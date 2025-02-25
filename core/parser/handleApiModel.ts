@@ -42,7 +42,7 @@ export function handleApiModel(
         const theFileExt = getFileExt(fileExt)
         const summary = handleDescription(obj.summary) // 接口注释
         const parameters = getParameters(obj.parameters, allInterfaces, typeMap) // 入参
-        const resScheme = obj?.responses['200']?.schema // 出参模型
+        const resScheme = obj?.responses?.['200']?.schema // 出参模型
 
         let outputInterface = '' // 出参 interface
         let outputType: 'object' | 'array' = 'object' // 出参类型
