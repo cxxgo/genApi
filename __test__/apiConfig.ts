@@ -49,7 +49,7 @@ const config: UserConfig = {
 
       apiBody: ({ url, method, summary, name, parameters, pstr3 }) => {
         const quotationMark = pstr3 ? '`' : "'"
-        const data = !!parameters.length ? 'data' : ''
+        const data = parameters.length ? 'data' : ''
         return `
         /** ${summary || '后端没写注释'} */
         export function ${name}  (${data}){
@@ -59,8 +59,8 @@ const config: UserConfig = {
       },
     },
     {
-      swaggerUrl: './__test__/json/mess.json',
-      outputDir: './__test__/output/mess',
+      swaggerUrl: './__test__/json/swagger2.0.json',
+      outputDir: './__test__/output/swagger2.0',
       gen: true,
     },
   ],

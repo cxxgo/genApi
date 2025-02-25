@@ -103,10 +103,11 @@ import * as __test__outputswagger3saveAdmin from './__test__outputswagger3/saveA
 import * as __test__outputswagger3token from './__test__outputswagger3/token.js'
 import * as __test__outputswagger4thk from './__test__outputswagger4/thk.js'
 import * as __test__outputswagger4jsswagger4Apijs from './__test__outputswagger4js/swagger4Api-js.js'
-import * as __test__outputmessemocenter from './__test__outputmess/emo-center.js'
-import * as __test__outputmesshappyPlan from './__test__outputmess/happyPlan.js'
-import * as __test__outputmessmobile from './__test__outputmess/mobile.js'
-import * as __test__outputmessemo from './__test__outputmess/emo.js'
+import * as __test__outputswagger20nothing from './__test__outputswagger20/nothing.js'
+import * as __test__outputswagger20emo from './__test__outputswagger20/emo.js'
+import * as __test__outputswagger20emocenter from './__test__outputswagger20/emo-center.js'
+import * as __test__outputswagger20happyPlan from './__test__outputswagger20/happyPlan.js'
+import * as __test__outputswagger20mobile from './__test__outputswagger20/mobile.js'
 Mock.mock(/\/api\/blue\/acc\/queryAcc/, 'post', __test__outputswagger1blue.blueAccQueryAcc)
 Mock.mock(/\/api\/blue\/door\/addDoor/, 'post', __test__outputswagger1blue.blueDoorAddDoor)
 Mock.mock(/\/api\/blue\/door\/createDoor/, 'post', __test__outputswagger1blue.blueDoorCreateDoor)
@@ -2331,35 +2332,37 @@ Mock.mock(/\/prefix\/thk\/test\/export-excel/, 'get', __test__outputswagger4jssw
 Mock.mock(/\/prefix\/thk\/test\/merge/, 'post', __test__outputswagger4jsswagger4Apijs.thkTestMerge)
 Mock.mock(/\/prefix\/thk\/test\/test1/, 'get', __test__outputswagger4jsswagger4Apijs.thkTestTest1)
 Mock.mock(/\/prefix\/thk\/test\/test2/, 'get', __test__outputswagger4jsswagger4Apijs.thkTestTest2)
-Mock.mock(/\/emo-center\/api\/enterprise\/list/, 'get', __test__outputmessemocenter.emocenterApiEnterpriseList)
+Mock.mock(/\/nothing\/api\/noParam/, 'get', __test__outputswagger20nothing.nothingApiNoParam)
+Mock.mock(/\/emo\/api\/colorful/, 'get', __test__outputswagger20emo.emoApiColorful)
+Mock.mock(/\/api\/emo\/emo\/employee\/tree/, 'get', __test__outputswagger20emo.emoEmoEmployeeTree)
+Mock.mock(/\/emo-center\/api\/enterprise\/list/, 'get', __test__outputswagger20emocenter.emocenterApiEnterpriseList)
 Mock.mock(
   /\/emo-center\/api\/feeRule\/getCooperateTypeIdsByFeeId/,
   'get',
-  __test__outputmessemocenter.emocenterApiFeeRuleGetCooperateTypeIdsByFeeId
+  __test__outputswagger20emocenter.emocenterApiFeeRuleGetCooperateTypeIdsByFeeId
 )
 Mock.mock(
   /\/emo-center\/api\/admin\/jobCategory\/byParentIds/,
   'get',
-  __test__outputmessemocenter.emocenterApiAdminJobCategoryByParentIds
+  __test__outputswagger20emocenter.emocenterApiAdminJobCategoryByParentIds
 )
 Mock.mock(
   /\/emo-center\/api\/searchRecord\/deleteByKeywords/,
   'post',
-  __test__outputmessemocenter.emocenterApiSearchRecordDeleteByKeywords
+  __test__outputswagger20emocenter.emocenterApiSearchRecordDeleteByKeywords
 )
 Mock.mock(
   /\/emo-center\/api\/empower\/enterpriseRe\/upEntReSet\/.*/,
   'post',
-  __test__outputmessemocenter.emocenterApiEmpowerEnterpriseReUpEntReSetEnterpriseId
+  __test__outputswagger20emocenter.emocenterApiEmpowerEnterpriseReUpEntReSetEnterpriseId
 )
-Mock.mock(/\/api\/emo-center\/effective\/dept/, 'get', __test__outputmessemocenter.emocenterEffectiveDept)
-Mock.mock(/\/api\/emo-center\/white\/get\/.*/, 'get', __test__outputmessemocenter.emocenterWhiteGetWhiteId)
-Mock.mock(/\/api\/emo-center\/auth\/execute/, 'put', __test__outputmessemocenter.emocenterAuthExecute)
+Mock.mock(/\/api\/emo-center\/effective\/dept/, 'get', __test__outputswagger20emocenter.emocenterEffectiveDept)
+Mock.mock(/\/api\/emo-center\/white\/get\/.*/, 'get', __test__outputswagger20emocenter.emocenterWhiteGetWhiteId)
+Mock.mock(/\/api\/emo-center\/auth\/execute/, 'put', __test__outputswagger20emocenter.emocenterAuthExecute)
 Mock.mock(
   /\/emo-center\/api\/v1\/tasty\/work-history\/.*/,
   'delete',
-  __test__outputmessemocenter.emocenterApiV1TastyWorkhistoryId
+  __test__outputswagger20emocenter.emocenterApiV1TastyWorkhistoryId
 )
-Mock.mock(/\/api\/happyPlan\/addCustomer/, 'get', __test__outputmesshappyPlan.happyPlanAddCustomer)
-Mock.mock(/\/api\/mobile\/person\/resume\//, 'get', __test__outputmessmobile.mobilePersonResume)
-Mock.mock(/\/api\/emo\/emo\/employee\/tree/, 'get', __test__outputmessemo.emoEmoEmployeeTree)
+Mock.mock(/\/api\/happyPlan\/addCustomer/, 'get', __test__outputswagger20happyPlan.happyPlanAddCustomer)
+Mock.mock(/\/api\/mobile\/person\/resume\//, 'get', __test__outputswagger20mobile.mobilePersonResume)

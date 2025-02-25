@@ -1,20 +1,132 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "彩虹中心-test, common-test, sa-client-test-接口文档",
-    "title": "彩虹中心-test, common-test, sa-client-test-接口文档"
+    "description": "swagger 2.0 测试数据",
+    "title": "swagger 2.0 测试数据"
   },
   "basePath": "/",
   "tags": [{ "name": "西蓝花管理", "description": "Enterprise Controller" }],
   "paths": {
-    "/emo-center/api/enterprise/list": {
+    "/nothing/api/noParam": {
+      "get": {
+        "tags": ["武术规则"],
+        "summary": "该接口没入参、没出参",
+        "produces": ["*/*"]
+      }
+    },
+    "/emo/api/colorful": {
       "get": {
         "tags": ["西蓝花管理"],
-        "summary": "这个接口注释、入参注释、出参注释\n有特殊字符\n，*/ 等，导致报错",
+        "summary": "入参、出参类型丰富多彩",
         "operationId": "listUsingGET",
         "produces": ["*/*"],
         "parameters": [
-          { "name": "city", "in": "query", "description": "市", "required": false, "type": "string" },
+          {
+            "name": "cooperateStatus",
+            "in": "query",
+            "description": "枚举入参",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "EXPIRE_COOPERATE",
+              "EXPIRE_LOG_OFF",
+              "FORWARD_LOG_OFF",
+              "IN_COOPERATE",
+              "TERMINATE_COOPERATING",
+              "TERMINATE_LOG_OFF",
+              "UN_COOPERATE"
+            ]
+          },
+          {
+            "name": "cooperateTypeFirst",
+            "in": "query",
+            "description": "type string",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "allowAllot",
+            "in": "query",
+            "description": "type boolean",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "feeId",
+            "in": "query",
+            "description": "type integer, format int64",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "loginTimeEnd",
+            "in": "query",
+            "description": "操作时间",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "parentIds",
+            "in": "query",
+            "description": "type array, items integer, format int64",
+            "required": true,
+            "type": "array",
+            "items": { "type": "integer", "format": "int64" },
+            "collectionFormat": "multi"
+          },
+          {
+            "in": "body",
+            "name": "keywords",
+            "description": "type array, items string",
+            "required": true,
+            "schema": { "type": "array", "items": { "type": "string" } }
+          },
+          {
+            "in": "body",
+            "name": "reId",
+            "description": "type array, items integer, format int64",
+            "required": true,
+            "schema": { "type": "array", "items": { "type": "integer", "format": "int64" } }
+          },  
+          {
+            "in": "body",
+            "name": "map",
+            "description": "type array, items object",
+            "required": true,
+            "schema": { "type": "object", "additionalProperties": { "type": "object" } }
+          },  
+          {
+            "in": "body",
+            "name": "req",
+            "description": "type interface",
+            "required": true,
+            "schema": { "$ref": "#/definitions/KeyBorardJoinDoorReq", "originalRef": "KeyBorardJoinDoorReq" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse«ComPage«西蓝花列表»»",
+              "originalRef": "ApiResponse«ComPage«西蓝花列表»»"
+            }
+          },
+          "401": { "description": "Unauthorized" },
+          "403": { "description": "Forbidden" },
+          "404": { "description": "Not Found" }
+        },
+        "security": [{ "satoken": ["global"] }]
+      }
+    },
+    "/emo-center/api/enterprise/list": {
+      "get": {
+        "tags": ["西蓝花管理"],
+        "summary": "这个接口注释、入参注释、出参注释\n有特殊字符\n，*/ 等，入参有枚举",
+        "operationId": "listUsingGET",
+        "produces": ["*/*"],
+        "parameters": [
           {
             "name": "cooperateStatus",
             "in": "query",
@@ -51,16 +163,7 @@
             "description": "//西蓝花性质 合作种类三级分类\\",
             "required": false,
             "type": "string"
-          },
-          {
-            "name": "id",
-            "in": "query",
-            "description": "西蓝花id",
-            "required": false,
-            "type": "integer",
-            "format": "int64"
-          },
-          { "name": "letter", "in": "query", "description": "字母", "required": false, "type": "string" }
+          }
         ],
         "responses": {
           "200": {
@@ -80,7 +183,7 @@
     "/emo-center/api/feeRule/getCooperateTypeIdsByFeeId": {
       "get": {
         "tags": ["武术规则"],
-        "summary": "这个接口处理后的 parsedData 里的type为空，导出出现形如 'data|1-20': [()]  的错误mock数据",
+        "summary": "这个接口处理后的 parsedData 里的type为空，导致出现形如 'data|1-20': [()]  的错误mock数据",
         "operationId": "getCooperateTypeIdsByFeeIdUsingGET",
         "produces": ["*/*"],
         "parameters": [
@@ -116,14 +219,6 @@
         "produces": ["*/*"],
         "parameters": [
           {
-            "name": "isEnable",
-            "in": "query",
-            "description": "isEnable",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
             "name": "parentIds",
             "in": "query",
             "description": "parentIds",
@@ -140,10 +235,7 @@
               "$ref": "#/definitions/ApiResponse«List«JobCategoryConfigResp»»",
               "originalRef": "ApiResponse«List«JobCategoryConfigResp»»"
             }
-          },
-          "401": { "description": "Unauthorized" },
-          "403": { "description": "Forbidden" },
-          "404": { "description": "Not Found" }
+          }
         },
         "security": [{ "satoken": ["global"] }]
       }
@@ -192,10 +284,7 @@
               "$ref": "#/definitions/ApiResponse«ResumeInfoMobileResp»",
               "originalRef": "ApiResponse«ResumeInfoMobileResp»"
             }
-          },
-          "401": { "description": "Unauthorized" },
-          "403": { "description": "Forbidden" },
-          "404": { "description": "Not Found" }
+          }
         },
         "security": [{ "satoken": ["global"] }]
       }
@@ -234,7 +323,7 @@
     },
     "/emo-center/api/empower/enterpriseRe/upEntReSet/{enterpriseId}": {
       "post": {
-        "summary": "这个接口的入参既有 in path, 又有 in body",
+        "summary": "这个接口的入参既有 in path, 又有 in body, 还有 in header",
         "operationId": "upEntReSetUsingPOST",
         "consumes": ["application/json"],
         "produces": ["*/*"],
@@ -253,17 +342,14 @@
             "description": "req",
             "required": true,
             "schema": { "$ref": "#/definitions/EntReSetReq", "originalRef": "EntReSetReq" }
-          }
+          },
+          { "name": "channel", "in": "header", "description": "channel", "required": true, "type": "string" }
         ],
         "responses": {
           "200": {
             "description": "OK",
             "schema": { "$ref": "#/definitions/ApiResponse«Void»", "originalRef": "ApiResponse«Void»" }
-          },
-          "201": { "description": "Created" },
-          "401": { "description": "Unauthorized" },
-          "403": { "description": "Forbidden" },
-          "404": { "description": "Not Found" }
+          }
         },
         "security": [{ "satoken": ["global"] }]
       }
@@ -274,24 +360,6 @@
         "description": "返回数值是个数组而非对象",
         "operationId": "filterDeptLoginListV2UsingGET",
         "produces": ["*/*"],
-        "parameters": [
-          {
-            "name": "platformEnterpriseId",
-            "in": "query",
-            "description": "platformEnterpriseId",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "platformSkyId",
-            "in": "query",
-            "description": "platformSkyId",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -302,12 +370,8 @@
                 "originalRef": "EarthDeptMetaRespe返回模型"
               }
             }
-          },
-          "401": { "description": "Unauthorized" },
-          "403": { "description": "Forbidden" },
-          "404": { "description": "Not Found" }
-        },
-        "security": [{ "satoken": ["global"] }]
+          }
+        }
       }
     },
     "/api/emo-center/white/get/{whiteId}": {
@@ -333,12 +397,8 @@
               "$ref": "#/definitions/ApiResponse«WhiteDetailResp»",
               "originalRef": "ApiResponse«WhiteDetailResp»"
             }
-          },
-          "401": { "description": "Unauthorized" },
-          "403": { "description": "Forbidden" },
-          "404": { "description": "Not Found" }
-        },
-        "security": [{ "satoken": ["global"] }]
+          }
+        }
       }
     },
     "/api/emo-center/auth/execute": {
@@ -361,13 +421,8 @@
           "200": {
             "description": "OK",
             "schema": { "$ref": "#/definitions/ApiResponse«Void»", "originalRef": "ApiResponse«Void»" }
-          },
-          "201": { "description": "Created" },
-          "401": { "description": "Unauthorized" },
-          "403": { "description": "Forbidden" },
-          "404": { "description": "Not Found" }
-        },
-        "security": [{ "satoken": ["global"] }]
+          }
+        }
       }
     },
     "/emo-center/api/v1/tasty/work-history/{id}": {
@@ -383,12 +438,8 @@
           "200": {
             "description": "OK",
             "schema": { "$ref": "#/definitions/ApiResponse«boolean»", "originalRef": "ApiResponse«boolean»" }
-          },
-          "204": { "description": "No Content" },
-          "401": { "description": "Unauthorized" },
-          "403": { "description": "Forbidden" }
-        },
-        "security": [{ "satoken": ["global"] }]
+          }
+        }
       }
     },
     "/api/emo/emo/employee/tree": {
@@ -398,16 +449,6 @@
         "description": "这个接口出参type是object, 需要处理成any",
         "operationId": "selectDeptWithEmployeesUsingGET",
         "produces": ["*/*"],
-        "parameters": [
-          {
-            "name": "emoId",
-            "in": "query",
-            "description": "emoId",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK",
@@ -415,12 +456,8 @@
               "$ref": "#/definitions/ApiResponse«List«Tree«long»»»",
               "originalRef": "ApiResponse«List«Tree«long»»»"
             }
-          },
-          "401": { "description": "Unauthorized" },
-          "403": { "description": "Forbidden" },
-          "404": { "description": "Not Found" }
-        },
-        "security": [{ "satoken": ["global"] }]
+          }
+        }
       }
     }
   },
@@ -433,17 +470,14 @@
         "data": { "$ref": "#/definitions/ComPage«西蓝花列表»", "originalRef": "ComPage«西蓝花列表»" },
         "msg": { "type": "string" },
         "success": { "type": "boolean" },
-        "timestamp": { "type": "integer", "format": "int64" },
-        "traceId": { "type": "string" }
+        "timestamp": { "type": "integer", "format": "int64" }
       },
       "title": "ApiResponse«ComPage«西蓝花列表»»"
     },
     "ComPage«西蓝花列表»": {
       "type": "object",
       "properties": {
-        "current": { "type": "integer", "format": "int64" },
         "records": { "type": "array", "items": { "$ref": "#/definitions/西蓝花列表", "originalRef": "西蓝花列表" } },
-        "size": { "type": "integer", "format": "int64" },
         "total": { "type": "integer", "format": "int64" }
       },
       "title": "ComPage«西蓝花列表»"
@@ -451,10 +485,6 @@
     "西蓝花列表": {
       "type": "object",
       "properties": {
-        "actualResponsiblePerson": { "type": "string", "description": "实际责任人" },
-        "aidedManagementName": { "type": "string", "description": "分管人姓名" },
-        "area": { "type": "string", "description": "区" },
-        "areaCode": { "type": "string", "description": "地区码" },
         "areaScope": { "type": "string", "description": "彩虹区域范围：\n ALL全国彩虹 PART区域彩虹 APPOINT制定区域" },
         "businessLicenseAuditStatus": {
           "type": "string",
@@ -464,47 +494,14 @@
           "type": "string",
           "description": "门牌号锁定状态: 未锁定 UNCERTIFICATED, 已锁定 CERTIFIED"
         },
-        "businessLicenseUrl": { "type": "string", "description": "门牌号url" },
-        "businessScope": { "type": "string", "description": "经营范围" },
-        "businessUserName": { "type": "string", "description": "商务人员" },
-        "city": { "type": "string", "description": "市" },
-        "cooperateStatus": { "type": "string", "description": "合作状态" },
-        "cooperateType": { "type": "string", "description": "合作类型" },
-        "cooperateTypeFirst": { "type": "string", "description": "西蓝花类型 合作种类一级分类" },
-        "cooperateTypeSecond": { "type": "string", "description": "西蓝花性质 合作种类二级分类" },
-        "cooperateTypeThird": { "type": "string", "description": "西蓝花性质 合作种类三级分类" },
-        "country": { "type": "string", "description": "国家" },
         "creditCode": { "type": "string", "description": "社会统一信用代码" },
         "empowerReId": { "type": "integer", "format": "int64", "description": "摇篮西蓝花关联id" },
         "endDate": { "type": "string", "format": "date", "description": "合作到期时间" },
-        "enterpriseBranchName": { "type": "string", "description": "分院名称" },
         "firstCooperationTime": { "type": "string", "format": "date-time", "description": "首次合作时间" },
-        "emoEnterpriseId": {
-          "type": "integer",
-          "format": "int64",
-          "description": "彩虹西蓝花在摇篮中心的西蓝花ID"
-        },
         "emoSkyId": { "type": "integer", "format": "int64", "description": "彩虹西蓝花的-摇篮ID" },
-        "headerName": { "type": "string", "description": "西蓝花管理员姓名" },
-        "headerPhone": { "type": "string", "description": "西蓝花管理员电话" },
-        "headerUserId": { "type": "integer", "format": "int64", "description": "西蓝花管理员ID-摇篮中心小蚂蚁ID" },
-        "id": { "type": "integer", "format": "int64", "description": "西蓝花ID" },
-        "introduceEarthId": { "type": "integer", "format": "int64", "description": "介绍人id" },
         "introduceEarthName": { "type": "string", "description": "介绍人" },
         "investment": { "type": "number", "description": "投资金额" },
-        "legalPerson": { "type": "string", "description": "法人" },
-        "legalPersonPhone": { "type": "string", "description": "法人电话" },
-        "location": { "type": "string", "description": "详细地址" },
-        "mainBusinessStage": { "type": "string", "description": "主营阶段" },
-        "name": { "type": "string", "description": "西蓝花名称" },
-        "personType": { "type": "integer", "format": "int32", "description": "人员类型 0:不是烙铁人员 1:是烙铁人员" },
-        "pinyin": { "type": "string", "description": "西蓝花首字母" },
-        "platformEnterpriseId": { "type": "integer", "format": "int64" },
-        "province": { "type": "string", "description": "省" },
-        "relateContractNum": { "type": "string", "description": "关联合同数量" },
-        "serialNo": { "type": "string", "description": "西蓝花编码" },
-        "signId": { "type": "integer", "format": "int64", "description": "最新消防车表ID" },
-        "skyId": { "type": "integer", "format": "int64" }
+        "personType": { "type": "integer", "format": "int32", "description": "人员类型 0:不是烙铁人员 1:是烙铁人员" }
       },
       "title": "西蓝花列表"
     },
@@ -515,8 +512,7 @@
         "data": { "type": "array", "items": { "type": "array", "items": { "type": "integer", "format": "int64" } } },
         "msg": { "type": "string" },
         "success": { "type": "boolean" },
-        "timestamp": { "type": "integer", "format": "int64" },
-        "traceId": { "type": "string" }
+        "timestamp": { "type": "integer", "format": "int64" }
       },
       "title": "ApiResponse«List«List«long»»»"
     },
@@ -530,8 +526,7 @@
         },
         "msg": { "type": "string" },
         "success": { "type": "boolean" },
-        "timestamp": { "type": "integer", "format": "int64" },
-        "traceId": { "type": "string" }
+        "timestamp": { "type": "integer", "format": "int64" }
       },
       "title": "ApiResponse«List«JobCategoryConfigResp»»"
     },
@@ -544,7 +539,6 @@
           "items": { "$ref": "#/definitions/JobCategoryConfigResp", "originalRef": "JobCategoryConfigResp" }
         },
         "createId": { "type": "integer", "format": "int64", "description": "创建人id" },
-        "createName": { "type": "string", "description": "创建人name" },
         "created": { "type": "string", "format": "date-time", "description": "创建时间" }
       },
       "title": "JobCategoryConfigResp"
@@ -586,8 +580,7 @@
         "data": { "type": "object" },
         "msg": { "type": "string" },
         "success": { "type": "boolean" },
-        "timestamp": { "type": "integer", "format": "int64" },
-        "traceId": { "type": "string" }
+        "timestamp": { "type": "integer", "format": "int64" }
       },
       "title": "ApiResponse«object»"
     },
@@ -598,17 +591,13 @@
         "data": { "$ref": "#/definitions/ResumeInfoMobileResp", "originalRef": "ResumeInfoMobileResp" },
         "msg": { "type": "string" },
         "success": { "type": "boolean" },
-        "timestamp": { "type": "integer", "format": "int64" },
-        "traceId": { "type": "string" }
+        "timestamp": { "type": "integer", "format": "int64" }
       },
       "title": "ApiResponse«ResumeInfoMobileResp»"
     },
     "ResumeInfoMobileResp": {
       "type": "object",
       "properties": {
-        "age": { "type": "string", "description": "年龄" },
-        "avatarAddress": { "type": "string", "description": "头像图片oss地址" },
-        "certCount": { "type": "string", "description": "已发布门牌号数量" },
         "certStatusMark": {
           "type": "string",
           "description": "门牌号状态标识: AUTOMATICALLY 大数据自动生成,OFFICIALLY_RELEASED 正式发布"
@@ -632,30 +621,7 @@
           "type": "string",
           "description": "门牌号状态标识: AUTOMATICALLY 大数据自动生成,OFFICIALLY_RELEASED 正式发布"
         },
-        "certificateName": { "type": "string", "description": "门牌号名" },
-        "certificateStatus": {
-          "type": "string",
-          "description": "门牌号状态: IDLE 闲置中,PASSED-BUT-NOT-RECEIVED 已考过,未拿证,CONTRACT-WILL-EXPIRE 合同将到期"
-        },
-        "cooperateSocialSecurity": {
-          "type": "string",
-          "description": "配合社保: COOPERATABLE 可配合,UNABLE-TO-COOPERATETERED 不能配合"
-        },
-        "registrationStatus": {
-          "type": "string",
-          "description": "烙铁情况: RE-REGISTRATION 转烙铁,UNREGISTERED 未烙铁"
-        },
-        "sex": { "type": "string", "description": "MAN 男 , WOMAN 女" },
-        "sikuCertificateCnt": { "type": "integer", "format": "int64", "description": "四库门牌号数量" },
-        "technicalTitle": {
-          "type": "string",
-          "description": "技术职称: NO-PROFESSIONAL 无职称,JUNIOR-PROFESSIONAL 初级职称 ,INTERMEDIATE-PROFESSIONAL中级职称, SENIOR-PROFESSIONAL 高级职称"
-        },
-        "workExperience": {
-          "type": "string",
-          "description": "工作经验: INEXPERIENCED 无经验,ONE-TO-THREE-YEAR 1~3年,THREE-TO-FIVE-YEAR 3~5年,FIVE-TO-TEN-YEAR 5~10年,OVER-TEN-YEAR 10年以上"
-        },
-        "workNature": { "type": "string", "description": "工作性质: UNLIMITED 不限,FULL-TIME 全职, PART-TIME 兼职" }
+        "sikuCertificateCnt": { "type": "integer", "format": "int64", "description": "四库门牌号数量" }
       },
       "title": "女娲补天烙饼"
     },
@@ -665,8 +631,7 @@
         "code": { "type": "integer", "format": "int32" },
         "msg": { "type": "string" },
         "success": { "type": "boolean" },
-        "timestamp": { "type": "integer", "format": "int64" },
-        "traceId": { "type": "string" }
+        "timestamp": { "type": "integer", "format": "int64" }
       },
       "title": "ApiResponse«Void»"
     },
@@ -703,8 +668,6 @@
         },
         "enterpriseId": { "type": "integer", "format": "int64", "description": "公司ID" },
         "id": { "type": "integer", "format": "int64" },
-        "inviteType": { "type": "string", "description": "LINK-链接 QR-二维码" },
-        "module": { "type": "string", "description": "模块分类 ENT_RE-公司关联   EMP_AUTH-小蚂蚁摔跤" },
         "openState": { "type": "boolean", "description": "配置开启状态 0-关闭 1-开启" }
       },
       "title": "EntInviteConfig"
@@ -757,20 +720,9 @@
             "originalRef": "EarthDeptMetaRespe返回模型"
           }
         },
-        "deptCode": { "type": "string" },
-        "deptName": { "type": "string" },
-        "email": { "type": "string" },
-        "id": { "type": "integer", "format": "int64" },
         "leaderEarthId": { "type": "integer", "format": "int64" },
         "mainDept": { "type": "boolean" },
-        "mark": { "type": "string" },
-        "parentCode": { "type": "string" },
-        "parentId": { "type": "integer", "format": "int64" },
-        "phone": { "type": "string" },
-        "profile": { "type": "string" },
-        "scaleType": { "type": "string" },
-        "status": { "type": "string" },
-        "skyId": { "type": "integer", "format": "int64" }
+        "mark": { "type": "string" }
       },
       "title": "EarthDeptMetaRespe返回模型"
     },
@@ -781,21 +733,13 @@
         "data": { "$ref": "#/definitions/WhiteDetailResp", "originalRef": "WhiteDetailResp" },
         "msg": { "type": "string" },
         "success": { "type": "boolean" },
-        "timestamp": { "type": "integer", "format": "int64" },
-        "traceId": { "type": "string" }
+        "timestamp": { "type": "integer", "format": "int64" }
       },
       "title": "ApiResponse«WhiteDetailResp»"
     },
     "WhiteDetailResp": {
       "type": "object",
       "properties": {
-        "channelWhiteName": { "type": "string", "description": "渠道小金库名" },
-        "createId": { "type": "integer", "format": "int64" },
-        "createName": { "type": "string" },
-        "created": { "type": "string", "format": "date-time" },
-        "email": { "type": "string", "description": "邮箱" },
-        "id": { "type": "integer", "format": "int64", "description": "小金库id" },
-        "leaderDesktopId": { "type": "integer", "format": "int64", "description": "负责人id" },
         "leaderDesktopInfo": {
           "description": "部负责人信息",
           "$ref": "#/definitions/DesktopComplexResp",
@@ -803,8 +747,6 @@
         },
         "markDesc": { "type": "string" },
         "modified": { "type": "string", "format": "date-time" },
-        "orderNum": { "type": "integer", "format": "int32", "description": "显示顺序" },
-        "parentId": { "type": "integer", "format": "int64", "description": "父小金库id" },
         "scaleTypeDesc": { "type": "string" },
         "status": { "type": "string", "description": "小金库状态（NORMAL正常 STOP停用）" },
         "updateId": { "type": "integer", "format": "int64" }
@@ -816,23 +758,16 @@
       "properties": {
         "authStatus": { "type": "boolean", "description": "是否卖烧饼辟邪刀: 根据卖烧饼场景，存在无返会情况" },
         "createId": { "type": "integer", "format": "int64" },
-        "createName": { "type": "string", "description": "邀请人" },
-        "created": { "type": "string", "format": "date-time", "description": "加入时间" },
         "whiteRespList": {
           "type": "array",
           "description": "小金库信息",
           "items": { "$ref": "#/definitions/DesktopWhiteResp", "originalRef": "DesktopWhiteResp" }
         },
-        "email": { "type": "string", "description": "小麦邮箱" },
-        "id": { "type": "integer", "format": "int64", "description": "小麦id" },
         "jobRespList": {
           "type": "array",
           "description": "职务信息",
           "items": { "$ref": "#/definitions/DesktopJobResp", "originalRef": "DesktopJobResp" }
         },
-        "mobile": { "type": "string", "description": "手机号" },
-        "modified": { "type": "string", "format": "date-time" },
-        "nickName": { "type": "string", "description": "小麦昵称" },
         "postRespList": {
           "type": "array",
           "description": "岗位信息",
@@ -843,22 +778,13 @@
           "type": "string",
           "description": "关联关系：INIT:创建人，CREATE：后台添加，INVITE:邀请加入，ADD:搜索加入"
         },
-        "sex": { "type": "string", "description": "性别,man:表示男性,woman表示女性，unknown未知" },
-        "sexDesc": { "type": "string" },
-        "status": { "type": "string", "description": "账号状态：NONACTIVATED未激活,NORMAL正常,FORBID禁用" },
-        "updateId": { "type": "integer", "format": "int64" },
-        "updateName": { "type": "string" },
-        "keyBorardId": { "type": "integer", "format": "int64", "description": "账号id" },
-        "keyBorardName": { "type": "string", "description": "小麦姓名" }
+        "sex": { "type": "string", "description": "性别,man:表示男性,woman表示女性，unknown未知" }
       },
       "title": "DesktopComplexResp"
     },
     "DesktopWhiteResp": {
       "type": "object",
       "properties": {
-        "whiteCode": { "type": "string", "description": "小金库code" },
-        "whiteId": { "type": "integer", "format": "int64", "description": "小金库id" },
-        "whiteName": { "type": "string", "description": "小金库太阳花" },
         "desktopId": { "type": "integer", "format": "int64", "description": "小麦id" },
         "id": { "type": "integer", "format": "int64", "description": "ID" },
         "mainWhite": { "type": "boolean", "description": "是否主小金库" },
@@ -869,9 +795,6 @@
     "DesktopJobResp": {
       "type": "object",
       "properties": {
-        "desktopId": { "type": "integer", "format": "int64", "description": "小麦id" },
-        "id": { "type": "integer", "format": "int64", "description": "ID" },
-        "jobCode": { "type": "string", "description": "职务code" },
         "jobId": { "type": "integer", "format": "int64", "description": "职务ID" },
         "jobName": { "type": "string", "description": "职务name" },
         "gratefulId": { "type": "integer", "format": "int64", "description": "房东id" }
@@ -882,11 +805,7 @@
       "type": "object",
       "properties": {
         "desktopId": { "type": "integer", "format": "int64", "description": "小麦ID" },
-        "id": { "type": "integer", "format": "int64", "description": "id" },
-        "postCode": { "type": "string", "description": "岗位code" },
-        "postId": { "type": "integer", "format": "int64", "description": "岗位ID" },
-        "postName": { "type": "string", "description": "岗位name" },
-        "gratefulId": { "type": "integer", "format": "int64", "description": "房东id" }
+        "postName": { "type": "string", "description": "岗位name" }
       },
       "title": "DesktopPostResp"
     },
@@ -897,10 +816,17 @@
         "data": { "type": "array", "items": { "type": "object", "additionalProperties": { "type": "object" } } },
         "msg": { "type": "string" },
         "success": { "type": "boolean" },
-        "timestamp": { "type": "integer", "format": "int64" },
-        "traceId": { "type": "string" }
+        "timestamp": { "type": "integer", "format": "int64" }
       },
       "title": "ApiResponse«List«Tree«long»»»"
+    },
+    "KeyBorardJoinDoorReq": {
+      "type": "object",
+      "properties": {
+        "reason": { "type": "string", "description": "申请理由" },
+        "gratefulId": { "type": "integer", "format": "int64", "description": "房东id" }
+      },
+      "title": "KeyBorardJoinDoorReq"
     }
   }
 }
