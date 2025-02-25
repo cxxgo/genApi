@@ -28,6 +28,8 @@ const jsKeyWords = [
   'static',
   'for',
   'function',
+  'if',
+  'else',
 ]
 
 /**
