@@ -2063,7 +2063,7 @@ function ChaXianBanFenZhiJiGouGengXinQingQiu() {
 function ChaXianBanShiXinLianHeChengJieGuShi() {
   return {
     addDate: '@datetime',
-    dept: '@string(5,50)',
+    dept: '/财务部|研发部|市场部|运维部|测试部/',
     legalName: '@ctitle(5,10)',
     mainBody: '@string(5,50)',
     number: '@string(5,50)',
@@ -2268,7 +2268,7 @@ function ChaXianBanHeiMingDanXiangYing() {
   return {
     blacklistBasis: '@string(5,50)',
     decisionEffectiveDate: '@datetime',
-    dept: '@string(5,50)',
+    dept: '/财务部|研发部|市场部|运维部|测试部/',
     number: '@string(5,50)',
   }
 }
@@ -2348,7 +2348,7 @@ function ZhanShiZanShiYongDeShengJiTiaoJianFanHui() {
     escalationConditionTastyDetailResp: ShengJiTiaoJianJuanXinCaiXiangQing(),
     preLevel: '@string(5,50)',
     projectRequire: '@string(5,50)',
-    rate: '@integer(3,1000)',
+    rate: '@float(0,1)',
   }
 }
 function ChaZhiXiangQing() {

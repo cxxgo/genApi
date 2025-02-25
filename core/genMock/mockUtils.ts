@@ -32,13 +32,13 @@ export function getFieldMockStr({ name, type, fieldRules }) {
     mockStr = '@city'
   } else if (type === 'string' && /county/.test(lowerCaseName)) {
     mockStr = '@county'
-  } else if (type === 'number' && /Ratio|Percent|Rate/.test(name)) {
+  } else if (type === 'number' && /Ratio|Percent|Rate|^ratio$|^percent$|^rate$/.test(name)) {
     mockStr = '@float(0,1)' // 比例
-  } else if (type === 'number' && /Count|Amount/.test(lowerCaseName)) {
-    mockStr = '@integer(10,10000)' // 数量
+  } else if (type === 'number' && /score/.test(lowerCaseName)) {
+    mockStr = '@integer(0,100)' // 得分
   } else if (type === 'string' && /username/.test(lowerCaseName)) {
     mockStr = '@cname'
-  } else if (type === 'string' && /department/.test(lowerCaseName)) {
+  } else if (type === 'string' && /department|^dept$/.test(lowerCaseName)) {
     mockStr = getRandomOneFromArr('财务部|研发部|市场部|运维部|测试部')
   } else if (type === 'string' && /url|link|avatar/.test(lowerCaseName)) {
     mockStr = '@image(200x100, @color, @color)' // 生成一张图片地址
