@@ -1,0 +1,2224 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "OpenAPI definition",
+    "version": "v0"
+  },
+  "servers": [
+    {
+      "url": "http://gateway-dev.wygsy.com:9080",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/inner/todo/save": {
+      "post": {
+        "tags": ["to-do-feign-controller"],
+        "operationId": "saveToDo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InnerRpc保存待办请求"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseLong"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/inner/todo/finish": {
+      "post": {
+        "tags": ["to-do-feign-controller"],
+        "operationId": "finishToDo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InnerRpc操作待办请求"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/inner/todo/count": {
+      "post": {
+        "tags": ["to-do-feign-controller"],
+        "operationId": "countToDo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InnerRpcObject"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseInteger"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/inner/todo/close": {
+      "post": {
+        "tags": ["to-do-feign-controller"],
+        "operationId": "closeToDo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InnerRpc操作待办请求"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/todo/sub-todo/save": {
+      "post": {
+        "tags": ["待办接口"],
+        "summary": "保存子待办",
+        "operationId": "saveSubToDo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/保存待办请求"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/todo/save": {
+      "post": {
+        "tags": ["待办接口"],
+        "summary": "保存待办：参数含ID则更新否则新增",
+        "operationId": "saveToDo_1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/保存待办请求"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseLong"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/todo/reopen": {
+      "post": {
+        "tags": ["待办接口"],
+        "summary": "重启待办",
+        "operationId": "reopenToDo",
+        "parameters": [
+          {
+            "name": "arg0",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "arg1",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/todo/list/owner": {
+      "post": {
+        "tags": ["待办接口"],
+        "summary": "获取待办-已办列表",
+        "operationId": "listToDoByOwner",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/待办列表查询请求"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseComPage待办列表响应"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/todo/list/assigner": {
+      "post": {
+        "tags": ["待办接口"],
+        "summary": "获取交办列表",
+        "operationId": "listToDoByAssigner",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/待办列表查询请求"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseComPage待办列表响应"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/todo/forward": {
+      "post": {
+        "tags": ["待办接口"],
+        "summary": "转办",
+        "operationId": "forwardToDo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/转办请求"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/todo/finish": {
+      "post": {
+        "tags": ["待办接口"],
+        "summary": "完成待办",
+        "operationId": "finishToDo_1",
+        "parameters": [
+          {
+            "name": "arg1",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "arg2",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InvokeStateReq"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/todo/delete": {
+      "post": {
+        "tags": ["待办接口"],
+        "summary": "删除待办",
+        "operationId": "deleteToDo",
+        "parameters": [
+          {
+            "name": "arg0",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/todo/comment/save": {
+      "post": {
+        "tags": ["待办接口"],
+        "summary": "添加评论",
+        "operationId": "commentToDo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/待办评论请求"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/todo/close": {
+      "post": {
+        "tags": ["待办接口"],
+        "summary": "关闭待办",
+        "operationId": "closeToDo_1",
+        "parameters": [
+          {
+            "name": "arg0",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "arg1",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/project/todo/list": {
+      "post": {
+        "tags": ["项目待办"],
+        "summary": "根据项目查询待办列表",
+        "operationId": "listToDoByProject",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/项目全部待办列表请求"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseComPage待办列表响应"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/im/user-infos": {
+      "post": {
+        "tags": ["IM适配接口"],
+        "summary": "根据IM userId批量获取用户信息",
+        "operationId": "getUserInfoProfiles",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/请求结构体"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseListPairLong租户信息"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/im/todo/list/owner": {
+      "post": {
+        "tags": ["IM适配接口"],
+        "summary": "客户端-获取待办列表",
+        "operationId": "listToDoByAppOwner",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/待办列表查询请求"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseComPageAPP待办列表响应"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/entry-setting/save": {
+      "post": {
+        "tags": ["待办业务入口配置"],
+        "summary": "保存入口配置",
+        "operationId": "saveEntrySetting",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/保存待办入口配置请求"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/entry-setting/delete": {
+      "post": {
+        "tags": ["待办业务入口配置"],
+        "summary": "删除待办入口配置",
+        "operationId": "deleteEntrySetting",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/请求结构体"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/backdoor/peek": {
+      "get": {
+        "tags": ["backdoor-controller"],
+        "operationId": "peekToDoOwer",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/backdoor/init": {
+      "get": {
+        "tags": ["backdoor-controller"],
+        "operationId": "initToDoOwer",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/backdoor/clear": {
+      "get": {
+        "tags": ["backdoor-controller"],
+        "operationId": "clear",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseObject"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/todo/get": {
+      "get": {
+        "tags": ["待办接口"],
+        "summary": "获取待办详情",
+        "operationId": "getToDo",
+        "parameters": [
+          {
+            "name": "arg0",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse待办详情响应"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/todo/event/list": {
+      "get": {
+        "tags": ["待办接口"],
+        "summary": "获取待办操作记录列表",
+        "operationId": "listEvent",
+        "parameters": [
+          {
+            "name": "arg0",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "arg1",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "arg2",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseComPage待办事件响应"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/todo/comment/list": {
+      "get": {
+        "tags": ["待办接口"],
+        "summary": "获取待办评论列表",
+        "operationId": "listComment",
+        "parameters": [
+          {
+            "name": "arg0",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "arg1",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "arg2",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseComPage待办评论详情"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/im/user-info": {
+      "get": {
+        "tags": ["IM适配接口"],
+        "summary": "根据IM userId获取用户信息",
+        "operationId": "getUserInfoProfile",
+        "parameters": [
+          {
+            "name": "arg0",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse租户信息"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/entry-setting/list": {
+      "get": {
+        "tags": ["待办业务入口配置"],
+        "summary": "查询配置列表",
+        "operationId": "listEntrySetting",
+        "parameters": [
+          {
+            "name": "arg0",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "arg1",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 10
+            }
+          },
+          {
+            "name": "arg2",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "arg3",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "GENERAL",
+                "ENGINEERING",
+                "SCIENTIFIC",
+                "FINANCE",
+                "OA",
+                "MARKET",
+                "CA",
+                "DETECTION",
+                "BUSINESS",
+                "PSI",
+                "CDE",
+                "SIGN",
+                "FIR",
+                "QA",
+                "FDD",
+                "SYSTEM",
+                "AUDIT",
+                "ADMIN",
+                "OTHER"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponseComPage待办入口配置响应"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Attach": {
+        "type": "object",
+        "properties": {
+          "fileName": {
+            "type": "string"
+          },
+          "fileUrl": {
+            "type": "string"
+          }
+        }
+      },
+      "EndpointLink": {
+        "type": "object",
+        "properties": {
+          "endpoint": {
+            "type": "string",
+            "enum": ["APP", "PC"]
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "InnerRpc保存待办请求": {
+        "type": "object",
+        "properties": {
+          "req": {
+            "$ref": "#/components/schemas/保存待办请求"
+          }
+        }
+      },
+      "ToDoRelInfo": {
+        "type": "object"
+      },
+      "保存待办请求": {
+        "type": "object",
+        "properties": {
+          "业务待办编码": {
+            "type": "string"
+          },
+          "待办内容": {
+            "type": "string"
+          },
+          "附件内容": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attach"
+            }
+          },
+          "租户ID": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "负责人列表": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/待办负责人"
+            }
+          },
+          "完成方式：默认ANY_OWNER": {
+            "type": "string",
+            "enum": ["ANY_OWNER", "ALL_OWNER"]
+          },
+          "是否IM单聊通知：默认true": {
+            "type": "boolean"
+          },
+          "截至日期": {
+            "type": "string",
+            "format": "date"
+          },
+          "优先级": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "工作量（天）": {
+            "type": "number"
+          },
+          "关联项目信息": {
+            "$ref": "#/components/schemas/ToDoRelInfo"
+          },
+          "处理按钮": {
+            "type": "string"
+          },
+          "处理链接": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EndpointLink"
+            }
+          },
+          "详情链接": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EndpointLink"
+            }
+          }
+        }
+      },
+      "待办负责人": {
+        "type": "object",
+        "properties": {
+          "用户ID": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "用户姓名": {
+            "type": "string"
+          },
+          "部门编号": {
+            "type": "string"
+          },
+          "部门名称": {
+            "type": "string"
+          },
+          "待办状态": {
+            "type": "string",
+            "enum": ["OPENING", "FINISHED", "CLOSED"]
+          }
+        }
+      },
+      "ApiResponseLong": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "traceId": {
+            "type": "string"
+          },
+          "data": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "InnerRpc操作待办请求": {
+        "type": "object",
+        "properties": {
+          "req": {
+            "$ref": "#/components/schemas/操作待办请求"
+          }
+        }
+      },
+      "操作待办请求": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "ownerIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        }
+      },
+      "ApiResponseObject": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "traceId": {
+            "type": "string"
+          },
+          "data": {
+            "type": "object"
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "InnerRpcObject": {
+        "type": "object",
+        "properties": {
+          "req": {
+            "type": "object"
+          }
+        }
+      },
+      "ApiResponseInteger": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "traceId": {
+            "type": "string"
+          },
+          "data": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "ToDoEntryInfo": {
+        "type": "object"
+      },
+      "待办列表查询请求": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "状态": {
+            "type": "string",
+            "enum": ["OPENING", "FINISHED", "CLOSED"]
+          },
+          "项目ID": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "类型: 'GENERAL'-通用, 'ENGINEERING'-工程, 'SCIENTIFIC'-科研, 'FINANCE'-财务, 'OA'-人事, 'CA'-CA, 'PSI'-进销存, 'DETECTION'-检测, 'MARKET'-市场, 'BUSINESS'-商机": {
+            "type": "string",
+            "enum": [
+              "GENERAL",
+              "ENGINEERING",
+              "SCIENTIFIC",
+              "FINANCE",
+              "OA",
+              "MARKET",
+              "CA",
+              "DETECTION",
+              "BUSINESS",
+              "PSI",
+              "CDE",
+              "SIGN",
+              "FIR",
+              "QA",
+              "FDD",
+              "SYSTEM",
+              "AUDIT",
+              "ADMIN",
+              "OTHER"
+            ]
+          },
+          "截止日期 - 开始": {
+            "type": "string",
+            "format": "date"
+          },
+          "截止日期 - 结束": {
+            "type": "string",
+            "format": "date"
+          },
+          "优先级    \" +\n            \"    默认： 999\n            \"    重要紧急： 0 \n            \"    重要不紧急： 1 \n            \"    紧急不重要： 2 \n            \"    不重要不紧急： 3 ": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "排序规则": {
+            "type": "string",
+            "enum": ["CREATED_ASC", "CREATED_DESC", "UPDATED_ASC", "UPDATED_DESC", "DEADLINE_ASC", "DEADLINE_DESC"]
+          },
+          "菜单": {
+            "type": "string",
+            "enum": ["TO_DO", "DONE"]
+          },
+          "交办人姓名": {
+            "type": "string"
+          }
+        }
+      },
+      "ApiResponseComPage待办列表响应": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "traceId": {
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ComPage待办列表响应"
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "ComPage待办列表响应": {
+        "type": "object",
+        "properties": {
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/待办列表响应"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "current": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "待办列表响应": {
+        "type": "object",
+        "properties": {
+          "待办ID": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "入口编码": {
+            "type": "string"
+          },
+          "入口信息:entry = GENERAL - null entry = IM - {title,imMessageList,imUserId,groupType,groupId}, entry = TREND - {title,trendInfo}, 其他 = {processButton(按钮名),processLinks(处理链接) [{endpoint(端类型-PC，APP),url(链接地址)}]}": {
+            "$ref": "#/components/schemas/ToDoEntryInfo"
+          },
+          "交办人ID": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "交办人姓名": {
+            "type": "string"
+          },
+          "待办状态": {
+            "type": "string",
+            "enum": ["OPENING", "FINISHED", "CLOSED"]
+          },
+          "待办内容": {
+            "type": "string"
+          },
+          "最后更新时间": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "优先级": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "类型: 'GENERAL'-通用, 'ENGINEERING'-工程, 'SCIENTIFIC'-科研, 'FINANCE'-财务, 'OA'-人事, 'CA'-CA, 'PSI'-进销存, 'DETECTION'-检测, 'MARKET'-市场, 'BUSINESS'-商机": {
+            "type": "string",
+            "enum": [
+              "GENERAL",
+              "ENGINEERING",
+              "SCIENTIFIC",
+              "FINANCE",
+              "OA",
+              "MARKET",
+              "CA",
+              "DETECTION",
+              "BUSINESS",
+              "PSI",
+              "CDE",
+              "SIGN",
+              "FIR",
+              "QA",
+              "FDD",
+              "SYSTEM",
+              "AUDIT",
+              "ADMIN",
+              "OTHER"
+            ]
+          },
+          "类型描述": {
+            "type": "string"
+          },
+          "负责人": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/待办负责人"
+            }
+          },
+          "预期完成日期": {
+            "type": "string",
+            "format": "date"
+          },
+          "是否存在子待办": {
+            "type": "boolean"
+          },
+          "完成方式": {
+            "type": "string",
+            "enum": ["ANY_OWNER", "ALL_OWNER"]
+          },
+          "关联信息": {
+            "$ref": "#/components/schemas/ToDoRelInfo"
+          }
+        }
+      },
+      "转办请求": {
+        "type": "object",
+        "properties": {
+          "待办ID": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "负责人列表": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/待办负责人"
+            }
+          },
+          "转办说明": {
+            "type": "string"
+          },
+          "附件列表": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attach"
+            }
+          }
+        }
+      },
+      "InvokeStateReq": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "待办评论请求": {
+        "required": ["待办ID", "评论内容"],
+        "type": "object",
+        "properties": {
+          "待办ID": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "评论内容": {
+            "type": "string"
+          },
+          "附件列表": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attach"
+            }
+          }
+        }
+      },
+      "项目全部待办列表请求": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "状态": {
+            "type": "string",
+            "enum": ["OPENING", "FINISHED", "CLOSED"]
+          },
+          "项目ID": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "类型: 'GENERAL'-通用, 'ENGINEERING'-工程, 'SCIENTIFIC'-科研, 'FINANCE'-财务, 'OA'-人事, 'CA'-CA, 'PSI'-进销存, 'DETECTION'-检测, 'MARKET'-市场, 'BUSINESS'-商机": {
+            "type": "string",
+            "enum": [
+              "GENERAL",
+              "ENGINEERING",
+              "SCIENTIFIC",
+              "FINANCE",
+              "OA",
+              "MARKET",
+              "CA",
+              "DETECTION",
+              "BUSINESS",
+              "PSI",
+              "CDE",
+              "SIGN",
+              "FIR",
+              "QA",
+              "FDD",
+              "SYSTEM",
+              "AUDIT",
+              "ADMIN",
+              "OTHER"
+            ]
+          },
+          "截止日期 - 开始": {
+            "type": "string",
+            "format": "date"
+          },
+          "截止日期 - 结束": {
+            "type": "string",
+            "format": "date"
+          },
+          "优先级    \" +\n            \"    默认： 999\n            \"    重要紧急： 0 \n            \"    重要不紧急： 1 \n            \"    紧急不重要： 2 \n            \"    不重要不紧急： 3 ": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "排序规则": {
+            "type": "string",
+            "enum": ["CREATED_ASC", "CREATED_DESC", "UPDATED_ASC", "UPDATED_DESC", "DEADLINE_ASC", "DEADLINE_DESC"]
+          },
+          "交办人姓名": {
+            "type": "string"
+          },
+          "负责人姓名": {
+            "type": "string"
+          }
+        }
+      },
+      "请求结构体": {
+        "type": "object",
+        "properties": {
+          "IM用户ID列表": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          "租户用户ID列表": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        }
+      },
+      "ApiResponseListPairLong租户信息": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "traceId": {
+            "type": "string"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PairLong租户信息"
+            }
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "EmployeeDeptInfo": {
+        "type": "object",
+        "properties": {
+          "deptId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "deptCode": {
+            "type": "string"
+          },
+          "deptName": {
+            "type": "string"
+          },
+          "mainDept": {
+            "type": "boolean"
+          },
+          "mark": {
+            "type": "string"
+          }
+        }
+      },
+      "EmployeePostInfo": {
+        "type": "object",
+        "properties": {
+          "postName": {
+            "type": "string"
+          },
+          "postCategoryName": {
+            "type": "string"
+          }
+        }
+      },
+      "PairLong租户信息": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "value": {
+            "$ref": "#/components/schemas/租户信息"
+          }
+        }
+      },
+      "TenantEmployeeInfo": {
+        "type": "object",
+        "properties": {
+          "tenantId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "companyId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "companyName": {
+            "type": "string"
+          },
+          "companyCode": {
+            "type": "string"
+          },
+          "employeePostInfos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmployeePostInfo"
+            }
+          },
+          "employeeDeptInfos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmployeeDeptInfo"
+            }
+          }
+        }
+      },
+      "租户信息": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "status": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          },
+          "tenantEmployeeInfos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TenantEmployeeInfo"
+            }
+          },
+          "个人租户ID": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "APP待办列表响应": {
+        "type": "object",
+        "properties": {
+          "待办ID": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "处理按钮": {
+            "type": "string"
+          },
+          "处理连接": {
+            "type": "string"
+          },
+          "是否可直接完成整个待办": {
+            "type": "boolean"
+          },
+          "详情地址": {
+            "type": "string"
+          },
+          "待办内容": {
+            "type": "string"
+          },
+          "类型描述": {
+            "type": "string"
+          },
+          "最后更新时间": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "ApiResponseComPageAPP待办列表响应": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "traceId": {
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ComPageAPP待办列表响应"
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "ComPageAPP待办列表响应": {
+        "type": "object",
+        "properties": {
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/APP待办列表响应"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "current": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "保存待办入口配置请求": {
+        "type": "object",
+        "properties": {
+          "ID": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "名称": {
+            "type": "string"
+          },
+          "待办类型": {
+            "type": "string",
+            "enum": [
+              "GENERAL",
+              "ENGINEERING",
+              "SCIENTIFIC",
+              "FINANCE",
+              "OA",
+              "MARKET",
+              "CA",
+              "DETECTION",
+              "BUSINESS",
+              "PSI",
+              "CDE",
+              "SIGN",
+              "FIR",
+              "QA",
+              "FDD",
+              "SYSTEM",
+              "AUDIT",
+              "ADMIN",
+              "OTHER"
+            ]
+          },
+          "通用待办完成开关": {
+            "type": "boolean"
+          },
+          "通用待办关闭开关": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ApiResponse待办详情响应": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "traceId": {
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/待办详情响应"
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "待办详情响应": {
+        "type": "object",
+        "properties": {
+          "待办ID": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "租户ID": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "租户类型": {
+            "type": "string",
+            "enum": ["ENTERPRISE", "PLATFORM", "PERSON", "WORKROOM"]
+          },
+          "租户名称": {
+            "type": "string"
+          },
+          "入口：GENERAL - 待办中心，IM - IM，TREND - 动态， USER_FEEDBACK - 商云问题反馈": {
+            "type": "string"
+          },
+          "父级待办": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "交办人ID": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "交办人姓名": {
+            "type": "string"
+          },
+          "交办人头像": {
+            "type": "string"
+          },
+          "优先级": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "负责人列表": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/待办负责人"
+            }
+          },
+          "是否通知": {
+            "type": "boolean"
+          },
+          "类型: 'GENERAL'-通用, 'ENGINEERING'-工程, 'SCIENTIFIC'-科研, 'FINANCE'-财务, 'OA'-人事, 'CA'-CA, 'PSI'-进销存, 'DETECTION'-检测, 'MARKET'-市场, 'BUSINESS'-商机": {
+            "type": "string",
+            "enum": [
+              "GENERAL",
+              "ENGINEERING",
+              "SCIENTIFIC",
+              "FINANCE",
+              "OA",
+              "MARKET",
+              "CA",
+              "DETECTION",
+              "BUSINESS",
+              "PSI",
+              "CDE",
+              "SIGN",
+              "FIR",
+              "QA",
+              "FDD",
+              "SYSTEM",
+              "AUDIT",
+              "ADMIN",
+              "OTHER"
+            ]
+          },
+          "类型描述": {
+            "type": "string"
+          },
+          "父待办内容": {
+            "type": "string"
+          },
+          "待办内容": {
+            "type": "string"
+          },
+          "截止日期": {
+            "type": "string",
+            "format": "date"
+          },
+          "状态": {
+            "type": "string",
+            "enum": ["OPENING", "FINISHED", "CLOSED"]
+          },
+          "入口信息: entry = GENERAL - null, entry = IM - {title,imMessageList,imUserId,groupType,groupId}, entry = TREND - {title,trendInfo}, 其他 = {processButton(按钮名),processLinks(处理链接) [{endpoint(端类型-PC，APP),url(链接地址)}]}": {
+            "$ref": "#/components/schemas/ToDoEntryInfo"
+          },
+          "关联信息": {
+            "$ref": "#/components/schemas/ToDoRelInfo"
+          },
+          "工作量": {
+            "type": "number"
+          },
+          "待办完成方式": {
+            "type": "string",
+            "enum": ["ANY_OWNER", "ALL_OWNER"]
+          },
+          "附件": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attach"
+            }
+          },
+          "子待办列表": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/待办列表响应"
+            }
+          },
+          "创建时间": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "ApiResponseComPage待办事件响应": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "traceId": {
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ComPage待办事件响应"
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "ComPage待办事件响应": {
+        "type": "object",
+        "properties": {
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/待办事件响应"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "current": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "CommentInfo": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/EventPayload"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "content": {
+                "type": "string"
+              },
+              "attaches": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Attach"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "EventPayload": {
+        "required": ["type"],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type"
+        }
+      },
+      "ForwardInfo": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/EventPayload"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "转办说明": {
+                "type": "string"
+              },
+              "附件列表": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Attach"
+                }
+              },
+              "curOwners": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/待办负责人"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "待办事件响应": {
+        "type": "object",
+        "properties": {
+          "事件ID": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "操作人ID": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "操作人姓名": {
+            "type": "string"
+          },
+          "操作人头像": {
+            "type": "string"
+          },
+          "待办ID": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "内容：转办-#转办说明和附件{content,attaches}\n评论-#评论内容和附件{content,attaches}\n单人（关闭、完成、重启）-#操作对象id和姓名{userId,userName}\n整体-无": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/CommentInfo"
+              },
+              {
+                "$ref": "#/components/schemas/ForwardInfo"
+              }
+            ]
+          },
+          "事件类型: CREATED-创建，CREATED_SUB-创建子待办，FORWARD-转办，UPDATED-更新，FINISHED-完成，REOPENED-重启，COMMENTED-评论，DELETED-删除，CLOSED-关闭": {
+            "type": "string",
+            "enum": [
+              "CREATED",
+              "CREATED_SUB",
+              "UPDATED",
+              "FINISHED",
+              "REOPENED",
+              "FORWARDED",
+              "COMMENTED",
+              "DELETED",
+              "CLOSED"
+            ]
+          },
+          "创建事件": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "ApiResponseComPage待办评论详情": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "traceId": {
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ComPage待办评论详情"
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "ComPage待办评论详情": {
+        "type": "object",
+        "properties": {
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/待办评论详情"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "current": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "待办评论详情": {
+        "type": "object",
+        "properties": {
+          "评论ID": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "评论人ID": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "评论者头像": {
+            "type": "string"
+          },
+          "评论人姓名": {
+            "type": "string"
+          },
+          "评论内容": {
+            "type": "string"
+          },
+          "附件内容": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attach"
+            }
+          },
+          "创建时间": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "ApiResponse租户信息": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "traceId": {
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/租户信息"
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "ApiResponseComPage待办入口配置响应": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "msg": {
+            "type": "string"
+          },
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "traceId": {
+            "type": "string"
+          },
+          "data": {
+            "$ref": "#/components/schemas/ComPage待办入口配置响应"
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "ComPage待办入口配置响应": {
+        "type": "object",
+        "properties": {
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/待办入口配置响应"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "current": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "待办入口配置响应": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "toDoType": {
+            "type": "string",
+            "enum": [
+              "GENERAL",
+              "ENGINEERING",
+              "SCIENTIFIC",
+              "FINANCE",
+              "OA",
+              "MARKET",
+              "CA",
+              "DETECTION",
+              "BUSINESS",
+              "PSI",
+              "CDE",
+              "SIGN",
+              "FIR",
+              "QA",
+              "FDD",
+              "SYSTEM",
+              "AUDIT",
+              "ADMIN",
+              "OTHER"
+            ]
+          },
+          "generalFinish": {
+            "type": "boolean"
+          },
+          "generalClose": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

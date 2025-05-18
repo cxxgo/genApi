@@ -5,6 +5,10 @@ import { handleInterface } from './handleInterface'
 import { readSwagger } from './readSwagger'
 import { saveParseredDataToLocal } from './localData'
 
+import { handleApiModel3 } from './parserSwagger3.x/handleApiModel3.x'
+import { handleInterface3 } from './parserSwagger3.x/handleInterface3.x'
+import { OpenApi } from '../swaggerType3.x'
+
 export async function parser(apiConfig: UserConfig) {
   validateApiConfig(apiConfig)
   const apiList: IApiStation[] = apiConfig.apiList
@@ -36,25 +40,54 @@ function parseParaller(apiList: IApiStation[]): Promise<IParsered[]> {
 
 async function parseFn(apiStation: IApiStation, stationIndex: number): Promise<IParsered> {
   const swaggerJson = (await readSwagger(apiStation.swaggerUrl)) as any
-  let apis: IApiModel[] = []
-  let interfaces: IInterface[] = []
-  if (swaggerJson) {
-    interfaces = handleInterface(swaggerJson.definitions, apiStation.typeMap)
-    apis = handleApiModel(swaggerJson.paths, interfaces, {
-      include: apiStation.include,
-      exclude: apiStation.exclude,
-      fileName: apiStation.fileName,
-      apiName: apiStation.apiName,
-      pathRewrite: apiStation.pathRewrite,
-      typeMap: apiStation.typeMap,
-      fileExt: apiStation.fileExt,
-    })
+  // swagger 2.0
+  if (swaggerJson.swagger?.startsWith('2.')) {
+    let apis: IApiModel[] = []
+    let interfaces: IInterface[] = []
+    if (swaggerJson) {
+      interfaces = handleInterface(swaggerJson.definitions, apiStation.typeMap)
+      apis = handleApiModel(swaggerJson.paths, interfaces, {
+        include: apiStation.include,
+        exclude: apiStation.exclude,
+        fileName: apiStation.fileName,
+        apiName: apiStation.apiName,
+        pathRewrite: apiStation.pathRewrite,
+        typeMap: apiStation.typeMap,
+        fileExt: apiStation.fileExt,
+      })
+    }
+    return {
+      ...apiStation,
+      stationFlag: `${handleWeirdName(apiStation.outputDir)}`,
+      apis,
+      interfaces,
+    }
   }
-  return {
-    ...apiStation,
-    stationFlag: `${handleWeirdName(apiStation.outputDir)}`,
-    apis,
-    interfaces,
+  // swagger 3.0
+  else if (swaggerJson.openapi?.startsWith('3.')) {
+    const _swaggerJson = swaggerJson as OpenApi
+    let apis: IApiModel[] = []
+    let interfaces: IInterface[] = []
+    if (_swaggerJson) {
+      interfaces = handleInterface3(_swaggerJson, apiStation.typeMap)
+      apis = handleApiModel3(_swaggerJson, interfaces, {
+        include: apiStation.include,
+        exclude: apiStation.exclude,
+        fileName: apiStation.fileName,
+        apiName: apiStation.apiName,
+        pathRewrite: apiStation.pathRewrite,
+        typeMap: apiStation.typeMap,
+        fileExt: apiStation.fileExt,
+      })
+    }
+    return {
+      ...apiStation,
+      stationFlag: `${handleWeirdName(apiStation.outputDir)}`,
+      apis,
+      interfaces,
+    }
+  } else {
+    throw new Error(`未知的接口文档类型: ${apiStation.swaggerUrl}`)
   }
 }
 
