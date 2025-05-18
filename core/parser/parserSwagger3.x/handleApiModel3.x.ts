@@ -11,7 +11,7 @@ import {
   isExistInterface,
 } from '../../utils'
 
-import { OpenApi, Schema, Parameter, Reference, Operation, Response } from '../../swaggerType3.x'
+import { OpenApi, Schema, Parameter, Reference, Operation, Response, RequestBody } from '../../swaggerType3.x'
 
 /** 生成 api 数据模型 */
 export function handleApiModel3(
@@ -48,7 +48,7 @@ export function handleApiModel3(
         const theFileExt = getFileExt(fileExt)
         const summary = handleDescription(obj.summary) // 接口注释
         const parameters = getParameters(obj.parameters, allInterfaces, typeMap) // 入参
-        const parametersInBody = getParametersInBody(obj.requestBody, allInterfaces, typeMap)
+        const parametersInBody = getParametersInBody(obj.requestBody, allInterfaces, typeMap) || []
 
         const successCode = obj?.responses?.['200']
 
@@ -89,7 +89,7 @@ export function handleApiModel3(
           originUrl: theUrl,
           method,
           summary,
-          parameters,
+          parameters: [...parameters, ...parametersInBody],
           outputInterface: outputInterface || 'any',
           outputType,
           fileName: theFileName,
@@ -182,8 +182,35 @@ function getParametersInBody(
   requestBody: Operation['requestBody'],
   allInterfaces: IInterface[],
   customerTypeMap: { [key: string]: string }
-) {
-  //
+): IParams[] {
+  if (!requestBody) return []
+  if ((requestBody as Reference)?.$ref) {
+    const _requestBody = requestBody as Reference
+    return [
+      {
+        name: '',
+        description: '',
+        in: 'body',
+        // isArray,
+        type: getInterfaceByRefPathLast(_requestBody.$ref),
+      },
+    ]
+  } else {
+    const _requestBody = requestBody as RequestBody
+    console.log(_requestBody)
+    const json = _requestBody?.content?.['application/json'] // cjh todo ,同时有 formData 的没处理
+    if ((json?.schema as Reference)?.$ref) {
+      return [
+        {
+          name: '',
+          description: _requestBody?.description || '', // 注释
+          in: 'body',
+          // isArray,
+          type: getInterfaceByRefPathLast((json?.schema as Reference)?.$ref),
+        },
+      ]
+    }
+  }
 }
 
 function getItemType(schema: Schema | Reference, customerTypeMap: { [key: string]: string }) {
