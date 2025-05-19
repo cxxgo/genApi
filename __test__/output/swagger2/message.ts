@@ -1,18 +1,18 @@
 const request: any = () => {}
 import type {
-  ApiResponseobject,
-  XiaoXiack,
   ApiResponseAtListAndAckSequenceResp,
-  QingKongXiaoXiRuCan,
-  XiaoXiSaoXue,
-  ApiResponseXiaoXiDuiXiang,
-  XiaoXiXiangQingMessageDetailReq,
   ApiResponseComPageXiaoXiDuiXiang,
-  LiShiXiaoXiMessageHistoryReq,
   ApiResponseListXiaoXiDuiXiang,
+  ApiResponseobject,
+  ApiResponseXiaoXiDuiXiang,
+  LiShiXiaoXiMessageHistoryReq,
   MessagePositionReqq,
-  XiaoXiGunDongQingQiuTi,
   MsgSearchReq,
+  QingKongXiaoXiRuCan,
+  XiaoXiack,
+  XiaoXiGunDongQingQiuTi,
+  XiaoXiSaoXue,
+  XiaoXiXiangQingMessageDetailReq,
 } from './_interfaces.ts'
 
 /** 确认收到消息 */

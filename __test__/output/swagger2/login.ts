@@ -1,5 +1,5 @@
 const request: any = () => {}
-import type { ApiResponseDengLuXiangYingShiTi, ComLoginReq, ApiResponse, ApiResponsestring } from './_interfaces.ts'
+import type { ApiResponse, ApiResponseDengLuXiangYingShiTi, ApiResponsestring, ComLoginReq } from './_interfaces.ts'
 
 /** 通用登录 */
 export function loginDoLogin(data: ComLoginReq): Promise<ApiResponseDengLuXiangYingShiTi> {

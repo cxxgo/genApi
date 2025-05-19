@@ -1,14 +1,14 @@
 const request: any = () => {}
 import type {
   ApiResponsealiyunSTSJianQuanFanHuiZhi,
-  ApiResponseShangChuanALiYunQianMingXiangYing,
-  HuoQubucket,
-  ApiResponseYuYinShiBieFanHui,
   ApiResponsePutFileResp,
-  ApiResponseWenJianPiLiangBaoCunXiangYingShiTi,
-  QianMingWenJianShangChuanQingQiuRuCanShiTi,
   ApiResponseQianMingWenJianXiangYing,
+  ApiResponseShangChuanALiYunQianMingXiangYing,
+  ApiResponseWenJianPiLiangBaoCunXiangYingShiTi,
+  ApiResponseYuYinShiBieFanHui,
   HuoQuALiYunQianMingRuCan,
+  HuoQubucket,
+  QianMingWenJianShangChuanQingQiuRuCanShiTi,
   UploadFileReq,
 } from './_interfaces.ts'
 

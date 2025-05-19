@@ -1,19 +1,19 @@
 const request: any = () => {}
 import type {
-  ApiResponsestring,
-  HaoYouFriendshipReq,
-  ApiResponseFriendshipDetailResp,
-  FriendshipDetailReq,
+  ApiResponse,
   ApiResponseboolean,
+  ApiResponseComPageFriendshipResp,
+  ApiResponseFriendshipDetailResp,
   ApiResponseFriendshipKeyBorardDetailResp,
   ApiResponseListFriendshipResp,
-  ListFriendshipQueryReq,
-  ApiResponse,
-  XiuGaiBeiZhuModifyfriendRemarkReq,
-  ApiResponseComPageFriendshipResp,
+  ApiResponsestring,
+  FriendshipDetailReq,
+  HaoYouFriendshipReq,
   HaoYouYongDaoChuXingFriendshipQueryReq,
+  ListFriendshipQueryReq,
   SetRcvMsgReq,
   SetShowPhoneReq,
+  XiuGaiBeiZhuModifyfriendRemarkReq,
 } from './_interfaces.ts'
 
 /** 扫雪好友 */

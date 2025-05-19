@@ -1,9 +1,9 @@
 const request: any = () => {}
 import type {
-  ApiResponseDouJiangJiFangDongXinXiXiangQingBiao,
   ApiResponseboolean,
-  XiuGaiMiMa,
+  ApiResponseDouJiangJiFangDongXinXiXiangQingBiao,
   XiuGaiDouJiangJiXinXi,
+  XiuGaiMiMa,
 } from './_interfaces.ts'
 
 /** 获取豆浆机房东信息详情 */

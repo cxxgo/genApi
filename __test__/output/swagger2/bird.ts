@@ -1,16 +1,21 @@
 const request: any = () => {}
 import type {
-  ApiResponseNiaoWoDuiXiangBirdDetailResp,
-  NiaoWoXinXiBirdDetailReq,
   ApiResponse,
-  NiaoWoSheZhiZhiNenYiGeZhiBuWeiNullBirdSetReq,
-  XiuGaiNiaoWoTaiYangHuaRuCanModifyBirdNameReq,
   ApiResponseComPageNiaoWoDuiXiangBirdResp,
-  NiaoWoFenYeBirdPageListReq,
+  ApiResponseNiaoWoDuiXiangBirdDetailResp,
   ApiResponseNiaoWoDuiXiangBirdResp,
-  NiaoWoBaoCunRuCan,
   BirdTransferReq,
+  NiaoWoBaoCunRuCan,
+  NiaoWoFenYeBirdPageListReq,
+  NiaoWoSheZhiZhiNenYiGeZhiBuWeiNullBirdSetReq,
+  NiaoWoXinXiBirdDetailReq,
+  XiuGaiNiaoWoTaiYangHuaRuCanModifyBirdNameReq,
 } from './_interfaces.ts'
+
+/** 鸟窝设置 */
+export function birdBirdSetting(data: NiaoWoSheZhiZhiNenYiGeZhiBuWeiNullBirdSetReq): Promise<ApiResponse> {
+  return request.post('/api/bird/birdSetting', data)
+}
 
 /** 鸟窝信息详情 */
 export function birdDetail(data: NiaoWoXinXiBirdDetailReq): Promise<ApiResponseNiaoWoDuiXiangBirdDetailResp> {
@@ -20,11 +25,6 @@ export function birdDetail(data: NiaoWoXinXiBirdDetailReq): Promise<ApiResponseN
 /** 鸟窝主解散鸟窝[二期] */
 export function birdDissolve(data: NiaoWoXinXiBirdDetailReq): Promise<ApiResponse> {
   return request.post('/api/bird/dissolve', data)
-}
-
-/** 鸟窝设置 */
-export function birdBirdSetting(data: NiaoWoSheZhiZhiNenYiGeZhiBuWeiNullBirdSetReq): Promise<ApiResponse> {
-  return request.post('/api/bird/birdSetting', data)
 }
 
 /** 修改鸟窝太阳花 */

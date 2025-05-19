@@ -1,8 +1,8 @@
 const request: any = () => {}
 import type {
+  ApiResponseComPageDesktopAddRecordResp,
   FileSystemResource,
   PageDesktopAddRecordReq,
-  ApiResponseComPageDesktopAddRecordResp,
 } from './_interfaces.ts'
 
 /** 导出未激活成员甬道 */

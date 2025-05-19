@@ -1,8 +1,8 @@
 const request: any = () => {}
 import type {
   ApiResponseChannelKeyBorardResp,
-  BiXieDaoRuCan,
   ApiResponseCorpWehiallAuthUrlResp,
+  BiXieDaoRuCan,
 } from './_interfaces.ts'
 
 /** 获取渠道喇叭花信息 */

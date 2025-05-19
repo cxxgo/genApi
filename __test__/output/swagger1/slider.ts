@@ -1,5 +1,5 @@
 const request: any = () => {}
-import type { ApiResponseboolean, AddVerificationImageReq, ApiResponseMapstringobject } from './_interfaces.ts'
+import type { AddVerificationImageReq, ApiResponseboolean, ApiResponseMapstringobject } from './_interfaces.ts'
 
 /** 添加验山麻杆图片 */
 export function sliderAddImage(data: AddVerificationImageReq): Promise<ApiResponseboolean> {

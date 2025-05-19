@@ -6,7 +6,8 @@ import { writeAndPrettify, typeIsInterface, isExistInterface } from '../utils'
 export function writeInterface(interfaces: IInterface[], config: { outputDir: string }) {
   const { outputDir } = config
   let str = ''
-  interfaces.forEach((item) => {
+  const interfacesSorted = interfaces.sort((a, b) => a.name.localeCompare(b.name))
+  interfacesSorted.forEach((item) => {
     str += `export interface ${item.name} {\n`
     if (item?.properties && item.properties?.length) {
       item.properties.forEach((it) => {

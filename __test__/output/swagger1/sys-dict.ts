@@ -1,8 +1,8 @@
 const request: any = () => {}
 import type {
   ApiResponseJSONArray,
-  ApiResponseMapstringobject,
   ApiResponseListSysDictDuiXiangnullZhiBuXuLieHua,
+  ApiResponseMapstringobject,
   ApiResponsePageSysDictDuiXiangnullZhiBuXuLieHua,
   BasePageReq,
 } from './_interfaces.ts'
@@ -10,11 +10,6 @@ import type {
 /** 区域出行 */
 export function sysdictV1AreaInfo(): Promise<ApiResponseJSONArray> {
   return request.get('/api/sys-dict/v1/areaInfo')
-}
-
-/** 出行菜谱甬道-出行当前数据类型甬道 */
-export function sysdictV1Types(): Promise<ApiResponseMapstringobject> {
-  return request.get('/api/sys-dict/v1/types')
 }
 
 /** 出行菜谱甬道-根据数据类型模糊搜索 */
@@ -49,4 +44,9 @@ export function sysdictV1TypeListTree(data: {
 }): Promise<ApiResponseListSysDictDuiXiangnullZhiBuXuLieHua> {
   const { type } = data
   return request.get(`/api/sys-dict/v1/${type}/list/tree`)
+}
+
+/** 出行菜谱甬道-出行当前数据类型甬道 */
+export function sysdictV1Types(): Promise<ApiResponseMapstringobject> {
+  return request.get('/api/sys-dict/v1/types')
 }

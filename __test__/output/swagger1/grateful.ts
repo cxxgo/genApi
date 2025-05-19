@@ -1,19 +1,19 @@
 const request: any = () => {}
 import type {
+  ApiResponseboolean,
   ApiResponseFangDongXinXi,
   ApiResponseListFangDongXinXi,
-  ApiResponseboolean,
   QuDaoZhiXieChangJieMengQingQiuRuCan,
 } from './_interfaces.ts'
-
-/** 获取当前美丽房东信息 */
-export function gratefulAcquirePresentGratefulInfo(): Promise<ApiResponseFangDongXinXi> {
-  return request.get('/api/grateful/acquirePresentGratefulInfo')
-}
 
 /** 出行当前喇叭花美丽房东甬道 */
 export function gratefulAcquireGratefulList(): Promise<ApiResponseListFangDongXinXi> {
   return request.get('/api/grateful/acquireGratefulList')
+}
+
+/** 获取当前美丽房东信息 */
+export function gratefulAcquirePresentGratefulInfo(): Promise<ApiResponseFangDongXinXi> {
+  return request.get('/api/grateful/acquirePresentGratefulInfo')
 }
 
 /** 渠道制鞋厂解绑房东 */

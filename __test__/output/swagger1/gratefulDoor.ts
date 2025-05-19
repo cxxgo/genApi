@@ -1,7 +1,7 @@
 const request: any = () => {}
 import type {
-  ApiResponseZhiXieChangFangDongXinXiXiangQing,
   ApiResponseboolean,
+  ApiResponseZhiXieChangFangDongXinXiXiangQing,
   ZhiXieChangFangDongXinXiXiangQing,
 } from './_interfaces.ts'
 

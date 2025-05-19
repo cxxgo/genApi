@@ -1,19 +1,24 @@
 const request: any = () => {}
 import type {
   ApiResponse,
-  NiaoWoChengYuanSaoXueBirdMemberDelReq,
-  ApiResponseNiaoWoChengYuanXinXiDuiXiangBirdMemberResp,
-  NiaoWoXinXiBirdDetailReq,
   ApiResponseboolean,
-  ApiResponseMemberBirdStatusResp,
-  ApiResponseListNiaoWoChengYuanXinXiDuiXiangBirdMemberResp,
-  NiaoWoChengYuanYongDaoChuXingRuCan,
-  XiuGaiBeiZhuModifyRemarkBirdReq,
   ApiResponseComPageNiaoWoChengYuanXinXiDuiXiangBirdMemberResp,
+  ApiResponseListNiaoWoChengYuanXinXiDuiXiangBirdMemberResp,
+  ApiResponseMemberBirdStatusResp,
+  ApiResponseNiaoWoChengYuanXinXiDuiXiangBirdMemberResp,
+  BirdSetNoticeAndTopReq,
   NiaoWoChengYuanFenYeBirdMemberPageReq,
   NiaoWoChengYuanJiaShiBirdMemberSaveReq,
-  BirdSetNoticeAndTopReq,
+  NiaoWoChengYuanSaoXueBirdMemberDelReq,
+  NiaoWoChengYuanYongDaoChuXingRuCan,
+  NiaoWoXinXiBirdDetailReq,
+  XiuGaiBeiZhuModifyRemarkBirdReq,
 } from './_interfaces.ts'
+
+/** 本鸟窝状态 */
+export function birdMemberBirdStatus(data: NiaoWoXinXiBirdDetailReq): Promise<ApiResponseMemberBirdStatusResp> {
+  return request.post('/api/birdMember/birdStatus', data)
+}
 
 /** 管理员扫雪鸟窝成员 */
 export function birdMemberDelete(data: NiaoWoChengYuanSaoXueBirdMemberDelReq): Promise<ApiResponse> {
@@ -35,11 +40,6 @@ export function birdMemberDetail(
 /** 是否是鸟窝成员 */
 export function birdMemberExistInBird(data: NiaoWoXinXiBirdDetailReq): Promise<ApiResponseboolean> {
   return request.post('/api/birdMember/existInBird', data)
-}
-
-/** 本鸟窝状态 */
-export function birdMemberBirdStatus(data: NiaoWoXinXiBirdDetailReq): Promise<ApiResponseMemberBirdStatusResp> {
-  return request.post('/api/birdMember/birdStatus', data)
 }
 
 /** 退出鸟窝瓜子 */

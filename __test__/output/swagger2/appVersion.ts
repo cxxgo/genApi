@@ -1,5 +1,5 @@
 const request: any = () => {}
-import type { ApiResponseListBanBen, ApiResponseBanBen } from './_interfaces.ts'
+import type { ApiResponseBanBen, ApiResponseListBanBen } from './_interfaces.ts'
 
 /** 获取当前版本后聪明版本甬道 */
 export function appVersionList(): Promise<ApiResponseListBanBen> {

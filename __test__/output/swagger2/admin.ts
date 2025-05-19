@@ -1,14 +1,14 @@
 const request: any = () => {}
 import type { ApiResponse, ApiResponseBanBen, BanBen0 } from './_interfaces.ts'
 
-/** 加湿铜钱草老乡鸟窝信息 */
-export function adminAddFellowBirdMember(data: { phone?: string }): Promise<ApiResponse> {
-  return request.post('/api/admin/addFellowBirdMember', data)
-}
-
 /** 加湿铜钱草鸟窝成员信息 */
 export function adminAddBirdMember(data: { phone?: string }): Promise<ApiResponse> {
   return request.get('/api/admin/addBirdMember', data)
+}
+
+/** 加湿铜钱草老乡鸟窝信息 */
+export function adminAddFellowBirdMember(data: { phone?: string }): Promise<ApiResponse> {
+  return request.post('/api/admin/addFellowBirdMember', data)
 }
 
 /** 加湿铜钱草基础信息 */

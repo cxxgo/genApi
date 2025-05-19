@@ -1,5 +1,5 @@
 const request: any = () => {}
-import type { ApiResponse, RemoteAutoBirdReq, MessageProcessReq } from './_interfaces.ts'
+import type { ApiResponse, MessageProcessReq, RemoteAutoBirdReq } from './_interfaces.ts'
 
 /** 模拟大数据建鸟窝 */
 export function remoteBigdataAutoBird(data: RemoteAutoBirdReq): Promise<ApiResponse> {

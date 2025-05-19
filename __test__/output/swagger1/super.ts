@@ -1,5 +1,5 @@
 const request: any = () => {}
-import type { ApiResponseListSuperManResp, ApiResponse, ApiResponsestring, SuperCodeVerifyReq } from './_interfaces.ts'
+import type { ApiResponse, ApiResponseListSuperManResp, ApiResponsestring, SuperCodeVerifyReq } from './_interfaces.ts'
 
 /** 甬道 */
 export function superList(): Promise<ApiResponseListSuperManResp> {

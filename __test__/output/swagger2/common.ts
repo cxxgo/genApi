@@ -1,15 +1,15 @@
 const request: any = () => {}
 import type {
-  ApiResponseKeyBorardBindResp,
-  KeyBorardBindReq,
-  ApiResponseMapstringSearchMapResp,
-  SearchReq,
   ApiResponseComPageCommonSearchResp,
-  CommonSearchReq,
   ApiResponseComPageSearchBeforeAddFriendResp,
-  SearchBeforeAddFriendReq,
-  SwitchKeyBorardReq,
+  ApiResponseKeyBorardBindResp,
   ApiResponseListSwitchKeyBorardListResp,
+  ApiResponseMapstringSearchMapResp,
+  CommonSearchReq,
+  KeyBorardBindReq,
+  SearchBeforeAddFriendReq,
+  SearchReq,
+  SwitchKeyBorardReq,
 } from './_interfaces.ts'
 
 /** 结盟设备 */
@@ -22,16 +22,16 @@ export function commonSearch(data: SearchReq): Promise<ApiResponseMapstringSearc
   return request.post('/api/common/search', data)
 }
 
-/** 按照类型搜索 */
-export function commonSearchType(data: CommonSearchReq): Promise<ApiResponseComPageCommonSearchResp> {
-  return request.post('/api/common/search/type', data)
-}
-
 /** 搜索人员添加好友前 */
 export function commonSearchBeforeAddFriend(
   data: SearchBeforeAddFriendReq
 ): Promise<ApiResponseComPageSearchBeforeAddFriendResp> {
   return request.post('/api/common/searchBeforeAddFriend', data)
+}
+
+/** 按照类型搜索 */
+export function commonSearchType(data: CommonSearchReq): Promise<ApiResponseComPageCommonSearchResp> {
+  return request.post('/api/common/search/type', data)
 }
 
 /** 结盟设备 */

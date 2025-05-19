@@ -4,16 +4,6 @@ function AddBirdResp() {
     imBirdId: '@guid',
   }
 }
-function GreenBookGratefulInfoResp() {
-  return {
-    avatar: '@image(200x100, @color, @color)',
-    checked: '@boolean',
-    kind: '@string(5,50)',
-    showImBirdId: '@guid',
-    gratefulId: '@guid',
-    gratefulName: '@ctitle(5,10)',
-  }
-}
 function ApiResponse() {
   return {
     code: 200,
@@ -34,6 +24,66 @@ function ApiResponseAddBirdResp() {
     traceId: '@guid',
   }
 }
+function ApiResponseboolean() {
+  return {
+    code: 200,
+    data: '@boolean',
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseBuLuoChengYuanXinXiDuiXiangBirdMemberResp() {
+  return {
+    code: 200,
+    data: BuLuoChengYuanXinXiDuiXiangBirdMemberResp(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseBuLuoDuiXiangBirdDetailResp() {
+  return {
+    code: 200,
+    data: BuLuoDuiXiangBirdDetailResp(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseBuLuoDuiXiangBirdResp() {
+  return {
+    code: 200,
+    data: BuLuoDuiXiangBirdResp(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseComPageBuLuoChengYuanXinXiDuiXiangBirdMemberResp() {
+  return {
+    code: 200,
+    data: ComPageBuLuoChengYuanXinXiDuiXiangBirdMemberResp(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseComPageBuLuoDuiXiangBirdResp() {
+  return {
+    code: 200,
+    data: ComPageBuLuoDuiXiangBirdResp(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
 function ApiResponseComPageCommonSearchResp() {
   return {
     code: 200,
@@ -48,6 +98,16 @@ function ApiResponseComPageContactResp() {
   return {
     code: 200,
     data: ComPageContactResp(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseComPageDaDuNanTongQianCaoQiuQianWhiteKeyBorardResp() {
+  return {
+    code: 200,
+    data: ComPageDaDuNanTongQianCaoQiuQianWhiteKeyBorardResp(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -104,40 +164,20 @@ function ApiResponseComPageXiaoXiDuiXiang() {
     traceId: '@guid',
   }
 }
-function ApiResponseComPageBuLuoDuiXiangBirdResp() {
-  return {
-    code: 200,
-    data: ComPageBuLuoDuiXiangBirdResp(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseComPageBuLuoChengYuanXinXiDuiXiangBirdMemberResp() {
-  return {
-    code: 200,
-    data: ComPageBuLuoChengYuanXinXiDuiXiangBirdMemberResp(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseComPageDaDuNanTongQianCaoQiuQianWhiteKeyBorardResp() {
-  return {
-    code: 200,
-    data: ComPageDaDuNanTongQianCaoQiuQianWhiteKeyBorardResp(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
 function ApiResponseComPageYanChangChunHuaXiaoXiFenYeRequestPageListResp() {
   return {
     code: 200,
     data: ComPageYanChangChunHuaXiaoXiFenYeRequestPageListResp(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseDengLuXiangYingShiTi() {
+  return {
+    code: 200,
+    data: DengLuXiangYingShiTi(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -158,166 +198,6 @@ function ApiResponseFriendshipDetailResp() {
   return {
     code: 200,
     data: FriendshipDetailResp(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseListGreenBookGratefulInfoResp() {
-  return {
-    code: 200,
-    'data|1-20': [GreenBookGratefulInfoResp()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseListWhiteNoteResp() {
-  return {
-    code: 200,
-    'data|1-20': [WhiteNoteResp()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseListForwardListResp() {
-  return {
-    code: 200,
-    'data|1-20': [ForwardListResp()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseListBirdF2fKeyBorardListResp() {
-  return {
-    code: 200,
-    'data|1-20': [BirdF2fKeyBorardListResp()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseListPhoneFriendshipResp() {
-  return {
-    code: 200,
-    'data|1-20': [PhoneFriendshipResp()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseListSwitchKeyBorardListResp() {
-  return {
-    code: 200,
-    'data|1-20': [SwitchKeyBorardListResp()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseListUnreadResp() {
-  return {
-    code: 200,
-    'data|1-20': [UnreadResp()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseListKeyBorardListAllGratefulResp() {
-  return {
-    code: 200,
-    'data|1-20': [KeyBorardListAllGratefulResp()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseListBanBen() {
-  return {
-    code: 200,
-    'data|1-20': [BanBen()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseListFangDongXinXi() {
-  return {
-    code: 200,
-    'data|1-20': [FangDongXinXi()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseListBuLuoChengYuanXinXiDuiXiangBirdMemberResp() {
-  return {
-    code: 200,
-    'data|1-20': [BuLuoChengYuanXinXiDuiXiangBirdMemberResp()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseListDaDuNanXinXiWhiteResp() {
-  return {
-    code: 200,
-    'data|1-20': [DaDuNanXinXiWhiteResp()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseMapstringSearchMapResp() {
-  return {
-    code: 200,
-    data: SearchMapResp(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseMemberBirdStatusResp() {
-  return {
-    code: 200,
-    data: MemberBirdStatusResp(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponsePutFileResp() {
-  return {
-    code: 200,
-    data: PutFileResp(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseQueryLastMessageResp() {
-  return {
-    code: 200,
-    data: QueryLastMessageResp(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -354,10 +234,120 @@ function ApiResponseKeyBorardRespDuiXiang() {
     traceId: '@guid',
   }
 }
-function ApiResponseboolean() {
+function ApiResponseListBanBen() {
   return {
     code: 200,
-    data: '@boolean',
+    'data|1-20': [BanBen()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseListBirdF2fKeyBorardListResp() {
+  return {
+    code: 200,
+    'data|1-20': [BirdF2fKeyBorardListResp()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseListBuLuoChengYuanXinXiDuiXiangBirdMemberResp() {
+  return {
+    code: 200,
+    'data|1-20': [BuLuoChengYuanXinXiDuiXiangBirdMemberResp()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseListDaDuNanXinXiWhiteResp() {
+  return {
+    code: 200,
+    'data|1-20': [DaDuNanXinXiWhiteResp()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseListFangDongXinXi() {
+  return {
+    code: 200,
+    'data|1-20': [FangDongXinXi()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseListForwardListResp() {
+  return {
+    code: 200,
+    'data|1-20': [ForwardListResp()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseListGreenBookGratefulInfoResp() {
+  return {
+    code: 200,
+    'data|1-20': [GreenBookGratefulInfoResp()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseListKeyBorardListAllGratefulResp() {
+  return {
+    code: 200,
+    'data|1-20': [KeyBorardListAllGratefulResp()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseListPhoneFriendshipResp() {
+  return {
+    code: 200,
+    'data|1-20': [PhoneFriendshipResp()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseListSwitchKeyBorardListResp() {
+  return {
+    code: 200,
+    'data|1-20': [SwitchKeyBorardListResp()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseListUnreadResp() {
+  return {
+    code: 200,
+    'data|1-20': [UnreadResp()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseListWhiteNoteResp() {
+  return {
+    code: 200,
+    'data|1-20': [WhiteNoteResp()],
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -374,10 +364,50 @@ function ApiResponselong() {
     traceId: '@guid',
   }
 }
+function ApiResponseMapstringSearchMapResp() {
+  return {
+    code: 200,
+    data: SearchMapResp(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseMemberBirdStatusResp() {
+  return {
+    code: 200,
+    data: MemberBirdStatusResp(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
 function ApiResponseobject() {
   return {
     code: 200,
     data: '',
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponsePutFileResp() {
+  return {
+    code: 200,
+    data: PutFileResp(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseQueryLastMessageResp() {
+  return {
+    code: 200,
+    data: QueryLastMessageResp(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -414,40 +444,10 @@ function ApiResponseXiaoXiDuiXiang() {
     traceId: '@guid',
   }
 }
-function ApiResponseDengLuXiangYingShiTi() {
+function ApiResponseYanChangChunHuaXiaoXiXiangQingRequestDetailResp() {
   return {
     code: 200,
-    data: DengLuXiangYingShiTi(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseBuLuoDuiXiangBirdDetailResp() {
-  return {
-    code: 200,
-    data: BuLuoDuiXiangBirdDetailResp(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseBuLuoDuiXiangBirdResp() {
-  return {
-    code: 200,
-    data: BuLuoDuiXiangBirdResp(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseBuLuoChengYuanXinXiDuiXiangBirdMemberResp() {
-  return {
-    code: 200,
-    data: BuLuoChengYuanXinXiDuiXiangBirdMemberResp(),
+    data: YanChangChunHuaXiaoXiXiangQingRequestDetailResp(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -464,20 +464,162 @@ function ApiResponseYaoQingRuBuLuoXiangYing() {
     traceId: '@guid',
   }
 }
-function ApiResponseYanChangChunHuaXiaoXiXiangQingRequestDetailResp() {
+function BanBen() {
   return {
-    code: 200,
-    data: YanChangChunHuaXiaoXiXiangQingRequestDetailResp(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
+    appType: '@string(5,50)',
+    isForceUpdate: '@boolean',
+    versionDesc: '@string(5,50)',
+    versionName: '@ctitle(5,10)',
+    versionNum: '@string(5,50)',
+    versionUrl: '@image(200x100, @color, @color)',
   }
 }
 function BasePageReq() {
   return {
     page: '@integer(3,1000)',
     size: '20',
+  }
+}
+function BirdF2fKeyBorardListResp() {
+  return {
+    avatar: '@image(200x100, @color, @color)',
+    avatarUrl: '@image(200x100, @color, @color)',
+    f2fBirdId: '@guid',
+    imKeyBorardId: '@guid',
+    keyBorardName: '@ctitle(5,10)',
+  }
+}
+function BirdTransferReq() {
+  return {
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+  }
+}
+function BuLuoChengYuanDaoLaJiBirdMemberDelReq() {
+  return {
+    imBirdId: '@guid',
+    'imMemberIdList|1-20': ['@string(5,50)'],
+    imKeyBorardId: '@guid',
+  }
+}
+function BuLuoChengYuanFenYeBirdMemberPageReq() {
+  return {
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+    isDeleteMember: '@boolean',
+    keyword: '@string(5,50)',
+    memberType: '@string(5,50)',
+    page: '@integer(3,1000)',
+    size: '20',
+  }
+}
+function BuLuoChengYuanJiaShiBirdMemberSaveReq() {
+  return {
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+    'imKeyBorardIdList|1-20': ['@string(5,50)'],
+  }
+}
+function BuLuoChengYuanXinXiDuiXiangBirdMemberResp() {
+  return {
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+    isNotice: '@boolean',
+    isTop: '@boolean',
+    memberAvatar: '@image(200x100, @color, @color)',
+    memberName: '@ctitle(5,10)',
+    memberPhone: '@integer(13100000000,18999999999)',
+    memberRemark: '@string(5,50)',
+    memberGratefulName: '@ctitle(5,10)',
+    memberType: '@string(5,50)',
+  }
+}
+function BuLuoDuiXiangBirdDetailResp() {
+  return {
+    avatar: '@image(200x100, @color, @color)',
+    createType: '@string(5,50)',
+    whiteId: '@guid',
+    whitePath: '@string(5,50)',
+    desc: '@string(5,50)',
+    birdAttr: '@string(5,50)',
+    birdBelong: '@string(5,50)',
+    birdType: '@string(5,50)',
+    imBirdId: '@guid',
+    isAdminConfirm: '@boolean',
+    isAllSilence: '@boolean',
+    isAtAll: '@boolean',
+    isModifyName: '@boolean',
+    isOrdinaryInvent: '@boolean',
+    isPrivate: '@boolean',
+    name: '@ctitle(5,10)',
+    notice: '@string(5,50)',
+    ownerId: '@guid',
+    status: '@string(5,50)',
+    gratefulId: '@guid',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+function BuLuoDuiXiangBirdResp() {
+  return {
+    avatar: '@image(200x100, @color, @color)',
+    hiallType: '@string(5,50)',
+    createType: '@string(5,50)',
+    birdAttr: '@string(5,50)',
+    birdType: '@string(5,50)',
+    imBirdId: '@guid',
+    name: '@ctitle(5,10)',
+    ownerId: '@guid',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+function BuLuoFenYeBirdPageListReq() {
+  return {
+    imKeyBorardId: '@guid',
+    keyword: '@string(5,50)',
+    name: '@ctitle(5,10)',
+    page: '@integer(3,1000)',
+    size: '20',
+  }
+}
+function BuLuoSheZhiZhiNenYiGeZhiBuWeiNullBirdSetReq() {
+  return {
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+    isAdminConfirm: '@boolean',
+    isAllSilence: '@boolean',
+    isAtAll: '@boolean',
+    isModifyName: '@boolean',
+    isOrdinaryInvent: '@boolean',
+    isPrivate: '@boolean',
+  }
+}
+function BuLuoXinXiBirdDetailReq() {
+  return {
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+    isNotice: '@boolean',
+    isTop: '@boolean',
+  }
+}
+function ChuangJianGengXinDuiXiangBirdSaveReq() {
+  return {
+    desc: '@string(5,50)',
+    'memberIdList|1-20': ['@string(5,50)'],
+    name: '@ctitle(5,10)',
+    ownerId: '@guid',
+  }
+}
+function ChuangJianXiaoDaoXiaoXi() {
+  return {
+    channel: '@string(5,50)',
+    checkCache: '@boolean',
+    'birdIdList|1-20': ['@string(5,50)'],
+    'receiverIdList|1-20': ['@string(5,50)'],
+    updateBirdHiall: '@boolean',
   }
 }
 function ComLoginReq() {
@@ -494,6 +636,60 @@ function ComLoginReq() {
     uuid: '@guid',
   }
 }
+function CommonSearchReq() {
+  return {
+    imKeyBorardId: '@guid',
+    keywords: '@string(5,50)',
+    page: '@integer(3,1000)',
+    size: '20',
+    type: '@string(5,50)',
+  }
+}
+function CommonSearchResp() {
+  return {
+    avatar: '@image(200x100, @color, @color)',
+    hiallType: '@string(5,50)',
+    company: '@string(5,50)',
+    createType: '@string(5,50)',
+    birdAttr: '@string(5,50)',
+    birdAvatar: '@image(200x100, @color, @color)',
+    birdType: '@string(5,50)',
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+    isFriendship: '@boolean',
+    isNotice: '@boolean',
+    isSameGrateful: '@boolean',
+    isTop: '@boolean',
+    job: '@string(5,50)',
+    keywords: '@string(5,50)',
+    name: '@ctitle(5,10)',
+    ownerId: '@guid',
+    post: '@string(5,50)',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+function ComPageBuLuoChengYuanXinXiDuiXiangBirdMemberResp() {
+  return {
+    current: '@string(5,50)',
+    'records|1-20': [BuLuoChengYuanXinXiDuiXiangBirdMemberResp()],
+    size: '20',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+function ComPageBuLuoDuiXiangBirdResp() {
+  return {
+    current: '@string(5,50)',
+    'records|1-20': [BuLuoDuiXiangBirdResp()],
+    size: '20',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
 function ComPageCommonSearchResp() {
   return {
     current: '@string(5,50)',
@@ -508,6 +704,16 @@ function ComPageContactResp() {
   return {
     current: '@string(5,50)',
     'records|1-20': [ContactResp()],
+    size: '20',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+function ComPageDaDuNanTongQianCaoQiuQianWhiteKeyBorardResp() {
+  return {
+    current: '@string(5,50)',
+    'records|1-20': [DaDuNanTongQianCaoQiuQianWhiteKeyBorardResp()],
     size: '20',
     total: () => {
       return +this.size * 10 || 100
@@ -564,75 +770,11 @@ function ComPageXiaoXiDuiXiang() {
     },
   }
 }
-function ComPageBuLuoDuiXiangBirdResp() {
-  return {
-    current: '@string(5,50)',
-    'records|1-20': [BuLuoDuiXiangBirdResp()],
-    size: '20',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-function ComPageBuLuoChengYuanXinXiDuiXiangBirdMemberResp() {
-  return {
-    current: '@string(5,50)',
-    'records|1-20': [BuLuoChengYuanXinXiDuiXiangBirdMemberResp()],
-    size: '20',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-function ComPageDaDuNanTongQianCaoQiuQianWhiteKeyBorardResp() {
-  return {
-    current: '@string(5,50)',
-    'records|1-20': [DaDuNanTongQianCaoQiuQianWhiteKeyBorardResp()],
-    size: '20',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
 function ComPageYanChangChunHuaXiaoXiFenYeRequestPageListResp() {
   return {
     current: '@string(5,50)',
     'records|1-20': [YanChangChunHuaXiaoXiFenYeRequestPageListResp()],
     size: '20',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-function CommonSearchReq() {
-  return {
-    imKeyBorardId: '@guid',
-    keywords: '@string(5,50)',
-    page: '@integer(3,1000)',
-    size: '20',
-    type: '@string(5,50)',
-  }
-}
-function CommonSearchResp() {
-  return {
-    avatar: '@image(200x100, @color, @color)',
-    hiallType: '@string(5,50)',
-    company: '@string(5,50)',
-    createType: '@string(5,50)',
-    birdAttr: '@string(5,50)',
-    birdAvatar: '@image(200x100, @color, @color)',
-    birdType: '@string(5,50)',
-    imBirdId: '@guid',
-    imKeyBorardId: '@guid',
-    isFriendship: '@boolean',
-    isNotice: '@boolean',
-    isSameGrateful: '@boolean',
-    isTop: '@boolean',
-    job: '@string(5,50)',
-    keywords: '@string(5,50)',
-    name: '@ctitle(5,10)',
-    ownerId: '@guid',
-    post: '@string(5,50)',
     total: () => {
       return +this.size * 10 || 100
     },
@@ -677,40 +819,65 @@ function ContactResp() {
     keyBorardStatus: '@string(5,50)',
   }
 }
-function WhiteNoteResp() {
+function DaDuNanLvYouRuCan() {
   return {
-    desktopCount: '@integer(3,1000)',
-    info: WhiteResp(),
+    whiteId: '@guid',
+    gratefulId: '@guid',
   }
 }
-function WhiteResp() {
+function DaDuNanQiuQianWhiteListReq() {
   return {
-    ancestors: '@string(5,50)',
-    createId: '@guid',
-    createName: '@ctitle(5,10)',
-    created: '@datetime',
-    whiteCode: '@string(5,50)',
-    whiteName: '@ctitle(5,10)',
-    email: '@email',
-    id: '@guid',
-    leaderDesktopId: '@guid',
-    leaderKeyBorardId: '@guid',
-    linkStatus: '@boolean',
-    mark: '@string(5,50)',
-    markDesc: '@string(5,50)',
-    modified: '@string(5,50)',
-    orderNum: '@integer(3,1000)',
-    parentCode: '@string(5,50)',
+    getImBirdId: '@guid',
     parentId: '@guid',
-    phone: '@integer(13100000000,18999999999)',
-    profile: '@string(5,50)',
-    scaleType: '@string(5,50)',
-    scaleTypeDesc: '@string(5,50)',
-    status: '@string(5,50)',
-    statusDesc: '@string(5,50)',
     gratefulId: '@guid',
-    updateId: '@guid',
-    updateName: '@ctitle(5,10)',
+  }
+}
+function DaDuNanTongQianCaoFenYeKeyBorardPageReq() {
+  return {
+    whiteId: '@guid',
+    excludeMemberImBirdId: '@guid',
+    imKeyBorardId: '@guid',
+    keyword: '@string(5,50)',
+    page: '@integer(3,1000)',
+    size: '20',
+    gratefulId: '@guid',
+  }
+}
+function DaDuNanTongQianCaoQiuQianWhiteKeyBorardResp() {
+  return {
+    avatar: '@image(200x100, @color, @color)',
+    avatarId: '@guid',
+    imKeyBorardId: '@guid',
+    isBirdMember: '@boolean',
+    gratefulId: '@guid',
+    gratefulName: '@ctitle(5,10)',
+    keyBorardName: '@ctitle(5,10)',
+  }
+}
+function DaDuNanTongQianCaoQiuQianWhiteListReq() {
+  return {
+    getImBirdId: '@guid',
+    gratefulId: '@guid',
+  }
+}
+function DaDuNanXinXiWhiteResp() {
+  return {
+    whiteId: '@guid',
+    whiteName: '@ctitle(5,10)',
+    imBirdId: '@guid',
+  }
+}
+function DengLuXiangYingShiTi() {
+  return {
+    channel: '@string(5,50)',
+    code: 200,
+    imKeyBorardId: '@guid',
+    newKeyBorard: '@boolean',
+    satoken: '@string(5,50)',
+    setPassWord: '@boolean',
+    token: '@string(5,50)',
+    tokenTimeOut: '@datetime',
+    keyBorardId: '@guid',
   }
 }
 function DesktopAllInfoResp() {
@@ -741,12 +908,6 @@ function DesktopResp() {
     keyBorardName: '@ctitle(5,10)',
   }
 }
-function EnterBirdReq() {
-  return {
-    f2fBirdId: '@guid',
-    imKeyBorardId: '@guid',
-  }
-}
 function DoorMainInfoResp() {
   return {
     authStatus: '@string(5,50)',
@@ -762,6 +923,18 @@ function DoorMainInfoResp() {
     name: '@ctitle(5,10)',
     gratefulId: '@guid',
     keyBorardId: '@guid',
+  }
+}
+function EnterBirdReq() {
+  return {
+    f2fBirdId: '@guid',
+    imKeyBorardId: '@guid',
+  }
+}
+function ErWeiMa() {
+  return {
+    id: '@guid',
+    type: '@string(5,50)',
   }
 }
 function ExtWhiteResp() {
@@ -791,6 +964,19 @@ function ExtWhiteResp() {
     gratefulId: '@guid',
     updateId: '@guid',
     updateName: '@ctitle(5,10)',
+  }
+}
+function FangDongXinXi() {
+  return {
+    avatar: '@image(200x100, @color, @color)',
+    channel: '@string(5,50)',
+    checked: '@boolean',
+    kind: '@string(5,50)',
+    phone: '@integer(13100000000,18999999999)',
+    post: '@string(5,50)',
+    gratefulId: '@guid',
+    gratefulName: '@ctitle(5,10)',
+    keyBorardName: '@ctitle(5,10)',
   }
 }
 function ForwardListReq() {
@@ -869,19 +1055,31 @@ function GetUnreadPageReq() {
     'requestIdList|1-20': ['@string(5,50)'],
   }
 }
-function BirdF2fKeyBorardListResp() {
+function GreenBookGratefulInfoResp() {
   return {
     avatar: '@image(200x100, @color, @color)',
-    avatarUrl: '@image(200x100, @color, @color)',
-    f2fBirdId: '@guid',
-    imKeyBorardId: '@guid',
-    keyBorardName: '@ctitle(5,10)',
+    checked: '@boolean',
+    kind: '@string(5,50)',
+    showImBirdId: '@guid',
+    gratefulId: '@guid',
+    gratefulName: '@ctitle(5,10)',
   }
 }
-function BirdTransferReq() {
+function HaoYouFriendshipReq() {
   return {
-    imBirdId: '@guid',
+    imFriendId: '@guid',
     imKeyBorardId: '@guid',
+    isNotice: '@boolean',
+    isTop: '@boolean',
+  }
+}
+function HaoYouQiuQianLvYouFriendshipQueryReq() {
+  return {
+    excludeMemberImBirdId: '@guid',
+    imKeyBorardId: '@guid',
+    keyword: '@string(5,50)',
+    page: '@integer(3,1000)',
+    size: '20',
   }
 }
 function InviteToBirdReq() {
@@ -909,6 +1107,81 @@ function JobResp() {
     status: '@string(5,50)',
     updateId: '@guid',
     updateName: '@ctitle(5,10)',
+  }
+}
+function KeyBorardBindReq() {
+  return {
+    channel: '@string(5,50)',
+    deviceId: '@guid',
+    imKeyBorardId: '@guid',
+  }
+}
+function KeyBorardBindResp() {}
+function KeyBorardCancelReq() {
+  return {
+    imKeyBorardId: '@guid',
+    smsCode: '@string(5,50)',
+  }
+}
+function KeyBorardDetailResp() {
+  return {
+    hasSameGrateful: '@boolean',
+    imBirdId: '@guid',
+    isAttention: '@boolean',
+    isFrinedship: '@boolean',
+    isNotice: '@boolean',
+    isPrivate: '@boolean',
+    isTop: '@boolean',
+    remark: '@string(5,50)',
+    showRemark: '@boolean',
+  }
+}
+function KeyBorardGratefulReq() {
+  return {
+    stationKeyBorardId: '@guid',
+    gratefulId: '@guid',
+  }
+}
+function KeyBorardListAllGratefulResp() {
+  return {
+    hasMore: '@boolean',
+    gratefulId: '@guid',
+    gratefulName: '@ctitle(5,10)',
+    'keyBorardList|1-20': [DaDuNanTongQianCaoQiuQianWhiteKeyBorardResp()],
+  }
+}
+function KeyBorardRespDuiXiang() {
+  return {
+    avatar: '@image(200x100, @color, @color)',
+    whiteId: '@guid',
+    whiteName: '@ctitle(5,10)',
+    email: '@email',
+    birdMemberRemark: '@string(5,50)',
+    imKeyBorardId: '@guid',
+    isApprove: '@boolean',
+    isBirdApprove: '@boolean',
+    isNotice: '@boolean',
+    job: '@string(5,50)',
+    nickName: '@ctitle(5,10)',
+    parentWhitePath: '@string(5,50)',
+    phone: '@integer(13100000000,18999999999)',
+    pinyin: '@string(5,50)',
+    post: '@string(5,50)',
+    requestChannel: '@string(5,50)',
+    sex: '@string(5,50)',
+    status: '@string(5,50)',
+    gratefulId: '@guid',
+    gratefulName: '@ctitle(5,10)',
+    keyBorardName: '@ctitle(5,10)',
+  }
+}
+function LiShiXiaoXiMessageHistoryReq() {
+  return {
+    imBirdId: '@guid',
+    orderType: '@integer(3,1000)',
+    page: '@integer(3,1000)',
+    sequence: '@string(5,50)',
+    size: '20',
   }
 }
 function MemberBirdStatusResp() {
@@ -953,6 +1226,30 @@ function PhoneListReq() {
     'phoneList|1-20': ['@integer(13100000000,18999999999)'],
   }
 }
+function PinkResq() {
+  return {
+    allowAllot: '@boolean',
+    ancestors: '@string(5,50)',
+    createId: '@guid',
+    createName: '@ctitle(5,10)',
+    created: '@datetime',
+    whiteCheckStrictly: '@boolean',
+    id: '@guid',
+    level: '@integer(3,1000)',
+    menuCheckStrictly: '@boolean',
+    menuNames: '@ctitle(5,10)',
+    modified: '@string(5,50)',
+    parentCode: '@string(5,50)',
+    parentId: '@guid',
+    remark: '@string(5,50)',
+    pinkCode: '@string(5,50)',
+    pinkName: '@ctitle(5,10)',
+    pinkSort: '@integer(3,1000)',
+    status: '@string(5,50)',
+    updateId: '@guid',
+    updateName: '@ctitle(5,10)',
+  }
+}
 function PostResp() {
   return {
     createId: '@guid',
@@ -976,6 +1273,48 @@ function PutFileResp() {
     url: '@url',
   }
 }
+function QingKongXiaoXiJiLu() {
+  return {
+    channel: '@string(5,50)',
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+  }
+}
+function QingKongXiaoXiRuCan() {
+  return {
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+  }
+}
+function QingQiuHuiFuXiaoXiQiuQianReqMsgDetailResp() {
+  return {
+    content: '@string(5,50)',
+    created: '@datetime',
+    isRead: '@boolean',
+    receiverId: '@guid',
+    receiverName: '@ctitle(5,10)',
+    requestId: '@guid',
+    requestMsgId: '@guid',
+    senderId: '@guid',
+    senderName: '@ctitle(5,10)',
+  }
+}
+function QingQiuXiaoXiDuBaoKuoYanChangChunHuaJiHuiFuXiaoXiDuRequestReadReq() {
+  return {
+    imKeyBorardId: '@guid',
+    requestId: '@guid',
+    'requestMsgIdList|1-20': ['@string(5,50)'],
+  }
+}
+function QingQiuXiaoXiQiuQianRequestPageListReq() {
+  return {
+    imKeyBorardId: '@guid',
+    keyword: '@string(5,50)',
+    page: '@integer(3,1000)',
+    size: '20',
+    type: '@integer(3,1000)',
+  }
+}
 function QueryLastMessageResp() {
   return {
     appType: '@integer(3,1000)',
@@ -993,28 +1332,12 @@ function RequestMsgReqDuiXiang() {
     senderId: '@guid',
   }
 }
-function PinkResq() {
+function RuBuLuoQingQiuAddBirdReq() {
   return {
-    allowAllot: '@boolean',
-    ancestors: '@string(5,50)',
-    createId: '@guid',
-    createName: '@ctitle(5,10)',
-    created: '@datetime',
-    whiteCheckStrictly: '@boolean',
-    id: '@guid',
-    level: '@integer(3,1000)',
-    menuCheckStrictly: '@boolean',
-    menuNames: '@ctitle(5,10)',
-    modified: '@string(5,50)',
-    parentCode: '@string(5,50)',
-    parentId: '@guid',
-    remark: '@string(5,50)',
-    pinkCode: '@string(5,50)',
-    pinkName: '@ctitle(5,10)',
-    pinkSort: '@integer(3,1000)',
-    status: '@string(5,50)',
-    updateId: '@guid',
-    updateName: '@ctitle(5,10)',
+    applyId: '@guid',
+    imBirdId: '@guid',
+    inviterId: '@guid',
+    type: '@integer(3,1000)',
   }
 }
 function SaveRandomReq() {
@@ -1081,6 +1404,13 @@ function SearchResp() {
     },
   }
 }
+function SheZhiMoRenZhiYiChang() {
+  return {
+    kind: '@string(5,50)',
+    gratefulId: '@guid',
+    gratefulName: '@ctitle(5,10)',
+  }
+}
 function SwitchKeyBorardListResp() {
   return {
     avatar: '@image(200x100, @color, @color)',
@@ -1096,82 +1426,79 @@ function SwitchKeyBorardReq() {
     imKeyBorardId: '@guid',
   }
 }
+function TianJiaHaoYouAddFriendReq() {
+  return {
+    channel: '@string(5,50)',
+    content: '@string(5,50)',
+    friendRemark: '@string(5,50)',
+    imFriendId: '@guid',
+    imKeyBorardId: '@guid',
+    isTop: '@boolean',
+    phone: '@integer(13100000000,18999999999)',
+  }
+}
+function TianJiaWoWeiHaoYouHaoKanFangShi() {
+  return {
+    imKeyBorardId: '@guid',
+    'requestChannels|1-20': ['@string(5,50)'],
+  }
+}
+function TongGuoJuJueApproveReq() {
+  return {
+    imKeyBorardId: '@guid',
+    isNotice: '@boolean',
+    permitted: '@boolean',
+    remark: '@string(5,50)',
+    requestId: '@guid',
+  }
+}
+function TongQianCaoSuoYouFangDongKeyBorardListAllGratefulReq() {
+  return {
+    excludeMemberImBirdId: '@guid',
+    imKeyBorardId: '@guid',
+    keyword: '@string(5,50)',
+  }
+}
 function UnreadResp() {
   return {
     isRead: '@boolean',
     requestId: '@guid',
   }
 }
-function KeyBorardBindReq() {
+function WhiteNoteResp() {
   return {
-    channel: '@string(5,50)',
-    deviceId: '@guid',
-    imKeyBorardId: '@guid',
+    desktopCount: '@integer(3,1000)',
+    info: WhiteResp(),
   }
 }
-function KeyBorardBindResp() {}
-function KeyBorardCancelReq() {
+function WhiteResp() {
   return {
-    imKeyBorardId: '@guid',
-    smsCode: '@string(5,50)',
-  }
-}
-function KeyBorardDetailResp() {
-  return {
-    hasSameGrateful: '@boolean',
-    imBirdId: '@guid',
-    isAttention: '@boolean',
-    isFrinedship: '@boolean',
-    isNotice: '@boolean',
-    isPrivate: '@boolean',
-    isTop: '@boolean',
-    remark: '@string(5,50)',
-    showRemark: '@boolean',
-  }
-}
-function KeyBorardListAllGratefulResp() {
-  return {
-    hasMore: '@boolean',
-    gratefulId: '@guid',
-    gratefulName: '@ctitle(5,10)',
-    'keyBorardList|1-20': [DaDuNanTongQianCaoQiuQianWhiteKeyBorardResp()],
-  }
-}
-function KeyBorardRespDuiXiang() {
-  return {
-    avatar: '@image(200x100, @color, @color)',
-    whiteId: '@guid',
+    ancestors: '@string(5,50)',
+    createId: '@guid',
+    createName: '@ctitle(5,10)',
+    created: '@datetime',
+    whiteCode: '@string(5,50)',
     whiteName: '@ctitle(5,10)',
     email: '@email',
-    birdMemberRemark: '@string(5,50)',
-    imKeyBorardId: '@guid',
-    isApprove: '@boolean',
-    isBirdApprove: '@boolean',
-    isNotice: '@boolean',
-    job: '@string(5,50)',
-    nickName: '@ctitle(5,10)',
-    parentWhitePath: '@string(5,50)',
-    phone: '@integer(13100000000,18999999999)',
-    pinyin: '@string(5,50)',
-    post: '@string(5,50)',
-    requestChannel: '@string(5,50)',
-    sex: '@string(5,50)',
-    status: '@string(5,50)',
-    gratefulId: '@guid',
-    gratefulName: '@ctitle(5,10)',
-    keyBorardName: '@ctitle(5,10)',
-  }
-}
-function KeyBorardGratefulReq() {
-  return {
-    stationKeyBorardId: '@guid',
-    gratefulId: '@guid',
-  }
-}
-function ErWeiMa() {
-  return {
     id: '@guid',
-    type: '@string(5,50)',
+    leaderDesktopId: '@guid',
+    leaderKeyBorardId: '@guid',
+    linkStatus: '@boolean',
+    mark: '@string(5,50)',
+    markDesc: '@string(5,50)',
+    modified: '@string(5,50)',
+    orderNum: '@integer(3,1000)',
+    parentCode: '@string(5,50)',
+    parentId: '@guid',
+    phone: '@integer(13100000000,18999999999)',
+    profile: '@string(5,50)',
+    scaleType: '@string(5,50)',
+    scaleTypeDesc: '@string(5,50)',
+    status: '@string(5,50)',
+    statusDesc: '@string(5,50)',
+    gratefulId: '@guid',
+    updateId: '@guid',
+    updateName: '@ctitle(5,10)',
   }
 }
 function XiaoDaoXiaoXi() {
@@ -1252,83 +1579,6 @@ function XiaoDaoXiaoXiQiuQianXiangYing() {
     keyBorardid: '@guid',
   }
 }
-function XiuGaiBeiZhuModifyRemarkBirdReq() {
-  return {
-    birdRemark: '@string(5,50)',
-    imBirdId: '@guid',
-    imKeyBorardId: '@guid',
-  }
-}
-function XiuGaiBeiZhuModifyfriendRemarkReq() {
-  return {
-    friendRemark: '@string(5,50)',
-    imFriendId: '@guid',
-    imKeyBorardId: '@guid',
-  }
-}
-function XiuGaiTongQianCaoTouXiang() {
-  return {
-    avatar: '@image(200x100, @color, @color)',
-  }
-}
-function XiuGaiBuLuoShuiLianRuCanModifyBirdNameReq() {
-  return {
-    birdName: '@ctitle(5,10)',
-    imBirdId: '@guid',
-    imKeyBorardId: '@guid',
-  }
-}
-function RuBuLuoQingQiuAddBirdReq() {
-  return {
-    applyId: '@guid',
-    imBirdId: '@guid',
-    inviterId: '@guid',
-    type: '@integer(3,1000)',
-  }
-}
-function ChuangJianXiaoDaoXiaoXi() {
-  return {
-    channel: '@string(5,50)',
-    checkCache: '@boolean',
-    'birdIdList|1-20': ['@string(5,50)'],
-    'receiverIdList|1-20': ['@string(5,50)'],
-    updateBirdHiall: '@boolean',
-  }
-}
-function ChuangJianGengXinDuiXiangBirdSaveReq() {
-  return {
-    desc: '@string(5,50)',
-    'memberIdList|1-20': ['@string(5,50)'],
-    name: '@ctitle(5,10)',
-    ownerId: '@guid',
-  }
-}
-function LiShiXiaoXiMessageHistoryReq() {
-  return {
-    imBirdId: '@guid',
-    orderType: '@integer(3,1000)',
-    page: '@integer(3,1000)',
-    sequence: '@string(5,50)',
-    size: '20',
-  }
-}
-function HaoYouFriendshipReq() {
-  return {
-    imFriendId: '@guid',
-    imKeyBorardId: '@guid',
-    isNotice: '@boolean',
-    isTop: '@boolean',
-  }
-}
-function HaoYouQiuQianLvYouFriendshipQueryReq() {
-  return {
-    excludeMemberImBirdId: '@guid',
-    imKeyBorardId: '@guid',
-    keyword: '@string(5,50)',
-    page: '@integer(3,1000)',
-    size: '20',
-  }
-}
 function XiaoXiack() {
   return {
     imBirdId: '@guid',
@@ -1380,308 +1630,30 @@ function XiaoXiXiangQingMessageDetailReq() {
     messageId: '@guid',
   }
 }
-function TianJiaHaoYouAddFriendReq() {
+function XiuGaiBeiZhuModifyfriendRemarkReq() {
   return {
-    channel: '@string(5,50)',
-    content: '@string(5,50)',
     friendRemark: '@string(5,50)',
     imFriendId: '@guid',
     imKeyBorardId: '@guid',
-    isTop: '@boolean',
-    phone: '@integer(13100000000,18999999999)',
   }
 }
-function TianJiaWoWeiHaoYouHaoKanFangShi() {
+function XiuGaiBeiZhuModifyRemarkBirdReq() {
   return {
-    imKeyBorardId: '@guid',
-    'requestChannels|1-20': ['@string(5,50)'],
-  }
-}
-function QingKongXiaoXiRuCan() {
-  return {
+    birdRemark: '@string(5,50)',
     imBirdId: '@guid',
     imKeyBorardId: '@guid',
   }
 }
-function QingKongXiaoXiJiLu() {
+function XiuGaiBuLuoShuiLianRuCanModifyBirdNameReq() {
   return {
-    channel: '@string(5,50)',
+    birdName: '@ctitle(5,10)',
     imBirdId: '@guid',
     imKeyBorardId: '@guid',
   }
 }
-function BanBen() {
-  return {
-    appType: '@string(5,50)',
-    isForceUpdate: '@boolean',
-    versionDesc: '@string(5,50)',
-    versionName: '@ctitle(5,10)',
-    versionNum: '@string(5,50)',
-    versionUrl: '@image(200x100, @color, @color)',
-  }
-}
-function TongQianCaoSuoYouFangDongKeyBorardListAllGratefulReq() {
-  return {
-    excludeMemberImBirdId: '@guid',
-    imKeyBorardId: '@guid',
-    keyword: '@string(5,50)',
-  }
-}
-function DengLuXiangYingShiTi() {
-  return {
-    channel: '@string(5,50)',
-    code: 200,
-    imKeyBorardId: '@guid',
-    newKeyBorard: '@boolean',
-    satoken: '@string(5,50)',
-    setPassWord: '@boolean',
-    token: '@string(5,50)',
-    tokenTimeOut: '@datetime',
-    keyBorardId: '@guid',
-  }
-}
-function FangDongXinXi() {
+function XiuGaiTongQianCaoTouXiang() {
   return {
     avatar: '@image(200x100, @color, @color)',
-    channel: '@string(5,50)',
-    checked: '@boolean',
-    kind: '@string(5,50)',
-    phone: '@integer(13100000000,18999999999)',
-    post: '@string(5,50)',
-    gratefulId: '@guid',
-    gratefulName: '@ctitle(5,10)',
-    keyBorardName: '@ctitle(5,10)',
-  }
-}
-function BuLuoXinXiBirdDetailReq() {
-  return {
-    imBirdId: '@guid',
-    imKeyBorardId: '@guid',
-    isNotice: '@boolean',
-    isTop: '@boolean',
-  }
-}
-function BuLuoFenYeBirdPageListReq() {
-  return {
-    imKeyBorardId: '@guid',
-    keyword: '@string(5,50)',
-    name: '@ctitle(5,10)',
-    page: '@integer(3,1000)',
-    size: '20',
-  }
-}
-function BuLuoDuiXiangBirdDetailResp() {
-  return {
-    avatar: '@image(200x100, @color, @color)',
-    createType: '@string(5,50)',
-    whiteId: '@guid',
-    whitePath: '@string(5,50)',
-    desc: '@string(5,50)',
-    birdAttr: '@string(5,50)',
-    birdBelong: '@string(5,50)',
-    birdType: '@string(5,50)',
-    imBirdId: '@guid',
-    isAdminConfirm: '@boolean',
-    isAllSilence: '@boolean',
-    isAtAll: '@boolean',
-    isModifyName: '@boolean',
-    isOrdinaryInvent: '@boolean',
-    isPrivate: '@boolean',
-    name: '@ctitle(5,10)',
-    notice: '@string(5,50)',
-    ownerId: '@guid',
-    status: '@string(5,50)',
-    gratefulId: '@guid',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-function BuLuoDuiXiangBirdResp() {
-  return {
-    avatar: '@image(200x100, @color, @color)',
-    hiallType: '@string(5,50)',
-    createType: '@string(5,50)',
-    birdAttr: '@string(5,50)',
-    birdType: '@string(5,50)',
-    imBirdId: '@guid',
-    name: '@ctitle(5,10)',
-    ownerId: '@guid',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-function BuLuoChengYuanXinXiDuiXiangBirdMemberResp() {
-  return {
-    imBirdId: '@guid',
-    imKeyBorardId: '@guid',
-    isNotice: '@boolean',
-    isTop: '@boolean',
-    memberAvatar: '@image(200x100, @color, @color)',
-    memberName: '@ctitle(5,10)',
-    memberPhone: '@integer(13100000000,18999999999)',
-    memberRemark: '@string(5,50)',
-    memberGratefulName: '@ctitle(5,10)',
-    memberType: '@string(5,50)',
-  }
-}
-function BuLuoChengYuanFenYeBirdMemberPageReq() {
-  return {
-    imBirdId: '@guid',
-    imKeyBorardId: '@guid',
-    isDeleteMember: '@boolean',
-    keyword: '@string(5,50)',
-    memberType: '@string(5,50)',
-    page: '@integer(3,1000)',
-    size: '20',
-  }
-}
-function BuLuoChengYuanDaoLaJiBirdMemberDelReq() {
-  return {
-    imBirdId: '@guid',
-    'imMemberIdList|1-20': ['@string(5,50)'],
-    imKeyBorardId: '@guid',
-  }
-}
-function BuLuoChengYuanJiaShiBirdMemberSaveReq() {
-  return {
-    imBirdId: '@guid',
-    imKeyBorardId: '@guid',
-    'imKeyBorardIdList|1-20': ['@string(5,50)'],
-  }
-}
-function BuLuoSheZhiZhiNenYiGeZhiBuWeiNullBirdSetReq() {
-  return {
-    imBirdId: '@guid',
-    imKeyBorardId: '@guid',
-    isAdminConfirm: '@boolean',
-    isAllSilence: '@boolean',
-    isAtAll: '@boolean',
-    isModifyName: '@boolean',
-    isOrdinaryInvent: '@boolean',
-    isPrivate: '@boolean',
-  }
-}
-function SheZhiMoRenZhiYiChang() {
-  return {
-    kind: '@string(5,50)',
-    gratefulId: '@guid',
-    gratefulName: '@ctitle(5,10)',
-  }
-}
-function QingQiuHuiFuXiaoXiQiuQianReqMsgDetailResp() {
-  return {
-    content: '@string(5,50)',
-    created: '@datetime',
-    isRead: '@boolean',
-    receiverId: '@guid',
-    receiverName: '@ctitle(5,10)',
-    requestId: '@guid',
-    requestMsgId: '@guid',
-    senderId: '@guid',
-    senderName: '@ctitle(5,10)',
-  }
-}
-function QingQiuXiaoXiQiuQianRequestPageListReq() {
-  return {
-    imKeyBorardId: '@guid',
-    keyword: '@string(5,50)',
-    page: '@integer(3,1000)',
-    size: '20',
-    type: '@integer(3,1000)',
-  }
-}
-function QingQiuXiaoXiDuBaoKuoYanChangChunHuaJiHuiFuXiaoXiDuRequestReadReq() {
-  return {
-    imKeyBorardId: '@guid',
-    requestId: '@guid',
-    'requestMsgIdList|1-20': ['@string(5,50)'],
-  }
-}
-function ZhuanFaXiaoXiDuiXiang() {
-  return {
-    applyType: /FORWARD|REPLY|/,
-    content: '@string(5,50)',
-    contentType: '@string(5,50)',
-    created: '@datetime',
-    fileId: '@guid',
-    fileName: '@ctitle(5,10)',
-    fileSize: '@string(5,50)',
-    fileText: '@string(5,50)',
-    fileTime: '@datetime',
-    fileType: '@string(5,50)',
-    fileUrl: '@image(200x100, @color, @color)',
-    birdId: '@guid',
-    id: '@guid',
-    senderAvatar: '@image(200x100, @color, @color)',
-    senderId: '@guid',
-    senderName: '@ctitle(5,10)',
-    sequence: '@string(5,50)',
-  }
-}
-function TongGuoJuJueApproveReq() {
-  return {
-    imKeyBorardId: '@guid',
-    isNotice: '@boolean',
-    permitted: '@boolean',
-    remark: '@string(5,50)',
-    requestId: '@guid',
-  }
-}
-function YaoQingRuBuLuoXiangYing() {
-  return {
-    'checkKeyBorardIds|1-20': ['@string(5,50)'],
-    'checkKeyBorards|1-20': [KeyBorardRespDuiXiang()],
-    inviteMsg: '@string(5,50)',
-  }
-}
-function DaDuNanXinXiWhiteResp() {
-  return {
-    whiteId: '@guid',
-    whiteName: '@ctitle(5,10)',
-    imBirdId: '@guid',
-  }
-}
-function DaDuNanQiuQianWhiteListReq() {
-  return {
-    getImBirdId: '@guid',
-    parentId: '@guid',
-    gratefulId: '@guid',
-  }
-}
-function DaDuNanLvYouRuCan() {
-  return {
-    whiteId: '@guid',
-    gratefulId: '@guid',
-  }
-}
-function DaDuNanTongQianCaoFenYeKeyBorardPageReq() {
-  return {
-    whiteId: '@guid',
-    excludeMemberImBirdId: '@guid',
-    imKeyBorardId: '@guid',
-    keyword: '@string(5,50)',
-    page: '@integer(3,1000)',
-    size: '20',
-    gratefulId: '@guid',
-  }
-}
-function DaDuNanTongQianCaoQiuQianWhiteListReq() {
-  return {
-    getImBirdId: '@guid',
-    gratefulId: '@guid',
-  }
-}
-function DaDuNanTongQianCaoQiuQianWhiteKeyBorardResp() {
-  return {
-    avatar: '@image(200x100, @color, @color)',
-    avatarId: '@guid',
-    imKeyBorardId: '@guid',
-    isBirdMember: '@boolean',
-    gratefulId: '@guid',
-    gratefulName: '@ctitle(5,10)',
-    keyBorardName: '@ctitle(5,10)',
   }
 }
 function YanChangChunHuaXiaoXiFenYeRequestPageListResp() {
@@ -1736,163 +1708,191 @@ function YanChangChunHuaXiaoXiXiangQingRequestDetailResp() {
     type: '@integer(3,1000)',
   }
 }
+function YaoQingRuBuLuoXiangYing() {
+  return {
+    'checkKeyBorardIds|1-20': ['@string(5,50)'],
+    'checkKeyBorards|1-20': [KeyBorardRespDuiXiang()],
+    inviteMsg: '@string(5,50)',
+  }
+}
+function ZhuanFaXiaoXiDuiXiang() {
+  return {
+    applyType: /FORWARD|REPLY|/,
+    content: '@string(5,50)',
+    contentType: '@string(5,50)',
+    created: '@datetime',
+    fileId: '@guid',
+    fileName: '@ctitle(5,10)',
+    fileSize: '@string(5,50)',
+    fileText: '@string(5,50)',
+    fileTime: '@datetime',
+    fileType: '@string(5,50)',
+    fileUrl: '@image(200x100, @color, @color)',
+    birdId: '@guid',
+    id: '@guid',
+    senderAvatar: '@image(200x100, @color, @color)',
+    senderId: '@guid',
+    senderName: '@ctitle(5,10)',
+    sequence: '@string(5,50)',
+  }
+}
 module.exports = {
   AddBirdResp,
-  GreenBookGratefulInfoResp,
   ApiResponse,
   ApiResponseAddBirdResp,
+  ApiResponseboolean,
+  ApiResponseBuLuoChengYuanXinXiDuiXiangBirdMemberResp,
+  ApiResponseBuLuoDuiXiangBirdDetailResp,
+  ApiResponseBuLuoDuiXiangBirdResp,
+  ApiResponseComPageBuLuoChengYuanXinXiDuiXiangBirdMemberResp,
+  ApiResponseComPageBuLuoDuiXiangBirdResp,
   ApiResponseComPageCommonSearchResp,
   ApiResponseComPageContactResp,
+  ApiResponseComPageDaDuNanTongQianCaoQiuQianWhiteKeyBorardResp,
   ApiResponseComPageDoorMainInfoResp,
   ApiResponseComPageFriendshipResp,
   ApiResponseComPageSearchBeforeAddFriendResp,
   ApiResponseComPageXiaoDaoXiaoXiQiuQianXiangYing,
   ApiResponseComPageXiaoXiDuiXiang,
-  ApiResponseComPageBuLuoDuiXiangBirdResp,
-  ApiResponseComPageBuLuoChengYuanXinXiDuiXiangBirdMemberResp,
-  ApiResponseComPageDaDuNanTongQianCaoQiuQianWhiteKeyBorardResp,
   ApiResponseComPageYanChangChunHuaXiaoXiFenYeRequestPageListResp,
+  ApiResponseDengLuXiangYingShiTi,
   ApiResponseDesktopAllInfoResp,
   ApiResponseFriendshipDetailResp,
-  ApiResponseListGreenBookGratefulInfoResp,
-  ApiResponseListWhiteNoteResp,
-  ApiResponseListForwardListResp,
-  ApiResponseListBirdF2fKeyBorardListResp,
-  ApiResponseListPhoneFriendshipResp,
-  ApiResponseListSwitchKeyBorardListResp,
-  ApiResponseListUnreadResp,
-  ApiResponseListKeyBorardListAllGratefulResp,
-  ApiResponseListBanBen,
-  ApiResponseListFangDongXinXi,
-  ApiResponseListBuLuoChengYuanXinXiDuiXiangBirdMemberResp,
-  ApiResponseListDaDuNanXinXiWhiteResp,
-  ApiResponseMapstringSearchMapResp,
-  ApiResponseMemberBirdStatusResp,
-  ApiResponsePutFileResp,
-  ApiResponseQueryLastMessageResp,
   ApiResponseKeyBorardBindResp,
   ApiResponseKeyBorardDetailResp,
   ApiResponseKeyBorardRespDuiXiang,
-  ApiResponseboolean,
+  ApiResponseListBanBen,
+  ApiResponseListBirdF2fKeyBorardListResp,
+  ApiResponseListBuLuoChengYuanXinXiDuiXiangBirdMemberResp,
+  ApiResponseListDaDuNanXinXiWhiteResp,
+  ApiResponseListFangDongXinXi,
+  ApiResponseListForwardListResp,
+  ApiResponseListGreenBookGratefulInfoResp,
+  ApiResponseListKeyBorardListAllGratefulResp,
+  ApiResponseListPhoneFriendshipResp,
+  ApiResponseListSwitchKeyBorardListResp,
+  ApiResponseListUnreadResp,
+  ApiResponseListWhiteNoteResp,
   ApiResponselong,
+  ApiResponseMapstringSearchMapResp,
+  ApiResponseMemberBirdStatusResp,
   ApiResponseobject,
+  ApiResponsePutFileResp,
+  ApiResponseQueryLastMessageResp,
   ApiResponsestring,
   ApiResponseXiaoDaoXiaoXi,
   ApiResponseXiaoXiDuiXiang,
-  ApiResponseDengLuXiangYingShiTi,
-  ApiResponseBuLuoDuiXiangBirdDetailResp,
-  ApiResponseBuLuoDuiXiangBirdResp,
-  ApiResponseBuLuoChengYuanXinXiDuiXiangBirdMemberResp,
-  ApiResponseYaoQingRuBuLuoXiangYing,
   ApiResponseYanChangChunHuaXiaoXiXiangQingRequestDetailResp,
+  ApiResponseYaoQingRuBuLuoXiangYing,
+  BanBen,
   BasePageReq,
+  BirdF2fKeyBorardListResp,
+  BirdTransferReq,
+  BuLuoChengYuanDaoLaJiBirdMemberDelReq,
+  BuLuoChengYuanFenYeBirdMemberPageReq,
+  BuLuoChengYuanJiaShiBirdMemberSaveReq,
+  BuLuoChengYuanXinXiDuiXiangBirdMemberResp,
+  BuLuoDuiXiangBirdDetailResp,
+  BuLuoDuiXiangBirdResp,
+  BuLuoFenYeBirdPageListReq,
+  BuLuoSheZhiZhiNenYiGeZhiBuWeiNullBirdSetReq,
+  BuLuoXinXiBirdDetailReq,
+  ChuangJianGengXinDuiXiangBirdSaveReq,
+  ChuangJianXiaoDaoXiaoXi,
   ComLoginReq,
+  CommonSearchReq,
+  CommonSearchResp,
+  ComPageBuLuoChengYuanXinXiDuiXiangBirdMemberResp,
+  ComPageBuLuoDuiXiangBirdResp,
   ComPageCommonSearchResp,
   ComPageContactResp,
+  ComPageDaDuNanTongQianCaoQiuQianWhiteKeyBorardResp,
   ComPageDoorMainInfoResp,
   ComPageFriendshipResp,
   ComPageSearchBeforeAddFriendResp,
   ComPageXiaoDaoXiaoXiQiuQianXiangYing,
   ComPageXiaoXiDuiXiang,
-  ComPageBuLuoDuiXiangBirdResp,
-  ComPageBuLuoChengYuanXinXiDuiXiangBirdMemberResp,
-  ComPageDaDuNanTongQianCaoQiuQianWhiteKeyBorardResp,
   ComPageYanChangChunHuaXiaoXiFenYeRequestPageListResp,
-  CommonSearchReq,
-  CommonSearchResp,
   ContactReq,
   ContactResp,
-  WhiteNoteResp,
-  WhiteResp,
+  DaDuNanLvYouRuCan,
+  DaDuNanQiuQianWhiteListReq,
+  DaDuNanTongQianCaoFenYeKeyBorardPageReq,
+  DaDuNanTongQianCaoQiuQianWhiteKeyBorardResp,
+  DaDuNanTongQianCaoQiuQianWhiteListReq,
+  DaDuNanXinXiWhiteResp,
+  DengLuXiangYingShiTi,
   DesktopAllInfoResp,
   DesktopResp,
-  EnterBirdReq,
   DoorMainInfoResp,
+  EnterBirdReq,
+  ErWeiMa,
   ExtWhiteResp,
+  FangDongXinXi,
   ForwardListReq,
   ForwardListResp,
   FriendshipDetailReq,
   FriendshipDetailResp,
   FriendshipResp,
   GetUnreadPageReq,
-  BirdF2fKeyBorardListResp,
-  BirdTransferReq,
+  GreenBookGratefulInfoResp,
+  HaoYouFriendshipReq,
+  HaoYouQiuQianLvYouFriendshipQueryReq,
   InviteToBirdReq,
   JobResp,
+  KeyBorardBindReq,
+  KeyBorardBindResp,
+  KeyBorardCancelReq,
+  KeyBorardDetailResp,
+  KeyBorardGratefulReq,
+  KeyBorardListAllGratefulResp,
+  KeyBorardRespDuiXiang,
+  LiShiXiaoXiMessageHistoryReq,
   MemberBirdStatusResp,
   MessageSyncDTO,
   PhoneFriendshipResp,
   PhoneListReq,
+  PinkResq,
   PostResp,
   PutFileResp,
+  QingKongXiaoXiJiLu,
+  QingKongXiaoXiRuCan,
+  QingQiuHuiFuXiaoXiQiuQianReqMsgDetailResp,
+  QingQiuXiaoXiDuBaoKuoYanChangChunHuaJiHuiFuXiaoXiDuRequestReadReq,
+  QingQiuXiaoXiQiuQianRequestPageListReq,
   QueryLastMessageResp,
   RequestMsgReqDuiXiang,
-  PinkResq,
+  RuBuLuoQingQiuAddBirdReq,
   SaveRandomReq,
   SearchBeforeAddFriendReq,
   SearchBeforeAddFriendResp,
   SearchMapResp,
   SearchReq,
   SearchResp,
+  SheZhiMoRenZhiYiChang,
   SwitchKeyBorardListResp,
   SwitchKeyBorardReq,
+  TianJiaHaoYouAddFriendReq,
+  TianJiaWoWeiHaoYouHaoKanFangShi,
+  TongGuoJuJueApproveReq,
+  TongQianCaoSuoYouFangDongKeyBorardListAllGratefulReq,
   UnreadResp,
-  KeyBorardBindReq,
-  KeyBorardBindResp,
-  KeyBorardCancelReq,
-  KeyBorardDetailResp,
-  KeyBorardListAllGratefulResp,
-  KeyBorardRespDuiXiang,
-  KeyBorardGratefulReq,
-  ErWeiMa,
+  WhiteNoteResp,
+  WhiteResp,
   XiaoDaoXiaoXi,
   XiaoDaoXiaoXiQiuQian,
   XiaoDaoXiaoXiQiuQianXiangYing,
-  XiuGaiBeiZhuModifyRemarkBirdReq,
-  XiuGaiBeiZhuModifyfriendRemarkReq,
-  XiuGaiTongQianCaoTouXiang,
-  XiuGaiBuLuoShuiLianRuCanModifyBirdNameReq,
-  RuBuLuoQingQiuAddBirdReq,
-  ChuangJianXiaoDaoXiaoXi,
-  ChuangJianGengXinDuiXiangBirdSaveReq,
-  LiShiXiaoXiMessageHistoryReq,
-  HaoYouFriendshipReq,
-  HaoYouQiuQianLvYouFriendshipQueryReq,
   XiaoXiack,
   XiaoXiDaoLaJi,
   XiaoXiDuiXiang,
   XiaoXiSouSuoShiTi,
   XiaoXiXiangQingMessageDetailReq,
-  TianJiaHaoYouAddFriendReq,
-  TianJiaWoWeiHaoYouHaoKanFangShi,
-  QingKongXiaoXiRuCan,
-  QingKongXiaoXiJiLu,
-  BanBen,
-  TongQianCaoSuoYouFangDongKeyBorardListAllGratefulReq,
-  DengLuXiangYingShiTi,
-  FangDongXinXi,
-  BuLuoXinXiBirdDetailReq,
-  BuLuoFenYeBirdPageListReq,
-  BuLuoDuiXiangBirdDetailResp,
-  BuLuoDuiXiangBirdResp,
-  BuLuoChengYuanXinXiDuiXiangBirdMemberResp,
-  BuLuoChengYuanFenYeBirdMemberPageReq,
-  BuLuoChengYuanDaoLaJiBirdMemberDelReq,
-  BuLuoChengYuanJiaShiBirdMemberSaveReq,
-  BuLuoSheZhiZhiNenYiGeZhiBuWeiNullBirdSetReq,
-  SheZhiMoRenZhiYiChang,
-  QingQiuHuiFuXiaoXiQiuQianReqMsgDetailResp,
-  QingQiuXiaoXiQiuQianRequestPageListReq,
-  QingQiuXiaoXiDuBaoKuoYanChangChunHuaJiHuiFuXiaoXiDuRequestReadReq,
-  ZhuanFaXiaoXiDuiXiang,
-  TongGuoJuJueApproveReq,
-  YaoQingRuBuLuoXiangYing,
-  DaDuNanXinXiWhiteResp,
-  DaDuNanQiuQianWhiteListReq,
-  DaDuNanLvYouRuCan,
-  DaDuNanTongQianCaoFenYeKeyBorardPageReq,
-  DaDuNanTongQianCaoQiuQianWhiteListReq,
-  DaDuNanTongQianCaoQiuQianWhiteKeyBorardResp,
+  XiuGaiBeiZhuModifyfriendRemarkReq,
+  XiuGaiBeiZhuModifyRemarkBirdReq,
+  XiuGaiBuLuoShuiLianRuCanModifyBirdNameReq,
+  XiuGaiTongQianCaoTouXiang,
   YanChangChunHuaXiaoXiFenYeRequestPageListResp,
   YanChangChunHuaXiaoXiXiangQingRequestDetailResp,
+  YaoQingRuBuLuoXiangYing,
+  ZhuanFaXiaoXiDuiXiang,
 }

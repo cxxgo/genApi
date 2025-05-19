@@ -1,29 +1,29 @@
 const request: any = () => {}
 import type {
   ApiResponse,
-  TianJiaHaoYouAddFriendReq,
   ApiResponseAddBirdResp,
-  RuNiaoWoQingQiuAddBirdReq,
-  TongGuoJuJueApproveReq,
-  ApiResponseYanChangChunHuaXiaoXiXiangQingRequestDetailResp,
-  ApiResponseListUnreadResp,
-  GetUnreadPageReq,
-  ApiResponselong,
-  ApiResponseInviteToBirdRespYaoQingRuNiaoWoXiangYing,
-  InviteToBirdReq,
   ApiResponseComPageYanChangChunHuaXiaoXiFenYeRequestPageListResp,
-  QingQiuXiaoXiYongDaoRequestPageListReq,
+  ApiResponseInviteToBirdRespYaoQingRuNiaoWoXiangYing,
+  ApiResponseListUnreadResp,
+  ApiResponselong,
+  ApiResponseYanChangChunHuaXiaoXiXiangQingRequestDetailResp,
+  GetUnreadPageReq,
+  InviteToBirdReq,
   QingQiuXiaoXiDuBaoKuoYanChangChunHuaJiHuiFuXiaoXiDuRequestReadReq,
+  QingQiuXiaoXiYongDaoRequestPageListReq,
+  RuNiaoWoQingQiuAddBirdReq,
+  TianJiaHaoYouAddFriendReq,
+  TongGuoJuJueApproveReq,
 } from './_interfaces.ts'
-
-/** 添加好友申请 */
-export function requestAddFriend(data: TianJiaHaoYouAddFriendReq): Promise<ApiResponse> {
-  return request.post('/api/request/addFriend', data)
-}
 
 /** 入鸟窝申请 */
 export function requestAddBird(data: RuNiaoWoQingQiuAddBirdReq): Promise<ApiResponseAddBirdResp> {
   return request.post('/api/request/addBird', data)
+}
+
+/** 添加好友申请 */
+export function requestAddFriend(data: TianJiaHaoYouAddFriendReq): Promise<ApiResponse> {
+  return request.post('/api/request/addFriend', data)
 }
 
 /** 通过/拒绝 */

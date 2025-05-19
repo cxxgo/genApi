@@ -1,10 +1,10 @@
 const request: any = () => {}
 import type {
   ApiResponseboolean,
-  FangDongShouHuoDiZhiTianJia,
-  QieHuanMoRenDiZhi,
   ApiResponseComPageFangDongShouHuoDiZhiTianJia,
   BasePageReq,
+  FangDongShouHuoDiZhiTianJia,
+  QieHuanMoRenDiZhi,
 } from './_interfaces.ts'
 
 /** 添加地址 */
