@@ -1,48 +1,26 @@
 const request: any = () => {}
 import type {
-  ApiResponsePutFileResp,
-  UploadFileReq,
-  ApiResponseNiaoWoWenJianShangChuanXiangYingShiTi,
-  BirdFileUploadReq,
-  ApiResponseVoid,
-  InnerBirdDissolveReq,
-  ApiResponseNaBuMaiShaoBingNiaoWoBaoCunChuCan,
-  NaBuNiaoWoBaoCunRuCan,
   ApiResponseboolean,
   ApiResponseComPageNiaoWoDuiXiangBirdResp,
-  InnerBirdMemberBirdListReq,
-  NaBuNiaoWoBaoCunNiaoWoChengYuanRuCan,
-  mockJiaRenRuNiaoWoRuCan,
   ApiResponseComPageXiaoXiNaBuXiangYingShiTi,
-  NaBuXiaoXiSouSuoQingQiu,
+  ApiResponseNaBuMaiShaoBingNiaoWoBaoCunChuCan,
+  ApiResponseNiaoWoWenJianShangChuanXiangYingShiTi,
+  ApiResponsePutFileResp,
+  ApiResponseVoid,
+  BirdFileUploadReq,
+  InnerBirdDissolveReq,
+  InnerBirdMemberBirdListReq,
   MaiShaoBingXiaoXiTuiSongimXiaoXi,
+  mockJiaRenRuNiaoWoRuCan,
+  NaBuNiaoWoBaoCunNiaoWoChengYuanRuCan,
+  NaBuNiaoWoBaoCunRuCan,
+  NaBuXiaoXiSouSuoQingQiu,
+  UploadFileReq,
 } from './_interfaces.ts'
-
-/** 生成上传签名url[图片消息 传入type及originalFileName] */
-export function innerFileGetUploadUrl(data: UploadFileReq): Promise<ApiResponsePutFileResp> {
-  return request.post('/inner/file/getUploadUrl', data)
-}
-
-/** 上传鸟窝文件 */
-export function innerFileBirdFileSave(
-  data: BirdFileUploadReq
-): Promise<ApiResponseNiaoWoWenJianShangChuanXiangYingShiTi> {
-  return request.post('/inner/file/birdFile/save', data)
-}
 
 /** 卖烧饼解散鸟窝 */
 export function innerBirdDissolve(data: InnerBirdDissolveReq): Promise<ApiResponseVoid> {
   return request.post('/inner/bird/dissolve', data)
-}
-
-/** 卖烧饼自动拉鸟窝 */
-export function innerBirdSave(data: NaBuNiaoWoBaoCunRuCan): Promise<ApiResponseNaBuMaiShaoBingNiaoWoBaoCunChuCan> {
-  return request.post('/inner/bird/save', data)
-}
-
-/** 拉校友鸟窝 */
-export function innerBirdSaveSchoolMateBird(data: NaBuNiaoWoBaoCunRuCan): Promise<ApiResponseboolean> {
-  return request.post('/inner/bird/saveSchoolMateBird', data)
 }
 
 /** 鸟窝甬道 */
@@ -62,6 +40,28 @@ export function innerBirdMemberSave(
   data: NaBuNiaoWoBaoCunNiaoWoChengYuanRuCan
 ): Promise<ApiResponseNaBuMaiShaoBingNiaoWoBaoCunChuCan> {
   return request.post('/inner/birdMember/save', data)
+}
+
+/** 卖烧饼自动拉鸟窝 */
+export function innerBirdSave(data: NaBuNiaoWoBaoCunRuCan): Promise<ApiResponseNaBuMaiShaoBingNiaoWoBaoCunChuCan> {
+  return request.post('/inner/bird/save', data)
+}
+
+/** 拉校友鸟窝 */
+export function innerBirdSaveSchoolMateBird(data: NaBuNiaoWoBaoCunRuCan): Promise<ApiResponseboolean> {
+  return request.post('/inner/bird/saveSchoolMateBird', data)
+}
+
+/** 上传鸟窝文件 */
+export function innerFileBirdFileSave(
+  data: BirdFileUploadReq
+): Promise<ApiResponseNiaoWoWenJianShangChuanXiangYingShiTi> {
+  return request.post('/inner/file/birdFile/save', data)
+}
+
+/** 生成上传签名url[图片消息 传入type及originalFileName] */
+export function innerFileGetUploadUrl(data: UploadFileReq): Promise<ApiResponsePutFileResp> {
+  return request.post('/inner/file/getUploadUrl', data)
 }
 
 /** 模拟拉鸟窝后加人入鸟窝 */

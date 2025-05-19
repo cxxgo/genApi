@@ -1,10 +1,10 @@
 const request: any = () => {}
 import type {
+  ApiResponse,
+  ApiResponseListBirdF2fKeyBorardListResp,
   ApiResponselong,
   EnterBirdReq,
-  ApiResponseListBirdF2fKeyBorardListResp,
   SaveRandomReq,
-  ApiResponse,
 } from './_interfaces.ts'
 
 /** 进入部落瓜子 */

@@ -1,21 +1,16 @@
 const request: any = () => {}
 import type {
+  AliMpLoginReq,
   ApiResponseboolean,
   ApiResponseComLoginResp,
-  AliMpLoginReq,
+  ApiResponseOrangeerResultResp,
+  ApiResponsestring,
   ApiResponseVoid,
   ComLoginReq,
-  ApiResponsestring,
-  ApiResponseOrangeerResultResp,
-  ZhuCeQingQiu,
-  ZhaoHuiMiMa,
   SetPassWordReq,
+  ZhaoHuiMiMa,
+  ZhuCeQingQiu,
 } from './_interfaces.ts'
-
-/** 出行喇叭花密码未设置是否提醒 */
-export function loginOrangeerJudgePassWordIsSet(): Promise<ApiResponseboolean> {
-  return request.get('/api/loginOrangeer/JudgePassWordIsSet')
-}
 
 /** 支付小程序手机号辟邪刀登录 */
 export function loginOrangeerAliMpAutoLogin(data: AliMpLoginReq): Promise<ApiResponseComLoginResp> {
@@ -49,19 +44,24 @@ export function loginOrangeerComLogin(data: ComLoginReq): Promise<ApiResponseCom
   return request.post('/api/loginOrangeer/comLogin', data)
 }
 
+/** 出行喇叭花密码未设置是否提醒 */
+export function loginOrangeerJudgePassWordIsSet(): Promise<ApiResponseboolean> {
+  return request.get('/api/loginOrangeer/JudgePassWordIsSet')
+}
+
 /** 退出登录 */
 export function loginOrangeerLoginout(): Promise<ApiResponseboolean> {
   return request.get('/api/loginOrangeer/loginout')
 }
 
-/** 仅测试-密码加密 */
-export function loginOrangeerPasswordCry(data: { password?: string }): Promise<ApiResponsestring> {
-  return request.get('/api/loginOrangeer/passwordCry', data)
-}
-
 /** 注册喇叭花-手机号密码注册 */
 export function loginOrangeerOrangeer(data: ZhuCeQingQiu): Promise<ApiResponseOrangeerResultResp> {
   return request.post('/api/loginOrangeer/orangeer', data)
+}
+
+/** 仅测试-密码加密 */
+export function loginOrangeerPasswordCry(data: { password?: string }): Promise<ApiResponsestring> {
+  return request.get('/api/loginOrangeer/passwordCry', data)
 }
 
 /** 找回密码 */

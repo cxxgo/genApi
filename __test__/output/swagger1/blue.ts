@@ -1,14 +1,14 @@
 const request: any = () => {}
 import type {
+  ApiResponseboolean,
+  ApiResponseComPageZhiXieChangChuXing,
+  ApiResponseListZhiXieChangChuXing,
   ApiResponseQueryAccInfoResp,
   ApiResponsestring,
-  KeyBorardJoinDoorReq,
-  ApiResponseboolean,
   ChuangJianZhiXieChang,
-  ApiResponseListZhiXieChangChuXing,
-  ZhiXieChangChuXing0,
-  ApiResponseComPageZhiXieChangChuXing,
   FenYeChuXingSuoYouZhiXieChang,
+  KeyBorardJoinDoorReq,
+  ZhiXieChangChuXing0,
 } from './_interfaces.ts'
 
 /** 账号信息 */

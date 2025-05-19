@@ -1,11 +1,11 @@
 const request: any = () => {}
 import type {
+  ApiResponseComPageCommonSearchResp,
+  ApiResponseListForwardListResp,
   ApiResponseXiaoDaoXiaoXi,
   ChuangJianXiaoDaoXiaoXi,
-  ApiResponseListForwardListResp,
-  ForwardListReq,
-  ApiResponseComPageCommonSearchResp,
   CommonSearchReq,
+  ForwardListReq,
 } from './_interfaces.ts'
 
 /** 转发 创建小道消息/发起瓜子天/进入部落瓜子 */
@@ -18,14 +18,14 @@ export function forwardList(data: ForwardListReq): Promise<ApiResponseListForwar
   return request.post('/api/forward/list', data)
 }
 
-/** 转发搜索秋千 */
-export function forwardSearch(data: CommonSearchReq): Promise<ApiResponseComPageCommonSearchResp> {
-  return request.post('/api/forward/search', data)
-}
-
 /** 秋千(仅5个) */
 export function forwardList(data: ForwardListReq): Promise<ApiResponseListForwardListResp> {
   return request.post('/forward/list', data)
+}
+
+/** 转发搜索秋千 */
+export function forwardSearch(data: CommonSearchReq): Promise<ApiResponseComPageCommonSearchResp> {
+  return request.post('/api/forward/search', data)
 }
 
 /** 转发搜索秋千 */

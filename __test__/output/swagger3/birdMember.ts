@@ -1,17 +1,22 @@
 const request: any = () => {}
 import type {
   ApiResponse,
-  BuLuoChengYuanDaoLaJiBirdMemberDelReq,
-  ApiResponseBuLuoChengYuanXinXiDuiXiangBirdMemberResp,
-  BuLuoXinXiBirdDetailReq,
   ApiResponseboolean,
-  ApiResponseMemberBirdStatusResp,
-  ApiResponseListBuLuoChengYuanXinXiDuiXiangBirdMemberResp,
-  XiuGaiBeiZhuModifyRemarkBirdReq,
+  ApiResponseBuLuoChengYuanXinXiDuiXiangBirdMemberResp,
   ApiResponseComPageBuLuoChengYuanXinXiDuiXiangBirdMemberResp,
+  ApiResponseListBuLuoChengYuanXinXiDuiXiangBirdMemberResp,
+  ApiResponseMemberBirdStatusResp,
+  BuLuoChengYuanDaoLaJiBirdMemberDelReq,
   BuLuoChengYuanFenYeBirdMemberPageReq,
   BuLuoChengYuanJiaShiBirdMemberSaveReq,
+  BuLuoXinXiBirdDetailReq,
+  XiuGaiBeiZhuModifyRemarkBirdReq,
 } from './_interfaces.ts'
+
+/** 本部落状态 */
+export function birdMemberBirdStatus(data: BuLuoXinXiBirdDetailReq): Promise<ApiResponseMemberBirdStatusResp> {
+  return request.post('/api/birdMember/birdStatus', data)
+}
 
 /** 管理员倒垃圾部落成员 */
 export function birdMemberDelete(data: BuLuoChengYuanDaoLaJiBirdMemberDelReq): Promise<ApiResponse> {
@@ -33,11 +38,6 @@ export function birdMemberDetail(
 /** 是否是部落成员 */
 export function birdMemberExistInBird(data: BuLuoXinXiBirdDetailReq): Promise<ApiResponseboolean> {
   return request.post('/api/birdMember/existInBird', data)
-}
-
-/** 本部落状态 */
-export function birdMemberBirdStatus(data: BuLuoXinXiBirdDetailReq): Promise<ApiResponseMemberBirdStatusResp> {
-  return request.post('/api/birdMember/birdStatus', data)
 }
 
 /** 退出部落瓜子 */

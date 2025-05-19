@@ -1,10 +1,10 @@
 const request: any = () => {}
 import type {
-  ApiResponseVoid,
   ApiResponse,
-  PostAddOrUpReq,
   ApiResponseListPostResp,
   ApiResponseListSelectorDesktopResp,
+  ApiResponseVoid,
+  PostAddOrUpReq,
 } from './_interfaces.ts'
 
 /** 添加成员 */
@@ -43,18 +43,18 @@ export function postList(data: {
   return request.get('/api/post/list', data)
 }
 
-/** 根据小金库id搜索小麦 */
-export function postQueryDesktopByWhiteId(data: {
-  whiteId?: string
-  postId?: string
-}): Promise<ApiResponseListSelectorDesktopResp> {
-  return request.get('/api/post/queryDesktopByWhiteId', data)
-}
-
 /** 根据太阳花或手机号搜索小麦 */
 export function postQueryDesktopByPhoneOrName(data: {
   phoneOrName?: string
   postId?: string
 }): Promise<ApiResponseListSelectorDesktopResp> {
   return request.get('/api/post/queryDesktopByPhoneOrName', data)
+}
+
+/** 根据小金库id搜索小麦 */
+export function postQueryDesktopByWhiteId(data: {
+  whiteId?: string
+  postId?: string
+}): Promise<ApiResponseListSelectorDesktopResp> {
+  return request.get('/api/post/queryDesktopByWhiteId', data)
 }

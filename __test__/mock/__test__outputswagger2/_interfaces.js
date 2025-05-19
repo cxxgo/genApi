@@ -5,14 +5,11 @@ export function AddBirdResp() {
     imBirdId: '@guid',
   }
 }
-export function GreenBookGratefulInfoResp() {
+export function aliyunSTSJianQuanFanHuiZhi() {
   return {
-    avatar: '@image(200x100, @color, @color)',
-    checked: '@boolean',
-    kind: '@string(5,50)',
-    showImBirdId: '@guid',
-    gratefulId: '@guid',
-    gratefulName: '@ctitle(5,10)',
+    accessKeyIdSts: '@string(5,50)',
+    secretKeyIdSts: '@string(5,50)',
+    securityToken: '@string(5,50)',
   }
 }
 export function ApiResponse() {
@@ -35,10 +32,40 @@ export function ApiResponseAddBirdResp() {
     traceId: '@guid',
   }
 }
+export function ApiResponsealiyunSTSJianQuanFanHuiZhi() {
+  return {
+    code: 200,
+    data: aliyunSTSJianQuanFanHuiZhi(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
 export function ApiResponseAtListAndAckSequenceResp() {
   return {
     code: 200,
     data: AtListAndAckSequenceResp(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseBanBen() {
+  return {
+    code: 200,
+    data: BanBen(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseboolean() {
+  return {
+    code: 200,
+    data: '@boolean',
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -65,20 +92,20 @@ export function ApiResponseComPageContactResp() {
     traceId: '@guid',
   }
 }
-export function ApiResponseComPageFriendshipResp() {
+export function ApiResponseComPageDaDuNanTongQianCaoYongDaoWhiteKeyBorardResp() {
   return {
     code: 200,
-    data: ComPageFriendshipResp(),
+    data: ComPageDaDuNanTongQianCaoYongDaoWhiteKeyBorardResp(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
     traceId: '@guid',
   }
 }
-export function ApiResponseComPageSearchBeforeAddFriendResp() {
+export function ApiResponseComPageFriendshipResp() {
   return {
     code: 200,
-    data: ComPageSearchBeforeAddFriendResp(),
+    data: ComPageFriendshipResp(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -95,40 +122,10 @@ export function ApiResponseComPageKeyBorardBlackResp() {
     traceId: '@guid',
   }
 }
-export function ApiResponseComPageWaiBuZhiXieChangChuCan() {
+export function ApiResponseComPageNiaoWoChengYuanXinXiDuiXiangBirdMemberResp() {
   return {
     code: 200,
-    data: ComPageWaiBuZhiXieChangChuCan(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponseComPageWaiBuShuiDaoXiangYing() {
-  return {
-    code: 200,
-    data: ComPageWaiBuShuiDaoXiangYing(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponseComPageXiaoXiNaBuXiangYingShiTi() {
-  return {
-    code: 200,
-    data: ComPageXiaoXiNaBuXiangYingShiTi(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponseComPageXiaoXiDuiXiang() {
-  return {
-    code: 200,
-    data: ComPageXiaoXiDuiXiang(),
+    data: ComPageNiaoWoChengYuanXinXiDuiXiangBirdMemberResp(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -145,20 +142,50 @@ export function ApiResponseComPageNiaoWoDuiXiangBirdResp() {
     traceId: '@guid',
   }
 }
-export function ApiResponseComPageNiaoWoChengYuanXinXiDuiXiangBirdMemberResp() {
+export function ApiResponseComPageSearchBeforeAddFriendResp() {
   return {
     code: 200,
-    data: ComPageNiaoWoChengYuanXinXiDuiXiangBirdMemberResp(),
+    data: ComPageSearchBeforeAddFriendResp(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
     traceId: '@guid',
   }
 }
-export function ApiResponseComPageDaDuNanTongQianCaoYongDaoWhiteKeyBorardResp() {
+export function ApiResponseComPageWaiBuShuiDaoXiangYing() {
   return {
     code: 200,
-    data: ComPageDaDuNanTongQianCaoYongDaoWhiteKeyBorardResp(),
+    data: ComPageWaiBuShuiDaoXiangYing(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseComPageWaiBuZhiXieChangChuCan() {
+  return {
+    code: 200,
+    data: ComPageWaiBuZhiXieChangChuCan(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseComPageXiaoXiDuiXiang() {
+  return {
+    code: 200,
+    data: ComPageXiaoXiDuiXiang(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseComPageXiaoXiNaBuXiangYingShiTi() {
+  return {
+    code: 200,
+    data: ComPageXiaoXiNaBuXiangYingShiTi(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -169,6 +196,16 @@ export function ApiResponseComPageYanChangChunHuaXiaoXiFenYeRequestPageListResp(
   return {
     code: 200,
     data: ComPageYanChangChunHuaXiaoXiFenYeRequestPageListResp(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseDengLuXiangYingShiTi() {
+  return {
+    code: 200,
+    data: DengLuXiangYingShiTi(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -205,10 +242,50 @@ export function ApiResponseInviteToBirdRespYaoQingRuNiaoWoXiangYing() {
     traceId: '@guid',
   }
 }
-export function ApiResponseListGreenBookGratefulInfoResp() {
+export function ApiResponseKeyBorardBindResp() {
   return {
     code: 200,
-    'data|1-20': [GreenBookGratefulInfoResp()],
+    data: KeyBorardBindResp(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseKeyBorardRespDuiXiang() {
+  return {
+    code: 200,
+    data: KeyBorardRespDuiXiang(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseListBanBen() {
+  return {
+    code: 200,
+    'data|1-20': [BanBen()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseListBirdF2fKeyBorardListResp() {
+  return {
+    code: 200,
+    'data|1-20': [BirdF2fKeyBorardListResp()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseListDaDuNanXinXiWhiteResp() {
+  return {
+    code: 200,
+    'data|1-20': [DaDuNanXinXiWhiteResp()],
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -235,10 +312,40 @@ export function ApiResponseListFriendshipResp() {
     traceId: '@guid',
   }
 }
-export function ApiResponseListBirdF2fKeyBorardListResp() {
+export function ApiResponseListGratefulInfoRespLvKeXinXi() {
   return {
     code: 200,
-    'data|1-20': [BirdF2fKeyBorardListResp()],
+    'data|1-20': [GratefulInfoRespLvKeXinXi()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseListGreenBookGratefulInfoResp() {
+  return {
+    code: 200,
+    'data|1-20': [GreenBookGratefulInfoResp()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseListKeyBorardListAllGratefulResp() {
+  return {
+    code: 200,
+    'data|1-20': [KeyBorardListAllGratefulResp()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseListNiaoWoChengYuanXinXiDuiXiangBirdMemberResp() {
+  return {
+    code: 200,
+    'data|1-20': [NiaoWoChengYuanXinXiDuiXiangBirdMemberResp()],
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -265,30 +372,10 @@ export function ApiResponseListSwitchKeyBorardListResp() {
     traceId: '@guid',
   }
 }
-export function ApiResponseListGratefulInfoRespLvKeXinXi() {
-  return {
-    code: 200,
-    'data|1-20': [GratefulInfoRespLvKeXinXi()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
 export function ApiResponseListUnreadResp() {
   return {
     code: 200,
     'data|1-20': [UnreadResp()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponseListKeyBorardListAllGratefulResp() {
-  return {
-    code: 200,
-    'data|1-20': [KeyBorardListAllGratefulResp()],
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -305,30 +392,10 @@ export function ApiResponseListXiaoXiDuiXiang() {
     traceId: '@guid',
   }
 }
-export function ApiResponseListBanBen() {
+export function ApiResponselong() {
   return {
     code: 200,
-    'data|1-20': [BanBen()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponseListNiaoWoChengYuanXinXiDuiXiangBirdMemberResp() {
-  return {
-    code: 200,
-    'data|1-20': [NiaoWoChengYuanXinXiDuiXiangBirdMemberResp()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponseListDaDuNanXinXiWhiteResp() {
-  return {
-    code: 200,
-    'data|1-20': [DaDuNanXinXiWhiteResp()],
+    data: '@string(5,50)',
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -365,145 +432,6 @@ export function ApiResponseMemberBirdStatusResp() {
     traceId: '@guid',
   }
 }
-export function ApiResponsePutFileResp() {
-  return {
-    code: 200,
-    data: PutFileResp(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponseQueryLastMessageResp() {
-  return {
-    code: 200,
-    data: QueryLastMessageResp(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponseUnReadComPageXiaoDaoXiaoXiYongDaoXiangYing() {
-  return {
-    code: 200,
-    data: UnReadComPageXiaoDaoXiaoXiYongDaoXiangYing(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponseKeyBorardBindResp() {
-  return {
-    code: 200,
-    data: KeyBorardBindResp(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponseKeyBorardRespDuiXiang() {
-  return {
-    code: 200,
-    data: KeyBorardRespDuiXiang(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponseVoid() {
-  return {
-    code: 200,
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponseWaterFallPageKeyBorardBlackResp() {
-  return {
-    code: 200,
-    data: WaterFallPageKeyBorardBlackResp(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponsealiyunSTSJianQuanFanHuiZhi() {
-  return {
-    code: 200,
-    data: aliyunSTSJianQuanFanHuiZhi(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponseboolean() {
-  return {
-    code: 200,
-    data: '@boolean',
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponselong() {
-  return {
-    code: 200,
-    data: '@string(5,50)',
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponseobject() {
-  return {
-    code: 200,
-    data: '',
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponsestring() {
-  return {
-    code: 200,
-    data: '@string(5,50)',
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponseShangChuanALiYunQianMingXiangYing() {
-  return {
-    code: 200,
-    data: ShangChuanALiYunQianMingXiangYing(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponseXiaoDaoXiaoXi() {
-  return {
-    code: 200,
-    data: XiaoDaoXiaoXi(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
 export function ApiResponseNaBuMaiShaoBingNiaoWoBaoCunChuCan() {
   return {
     code: 200,
@@ -514,50 +442,10 @@ export function ApiResponseNaBuMaiShaoBingNiaoWoBaoCunChuCan() {
     traceId: '@guid',
   }
 }
-export function ApiResponseWenJianPiLiangBaoCunXiangYingShiTi() {
+export function ApiResponseNiaoWoChengYuanXinXiDuiXiangBirdMemberResp() {
   return {
     code: 200,
-    data: WenJianPiLiangBaoCunXiangYingShiTi(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponseXiaoXiDuiXiang() {
-  return {
-    code: 200,
-    data: XiaoXiDuiXiang(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponseBanBen() {
-  return {
-    code: 200,
-    data: BanBen(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponseDengLuXiangYingShiTi() {
-  return {
-    code: 200,
-    data: DengLuXiangYingShiTi(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponseQianMingWenJianXiangYing() {
-  return {
-    code: 200,
-    data: QianMingWenJianXiangYing(),
+    data: NiaoWoChengYuanXinXiDuiXiangBirdMemberResp(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -584,16 +472,6 @@ export function ApiResponseNiaoWoDuiXiangBirdResp() {
     traceId: '@guid',
   }
 }
-export function ApiResponseNiaoWoChengYuanXinXiDuiXiangBirdMemberResp() {
-  return {
-    code: 200,
-    data: NiaoWoChengYuanXinXiDuiXiangBirdMemberResp(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
 export function ApiResponseNiaoWoWenJianShangChuanXiangYingShiTi() {
   return {
     code: 200,
@@ -604,10 +482,119 @@ export function ApiResponseNiaoWoWenJianShangChuanXiangYingShiTi() {
     traceId: '@guid',
   }
 }
-export function ApiResponseYuYinShiBieFanHui() {
+export function ApiResponseobject() {
   return {
     code: 200,
-    data: YuYinShiBieFanHui(),
+    data: '',
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponsePutFileResp() {
+  return {
+    code: 200,
+    data: PutFileResp(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseQianMingWenJianXiangYing() {
+  return {
+    code: 200,
+    data: QianMingWenJianXiangYing(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseQueryLastMessageResp() {
+  return {
+    code: 200,
+    data: QueryLastMessageResp(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseShangChuanALiYunQianMingXiangYing() {
+  return {
+    code: 200,
+    data: ShangChuanALiYunQianMingXiangYing(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponsestring() {
+  return {
+    code: 200,
+    data: '@string(5,50)',
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseUnReadComPageXiaoDaoXiaoXiYongDaoXiangYing() {
+  return {
+    code: 200,
+    data: UnReadComPageXiaoDaoXiaoXiYongDaoXiangYing(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseVoid() {
+  return {
+    code: 200,
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseWaterFallPageKeyBorardBlackResp() {
+  return {
+    code: 200,
+    data: WaterFallPageKeyBorardBlackResp(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseWenJianPiLiangBaoCunXiangYingShiTi() {
+  return {
+    code: 200,
+    data: WenJianPiLiangBaoCunXiangYingShiTi(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseXiaoDaoXiaoXi() {
+  return {
+    code: 200,
+    data: XiaoDaoXiaoXi(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+export function ApiResponseXiaoXiDuiXiang() {
+  return {
+    code: 200,
+    data: XiaoXiDuiXiang(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -624,6 +611,16 @@ export function ApiResponseYanChangChunHuaXiaoXiXiangQingRequestDetailResp() {
     traceId: '@guid',
   }
 }
+export function ApiResponseYuYinShiBieFanHui() {
+  return {
+    code: 200,
+    data: YuYinShiBieFanHui(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
 export function AtListAndAckSequenceResp() {
   return {
     lastAckSequence: '@string(5,50)',
@@ -631,10 +628,73 @@ export function AtListAndAckSequenceResp() {
     unreadCount: '@integer(3,1000)',
   }
 }
+export function BanBen() {
+  return {
+    appType: '@string(5,50)',
+    fileSize: '@string(5,50)',
+    isForceUpdate: '@boolean',
+    versionDesc: '@string(5,50)',
+    versionName: '@ctitle(5,10)',
+    versionNum: '@string(5,50)',
+    versionUrl: '@image(200x100, @color, @color)',
+  }
+}
+export function BanBen0() {
+  return {
+    appType: '@string(5,50)',
+    fileSize: '@string(5,50)',
+    isForceUpdate: '@boolean',
+    versionDesc: '@string(5,50)',
+    versionName: '@ctitle(5,10)',
+    versionNum: '@string(5,50)',
+    versionUrl: '@image(200x100, @color, @color)',
+  }
+}
 export function BasePageReq() {
   return {
     page: '@integer(3,1000)',
     size: '20',
+  }
+}
+export function BirdF2fKeyBorardListResp() {
+  return {
+    avatarUrl: '@image(200x100, @color, @color)',
+    f2fBirdId: '@guid',
+    imKeyBorardId: '@guid',
+    keyBorardName: '@ctitle(5,10)',
+  }
+}
+export function BirdFileUploadReq() {
+  return {
+    bizId: '@guid',
+    bizSource: /BASE_PLATFORM_SENDER|BIGDATA|CRM|FLEX_WORK|HR_OA_SCHOOL|OA/,
+    bpSenderId: '@guid',
+    'fileList|1-20': [FileDTO()],
+  }
+}
+export function BirdSetNoticeAndTopReq() {
+  return {
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+    isNotice: '@boolean',
+    isTop: '@boolean',
+    needHiallMsg: '@boolean',
+  }
+}
+export function BirdTransferReq() {
+  return {
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+  }
+}
+export function ChuangJianXiaoDaoXiaoXi() {
+  return {
+    channel: '@string(5,50)',
+    checkCache: '@boolean',
+    'birdIdList|1-20': ['@string(5,50)'],
+    privateBirdId: '@guid',
+    'receiverIdList|1-20': ['@string(5,50)'],
+    updateBirdHiall: '@boolean',
   }
 }
 export function ComLoginReq() {
@@ -651,136 +711,6 @@ export function ComLoginReq() {
       /CORP_WEIXIN|DINGDING|MOBILE_CODE_FAST|ONE_CLICK|PASSWORD|TOKEN|VERIFICATION_CODE|WECHAT|WECHAT_FAST|WECHAT_WEB_FAST/,
     openId: '@guid',
     uuid: '@guid',
-  }
-}
-export function ComPageCommonSearchResp() {
-  return {
-    current: '@string(5,50)',
-    'records|1-20': [CommonSearchResp()],
-    size: '20',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-export function ComPageContactResp() {
-  return {
-    current: '@string(5,50)',
-    'records|1-20': [ContactResp()],
-    size: '20',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-export function ComPageFriendshipResp() {
-  return {
-    current: '@string(5,50)',
-    'records|1-20': [FriendshipResp()],
-    size: '20',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-export function ComPageSearchBeforeAddFriendResp() {
-  return {
-    current: '@string(5,50)',
-    'records|1-20': [SearchBeforeAddFriendResp()],
-    size: '20',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-export function ComPageKeyBorardBlackResp() {
-  return {
-    current: '@string(5,50)',
-    'records|1-20': [KeyBorardBlackResp()],
-    size: '20',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-export function ComPageWaiBuZhiXieChangChuCan() {
-  return {
-    current: '@string(5,50)',
-    'records|1-20': [WaiBuZhiXieChangChuCan()],
-    size: '20',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-export function ComPageWaiBuShuiDaoXiangYing() {
-  return {
-    current: '@string(5,50)',
-    'records|1-20': [WaiBuShuiDaoXiangYing()],
-    size: '20',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-export function ComPageXiaoXiNaBuXiangYingShiTi() {
-  return {
-    current: '@string(5,50)',
-    'records|1-20': [XiaoXiNaBuXiangYingShiTi()],
-    size: '20',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-export function ComPageXiaoXiDuiXiang() {
-  return {
-    current: '@string(5,50)',
-    'records|1-20': [XiaoXiDuiXiang()],
-    size: '20',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-export function ComPageNiaoWoDuiXiangBirdResp() {
-  return {
-    current: '@string(5,50)',
-    'records|1-20': [NiaoWoDuiXiangBirdResp()],
-    size: '20',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-export function ComPageNiaoWoChengYuanXinXiDuiXiangBirdMemberResp() {
-  return {
-    current: '@string(5,50)',
-    'records|1-20': [NiaoWoChengYuanXinXiDuiXiangBirdMemberResp()],
-    size: '20',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-export function ComPageDaDuNanTongQianCaoYongDaoWhiteKeyBorardResp() {
-  return {
-    current: '@string(5,50)',
-    'records|1-20': [DaDuNanTongQianCaoYongDaoWhiteKeyBorardResp()],
-    size: '20',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-export function ComPageYanChangChunHuaXiaoXiFenYeRequestPageListResp() {
-  return {
-    current: '@string(5,50)',
-    'records|1-20': [YanChangChunHuaXiaoXiFenYeRequestPageListResp()],
-    size: '20',
-    total: () => {
-      return +this.size * 10 || 100
-    },
   }
 }
 export function CommonSearchReq() {
@@ -813,6 +743,136 @@ export function CommonSearchResp() {
     name: '@ctitle(5,10)',
     ownerId: '@guid',
     post: '@string(5,50)',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+export function ComPageCommonSearchResp() {
+  return {
+    current: '@string(5,50)',
+    'records|1-20': [CommonSearchResp()],
+    size: '20',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+export function ComPageContactResp() {
+  return {
+    current: '@string(5,50)',
+    'records|1-20': [ContactResp()],
+    size: '20',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+export function ComPageDaDuNanTongQianCaoYongDaoWhiteKeyBorardResp() {
+  return {
+    current: '@string(5,50)',
+    'records|1-20': [DaDuNanTongQianCaoYongDaoWhiteKeyBorardResp()],
+    size: '20',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+export function ComPageFriendshipResp() {
+  return {
+    current: '@string(5,50)',
+    'records|1-20': [FriendshipResp()],
+    size: '20',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+export function ComPageKeyBorardBlackResp() {
+  return {
+    current: '@string(5,50)',
+    'records|1-20': [KeyBorardBlackResp()],
+    size: '20',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+export function ComPageNiaoWoChengYuanXinXiDuiXiangBirdMemberResp() {
+  return {
+    current: '@string(5,50)',
+    'records|1-20': [NiaoWoChengYuanXinXiDuiXiangBirdMemberResp()],
+    size: '20',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+export function ComPageNiaoWoDuiXiangBirdResp() {
+  return {
+    current: '@string(5,50)',
+    'records|1-20': [NiaoWoDuiXiangBirdResp()],
+    size: '20',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+export function ComPageSearchBeforeAddFriendResp() {
+  return {
+    current: '@string(5,50)',
+    'records|1-20': [SearchBeforeAddFriendResp()],
+    size: '20',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+export function ComPageWaiBuShuiDaoXiangYing() {
+  return {
+    current: '@string(5,50)',
+    'records|1-20': [WaiBuShuiDaoXiangYing()],
+    size: '20',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+export function ComPageWaiBuZhiXieChangChuCan() {
+  return {
+    current: '@string(5,50)',
+    'records|1-20': [WaiBuZhiXieChangChuCan()],
+    size: '20',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+export function ComPageXiaoXiDuiXiang() {
+  return {
+    current: '@string(5,50)',
+    'records|1-20': [XiaoXiDuiXiang()],
+    size: '20',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+export function ComPageXiaoXiNaBuXiangYingShiTi() {
+  return {
+    current: '@string(5,50)',
+    'records|1-20': [XiaoXiNaBuXiangYingShiTi()],
+    size: '20',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+export function ComPageYanChangChunHuaXiaoXiFenYeRequestPageListResp() {
+  return {
+    current: '@string(5,50)',
+    'records|1-20': [YanChangChunHuaXiaoXiFenYeRequestPageListResp()],
+    size: '20',
     total: () => {
       return +this.size * 10 || 100
     },
@@ -860,10 +920,74 @@ export function ContactResp() {
     keyBorardStatus: '@string(5,50)',
   }
 }
+export function DaDuNanTongQianCaoFenYeKeyBorardPageReq() {
+  return {
+    whiteId: '@guid',
+    excludeMemberImBirdId: '@guid',
+    imKeyBorardId: '@guid',
+    isForward: '@boolean',
+    keyword: '@string(5,50)',
+    page: '@integer(3,1000)',
+    size: '20',
+    gratefulId: '@guid',
+  }
+}
+export function DaDuNanTongQianCaoYongDaoWhiteKeyBorardResp() {
+  return {
+    avatar: '@image(200x100, @color, @color)',
+    avatarId: '@guid',
+    imKeyBorardId: '@guid',
+    isForward: '@boolean',
+    isBirdMember: '@boolean',
+    gratefulId: '@guid',
+    gratefulName: '@ctitle(5,10)',
+    keyBorardName: '@ctitle(5,10)',
+  }
+}
+export function DaDuNanTongQianCaoYongDaoWhiteListReq() {
+  return {
+    getImBirdId: '@guid',
+    gratefulId: '@guid',
+  }
+}
+export function DaDuNanXinXiWhiteResp() {
+  return {
+    whiteId: '@guid',
+    whiteName: '@ctitle(5,10)',
+    imBirdId: '@guid',
+  }
+}
+export function DaDuNanYongDaoWhiteListReq() {
+  return {
+    getImBirdId: '@guid',
+    parentId: '@guid',
+    gratefulId: '@guid',
+  }
+}
+export function DengLuXiangYingShiTi() {
+  return {
+    channel: '@string(5,50)',
+    code: 200,
+    imKeyBorardId: '@guid',
+    newKeyBorard: '@boolean',
+    openId: '@guid',
+    satoken: '@string(5,50)',
+    setPassWord: '@boolean',
+    token: '@string(5,50)',
+    tokenTimeOut: '@datetime',
+    keyBorardId: '@guid',
+  }
+}
 export function EnterBirdReq() {
   return {
     f2fBirdId: '@guid',
     imKeyBorardId: '@guid',
+  }
+}
+export function ErWeiMa() {
+  return {
+    id: '@guid',
+    type: '@string(5,50)',
   }
 }
 export function FileDTO() {
@@ -980,16 +1104,6 @@ export function FriendshipDetailResp() {
     keyBorardName: '@ctitle(5,10)',
   }
 }
-export function FriendshipResp() {
-  return {
-    avatar: '@image(200x100, @color, @color)',
-    imBirdId: '@guid',
-    imKeyBorardId: '@guid',
-    pinyin: '@string(5,50)',
-    gratefulName: '@ctitle(5,10)',
-    keyBorardName: '@ctitle(5,10)',
-  }
-}
 export function FriendshipKeyBorardDetailResp() {
   return {
     enableSendMsg: '@boolean',
@@ -1009,41 +1123,82 @@ export function FriendshipKeyBorardDetailResp() {
     showRemark: '@boolean',
   }
 }
+export function FriendshipResp() {
+  return {
+    avatar: '@image(200x100, @color, @color)',
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+    pinyin: '@string(5,50)',
+    gratefulName: '@ctitle(5,10)',
+    keyBorardName: '@ctitle(5,10)',
+  }
+}
 export function GetUnreadPageReq() {
   return {
     imKeyBorardId: '@guid',
     'requestIdList|1-20': ['@string(5,50)'],
   }
 }
-export function BirdF2fKeyBorardListResp() {
+export function GratefulInfoRespLvKeXinXi() {
   return {
-    avatarUrl: '@image(200x100, @color, @color)',
-    f2fBirdId: '@guid',
-    imKeyBorardId: '@guid',
+    avatar: '@image(200x100, @color, @color)',
+    channel: '@string(5,50)',
+    checked: '@boolean',
+    kind: '@string(5,50)',
+    phone: '@integer(13100000000,18999999999)',
+    post: '@string(5,50)',
+    gratefulId: '@guid',
+    gratefulName: '@ctitle(5,10)',
     keyBorardName: '@ctitle(5,10)',
   }
 }
-export function BirdFileUploadReq() {
+export function GreenBookGratefulInfoResp() {
   return {
-    bizId: '@guid',
-    bizSource: /BASE_PLATFORM_SENDER|BIGDATA|CRM|FLEX_WORK|HR_OA_SCHOOL|OA/,
-    bpSenderId: '@guid',
-    'fileList|1-20': [FileDTO()],
+    avatar: '@image(200x100, @color, @color)',
+    checked: '@boolean',
+    kind: '@string(5,50)',
+    showImBirdId: '@guid',
+    gratefulId: '@guid',
+    gratefulName: '@ctitle(5,10)',
   }
 }
-export function BirdSetNoticeAndTopReq() {
+export function HaoYouFriendshipReq() {
   return {
-    imBirdId: '@guid',
+    imFriendId: '@guid',
     imKeyBorardId: '@guid',
     isNotice: '@boolean',
     isTop: '@boolean',
-    needHiallMsg: '@boolean',
   }
 }
-export function BirdTransferReq() {
+export function HaoYouYongDaoChuXingFriendshipQueryReq() {
   return {
-    imBirdId: '@guid',
+    excludeMemberImBirdId: '@guid',
     imKeyBorardId: '@guid',
+    isForward: '@boolean',
+    keyword: '@string(5,50)',
+    page: '@integer(3,1000)',
+    size: '20',
+  }
+}
+export function HuoQuALiYunQianMingRuCan() {
+  return {
+    fileTypeE: /AUDIO|CARD_MSG|FILE|GROUP_AVATAR|IMG|MSG|TRANS_MSG|USER_AVATAR|VIDEO|VOICE/,
+    signContent: '@string(5,50)',
+  }
+}
+export function HuoQubucket() {
+  return {
+    fileTypeE: /AUDIO|CARD_MSG|FILE|GROUP_AVATAR|IMG|MSG|TRANS_MSG|USER_AVATAR|VIDEO|VOICE/,
+    sceneE: /IM/,
+  }
+}
+export function HuoQuLvKeTongQianCaoDuiYingimTongQianCaoXinXiRuCan() {
+  return {
+    'bpKeyBorardIds|1-20': ['@string(5,50)'],
+    channel: '@string(5,50)',
+    currentBpKeyBorardId: '@guid',
+    needRelation: '@boolean',
+    needGrateful: '@boolean',
   }
 }
 export function InnerBirdDissolveReq() {
@@ -1080,12 +1235,119 @@ export function InviteToBirdRespYaoQingRuNiaoWoXiangYing() {
     inviteMsg: '@string(5,50)',
   }
 }
+export function KeyBorardBindReq() {
+  return {
+    channel: '@string(5,50)',
+    deviceId: '@guid',
+    imKeyBorardId: '@guid',
+  }
+}
+export function KeyBorardBindResp() {}
+export function KeyBorardBlackResp() {
+  return {
+    avatarUrl: '@image(200x100, @color, @color)',
+    id: '@guid',
+    imKeyBorardId: '@guid',
+    gratefulName: '@ctitle(5,10)',
+    keyBorardName: '@ctitle(5,10)',
+  }
+}
+export function KeyBorardCancelReq() {
+  return {
+    imKeyBorardId: '@guid',
+    smsCode: '@string(5,50)',
+  }
+}
+export function KeyBorardInformSaveReq() {
+  return {
+    content: '@string(5,50)',
+    peerId: '@guid',
+    type: '@string(5,50)',
+  }
+}
+export function KeyBorardListAllGratefulResp() {
+  return {
+    hasMore: '@boolean',
+    gratefulId: '@guid',
+    gratefulName: '@ctitle(5,10)',
+    'keyBorardList|1-20': [DaDuNanTongQianCaoYongDaoWhiteKeyBorardResp()],
+  }
+}
+export function KeyBorardRespDuiXiang() {
+  return {
+    avatar: '@image(200x100, @color, @color)',
+    whiteId: '@guid',
+    whiteName: '@ctitle(5,10)',
+    email: '@email',
+    birdMemberRemark: '@string(5,50)',
+    imKeyBorardId: '@guid',
+    isApprove: '@boolean',
+    isBirdApprove: '@boolean',
+    isNamePhoneSearch: '@boolean',
+    isNoticed: '@boolean',
+    isRcvStrangerMsg: '@boolean',
+    job: '@string(5,50)',
+    nickName: '@ctitle(5,10)',
+    parentWhitePath: '@string(5,50)',
+    phone: '@integer(13100000000,18999999999)',
+    pinyin: '@string(5,50)',
+    post: '@string(5,50)',
+    requestChannel: '@string(5,50)',
+    sex: '@string(5,50)',
+    status: '@string(5,50)',
+    gratefulId: '@guid',
+    gratefulName: '@ctitle(5,10)',
+    keyBorardName: '@ctitle(5,10)',
+  }
+}
+export function LiShiXiaoXiMessageHistoryReq() {
+  return {
+    imBirdId: '@guid',
+    orderType: '@integer(3,1000)',
+    page: '@integer(3,1000)',
+    sequence: '@string(5,50)',
+    size: '20',
+  }
+}
 export function ListFriendshipQueryReq() {
   return {
     excludeMemberImBirdId: '@guid',
     imKeyBorardId: '@guid',
     isForward: '@boolean',
     keyword: '@string(5,50)',
+  }
+}
+export function LvKeTongQianCaoDaoimTongQianCaoXiangYingShiTi() {
+  return {
+    avatar: '@image(200x100, @color, @color)',
+    avatarId: '@guid',
+    bpKeyBorardId: '@guid',
+    email: '@email',
+    imKeyBorardId: '@guid',
+    nickName: '@ctitle(5,10)',
+    phone: '@integer(13100000000,18999999999)',
+    'relationE|1-20': ['@string(5,50)'],
+    sex: '@string(5,50)',
+    status: '@string(5,50)',
+    gratefulId: '@guid',
+    gratefulName: '@ctitle(5,10)',
+    keyBorardName: '@ctitle(5,10)',
+  }
+}
+export function MaiShaoBingXiaoXiTuiSongimXiaoXi() {
+  return {
+    atBpKeyBorardIds: '@string(5,50)',
+    'bizIdList|1-20': ['@string(5,50)'],
+    bizSource: /BASE_PLATFORM_SENDER|BIGDATA|CRM|FLEX_WORK|HR_OA_SCHOOL|OA/,
+    bpSenderId: '@guid',
+    content: '@string(5,50)',
+    contentType:
+      /AUDIO|FILE|IMG|LINK|STRUCTUAL|TEXT|TIP|TIP_DIFF_TENANT_FRIEND|TIP_FRIEND_BLACK|TIP_FRIEND_REJECT_MSG|TIP_KICKOUT_GROUP_PART|TIP_LAUNCH_GROUP_PART|TIP_MODIFY_GROUP_NAME_PART|TIP_NEW_ADD_SELF_GROUP_PART|TIP_OPERATE_CHAT_STRANGER_CNT|TIP_OPERATE_CHAT_STRANGER_MSG_CNT|TIP_USER_UNNORMAL|VIDEO|VOICE/,
+    footer: FooterWrapper(),
+    'imBirdIdList|1-20': ['@string(5,50)'],
+    'receiverBpKeyBorardIdList|1-20': ['@string(5,50)'],
+    title: '@ctitle(5,10)',
+    type: '@string(5,50)',
   }
 }
 export function MemberBirdStatusResp() {
@@ -1117,6 +1379,15 @@ export function MessageProcessReq() {
     msgId: '@guid',
   }
 }
+export function mockJiaRenRuNiaoWoRuCan() {
+  return {
+    bizId: '@guid',
+    bizSourceE: /BASE_PLATFORM_SENDER|BIGDATA|CRM|FLEX_WORK|HR_OA_SCHOOL|OA/,
+    cityId: '@guid',
+    'imKeyBorardIds|1-20': ['@string(5,50)'],
+    schoolName: '@ctitle(5,10)',
+  }
+}
 export function MsgSearchReq() {
   return {
     friendId: '@guid',
@@ -1126,6 +1397,198 @@ export function MsgSearchReq() {
     size: '20',
     type: '@string(5,50)',
     keyBorardId: '@guid',
+  }
+}
+export function NaBuMaiShaoBingNiaoWoBaoCunChuCan() {
+  return {
+    'errorKeyBorardIds|1-20': ['@string(5,50)'],
+    birdId: '@guid',
+    ownerBpKeyBorardId: '@guid',
+  }
+}
+export function NaBuNiaoWoBaoCunNiaoWoChengYuanRuCan() {
+  return {
+    bizId: '@guid',
+    bizSource: /BASE_PLATFORM_SENDER|BIGDATA|CRM|FLEX_WORK|HR_OA_SCHOOL|OA/,
+    'memberBpKeyBorardIdList|1-20': ['@string(5,50)'],
+    ownerBpKeyBorardId: '@guid',
+  }
+}
+export function NaBuNiaoWoBaoCunRuCan() {
+  return {
+    avatarUrl: '@image(200x100, @color, @color)',
+    bizId: '@guid',
+    bizSource: /BASE_PLATFORM_SENDER|BIGDATA|CRM|FLEX_WORK|HR_OA_SCHOOL|OA/,
+    desc: '@string(5,50)',
+    'memberBpKeyBorardIdList|1-20': ['@string(5,50)'],
+    name: '@ctitle(5,10)',
+    ownerBpKeyBorardId: '@guid',
+  }
+}
+export function NaBuXiaoXiSouSuoQingQiu() {
+  return {
+    bpKeyBorardId: '@guid',
+    birdId: '@guid',
+    keywords: '@string(5,50)',
+    page: '@integer(3,1000)',
+    size: '20',
+    type: '@string(5,50)',
+  }
+}
+export function NiaoWoBaoCunRuCan() {
+  return {
+    desc: '@string(5,50)',
+    'memberIdList|1-20': ['@string(5,50)'],
+    name: '@ctitle(5,10)',
+    ownerId: '@guid',
+  }
+}
+export function NiaoWoChengYuanFenYeBirdMemberPageReq() {
+  return {
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+    isDeleteMember: '@boolean',
+    isFilterCurrentKeyBorard: '@boolean',
+    keyword: '@string(5,50)',
+    memberType: '@string(5,50)',
+    needFriendRelation: '@boolean',
+    page: '@integer(3,1000)',
+    size: '20',
+    sortE: /GBK_NAME_ASC|GBK_NAME_DESC|TYPE_CREATED_ASC/,
+  }
+}
+export function NiaoWoChengYuanJiaShiBirdMemberSaveReq() {
+  return {
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+    'imKeyBorardIdList|1-20': ['@string(5,50)'],
+  }
+}
+export function NiaoWoChengYuanSaoXueBirdMemberDelReq() {
+  return {
+    imBirdId: '@guid',
+    'imMemberIdList|1-20': ['@string(5,50)'],
+    imKeyBorardId: '@guid',
+  }
+}
+export function NiaoWoChengYuanXinXiDuiXiangBirdMemberResp() {
+  return {
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+    isFriendship: '@boolean',
+    isNotice: '@boolean',
+    isTop: '@boolean',
+    memberAvatar: '@image(200x100, @color, @color)',
+    memberAvatarId: '@guid',
+    memberName: '@ctitle(5,10)',
+    memberPhone: '@integer(13100000000,18999999999)',
+    memberRemark: '@string(5,50)',
+    memberGratefulName: '@ctitle(5,10)',
+    memberType: '@string(5,50)',
+  }
+}
+export function NiaoWoChengYuanYongDaoChuXingRuCan() {
+  return {
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+    isDeleteMember: '@boolean',
+    keyword: '@string(5,50)',
+    memberType: '@string(5,50)',
+    sortE: /GBK_NAME_ASC|GBK_NAME_DESC|TYPE_CREATED_ASC/,
+  }
+}
+export function NiaoWoDuiXiangBirdDetailResp() {
+  return {
+    avatar: '@image(200x100, @color, @color)',
+    createType: '@string(5,50)',
+    whiteId: '@guid',
+    whitePath: '@string(5,50)',
+    desc: '@string(5,50)',
+    birdAttr: '@string(5,50)',
+    birdBelong: '@string(5,50)',
+    birdType: '@string(5,50)',
+    imBirdId: '@guid',
+    isAdminConfirm: '@boolean',
+    isAllSilence: '@boolean',
+    isAt: '@boolean',
+    isAtAll: '@boolean',
+    isAttention: '@boolean',
+    isModifyName: '@boolean',
+    isNotice: '@boolean',
+    isOrdinaryInvent: '@boolean',
+    isPrivate: '@boolean',
+    isTop: '@boolean',
+    lastAckSequence: '@string(5,50)',
+    msgApplyType: /FORWARD|REPLY|/,
+    msgContent: '@string(5,50)',
+    msgContentType: '@string(5,50)',
+    msgFileUrl: '@image(200x100, @color, @color)',
+    msgId: '@guid',
+    msgSenderName: '@ctitle(5,10)',
+    msgSequence: '@string(5,50)',
+    msgTime: '@datetime',
+    name: '@ctitle(5,10)',
+    notice: '@string(5,50)',
+    ownerId: '@guid',
+    status: '@string(5,50)',
+    gratefulId: '@guid',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+    unreadCount: '@integer(3,1000)',
+  }
+}
+export function NiaoWoDuiXiangBirdResp() {
+  return {
+    avatar: '@image(200x100, @color, @color)',
+    bizId: '@guid',
+    bizSource: '@string(5,50)',
+    hiallType: '@string(5,50)',
+    createType: '@string(5,50)',
+    birdAttr: '@string(5,50)',
+    birdType: '@string(5,50)',
+    imBirdId: '@guid',
+    name: '@ctitle(5,10)',
+    ownerId: '@guid',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+export function NiaoWoFenYeBirdPageListReq() {
+  return {
+    birdAttrE: /CLASSMATE|COMPANY|DEPT|FELLOW|INDUSTRY|INTEREST|LEISURE|PROJECT|SCHOOLMATE/,
+    birdTypeE: /INNER|OUTER/,
+    imKeyBorardId: '@guid',
+    keyword: '@string(5,50)',
+    name: '@ctitle(5,10)',
+    page: '@integer(3,1000)',
+    size: '20',
+  }
+}
+export function NiaoWoSheZhiZhiNenYiGeZhiBuWeiNullBirdSetReq() {
+  return {
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+    isAdminConfirm: '@boolean',
+    isAllSilence: '@boolean',
+    isAtAll: '@boolean',
+    isModifyName: '@boolean',
+    isOrdinaryInvent: '@boolean',
+    isPrivate: '@boolean',
+  }
+}
+export function NiaoWoWenJianShangChuanXiangYingShiTi() {
+  return {
+    'files|1-20': [FileDTO()],
+    imBirdId: '@guid',
+  }
+}
+export function NiaoWoXinXiBirdDetailReq() {
+  return {
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+    needHiallMsg: '@boolean',
   }
 }
 export function PhoneFriendshipResp() {
@@ -1155,6 +1618,67 @@ export function PutFileResp() {
     url: '@url',
   }
 }
+export function QianMingWenJianShangChuanQingQiuRuCanShiTi() {
+  return {
+    'reqs|1-20': [ShengChengWenJianfileId()],
+  }
+}
+export function QianMingWenJianXiangYing() {
+  return {
+    accessId: '@guid',
+    bucketName: '@ctitle(5,10)',
+    callback: '@string(5,50)',
+    dir: '@string(5,50)',
+    endpoint: '@string(5,50)',
+    expire: '@string(5,50)',
+    host: '@string(5,50)',
+    policy: '@string(5,50)',
+    signature: '@string(5,50)',
+  }
+}
+export function QingKongXiaoXiJiLu() {
+  return {
+    channel: '@string(5,50)',
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+  }
+}
+export function QingKongXiaoXiRuCan() {
+  return {
+    imFriendId: '@guid',
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+  }
+}
+export function QingQiuHuiFuXiaoXiYongDaoReqMsgDetailResp() {
+  return {
+    content: '@string(5,50)',
+    created: '@datetime',
+    isRead: '@boolean',
+    receiverId: '@guid',
+    receiverName: '@ctitle(5,10)',
+    requestId: '@guid',
+    requestMsgId: '@guid',
+    senderId: '@guid',
+    senderName: '@ctitle(5,10)',
+  }
+}
+export function QingQiuXiaoXiDuBaoKuoYanChangChunHuaJiHuiFuXiaoXiDuRequestReadReq() {
+  return {
+    imKeyBorardId: '@guid',
+    requestId: '@guid',
+    'requestMsgIdList|1-20': ['@string(5,50)'],
+  }
+}
+export function QingQiuXiaoXiYongDaoRequestPageListReq() {
+  return {
+    imKeyBorardId: '@guid',
+    keyword: '@string(5,50)',
+    page: '@integer(3,1000)',
+    size: '20',
+    type: '@integer(3,1000)',
+  }
+}
 export function QueryLastMessageResp() {
   return {
     appType: '@integer(3,1000)',
@@ -1179,6 +1703,14 @@ export function RequestMsgReqDuiXiang() {
     receiverId: '@guid',
     requestId: '@guid',
     senderId: '@guid',
+  }
+}
+export function RuNiaoWoQingQiuAddBirdReq() {
+  return {
+    applyId: '@guid',
+    imBirdId: '@guid',
+    inviterId: '@guid',
+    type: '@integer(3,1000)',
   }
 }
 export function SaveRandomReq() {
@@ -1261,6 +1793,35 @@ export function SetShowPhoneReq() {
     isShowPhone: '@boolean',
   }
 }
+export function ShangChuanALiYunQianMingXiangYing() {
+  return {
+    accessKey: '@string(5,50)',
+    bucketName: '@ctitle(5,10)',
+    dir: '@string(5,50)',
+    endpoint: '@string(5,50)',
+    sign: '@string(5,50)',
+  }
+}
+export function ShengChengWenJianfileId() {
+  return {
+    bucketName: '@ctitle(5,10)',
+    dir: '@string(5,50)',
+    fileSize: '@string(5,50)',
+    fileTime: '@datetime',
+    height: '@integer(3,1000)',
+    originalFileName: '@ctitle(5,10)',
+    ossFileName: '@ctitle(5,10)',
+    type: /AUDIO|CARD_MSG|FILE|GROUP_AVATAR|IMG|MSG|TRANS_MSG|USER_AVATAR|VIDEO|VOICE/,
+    width: '@integer(3,1000)',
+  }
+}
+export function SheZhiMoRenZhiXieChang() {
+  return {
+    kind: '@string(5,50)',
+    gratefulId: '@guid',
+    gratefulName: '@ctitle(5,10)',
+  }
+}
 export function SwitchKeyBorardListResp() {
   return {
     avatar: '@image(200x100, @color, @color)',
@@ -1276,17 +1837,38 @@ export function SwitchKeyBorardReq() {
     imKeyBorardId: '@guid',
   }
 }
-export function GratefulInfoRespLvKeXinXi() {
+export function TianJiaHaoYouAddFriendReq() {
   return {
-    avatar: '@image(200x100, @color, @color)',
     channel: '@string(5,50)',
-    checked: '@boolean',
-    kind: '@string(5,50)',
+    content: '@string(5,50)',
+    friendRemark: '@string(5,50)',
+    imFriendId: '@guid',
+    imKeyBorardId: '@guid',
+    isTop: '@boolean',
     phone: '@integer(13100000000,18999999999)',
-    post: '@string(5,50)',
-    gratefulId: '@guid',
-    gratefulName: '@ctitle(5,10)',
-    keyBorardName: '@ctitle(5,10)',
+  }
+}
+export function TianJiaWoWeiHaoYouCongMingFangShi() {
+  return {
+    imKeyBorardId: '@guid',
+    'requestChannels|1-20': ['@string(5,50)'],
+  }
+}
+export function TongGuoJuJueApproveReq() {
+  return {
+    imKeyBorardId: '@guid',
+    isNotice: '@boolean',
+    permitted: '@boolean',
+    remark: '@string(5,50)',
+    requestId: '@guid',
+  }
+}
+export function TongQianCaoSuoYouLvKeKeyBorardListAllGratefulReq() {
+  return {
+    excludeMemberImBirdId: '@guid',
+    imKeyBorardId: '@guid',
+    isForward: '@boolean',
+    keyword: '@string(5,50)',
   }
 }
 export function UnReadComPageXiaoDaoXiaoXiYongDaoXiangYing() {
@@ -1318,69 +1900,68 @@ export function UploadFileReq() {
     width: '@integer(3,1000)',
   }
 }
-export function KeyBorardBindReq() {
+export function WaiBuShuiDaoSouSuoRuCan() {
   return {
-    channel: '@string(5,50)',
-    deviceId: '@guid',
-    imKeyBorardId: '@guid',
-  }
-}
-export function KeyBorardBindResp() {}
-export function KeyBorardBlackResp() {
-  return {
-    avatarUrl: '@image(200x100, @color, @color)',
-    id: '@guid',
-    imKeyBorardId: '@guid',
-    gratefulName: '@ctitle(5,10)',
+    page: '@integer(3,1000)',
+    size: '20',
+    gratefulId: '@guid',
     keyBorardName: '@ctitle(5,10)',
   }
 }
-export function KeyBorardCancelReq() {
-  return {
-    imKeyBorardId: '@guid',
-    smsCode: '@string(5,50)',
-  }
-}
-export function KeyBorardInformSaveReq() {
-  return {
-    content: '@string(5,50)',
-    peerId: '@guid',
-    type: '@string(5,50)',
-  }
-}
-export function KeyBorardListAllGratefulResp() {
-  return {
-    hasMore: '@boolean',
-    gratefulId: '@guid',
-    gratefulName: '@ctitle(5,10)',
-    'keyBorardList|1-20': [DaDuNanTongQianCaoYongDaoWhiteKeyBorardResp()],
-  }
-}
-export function KeyBorardRespDuiXiang() {
+export function WaiBuShuiDaoXiangYing() {
   return {
     avatar: '@image(200x100, @color, @color)',
-    whiteId: '@guid',
-    whiteName: '@ctitle(5,10)',
-    email: '@email',
-    birdMemberRemark: '@string(5,50)',
+    bpKeyBorardId: '@guid',
+    channel: '@string(5,50)',
+    desktopNickName: '@ctitle(5,10)',
+    desktopKeyBorardName: '@ctitle(5,10)',
     imKeyBorardId: '@guid',
-    isApprove: '@boolean',
-    isBirdApprove: '@boolean',
-    isNamePhoneSearch: '@boolean',
-    isNoticed: '@boolean',
-    isRcvStrangerMsg: '@boolean',
-    job: '@string(5,50)',
-    nickName: '@ctitle(5,10)',
-    parentWhitePath: '@string(5,50)',
+    isFriend: '@boolean',
+    isBirdMember: '@boolean',
+    isNormal: '@boolean',
+    permitChannel: '@boolean',
     phone: '@integer(13100000000,18999999999)',
     pinyin: '@string(5,50)',
-    post: '@string(5,50)',
-    requestChannel: '@string(5,50)',
-    sex: '@string(5,50)',
-    status: '@string(5,50)',
-    gratefulId: '@guid',
     gratefulName: '@ctitle(5,10)',
     keyBorardName: '@ctitle(5,10)',
+  }
+}
+export function WaiBuZhiXieChangChuCan() {
+  return {
+    area: '@string(5,50)',
+    authStatus: '@string(5,50)',
+    avatar: '@image(200x100, @color, @color)',
+    chiefly: '@boolean',
+    city: '@city',
+    contactNumber: '@string(5,50)',
+    country: '@string(5,50)',
+    whiteId: '@guid',
+    empNum: '@integer(3,1000)',
+    doorRealGreen: '@string(5,50)',
+    firmSize: '@string(5,50)',
+    id: '@guid',
+    imBirdId: '@guid',
+    industryInvolved: '@string(5,50)',
+    introduction: '@string(5,50)',
+    legalIdCardNo: '@string(5,50)',
+    legalCat: '@string(5,50)',
+    licenseUnifiedCode: '@string(5,50)',
+    licenseUnifiedUrl: '@image(200x100, @color, @color)',
+    location: '@string(5,50)',
+    mark: '@string(5,50)',
+    name: '@ctitle(5,10)',
+    province: '@province',
+    serialNum: '@string(5,50)',
+    gratefulId: '@guid',
+    xmail: '@string(5,50)',
+  }
+}
+export function WaiBuZhiXieChangSouSuoRuCan() {
+  return {
+    doorName: '@ctitle(5,10)',
+    flag: '@boolean',
+    page: '@integer(3,1000)',
+    size: '20',
   }
 }
 export function WaterFallPageKeyBorardBlackResp() {
@@ -1390,51 +1971,9 @@ export function WaterFallPageKeyBorardBlackResp() {
     requestTime: '@datetime',
   }
 }
-export function aliyunSTSJianQuanFanHuiZhi() {
+export function WenJianPiLiangBaoCunXiangYingShiTi() {
   return {
-    accessKeyIdSts: '@string(5,50)',
-    secretKeyIdSts: '@string(5,50)',
-    securityToken: '@string(5,50)',
-  }
-}
-export function mockJiaRenRuNiaoWoRuCan() {
-  return {
-    bizId: '@guid',
-    bizSourceE: /BASE_PLATFORM_SENDER|BIGDATA|CRM|FLEX_WORK|HR_OA_SCHOOL|OA/,
-    cityId: '@guid',
-    'imKeyBorardIds|1-20': ['@string(5,50)'],
-    schoolName: '@ctitle(5,10)',
-  }
-}
-export function ShangChuanALiYunQianMingXiangYing() {
-  return {
-    accessKey: '@string(5,50)',
-    bucketName: '@ctitle(5,10)',
-    dir: '@string(5,50)',
-    endpoint: '@string(5,50)',
-    sign: '@string(5,50)',
-  }
-}
-export function MaiShaoBingXiaoXiTuiSongimXiaoXi() {
-  return {
-    atBpKeyBorardIds: '@string(5,50)',
-    'bizIdList|1-20': ['@string(5,50)'],
-    bizSource: /BASE_PLATFORM_SENDER|BIGDATA|CRM|FLEX_WORK|HR_OA_SCHOOL|OA/,
-    bpSenderId: '@guid',
-    content: '@string(5,50)',
-    contentType:
-      /AUDIO|FILE|IMG|LINK|STRUCTUAL|TEXT|TIP|TIP_DIFF_TENANT_FRIEND|TIP_FRIEND_BLACK|TIP_FRIEND_REJECT_MSG|TIP_KICKOUT_GROUP_PART|TIP_LAUNCH_GROUP_PART|TIP_MODIFY_GROUP_NAME_PART|TIP_NEW_ADD_SELF_GROUP_PART|TIP_OPERATE_CHAT_STRANGER_CNT|TIP_OPERATE_CHAT_STRANGER_MSG_CNT|TIP_USER_UNNORMAL|VIDEO|VOICE/,
-    footer: FooterWrapper(),
-    'imBirdIdList|1-20': ['@string(5,50)'],
-    'receiverBpKeyBorardIdList|1-20': ['@string(5,50)'],
-    title: '@ctitle(5,10)',
-    type: '@string(5,50)',
-  }
-}
-export function ErWeiMa() {
-  return {
-    id: '@guid',
-    type: '@string(5,50)',
+    'resps|1-20': [FileResp()],
   }
 }
 export function XiaoDaoXiaoXi() {
@@ -1521,226 +2060,10 @@ export function XiaoDaoXiaoXiYongDaoXiangYing() {
     keyBorardid: '@guid',
   }
 }
-export function XiuGaiBeiZhuModifyRemarkBirdReq() {
-  return {
-    birdRemark: '@string(5,50)',
-    imBirdId: '@guid',
-    imKeyBorardId: '@guid',
-  }
-}
-export function XiuGaiBeiZhuModifyfriendRemarkReq() {
-  return {
-    friendRemark: '@string(5,50)',
-    imFriendId: '@guid',
-    imKeyBorardId: '@guid',
-  }
-}
-export function XiuGaiTongQianCaoTouXiang() {
-  return {
-    avatar: '@image(200x100, @color, @color)',
-  }
-}
-export function XiuGaiNiaoWoTaiYangHuaRuCanModifyBirdNameReq() {
-  return {
-    birdName: '@ctitle(5,10)',
-    imBirdId: '@guid',
-    imKeyBorardId: '@guid',
-  }
-}
-export function RuNiaoWoQingQiuAddBirdReq() {
-  return {
-    applyId: '@guid',
-    imBirdId: '@guid',
-    inviterId: '@guid',
-    type: '@integer(3,1000)',
-  }
-}
-export function NaBuMaiShaoBingNiaoWoBaoCunChuCan() {
-  return {
-    'errorKeyBorardIds|1-20': ['@string(5,50)'],
-    birdId: '@guid',
-    ownerBpKeyBorardId: '@guid',
-  }
-}
-export function NaBuXiaoXiSouSuoQingQiu() {
-  return {
-    bpKeyBorardId: '@guid',
-    birdId: '@guid',
-    keywords: '@string(5,50)',
-    page: '@integer(3,1000)',
-    size: '20',
-    type: '@string(5,50)',
-  }
-}
-export function NaBuNiaoWoBaoCunRuCan() {
-  return {
-    avatarUrl: '@image(200x100, @color, @color)',
-    bizId: '@guid',
-    bizSource: /BASE_PLATFORM_SENDER|BIGDATA|CRM|FLEX_WORK|HR_OA_SCHOOL|OA/,
-    desc: '@string(5,50)',
-    'memberBpKeyBorardIdList|1-20': ['@string(5,50)'],
-    name: '@ctitle(5,10)',
-    ownerBpKeyBorardId: '@guid',
-  }
-}
-export function NaBuNiaoWoBaoCunNiaoWoChengYuanRuCan() {
-  return {
-    bizId: '@guid',
-    bizSource: /BASE_PLATFORM_SENDER|BIGDATA|CRM|FLEX_WORK|HR_OA_SCHOOL|OA/,
-    'memberBpKeyBorardIdList|1-20': ['@string(5,50)'],
-    ownerBpKeyBorardId: '@guid',
-  }
-}
-export function ChuangJianXiaoDaoXiaoXi() {
-  return {
-    channel: '@string(5,50)',
-    checkCache: '@boolean',
-    'birdIdList|1-20': ['@string(5,50)'],
-    privateBirdId: '@guid',
-    'receiverIdList|1-20': ['@string(5,50)'],
-    updateBirdHiall: '@boolean',
-  }
-}
-export function LiShiXiaoXiMessageHistoryReq() {
-  return {
-    imBirdId: '@guid',
-    orderType: '@integer(3,1000)',
-    page: '@integer(3,1000)',
-    sequence: '@string(5,50)',
-    size: '20',
-  }
-}
-export function WaiBuZhiXieChangChuCan() {
-  return {
-    area: '@string(5,50)',
-    authStatus: '@string(5,50)',
-    avatar: '@image(200x100, @color, @color)',
-    chiefly: '@boolean',
-    city: '@city',
-    contactNumber: '@string(5,50)',
-    country: '@string(5,50)',
-    whiteId: '@guid',
-    empNum: '@integer(3,1000)',
-    doorRealGreen: '@string(5,50)',
-    firmSize: '@string(5,50)',
-    id: '@guid',
-    imBirdId: '@guid',
-    industryInvolved: '@string(5,50)',
-    introduction: '@string(5,50)',
-    legalIdCardNo: '@string(5,50)',
-    legalCat: '@string(5,50)',
-    licenseUnifiedCode: '@string(5,50)',
-    licenseUnifiedUrl: '@image(200x100, @color, @color)',
-    location: '@string(5,50)',
-    mark: '@string(5,50)',
-    name: '@ctitle(5,10)',
-    province: '@province',
-    serialNum: '@string(5,50)',
-    gratefulId: '@guid',
-    xmail: '@string(5,50)',
-  }
-}
-export function WaiBuZhiXieChangSouSuoRuCan() {
-  return {
-    doorName: '@ctitle(5,10)',
-    flag: '@boolean',
-    page: '@integer(3,1000)',
-    size: '20',
-  }
-}
-export function WaiBuShuiDaoXiangYing() {
-  return {
-    avatar: '@image(200x100, @color, @color)',
-    bpKeyBorardId: '@guid',
-    channel: '@string(5,50)',
-    desktopNickName: '@ctitle(5,10)',
-    desktopKeyBorardName: '@ctitle(5,10)',
-    imKeyBorardId: '@guid',
-    isFriend: '@boolean',
-    isBirdMember: '@boolean',
-    isNormal: '@boolean',
-    permitChannel: '@boolean',
-    phone: '@integer(13100000000,18999999999)',
-    pinyin: '@string(5,50)',
-    gratefulName: '@ctitle(5,10)',
-    keyBorardName: '@ctitle(5,10)',
-  }
-}
-export function WaiBuShuiDaoSouSuoRuCan() {
-  return {
-    page: '@integer(3,1000)',
-    size: '20',
-    gratefulId: '@guid',
-    keyBorardName: '@ctitle(5,10)',
-  }
-}
-export function HaoYouFriendshipReq() {
-  return {
-    imFriendId: '@guid',
-    imKeyBorardId: '@guid',
-    isNotice: '@boolean',
-    isTop: '@boolean',
-  }
-}
-export function HaoYouYongDaoChuXingFriendshipQueryReq() {
-  return {
-    excludeMemberImBirdId: '@guid',
-    imKeyBorardId: '@guid',
-    isForward: '@boolean',
-    keyword: '@string(5,50)',
-    page: '@integer(3,1000)',
-    size: '20',
-  }
-}
-export function WenJianPiLiangBaoCunXiangYingShiTi() {
-  return {
-    'resps|1-20': [FileResp()],
-  }
-}
 export function XiaoXiack() {
   return {
     imBirdId: '@guid',
     imKeyBorardId: '@guid',
-  }
-}
-export function XiaoXiNaBuXiangYingShiTi() {
-  return {
-    applyType: /FORWARD|REPLY|/,
-    atKeyBorardIds: '@string(5,50)',
-    atKeyBorardNames: '@ctitle(5,10)',
-    bpKeyBorardId: '@guid',
-    'cardMessageList|1-20': [ZhuanFaXiaoXiDuiXiang()],
-    channelFile: FileResp(),
-    content: '@string(5,50)',
-    contentType: '@string(5,50)',
-    created: '@datetime',
-    fileId: '@guid',
-    fileName: '@ctitle(5,10)',
-    fileSize: '@string(5,50)',
-    fileText: '@string(5,50)',
-    fileTime: '@datetime',
-    fileType: '@string(5,50)',
-    fileUrl: '@image(200x100, @color, @color)',
-    footer: FooterWrapper(),
-    birdId: '@guid',
-    height: '@integer(3,1000)',
-    id: '@guid',
-    isAlarm: '@boolean',
-    isSystem: '@boolean',
-    nickName: '@ctitle(5,10)',
-    senderAvatar: '@image(200x100, @color, @color)',
-    senderId: '@guid',
-    senderName: '@ctitle(5,10)',
-    sequence: '@string(5,50)',
-    title: '@ctitle(5,10)',
-    width: '@integer(3,1000)',
-  }
-}
-export function XiaoXiSaoXue() {
-  return {
-    imBirdId: '@guid',
-    imKeyBorardId: '@guid',
-    'messageIdList|1-20': ['@string(5,50)'],
   }
 }
 export function XiaoXiDuiXiang() {
@@ -1785,358 +2108,13 @@ export function XiaoXiGunDongQingQiuTi() {
     upSize: '@integer(3,1000)',
   }
 }
-export function XiaoXiXiangQingMessageDetailReq() {
-  return {
-    messageId: '@guid',
-  }
-}
-export function TianJiaHaoYouAddFriendReq() {
-  return {
-    channel: '@string(5,50)',
-    content: '@string(5,50)',
-    friendRemark: '@string(5,50)',
-    imFriendId: '@guid',
-    imKeyBorardId: '@guid',
-    isTop: '@boolean',
-    phone: '@integer(13100000000,18999999999)',
-  }
-}
-export function TianJiaWoWeiHaoYouCongMingFangShi() {
-  return {
-    imKeyBorardId: '@guid',
-    'requestChannels|1-20': ['@string(5,50)'],
-  }
-}
-export function QingKongXiaoXiRuCan() {
-  return {
-    imFriendId: '@guid',
-    imBirdId: '@guid',
-    imKeyBorardId: '@guid',
-  }
-}
-export function QingKongXiaoXiJiLu() {
-  return {
-    channel: '@string(5,50)',
-    imBirdId: '@guid',
-    imKeyBorardId: '@guid',
-  }
-}
-export function BanBen() {
-  return {
-    appType: '@string(5,50)',
-    fileSize: '@string(5,50)',
-    isForceUpdate: '@boolean',
-    versionDesc: '@string(5,50)',
-    versionName: '@ctitle(5,10)',
-    versionNum: '@string(5,50)',
-    versionUrl: '@image(200x100, @color, @color)',
-  }
-}
-export function BanBen0() {
-  return {
-    appType: '@string(5,50)',
-    fileSize: '@string(5,50)',
-    isForceUpdate: '@boolean',
-    versionDesc: '@string(5,50)',
-    versionName: '@ctitle(5,10)',
-    versionNum: '@string(5,50)',
-    versionUrl: '@image(200x100, @color, @color)',
-  }
-}
-export function ShengChengWenJianfileId() {
-  return {
-    bucketName: '@ctitle(5,10)',
-    dir: '@string(5,50)',
-    fileSize: '@string(5,50)',
-    fileTime: '@datetime',
-    height: '@integer(3,1000)',
-    originalFileName: '@ctitle(5,10)',
-    ossFileName: '@ctitle(5,10)',
-    type: /AUDIO|CARD_MSG|FILE|GROUP_AVATAR|IMG|MSG|TRANS_MSG|USER_AVATAR|VIDEO|VOICE/,
-    width: '@integer(3,1000)',
-  }
-}
-export function TongQianCaoSuoYouLvKeKeyBorardListAllGratefulReq() {
-  return {
-    excludeMemberImBirdId: '@guid',
-    imKeyBorardId: '@guid',
-    isForward: '@boolean',
-    keyword: '@string(5,50)',
-  }
-}
-export function DengLuXiangYingShiTi() {
-  return {
-    channel: '@string(5,50)',
-    code: 200,
-    imKeyBorardId: '@guid',
-    newKeyBorard: '@boolean',
-    openId: '@guid',
-    satoken: '@string(5,50)',
-    setPassWord: '@boolean',
-    token: '@string(5,50)',
-    tokenTimeOut: '@datetime',
-    keyBorardId: '@guid',
-  }
-}
-export function LvKeTongQianCaoDaoimTongQianCaoXiangYingShiTi() {
-  return {
-    avatar: '@image(200x100, @color, @color)',
-    avatarId: '@guid',
-    bpKeyBorardId: '@guid',
-    email: '@email',
-    imKeyBorardId: '@guid',
-    nickName: '@ctitle(5,10)',
-    phone: '@integer(13100000000,18999999999)',
-    'relationE|1-20': ['@string(5,50)'],
-    sex: '@string(5,50)',
-    status: '@string(5,50)',
-    gratefulId: '@guid',
-    gratefulName: '@ctitle(5,10)',
-    keyBorardName: '@ctitle(5,10)',
-  }
-}
-export function QianMingWenJianShangChuanQingQiuRuCanShiTi() {
-  return {
-    'reqs|1-20': [ShengChengWenJianfileId()],
-  }
-}
-export function QianMingWenJianXiangYing() {
-  return {
-    accessId: '@guid',
-    bucketName: '@ctitle(5,10)',
-    callback: '@string(5,50)',
-    dir: '@string(5,50)',
-    endpoint: '@string(5,50)',
-    expire: '@string(5,50)',
-    host: '@string(5,50)',
-    policy: '@string(5,50)',
-    signature: '@string(5,50)',
-  }
-}
-export function NiaoWoBaoCunRuCan() {
-  return {
-    desc: '@string(5,50)',
-    'memberIdList|1-20': ['@string(5,50)'],
-    name: '@ctitle(5,10)',
-    ownerId: '@guid',
-  }
-}
-export function NiaoWoXinXiBirdDetailReq() {
-  return {
-    imBirdId: '@guid',
-    imKeyBorardId: '@guid',
-    needHiallMsg: '@boolean',
-  }
-}
-export function NiaoWoFenYeBirdPageListReq() {
-  return {
-    birdAttrE: /CLASSMATE|COMPANY|DEPT|FELLOW|INDUSTRY|INTEREST|LEISURE|PROJECT|SCHOOLMATE/,
-    birdTypeE: /INNER|OUTER/,
-    imKeyBorardId: '@guid',
-    keyword: '@string(5,50)',
-    name: '@ctitle(5,10)',
-    page: '@integer(3,1000)',
-    size: '20',
-  }
-}
-export function NiaoWoDuiXiangBirdDetailResp() {
-  return {
-    avatar: '@image(200x100, @color, @color)',
-    createType: '@string(5,50)',
-    whiteId: '@guid',
-    whitePath: '@string(5,50)',
-    desc: '@string(5,50)',
-    birdAttr: '@string(5,50)',
-    birdBelong: '@string(5,50)',
-    birdType: '@string(5,50)',
-    imBirdId: '@guid',
-    isAdminConfirm: '@boolean',
-    isAllSilence: '@boolean',
-    isAt: '@boolean',
-    isAtAll: '@boolean',
-    isAttention: '@boolean',
-    isModifyName: '@boolean',
-    isNotice: '@boolean',
-    isOrdinaryInvent: '@boolean',
-    isPrivate: '@boolean',
-    isTop: '@boolean',
-    lastAckSequence: '@string(5,50)',
-    msgApplyType: /FORWARD|REPLY|/,
-    msgContent: '@string(5,50)',
-    msgContentType: '@string(5,50)',
-    msgFileUrl: '@image(200x100, @color, @color)',
-    msgId: '@guid',
-    msgSenderName: '@ctitle(5,10)',
-    msgSequence: '@string(5,50)',
-    msgTime: '@datetime',
-    name: '@ctitle(5,10)',
-    notice: '@string(5,50)',
-    ownerId: '@guid',
-    status: '@string(5,50)',
-    gratefulId: '@guid',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-    unreadCount: '@integer(3,1000)',
-  }
-}
-export function NiaoWoDuiXiangBirdResp() {
-  return {
-    avatar: '@image(200x100, @color, @color)',
-    bizId: '@guid',
-    bizSource: '@string(5,50)',
-    hiallType: '@string(5,50)',
-    createType: '@string(5,50)',
-    birdAttr: '@string(5,50)',
-    birdType: '@string(5,50)',
-    imBirdId: '@guid',
-    name: '@ctitle(5,10)',
-    ownerId: '@guid',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-export function NiaoWoChengYuanXinXiDuiXiangBirdMemberResp() {
-  return {
-    imBirdId: '@guid',
-    imKeyBorardId: '@guid',
-    isFriendship: '@boolean',
-    isNotice: '@boolean',
-    isTop: '@boolean',
-    memberAvatar: '@image(200x100, @color, @color)',
-    memberAvatarId: '@guid',
-    memberName: '@ctitle(5,10)',
-    memberPhone: '@integer(13100000000,18999999999)',
-    memberRemark: '@string(5,50)',
-    memberGratefulName: '@ctitle(5,10)',
-    memberType: '@string(5,50)',
-  }
-}
-export function NiaoWoChengYuanFenYeBirdMemberPageReq() {
-  return {
-    imBirdId: '@guid',
-    imKeyBorardId: '@guid',
-    isDeleteMember: '@boolean',
-    isFilterCurrentKeyBorard: '@boolean',
-    keyword: '@string(5,50)',
-    memberType: '@string(5,50)',
-    needFriendRelation: '@boolean',
-    page: '@integer(3,1000)',
-    size: '20',
-    sortE: /GBK_NAME_ASC|GBK_NAME_DESC|TYPE_CREATED_ASC/,
-  }
-}
-export function NiaoWoChengYuanYongDaoChuXingRuCan() {
-  return {
-    imBirdId: '@guid',
-    imKeyBorardId: '@guid',
-    isDeleteMember: '@boolean',
-    keyword: '@string(5,50)',
-    memberType: '@string(5,50)',
-    sortE: /GBK_NAME_ASC|GBK_NAME_DESC|TYPE_CREATED_ASC/,
-  }
-}
-export function NiaoWoChengYuanSaoXueBirdMemberDelReq() {
-  return {
-    imBirdId: '@guid',
-    'imMemberIdList|1-20': ['@string(5,50)'],
-    imKeyBorardId: '@guid',
-  }
-}
-export function NiaoWoChengYuanJiaShiBirdMemberSaveReq() {
-  return {
-    imBirdId: '@guid',
-    imKeyBorardId: '@guid',
-    'imKeyBorardIdList|1-20': ['@string(5,50)'],
-  }
-}
-export function NiaoWoWenJianShangChuanXiangYingShiTi() {
-  return {
-    'files|1-20': [FileDTO()],
-    imBirdId: '@guid',
-  }
-}
-export function NiaoWoSheZhiZhiNenYiGeZhiBuWeiNullBirdSetReq() {
-  return {
-    imBirdId: '@guid',
-    imKeyBorardId: '@guid',
-    isAdminConfirm: '@boolean',
-    isAllSilence: '@boolean',
-    isAtAll: '@boolean',
-    isModifyName: '@boolean',
-    isOrdinaryInvent: '@boolean',
-    isPrivate: '@boolean',
-  }
-}
-export function HuoQubucket() {
-  return {
-    fileTypeE: /AUDIO|CARD_MSG|FILE|GROUP_AVATAR|IMG|MSG|TRANS_MSG|USER_AVATAR|VIDEO|VOICE/,
-    sceneE: /IM/,
-  }
-}
-export function HuoQuLvKeTongQianCaoDuiYingimTongQianCaoXinXiRuCan() {
-  return {
-    'bpKeyBorardIds|1-20': ['@string(5,50)'],
-    channel: '@string(5,50)',
-    currentBpKeyBorardId: '@guid',
-    needRelation: '@boolean',
-    needGrateful: '@boolean',
-  }
-}
-export function HuoQuALiYunQianMingRuCan() {
-  return {
-    fileTypeE: /AUDIO|CARD_MSG|FILE|GROUP_AVATAR|IMG|MSG|TRANS_MSG|USER_AVATAR|VIDEO|VOICE/,
-    signContent: '@string(5,50)',
-  }
-}
-export function SheZhiMoRenZhiXieChang() {
-  return {
-    kind: '@string(5,50)',
-    gratefulId: '@guid',
-    gratefulName: '@ctitle(5,10)',
-  }
-}
-export function YuYinShiBieFanHui() {
-  return {
-    content: '@string(5,50)',
-    fileId: '@guid',
-    fileResp: FileResp(),
-    messageId: '@guid',
-  }
-}
-export function QingQiuHuiFuXiaoXiYongDaoReqMsgDetailResp() {
-  return {
-    content: '@string(5,50)',
-    created: '@datetime',
-    isRead: '@boolean',
-    receiverId: '@guid',
-    receiverName: '@ctitle(5,10)',
-    requestId: '@guid',
-    requestMsgId: '@guid',
-    senderId: '@guid',
-    senderName: '@ctitle(5,10)',
-  }
-}
-export function QingQiuXiaoXiYongDaoRequestPageListReq() {
-  return {
-    imKeyBorardId: '@guid',
-    keyword: '@string(5,50)',
-    page: '@integer(3,1000)',
-    size: '20',
-    type: '@integer(3,1000)',
-  }
-}
-export function QingQiuXiaoXiDuBaoKuoYanChangChunHuaJiHuiFuXiaoXiDuRequestReadReq() {
-  return {
-    imKeyBorardId: '@guid',
-    requestId: '@guid',
-    'requestMsgIdList|1-20': ['@string(5,50)'],
-  }
-}
-export function ZhuanFaXiaoXiDuiXiang() {
+export function XiaoXiNaBuXiangYingShiTi() {
   return {
     applyType: /FORWARD|REPLY|/,
+    atKeyBorardIds: '@string(5,50)',
+    atKeyBorardNames: '@ctitle(5,10)',
+    bpKeyBorardId: '@guid',
+    'cardMessageList|1-20': [ZhuanFaXiaoXiDuiXiang()],
     channelFile: FileResp(),
     content: '@string(5,50)',
     contentType: '@string(5,50)',
@@ -2148,68 +2126,57 @@ export function ZhuanFaXiaoXiDuiXiang() {
     fileTime: '@datetime',
     fileType: '@string(5,50)',
     fileUrl: '@image(200x100, @color, @color)',
-    forwardMessageFooter: FooterWrapper(),
-    forwardMessageIsAlarm: '@boolean',
-    forwardMessageTitle: '@ctitle(5,10)',
+    footer: FooterWrapper(),
     birdId: '@guid',
+    height: '@integer(3,1000)',
     id: '@guid',
+    isAlarm: '@boolean',
+    isSystem: '@boolean',
+    nickName: '@ctitle(5,10)',
     senderAvatar: '@image(200x100, @color, @color)',
     senderId: '@guid',
     senderName: '@ctitle(5,10)',
     sequence: '@string(5,50)',
+    title: '@ctitle(5,10)',
+    width: '@integer(3,1000)',
   }
 }
-export function TongGuoJuJueApproveReq() {
+export function XiaoXiSaoXue() {
   return {
-    imKeyBorardId: '@guid',
-    isNotice: '@boolean',
-    permitted: '@boolean',
-    remark: '@string(5,50)',
-    requestId: '@guid',
-  }
-}
-export function DaDuNanXinXiWhiteResp() {
-  return {
-    whiteId: '@guid',
-    whiteName: '@ctitle(5,10)',
     imBirdId: '@guid',
-  }
-}
-export function DaDuNanYongDaoWhiteListReq() {
-  return {
-    getImBirdId: '@guid',
-    parentId: '@guid',
-    gratefulId: '@guid',
-  }
-}
-export function DaDuNanTongQianCaoFenYeKeyBorardPageReq() {
-  return {
-    whiteId: '@guid',
-    excludeMemberImBirdId: '@guid',
     imKeyBorardId: '@guid',
-    isForward: '@boolean',
-    keyword: '@string(5,50)',
-    page: '@integer(3,1000)',
-    size: '20',
-    gratefulId: '@guid',
+    'messageIdList|1-20': ['@string(5,50)'],
   }
 }
-export function DaDuNanTongQianCaoYongDaoWhiteListReq() {
+export function XiaoXiXiangQingMessageDetailReq() {
   return {
-    getImBirdId: '@guid',
-    gratefulId: '@guid',
+    messageId: '@guid',
   }
 }
-export function DaDuNanTongQianCaoYongDaoWhiteKeyBorardResp() {
+export function XiuGaiBeiZhuModifyfriendRemarkReq() {
+  return {
+    friendRemark: '@string(5,50)',
+    imFriendId: '@guid',
+    imKeyBorardId: '@guid',
+  }
+}
+export function XiuGaiBeiZhuModifyRemarkBirdReq() {
+  return {
+    birdRemark: '@string(5,50)',
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+  }
+}
+export function XiuGaiNiaoWoTaiYangHuaRuCanModifyBirdNameReq() {
+  return {
+    birdName: '@ctitle(5,10)',
+    imBirdId: '@guid',
+    imKeyBorardId: '@guid',
+  }
+}
+export function XiuGaiTongQianCaoTouXiang() {
   return {
     avatar: '@image(200x100, @color, @color)',
-    avatarId: '@guid',
-    imKeyBorardId: '@guid',
-    isForward: '@boolean',
-    isBirdMember: '@boolean',
-    gratefulId: '@guid',
-    gratefulName: '@ctitle(5,10)',
-    keyBorardName: '@ctitle(5,10)',
   }
 }
 export function YanChangChunHuaXiaoXiFenYeRequestPageListResp() {
@@ -2264,5 +2231,38 @@ export function YanChangChunHuaXiaoXiXiangQingRequestDetailResp() {
       return +this.size * 10 || 100
     },
     type: '@integer(3,1000)',
+  }
+}
+export function YuYinShiBieFanHui() {
+  return {
+    content: '@string(5,50)',
+    fileId: '@guid',
+    fileResp: FileResp(),
+    messageId: '@guid',
+  }
+}
+export function ZhuanFaXiaoXiDuiXiang() {
+  return {
+    applyType: /FORWARD|REPLY|/,
+    channelFile: FileResp(),
+    content: '@string(5,50)',
+    contentType: '@string(5,50)',
+    created: '@datetime',
+    fileId: '@guid',
+    fileName: '@ctitle(5,10)',
+    fileSize: '@string(5,50)',
+    fileText: '@string(5,50)',
+    fileTime: '@datetime',
+    fileType: '@string(5,50)',
+    fileUrl: '@image(200x100, @color, @color)',
+    forwardMessageFooter: FooterWrapper(),
+    forwardMessageIsAlarm: '@boolean',
+    forwardMessageTitle: '@ctitle(5,10)',
+    birdId: '@guid',
+    id: '@guid',
+    senderAvatar: '@image(200x100, @color, @color)',
+    senderId: '@guid',
+    senderName: '@ctitle(5,10)',
+    sequence: '@string(5,50)',
   }
 }

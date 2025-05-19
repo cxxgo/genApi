@@ -1,12 +1,12 @@
 const request: any = () => {}
 import type {
-  ApiResponseboolean,
   AddOrUpdateCredentialReq,
-  ApiResponseJSONArray,
+  ApiResponseboolean,
   ApiResponseComPageDoorCredentialResp,
-  PageDoorCredentialReq,
+  ApiResponseJSONArray,
   ApiResponseOcrHappyLicenseBO,
   OcrImageReq,
+  PageDoorCredentialReq,
 } from './_interfaces.ts'
 
 /** 添加制鞋厂背景 */

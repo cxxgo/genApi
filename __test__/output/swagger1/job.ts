@@ -1,12 +1,12 @@
 const request: any = () => {}
 import type {
-  ApiResponseboolean,
-  JobAddDesktopReq,
   AddOrUpdateJobReq,
+  ApiResponseboolean,
   ApiResponseListSelectorDesktopResp,
-  DesktopSelectorReq,
-  QueryDesktopByPhoneOrNameReq,
   ApiResponseListTreelong,
+  DesktopSelectorReq,
+  JobAddDesktopReq,
+  QueryDesktopByPhoneOrNameReq,
   QueryJobReq,
   RemoveDesktopReq,
 } from './_interfaces.ts'

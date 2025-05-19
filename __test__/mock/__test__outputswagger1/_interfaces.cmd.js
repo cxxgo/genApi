@@ -94,6 +94,26 @@ function ApiResponseAgentConfigResp() {
     traceId: '@guid',
   }
 }
+function ApiResponseBiXieDao() {
+  return {
+    code: 200,
+    data: BiXieDao0(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseboolean() {
+  return {
+    code: 200,
+    data: '@boolean',
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
 function ApiResponseChannelAppGratefulConfigResp() {
   return {
     code: 200,
@@ -118,6 +138,16 @@ function ApiResponseComLoginResp() {
   return {
     code: 200,
     data: ComLoginResp(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseComPageBiXieDaoYongDao() {
+  return {
+    code: 200,
+    data: ComPageBiXieDaoYongDao(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -184,6 +214,26 @@ function ApiResponseComPageEpDesktopResp() {
     traceId: '@guid',
   }
 }
+function ApiResponseComPageFangDongShouHuoDiZhiTianJia() {
+  return {
+    code: 200,
+    data: ComPageFangDongShouHuoDiZhiTianJia(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseComPageGuanLianShenHeXinXi() {
+  return {
+    code: 200,
+    data: ComPageGuanLianShenHeXinXi(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
 function ApiResponseComPageInviteDesktopResp() {
   return {
     code: 200,
@@ -204,20 +254,10 @@ function ApiResponseComPageLogLoginResp() {
     traceId: '@guid',
   }
 }
-function ApiResponseComPageZhiXieChangChuXing() {
+function ApiResponseComPageTianJiaDouJiangJiBeiJing() {
   return {
     code: 200,
-    data: ComPageZhiXieChangChuXing(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseComPageGuanLianShenHeXinXi() {
-  return {
-    code: 200,
-    data: ComPageGuanLianShenHeXinXi(),
+    data: ComPageTianJiaDouJiangJiBeiJing(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -234,30 +274,10 @@ function ApiResponseComPageXiaoYuanZhuoGuanLi() {
     traceId: '@guid',
   }
 }
-function ApiResponseComPageBiXieDaoYongDao() {
+function ApiResponseComPageZhiXieChangChuXing() {
   return {
     code: 200,
-    data: ComPageBiXieDaoYongDao(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseComPageTianJiaDouJiangJiBeiJing() {
-  return {
-    code: 200,
-    data: ComPageTianJiaDouJiangJiBeiJing(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseComPageFangDongShouHuoDiZhiTianJia() {
-  return {
-    code: 200,
-    data: ComPageFangDongShouHuoDiZhiTianJia(),
+    data: ComPageZhiXieChangChuXing(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -278,26 +298,6 @@ function ApiResponseCurrentAuthResp() {
   return {
     code: 200,
     data: CurrentAuthResp(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseWhiteDetailResp() {
-  return {
-    code: 200,
-    data: WhiteDetailResp(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseWhiteLinkDoorResp() {
-  return {
-    code: 200,
-    data: WhiteLinkDoorResp(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -344,10 +344,70 @@ function ApiResponseDesktopResp() {
     traceId: '@guid',
   }
 }
+function ApiResponseDouJiangJiFangDongXinXiXiangQingBiao() {
+  return {
+    code: 200,
+    data: DouJiangJiFangDongXinXiXiangQingBiao(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseDouJiangJiFangXingXinXi() {
+  return {
+    code: 200,
+    data: DouJiangJiFangXingXinXi(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseDouJiangJiFangXingXinXiBoJuZiXinXiJiaShiShiZhiXuYaoChuanRuindividualBankCardNoindividualReservedPhoneNoindividualVocationQiTaXinXiCongredisHuanCunZhongHuoQu() {
+  return {
+    code: 200,
+    data: DouJiangJiFangXingXinXiBoJuZiXinXiJiaShiShiZhiXuYaoChuanRuindividualBankCardNoindividualReservedPhoneNoindividualVocationQiTaXinXiCongredisHuanCunZhongHuoQu(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
 function ApiResponseEntReSetResp() {
   return {
     code: 200,
     data: EntReSetResp(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseFangDongXinXi() {
+  return {
+    code: 200,
+    data: FangDongXinXi(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseGuanLianMaoZiXiangQing() {
+  return {
+    code: 200,
+    data: GuanLianMaoZiXiangQing(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseGuanLianMaoZiYongDao() {
+  return {
+    code: 200,
+    data: GuanLianMaoZiYongDao(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -414,6 +474,16 @@ function ApiResponseInviteSetResp() {
     traceId: '@guid',
   }
 }
+function ApiResponseJianChaYaoQingMa() {
+  return {
+    code: 200,
+    data: JianChaYaoQingMa(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
 function ApiResponseJSONArray() {
   return {
     code: 200,
@@ -438,16 +508,6 @@ function ApiResponseListAuthDoorOrgInfoResp() {
   return {
     code: 200,
     'data|1-20': [AuthDoorOrgInfoResp()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseListWhiteResp() {
-  return {
-    code: 200,
-    'data|1-20': [WhiteResp()],
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -484,6 +544,26 @@ function ApiResponseListExtWhiteResp() {
     traceId: '@guid',
   }
 }
+function ApiResponseListFangDongXinXi() {
+  return {
+    code: 200,
+    'data|1-20': [FangDongXinXi()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseListFangXingQuDaoZhuangTaiChuXing() {
+  return {
+    code: 200,
+    'data|1-20': [FangXingQuDaoZhuangTaiChuXing()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
 function ApiResponseListImportDesktopResp() {
   return {
     code: 200,
@@ -494,30 +574,20 @@ function ApiResponseListImportDesktopResp() {
     traceId: '@guid',
   }
 }
+function ApiResponseListlong() {
+  return {
+    code: 200,
+    'data|1-20': ['@string(5,50)'],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
 function ApiResponseListMenuResp() {
   return {
     code: 200,
     'data|1-20': [MenuResp()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseListPostResp() {
-  return {
-    code: 200,
-    'data|1-20': [PostResp()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseListQueryCatPageHomeResp() {
-  return {
-    code: 200,
-    'data|1-20': [QueryCatPageHomeResp()],
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -544,10 +614,50 @@ function ApiResponseListPinkResq() {
     traceId: '@guid',
   }
 }
+function ApiResponseListPostResp() {
+  return {
+    code: 200,
+    'data|1-20': [PostResp()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseListQueryCatPageHomeResp() {
+  return {
+    code: 200,
+    'data|1-20': [QueryCatPageHomeResp()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
 function ApiResponseListSelectorDesktopResp() {
   return {
     code: 200,
     'data|1-20': [SelectorDesktopResp()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseListShengChengYaoQing() {
+  return {
+    code: 200,
+    'data|1-20': [ShengChengYaoQing0()],
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseListstring() {
+  return {
+    code: 200,
+    'data|1-20': ['@string(5,50)'],
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -584,20 +694,20 @@ function ApiResponseListTreelong() {
     traceId: '@guid',
   }
 }
-function ApiResponseListlong() {
+function ApiResponseListWenJianShangChuanXiangYing() {
   return {
     code: 200,
-    'data|1-20': ['@string(5,50)'],
+    'data|1-20': [WenJianShangChuanXiangYing()],
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
     traceId: '@guid',
   }
 }
-function ApiResponseListstring() {
+function ApiResponseListWhiteResp() {
   return {
     code: 200,
-    'data|1-20': ['@string(5,50)'],
+    'data|1-20': [WhiteResp()],
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -624,40 +734,10 @@ function ApiResponseListZhiXieChangFangDongXinXi() {
     traceId: '@guid',
   }
 }
-function ApiResponseListWenJianShangChuanXiangYing() {
+function ApiResponselong() {
   return {
     code: 200,
-    'data|1-20': [WenJianShangChuanXiangYing()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseListShengChengYaoQing() {
-  return {
-    code: 200,
-    'data|1-20': [ShengChengYaoQing0()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseListFangDongXinXi() {
-  return {
-    code: 200,
-    'data|1-20': [FangDongXinXi()],
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseListFangXingQuDaoZhuangTaiChuXing() {
-  return {
-    code: 200,
-    'data|1-20': [FangXingQuDaoZhuangTaiChuXing()],
+    data: '@string(5,50)',
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -734,6 +814,16 @@ function ApiResponseOcrIdCardFrontResp() {
     traceId: '@guid',
   }
 }
+function ApiResponseOrangeerResultResp() {
+  return {
+    code: 200,
+    data: OrangeerResultResp(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
 function ApiResponsePageSysDictDuiXiangnullZhiBuXuLieHua() {
   return {
     code: 200,
@@ -748,6 +838,16 @@ function ApiResponsePageZhiXieChangBoJuZiXinXi() {
   return {
     code: 200,
     data: PageZhiXieChangBoJuZiXinXi(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponsePinkInfoResq() {
+  return {
+    code: 200,
+    data: PinkInfoResq(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -804,26 +904,6 @@ function ApiResponseQueryWalletBalanceResp() {
     traceId: '@guid',
   }
 }
-function ApiResponseOrangeerResultResp() {
-  return {
-    code: 200,
-    data: OrangeerResultResp(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponsePinkInfoResq() {
-  return {
-    code: 200,
-    data: PinkInfoResq(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
 function ApiResponseScanReQrResp() {
   return {
     code: 200,
@@ -844,10 +924,40 @@ function ApiResponseSendActiveMessageResp() {
     traceId: '@guid',
   }
 }
+function ApiResponseShenHeTongJiHuanCunSanShiMiao() {
+  return {
+    code: 200,
+    data: ShenHeTongJiHuanCunSanShiMiao(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
 function ApiResponseShiftDesktopResp() {
   return {
     code: 200,
     data: ShiftDesktopResp(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponseShuJuYiZhiXingCaoZuoFanHuiJieGuo() {
+  return {
+    code: 200,
+    data: ShuJuYiZhiXingCaoZuoFanHuiJieGuo(),
+    msg: '@string(5,50)',
+    success: '@boolean',
+    timestamp: '@datetime',
+    traceId: '@guid',
+  }
+}
+function ApiResponsestring() {
+  return {
+    code: 200,
+    data: '@string(5,50)',
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -873,80 +983,30 @@ function ApiResponseVoid() {
     traceId: '@guid',
   }
 }
-function ApiResponseboolean() {
+function ApiResponseWhiteDetailResp() {
   return {
     code: 200,
-    data: '@boolean',
+    data: WhiteDetailResp(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
     traceId: '@guid',
   }
 }
-function ApiResponselong() {
+function ApiResponseWhiteLinkDoorResp() {
   return {
     code: 200,
-    data: '@string(5,50)',
+    data: WhiteLinkDoorResp(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
     traceId: '@guid',
   }
 }
-function ApiResponsestring() {
+function ApiResponseYaoQingZhuCe() {
   return {
     code: 200,
-    data: '@string(5,50)',
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseDouJiangJiFangDongXinXiXiangQingBiao() {
-  return {
-    code: 200,
-    data: DouJiangJiFangDongXinXiXiangQingBiao(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseDouJiangJiFangXingXinXiBoJuZiXinXiJiaShiShiZhiXuYaoChuanRuindividualBankCardNoindividualReservedPhoneNoindividualVocationQiTaXinXiCongredisHuanCunZhongHuoQu() {
-  return {
-    code: 200,
-    data: DouJiangJiFangXingXinXiBoJuZiXinXiJiaShiShiZhiXuYaoChuanRuindividualBankCardNoindividualReservedPhoneNoindividualVocationQiTaXinXiCongredisHuanCunZhongHuoQu(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseDouJiangJiFangXingXinXi() {
-  return {
-    code: 200,
-    data: DouJiangJiFangXingXinXi(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseZhiXieChangJianDanFangXing() {
-  return {
-    code: 200,
-    data: ZhiXieChangJianDanFangXing0(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseZhiXieChangZhuTiXinXi() {
-  return {
-    code: 200,
-    data: ZhiXieChangZhuTiXinXi(),
+    data: YaoQingZhuCe(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -973,80 +1033,20 @@ function ApiResponseZhiXieChangFangDongXinXiXiangQing() {
     traceId: '@guid',
   }
 }
-function ApiResponseGuanLianMaoZiYongDao() {
+function ApiResponseZhiXieChangJianDanFangXing() {
   return {
     code: 200,
-    data: GuanLianMaoZiYongDao(),
+    data: ZhiXieChangJianDanFangXing0(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
     traceId: '@guid',
   }
 }
-function ApiResponseGuanLianMaoZiXiangQing() {
+function ApiResponseZhiXieChangZhuTiXinXi() {
   return {
     code: 200,
-    data: GuanLianMaoZiXiangQing(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseShenHeTongJiHuanCunSanShiMiao() {
-  return {
-    code: 200,
-    data: ShenHeTongJiHuanCunSanShiMiao(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseBiXieDao() {
-  return {
-    code: 200,
-    data: BiXieDao0(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseShuJuYiZhiXingCaoZuoFanHuiJieGuo() {
-  return {
-    code: 200,
-    data: ShuJuYiZhiXingCaoZuoFanHuiJieGuo(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseJianChaYaoQingMa() {
-  return {
-    code: 200,
-    data: JianChaYaoQingMa(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseFangDongXinXi() {
-  return {
-    code: 200,
-    data: FangDongXinXi(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseYaoQingZhuCe() {
-  return {
-    code: 200,
-    data: YaoQingZhuCe(),
+    data: ZhiXieChangZhuTiXinXi(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -1061,16 +1061,16 @@ function Attachment() {
     url: '@url',
   }
 }
-function AuditRelationTotalReq() {
-  return {
-    endTime: '@datetime',
-    startTime: '@datetime',
-  }
-}
 function AuditorInfo() {
   return {
     id: '@guid',
     name: '@ctitle(5,10)',
+  }
+}
+function AuditRelationTotalReq() {
+  return {
+    endTime: '@datetime',
+    startTime: '@datetime',
   }
 }
 function AuthDoorOrgInfoResp() {
@@ -1100,6 +1100,94 @@ function BasePageReq() {
   return {
     page: '@integer(3,1000)',
     size: '20',
+  }
+}
+function BiXieDao() {
+  return {
+    'ids|1-20': ['@string(5,50)'],
+    reason: '@string(5,50)',
+  }
+}
+function BiXieDao0() {
+  return {
+    list: ComPageBiXieDao(),
+    reviewedNum: '@integer(3,1000)',
+    unauditedNum: '@integer(3,1000)',
+  }
+}
+function BiXieDao1() {
+  return {
+    auditName: '@ctitle(5,10)',
+    auditStatus: /NO_PASS|PASS|WAIT/,
+    auditTime: '@datetime',
+    authStatusEnum: /FAIL_AUTH|IN_AUTH|UN_AUTH|WAIT_AUTH/,
+    belongDoor: '@string(5,50)',
+    id: '@guid',
+    initTime: '@datetime',
+    mainDep: '@string(5,50)',
+    name: '@ctitle(5,10)',
+    phone: '@integer(13100000000,18999999999)',
+    refuseReason: '@string(5,50)',
+    source: /APPLY|BIZ|INVITE/,
+  }
+}
+function BiXieDaoRuCan() {
+  return {
+    channelType: /CORP_WEIXIN|DINGDING/,
+    code: 200,
+    corpId: '@guid',
+    redirectUri: '@string(5,50)',
+    state: '@string(5,50)',
+  }
+}
+function BiXieDaoYongDao() {
+  return {
+    authCount: '@integer(3,1000)',
+    branchName: '@ctitle(5,10)',
+    branchSerialNo: '@string(5,50)',
+    doorName: '@ctitle(5,10)',
+    headerName: '@ctitle(5,10)',
+    headerPhone: '@integer(13100000000,18999999999)',
+    id: '@guid',
+    relationStatus: /FAIL_RELATION|INVALID_RELATION|IN_RELATION|UN_RELATION/,
+    serialNo: '@string(5,50)',
+    waitAuthCount: '@integer(3,1000)',
+  }
+}
+function BiXieDaoZhongXinChuXingGuoLvTiaoJian() {
+  return {
+    authFlag: '@boolean',
+    certType: /AL_TICKET|COMMON|ESIGN_ALL|ESIGN_ONLY_SIGN|WALLET/,
+    whiteName: '@ctitle(5,10)',
+    'desktopIds|1-20': ['@string(5,50)'],
+    desktopMobile: '@string(5,50)',
+    desktopName: '@ctitle(5,10)',
+    doorId: '@guid',
+    page: '@integer(3,1000)',
+    size: '20',
+  }
+}
+function CatnelCertificate() {
+  return {
+    allTotalName: '@ctitle(5,10)',
+    reSDate: '@datetime',
+    regEDate: '@datetime',
+    zczyName: '@ctitle(5,10)',
+  }
+}
+function CatVerifyReq() {
+  return {
+    cardNo: '@string(5,50)',
+    cardValidData: '@string(5,50)',
+    idNo: '@string(5,50)',
+    metaInfo: '@string(5,50)',
+    name: '@ctitle(5,10)',
+    ocrIdCardBack: '@string(5,50)',
+    ocrIdCardFront: '@string(5,50)',
+    openBank: '@string(5,50)',
+    profession: '@string(5,50)',
+    returnUrl: '@image(200x100, @color, @color)',
+    validStatus: '@boolean',
   }
 }
 function ChannelAppGratefulConfigAddReq() {
@@ -1169,6 +1257,16 @@ function ChannelKeyBorardResp() {
   }
 }
 function CharSequence() {}
+function ChuangJianZhiXieChang() {
+  return {
+    area: '@string(5,50)',
+    city: '@city',
+    country: '@string(5,50)',
+    location: '@string(5,50)',
+    name: '@ctitle(5,10)',
+    province: '@province',
+  }
+}
 function ComLoginReq() {
   return {
     blue: '@string(5,50)',
@@ -1196,6 +1294,26 @@ function ComPage() {
   return {
     current: '@string(5,50)',
     'records|1-20': [''],
+    size: '20',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+function ComPageBiXieDao() {
+  return {
+    current: '@string(5,50)',
+    'records|1-20': [BiXieDao1()],
+    size: '20',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+function ComPageBiXieDaoYongDao() {
+  return {
+    current: '@string(5,50)',
+    'records|1-20': [BiXieDaoYongDao()],
     size: '20',
     total: () => {
       return +this.size * 10 || 100
@@ -1262,6 +1380,26 @@ function ComPageEpDesktopResp() {
     },
   }
 }
+function ComPageFangDongShouHuoDiZhiTianJia() {
+  return {
+    current: '@string(5,50)',
+    'records|1-20': [FangDongShouHuoDiZhiTianJia0()],
+    size: '20',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
+function ComPageGuanLianShenHeXinXi() {
+  return {
+    current: '@string(5,50)',
+    'records|1-20': [GuanLianShenHeXinXi()],
+    size: '20',
+    total: () => {
+      return +this.size * 10 || 100
+    },
+  }
+}
 function ComPageInviteDesktopResp() {
   return {
     current: '@string(5,50)',
@@ -1292,20 +1430,10 @@ function ComPageRelationDoorInfo() {
     },
   }
 }
-function ComPageZhiXieChangChuXing() {
+function ComPageTianJiaDouJiangJiBeiJing() {
   return {
     current: '@string(5,50)',
-    'records|1-20': [ZhiXieChangChuXing()],
-    size: '20',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-function ComPageGuanLianShenHeXinXi() {
-  return {
-    current: '@string(5,50)',
-    'records|1-20': [GuanLianShenHeXinXi()],
+    'records|1-20': [TianJiaDouJiangJiBeiJing()],
     size: '20',
     total: () => {
       return +this.size * 10 || 100
@@ -1322,40 +1450,10 @@ function ComPageXiaoYuanZhuoGuanLi() {
     },
   }
 }
-function ComPageBiXieDao() {
+function ComPageZhiXieChangChuXing() {
   return {
     current: '@string(5,50)',
-    'records|1-20': [BiXieDao1()],
-    size: '20',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-function ComPageBiXieDaoYongDao() {
-  return {
-    current: '@string(5,50)',
-    'records|1-20': [BiXieDaoYongDao()],
-    size: '20',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-function ComPageTianJiaDouJiangJiBeiJing() {
-  return {
-    current: '@string(5,50)',
-    'records|1-20': [TianJiaDouJiangJiBeiJing()],
-    size: '20',
-    total: () => {
-      return +this.size * 10 || 100
-    },
-  }
-}
-function ComPageFangDongShouHuoDiZhiTianJia() {
-  return {
-    current: '@string(5,50)',
-    'records|1-20': [FangDongShouHuoDiZhiTianJia0()],
+    'records|1-20': [ZhiXieChangChuXing()],
     size: '20',
     total: () => {
       return +this.size * 10 || 100
@@ -1411,125 +1509,6 @@ function CurrentAuthResp() {
   return {
     'menuRoute|1-20': [RouterResp()],
     'permission|1-20': ['@string(5,50)'],
-  }
-}
-function WhiteAddReq() {
-  return {
-    whiteName: '@ctitle(5,10)',
-    leaderDesktopId: '@guid',
-    mark: '@string(5,50)',
-    orderNum: '@integer(3,1000)',
-    parentId: '@guid',
-    profile: '@string(5,50)',
-    scaleType: '@string(5,50)',
-  }
-}
-function WhiteDetailResp() {
-  return {
-    ancestors: '@string(5,50)',
-    channelWhiteName: '@ctitle(5,10)',
-    createId: '@guid',
-    createName: '@ctitle(5,10)',
-    created: '@datetime',
-    whiteCode: '@string(5,50)',
-    whiteName: '@ctitle(5,10)',
-    email: '@email',
-    id: '@guid',
-    leaderDesktopId: '@guid',
-    leaderDesktopInfo: DesktopComplexResp(),
-    mark: '@string(5,50)',
-    markDesc: '@string(5,50)',
-    modified: '@string(5,50)',
-    orderNum: '@integer(3,1000)',
-    parentCode: '@string(5,50)',
-    parentId: '@guid',
-    parentName: '@ctitle(5,10)',
-    phone: '@integer(13100000000,18999999999)',
-    profile: '@string(5,50)',
-    scaleType: '@string(5,50)',
-    scaleTypeDesc: '@string(5,50)',
-    status: '@string(5,50)',
-    statusDesc: '@string(5,50)',
-    updateId: '@guid',
-    updateName: '@ctitle(5,10)',
-  }
-}
-function WhiteLinkDoorReq() {
-  return {
-    whiteId: '@guid',
-    doorId: '@guid',
-    overFlag: '@boolean',
-  }
-}
-function WhiteLinkDoorResp() {
-  return {
-    ancestors: '@string(5,50)',
-    createId: '@guid',
-    createName: '@ctitle(5,10)',
-    created: '@datetime',
-    whiteCode: '@string(5,50)',
-    whiteName: '@ctitle(5,10)',
-    email: '@email',
-    doorId: '@guid',
-    id: '@guid',
-    leaderDesktopId: '@guid',
-    leaderKeyBorardId: '@guid',
-    linkStatus: '@boolean',
-    mark: '@string(5,50)',
-    markDesc: '@string(5,50)',
-    modified: '@string(5,50)',
-    orderNum: '@integer(3,1000)',
-    parentCode: '@string(5,50)',
-    parentId: '@guid',
-    phone: '@integer(13100000000,18999999999)',
-    profile: '@string(5,50)',
-    scaleType: '@string(5,50)',
-    scaleTypeDesc: '@string(5,50)',
-    status: '@string(5,50)',
-    statusDesc: '@string(5,50)',
-    gratefulId: '@guid',
-    updateId: '@guid',
-    updateName: '@ctitle(5,10)',
-  }
-}
-function WhiteResp() {
-  return {
-    ancestors: '@string(5,50)',
-    createId: '@guid',
-    createName: '@ctitle(5,10)',
-    created: '@datetime',
-    whiteCode: '@string(5,50)',
-    whiteName: '@ctitle(5,10)',
-    email: '@email',
-    id: '@guid',
-    leaderDesktopId: '@guid',
-    leaderKeyBorardId: '@guid',
-    linkStatus: '@boolean',
-    mark: '@string(5,50)',
-    markDesc: '@string(5,50)',
-    modified: '@string(5,50)',
-    orderNum: '@integer(3,1000)',
-    parentCode: '@string(5,50)',
-    parentId: '@guid',
-    phone: '@integer(13100000000,18999999999)',
-    profile: '@string(5,50)',
-    scaleType: '@string(5,50)',
-    scaleTypeDesc: '@string(5,50)',
-    status: '@string(5,50)',
-    statusDesc: '@string(5,50)',
-    gratefulId: '@guid',
-    updateId: '@guid',
-    updateName: '@ctitle(5,10)',
-  }
-}
-function WhiteUpReq() {
-  return {
-    whiteName: '@ctitle(5,10)',
-    id: '@guid',
-    leaderDesktopId: '@guid',
-    orderNum: '@integer(3,1000)',
-    profile: '@string(5,50)',
-    scaleType: '@string(5,50)',
   }
 }
 function DescribeFaceVerifyResponse() {
@@ -1609,17 +1588,6 @@ function DesktopComplexResp() {
     updateName: '@ctitle(5,10)',
     keyBorardId: '@guid',
     keyBorardName: '@ctitle(5,10)',
-  }
-}
-function DesktopWhiteResp() {
-  return {
-    whiteCode: '@string(5,50)',
-    whiteId: '@guid',
-    whiteName: '@ctitle(5,10)',
-    desktopId: '@guid',
-    id: '@guid',
-    mainWhite: '@boolean',
-    gratefulId: '@guid',
   }
 }
 function DesktopJobResp() {
@@ -1736,50 +1704,15 @@ function DesktopUpReq() {
     keyBorardName: '@ctitle(5,10)',
   }
 }
-function EmpowerWhiteResp(n = 2) {
-  if (n <= 0) {
-    return {
-      id: '@guid',
-      info: WhiteResp(),
-      label: '@string(5,50)',
-      parentId: '@guid',
-      weight: '@string(5,50)',
-    }
-  }
-  n = n - 1
-
+function DesktopWhiteResp() {
   return {
-    'children|1-20': [EmpowerWhiteResp(n)],
+    whiteCode: '@string(5,50)',
+    whiteId: '@guid',
+    whiteName: '@ctitle(5,10)',
+    desktopId: '@guid',
     id: '@guid',
-    info: WhiteResp(),
-    label: '@string(5,50)',
-    parentId: '@guid',
-    weight: '@string(5,50)',
-  }
-}
-function EntInviteConfig() {
-  return {
-    auditState: '@boolean',
-    'auditor|1-20': [AuditorInfo()],
-    doorId: '@guid',
-    id: '@guid',
-    inviteType: '@string(5,50)',
-    module: '@string(5,50)',
-    openState: '@boolean',
-  }
-}
-function EntReSetReq() {
-  return {
-    emInviteConfig: EntInviteConfig(),
-    reInviteConfig: EntInviteConfig(),
-    pinkConfigInfo: PinkConfigInfo(),
-  }
-}
-function EntReSetResp() {
-  return {
-    emInviteConfig: EntInviteConfig(),
-    reInviteConfig: EntInviteConfig(),
-    pinkConfigInfo: PinkConfigInfo(),
+    mainWhite: '@boolean',
+    gratefulId: '@guid',
   }
 }
 function DoorAuditReq() {
@@ -1946,6 +1879,120 @@ function DoorShareholderResp() {
     updateName: '@ctitle(5,10)',
   }
 }
+function DouJiangJiBeiJingZhuCeZhuanYe() {
+  return {
+    endDate: '@datetime',
+    id: '@guid',
+    major: '@string(5,50)',
+    majorCode: '@string(5,50)',
+    startDate: '@datetime',
+  }
+}
+function DouJiangJiFangDongXinXiXiangQingBiao() {
+  return {
+    area: '@string(5,50)',
+    authStatus: '@string(5,50)',
+    avatar: '@image(200x100, @color, @color)',
+    city: '@city',
+    country: '@string(5,50)',
+    init: '@boolean',
+    location: '@string(5,50)',
+    maxNameUpdateNum: '@integer(3,1000)',
+    mobile: '@string(5,50)',
+    nameUpdateNum: '@integer(3,1000)',
+    nickname: '@ctitle(5,10)',
+    province: '@province',
+    sex: '@string(5,50)',
+    gratefulId: '@guid',
+    keyBorardname: '@ctitle(5,10)',
+    xmail: '@string(5,50)',
+  }
+}
+function DouJiangJiFangXingXinXi() {
+  return {
+    green: '@string(5,50)',
+    bankCardNo: '@string(5,50)',
+    cardNo: '@string(5,50)',
+    cardStartDate: '@datetime',
+    cardValidDate: '@datetime',
+    issue: '@string(5,50)',
+    nationality: '@string(5,50)',
+    ocridCardBack: '@string(5,50)',
+    ocridCardFront: '@string(5,50)',
+    openBank: '@string(5,50)',
+    profession: '@string(5,50)',
+    sex: '@string(5,50)',
+    keyBorardName: '@ctitle(5,10)',
+    validStatus: '@boolean',
+  }
+}
+function DouJiangJiFangXingXinXiBoJuZiXinXiJiaShiShiZhiXuYaoChuanRuindividualBankCardNoindividualReservedPhoneNoindividualVocationQiTaXinXiCongredisHuanCunZhongHuoQu() {
+  return {
+    green: '@string(5,50)',
+    birth: '@string(5,50)',
+    endDate: '@datetime',
+    idCardNum: '@string(5,50)',
+    individualBankCardNo: '@string(5,50)',
+    individualCompany: '@string(5,50)',
+    individualMail: '@string(5,50)',
+    individualReservedPhoneNo: '@integer(13100000000,18999999999)',
+    individualVocation: '@string(5,50)',
+    issue: '@string(5,50)',
+    name: '@ctitle(5,10)',
+    nationality: '@string(5,50)',
+    posUrl: '@image(200x100, @color, @color)',
+    revUrl: '@image(200x100, @color, @color)',
+    sex: '@string(5,50)',
+    startDate: '@datetime',
+    keyBorardId: '@guid',
+  }
+}
+function EmpowerWhiteResp(n = 2) {
+  if (n <= 0) {
+    return {
+      id: '@guid',
+      info: WhiteResp(),
+      label: '@string(5,50)',
+      parentId: '@guid',
+      weight: '@string(5,50)',
+    }
+  }
+  n = n - 1
+
+  return {
+    'children|1-20': [EmpowerWhiteResp(n)],
+    id: '@guid',
+    info: WhiteResp(),
+    label: '@string(5,50)',
+    parentId: '@guid',
+    weight: '@string(5,50)',
+  }
+}
+function EntInviteConfig() {
+  return {
+    auditState: '@boolean',
+    'auditor|1-20': [AuditorInfo()],
+    doorId: '@guid',
+    id: '@guid',
+    inviteType: '@string(5,50)',
+    module: '@string(5,50)',
+    openState: '@boolean',
+  }
+}
+function EntReSetReq() {
+  return {
+    emInviteConfig: EntInviteConfig(),
+    reInviteConfig: EntInviteConfig(),
+    pinkConfigInfo: PinkConfigInfo(),
+  }
+}
+function EntReSetResp() {
+  return {
+    emInviteConfig: EntInviteConfig(),
+    reInviteConfig: EntInviteConfig(),
+    pinkConfigInfo: PinkConfigInfo(),
+  }
+}
 function EpDesktopResp() {
   return {
     authStatus: '@boolean',
@@ -2013,6 +2060,77 @@ function ExtWhiteResp() {
     updateName: '@ctitle(5,10)',
   }
 }
+function FangDongShouHuoDiZhiTianJia() {
+  return {
+    area: '@string(5,50)',
+    checked: '@boolean',
+    city: '@city',
+    country: '@string(5,50)',
+    location: '@string(5,50)',
+    mobile: '@string(5,50)',
+    name: '@ctitle(5,10)',
+    province: '@province',
+  }
+}
+function FangDongShouHuoDiZhiTianJia0() {
+  return {
+    area: '@string(5,50)',
+    checked: '@boolean',
+    city: '@city',
+    country: '@string(5,50)',
+    id: '@guid',
+    location: '@string(5,50)',
+    mobile: '@string(5,50)',
+    name: '@ctitle(5,10)',
+    province: '@province',
+  }
+}
+function FangDongXinXi() {
+  return {
+    authStatus: '@string(5,50)',
+    channelBindStatus: '@string(5,50)',
+    channelCorpId: '@guid',
+    channelType: '@string(5,50)',
+    checked: '@boolean',
+    clientType: '@string(5,50)',
+    desktopStatus: '@string(5,50)',
+    init: '@boolean',
+    kind: '@string(5,50)',
+    relation: '@string(5,50)',
+    status: '@string(5,50)',
+    gratefulId: '@guid',
+    gratefulName: '@ctitle(5,10)',
+    keyBorardId: '@guid',
+  }
+}
+function FangXingQuDaoZhuangTaiChuXing() {
+  return {
+    certifyId: '@guid',
+    clazz: '@string(5,50)',
+    cost: '@string(5,50)',
+    function: '@string(5,50)',
+    institution: '@string(5,50)',
+    interests: '@string(5,50)',
+    mark: '@string(5,50)',
+    name: '@ctitle(5,10)',
+    status: '@string(5,50)',
+  }
+}
+function FenYeChuXingDouJiangJiBeiJing() {
+  return {
+    credentialNo: '@string(5,50)',
+    credentialType: '@string(5,50)',
+    page: '@integer(3,1000)',
+    size: '20',
+  }
+}
+function FenYeChuXingSuoYouZhiXieChang() {
+  return {
+    name: '@ctitle(5,10)',
+    page: '@integer(3,1000)',
+    size: '20',
+  }
+}
 function FileSystemResource() {
   return {
     description: '@string(5,50)',
@@ -2026,6 +2144,48 @@ function FileSystemResource() {
     uri: '@string(5,50)',
     url: '@url',
     writable: '@boolean',
+  }
+}
+function GuanLianMaoZiXiangQing() {
+  return {
+    auditStatus: /NO_PASS|PASS|WAIT/,
+    authCount: '@integer(3,1000)',
+    created: '@datetime',
+    whiteCount: '@integer(3,1000)',
+    id: '@guid',
+    preReDoorInfo: ReDoorInfo(),
+    reDoorInfo: ReDoorInfo(),
+    reDoorSource: /APPLY|BIZ|INVITE/,
+    relationAuditInfo: MaoZiGuanLianYouGuanLianShenHeXinXi(),
+    relationInfo: MaoZiGuanLianFaQiGuanLianXinXi(),
+    relationStatus: /FAIL_RELATION|INVALID_RELATION|IN_RELATION|UN_RELATION/,
+    'relationTypeList|1-20': [RelationHappyTypeInfo()],
+    syncTime: '@datetime',
+  }
+}
+function GuanLianMaoZiYongDao() {
+  return {
+    inRelateCount: '@integer(3,1000)',
+    invalidRelateCount: '@integer(3,1000)',
+    list: ComPageRelationDoorInfo(),
+    totalCount: '@integer(3,1000)',
+    unRelateCount: '@integer(3,1000)',
+  }
+}
+function GuanLianShenHeXinXi() {
+  return {
+    auditClassificationEnum: /REVIEWED|UNAUDITED/,
+    auditStatus: /NO_PASS|PASS|WAIT/,
+    branchName: '@ctitle(5,10)',
+    happyLicenseUrl: '@image(200x100, @color, @color)',
+    created: '@datetime',
+    franchiseDoorName: '@ctitle(5,10)',
+    headerName: '@ctitle(5,10)',
+    headerPhone: '@integer(13100000000,18999999999)',
+    id: '@guid',
+    relationStatus: /FAIL_RELATION|INVALID_RELATION|IN_RELATION|UN_RELATION/,
+    serialNo: '@string(5,50)',
+    source: /APPLY|BIZ|INVITE/,
   }
 }
 function HeaderEmpowerSmsInfo() {
@@ -2146,6 +2306,12 @@ function InviteSetResp() {
     shareType: '@string(5,50)',
   }
 }
+function JianChaYaoQingMa() {
+  return {
+    msg: '@string(5,50)',
+    gratefulName: '@ctitle(5,10)',
+  }
+}
 function JobAddDesktopReq() {
   return {
     desktopId: '@guid',
@@ -2178,6 +2344,13 @@ function JudgeSwitchDoorLimitResp() {
     msg: '@string(5,50)',
   }
 }
+function KeyBorardJoinDoorReq() {
+  return {
+    name: '@ctitle(5,10)',
+    reason: '@string(5,50)',
+    gratefulId: '@guid',
+  }
+}
 function LogLoginResp() {
   return {
     browser: '@string(5,50)',
@@ -2193,6 +2366,32 @@ function LogLoginResp() {
     os: '@string(5,50)',
     updateId: '@guid',
     updateName: '@ctitle(5,10)',
+  }
+}
+function MaoZiGuanLianFaQiGuanLianXinXi() {
+  return {
+    applyName: '@ctitle(5,10)',
+    applyPhone: '@integer(13100000000,18999999999)',
+    applyTime: '@datetime',
+    headerName: '@ctitle(5,10)',
+    headerPhone: '@integer(13100000000,18999999999)',
+    initTime: '@datetime',
+    inviteName: '@ctitle(5,10)',
+    invitePhone: '@integer(13100000000,18999999999)',
+    inviteSource: '@string(5,50)',
+    inviteTime: '@datetime',
+    invitedName: '@ctitle(5,10)',
+    invitedPhone: '@integer(13100000000,18999999999)',
+    sourceEnum: /APPLY|BIZ|INVITE/,
+    triggerTime: '@datetime',
+  }
+}
+function MaoZiGuanLianYouGuanLianShenHeXinXi() {
+  return {
+    auditStatus: /NO_PASS|PASS|WAIT/,
+    auditTime: '@datetime',
+    name: '@ctitle(5,10)',
+    reason: '@string(5,50)',
   }
 }
 function MenuCheckedResp() {
@@ -2288,6 +2487,23 @@ function OcrImageReq() {
     image: '@string(5,50)',
   }
 }
+function OrangeerCertificateInfo() {
+  return {
+    certificateNumber: '@string(5,50)',
+    regNo: '@string(5,50)',
+    regTypeName: '@ctitle(5,10)',
+    orangeeredCertificateCompany: '@string(5,50)',
+    'voList|1-20': [CatnelCertificate()],
+  }
+}
+function OrangeerResultResp() {
+  return {
+    mark: '@string(5,50)',
+    mobile: '@string(5,50)',
+    token: '@string(5,50)',
+    tokenTimeOut: '@datetime',
+  }
+}
 function OrderItem() {
   return {
     asc: '@boolean',
@@ -2355,209 +2571,6 @@ function PageZhiXieChangBoJuZiXinXi() {
     total: () => {
       return +this.size * 10 || 100
     },
-  }
-}
-function CatVerifyReq() {
-  return {
-    cardNo: '@string(5,50)',
-    cardValidData: '@string(5,50)',
-    idNo: '@string(5,50)',
-    metaInfo: '@string(5,50)',
-    name: '@ctitle(5,10)',
-    ocrIdCardBack: '@string(5,50)',
-    ocrIdCardFront: '@string(5,50)',
-    openBank: '@string(5,50)',
-    profession: '@string(5,50)',
-    returnUrl: '@image(200x100, @color, @color)',
-    validStatus: '@boolean',
-  }
-}
-function CatnelCertificate() {
-  return {
-    allTotalName: '@ctitle(5,10)',
-    reSDate: '@datetime',
-    regEDate: '@datetime',
-    zczyName: '@ctitle(5,10)',
-  }
-}
-function StationDesktopAuthReq() {
-  return {
-    'desktopIds|1-20': ['@string(5,50)'],
-    doorId: '@guid',
-    'pinkIds|1-20': ['@string(5,50)'],
-  }
-}
-function PostAddOrUpReq() {
-  return {
-    id: '@guid',
-    postName: '@ctitle(5,10)',
-    postSort: '@integer(3,1000)',
-    workflowKey: '@string(5,50)',
-  }
-}
-function PostResp() {
-  return {
-    createId: '@guid',
-    createName: '@ctitle(5,10)',
-    created: '@datetime',
-    id: '@guid',
-    modified: '@string(5,50)',
-    postCode: '@string(5,50)',
-    postName: '@ctitle(5,10)',
-    postSort: '@integer(3,1000)',
-    status: '@string(5,50)',
-    updateId: '@guid',
-    updateName: '@ctitle(5,10)',
-  }
-}
-function QueryAccInfoResp() {
-  return {
-    mobile: '@string(5,50)',
-    setPassWord: '@boolean',
-    status: '@string(5,50)',
-  }
-}
-function QueryCertFormResp() {
-  return {
-    cardNo: '@string(5,50)',
-    cardValidData: '@string(5,50)',
-    idNo: '@string(5,50)',
-    name: '@ctitle(5,10)',
-    ocrIdCardBack: '@string(5,50)',
-    ocrIdCardFront: '@string(5,50)',
-    openBank: '@string(5,50)',
-    profession: '@string(5,50)',
-    validStatus: '@boolean',
-  }
-}
-function QueryDesktopByPhoneOrNameReq() {
-  return {
-    jobId: '@guid',
-    phoneOrName: '@integer(13100000000,18999999999)',
-  }
-}
-function QueryDoorPageHomeResp() {
-  return {
-    companyInfo: CompanyInfo(),
-  }
-}
-function QueryInviteDesktopReq() {
-  return {
-    applyTimeEnd: '@datetime',
-    applyTimeStart: '@datetime',
-    whiteName: '@ctitle(5,10)',
-    desktopStatus: '@string(5,50)',
-    inviterPhoneOrName: '@integer(13100000000,18999999999)',
-    joinTimeEnd: '@datetime',
-    joinTimeStart: '@datetime',
-    page: '@integer(3,1000)',
-    proposerPhone: '@integer(13100000000,18999999999)',
-    proposerPhoneOrName: '@integer(13100000000,18999999999)',
-    shareType: '@string(5,50)',
-    size: '20',
-    status: '@string(5,50)',
-  }
-}
-function QueryJobReq() {
-  return {
-    ancestors: '@string(5,50)',
-    jobCode: '@string(5,50)',
-    name: '@ctitle(5,10)',
-    orderNum: '@integer(3,1000)',
-    parentCode: '@string(5,50)',
-    parentId: '@guid',
-    status: '@string(5,50)',
-  }
-}
-function QueryJudgeClaimResp() {
-  return {
-    operResult: '@string(5,50)',
-  }
-}
-function QueryCatPageHomeResp() {
-  return {
-    cardNo: '@string(5,50)',
-    companyName: '@ctitle(5,10)',
-    name: '@ctitle(5,10)',
-    catRepetitionId: '@guid',
-    sex: '@string(5,50)',
-    'vosList|1-20': [OrangeerCertificateInfo()],
-  }
-}
-function QueryWalletBalanceResp() {
-  return {
-    blueId: '@guid',
-    blueNumber: '@string(5,50)',
-    availableAmount: '@string(5,50)',
-    bankName: '@ctitle(5,10)',
-    bankcardNumber: '@string(5,50)',
-    companyName: '@ctitle(5,10)',
-    frozenAmount: '@string(5,50)',
-  }
-}
-function ReEntMeta() {
-  return {
-    whiteCode: '@string(5,50)',
-    reDoorId: '@guid',
-    reName: '@ctitle(5,10)',
-  }
-}
-function ReDoorInfo() {
-  return {
-    happyLicenseCode: '@string(5,50)',
-    doorName: '@ctitle(5,10)',
-    headerName: '@ctitle(5,10)',
-    headerPhone: '@integer(13100000000,18999999999)',
-    isAuth: /CERTIFIED|UNCERTIFICATED/,
-    serialNo: '@string(5,50)',
-  }
-}
-function RefuseJoinReq() {
-  return {
-    id: '@guid',
-    refuse: '@string(5,50)',
-  }
-}
-function OrangeerCertificateInfo() {
-  return {
-    certificateNumber: '@string(5,50)',
-    regNo: '@string(5,50)',
-    regTypeName: '@ctitle(5,10)',
-    orangeeredCertificateCompany: '@string(5,50)',
-    'voList|1-20': [CatnelCertificate()],
-  }
-}
-function OrangeerResultResp() {
-  return {
-    mark: '@string(5,50)',
-    mobile: '@string(5,50)',
-    token: '@string(5,50)',
-    tokenTimeOut: '@datetime',
-  }
-}
-function RelationHappyTypeInfo() {
-  return {
-    happyType: '@string(5,50)',
-    initTime: '@datetime',
-    reSource: /APPLY|BIZ|INVITE/,
-  }
-}
-function RelationDoorInfo() {
-  return {
-    auditStatus: /NO_PASS|PASS|WAIT/,
-    authCount: '@integer(3,1000)',
-    happyLicenseCode: '@string(5,50)',
-    created: '@datetime',
-    id: '@guid',
-    name: '@ctitle(5,10)',
-    preDoorName: '@ctitle(5,10)',
-    relationStatus: /FAIL_RELATION|INVALID_RELATION|IN_RELATION|UN_RELATION/,
-  }
-}
-function RemoveDesktopReq() {
-  return {
-    'desktopId|1-20': ['@guid'],
-    jobId: '@guid',
   }
 }
 function PinkAddReq() {
@@ -2651,6 +2664,177 @@ function PinkResq() {
     updateName: '@ctitle(5,10)',
   }
 }
+function PostAddOrUpReq() {
+  return {
+    id: '@guid',
+    postName: '@ctitle(5,10)',
+    postSort: '@integer(3,1000)',
+    workflowKey: '@string(5,50)',
+  }
+}
+function PostResp() {
+  return {
+    createId: '@guid',
+    createName: '@ctitle(5,10)',
+    created: '@datetime',
+    id: '@guid',
+    modified: '@string(5,50)',
+    postCode: '@string(5,50)',
+    postName: '@ctitle(5,10)',
+    postSort: '@integer(3,1000)',
+    status: '@string(5,50)',
+    updateId: '@guid',
+    updateName: '@ctitle(5,10)',
+  }
+}
+function QieHuanMoRenDiZhi() {
+  return {
+    newGreenId: '@guid',
+  }
+}
+function QuDaoZhiXieChangJieMengQingQiuRuCan() {
+  return {
+    channelCorpId: '@guid',
+    channelType: /CORP_WEIXIN|DINGDING/,
+    dingId: '@guid',
+    desktopId: '@guid',
+    gratefulId: '@guid',
+    keyBorardId: '@guid',
+  }
+}
+function QueryAccInfoResp() {
+  return {
+    mobile: '@string(5,50)',
+    setPassWord: '@boolean',
+    status: '@string(5,50)',
+  }
+}
+function QueryCatPageHomeResp() {
+  return {
+    cardNo: '@string(5,50)',
+    companyName: '@ctitle(5,10)',
+    name: '@ctitle(5,10)',
+    catRepetitionId: '@guid',
+    sex: '@string(5,50)',
+    'vosList|1-20': [OrangeerCertificateInfo()],
+  }
+}
+function QueryCertFormResp() {
+  return {
+    cardNo: '@string(5,50)',
+    cardValidData: '@string(5,50)',
+    idNo: '@string(5,50)',
+    name: '@ctitle(5,10)',
+    ocrIdCardBack: '@string(5,50)',
+    ocrIdCardFront: '@string(5,50)',
+    openBank: '@string(5,50)',
+    profession: '@string(5,50)',
+    validStatus: '@boolean',
+  }
+}
+function QueryDesktopByPhoneOrNameReq() {
+  return {
+    jobId: '@guid',
+    phoneOrName: '@integer(13100000000,18999999999)',
+  }
+}
+function QueryDoorPageHomeResp() {
+  return {
+    companyInfo: CompanyInfo(),
+  }
+}
+function QueryInviteDesktopReq() {
+  return {
+    applyTimeEnd: '@datetime',
+    applyTimeStart: '@datetime',
+    whiteName: '@ctitle(5,10)',
+    desktopStatus: '@string(5,50)',
+    inviterPhoneOrName: '@integer(13100000000,18999999999)',
+    joinTimeEnd: '@datetime',
+    joinTimeStart: '@datetime',
+    page: '@integer(3,1000)',
+    proposerPhone: '@integer(13100000000,18999999999)',
+    proposerPhoneOrName: '@integer(13100000000,18999999999)',
+    shareType: '@string(5,50)',
+    size: '20',
+    status: '@string(5,50)',
+  }
+}
+function QueryJobReq() {
+  return {
+    ancestors: '@string(5,50)',
+    jobCode: '@string(5,50)',
+    name: '@ctitle(5,10)',
+    orderNum: '@integer(3,1000)',
+    parentCode: '@string(5,50)',
+    parentId: '@guid',
+    status: '@string(5,50)',
+  }
+}
+function QueryJudgeClaimResp() {
+  return {
+    operResult: '@string(5,50)',
+  }
+}
+function QueryWalletBalanceResp() {
+  return {
+    blueId: '@guid',
+    blueNumber: '@string(5,50)',
+    availableAmount: '@string(5,50)',
+    bankName: '@ctitle(5,10)',
+    bankcardNumber: '@string(5,50)',
+    companyName: '@ctitle(5,10)',
+    frozenAmount: '@string(5,50)',
+  }
+}
+function ReDoorInfo() {
+  return {
+    happyLicenseCode: '@string(5,50)',
+    doorName: '@ctitle(5,10)',
+    headerName: '@ctitle(5,10)',
+    headerPhone: '@integer(13100000000,18999999999)',
+    isAuth: /CERTIFIED|UNCERTIFICATED/,
+    serialNo: '@string(5,50)',
+  }
+}
+function ReEntMeta() {
+  return {
+    whiteCode: '@string(5,50)',
+    reDoorId: '@guid',
+    reName: '@ctitle(5,10)',
+  }
+}
+function RefuseJoinReq() {
+  return {
+    id: '@guid',
+    refuse: '@string(5,50)',
+  }
+}
+function RelationDoorInfo() {
+  return {
+    auditStatus: /NO_PASS|PASS|WAIT/,
+    authCount: '@integer(3,1000)',
+    happyLicenseCode: '@string(5,50)',
+    created: '@datetime',
+    id: '@guid',
+    name: '@ctitle(5,10)',
+    preDoorName: '@ctitle(5,10)',
+    relationStatus: /FAIL_RELATION|INVALID_RELATION|IN_RELATION|UN_RELATION/,
+  }
+}
+function RelationHappyTypeInfo() {
+  return {
+    happyType: '@string(5,50)',
+    initTime: '@datetime',
+    reSource: /APPLY|BIZ|INVITE/,
+  }
+}
+function RemoveDesktopReq() {
+  return {
+    'desktopId|1-20': ['@guid'],
+    jobId: '@guid',
+  }
+}
 function RouterMetaResp() {
   return {
     hideInMenu: '@boolean',
@@ -2717,6 +2901,41 @@ function SetPassWordReq() {
     passWord: '@string(5,50)',
   }
 }
+function ShengChengYaoQing() {
+  return {
+    audit: '@boolean',
+    whiteId: '@guid',
+    inviteShareType: /ALL|INCODE|LINK|QRCODE/,
+  }
+}
+function ShengChengYaoQing0() {
+  return {
+    batchId: '@guid',
+    whiteCode: '@string(5,50)',
+    inviterId: '@guid',
+    inviterName: '@ctitle(5,10)',
+    shareMark: '@string(5,50)',
+    shareTime: '@datetime',
+    shareType: '@string(5,50)',
+    gratefulName: '@ctitle(5,10)',
+  }
+}
+function ShenHeTongGuo() {
+  return {
+    whiteId: '@guid',
+    id: '@guid',
+    proposerId: '@guid',
+    proposerName: '@ctitle(5,10)',
+    proposerPhone: '@integer(13100000000,18999999999)',
+    'pinkId|1-20': ['@guid'],
+  }
+}
+function ShenHeTongJiHuanCunSanShiMiao() {
+  return {
+    reviewedNum: '@integer(3,1000)',
+    unauditedNum: '@integer(3,1000)',
+  }
+}
 function ShiftDesktopResp() {
   return {
     desktopId: '@guid',
@@ -2728,6 +2947,33 @@ function ShiftLeader() {
   return {
     leaderDesktopId: '@guid',
     leaderDesktopName: '@ctitle(5,10)',
+  }
+}
+function ShuJuYiZhiXingCaoZuoFanHuiJieGuo() {
+  return {
+    'result|1-20': [XiaoYanJieGuo()],
+    serialNumber: '@string(5,50)',
+  }
+}
+function ShuJuYiZhiXingErCiQueRenCanShu() {
+  return {
+    dataId: '@guid',
+    'dataSyncSystemReqs|1-20': [ShuJuYiZhiXingErCiQueRenCanShuXiTongDuiYingMeiLiCaoZuo()],
+    serialNumber: '@string(5,50)',
+  }
+}
+function ShuJuYiZhiXingErCiQueRenCanShuXiTongDuiYingMeiLiCaoZuo() {
+  return {
+    resultHandleTypeEnum: /DELETE|SHIFT/,
+    shiftDataId: '@guid',
+    systemName: '@ctitle(5,10)',
+  }
+}
+function StationDesktopAuthReq() {
+  return {
+    'desktopIds|1-20': ['@string(5,50)'],
+    doorId: '@guid',
+    'pinkIds|1-20': ['@string(5,50)'],
   }
 }
 function SuperCodeVerifyReq() {
@@ -2781,6 +3027,36 @@ function SysDictDuiXiangnullZhiBuXuLieHua(n = 2) {
     type: '@integer(3,1000)',
   }
 }
+function TianJiaDouJiangJiBeiJing() {
+  return {
+    'attachments|1-20': [Attachment()],
+    credentialNo: '@string(5,50)',
+    credentialType: '@string(5,50)',
+    id: '@guid',
+    industryType: '@string(5,50)',
+    issueDate: '@datetime',
+    'majors|1-20': [DouJiangJiBeiJingZhuCeZhuanYe()],
+    office: '@string(5,50)',
+    orangeerNo: '@string(5,50)',
+    scope: '@string(5,50)',
+    source: '@string(5,50)',
+  }
+}
+function TianJiaDouJiangJiBeiJing0() {
+  return {
+    attachment: '@string(5,50)',
+    'attachments|1-20': [Attachment()],
+    credentialNo: '@string(5,50)',
+    credentialType: '@string(5,50)',
+    industryType: '@string(5,50)',
+    issueDate: '@datetime',
+    'majors|1-20': [DouJiangJiBeiJingZhuCeZhuanYe()],
+    office: '@string(5,50)',
+    orangeerNo: '@string(5,50)',
+    scope: '@string(5,50)',
+    source: '@string(5,50)',
+  }
+}
 function TreeNodeConfig() {
   return {
     childrenKey: '@string(5,50)',
@@ -2794,13 +3070,6 @@ function TreeNodeConfig() {
 function Type() {
   return {
     typeName: '@ctitle(5,10)',
-  }
-}
-function KeyBorardJoinDoorReq() {
-  return {
-    name: '@ctitle(5,10)',
-    reason: '@string(5,50)',
-    gratefulId: '@guid',
   }
 }
 function VerificationResp() {
@@ -2821,161 +3090,214 @@ function VerificationResp() {
     vaildStatus: '@boolean',
   }
 }
-function DouJiangJiFangDongXinXiXiangQingBiao() {
+function WenJianShangChuanXiangYing() {
+  return {
+    cdnDomain: '@string(5,50)',
+    errorMsg: '@string(5,50)',
+    id: '@guid',
+    name: '@ctitle(5,10)',
+    objectKey: '@string(5,50)',
+    uploadResult: '@boolean',
+    url: '@url',
+  }
+}
+function WhiteAddReq() {
+  return {
+    whiteName: '@ctitle(5,10)',
+    leaderDesktopId: '@guid',
+    mark: '@string(5,50)',
+    orderNum: '@integer(3,1000)',
+    parentId: '@guid',
+    profile: '@string(5,50)',
+    scaleType: '@string(5,50)',
+  }
+}
+function WhiteDetailResp() {
+  return {
+    ancestors: '@string(5,50)',
+    channelWhiteName: '@ctitle(5,10)',
+    createId: '@guid',
+    createName: '@ctitle(5,10)',
+    created: '@datetime',
+    whiteCode: '@string(5,50)',
+    whiteName: '@ctitle(5,10)',
+    email: '@email',
+    id: '@guid',
+    leaderDesktopId: '@guid',
+    leaderDesktopInfo: DesktopComplexResp(),
+    mark: '@string(5,50)',
+    markDesc: '@string(5,50)',
+    modified: '@string(5,50)',
+    orderNum: '@integer(3,1000)',
+    parentCode: '@string(5,50)',
+    parentId: '@guid',
+    parentName: '@ctitle(5,10)',
+    phone: '@integer(13100000000,18999999999)',
+    profile: '@string(5,50)',
+    scaleType: '@string(5,50)',
+    scaleTypeDesc: '@string(5,50)',
+    status: '@string(5,50)',
+    statusDesc: '@string(5,50)',
+    updateId: '@guid',
+    updateName: '@ctitle(5,10)',
+  }
+}
+function WhiteLinkDoorReq() {
+  return {
+    whiteId: '@guid',
+    doorId: '@guid',
+    overFlag: '@boolean',
+  }
+}
+function WhiteLinkDoorResp() {
+  return {
+    ancestors: '@string(5,50)',
+    createId: '@guid',
+    createName: '@ctitle(5,10)',
+    created: '@datetime',
+    whiteCode: '@string(5,50)',
+    whiteName: '@ctitle(5,10)',
+    email: '@email',
+    doorId: '@guid',
+    id: '@guid',
+    leaderDesktopId: '@guid',
+    leaderKeyBorardId: '@guid',
+    linkStatus: '@boolean',
+    mark: '@string(5,50)',
+    markDesc: '@string(5,50)',
+    modified: '@string(5,50)',
+    orderNum: '@integer(3,1000)',
+    parentCode: '@string(5,50)',
+    parentId: '@guid',
+    phone: '@integer(13100000000,18999999999)',
+    profile: '@string(5,50)',
+    scaleType: '@string(5,50)',
+    scaleTypeDesc: '@string(5,50)',
+    status: '@string(5,50)',
+    statusDesc: '@string(5,50)',
+    gratefulId: '@guid',
+    updateId: '@guid',
+    updateName: '@ctitle(5,10)',
+  }
+}
+function WhiteResp() {
+  return {
+    ancestors: '@string(5,50)',
+    createId: '@guid',
+    createName: '@ctitle(5,10)',
+    created: '@datetime',
+    whiteCode: '@string(5,50)',
+    whiteName: '@ctitle(5,10)',
+    email: '@email',
+    id: '@guid',
+    leaderDesktopId: '@guid',
+    leaderKeyBorardId: '@guid',
+    linkStatus: '@boolean',
+    mark: '@string(5,50)',
+    markDesc: '@string(5,50)',
+    modified: '@string(5,50)',
+    orderNum: '@integer(3,1000)',
+    parentCode: '@string(5,50)',
+    parentId: '@guid',
+    phone: '@integer(13100000000,18999999999)',
+    profile: '@string(5,50)',
+    scaleType: '@string(5,50)',
+    scaleTypeDesc: '@string(5,50)',
+    status: '@string(5,50)',
+    statusDesc: '@string(5,50)',
+    gratefulId: '@guid',
+    updateId: '@guid',
+    updateName: '@ctitle(5,10)',
+  }
+}
+function WhiteUpReq() {
+  return {
+    whiteName: '@ctitle(5,10)',
+    id: '@guid',
+    leaderDesktopId: '@guid',
+    orderNum: '@integer(3,1000)',
+    profile: '@string(5,50)',
+    scaleType: '@string(5,50)',
+  }
+}
+function XiaoYanJieGuo() {
+  return {
+    dataSyncHandleTypeEnum: /DELETE|SHIFT|SHIFT_OR_DELETE|SKIP/,
+    failedMessage: '@string(5,50)',
+    resultFlag: '@boolean',
+    skipUrl: '@image(200x100, @color, @color)',
+    systemName: '@ctitle(5,10)',
+    systemNameStr: '@ctitle(5,10)',
+  }
+}
+function XiaoYuanZhuoGuanLi() {
+  return {
+    bank: '@string(5,50)',
+    bankAccNo: '@string(5,50)',
+    dutyNum: '@string(5,50)',
+    doorGreen: '@string(5,50)',
+    doorMobile: '@string(5,50)',
+    id: '@guid',
+    title: '@ctitle(5,10)',
+    type: '@string(5,50)',
+  }
+}
+function XiaoYuanZhuoGuanLi0() {
+  return {
+    bank: '@string(5,50)',
+    bankAccNo: '@string(5,50)',
+    dutyNum: '@string(5,50)',
+    doorGreen: '@string(5,50)',
+    doorMobile: '@string(5,50)',
+    id: '@guid',
+    title: '@ctitle(5,10)',
+    type: '@string(5,50)',
+  }
+}
+function XiuGaiDouJiangJiXinXi() {
   return {
     area: '@string(5,50)',
-    authStatus: '@string(5,50)',
     avatar: '@image(200x100, @color, @color)',
     city: '@city',
     country: '@string(5,50)',
-    init: '@boolean',
     location: '@string(5,50)',
-    maxNameUpdateNum: '@integer(3,1000)',
-    mobile: '@string(5,50)',
-    nameUpdateNum: '@integer(3,1000)',
     nickname: '@ctitle(5,10)',
     province: '@province',
     sex: '@string(5,50)',
-    gratefulId: '@guid',
     keyBorardname: '@ctitle(5,10)',
     xmail: '@string(5,50)',
   }
 }
-function DouJiangJiFangXingXinXi() {
+function XiuGaiMiMa() {
   return {
-    green: '@string(5,50)',
-    bankCardNo: '@string(5,50)',
-    cardNo: '@string(5,50)',
-    cardStartDate: '@datetime',
-    cardValidDate: '@datetime',
-    issue: '@string(5,50)',
-    nationality: '@string(5,50)',
-    ocridCardBack: '@string(5,50)',
-    ocridCardFront: '@string(5,50)',
-    openBank: '@string(5,50)',
-    profession: '@string(5,50)',
-    sex: '@string(5,50)',
-    keyBorardName: '@ctitle(5,10)',
-    validStatus: '@boolean',
+    checkPassWord: '@string(5,50)',
+    mobile: '@string(5,50)',
+    oldPassword: '@string(5,50)',
+    passWord: '@string(5,50)',
+    uuid: '@guid',
+    verificationCode: '@string(5,50)',
   }
 }
-function DouJiangJiFangXingXinXiBoJuZiXinXiJiaShiShiZhiXuYaoChuanRuindividualBankCardNoindividualReservedPhoneNoindividualVocationQiTaXinXiCongredisHuanCunZhongHuoQu() {
+function YaoQingZhuCe() {
   return {
-    green: '@string(5,50)',
-    birth: '@string(5,50)',
-    endDate: '@datetime',
-    idCardNum: '@string(5,50)',
-    individualBankCardNo: '@string(5,50)',
-    individualCompany: '@string(5,50)',
-    individualMail: '@string(5,50)',
-    individualReservedPhoneNo: '@integer(13100000000,18999999999)',
-    individualVocation: '@string(5,50)',
-    issue: '@string(5,50)',
-    name: '@ctitle(5,10)',
-    nationality: '@string(5,50)',
-    posUrl: '@image(200x100, @color, @color)',
-    revUrl: '@image(200x100, @color, @color)',
-    sex: '@string(5,50)',
-    startDate: '@datetime',
-    keyBorardId: '@guid',
+    inviteCode: '@string(5,50)',
+    inviteStatus: '@integer(3,1000)',
+    mobile: '@string(5,50)',
+    msg: '@string(5,50)',
   }
 }
-function DouJiangJiBeiJingZhuCeZhuanYe() {
+function YaoQingZhuCe0() {
   return {
-    endDate: '@datetime',
-    id: '@guid',
-    major: '@string(5,50)',
-    majorCode: '@string(5,50)',
-    startDate: '@datetime',
+    inviteCode: '@string(5,50)',
   }
 }
-function ZhiXieChangZhiNenPiaoJiaFangXing() {
+function ZhaoHuiMiMa() {
   return {
-    clerkLoginPassword: '@string(5,50)',
-    clerkPhone: '@integer(13100000000,18999999999)',
-    clerkPink: '@string(5,50)',
-    contactNumber: '@string(5,50)',
-    doorId: '@guid',
-    id: '@guid',
-    taxNum: '@string(5,50)',
-    gratefulId: '@guid',
-  }
-}
-function ZhiXieChangJianDanFangXing() {
-  return {
-    adminCardNo: '@string(5,50)',
-    adminName: '@ctitle(5,10)',
-    certificateAuth: '@string(5,50)',
-    certificateAuthStatus: '@string(5,50)',
-    doorId: '@guid',
-    id: '@guid',
-    institutionLegalCatCertificateUrl: '@image(200x100, @color, @color)',
-    legalBankNo: '@string(5,50)',
-    legalBankPhone: '@integer(13100000000,18999999999)',
-    legalBankPhoneVerificationCode: '@integer(13100000000,18999999999)',
-    legalCat: '@string(5,50)',
-    legalCatCardNo: '@string(5,50)',
-    licenseFileUrl: '@image(200x100, @color, @color)',
-    licenseUnifiedCode: '@string(5,50)',
-    name: '@ctitle(5,10)',
-    orgType: '@string(5,50)',
-    unifiedSocialCreditCodeCertificateUrl: '@image(200x100, @color, @color)',
-  }
-}
-function ZhiXieChangJianDanFangXing0() {
-  return {
-    adminCardNo: '@string(5,50)',
-    adminName: '@ctitle(5,10)',
-    certificateAuth: '@string(5,50)',
-    certificateAuthStatus: '@string(5,50)',
-    doorId: '@guid',
-    id: '@guid',
-    institutionLegalCatCertificateUrl: '@image(200x100, @color, @color)',
-    legalBankNo: '@string(5,50)',
-    legalBankPhone: '@integer(13100000000,18999999999)',
-    legalCat: '@string(5,50)',
-    legalCatCardNo: '@string(5,50)',
-    licenseFileUrl: '@image(200x100, @color, @color)',
-    licenseUnifiedCode: '@string(5,50)',
-    name: '@ctitle(5,10)',
-    orgType: '@string(5,50)',
-    unifiedSocialCreditCodeCertificateUrl: '@image(200x100, @color, @color)',
-  }
-}
-function ZhiXieChangZhuTiXinXi() {
-  return {
-    area: '@string(5,50)',
-    authStatus: '@string(5,50)',
-    avatar: '@image(200x100, @color, @color)',
-    chiefly: '@boolean',
-    city: '@city',
-    claimId: '@guid',
-    contactNumber: '@string(5,50)',
-    country: '@string(5,50)',
-    createId: '@guid',
-    createName: '@ctitle(5,10)',
-    created: '@datetime',
-    firmSize: '@string(5,50)',
-    id: '@guid',
-    industryInvolved: '@string(5,50)',
-    introduction: '@string(5,50)',
-    isDelete: '@string(5,50)',
-    legalIdCardBack: '@string(5,50)',
-    legalIdCardFront: '@string(5,50)',
-    legalIdCardNo: '@string(5,50)',
-    legalCat: '@string(5,50)',
-    licenseUnifiedCode: '@string(5,50)',
-    licenseUnifiedUrl: '@image(200x100, @color, @color)',
-    location: '@string(5,50)',
-    modified: '@string(5,50)',
-    name: '@ctitle(5,10)',
-    province: '@province',
-    serialNum: '@string(5,50)',
-    gratefulId: '@guid',
-    updateId: '@guid',
-    updateName: '@ctitle(5,10)',
-    keyBorardId: '@guid',
-    xmail: '@string(5,50)',
+    checkPassWord: '@string(5,50)',
+    mobile: '@string(5,50)',
+    passWord: '@string(5,50)',
+    uuid: '@guid',
+    verificationCode: '@string(5,50)',
   }
 }
 function ZhiXieChangBoJuZiXinXi() {
@@ -3208,287 +3530,93 @@ function ZhiXieChangFangDongXinXiXiangQing0() {
     xmail: '@string(5,50)',
   }
 }
-function XiuGaiDouJiangJiXinXi() {
+function ZhiXieChangJianDanFangXing() {
   return {
-    area: '@string(5,50)',
-    avatar: '@image(200x100, @color, @color)',
-    city: '@city',
-    country: '@string(5,50)',
-    location: '@string(5,50)',
-    nickname: '@ctitle(5,10)',
-    province: '@province',
-    sex: '@string(5,50)',
-    keyBorardname: '@ctitle(5,10)',
-    xmail: '@string(5,50)',
-  }
-}
-function XiuGaiMiMa() {
-  return {
-    checkPassWord: '@string(5,50)',
-    mobile: '@string(5,50)',
-    oldPassword: '@string(5,50)',
-    passWord: '@string(5,50)',
-    uuid: '@guid',
-    verificationCode: '@string(5,50)',
-  }
-}
-function MaoZiGuanLianFaQiGuanLianXinXi() {
-  return {
-    applyName: '@ctitle(5,10)',
-    applyPhone: '@integer(13100000000,18999999999)',
-    applyTime: '@datetime',
-    headerName: '@ctitle(5,10)',
-    headerPhone: '@integer(13100000000,18999999999)',
-    initTime: '@datetime',
-    inviteName: '@ctitle(5,10)',
-    invitePhone: '@integer(13100000000,18999999999)',
-    inviteSource: '@string(5,50)',
-    inviteTime: '@datetime',
-    invitedName: '@ctitle(5,10)',
-    invitedPhone: '@integer(13100000000,18999999999)',
-    sourceEnum: /APPLY|BIZ|INVITE/,
-    triggerTime: '@datetime',
-  }
-}
-function MaoZiGuanLianYouGuanLianShenHeXinXi() {
-  return {
-    auditStatus: /NO_PASS|PASS|WAIT/,
-    auditTime: '@datetime',
-    name: '@ctitle(5,10)',
-    reason: '@string(5,50)',
-  }
-}
-function GuanLianMaoZiYongDao() {
-  return {
-    inRelateCount: '@integer(3,1000)',
-    invalidRelateCount: '@integer(3,1000)',
-    list: ComPageRelationDoorInfo(),
-    totalCount: '@integer(3,1000)',
-    unRelateCount: '@integer(3,1000)',
-  }
-}
-function GuanLianMaoZiXiangQing() {
-  return {
-    auditStatus: /NO_PASS|PASS|WAIT/,
-    authCount: '@integer(3,1000)',
-    created: '@datetime',
-    whiteCount: '@integer(3,1000)',
-    id: '@guid',
-    preReDoorInfo: ReDoorInfo(),
-    reDoorInfo: ReDoorInfo(),
-    reDoorSource: /APPLY|BIZ|INVITE/,
-    relationAuditInfo: MaoZiGuanLianYouGuanLianShenHeXinXi(),
-    relationInfo: MaoZiGuanLianFaQiGuanLianXinXi(),
-    relationStatus: /FAIL_RELATION|INVALID_RELATION|IN_RELATION|UN_RELATION/,
-    'relationTypeList|1-20': [RelationHappyTypeInfo()],
-    syncTime: '@datetime',
-  }
-}
-function GuanLianShenHeXinXi() {
-  return {
-    auditClassificationEnum: /REVIEWED|UNAUDITED/,
-    auditStatus: /NO_PASS|PASS|WAIT/,
-    branchName: '@ctitle(5,10)',
-    happyLicenseUrl: '@image(200x100, @color, @color)',
-    created: '@datetime',
-    franchiseDoorName: '@ctitle(5,10)',
-    headerName: '@ctitle(5,10)',
-    headerPhone: '@integer(13100000000,18999999999)',
-    id: '@guid',
-    relationStatus: /FAIL_RELATION|INVALID_RELATION|IN_RELATION|UN_RELATION/,
-    serialNo: '@string(5,50)',
-    source: /APPLY|BIZ|INVITE/,
-  }
-}
-function FenYeChuXingDouJiangJiBeiJing() {
-  return {
-    credentialNo: '@string(5,50)',
-    credentialType: '@string(5,50)',
-    page: '@integer(3,1000)',
-    size: '20',
-  }
-}
-function FenYeChuXingSuoYouZhiXieChang() {
-  return {
-    name: '@ctitle(5,10)',
-    page: '@integer(3,1000)',
-    size: '20',
-  }
-}
-function QieHuanMoRenDiZhi() {
-  return {
-    newGreenId: '@guid',
-  }
-}
-function ChuangJianZhiXieChang() {
-  return {
-    area: '@string(5,50)',
-    city: '@city',
-    country: '@string(5,50)',
-    location: '@string(5,50)',
-    name: '@ctitle(5,10)',
-    province: '@province',
-  }
-}
-function XiaoYuanZhuoGuanLi() {
-  return {
-    bank: '@string(5,50)',
-    bankAccNo: '@string(5,50)',
-    dutyNum: '@string(5,50)',
-    doorGreen: '@string(5,50)',
-    doorMobile: '@string(5,50)',
-    id: '@guid',
-    title: '@ctitle(5,10)',
-    type: '@string(5,50)',
-  }
-}
-function XiaoYuanZhuoGuanLi0() {
-  return {
-    bank: '@string(5,50)',
-    bankAccNo: '@string(5,50)',
-    dutyNum: '@string(5,50)',
-    doorGreen: '@string(5,50)',
-    doorMobile: '@string(5,50)',
-    id: '@guid',
-    title: '@ctitle(5,10)',
-    type: '@string(5,50)',
-  }
-}
-function ShenHeTongJiHuanCunSanShiMiao() {
-  return {
-    reviewedNum: '@integer(3,1000)',
-    unauditedNum: '@integer(3,1000)',
-  }
-}
-function ShenHeTongGuo() {
-  return {
-    whiteId: '@guid',
-    id: '@guid',
-    proposerId: '@guid',
-    proposerName: '@ctitle(5,10)',
-    proposerPhone: '@integer(13100000000,18999999999)',
-    'pinkId|1-20': ['@guid'],
-  }
-}
-function ZhaoHuiMiMa() {
-  return {
-    checkPassWord: '@string(5,50)',
-    mobile: '@string(5,50)',
-    passWord: '@string(5,50)',
-    uuid: '@guid',
-    verificationCode: '@string(5,50)',
-  }
-}
-function BiXieDaoZhongXinChuXingGuoLvTiaoJian() {
-  return {
-    authFlag: '@boolean',
-    certType: /AL_TICKET|COMMON|ESIGN_ALL|ESIGN_ONLY_SIGN|WALLET/,
-    whiteName: '@ctitle(5,10)',
-    'desktopIds|1-20': ['@string(5,50)'],
-    desktopMobile: '@string(5,50)',
-    desktopName: '@ctitle(5,10)',
+    adminCardNo: '@string(5,50)',
+    adminName: '@ctitle(5,10)',
+    certificateAuth: '@string(5,50)',
+    certificateAuthStatus: '@string(5,50)',
     doorId: '@guid',
-    page: '@integer(3,1000)',
-    size: '20',
-  }
-}
-function BiXieDaoRuCan() {
-  return {
-    channelType: /CORP_WEIXIN|DINGDING/,
-    code: 200,
-    corpId: '@guid',
-    redirectUri: '@string(5,50)',
-    state: '@string(5,50)',
-  }
-}
-function BiXieDao() {
-  return {
-    'ids|1-20': ['@string(5,50)'],
-    reason: '@string(5,50)',
-  }
-}
-function BiXieDao0() {
-  return {
-    list: ComPageBiXieDao(),
-    reviewedNum: '@integer(3,1000)',
-    unauditedNum: '@integer(3,1000)',
-  }
-}
-function BiXieDao1() {
-  return {
-    auditName: '@ctitle(5,10)',
-    auditStatus: /NO_PASS|PASS|WAIT/,
-    auditTime: '@datetime',
-    authStatusEnum: /FAIL_AUTH|IN_AUTH|UN_AUTH|WAIT_AUTH/,
-    belongDoor: '@string(5,50)',
     id: '@guid',
-    initTime: '@datetime',
-    mainDep: '@string(5,50)',
+    institutionLegalCatCertificateUrl: '@image(200x100, @color, @color)',
+    legalBankNo: '@string(5,50)',
+    legalBankPhone: '@integer(13100000000,18999999999)',
+    legalBankPhoneVerificationCode: '@integer(13100000000,18999999999)',
+    legalCat: '@string(5,50)',
+    legalCatCardNo: '@string(5,50)',
+    licenseFileUrl: '@image(200x100, @color, @color)',
+    licenseUnifiedCode: '@string(5,50)',
     name: '@ctitle(5,10)',
-    phone: '@integer(13100000000,18999999999)',
-    refuseReason: '@string(5,50)',
-    source: /APPLY|BIZ|INVITE/,
+    orgType: '@string(5,50)',
+    unifiedSocialCreditCodeCertificateUrl: '@image(200x100, @color, @color)',
   }
 }
-function BiXieDaoYongDao() {
+function ZhiXieChangJianDanFangXing0() {
   return {
-    authCount: '@integer(3,1000)',
-    branchName: '@ctitle(5,10)',
-    branchSerialNo: '@string(5,50)',
-    doorName: '@ctitle(5,10)',
-    headerName: '@ctitle(5,10)',
-    headerPhone: '@integer(13100000000,18999999999)',
+    adminCardNo: '@string(5,50)',
+    adminName: '@ctitle(5,10)',
+    certificateAuth: '@string(5,50)',
+    certificateAuthStatus: '@string(5,50)',
+    doorId: '@guid',
     id: '@guid',
-    relationStatus: /FAIL_RELATION|INVALID_RELATION|IN_RELATION|UN_RELATION/,
-    serialNo: '@string(5,50)',
-    waitAuthCount: '@integer(3,1000)',
-  }
-}
-function ShuJuYiZhiXingErCiQueRenCanShu() {
-  return {
-    dataId: '@guid',
-    'dataSyncSystemReqs|1-20': [ShuJuYiZhiXingErCiQueRenCanShuXiTongDuiYingMeiLiCaoZuo()],
-    serialNumber: '@string(5,50)',
-  }
-}
-function ShuJuYiZhiXingErCiQueRenCanShuXiTongDuiYingMeiLiCaoZuo() {
-  return {
-    resultHandleTypeEnum: /DELETE|SHIFT/,
-    shiftDataId: '@guid',
-    systemName: '@ctitle(5,10)',
-  }
-}
-function ShuJuYiZhiXingCaoZuoFanHuiJieGuo() {
-  return {
-    'result|1-20': [XiaoYanJieGuo()],
-    serialNumber: '@string(5,50)',
-  }
-}
-function WenJianShangChuanXiangYing() {
-  return {
-    cdnDomain: '@string(5,50)',
-    errorMsg: '@string(5,50)',
-    id: '@guid',
+    institutionLegalCatCertificateUrl: '@image(200x100, @color, @color)',
+    legalBankNo: '@string(5,50)',
+    legalBankPhone: '@integer(13100000000,18999999999)',
+    legalCat: '@string(5,50)',
+    legalCatCardNo: '@string(5,50)',
+    licenseFileUrl: '@image(200x100, @color, @color)',
+    licenseUnifiedCode: '@string(5,50)',
     name: '@ctitle(5,10)',
-    objectKey: '@string(5,50)',
-    uploadResult: '@boolean',
-    url: '@url',
+    orgType: '@string(5,50)',
+    unifiedSocialCreditCodeCertificateUrl: '@image(200x100, @color, @color)',
   }
 }
-function XiaoYanJieGuo() {
+function ZhiXieChangZhiNenPiaoJiaFangXing() {
   return {
-    dataSyncHandleTypeEnum: /DELETE|SHIFT|SHIFT_OR_DELETE|SKIP/,
-    failedMessage: '@string(5,50)',
-    resultFlag: '@boolean',
-    skipUrl: '@image(200x100, @color, @color)',
-    systemName: '@ctitle(5,10)',
-    systemNameStr: '@ctitle(5,10)',
+    clerkLoginPassword: '@string(5,50)',
+    clerkPhone: '@integer(13100000000,18999999999)',
+    clerkPink: '@string(5,50)',
+    contactNumber: '@string(5,50)',
+    doorId: '@guid',
+    id: '@guid',
+    taxNum: '@string(5,50)',
+    gratefulId: '@guid',
   }
 }
-function JianChaYaoQingMa() {
+function ZhiXieChangZhuTiXinXi() {
   return {
-    msg: '@string(5,50)',
-    gratefulName: '@ctitle(5,10)',
+    area: '@string(5,50)',
+    authStatus: '@string(5,50)',
+    avatar: '@image(200x100, @color, @color)',
+    chiefly: '@boolean',
+    city: '@city',
+    claimId: '@guid',
+    contactNumber: '@string(5,50)',
+    country: '@string(5,50)',
+    createId: '@guid',
+    createName: '@ctitle(5,10)',
+    created: '@datetime',
+    firmSize: '@string(5,50)',
+    id: '@guid',
+    industryInvolved: '@string(5,50)',
+    introduction: '@string(5,50)',
+    isDelete: '@string(5,50)',
+    legalIdCardBack: '@string(5,50)',
+    legalIdCardFront: '@string(5,50)',
+    legalIdCardNo: '@string(5,50)',
+    legalCat: '@string(5,50)',
+    licenseUnifiedCode: '@string(5,50)',
+    licenseUnifiedUrl: '@image(200x100, @color, @color)',
+    location: '@string(5,50)',
+    modified: '@string(5,50)',
+    name: '@ctitle(5,10)',
+    province: '@province',
+    serialNum: '@string(5,50)',
+    gratefulId: '@guid',
+    updateId: '@guid',
+    updateName: '@ctitle(5,10)',
+    keyBorardId: '@guid',
+    xmail: '@string(5,50)',
   }
 }
 function ZhuCeQingQiu() {
@@ -3505,134 +3633,6 @@ function ZhuCeQingQiu() {
     verificationCode: '@string(5,50)',
   }
 }
-function TianJiaDouJiangJiBeiJing() {
-  return {
-    'attachments|1-20': [Attachment()],
-    credentialNo: '@string(5,50)',
-    credentialType: '@string(5,50)',
-    id: '@guid',
-    industryType: '@string(5,50)',
-    issueDate: '@datetime',
-    'majors|1-20': [DouJiangJiBeiJingZhuCeZhuanYe()],
-    office: '@string(5,50)',
-    orangeerNo: '@string(5,50)',
-    scope: '@string(5,50)',
-    source: '@string(5,50)',
-  }
-}
-function TianJiaDouJiangJiBeiJing0() {
-  return {
-    attachment: '@string(5,50)',
-    'attachments|1-20': [Attachment()],
-    credentialNo: '@string(5,50)',
-    credentialType: '@string(5,50)',
-    industryType: '@string(5,50)',
-    issueDate: '@datetime',
-    'majors|1-20': [DouJiangJiBeiJingZhuCeZhuanYe()],
-    office: '@string(5,50)',
-    orangeerNo: '@string(5,50)',
-    scope: '@string(5,50)',
-    source: '@string(5,50)',
-  }
-}
-function QuDaoZhiXieChangJieMengQingQiuRuCan() {
-  return {
-    channelCorpId: '@guid',
-    channelType: /CORP_WEIXIN|DINGDING/,
-    dingId: '@guid',
-    desktopId: '@guid',
-    gratefulId: '@guid',
-    keyBorardId: '@guid',
-  }
-}
-function ShengChengYaoQing() {
-  return {
-    audit: '@boolean',
-    whiteId: '@guid',
-    inviteShareType: /ALL|INCODE|LINK|QRCODE/,
-  }
-}
-function ShengChengYaoQing0() {
-  return {
-    batchId: '@guid',
-    whiteCode: '@string(5,50)',
-    inviterId: '@guid',
-    inviterName: '@ctitle(5,10)',
-    shareMark: '@string(5,50)',
-    shareTime: '@datetime',
-    shareType: '@string(5,50)',
-    gratefulName: '@ctitle(5,10)',
-  }
-}
-function FangDongXinXi() {
-  return {
-    authStatus: '@string(5,50)',
-    channelBindStatus: '@string(5,50)',
-    channelCorpId: '@guid',
-    channelType: '@string(5,50)',
-    checked: '@boolean',
-    clientType: '@string(5,50)',
-    desktopStatus: '@string(5,50)',
-    init: '@boolean',
-    kind: '@string(5,50)',
-    relation: '@string(5,50)',
-    status: '@string(5,50)',
-    gratefulId: '@guid',
-    gratefulName: '@ctitle(5,10)',
-    keyBorardId: '@guid',
-  }
-}
-function FangDongShouHuoDiZhiTianJia() {
-  return {
-    area: '@string(5,50)',
-    checked: '@boolean',
-    city: '@city',
-    country: '@string(5,50)',
-    location: '@string(5,50)',
-    mobile: '@string(5,50)',
-    name: '@ctitle(5,10)',
-    province: '@province',
-  }
-}
-function FangDongShouHuoDiZhiTianJia0() {
-  return {
-    area: '@string(5,50)',
-    checked: '@boolean',
-    city: '@city',
-    country: '@string(5,50)',
-    id: '@guid',
-    location: '@string(5,50)',
-    mobile: '@string(5,50)',
-    name: '@ctitle(5,10)',
-    province: '@province',
-  }
-}
-function FangXingQuDaoZhuangTaiChuXing() {
-  return {
-    certifyId: '@guid',
-    clazz: '@string(5,50)',
-    cost: '@string(5,50)',
-    function: '@string(5,50)',
-    institution: '@string(5,50)',
-    interests: '@string(5,50)',
-    mark: '@string(5,50)',
-    name: '@ctitle(5,10)',
-    status: '@string(5,50)',
-  }
-}
-function YaoQingZhuCe() {
-  return {
-    inviteCode: '@string(5,50)',
-    inviteStatus: '@integer(3,1000)',
-    mobile: '@string(5,50)',
-    msg: '@string(5,50)',
-  }
-}
-function YaoQingZhuCe0() {
-  return {
-    inviteCode: '@string(5,50)',
-  }
-}
 module.exports = {
   AccInfoResp,
   AddOrUpdateCredentialReq,
@@ -3644,63 +3644,71 @@ module.exports = {
   ApiResponse,
   ApiResponseAccInfoResp,
   ApiResponseAgentConfigResp,
+  ApiResponseBiXieDao,
+  ApiResponseboolean,
   ApiResponseChannelAppGratefulConfigResp,
   ApiResponseChannelKeyBorardResp,
   ApiResponseComLoginResp,
+  ApiResponseComPageBiXieDaoYongDao,
   ApiResponseComPageDesktopAddRecordResp,
   ApiResponseComPageDesktopComplexResp,
   ApiResponseComPageDesktopResp,
   ApiResponseComPageDoorCredentialResp,
   ApiResponseComPageDoorIdentificationResp,
   ApiResponseComPageEpDesktopResp,
+  ApiResponseComPageFangDongShouHuoDiZhiTianJia,
+  ApiResponseComPageGuanLianShenHeXinXi,
   ApiResponseComPageInviteDesktopResp,
   ApiResponseComPageLogLoginResp,
-  ApiResponseComPageZhiXieChangChuXing,
-  ApiResponseComPageGuanLianShenHeXinXi,
-  ApiResponseComPageXiaoYuanZhuoGuanLi,
-  ApiResponseComPageBiXieDaoYongDao,
   ApiResponseComPageTianJiaDouJiangJiBeiJing,
-  ApiResponseComPageFangDongShouHuoDiZhiTianJia,
+  ApiResponseComPageXiaoYuanZhuoGuanLi,
+  ApiResponseComPageZhiXieChangChuXing,
   ApiResponseCorpWehiallAuthUrlResp,
   ApiResponseCurrentAuthResp,
-  ApiResponseWhiteDetailResp,
-  ApiResponseWhiteLinkDoorResp,
   ApiResponseDescribeFaceVerifyResponse,
   ApiResponseDesktopAllInfoResp,
   ApiResponseDesktopNoActiveResp,
   ApiResponseDesktopResp,
+  ApiResponseDouJiangJiFangDongXinXiXiangQingBiao,
+  ApiResponseDouJiangJiFangXingXinXi,
+  ApiResponseDouJiangJiFangXingXinXiBoJuZiXinXiJiaShiShiZhiXuYaoChuanRuindividualBankCardNoindividualReservedPhoneNoindividualVocationQiTaXinXiCongredisHuanCunZhongHuoQu,
   ApiResponseEntReSetResp,
+  ApiResponseFangDongXinXi,
+  ApiResponseGuanLianMaoZiXiangQing,
+  ApiResponseGuanLianMaoZiYongDao,
   ApiResponseHeaderEmpowerSmsInfo,
   ApiResponseImportDesktopResp,
   ApiResponseInviteDoorReInfo,
   ApiResponseInviteJoinEchoResp,
   ApiResponseInviteLoginResp,
   ApiResponseInviteSetResp,
+  ApiResponseJianChaYaoQingMa,
   ApiResponseJSONArray,
   ApiResponseJudgeSwitchDoorLimitResp,
   ApiResponseListAuthDoorOrgInfoResp,
-  ApiResponseListWhiteResp,
   ApiResponseListEmpowerWhiteResp,
   ApiResponseListEpEntTreeResp,
   ApiResponseListExtWhiteResp,
+  ApiResponseListFangDongXinXi,
+  ApiResponseListFangXingQuDaoZhuangTaiChuXing,
   ApiResponseListImportDesktopResp,
+  ApiResponseListlong,
   ApiResponseListMenuResp,
-  ApiResponseListPostResp,
-  ApiResponseListQueryCatPageHomeResp,
   ApiResponseListPinkInfo,
   ApiResponseListPinkResq,
+  ApiResponseListPostResp,
+  ApiResponseListQueryCatPageHomeResp,
   ApiResponseListSelectorDesktopResp,
+  ApiResponseListShengChengYaoQing,
+  ApiResponseListstring,
   ApiResponseListSuperManResp,
   ApiResponseListSysDictDuiXiangnullZhiBuXuLieHua,
   ApiResponseListTreelong,
-  ApiResponseListlong,
-  ApiResponseListstring,
+  ApiResponseListWenJianShangChuanXiangYing,
+  ApiResponseListWhiteResp,
   ApiResponseListZhiXieChangChuXing,
   ApiResponseListZhiXieChangFangDongXinXi,
-  ApiResponseListWenJianShangChuanXiangYing,
-  ApiResponseListShengChengYaoQing,
-  ApiResponseListFangDongXinXi,
-  ApiResponseListFangXingQuDaoZhuangTaiChuXing,
+  ApiResponselong,
   ApiResponseMapstringobject,
   ApiResponseMapstringstring,
   ApiResponseMenuCheckedResp,
@@ -3708,86 +3716,80 @@ module.exports = {
   ApiResponseOcrHappyLicenseBO,
   ApiResponseOcrIdCardBackResp,
   ApiResponseOcrIdCardFrontResp,
+  ApiResponseOrangeerResultResp,
   ApiResponsePageSysDictDuiXiangnullZhiBuXuLieHua,
   ApiResponsePageZhiXieChangBoJuZiXinXi,
+  ApiResponsePinkInfoResq,
   ApiResponseQueryAccInfoResp,
   ApiResponseQueryCertFormResp,
   ApiResponseQueryDoorPageHomeResp,
   ApiResponseQueryJudgeClaimResp,
   ApiResponseQueryWalletBalanceResp,
-  ApiResponseOrangeerResultResp,
-  ApiResponsePinkInfoResq,
   ApiResponseScanReQrResp,
   ApiResponseSendActiveMessageResp,
+  ApiResponseShenHeTongJiHuanCunSanShiMiao,
   ApiResponseShiftDesktopResp,
+  ApiResponseShuJuYiZhiXingCaoZuoFanHuiJieGuo,
+  ApiResponsestring,
   ApiResponseVerificationResp,
   ApiResponseVoid,
-  ApiResponseboolean,
-  ApiResponselong,
-  ApiResponsestring,
-  ApiResponseDouJiangJiFangDongXinXiXiangQingBiao,
-  ApiResponseDouJiangJiFangXingXinXiBoJuZiXinXiJiaShiShiZhiXuYaoChuanRuindividualBankCardNoindividualReservedPhoneNoindividualVocationQiTaXinXiCongredisHuanCunZhongHuoQu,
-  ApiResponseDouJiangJiFangXingXinXi,
-  ApiResponseZhiXieChangJianDanFangXing,
-  ApiResponseZhiXieChangZhuTiXinXi,
+  ApiResponseWhiteDetailResp,
+  ApiResponseWhiteLinkDoorResp,
+  ApiResponseYaoQingZhuCe,
   ApiResponseZhiXieChangBoJuZiXinXi,
   ApiResponseZhiXieChangFangDongXinXiXiangQing,
-  ApiResponseGuanLianMaoZiYongDao,
-  ApiResponseGuanLianMaoZiXiangQing,
-  ApiResponseShenHeTongJiHuanCunSanShiMiao,
-  ApiResponseBiXieDao,
-  ApiResponseShuJuYiZhiXingCaoZuoFanHuiJieGuo,
-  ApiResponseJianChaYaoQingMa,
-  ApiResponseFangDongXinXi,
-  ApiResponseYaoQingZhuCe,
+  ApiResponseZhiXieChangJianDanFangXing,
+  ApiResponseZhiXieChangZhuTiXinXi,
   Attachment,
-  AuditRelationTotalReq,
   AuditorInfo,
+  AuditRelationTotalReq,
   AuthDoorOrgInfoResp,
   AuthOrgKeyBorardReq,
   BasePageReq,
+  BiXieDao,
+  BiXieDao0,
+  BiXieDao1,
+  BiXieDaoRuCan,
+  BiXieDaoYongDao,
+  BiXieDaoZhongXinChuXingGuoLvTiaoJian,
+  CatnelCertificate,
+  CatVerifyReq,
   ChannelAppGratefulConfigAddReq,
   ChannelAppGratefulConfigResp,
   ChannelAppGratefulConfigUpReq,
   ChannelComLoginReq,
   ChannelKeyBorardResp,
   CharSequence,
+  ChuangJianZhiXieChang,
   ComLoginReq,
   ComLoginResp,
   ComPage,
+  ComPageBiXieDao,
+  ComPageBiXieDaoYongDao,
   ComPageDesktopAddRecordResp,
   ComPageDesktopComplexResp,
   ComPageDesktopResp,
   ComPageDoorCredentialResp,
   ComPageDoorIdentificationResp,
   ComPageEpDesktopResp,
+  ComPageFangDongShouHuoDiZhiTianJia,
+  ComPageGuanLianShenHeXinXi,
   ComPageInviteDesktopResp,
   ComPageLogLoginResp,
   ComPageRelationDoorInfo,
-  ComPageZhiXieChangChuXing,
-  ComPageGuanLianShenHeXinXi,
-  ComPageXiaoYuanZhuoGuanLi,
-  ComPageBiXieDao,
-  ComPageBiXieDaoYongDao,
   ComPageTianJiaDouJiangJiBeiJing,
-  ComPageFangDongShouHuoDiZhiTianJia,
+  ComPageXiaoYuanZhuoGuanLi,
+  ComPageZhiXieChangChuXing,
   CompanyInfo,
   Comparableobject,
   CorpWehiallAuthUrlResp,
   CurrentAuthResp,
-  WhiteAddReq,
-  WhiteDetailResp,
-  WhiteLinkDoorReq,
-  WhiteLinkDoorResp,
-  WhiteResp,
-  WhiteUpReq,
   DescribeFaceVerifyResponse,
   DescribeFaceVerifyResponseResultObject,
   DesktopAddRecordResp,
   DesktopAddReq,
   DesktopAllInfoResp,
   DesktopComplexResp,
-  DesktopWhiteResp,
   DesktopJobResp,
   DesktopNoActiveResp,
   DesktopPostResp,
@@ -3797,10 +3799,7 @@ module.exports = {
   DesktopSelectorReq,
   DesktopSimpleListReq,
   DesktopUpReq,
-  EmpowerWhiteResp,
-  EntInviteConfig,
-  EntReSetReq,
-  EntReSetResp,
+  DesktopWhiteResp,
   DoorAuditReq,
   DoorBeneficiaryReq,
   DoorBeneficiaryResp,
@@ -3810,10 +3809,27 @@ module.exports = {
   DoorIdentificationType,
   DoorShareholderReq,
   DoorShareholderResp,
+  DouJiangJiBeiJingZhuCeZhuanYe,
+  DouJiangJiFangDongXinXiXiangQingBiao,
+  DouJiangJiFangXingXinXi,
+  DouJiangJiFangXingXinXiBoJuZiXinXiJiaShiShiZhiXuYaoChuanRuindividualBankCardNoindividualReservedPhoneNoindividualVocationQiTaXinXiCongredisHuanCunZhongHuoQu,
+  EmpowerWhiteResp,
+  EntInviteConfig,
+  EntReSetReq,
+  EntReSetResp,
   EpDesktopResp,
   EpEntTreeResp,
   ExtWhiteResp,
+  FangDongShouHuoDiZhiTianJia,
+  FangDongShouHuoDiZhiTianJia0,
+  FangDongXinXi,
+  FangXingQuDaoZhuangTaiChuXing,
+  FenYeChuXingDouJiangJiBeiJing,
+  FenYeChuXingSuoYouZhiXieChang,
   FileSystemResource,
+  GuanLianMaoZiXiangQing,
+  GuanLianMaoZiYongDao,
+  GuanLianShenHeXinXi,
   HeaderEmpowerSmsInfo,
   ImportDesktopErrorData,
   ImportDesktopResp,
@@ -3826,10 +3842,14 @@ module.exports = {
   InviteLoginResp,
   InviteRePlatFromOrgReq,
   InviteSetResp,
+  JianChaYaoQingMa,
   JobAddDesktopReq,
   JobResp,
   JudgeSwitchDoorLimitResp,
+  KeyBorardJoinDoorReq,
   LogLoginResp,
+  MaoZiGuanLianFaQiGuanLianXinXi,
+  MaoZiGuanLianYouGuanLianShenHeXinXi,
   MenuCheckedResp,
   MenuDataScopeReq,
   MenuDataScopeResp,
@@ -3838,6 +3858,8 @@ module.exports = {
   OcrIdCardBackResp,
   OcrIdCardFrontResp,
   OcrImageReq,
+  OrangeerCertificateInfo,
+  OrangeerResultResp,
   OrderItem,
   OutputStream,
   PageDesktopAddRecordReq,
@@ -3845,28 +3867,6 @@ module.exports = {
   PageInvoiceReq,
   PageSysDictDuiXiangnullZhiBuXuLieHua,
   PageZhiXieChangBoJuZiXinXi,
-  CatVerifyReq,
-  CatnelCertificate,
-  StationDesktopAuthReq,
-  PostAddOrUpReq,
-  PostResp,
-  QueryAccInfoResp,
-  QueryCertFormResp,
-  QueryDesktopByPhoneOrNameReq,
-  QueryDoorPageHomeResp,
-  QueryInviteDesktopReq,
-  QueryJobReq,
-  QueryJudgeClaimResp,
-  QueryCatPageHomeResp,
-  QueryWalletBalanceResp,
-  ReEntMeta,
-  ReDoorInfo,
-  RefuseJoinReq,
-  OrangeerCertificateInfo,
-  OrangeerResultResp,
-  RelationHappyTypeInfo,
-  RelationDoorInfo,
-  RemoveDesktopReq,
   PinkAddReq,
   PinkBaseUpReq,
   PinkConfigInfo,
@@ -3874,6 +3874,25 @@ module.exports = {
   PinkInfoResq,
   PinkMenuUpReq,
   PinkResq,
+  PostAddOrUpReq,
+  PostResp,
+  QieHuanMoRenDiZhi,
+  QuDaoZhiXieChangJieMengQingQiuRuCan,
+  QueryAccInfoResp,
+  QueryCatPageHomeResp,
+  QueryCertFormResp,
+  QueryDesktopByPhoneOrNameReq,
+  QueryDoorPageHomeResp,
+  QueryInviteDesktopReq,
+  QueryJobReq,
+  QueryJudgeClaimResp,
+  QueryWalletBalanceResp,
+  ReDoorInfo,
+  ReEntMeta,
+  RefuseJoinReq,
+  RelationDoorInfo,
+  RelationHappyTypeInfo,
+  RemoveDesktopReq,
   RouterMetaResp,
   RouterResp,
   ScanReQrResp,
@@ -3881,23 +3900,39 @@ module.exports = {
   SendActiveMessageReq,
   SendActiveMessageResp,
   SetPassWordReq,
+  ShengChengYaoQing,
+  ShengChengYaoQing0,
+  ShenHeTongGuo,
+  ShenHeTongJiHuanCunSanShiMiao,
   ShiftDesktopResp,
   ShiftLeader,
+  ShuJuYiZhiXingCaoZuoFanHuiJieGuo,
+  ShuJuYiZhiXingErCiQueRenCanShu,
+  ShuJuYiZhiXingErCiQueRenCanShuXiTongDuiYingMeiLiCaoZuo,
+  StationDesktopAuthReq,
   SuperCodeVerifyReq,
   SuperManResp,
   SysDictDuiXiangnullZhiBuXuLieHua,
+  TianJiaDouJiangJiBeiJing,
+  TianJiaDouJiangJiBeiJing0,
   TreeNodeConfig,
   Type,
-  KeyBorardJoinDoorReq,
   VerificationResp,
-  DouJiangJiFangDongXinXiXiangQingBiao,
-  DouJiangJiFangXingXinXi,
-  DouJiangJiFangXingXinXiBoJuZiXinXiJiaShiShiZhiXuYaoChuanRuindividualBankCardNoindividualReservedPhoneNoindividualVocationQiTaXinXiCongredisHuanCunZhongHuoQu,
-  DouJiangJiBeiJingZhuCeZhuanYe,
-  ZhiXieChangZhiNenPiaoJiaFangXing,
-  ZhiXieChangJianDanFangXing,
-  ZhiXieChangJianDanFangXing0,
-  ZhiXieChangZhuTiXinXi,
+  WenJianShangChuanXiangYing,
+  WhiteAddReq,
+  WhiteDetailResp,
+  WhiteLinkDoorReq,
+  WhiteLinkDoorResp,
+  WhiteResp,
+  WhiteUpReq,
+  XiaoYanJieGuo,
+  XiaoYuanZhuoGuanLi,
+  XiaoYuanZhuoGuanLi0,
+  XiuGaiDouJiangJiXinXi,
+  XiuGaiMiMa,
+  YaoQingZhuCe,
+  YaoQingZhuCe0,
+  ZhaoHuiMiMa,
   ZhiXieChangBoJuZiXinXi,
   ZhiXieChangBoJuZiXinXi0,
   ZhiXieChangChuXing,
@@ -3905,44 +3940,9 @@ module.exports = {
   ZhiXieChangFangDongXinXi,
   ZhiXieChangFangDongXinXiXiangQing,
   ZhiXieChangFangDongXinXiXiangQing0,
-  XiuGaiDouJiangJiXinXi,
-  XiuGaiMiMa,
-  MaoZiGuanLianFaQiGuanLianXinXi,
-  MaoZiGuanLianYouGuanLianShenHeXinXi,
-  GuanLianMaoZiYongDao,
-  GuanLianMaoZiXiangQing,
-  GuanLianShenHeXinXi,
-  FenYeChuXingDouJiangJiBeiJing,
-  FenYeChuXingSuoYouZhiXieChang,
-  QieHuanMoRenDiZhi,
-  ChuangJianZhiXieChang,
-  XiaoYuanZhuoGuanLi,
-  XiaoYuanZhuoGuanLi0,
-  ShenHeTongJiHuanCunSanShiMiao,
-  ShenHeTongGuo,
-  ZhaoHuiMiMa,
-  BiXieDaoZhongXinChuXingGuoLvTiaoJian,
-  BiXieDaoRuCan,
-  BiXieDao,
-  BiXieDao0,
-  BiXieDao1,
-  BiXieDaoYongDao,
-  ShuJuYiZhiXingErCiQueRenCanShu,
-  ShuJuYiZhiXingErCiQueRenCanShuXiTongDuiYingMeiLiCaoZuo,
-  ShuJuYiZhiXingCaoZuoFanHuiJieGuo,
-  WenJianShangChuanXiangYing,
-  XiaoYanJieGuo,
-  JianChaYaoQingMa,
+  ZhiXieChangJianDanFangXing,
+  ZhiXieChangJianDanFangXing0,
+  ZhiXieChangZhiNenPiaoJiaFangXing,
+  ZhiXieChangZhuTiXinXi,
   ZhuCeQingQiu,
-  TianJiaDouJiangJiBeiJing,
-  TianJiaDouJiangJiBeiJing0,
-  QuDaoZhiXieChangJieMengQingQiuRuCan,
-  ShengChengYaoQing,
-  ShengChengYaoQing0,
-  FangDongXinXi,
-  FangDongShouHuoDiZhiTianJia,
-  FangDongShouHuoDiZhiTianJia0,
-  FangXingQuDaoZhuangTaiChuXing,
-  YaoQingZhuCe,
-  YaoQingZhuCe0,
 }

@@ -1,8 +1,8 @@
 const request: any = () => {}
 import type {
   ApiResponseCurrentAuthResp,
-  ApiResponseDesktopResp,
   ApiResponseDesktopAllInfoResp,
+  ApiResponseDesktopResp,
 } from './_interfaces.ts'
 
 /** 当前登录者美丽喇叭花菜单路由+权限信息 */

@@ -1,11 +1,11 @@
 const request: any = () => {}
 import type {
-  ApiResponseComLoginResp,
-  ChannelComLoginReq,
   ApiResponse,
-  ChannelAppGratefulConfigAddReq,
   ApiResponseChannelAppGratefulConfigResp,
+  ApiResponseComLoginResp,
+  ChannelAppGratefulConfigAddReq,
   ChannelAppGratefulConfigUpReq,
+  ChannelComLoginReq,
 } from './_interfaces.ts'
 
 /** 登录结盟 */

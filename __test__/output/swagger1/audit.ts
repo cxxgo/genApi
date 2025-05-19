@@ -1,9 +1,9 @@
 const request: any = () => {}
 import type {
-  ApiResponseVoid,
-  BiXieDao,
   ApiResponseBiXieDao,
   ApiResponseComPageBiXieDaoYongDao,
+  ApiResponseVoid,
+  BiXieDao,
 } from './_interfaces.ts'
 
 /** 执行审核 */

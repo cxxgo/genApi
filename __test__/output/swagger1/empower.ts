@@ -1,23 +1,23 @@
 const request: any = () => {}
 import type {
-  ApiResponseVoid,
-  StationDesktopAuthReq,
-  ApiResponseListEmpowerWhiteResp,
-  ApiResponseGuanLianMaoZiXiangQing,
-  ApiResponsestring,
-  ApiResponseListZhiXieChangFangDongXinXi,
-  ApiResponseListPinkInfo,
   ApiResponseAccInfoResp,
-  ApiResponseMapstringstring,
-  ApiResponseHeaderEmpowerSmsInfo,
-  ApiResponseEntReSetResp,
-  ApiResponseInviteDoorReInfo,
-  InviteRePlatFromOrgReq,
-  ApiResponseGuanLianMaoZiYongDao,
   ApiResponseComPageEpDesktopResp,
+  ApiResponseEntReSetResp,
+  ApiResponseGuanLianMaoZiXiangQing,
+  ApiResponseGuanLianMaoZiYongDao,
+  ApiResponseHeaderEmpowerSmsInfo,
+  ApiResponseInviteDoorReInfo,
+  ApiResponseListEmpowerWhiteResp,
   ApiResponseListEpEntTreeResp,
+  ApiResponseListPinkInfo,
+  ApiResponseListZhiXieChangFangDongXinXi,
+  ApiResponseMapstringstring,
   ApiResponseScanReQrResp,
+  ApiResponsestring,
+  ApiResponseVoid,
   EntReSetReq,
+  InviteRePlatFromOrgReq,
+  StationDesktopAuthReq,
 } from './_interfaces.ts'
 
 /** 提醒审核 */
@@ -45,14 +45,14 @@ export function empowerDoorReBathCancelAuth(data: StationDesktopAuthReq): Promis
   return request.post('/api/empower/doorRe/bathCancelAuth', data)
 }
 
-/** 获取小金库树_全部小金库 */
-export function empowerDoorReWhiteTree(data: {
-  // 小金库code
-  whiteCode?: string
-  // 小金库太阳花
-  whiteName?: string
-}): Promise<ApiResponseListEmpowerWhiteResp> {
-  return request.get('/api/empower/doorRe/whiteTree', data)
+/** 批量辟邪刀-小麦同意/拒绝 */
+export function empowerDoorReDesktopOperEmType(data: {
+  code?: string
+  refuseReason?: string
+  type?: string
+}): Promise<ApiResponseVoid> {
+  const { code, refuseReason, type } = data
+  return request.get(`/api/empower/doorRe/desktopOper/em/${type}`, { code, refuseReason })
 }
 
 /** 帽子关联详情 */
@@ -78,16 +78,6 @@ export function empowerDoorReDetailGetDoorListByPhone(data: {
 /** 获取平台帽子甬道 */
 export function empowerDoorReDetailListDoor(): Promise<ApiResponseListZhiXieChangFangDongXinXi> {
   return request.get('/api/empower/doorRe/detail/listDoor')
-}
-
-/** 批量辟邪刀-小麦同意/拒绝 */
-export function empowerDoorReDesktopOperEmType(data: {
-  code?: string
-  refuseReason?: string
-  type?: string
-}): Promise<ApiResponseVoid> {
-  const { code, refuseReason, type } = data
-  return request.get(`/api/empower/doorRe/desktopOper/em/${type}`, { code, refuseReason })
 }
 
 /** 关联设置-获取角色甬道 */
@@ -210,14 +200,6 @@ export function empowerDoorRePageDesktopList(data: {
   return request.get('/api/empower/doorRe/pageDesktopList', data)
 }
 
-/** 关联小金库树-帽子甬道 */
-export function empowerDoorReReReEntTree(data: {
-  // 帽子ID
-  doorId?: string
-}): Promise<ApiResponseListEpEntTreeResp> {
-  return request.get('/api/empower/doorRe/re/reEntTree', data)
-}
-
 /** 关联帽子树 */
 export function empowerDoorReReEntTree(data: { doorId?: string }): Promise<ApiResponseListEpEntTreeResp> {
   return request.get('/api/empower/doorRe/reEntTree', data)
@@ -244,6 +226,14 @@ export function empowerDoorReRelationRefresh(data: {
   return request.get('/api/empower/doorRe/relation/refresh', data)
 }
 
+/** 关联小金库树-帽子甬道 */
+export function empowerDoorReReReEntTree(data: {
+  // 帽子ID
+  doorId?: string
+}): Promise<ApiResponseListEpEntTreeResp> {
+  return request.get('/api/empower/doorRe/re/reEntTree', data)
+}
+
 /** 外部关联码-出行团建关联 */
 export function empowerDoorReScanGetOrgInfo(data: {
   code?: string
@@ -261,4 +251,14 @@ export function empowerDoorReSendEmpowerSms(data: string[]): Promise<ApiResponse
 export function empowerDoorReUpEntReSetDoorId(data: { doorId?: string; req?: EntReSetReq }): Promise<ApiResponseVoid> {
   const { doorId, req } = data
   return request.post(`/api/empower/doorRe/upEntReSet/${doorId}`, { req })
+}
+
+/** 获取小金库树_全部小金库 */
+export function empowerDoorReWhiteTree(data: {
+  // 小金库code
+  whiteCode?: string
+  // 小金库太阳花
+  whiteName?: string
+}): Promise<ApiResponseListEmpowerWhiteResp> {
+  return request.get('/api/empower/doorRe/whiteTree', data)
 }

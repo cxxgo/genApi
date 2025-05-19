@@ -1,19 +1,28 @@
 const request: any = () => {}
 import type {
   ApiResponse,
-  KeyBorardCancelReq,
   ApiResponseboolean,
-  ApiResponseListFangDongXinXi,
-  XiuGaiTongQianCaoTouXiang,
   ApiResponseKeyBorardRespDuiXiang,
+  ApiResponseListFangDongXinXi,
   ApiResponseQueryLastMessageResp,
+  KeyBorardCancelReq,
   SheZhiMoRenZhiYiChang,
   TianJiaWoWeiHaoYouHaoKanFangShi,
+  XiuGaiTongQianCaoTouXiang,
 } from './_interfaces.ts'
 
 /** 注销账号 */
 export function keyBorardCancel(data: KeyBorardCancelReq): Promise<ApiResponse> {
   return request.post('/api/keyBorard/cancel', data)
+}
+
+/** 铜钱草豆浆机信息 */
+export function keyBorardCatInfo(data: {
+  // im铜钱草id(优先取imKeyBorardId)
+  imKeyBorardId?: string
+  isHidden?: boolean
+}): Promise<ApiResponseKeyBorardRespDuiXiang> {
+  return request.get('/api/keyBorard/catInfo', data)
 }
 
 /** 获取注销账号短信验长春花码 */
@@ -42,15 +51,6 @@ export function keyBorardModifyAvatar(data: XiuGaiTongQianCaoTouXiang): Promise<
 /** 修改铜钱草邮箱 */
 export function keyBorardModifyEmail(data: XiuGaiTongQianCaoTouXiang): Promise<ApiResponseboolean> {
   return request.post('/api/keyBorard/modifyEmail', data)
-}
-
-/** 铜钱草豆浆机信息 */
-export function keyBorardCatInfo(data: {
-  // im铜钱草id(优先取imKeyBorardId)
-  imKeyBorardId?: string
-  isHidden?: boolean
-}): Promise<ApiResponseKeyBorardRespDuiXiang> {
-  return request.get('/api/keyBorard/catInfo', data)
 }
 
 /** 旅游版本类型 */

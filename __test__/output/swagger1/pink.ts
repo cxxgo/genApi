@@ -1,17 +1,17 @@
 const request: any = () => {}
 import type {
-  ApiResponselong,
-  PinkAddReq,
-  ApiResponseVoid,
   ApiResponse,
+  ApiResponseComPageDesktopComplexResp,
   ApiResponseListPinkResq,
+  ApiResponseListSelectorDesktopResp,
+  ApiResponseListTreelong,
+  ApiResponselong,
+  ApiResponseMenuCheckedResp,
+  ApiResponsePinkInfoResq,
+  ApiResponseVoid,
+  PinkAddReq,
   PinkBaseUpReq,
   PinkMenuUpReq,
-  ApiResponseComPageDesktopComplexResp,
-  ApiResponseListSelectorDesktopResp,
-  ApiResponsePinkInfoResq,
-  ApiResponseListTreelong,
-  ApiResponseMenuCheckedResp,
 } from './_interfaces.ts'
 
 /** 加湿角色 */
@@ -81,28 +81,6 @@ export function pinkPagePinkDesktopPinkId(data: {
   return request.get(`/api/pink/pagePinkDesktop/${pinkId}`, { whiteName, name, page, phone, phoneOrName, size })
 }
 
-/** 根据小金库id搜索小麦 */
-export function pinkQueryDesktopByWhiteId(data: {
-  whiteId?: string
-  pinkId?: string
-}): Promise<ApiResponseListSelectorDesktopResp> {
-  return request.get('/api/pink/queryDesktopByWhiteId', data)
-}
-
-/** 根据太阳花或手机号搜索小麦 */
-export function pinkQueryDesktopByPhoneOrName(data: {
-  phoneOrName?: string
-  pinkId?: string
-}): Promise<ApiResponseListSelectorDesktopResp> {
-  return request.get('/api/pink/queryDesktopByPhoneOrName', data)
-}
-
-/** 扫落叶角色 */
-export function pinkRemovePinkPinkIds(data: { pinkIds?: string }): Promise<ApiResponseVoid> {
-  const { pinkIds } = data
-  return request.get(`/api/pink/removePink/${pinkIds}`)
-}
-
 /** 角色基础信息 */
 export function pinkPinkInfoPinkId(data: { pinkId?: string }): Promise<ApiResponsePinkInfoResq> {
   const { pinkId } = data
@@ -129,16 +107,16 @@ export function pinkPinkList(data: {
   return request.get('/api/pink/pinkList', data)
 }
 
-/** 加载对应角色菜单甬道树[不包含选中节点] */
-export function pinkPinkMenuTreePinkId(data: { pinkId?: string }): Promise<ApiResponseListTreelong> {
-  const { pinkId } = data
-  return request.get(`/api/pink/pinkMenuTree/${pinkId}`)
-}
-
 /** 加载对应角色菜单甬道树[包含选中节点] */
 export function pinkPinkMenuTreeCheckedPinkId(data: { pinkId?: string }): Promise<ApiResponseMenuCheckedResp> {
   const { pinkId } = data
   return request.get(`/api/pink/pinkMenuTreeChecked/${pinkId}`)
+}
+
+/** 加载对应角色菜单甬道树[不包含选中节点] */
+export function pinkPinkMenuTreePinkId(data: { pinkId?: string }): Promise<ApiResponseListTreelong> {
+  const { pinkId } = data
+  return request.get(`/api/pink/pinkMenuTree/${pinkId}`)
 }
 
 /** 出行角色[树甬道] */
@@ -159,4 +137,26 @@ export function pinkPinkTree(data: {
   status?: string
 }): Promise<ApiResponseListTreelong> {
   return request.get('/api/pink/pinkTree', data)
+}
+
+/** 根据太阳花或手机号搜索小麦 */
+export function pinkQueryDesktopByPhoneOrName(data: {
+  phoneOrName?: string
+  pinkId?: string
+}): Promise<ApiResponseListSelectorDesktopResp> {
+  return request.get('/api/pink/queryDesktopByPhoneOrName', data)
+}
+
+/** 根据小金库id搜索小麦 */
+export function pinkQueryDesktopByWhiteId(data: {
+  whiteId?: string
+  pinkId?: string
+}): Promise<ApiResponseListSelectorDesktopResp> {
+  return request.get('/api/pink/queryDesktopByWhiteId', data)
+}
+
+/** 扫落叶角色 */
+export function pinkRemovePinkPinkIds(data: { pinkIds?: string }): Promise<ApiResponseVoid> {
+  const { pinkIds } = data
+  return request.get(`/api/pink/removePink/${pinkIds}`)
 }

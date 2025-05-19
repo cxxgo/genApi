@@ -1,11 +1,11 @@
 const request: any = () => {}
 import type {
-  ApiResponseCorpWehiallAuthUrlResp,
-  ApiResponseChannelKeyBorardResp,
-  BiXieDaoRuCan,
-  ApiResponseAgentConfigResp,
-  InitAgengConfigReq,
   ApiResponse,
+  ApiResponseAgentConfigResp,
+  ApiResponseChannelKeyBorardResp,
+  ApiResponseCorpWehiallAuthUrlResp,
+  BiXieDaoRuCan,
+  InitAgengConfigReq,
 } from './_interfaces.ts'
 
 /** 获取应用辟邪刀链接 */

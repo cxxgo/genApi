@@ -1,9 +1,9 @@
 const request: any = () => {}
 import type {
   ApiResponseComPageKeyBorardBlackResp,
-  BasePageReq,
   ApiResponseobject,
   ApiResponseWaterFallPageKeyBorardBlackResp,
+  BasePageReq,
 } from './_interfaces.ts'
 
 /** 黑名单甬道 */

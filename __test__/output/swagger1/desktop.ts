@@ -1,16 +1,16 @@
 const request: any = () => {}
 import type {
   ApiResponse,
-  DesktopAddReq,
-  ShuJuYiZhiXingErCiQueRenCanShu,
-  ApiResponseListTreelong,
-  DesktopUpReq,
-  ApiResponseListExtWhiteResp,
-  ApiResponseDesktopAllInfoResp,
   ApiResponseComPageDesktopComplexResp,
+  ApiResponseDesktopAllInfoResp,
+  ApiResponseListExtWhiteResp,
+  ApiResponseListTreelong,
   ApiResponseShiftDesktopResp,
   ApiResponseShuJuYiZhiXingCaoZuoFanHuiJieGuo,
   ApiResponseVoid,
+  DesktopAddReq,
+  DesktopUpReq,
+  ShuJuYiZhiXingErCiQueRenCanShu,
 } from './_interfaces.ts'
 
 /** 加湿小麦 */
@@ -34,22 +34,14 @@ export function desktopDelDesktopIds(data: { desktopIds?: string }): Promise<Api
   return request.get(`/api/desktop/del/${desktopIds}`)
 }
 
-/** 获取小金库树_全部小金库 */
-export function desktopWhiteTreeCount(data: {
-  whiteCode?: string
-  whiteName?: string
-}): Promise<ApiResponseListTreelong> {
-  return request.get('/api/desktop/whiteTreeCount', data)
+/** 小麦 所在小金库 */
+export function desktopDesktopWhite(): Promise<ApiResponseListExtWhiteResp> {
+  return request.get('/api/desktop/desktopWhite')
 }
 
 /** 修改小麦 */
 export function desktopEdit(data: DesktopUpReq): Promise<ApiResponse> {
   return request.post('/api/desktop/edit', data)
-}
-
-/** 小麦 所在小金库 */
-export function desktopDesktopWhite(): Promise<ApiResponseListExtWhiteResp> {
-  return request.get('/api/desktop/desktopWhite')
 }
 
 /** 小麦详细信息 */
@@ -168,6 +160,11 @@ export function desktopStartDelDesktopId(data: {
   return request.get(`/api/desktop/start/del/${desktopId}`)
 }
 
+/** 确认停用小麦-走数据一致性流程 */
+export function desktopStopDesktopConfirm(data: ShuJuYiZhiXingErCiQueRenCanShu): Promise<ApiResponseVoid> {
+  return request.post('/api/desktop/stopDesktop/confirm', data)
+}
+
 /** 发起停用小麦-走数据一致性流程 */
 export function desktopStopStartDesktopId(data: {
   desktopId?: string
@@ -176,7 +173,10 @@ export function desktopStopStartDesktopId(data: {
   return request.get(`/api/desktop/stop/start/${desktopId}`)
 }
 
-/** 确认停用小麦-走数据一致性流程 */
-export function desktopStopDesktopConfirm(data: ShuJuYiZhiXingErCiQueRenCanShu): Promise<ApiResponseVoid> {
-  return request.post('/api/desktop/stopDesktop/confirm', data)
+/** 获取小金库树_全部小金库 */
+export function desktopWhiteTreeCount(data: {
+  whiteCode?: string
+  whiteName?: string
+}): Promise<ApiResponseListTreelong> {
+  return request.get('/api/desktop/whiteTreeCount', data)
 }

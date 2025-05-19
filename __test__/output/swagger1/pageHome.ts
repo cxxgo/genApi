@@ -1,8 +1,8 @@
 const request: any = () => {}
 import type {
   ApiResponseboolean,
-  ApiResponseQueryJudgeClaimResp,
   ApiResponseListQueryCatPageHomeResp,
+  ApiResponseQueryJudgeClaimResp,
 } from './_interfaces.ts'
 
 /** 认领豆浆机信息 */

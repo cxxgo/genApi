@@ -1,19 +1,38 @@
 const request: any = () => {}
 import type {
   ApiResponseDescribeFaceVerifyResponse,
-  ApiResponseOcrIdCardBackResp,
-  OcrImageReq,
-  ApiResponseOcrIdCardFrontResp,
-  ApiResponseVerificationResp,
-  CatVerifyReq,
   ApiResponseDouJiangJiFangXingXinXi,
+  ApiResponseDouJiangJiFangXingXinXiBoJuZiXinXiJiaShiShiZhiXuYaoChuanRuindividualBankCardNoindividualReservedPhoneNoindividualVocationQiTaXinXiCongredisHuanCunZhongHuoQu,
   ApiResponseListFangXingQuDaoZhuangTaiChuXing,
-  ApiResponseVoid,
+  ApiResponseOcrIdCardBackResp,
+  ApiResponseOcrIdCardFrontResp,
   ApiResponseQueryCertFormResp,
   ApiResponsestring,
+  ApiResponseVerificationResp,
+  ApiResponseVoid,
+  CatVerifyReq,
   DouJiangJiFangXingXinXiBoJuZiXinXiJiaShiShiZhiXuYaoChuanRuindividualBankCardNoindividualReservedPhoneNoindividualVocationQiTaXinXiCongredisHuanCunZhongHuoQu,
-  ApiResponseDouJiangJiFangXingXinXiBoJuZiXinXiJiaShiShiZhiXuYaoChuanRuindividualBankCardNoindividualReservedPhoneNoindividualVocationQiTaXinXiCongredisHuanCunZhongHuoQu,
+  OcrImageReq,
 } from './_interfaces.ts'
+
+/** 出行豆浆机房东放行信息 */
+export function catCertificationCatAuthInfo(): Promise<ApiResponseDouJiangJiFangXingXinXi> {
+  return request.post('/api/catCertification/cat/auth/info')
+}
+
+/** 放行甬道 */
+export function catCertificationCatList(): Promise<ApiResponseListFangXingQuDaoZhuangTaiChuXing> {
+  return request.post('/api/catCertification/cat/list')
+}
+
+/** 豆浆机剥橘子-(支付)放行开始执行 */
+export function catCertificationCatV1KeyBorardIdOpenAcctExecute(data: {
+  // 喇叭花ID
+  keyBorardId?: string
+}): Promise<ApiResponseVoid> {
+  const { keyBorardId } = data
+  return request.post(`/api/catCertification/cat/v1/${keyBorardId}/openAcct/execute`)
+}
 
 /** 出行放行结果 */
 export function catCertificationDescribeFaceVerify(data: {
@@ -40,25 +59,6 @@ export function catCertificationInitFaceVerifyWithCertifyIdType(data: {
 }): Promise<ApiResponseVerificationResp> {
   const { req, type } = data
   return request.post(`/api/catCertification/initFaceVerifyWithCertifyId/${type}`, { req })
-}
-
-/** 出行豆浆机房东放行信息 */
-export function catCertificationCatAuthInfo(): Promise<ApiResponseDouJiangJiFangXingXinXi> {
-  return request.post('/api/catCertification/cat/auth/info')
-}
-
-/** 放行甬道 */
-export function catCertificationCatList(): Promise<ApiResponseListFangXingQuDaoZhuangTaiChuXing> {
-  return request.post('/api/catCertification/cat/list')
-}
-
-/** 豆浆机剥橘子-(支付)放行开始执行 */
-export function catCertificationCatV1KeyBorardIdOpenAcctExecute(data: {
-  // 喇叭花ID
-  keyBorardId?: string
-}): Promise<ApiResponseVoid> {
-  const { keyBorardId } = data
-  return request.post(`/api/catCertification/cat/v1/${keyBorardId}/openAcct/execute`)
 }
 
 /** 出行放行表单回显 */
