@@ -1,25 +1,40 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "OpenAPI definition",
-    "version": "v0"
+    "title": "待办中心 API",
+    "description": "待办中心接口文档",
+    "version": "1.0"
   },
   "servers": [
     {
-      "url": "http://gateway-dev.wygsy.com:9080",
-      "description": "Generated server url"
+      "url": "http://localhost:8080",
+      "description": "本地环境"
+    },
+    {
+      "url": "https://dev.gateway.wygsy.com/wygtech-schedule",
+      "description": "开发环境"
+    },
+    {
+      "url": "https://gatewaytest.wygsy.com/wygtech-schedule",
+      "description": "测试环境"
+    },
+    {
+      "url": "https://gateway.wygsy.com/wygtech-schedule",
+      "description": "生产环境"
     }
   ],
   "paths": {
     "/inner/todo/save": {
       "post": {
-        "tags": ["to-do-feign-controller"],
+        "tags": [
+          "to-do-feign-controller"
+        ],
         "operationId": "saveToDo",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/InnerRpc保存待办请求"
+                "$ref": "#/components/schemas/InnerRpcSaveToDoReq"
               }
             }
           },
@@ -41,13 +56,15 @@
     },
     "/inner/todo/finish": {
       "post": {
-        "tags": ["to-do-feign-controller"],
+        "tags": [
+          "to-do-feign-controller"
+        ],
         "operationId": "finishToDo",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/InnerRpc操作待办请求"
+                "$ref": "#/components/schemas/InnerRpcOperateToDoReq"
               }
             }
           },
@@ -69,7 +86,9 @@
     },
     "/inner/todo/count": {
       "post": {
-        "tags": ["to-do-feign-controller"],
+        "tags": [
+          "to-do-feign-controller"
+        ],
         "operationId": "countToDo",
         "requestBody": {
           "content": {
@@ -97,13 +116,15 @@
     },
     "/inner/todo/close": {
       "post": {
-        "tags": ["to-do-feign-controller"],
+        "tags": [
+          "to-do-feign-controller"
+        ],
         "operationId": "closeToDo",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/InnerRpc操作待办请求"
+                "$ref": "#/components/schemas/InnerRpcOperateToDoReq"
               }
             }
           },
@@ -125,14 +146,16 @@
     },
     "/api/todo/sub-todo/save": {
       "post": {
-        "tags": ["待办接口"],
+        "tags": [
+          "待办接口"
+        ],
         "summary": "保存子待办",
         "operationId": "saveSubToDo",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/保存待办请求"
+                "$ref": "#/components/schemas/SaveToDoReq"
               }
             }
           },
@@ -154,14 +177,16 @@
     },
     "/api/todo/save": {
       "post": {
-        "tags": ["待办接口"],
+        "tags": [
+          "待办接口"
+        ],
         "summary": "保存待办：参数含ID则更新否则新增",
         "operationId": "saveToDo_1",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/保存待办请求"
+                "$ref": "#/components/schemas/SaveToDoReq"
               }
             }
           },
@@ -183,12 +208,14 @@
     },
     "/api/todo/reopen": {
       "post": {
-        "tags": ["待办接口"],
+        "tags": [
+          "待办接口"
+        ],
         "summary": "重启待办",
         "operationId": "reopenToDo",
         "parameters": [
           {
-            "name": "arg0",
+            "name": "id",
             "in": "query",
             "required": true,
             "schema": {
@@ -197,7 +224,7 @@
             }
           },
           {
-            "name": "arg1",
+            "name": "userId",
             "in": "query",
             "required": false,
             "schema": {
@@ -222,14 +249,16 @@
     },
     "/api/todo/list/owner": {
       "post": {
-        "tags": ["待办接口"],
+        "tags": [
+          "待办接口"
+        ],
         "summary": "获取待办-已办列表",
         "operationId": "listToDoByOwner",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/待办列表查询请求"
+                "$ref": "#/components/schemas/OwnerListToDoReq"
               }
             }
           },
@@ -241,7 +270,7 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApiResponseComPage待办列表响应"
+                  "$ref": "#/components/schemas/ApiResponseComPageToDoListResp"
                 }
               }
             }
@@ -251,14 +280,16 @@
     },
     "/api/todo/list/assigner": {
       "post": {
-        "tags": ["待办接口"],
+        "tags": [
+          "待办接口"
+        ],
         "summary": "获取交办列表",
         "operationId": "listToDoByAssigner",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/待办列表查询请求"
+                "$ref": "#/components/schemas/AssignerListToDoReq"
               }
             }
           },
@@ -270,7 +301,7 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApiResponseComPage待办列表响应"
+                  "$ref": "#/components/schemas/ApiResponseComPageToDoListResp"
                 }
               }
             }
@@ -280,14 +311,16 @@
     },
     "/api/todo/forward": {
       "post": {
-        "tags": ["待办接口"],
+        "tags": [
+          "待办接口"
+        ],
         "summary": "转办",
         "operationId": "forwardToDo",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/转办请求"
+                "$ref": "#/components/schemas/ForwardToDoReq"
               }
             }
           },
@@ -309,12 +342,14 @@
     },
     "/api/todo/finish": {
       "post": {
-        "tags": ["待办接口"],
+        "tags": [
+          "待办接口"
+        ],
         "summary": "完成待办",
         "operationId": "finishToDo_1",
         "parameters": [
           {
-            "name": "arg1",
+            "name": "id",
             "in": "query",
             "required": false,
             "schema": {
@@ -323,7 +358,7 @@
             }
           },
           {
-            "name": "arg2",
+            "name": "userId",
             "in": "query",
             "required": false,
             "schema": {
@@ -357,12 +392,14 @@
     },
     "/api/todo/delete": {
       "post": {
-        "tags": ["待办接口"],
+        "tags": [
+          "待办接口"
+        ],
         "summary": "删除待办",
         "operationId": "deleteToDo",
         "parameters": [
           {
-            "name": "arg0",
+            "name": "id",
             "in": "query",
             "required": true,
             "schema": {
@@ -387,14 +424,16 @@
     },
     "/api/todo/comment/save": {
       "post": {
-        "tags": ["待办接口"],
+        "tags": [
+          "待办接口"
+        ],
         "summary": "添加评论",
         "operationId": "commentToDo",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/待办评论请求"
+                "$ref": "#/components/schemas/CommentReq"
               }
             }
           },
@@ -416,12 +455,14 @@
     },
     "/api/todo/close": {
       "post": {
-        "tags": ["待办接口"],
+        "tags": [
+          "待办接口"
+        ],
         "summary": "关闭待办",
         "operationId": "closeToDo_1",
         "parameters": [
           {
-            "name": "arg0",
+            "name": "id",
             "in": "query",
             "required": true,
             "schema": {
@@ -430,7 +471,7 @@
             }
           },
           {
-            "name": "arg1",
+            "name": "userId",
             "in": "query",
             "required": false,
             "schema": {
@@ -455,14 +496,16 @@
     },
     "/api/project/todo/list": {
       "post": {
-        "tags": ["项目待办"],
+        "tags": [
+          "项目待办"
+        ],
         "summary": "根据项目查询待办列表",
         "operationId": "listToDoByProject",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/项目全部待办列表请求"
+                "$ref": "#/components/schemas/ProjectListToDoReq"
               }
             }
           },
@@ -474,7 +517,7 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApiResponseComPage待办列表响应"
+                  "$ref": "#/components/schemas/ApiResponseComPageToDoListResp"
                 }
               }
             }
@@ -484,14 +527,16 @@
     },
     "/api/im/user-infos": {
       "post": {
-        "tags": ["IM适配接口"],
+        "tags": [
+          "IM适配接口"
+        ],
         "summary": "根据IM userId批量获取用户信息",
         "operationId": "getUserInfoProfiles",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/请求结构体"
+                "$ref": "#/components/schemas/ImUsersReq"
               }
             }
           },
@@ -503,7 +548,7 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApiResponseListPairLong租户信息"
+                  "$ref": "#/components/schemas/ApiResponseListPairLongTenantInfoResp"
                 }
               }
             }
@@ -513,14 +558,16 @@
     },
     "/api/im/todo/list/owner": {
       "post": {
-        "tags": ["IM适配接口"],
+        "tags": [
+          "IM适配接口"
+        ],
         "summary": "客户端-获取待办列表",
         "operationId": "listToDoByAppOwner",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/待办列表查询请求"
+                "$ref": "#/components/schemas/OwnerListToDoReq"
               }
             }
           },
@@ -532,7 +579,7 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApiResponseComPageAPP待办列表响应"
+                  "$ref": "#/components/schemas/ApiResponseComPageAppToDoListResp"
                 }
               }
             }
@@ -542,14 +589,16 @@
     },
     "/api/entry-setting/save": {
       "post": {
-        "tags": ["待办业务入口配置"],
+        "tags": [
+          "待办业务入口配置"
+        ],
         "summary": "保存入口配置",
         "operationId": "saveEntrySetting",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/保存待办入口配置请求"
+                "$ref": "#/components/schemas/SaveEntrySettingReq"
               }
             }
           },
@@ -571,14 +620,16 @@
     },
     "/api/entry-setting/delete": {
       "post": {
-        "tags": ["待办业务入口配置"],
+        "tags": [
+          "待办业务入口配置"
+        ],
         "summary": "删除待办入口配置",
         "operationId": "deleteEntrySetting",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/请求结构体"
+                "$ref": "#/components/schemas/IdReq"
               }
             }
           },
@@ -600,7 +651,9 @@
     },
     "/backdoor/peek": {
       "get": {
-        "tags": ["backdoor-controller"],
+        "tags": [
+          "backdoor-controller"
+        ],
         "operationId": "peekToDoOwer",
         "responses": {
           "200": {
@@ -618,7 +671,9 @@
     },
     "/backdoor/init": {
       "get": {
-        "tags": ["backdoor-controller"],
+        "tags": [
+          "backdoor-controller"
+        ],
         "operationId": "initToDoOwer",
         "responses": {
           "200": {
@@ -636,7 +691,9 @@
     },
     "/backdoor/clear": {
       "get": {
-        "tags": ["backdoor-controller"],
+        "tags": [
+          "backdoor-controller"
+        ],
         "operationId": "clear",
         "responses": {
           "200": {
@@ -654,12 +711,14 @@
     },
     "/api/todo/get": {
       "get": {
-        "tags": ["待办接口"],
+        "tags": [
+          "待办接口"
+        ],
         "summary": "获取待办详情",
         "operationId": "getToDo",
         "parameters": [
           {
-            "name": "arg0",
+            "name": "id",
             "in": "query",
             "required": true,
             "schema": {
@@ -674,7 +733,7 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApiResponse待办详情响应"
+                  "$ref": "#/components/schemas/ApiResponseToDoResp"
                 }
               }
             }
@@ -684,12 +743,14 @@
     },
     "/api/todo/event/list": {
       "get": {
-        "tags": ["待办接口"],
+        "tags": [
+          "待办接口"
+        ],
         "summary": "获取待办操作记录列表",
         "operationId": "listEvent",
         "parameters": [
           {
-            "name": "arg0",
+            "name": "id",
             "in": "query",
             "required": true,
             "schema": {
@@ -698,7 +759,7 @@
             }
           },
           {
-            "name": "arg1",
+            "name": "page",
             "in": "query",
             "required": false,
             "schema": {
@@ -708,7 +769,7 @@
             }
           },
           {
-            "name": "arg2",
+            "name": "size",
             "in": "query",
             "required": false,
             "schema": {
@@ -724,7 +785,7 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApiResponseComPage待办事件响应"
+                  "$ref": "#/components/schemas/ApiResponseComPageToDoEventResp"
                 }
               }
             }
@@ -734,12 +795,14 @@
     },
     "/api/todo/comment/list": {
       "get": {
-        "tags": ["待办接口"],
+        "tags": [
+          "待办接口"
+        ],
         "summary": "获取待办评论列表",
         "operationId": "listComment",
         "parameters": [
           {
-            "name": "arg0",
+            "name": "id",
             "in": "query",
             "required": true,
             "schema": {
@@ -748,7 +811,7 @@
             }
           },
           {
-            "name": "arg1",
+            "name": "page",
             "in": "query",
             "required": false,
             "schema": {
@@ -758,7 +821,7 @@
             }
           },
           {
-            "name": "arg2",
+            "name": "size",
             "in": "query",
             "required": false,
             "schema": {
@@ -774,7 +837,7 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApiResponseComPage待办评论详情"
+                  "$ref": "#/components/schemas/ApiResponseComPageCommentListResp"
                 }
               }
             }
@@ -784,12 +847,14 @@
     },
     "/api/im/user-info": {
       "get": {
-        "tags": ["IM适配接口"],
+        "tags": [
+          "IM适配接口"
+        ],
         "summary": "根据IM userId获取用户信息",
         "operationId": "getUserInfoProfile",
         "parameters": [
           {
-            "name": "arg0",
+            "name": "imUserId",
             "in": "query",
             "required": true,
             "schema": {
@@ -804,7 +869,7 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApiResponse租户信息"
+                  "$ref": "#/components/schemas/ApiResponseTenantInfoResp"
                 }
               }
             }
@@ -814,12 +879,14 @@
     },
     "/api/entry-setting/list": {
       "get": {
-        "tags": ["待办业务入口配置"],
+        "tags": [
+          "待办业务入口配置"
+        ],
         "summary": "查询配置列表",
         "operationId": "listEntrySetting",
         "parameters": [
           {
-            "name": "arg0",
+            "name": "page",
             "in": "query",
             "required": false,
             "schema": {
@@ -829,7 +896,7 @@
             }
           },
           {
-            "name": "arg1",
+            "name": "size",
             "in": "query",
             "required": false,
             "schema": {
@@ -839,7 +906,7 @@
             }
           },
           {
-            "name": "arg2",
+            "name": "nameKey",
             "in": "query",
             "required": false,
             "schema": {
@@ -847,7 +914,7 @@
             }
           },
           {
-            "name": "arg3",
+            "name": "toDoType",
             "in": "query",
             "required": false,
             "schema": {
@@ -882,7 +949,7 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/ApiResponseComPage待办入口配置响应"
+                  "$ref": "#/components/schemas/ApiResponseComPageEntrySettingResp"
                 }
               }
             }
@@ -902,115 +969,148 @@
           "fileUrl": {
             "type": "string"
           }
-        }
+        },
+        "description": "附件内容"
       },
       "EndpointLink": {
         "type": "object",
         "properties": {
           "endpoint": {
             "type": "string",
-            "enum": ["APP", "PC"]
+            "enum": [
+              "APP",
+              "PC"
+            ]
           },
           "url": {
             "type": "string"
           }
-        }
+        },
+        "description": "详情链接"
       },
-      "InnerRpc保存待办请求": {
+      "InnerRpcSaveToDoReq": {
         "type": "object",
         "properties": {
           "req": {
-            "$ref": "#/components/schemas/保存待办请求"
+            "$ref": "#/components/schemas/SaveToDoReq"
           }
         }
       },
-      "ToDoRelInfo": {
-        "type": "object"
-      },
-      "保存待办请求": {
+      "SaveToDoReq": {
         "type": "object",
         "properties": {
-          "业务待办编码": {
-            "type": "string"
+          "entry": {
+            "type": "string",
+            "description": "业务待办编码"
           },
-          "待办内容": {
-            "type": "string"
+          "content": {
+            "type": "string",
+            "description": "待办内容"
           },
-          "附件内容": {
+          "attaches": {
             "type": "array",
+            "description": "附件内容",
             "items": {
               "$ref": "#/components/schemas/Attach"
             }
           },
-          "租户ID": {
+          "tenantId": {
             "type": "integer",
+            "description": "租户ID",
             "format": "int64"
           },
-          "负责人列表": {
+          "owners": {
             "type": "array",
+            "description": "负责人列表",
             "items": {
-              "$ref": "#/components/schemas/待办负责人"
+              "$ref": "#/components/schemas/ToDoOwner"
             }
           },
-          "完成方式：默认ANY_OWNER": {
+          "finishTrigger": {
             "type": "string",
-            "enum": ["ANY_OWNER", "ALL_OWNER"]
+            "description": "完成方式：默认ANY_OWNER",
+            "enum": [
+              "ANY_OWNER",
+              "ALL_OWNER"
+            ]
           },
-          "是否IM单聊通知：默认true": {
-            "type": "boolean"
+          "isNotice": {
+            "type": "boolean",
+            "description": "是否IM单聊通知：默认true"
           },
-          "截至日期": {
+          "deadline": {
             "type": "string",
+            "description": "截至日期",
             "format": "date"
           },
-          "优先级": {
+          "priority": {
             "type": "integer",
+            "description": "优先级",
             "format": "int32"
           },
-          "工作量（天）": {
-            "type": "number"
+          "workload": {
+            "type": "number",
+            "description": "工作量（天）"
           },
-          "关联项目信息": {
+          "relInfo": {
             "$ref": "#/components/schemas/ToDoRelInfo"
           },
-          "处理按钮": {
-            "type": "string"
+          "processButton": {
+            "type": "string",
+            "description": "处理按钮"
           },
-          "处理链接": {
+          "processLinks": {
             "type": "array",
+            "description": "处理链接",
             "items": {
               "$ref": "#/components/schemas/EndpointLink"
             }
           },
-          "详情链接": {
+          "detailLinks": {
             "type": "array",
+            "description": "详情链接",
             "items": {
               "$ref": "#/components/schemas/EndpointLink"
             }
           }
-        }
+        },
+        "description": "保存待办请求"
       },
-      "待办负责人": {
+      "ToDoOwner": {
         "type": "object",
         "properties": {
-          "用户ID": {
+          "userId": {
             "type": "integer",
+            "description": "用户ID",
             "format": "int64"
           },
-          "用户姓名": {
-            "type": "string"
-          },
-          "部门编号": {
-            "type": "string"
-          },
-          "部门名称": {
-            "type": "string"
-          },
-          "待办状态": {
+          "userName": {
             "type": "string",
-            "enum": ["OPENING", "FINISHED", "CLOSED"]
+            "description": "用户姓名"
+          },
+          "deptCode": {
+            "type": "string",
+            "description": "部门编号"
+          },
+          "deptName": {
+            "type": "string",
+            "description": "部门名称"
+          },
+          "toDoState": {
+            "type": "string",
+            "description": "待办状态",
+            "enum": [
+              "OPENING",
+              "FINISHED",
+              "CLOSED"
+            ]
           }
-        }
+        },
+        "description": "待办负责人"
+      },
+      "ToDoRelInfo": {
+        "type": "object",
+        "description": "关联项目信息"
       },
       "ApiResponseLong": {
         "type": "object",
@@ -1038,15 +1138,15 @@
           }
         }
       },
-      "InnerRpc操作待办请求": {
+      "InnerRpcOperateToDoReq": {
         "type": "object",
         "properties": {
           "req": {
-            "$ref": "#/components/schemas/操作待办请求"
+            "$ref": "#/components/schemas/OperateToDoReq"
           }
         }
       },
-      "操作待办请求": {
+      "OperateToDoReq": {
         "type": "object",
         "properties": {
           "id": {
@@ -1060,7 +1160,8 @@
               "format": "int64"
             }
           }
-        }
+        },
+        "description": "操作待办请求"
       },
       "ApiResponseObject": {
         "type": "object",
@@ -1122,9 +1223,10 @@
         }
       },
       "ToDoEntryInfo": {
-        "type": "object"
+        "type": "object",
+        "description": "入口信息： 1.当入口为IM时：单聊-{imUserId, title, imMessageList},\n 群聊-{groupType, groupId, title, imMessageList} 2.当入口为动态时 {title, trendInfo}"
       },
-      "待办列表查询请求": {
+      "OwnerListToDoReq": {
         "type": "object",
         "properties": {
           "page": {
@@ -1135,16 +1237,23 @@
             "type": "integer",
             "format": "int32"
           },
-          "状态": {
+          "state": {
             "type": "string",
-            "enum": ["OPENING", "FINISHED", "CLOSED"]
+            "description": "状态",
+            "enum": [
+              "OPENING",
+              "FINISHED",
+              "CLOSED"
+            ]
           },
-          "项目ID": {
+          "projectId": {
             "type": "integer",
+            "description": "项目ID",
             "format": "int64"
           },
-          "类型: 'GENERAL'-通用, 'ENGINEERING'-工程, 'SCIENTIFIC'-科研, 'FINANCE'-财务, 'OA'-人事, 'CA'-CA, 'PSI'-进销存, 'DETECTION'-检测, 'MARKET'-市场, 'BUSINESS'-商机": {
+          "type": {
             "type": "string",
+            "description": "类型: 'GENERAL'-通用, 'ENGINEERING'-工程, 'SCIENTIFIC'-科研, 'FINANCE'-财务, 'OA'-人事, 'CA'-CA, 'PSI'-进销存, 'DETECTION'-检测, 'MARKET'-市场, 'BUSINESS'-商机",
             "enum": [
               "GENERAL",
               "ENGINEERING",
@@ -1167,32 +1276,49 @@
               "OTHER"
             ]
           },
-          "截止日期 - 开始": {
+          "ddlStartDate": {
             "type": "string",
+            "description": "截止日期 - 开始",
             "format": "date"
           },
-          "截止日期 - 结束": {
+          "ddlEndDate": {
             "type": "string",
+            "description": "截止日期 - 结束",
             "format": "date"
           },
-          "优先级    \" +\n            \"    默认： 999\n            \"    重要紧急： 0 \n            \"    重要不紧急： 1 \n            \"    紧急不重要： 2 \n            \"    不重要不紧急： 3 ": {
+          "priority": {
             "type": "integer",
+            "description": "优先级    \" +\n            \"    默认： 999\n            \"    重要紧急： 0 \n            \"    重要不紧急： 1 \n            \"    紧急不重要： 2 \n            \"    不重要不紧急： 3 ",
             "format": "int32"
           },
-          "排序规则": {
+          "orderBy": {
             "type": "string",
-            "enum": ["CREATED_ASC", "CREATED_DESC", "UPDATED_ASC", "UPDATED_DESC", "DEADLINE_ASC", "DEADLINE_DESC"]
+            "description": "排序规则",
+            "enum": [
+              "CREATED_ASC",
+              "CREATED_DESC",
+              "UPDATED_ASC",
+              "UPDATED_DESC",
+              "DEADLINE_ASC",
+              "DEADLINE_DESC"
+            ]
           },
-          "菜单": {
+          "viewTab": {
             "type": "string",
-            "enum": ["TO_DO", "DONE"]
+            "description": "菜单",
+            "enum": [
+              "TO_DO",
+              "DONE"
+            ]
           },
-          "交办人姓名": {
-            "type": "string"
+          "assignNameKey": {
+            "type": "string",
+            "description": "交办人姓名"
           }
-        }
+        },
+        "description": "待办列表查询请求"
       },
-      "ApiResponseComPage待办列表响应": {
+      "ApiResponseComPageToDoListResp": {
         "type": "object",
         "properties": {
           "success": {
@@ -1209,7 +1335,7 @@
             "type": "string"
           },
           "data": {
-            "$ref": "#/components/schemas/ComPage待办列表响应"
+            "$ref": "#/components/schemas/ComPageToDoListResp"
           },
           "timestamp": {
             "type": "integer",
@@ -1217,13 +1343,13 @@
           }
         }
       },
-      "ComPage待办列表响应": {
+      "ComPageToDoListResp": {
         "type": "object",
         "properties": {
           "records": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/待办列表响应"
+              "$ref": "#/components/schemas/ToDoListResp"
             }
           },
           "total": {
@@ -1240,43 +1366,56 @@
           }
         }
       },
-      "待办列表响应": {
+      "ToDoListResp": {
         "type": "object",
         "properties": {
-          "待办ID": {
+          "id": {
             "type": "integer",
+            "description": "待办ID",
             "format": "int64"
           },
-          "入口编码": {
-            "type": "string"
+          "entry": {
+            "type": "string",
+            "description": "入口编码"
           },
-          "入口信息:entry = GENERAL - null entry = IM - {title,imMessageList,imUserId,groupType,groupId}, entry = TREND - {title,trendInfo}, 其他 = {processButton(按钮名),processLinks(处理链接) [{endpoint(端类型-PC，APP),url(链接地址)}]}": {
+          "entryInfo": {
             "$ref": "#/components/schemas/ToDoEntryInfo"
           },
-          "交办人ID": {
+          "assignId": {
             "type": "integer",
+            "description": "交办人ID",
             "format": "int64"
           },
-          "交办人姓名": {
-            "type": "string"
-          },
-          "待办状态": {
+          "assignName": {
             "type": "string",
-            "enum": ["OPENING", "FINISHED", "CLOSED"]
+            "description": "交办人姓名"
           },
-          "待办内容": {
-            "type": "string"
-          },
-          "最后更新时间": {
+          "state": {
             "type": "string",
+            "description": "待办状态",
+            "enum": [
+              "OPENING",
+              "FINISHED",
+              "CLOSED"
+            ]
+          },
+          "content": {
+            "type": "string",
+            "description": "待办内容"
+          },
+          "lastUpdateTime": {
+            "type": "string",
+            "description": "最后更新时间",
             "format": "date-time"
           },
-          "优先级": {
+          "priority": {
             "type": "integer",
+            "description": "优先级",
             "format": "int32"
           },
-          "类型: 'GENERAL'-通用, 'ENGINEERING'-工程, 'SCIENTIFIC'-科研, 'FINANCE'-财务, 'OA'-人事, 'CA'-CA, 'PSI'-进销存, 'DETECTION'-检测, 'MARKET'-市场, 'BUSINESS'-商机": {
+          "type": {
             "type": "string",
+            "description": "类型: 'GENERAL'-通用, 'ENGINEERING'-工程, 'SCIENTIFIC'-科研, 'FINANCE'-财务, 'OA'-人事, 'CA'-CA, 'PSI'-进销存, 'DETECTION'-检测, 'MARKET'-市场, 'BUSINESS'-商机",
             "enum": [
               "GENERAL",
               "ENGINEERING",
@@ -1299,54 +1438,152 @@
               "OTHER"
             ]
           },
-          "类型描述": {
-            "type": "string"
+          "typeDesc": {
+            "type": "string",
+            "description": "类型描述"
           },
-          "负责人": {
+          "owners": {
             "type": "array",
+            "description": "负责人",
             "items": {
-              "$ref": "#/components/schemas/待办负责人"
+              "$ref": "#/components/schemas/ToDoOwner"
             }
           },
-          "预期完成日期": {
+          "deadline": {
             "type": "string",
+            "description": "预期完成日期",
             "format": "date"
           },
-          "是否存在子待办": {
-            "type": "boolean"
+          "hasSub": {
+            "type": "boolean",
+            "description": "是否存在子待办"
           },
-          "完成方式": {
+          "finishTrigger": {
             "type": "string",
-            "enum": ["ANY_OWNER", "ALL_OWNER"]
+            "description": "完成方式",
+            "enum": [
+              "ANY_OWNER",
+              "ALL_OWNER"
+            ]
           },
-          "关联信息": {
+          "relInfo": {
             "$ref": "#/components/schemas/ToDoRelInfo"
           }
-        }
+        },
+        "description": "待办列表响应"
       },
-      "转办请求": {
+      "AssignerListToDoReq": {
         "type": "object",
         "properties": {
-          "待办ID": {
+          "page": {
             "type": "integer",
+            "format": "int32"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "state": {
+            "type": "string",
+            "description": "状态",
+            "enum": [
+              "OPENING",
+              "FINISHED",
+              "CLOSED"
+            ]
+          },
+          "projectId": {
+            "type": "integer",
+            "description": "项目ID",
             "format": "int64"
           },
-          "负责人列表": {
+          "type": {
+            "type": "string",
+            "description": "类型: 'GENERAL'-通用, 'ENGINEERING'-工程, 'SCIENTIFIC'-科研, 'FINANCE'-财务, 'OA'-人事, 'CA'-CA, 'PSI'-进销存, 'DETECTION'-检测, 'MARKET'-市场, 'BUSINESS'-商机",
+            "enum": [
+              "GENERAL",
+              "ENGINEERING",
+              "SCIENTIFIC",
+              "FINANCE",
+              "OA",
+              "MARKET",
+              "CA",
+              "DETECTION",
+              "BUSINESS",
+              "PSI",
+              "CDE",
+              "SIGN",
+              "FIR",
+              "QA",
+              "FDD",
+              "SYSTEM",
+              "AUDIT",
+              "ADMIN",
+              "OTHER"
+            ]
+          },
+          "ddlStartDate": {
+            "type": "string",
+            "description": "截止日期 - 开始",
+            "format": "date"
+          },
+          "ddlEndDate": {
+            "type": "string",
+            "description": "截止日期 - 结束",
+            "format": "date"
+          },
+          "priority": {
+            "type": "integer",
+            "description": "优先级    \" +\n            \"    默认： 999\n            \"    重要紧急： 0 \n            \"    重要不紧急： 1 \n            \"    紧急不重要： 2 \n            \"    不重要不紧急： 3 ",
+            "format": "int32"
+          },
+          "orderBy": {
+            "type": "string",
+            "description": "排序规则",
+            "enum": [
+              "CREATED_ASC",
+              "CREATED_DESC",
+              "UPDATED_ASC",
+              "UPDATED_DESC",
+              "DEADLINE_ASC",
+              "DEADLINE_DESC"
+            ]
+          },
+          "ownerNameKey": {
+            "type": "string",
+            "description": "负责人姓名"
+          }
+        },
+        "description": "待办列表查询请求"
+      },
+      "ForwardToDoReq": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "待办ID",
+            "format": "int64"
+          },
+          "owners": {
             "type": "array",
+            "description": "负责人列表",
             "items": {
-              "$ref": "#/components/schemas/待办负责人"
+              "$ref": "#/components/schemas/ToDoOwner"
             }
           },
-          "转办说明": {
-            "type": "string"
+          "content": {
+            "type": "string",
+            "description": "转办说明"
           },
-          "附件列表": {
+          "attaches": {
             "type": "array",
+            "description": "附件列表",
             "items": {
               "$ref": "#/components/schemas/Attach"
             }
           }
-        }
+        },
+        "description": "转办请求"
       },
       "InvokeStateReq": {
         "type": "object",
@@ -1361,26 +1598,33 @@
           }
         }
       },
-      "待办评论请求": {
-        "required": ["待办ID", "评论内容"],
+      "CommentReq": {
+        "required": [
+          "content",
+          "toDoId"
+        ],
         "type": "object",
         "properties": {
-          "待办ID": {
+          "toDoId": {
             "type": "integer",
+            "description": "待办ID",
             "format": "int64"
           },
-          "评论内容": {
-            "type": "string"
+          "content": {
+            "type": "string",
+            "description": "评论内容"
           },
-          "附件列表": {
+          "attaches": {
             "type": "array",
+            "description": "附件列表",
             "items": {
               "$ref": "#/components/schemas/Attach"
             }
           }
-        }
+        },
+        "description": "待办评论请求"
       },
-      "项目全部待办列表请求": {
+      "ProjectListToDoReq": {
         "type": "object",
         "properties": {
           "page": {
@@ -1391,16 +1635,23 @@
             "type": "integer",
             "format": "int32"
           },
-          "状态": {
+          "state": {
             "type": "string",
-            "enum": ["OPENING", "FINISHED", "CLOSED"]
+            "description": "状态",
+            "enum": [
+              "OPENING",
+              "FINISHED",
+              "CLOSED"
+            ]
           },
-          "项目ID": {
+          "projectId": {
             "type": "integer",
+            "description": "项目ID",
             "format": "int64"
           },
-          "类型: 'GENERAL'-通用, 'ENGINEERING'-工程, 'SCIENTIFIC'-科研, 'FINANCE'-财务, 'OA'-人事, 'CA'-CA, 'PSI'-进销存, 'DETECTION'-检测, 'MARKET'-市场, 'BUSINESS'-商机": {
+          "type": {
             "type": "string",
+            "description": "类型: 'GENERAL'-通用, 'ENGINEERING'-工程, 'SCIENTIFIC'-科研, 'FINANCE'-财务, 'OA'-人事, 'CA'-CA, 'PSI'-进销存, 'DETECTION'-检测, 'MARKET'-市场, 'BUSINESS'-商机",
             "enum": [
               "GENERAL",
               "ENGINEERING",
@@ -1423,50 +1674,69 @@
               "OTHER"
             ]
           },
-          "截止日期 - 开始": {
+          "ddlStartDate": {
             "type": "string",
+            "description": "截止日期 - 开始",
             "format": "date"
           },
-          "截止日期 - 结束": {
+          "ddlEndDate": {
             "type": "string",
+            "description": "截止日期 - 结束",
             "format": "date"
           },
-          "优先级    \" +\n            \"    默认： 999\n            \"    重要紧急： 0 \n            \"    重要不紧急： 1 \n            \"    紧急不重要： 2 \n            \"    不重要不紧急： 3 ": {
+          "priority": {
             "type": "integer",
+            "description": "优先级    \" +\n            \"    默认： 999\n            \"    重要紧急： 0 \n            \"    重要不紧急： 1 \n            \"    紧急不重要： 2 \n            \"    不重要不紧急： 3 ",
             "format": "int32"
           },
-          "排序规则": {
+          "orderBy": {
             "type": "string",
-            "enum": ["CREATED_ASC", "CREATED_DESC", "UPDATED_ASC", "UPDATED_DESC", "DEADLINE_ASC", "DEADLINE_DESC"]
+            "description": "排序规则",
+            "enum": [
+              "CREATED_ASC",
+              "CREATED_DESC",
+              "UPDATED_ASC",
+              "UPDATED_DESC",
+              "DEADLINE_ASC",
+              "DEADLINE_DESC"
+            ]
           },
-          "交办人姓名": {
-            "type": "string"
+          "assignNameKey": {
+            "type": "string",
+            "description": "交办人姓名"
           },
-          "负责人姓名": {
-            "type": "string"
+          "ownerNameKey": {
+            "type": "string",
+            "description": "负责人姓名"
           }
-        }
+        },
+        "description": "项目全部待办列表请求"
       },
-      "请求结构体": {
+      "ImUsersReq": {
         "type": "object",
         "properties": {
-          "IM用户ID列表": {
+          "imUserIds": {
             "type": "array",
+            "description": "IM用户ID列表",
             "items": {
               "type": "integer",
+              "description": "IM用户ID列表",
               "format": "int64"
             }
           },
-          "租户用户ID列表": {
+          "userIds": {
             "type": "array",
+            "description": "租户用户ID列表",
             "items": {
               "type": "integer",
+              "description": "租户用户ID列表",
               "format": "int64"
             }
           }
-        }
+        },
+        "description": "请求结构体"
       },
-      "ApiResponseListPairLong租户信息": {
+      "ApiResponseListPairLongTenantInfoResp": {
         "type": "object",
         "properties": {
           "success": {
@@ -1485,7 +1755,7 @@
           "data": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/PairLong租户信息"
+              "$ref": "#/components/schemas/PairLongTenantInfoResp"
             }
           },
           "timestamp": {
@@ -1526,7 +1796,7 @@
           }
         }
       },
-      "PairLong租户信息": {
+      "PairLongTenantInfoResp": {
         "type": "object",
         "properties": {
           "key": {
@@ -1534,7 +1804,7 @@
             "format": "int64"
           },
           "value": {
-            "$ref": "#/components/schemas/租户信息"
+            "$ref": "#/components/schemas/TenantInfoResp"
           }
         }
       },
@@ -1569,7 +1839,7 @@
           }
         }
       },
-      "租户信息": {
+      "TenantInfoResp": {
         "type": "object",
         "properties": {
           "userId": {
@@ -1588,44 +1858,15 @@
               "$ref": "#/components/schemas/TenantEmployeeInfo"
             }
           },
-          "个人租户ID": {
+          "personTenantId": {
             "type": "integer",
+            "description": "个人租户ID",
             "format": "int64"
           }
-        }
+        },
+        "description": "租户信息"
       },
-      "APP待办列表响应": {
-        "type": "object",
-        "properties": {
-          "待办ID": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "处理按钮": {
-            "type": "string"
-          },
-          "处理连接": {
-            "type": "string"
-          },
-          "是否可直接完成整个待办": {
-            "type": "boolean"
-          },
-          "详情地址": {
-            "type": "string"
-          },
-          "待办内容": {
-            "type": "string"
-          },
-          "类型描述": {
-            "type": "string"
-          },
-          "最后更新时间": {
-            "type": "string",
-            "format": "date-time"
-          }
-        }
-      },
-      "ApiResponseComPageAPP待办列表响应": {
+      "ApiResponseComPageAppToDoListResp": {
         "type": "object",
         "properties": {
           "success": {
@@ -1642,7 +1883,7 @@
             "type": "string"
           },
           "data": {
-            "$ref": "#/components/schemas/ComPageAPP待办列表响应"
+            "$ref": "#/components/schemas/ComPageAppToDoListResp"
           },
           "timestamp": {
             "type": "integer",
@@ -1650,13 +1891,53 @@
           }
         }
       },
-      "ComPageAPP待办列表响应": {
+      "AppToDoListResp": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "待办ID",
+            "format": "int64"
+          },
+          "processButton": {
+            "type": "string",
+            "description": "处理按钮"
+          },
+          "processUrl": {
+            "type": "string",
+            "description": "处理连接"
+          },
+          "directFinish": {
+            "type": "boolean",
+            "description": "是否可直接完成整个待办"
+          },
+          "detailUrl": {
+            "type": "string",
+            "description": "详情地址"
+          },
+          "content": {
+            "type": "string",
+            "description": "待办内容"
+          },
+          "typeDesc": {
+            "type": "string",
+            "description": "类型描述"
+          },
+          "lastUpdateTime": {
+            "type": "string",
+            "description": "最后更新时间",
+            "format": "date-time"
+          }
+        },
+        "description": "APP待办列表响应"
+      },
+      "ComPageAppToDoListResp": {
         "type": "object",
         "properties": {
           "records": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/APP待办列表响应"
+              "$ref": "#/components/schemas/AppToDoListResp"
             }
           },
           "total": {
@@ -1673,18 +1954,21 @@
           }
         }
       },
-      "保存待办入口配置请求": {
+      "SaveEntrySettingReq": {
         "type": "object",
         "properties": {
-          "ID": {
+          "id": {
             "type": "integer",
+            "description": "ID",
             "format": "int64"
           },
-          "名称": {
-            "type": "string"
-          },
-          "待办类型": {
+          "name": {
             "type": "string",
+            "description": "名称"
+          },
+          "toDoType": {
+            "type": "string",
+            "description": "待办类型",
             "enum": [
               "GENERAL",
               "ENGINEERING",
@@ -1707,15 +1991,29 @@
               "OTHER"
             ]
           },
-          "通用待办完成开关": {
-            "type": "boolean"
+          "generalFinish": {
+            "type": "boolean",
+            "description": "通用待办完成开关"
           },
-          "通用待办关闭开关": {
-            "type": "boolean"
+          "generalClose": {
+            "type": "boolean",
+            "description": "通用待办关闭开关"
           }
-        }
+        },
+        "description": "保存待办入口配置请求"
       },
-      "ApiResponse待办详情响应": {
+      "IdReq": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "ID",
+            "format": "int64"
+          }
+        },
+        "description": "请求结构体"
+      },
+      "ApiResponseToDoResp": {
         "type": "object",
         "properties": {
           "success": {
@@ -1732,7 +2030,7 @@
             "type": "string"
           },
           "data": {
-            "$ref": "#/components/schemas/待办详情响应"
+            "$ref": "#/components/schemas/ToDoResp"
           },
           "timestamp": {
             "type": "integer",
@@ -1740,56 +2038,110 @@
           }
         }
       },
-      "待办详情响应": {
+      "ToDoOwnerResp": {
         "type": "object",
         "properties": {
-          "待办ID": {
+          "userId": {
             "type": "integer",
+            "description": "用户ID",
             "format": "int64"
           },
-          "租户ID": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "租户类型": {
+          "userName": {
             "type": "string",
-            "enum": ["ENTERPRISE", "PLATFORM", "PERSON", "WORKROOM"]
+            "description": "用户姓名"
           },
-          "租户名称": {
-            "type": "string"
+          "deptCode": {
+            "type": "string",
+            "description": "部门编码"
           },
-          "入口：GENERAL - 待办中心，IM - IM，TREND - 动态， USER_FEEDBACK - 商云问题反馈": {
-            "type": "string"
+          "deptName": {
+            "type": "string",
+            "description": "部门名称"
           },
-          "父级待办": {
+          "toDoState": {
+            "type": "string",
+            "description": "待办状态",
+            "enum": [
+              "OPENING",
+              "FINISHED",
+              "CLOSED"
+            ]
+          },
+          "avatar": {
+            "type": "string",
+            "description": "头像"
+          }
+        },
+        "description": "待办负责人"
+      },
+      "ToDoResp": {
+        "type": "object",
+        "properties": {
+          "id": {
             "type": "integer",
+            "description": "待办ID",
             "format": "int64"
           },
-          "交办人ID": {
+          "tenantId": {
             "type": "integer",
+            "description": "租户ID",
             "format": "int64"
           },
-          "交办人姓名": {
-            "type": "string"
+          "tenantType": {
+            "type": "string",
+            "description": "租户类型",
+            "enum": [
+              "ENTERPRISE",
+              "PLATFORM",
+              "PERSON",
+              "WORKROOM"
+            ]
           },
-          "交办人头像": {
-            "type": "string"
+          "tenantName": {
+            "type": "string",
+            "description": "租户名称"
           },
-          "优先级": {
+          "entry": {
+            "type": "string",
+            "description": "入口：GENERAL - 待办中心，IM - IM，TREND - 动态， USER_FEEDBACK - 商云问题反馈"
+          },
+          "parentId": {
             "type": "integer",
+            "description": "父级待办",
+            "format": "int64"
+          },
+          "assignId": {
+            "type": "integer",
+            "description": "交办人ID",
+            "format": "int64"
+          },
+          "assignName": {
+            "type": "string",
+            "description": "交办人姓名"
+          },
+          "assignAvatar": {
+            "type": "string",
+            "description": "交办人头像"
+          },
+          "priority": {
+            "type": "integer",
+            "description": "优先级",
             "format": "int32"
           },
-          "负责人列表": {
+          "owners": {
             "type": "array",
+            "description": "负责人列表",
             "items": {
-              "$ref": "#/components/schemas/待办负责人"
+              "$ref": "#/components/schemas/ToDoOwnerResp"
             }
           },
-          "是否通知": {
-            "type": "boolean"
+          "isNotice": {
+            "type": "boolean",
+            "description": "是否通知"
           },
-          "类型: 'GENERAL'-通用, 'ENGINEERING'-工程, 'SCIENTIFIC'-科研, 'FINANCE'-财务, 'OA'-人事, 'CA'-CA, 'PSI'-进销存, 'DETECTION'-检测, 'MARKET'-市场, 'BUSINESS'-商机": {
+          "type": {
             "type": "string",
+            "description": "类型: 'GENERAL'-通用, 'ENGINEERING'-工程, 'SCIENTIFIC'-科研, 'FINANCE'-财务, 'OA'-人事, 'CA'-CA, 'PSI'-进销存, 'DETECTION'-检测, 'MARKET'-市场, 'BUSINESS'-商机",
             "enum": [
               "GENERAL",
               "ENGINEERING",
@@ -1812,55 +2164,73 @@
               "OTHER"
             ]
           },
-          "类型描述": {
-            "type": "string"
-          },
-          "父待办内容": {
-            "type": "string"
-          },
-          "待办内容": {
-            "type": "string"
-          },
-          "截止日期": {
+          "typeDesc": {
             "type": "string",
+            "description": "类型描述"
+          },
+          "parentContent": {
+            "type": "string",
+            "description": "父待办内容"
+          },
+          "content": {
+            "type": "string",
+            "description": "待办内容"
+          },
+          "deadline": {
+            "type": "string",
+            "description": "截止日期",
             "format": "date"
           },
-          "状态": {
+          "state": {
             "type": "string",
-            "enum": ["OPENING", "FINISHED", "CLOSED"]
+            "description": "状态",
+            "enum": [
+              "OPENING",
+              "FINISHED",
+              "CLOSED"
+            ]
           },
-          "入口信息: entry = GENERAL - null, entry = IM - {title,imMessageList,imUserId,groupType,groupId}, entry = TREND - {title,trendInfo}, 其他 = {processButton(按钮名),processLinks(处理链接) [{endpoint(端类型-PC，APP),url(链接地址)}]}": {
+          "entryInfo": {
             "$ref": "#/components/schemas/ToDoEntryInfo"
           },
-          "关联信息": {
+          "relInfo": {
             "$ref": "#/components/schemas/ToDoRelInfo"
           },
-          "工作量": {
-            "type": "number"
+          "workload": {
+            "type": "number",
+            "description": "工作量"
           },
-          "待办完成方式": {
+          "finishTrigger": {
             "type": "string",
-            "enum": ["ANY_OWNER", "ALL_OWNER"]
+            "description": "待办完成方式",
+            "enum": [
+              "ANY_OWNER",
+              "ALL_OWNER"
+            ]
           },
-          "附件": {
+          "attaches": {
             "type": "array",
+            "description": "附件",
             "items": {
               "$ref": "#/components/schemas/Attach"
             }
           },
-          "子待办列表": {
+          "subToDo": {
             "type": "array",
+            "description": "子待办列表",
             "items": {
-              "$ref": "#/components/schemas/待办列表响应"
+              "$ref": "#/components/schemas/ToDoListResp"
             }
           },
-          "创建时间": {
+          "created": {
             "type": "string",
+            "description": "创建时间",
             "format": "date-time"
           }
-        }
+        },
+        "description": "待办详情响应"
       },
-      "ApiResponseComPage待办事件响应": {
+      "ApiResponseComPageToDoEventResp": {
         "type": "object",
         "properties": {
           "success": {
@@ -1877,7 +2247,7 @@
             "type": "string"
           },
           "data": {
-            "$ref": "#/components/schemas/ComPage待办事件响应"
+            "$ref": "#/components/schemas/ComPageToDoEventResp"
           },
           "timestamp": {
             "type": "integer",
@@ -1885,13 +2255,13 @@
           }
         }
       },
-      "ComPage待办事件响应": {
+      "ComPageToDoEventResp": {
         "type": "object",
         "properties": {
           "records": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/待办事件响应"
+              "$ref": "#/components/schemas/ToDoEventResp"
             }
           },
           "total": {
@@ -1930,14 +2300,47 @@
           }
         ]
       },
+      "EventInfo": {
+        "type": "object",
+        "description": "待办负责人",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/EventPayload"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "userId": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "userName": {
+                "type": "string"
+              },
+              "owners": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/UserNamePair"
+                }
+              },
+              "snapshot": {
+                "$ref": "#/components/schemas/ToDoDO"
+              }
+            }
+          }
+        ]
+      },
       "EventPayload": {
-        "required": ["type"],
+        "required": [
+          "type"
+        ],
         "type": "object",
         "properties": {
           "type": {
             "type": "string"
           }
         },
+        "description": "内容：转办-#转办说明和附件{content,attaches}\n评论-#评论内容和附件{content,attaches}\n单人（关闭、完成、重启）-#操作对象id和姓名{userId,userName}\n整体-无",
         "discriminator": {
           "propertyName": "type"
         }
@@ -1951,11 +2354,13 @@
           {
             "type": "object",
             "properties": {
-              "转办说明": {
-                "type": "string"
+              "content": {
+                "type": "string",
+                "description": "转办说明"
               },
-              "附件列表": {
+              "attaches": {
                 "type": "array",
+                "description": "附件列表",
                 "items": {
                   "$ref": "#/components/schemas/Attach"
                 }
@@ -1963,46 +2368,194 @@
               "curOwners": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/待办负责人"
+                  "$ref": "#/components/schemas/ToDoOwner"
                 }
               }
             }
           }
         ]
       },
-      "待办事件响应": {
+      "ToDoDO": {
         "type": "object",
         "properties": {
-          "事件ID": {
+          "id": {
             "type": "integer",
             "format": "int64"
           },
-          "操作人ID": {
+          "created": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createId": {
             "type": "integer",
             "format": "int64"
           },
-          "操作人姓名": {
+          "createName": {
             "type": "string"
           },
-          "操作人头像": {
-            "type": "string"
+          "modified": {
+            "type": "string",
+            "format": "date-time"
           },
-          "待办ID": {
+          "updateId": {
             "type": "integer",
             "format": "int64"
           },
-          "内容：转办-#转办说明和附件{content,attaches}\n评论-#评论内容和附件{content,attaches}\n单人（关闭、完成、重启）-#操作对象id和姓名{userId,userName}\n整体-无": {
+          "updateName": {
+            "type": "string"
+          },
+          "isDelete": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tenantId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tenantType": {
+            "type": "string",
+            "enum": [
+              "ENTERPRISE",
+              "PLATFORM",
+              "PERSON",
+              "WORKROOM"
+            ]
+          },
+          "tenantName": {
+            "type": "string"
+          },
+          "entry": {
+            "type": "string"
+          },
+          "parentId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "assignId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "assignName": {
+            "type": "string"
+          },
+          "isNotice": {
+            "type": "boolean"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "GENERAL",
+              "ENGINEERING",
+              "SCIENTIFIC",
+              "FINANCE",
+              "OA",
+              "MARKET",
+              "CA",
+              "DETECTION",
+              "BUSINESS",
+              "PSI",
+              "CDE",
+              "SIGN",
+              "FIR",
+              "QA",
+              "FDD",
+              "SYSTEM",
+              "AUDIT",
+              "ADMIN",
+              "OTHER"
+            ]
+          },
+          "relKey": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "deadline": {
+            "type": "string",
+            "format": "date"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "OPENING",
+              "FINISHED",
+              "CLOSED"
+            ]
+          },
+          "extra": {
+            "$ref": "#/components/schemas/ToDoExtraInfo"
+          },
+          "attaches": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attach"
+            }
+          },
+          "workload": {
+            "type": "number"
+          },
+          "entryLimited": {
+            "type": "boolean"
+          },
+          "priority": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasSub": {
+            "type": "boolean"
+          },
+          "finishTrigger": {
+            "type": "string",
+            "enum": [
+              "ANY_OWNER",
+              "ALL_OWNER"
+            ]
+          }
+        }
+      },
+      "ToDoEventResp": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "事件ID",
+            "format": "int64"
+          },
+          "operatorId": {
+            "type": "integer",
+            "description": "操作人ID",
+            "format": "int64"
+          },
+          "operator": {
+            "type": "string",
+            "description": "操作人姓名"
+          },
+          "operatorAvatar": {
+            "type": "string",
+            "description": "操作人头像"
+          },
+          "toDoId": {
+            "type": "integer",
+            "description": "待办ID",
+            "format": "int64"
+          },
+          "payload": {
             "oneOf": [
               {
                 "$ref": "#/components/schemas/CommentInfo"
+              },
+              {
+                "$ref": "#/components/schemas/EventInfo"
               },
               {
                 "$ref": "#/components/schemas/ForwardInfo"
               }
             ]
           },
-          "事件类型: CREATED-创建，CREATED_SUB-创建子待办，FORWARD-转办，UPDATED-更新，FINISHED-完成，REOPENED-重启，COMMENTED-评论，DELETED-删除，CLOSED-关闭": {
+          "identifier": {
             "type": "string",
+            "description": "事件类型: CREATED-创建，CREATED_SUB-创建子待办，FORWARD-转办，UPDATED-更新，FINISHED-完成，REOPENED-重启，COMMENTED-评论，DELETED-删除，CLOSED-关闭",
             "enum": [
               "CREATED",
               "CREATED_SUB",
@@ -2015,13 +2568,38 @@
               "CLOSED"
             ]
           },
-          "创建事件": {
+          "created": {
             "type": "string",
+            "description": "创建事件",
             "format": "date-time"
+          }
+        },
+        "description": "待办事件响应"
+      },
+      "ToDoExtraInfo": {
+        "type": "object",
+        "properties": {
+          "entryInfo": {
+            "$ref": "#/components/schemas/ToDoEntryInfo"
+          },
+          "relInfo": {
+            "$ref": "#/components/schemas/ToDoRelInfo"
           }
         }
       },
-      "ApiResponseComPage待办评论详情": {
+      "UserNamePair": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "userName": {
+            "type": "string"
+          }
+        }
+      },
+      "ApiResponseComPageCommentListResp": {
         "type": "object",
         "properties": {
           "success": {
@@ -2038,7 +2616,7 @@
             "type": "string"
           },
           "data": {
-            "$ref": "#/components/schemas/ComPage待办评论详情"
+            "$ref": "#/components/schemas/ComPageCommentListResp"
           },
           "timestamp": {
             "type": "integer",
@@ -2046,13 +2624,13 @@
           }
         }
       },
-      "ComPage待办评论详情": {
+      "ComPageCommentListResp": {
         "type": "object",
         "properties": {
           "records": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/待办评论详情"
+              "$ref": "#/components/schemas/CommentListResp"
             }
           },
           "total": {
@@ -2069,39 +2647,47 @@
           }
         }
       },
-      "待办评论详情": {
+      "CommentListResp": {
         "type": "object",
         "properties": {
-          "评论ID": {
+          "id": {
             "type": "integer",
+            "description": "评论ID",
             "format": "int64"
           },
-          "评论人ID": {
+          "operatorId": {
             "type": "integer",
+            "description": "评论人ID",
             "format": "int64"
           },
-          "评论者头像": {
-            "type": "string"
+          "operatorAvatar": {
+            "type": "string",
+            "description": "评论者头像"
           },
-          "评论人姓名": {
-            "type": "string"
+          "operator": {
+            "type": "string",
+            "description": "评论人姓名"
           },
-          "评论内容": {
-            "type": "string"
+          "content": {
+            "type": "string",
+            "description": "评论内容"
           },
-          "附件内容": {
+          "attaches": {
             "type": "array",
+            "description": "附件内容",
             "items": {
               "$ref": "#/components/schemas/Attach"
             }
           },
-          "创建时间": {
+          "created": {
             "type": "string",
+            "description": "创建时间",
             "format": "date-time"
           }
-        }
+        },
+        "description": "待办评论详情"
       },
-      "ApiResponse租户信息": {
+      "ApiResponseTenantInfoResp": {
         "type": "object",
         "properties": {
           "success": {
@@ -2118,7 +2704,7 @@
             "type": "string"
           },
           "data": {
-            "$ref": "#/components/schemas/租户信息"
+            "$ref": "#/components/schemas/TenantInfoResp"
           },
           "timestamp": {
             "type": "integer",
@@ -2126,7 +2712,7 @@
           }
         }
       },
-      "ApiResponseComPage待办入口配置响应": {
+      "ApiResponseComPageEntrySettingResp": {
         "type": "object",
         "properties": {
           "success": {
@@ -2143,7 +2729,7 @@
             "type": "string"
           },
           "data": {
-            "$ref": "#/components/schemas/ComPage待办入口配置响应"
+            "$ref": "#/components/schemas/ComPageEntrySettingResp"
           },
           "timestamp": {
             "type": "integer",
@@ -2151,13 +2737,13 @@
           }
         }
       },
-      "ComPage待办入口配置响应": {
+      "ComPageEntrySettingResp": {
         "type": "object",
         "properties": {
           "records": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/待办入口配置响应"
+              "$ref": "#/components/schemas/EntrySettingResp"
             }
           },
           "total": {
@@ -2174,7 +2760,7 @@
           }
         }
       },
-      "待办入口配置响应": {
+      "EntrySettingResp": {
         "type": "object",
         "properties": {
           "id": {
@@ -2217,7 +2803,15 @@
           "generalClose": {
             "type": "boolean"
           }
-        }
+        },
+        "description": "待办入口配置响应"
+      }
+    },
+    "securitySchemes": {
+      "satoken": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
       }
     }
   }

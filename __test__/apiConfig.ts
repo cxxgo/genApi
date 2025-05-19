@@ -18,15 +18,15 @@ const config: UserConfig = {
       outputDir: './__test__/output/swagger3',
       gen: false,
     },
-    // {
-    //   swaggerUrl: './__test__/json/swagger3.0.json',
-    //   outputDir: './__test__/output/swagger3.0',
-    //   gen: true,
-    // },
     {
-      swaggerUrl: './__test__/json/swagger3.0.1.json',
-      outputDir: './__test__/output/swagger3.0.1',
+      swaggerUrl: './__test__/json/schedule.json',
+      outputDir: './__test__/output/schedule',
       gen: true,
+    },
+    {
+      swaggerUrl: './__test__/json/crm.json',
+      outputDir: './__test__/output/crm',
+      gen: false,
     },
     {
       swaggerUrl: './__test__/json/swagger4.json',
