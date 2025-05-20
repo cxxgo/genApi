@@ -10,7 +10,9 @@ export function writeInterface(interfaces: IInterface[], config: { outputDir: st
   interfacesSorted.forEach((item) => {
     str += `export interface ${item.name} {\n`
     if (item?.properties && item.properties?.length) {
-      item.properties.forEach((it) => {
+
+      const propertiesSorted =  item.properties.sort((a, b) => a.name.localeCompare(b.name))
+      propertiesSorted.forEach((it) => {
         const description = it.description ? `/** ${it.description} */` : ''
         let theType = ''
         if (it.enums?.length) {

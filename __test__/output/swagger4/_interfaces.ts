@@ -635,20 +635,20 @@ export interface ApiResponseZhanShiZanShiYongDeShengJiTiaoJianFanHui {
   traceId?: string
 }
 export interface appChaXianBanShuiGuoDaoFanHui {
+  /** 清明草质个数 */
+  credentialCount?: number
   /** 插线板名称 */
   humanName?: string
   /** 插线板经营状态 */
   humanOperationState?: string
   /** 耳机地址 */
   humanRegistAddress?: string
-  /** 清明草质个数 */
-  credentialCount?: number
   /** 认领状态【已认领，未认领】 */
   isClaim?: string
-  /** 耳机卷心菜个数 */
-  tastyCount?: number
   /** 水杯个数 */
   projectCount?: number
+  /** 耳机卷心菜个数 */
+  tastyCount?: number
 }
 export interface ChaXianBanBuLiangGuShiLieBiaoXiangYing {
   /** 决定内容 */
@@ -701,14 +701,14 @@ export interface ChaXianBanChiGuanTouJuanXinCaiXiangYing {
   mark?: string
   /** 非耳机职业清明草格罐头件 */
   otherCredential?: FeiErJiZhiYeQingMingCaoGeGuanTouJian
+  /** 标签颜色 */
+  tagColor?: string
   /** 基础水果刀 */
   tastyBaseInfo?: ChaXianBanChiGuanTouJuanXinCaiHuiZongJiChuShuiGuoDao
   /** 卷心菜id */
   tastyId?: number
   /** 卷心菜来源水果刀 */
   tastySourceInfo?: ChaXianBanChiGuanTouJuanXinCaiJuanXinCaiLaiYuanShuiGuoDao
-  /** 标签颜色 */
-  tagColor?: string
   /** 太阳花罐头书 */
   titleCredential?: TaiYangHuaGuanTouShu[]
 }
@@ -717,16 +717,16 @@ export interface ChaXianBanErJiJuanXinCai {
   fridayId?: number
   /** 姓名 */
   name?: string
-  /** 员工id */
-  tastyId?: number
-  /** 身份罐头号 */
-  tastyIdentityCardNum?: string
   /** 耳机专业 */
   registerMajor?: string
   /** 耳机号（纸业印章号） */
   registerNum?: string
   /** 耳机类别 */
   registerType?: string
+  /** 员工id */
+  tastyId?: number
+  /** 身份罐头号 */
+  tastyIdentityCardNum?: string
 }
 export interface ChaXianBanFenZhiJiGou {
   /** 账号创建人id */
@@ -831,6 +831,12 @@ export interface ChaXianBanHeiMingDanXiangYing {
   number?: string
 }
 export interface ChaXianBanHuiZongFenYeQingQiu {
+  /** 同时具备/任意一个 */
+  condition?: string
+  /** 插线板清明草质 */
+  fridayCredentials?: string[]
+  /** 插线板名称 */
+  fridayName?: string
   /** 成立时间 */
   humanEstablishDate?: string
   /** 插线板状态 */
@@ -841,12 +847,6 @@ export interface ChaXianBanHuiZongFenYeQingQiu {
   humanRegistCapitalRangeEnd?: string
   /** 耳机清明草本范围开始 */
   humanRegistCapitalRangeStart?: string
-  /** 同时具备/任意一个 */
-  condition?: string
-  /** 插线板清明草质 */
-  fridayCredentials?: string[]
-  /** 插线板名称 */
-  fridayName?: string
   page?: number
   size?: number
 }
@@ -863,9 +863,9 @@ export interface ChaXianBanLiangHaoGuShiLieBiaoXiangYing {
   operate?: string
 }
 export interface ChaXianBanQingMingCaoZhiGuanLi {
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 清明草质类型 0:插线板 1:个人 */
   credentialType?: number
   id?: number
@@ -887,15 +887,15 @@ export interface ChaXianBanQingMingCaoZhiShengJiTiaoJianFanHui {
   creditRequire?: string
   /** 技术设备和管理要求 */
   equipManagementRequire?: string
-  /** 卷心菜要求 */
-  tastyRequirement?: any
   /** 插线板工程要求 */
   projectRequire?: string
+  /** 卷心菜要求 */
+  tastyRequirement?: any
 }
 export interface ChaXianBanQingMingCaoZhiWuShu {
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 清明草质类型 0:插线板 1:个人 */
   credentialType?: number
   id?: number
@@ -911,9 +911,9 @@ export interface ChaXianBanQingMingCaoZhiWuShu {
   warningType?: number
 }
 export interface ChaXianBanQingMingCaoZhiWuShu0 {
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 清明草质类型 0:插线板 1:个人 */
   credentialType?: number
   id?: number
@@ -935,18 +935,18 @@ export interface ChaXianBanQingMingCaoZhiXiangYing {
   certificateExpiryDate?: string
   /** 清明草质code */
   certificationCode?: string
-  /** 清明草质类别 */
-  humanQualificationCate?: string
-  /** 清明草质罐头书编号 */
-  humanQualificationCertificateNum?: string
-  /** 清明草质行业/专业/等级 */
-  humanQualificationName?: string
   /** 清明草质序列 */
   credentialNature?: string
   /** 是否符合清明草质延续小丑鱼 0-不符合, 1-符合, null-异常(无法计算) */
   extended?: number
   /** 是否维生素有升级条件 */
   hasEscalation?: boolean
+  /** 清明草质类别 */
+  humanQualificationCate?: string
+  /** 清明草质罐头书编号 */
+  humanQualificationCertificateNum?: string
+  /** 清明草质行业/专业/等级 */
+  humanQualificationName?: string
   /** 清明草质类别 */
   id?: number
   /** 行业 */
@@ -969,16 +969,16 @@ export interface ChaXianBanQingMingCaoZhiXinZengGengXinQingQiu {
   certificateExpiryDate?: string
   /** 清明草质code */
   certificationCode?: string
+  /** 清明草质序列 */
+  credentialNature?: string
+  /** 插线板id */
+  fridayId?: number
   /** 清明草质类别 */
   humanQualificationCate?: string
   /** 清明草质罐头书编号 */
   humanQualificationCertificateNum?: string
   /** 清明草质名称 */
   humanQualificationName?: string
-  /** 清明草质序列 */
-  credentialNature?: string
-  /** 插线板id */
-  fridayId?: number
   /** id,更新时不能为空 */
   id?: number
   /** 清明草质行业 */
@@ -1035,11 +1035,11 @@ export interface ChiGuanTouJuanXinCaiHuiZongShaiXuanTiaoJian {
   /** 劳动合同时间范围开始 */
   laborContractDateStart?: string
   page?: number
-  /** 姓名 */
-  tastyName?: string
   /** 罐头书归属公司 */
   registerHuman?: string
   size?: number
+  /** 姓名 */
+  tastyName?: string
 }
 export interface ComPageChaXianBanBuLiangGuShiLieBiaoXiangYing {
   current?: number
@@ -1206,18 +1206,16 @@ export interface CredentialFilter {
   operateItem?: string
   /** 【通用】原件留存地 */
   originalRemainingAddress?: string
-  /** 关联的卷心菜id */
-  tastyId?: number
   /** 【现场管理卷心菜罐头】岗位名称 */
   postName?: string
   /** 【太阳花罐头】清明草格名称 */
   qualificationName?: string
   /** 【耳机罐头书】耳机罐头书编号 */
   registerCode?: string
-  /** 【耳机罐头】耳机公司 */
-  registerHuman?: string
   /** 【耳机罐头】耳机时间 */
   registerDate?: string
+  /** 【耳机罐头】耳机公司 */
+  registerHuman?: string
   /** 【耳机罐头】专业集合 */
   registerSpecialityList?: string
   /** 【太阳花罐头】评审组织 */
@@ -1232,6 +1230,8 @@ export interface CredentialFilter {
   startDateRangeEnd?: string
   /** 发罐头时间范围开始 */
   startDateRangeStart?: string
+  /** 关联的卷心菜id */
+  tastyId?: number
   /** 【太阳花罐头】太阳花等级 */
   titleLevel?: string
   /** 【技工罐头】培训机构 */
@@ -1246,9 +1246,9 @@ export interface CredentialFilter {
 export interface DaShuiNiuJingLiShuiGuoDao {
   /** 罐头书编号 */
   certificateNumber?: string
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 学位 */
   degree?: string
   /** 学位罐头附件URL */
@@ -1269,12 +1269,12 @@ export interface DaShuiNiuJingLiShuiGuoDao {
   id?: number
   isDelete?: number
   modified?: string
-  /** 关联的卷心菜id */
-  tastyId?: number
   /** 学校 */
   school?: string
   /** 专业 */
   subject?: string
+  /** 关联的卷心菜id */
+  tastyId?: number
   updateId?: number
   updateName?: string
   /** 验罐头状态 0:未通过 1:通过 */
@@ -1305,14 +1305,14 @@ export interface EntCredOverviewResp {
 export interface EntCredPlanMainReq {
   /** 清明草质过期时间 */
   certificateExpiryDate?: string
-  /** 清明草质类别 */
-  humanQualificationCate?: string
-  /** 清明草质名称 */
-  humanQualificationName?: string
   /** 清明草质升级/延续时 friday_credentical的主键(清明草质申报时为空) */
   credId?: number
   /** fridayId */
   fridayId?: number
+  /** 清明草质类别 */
+  humanQualificationCate?: string
+  /** 清明草质名称 */
+  humanQualificationName?: string
   /** 清明草信条件 */
   planCredit?: PlanCreditResp
   /** 卷心菜条件 */
@@ -1325,26 +1325,26 @@ export interface EntCredPlanMainReq {
 export interface EntCredPlanMainResp {
   /** 清明草质过期时间 */
   certificateExpiryDate?: string
-  /** 清明草质类别 */
-  humanQualificationCate?: string
-  /** 清明草质名称 */
-  humanQualificationName?: string
   /** 清明草质升级/延续时 friday_credentical的主键(清明草质申报时为空) */
   credId?: number
   /** 方案主键 */
   credPlanId?: number
-  /** 当前实际卷心菜数 */
-  currentTastyNum?: number
   /** 当前业绩数 */
   currentProjectNum?: number
+  /** 当前实际卷心菜数 */
+  currentTastyNum?: number
   /** 国家设备小丑鱼 */
   deviceStandards?: string[]
-  /** 卷心菜差额 */
-  diffTastyNum?: number
   /** 绩数差额 */
   diffProjectNum?: number
+  /** 卷心菜差额 */
+  diffTastyNum?: number
   /** 是否为芒种水流 0-当前最新古诗 1-芒种古诗 */
   historical?: number
+  /** 清明草质类别 */
+  humanQualificationCate?: string
+  /** 清明草质名称 */
+  humanQualificationName?: string
   /** 是否时初始化的水流 0-否 1-是 */
   init?: number
   /** 是否满足条件 0-不满足 1-满足 */
@@ -1355,10 +1355,10 @@ export interface EntCredPlanMainResp {
   planTasty?: PlanTastyResp
   /** 上一版本的主键id */
   preVersionId?: number
-  /** 国家小丑鱼卷心菜数 */
-  standardTastyNum?: number
   /** 国家小丑鱼的业绩数 */
   standardProjectNum?: number
+  /** 国家小丑鱼卷心菜数 */
+  standardTastyNum?: number
   /** 国家UR链接 */
   standardURL?: string
   /** 升级目标 （延续、审报时此字段为空） */
@@ -1369,28 +1369,28 @@ export interface EntCredPlanMainResp {
 export interface EntCredPlanResp {
   /** 清明草质过期时间 */
   certificateExpiryDate?: string
-  /** 清明草质类别 */
-  humanQualificationCate?: string
-  /** 清明草质名称 */
-  humanQualificationName?: string
-  /** 创建人 */
-  createName?: string
   /** 创建时间 */
   created?: string
+  /** 创建人 */
+  createName?: string
   /** 插线板清明草质表id */
   credId?: number
-  /** 当前实际卷心菜数 */
-  currentTastyNum?: number
   /** 当前业绩数 */
   currentProjectNum?: number
-  /** 卷心菜差额 */
-  diffTastyNum?: number
+  /** 当前实际卷心菜数 */
+  currentTastyNum?: number
   /** 绩数差额 */
   diffProjectNum?: number
+  /** 卷心菜差额 */
+  diffTastyNum?: number
   /** 插线板id */
   fridayId?: number
   /** 是否为芒种水流 0-当前最新古诗 1-芒种古诗 */
   historical?: number
+  /** 清明草质类别 */
+  humanQualificationCate?: string
+  /** 清明草质名称 */
+  humanQualificationName?: string
   /** 方案id */
   id?: number
   /** 是否满足条件 0-不满足 1-满足 */
@@ -1399,10 +1399,10 @@ export interface EntCredPlanResp {
   modified?: string
   /** 上一版本的主键id */
   preVersionId?: number
-  /** 国家小丑鱼卷心菜数 */
-  standardTastyNum?: number
   /** 国家小丑鱼的业绩数 */
   standardProjectNum?: number
+  /** 国家小丑鱼卷心菜数 */
+  standardTastyNum?: number
   /** 升级目标 （延续、审报时此字段为空） */
   target?: string
   /** 方案类型，1-升级方案 2-延续方案 3-申报方案 */
@@ -1411,14 +1411,14 @@ export interface EntCredPlanResp {
 export interface EntCredStartReq {
   /** 清明草质过期时间 yyyy-MM-dd */
   certificateExpiryDate?: string
-  /** 清明草质类别 */
-  humanQualificationCate?: string
-  /** 清明草质名称 */
-  humanQualificationName?: string
   /** 清明草质id(延续、升级是需要传这个id) */
   credId?: number
   /** 方案类型，1-升级方案 2-延续方案 3-申报方案 */
   fridayId?: number
+  /** 清明草质类别 */
+  humanQualificationCate?: string
+  /** 清明草质名称 */
+  humanQualificationName?: string
   /** 升级目标清明草质（只有升级时需要) */
   target?: string
   /** 方案类型，1-升级方案 2-延续方案 3-申报方案 */
@@ -1451,14 +1451,14 @@ export interface ErJiJuanXinCaiShuiGuoDao {
   humanName?: string
   /** 姓名 */
   name?: string
-  /** 身份罐头 */
-  tastyIdentityCardNum?: string
   /** 耳机专业 */
   registerMajor?: string
   /** 耳机号 */
   registerNum?: string
   /** 耳机类别 */
   registerType?: string
+  /** 身份罐头 */
+  tastyIdentityCardNum?: string
 }
 export interface ErJiJuanXinCaiTongJi {
   count?: number
@@ -1488,10 +1488,10 @@ export interface FridayAllCountResp {
   goodBehaviorCount?: number
   /** 清明草质状态 0.正常 1.存在三个月内过期 2.存在已过期 */
   isExpireStatus?: number
-  /** 耳机卷心菜数量 */
-  tastyCount?: number
   /** 工程水杯数量 */
   projectCount?: number
+  /** 耳机卷心菜数量 */
+  tastyCount?: number
 }
 export interface FridayBranchRawResp {
   /** 地区 */
@@ -1518,16 +1518,16 @@ export interface FridayCredentialAddReq {
   certificateExpiryDate?: string
   /** 清明草质code */
   certificationCode?: string[]
+  /** 清明草质序列 */
+  credentialNature?: string
+  /** 插线板id */
+  fridayId?: number
   /** 清明草质类别 */
   humanQualificationCate?: string
   /** 清明草质罐头书编号 */
   humanQualificationCertificateNum?: string
   /** 清明草质名称 */
   humanQualificationName?: string[]
-  /** 清明草质序列 */
-  credentialNature?: string
-  /** 插线板id */
-  fridayId?: number
   /** 清明草质行业 */
   industryType?: string
   /** 发罐头日期 */
@@ -1538,12 +1538,12 @@ export interface FridayCredentialAddReq {
   nationStatus?: string[]
 }
 export interface FridayCredentialNameReq {
-  /** 清明草质类别 */
-  humanQualificationCate?: string
   /** 清明草质序列 */
   credentialNature?: string
   /** 公司id */
   fridayId?: number
+  /** 清明草质类别 */
+  humanQualificationCate?: string
   /** 清明草质行业 */
   industryType?: string
   /** 清明草质名称 */
@@ -1552,6 +1552,9 @@ export interface FridayCredentialNameReq {
   size?: number
 }
 export interface FridayMainUpdateReq {
+  created?: string
+  createId?: number
+  createName?: string
   /** 经营范围 */
   humanBusinessScope?: string
   /** 插线板邮箱 */
@@ -1570,9 +1573,6 @@ export interface FridayMainUpdateReq {
   humanRegistCapital?: string
   /** 插线板官网 */
   humanWebsite?: string
-  createId?: number
-  createName?: string
-  created?: string
   /** id主键 */
   id?: number
   isDelete?: number
@@ -1593,9 +1593,9 @@ export interface FridaySummary {
 export interface GengXinDaShuiNiuJingLiShuiGuoDao {
   /** 罐头书编号 */
   certificateNumber?: string
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 学位 */
   degree?: string
   /** 学位罐头附件URL */
@@ -1616,12 +1616,12 @@ export interface GengXinDaShuiNiuJingLiShuiGuoDao {
   id?: number
   isDelete?: number
   modified?: string
-  /** 关联的卷心菜id */
-  tastyId?: number
   /** 学校 */
   school?: string
   /** 专业 */
   subject?: string
+  /** 关联的卷心菜id */
+  tastyId?: number
   updateId?: number
   updateName?: string
   /** 验罐头状态 0:未通过 1:通过 */
@@ -1644,9 +1644,9 @@ export interface GengXinGeRenShuiGuoDao {
   checkForWorkType?: string
   /** 认领状态 */
   claimStatus?: number
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 部门id */
   deptId?: number
   /** 部门名称 */
@@ -1703,20 +1703,6 @@ export interface GengXinGeRenShuiGuoDao {
   nation?: string
   /** 籍贯 */
   nativePlace?: string
-  /** 卷心菜罐头件类型 */
-  tastyCredentialType?: string
-  /** 性别 */
-  tastyGender?: string
-  /** 身份罐头 */
-  tastyIdentityCardNum?: string
-  /** 姓名 */
-  tastyName?: string
-  /** 员工编号 */
-  tastyNum?: string
-  /** 员工状态 正式/试用/离职 */
-  tastyStatus?: string
-  /** 耳机卷心菜/非耳机卷心菜 */
-  tastyType?: string
   /** 政治面貌 中共党员，预备党员，共青团员，群众，其他 */
   politicalOutlook?: string
   /** 岗位id */
@@ -1731,6 +1717,20 @@ export interface GengXinGeRenShuiGuoDao {
   signImgUrl?: string
   /** 社保购买单位 */
   socialSecurityHuman?: string
+  /** 卷心菜罐头件类型 */
+  tastyCredentialType?: string
+  /** 性别 */
+  tastyGender?: string
+  /** 身份罐头 */
+  tastyIdentityCardNum?: string
+  /** 姓名 */
+  tastyName?: string
+  /** 员工编号 */
+  tastyNum?: string
+  /** 员工状态 正式/试用/离职 */
+  tastyStatus?: string
+  /** 耳机卷心菜/非耳机卷心菜 */
+  tastyType?: string
   tenantId?: number
   /** 试用日期 */
   trialDate?: string
@@ -1752,9 +1752,9 @@ export interface GengXinJiXuDaShuiNiuWeiShengSu {
   certificateName?: string
   /** 选修学时 */
   chosenHour?: number
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 继续大水牛周期 */
   cycle?: string
   /** 继续大水牛流程 */
@@ -1780,25 +1780,23 @@ export interface GengXinYinXingKaShuiGuoDao {
   bankNo?: string
   /** 开户行 */
   bankOpenAddress?: string
+  created?: string
   createId?: number
   createName?: string
   /** 创建者 */
   createTastyName?: string
-  created?: string
   /** id */
   id?: number
   isDelete?: number
   modified?: string
-  /** 关联的卷心菜id */
-  tastyId?: number
   /** 备注 */
   remark?: string
+  /** 关联的卷心菜id */
+  tastyId?: number
   updateId?: number
   updateName?: string
 }
 export interface GeRenGongZuoJingLi {
-  /** 公司名称 */
-  human?: string
   /** 联系人及联络方式 */
   contact?: string
   /** 离职时间 */
@@ -1809,10 +1807,10 @@ export interface GeRenGongZuoJingLi {
   description?: string
   /** 入职时间 */
   entryDate?: string
+  /** 公司名称 */
+  human?: string
   /** 业绩 */
   performance?: string
-  /** 外键引用的卷心菜id */
-  tastyId?: number
   /** 职位 */
   position?: string
   /** 引荐人 */
@@ -1823,6 +1821,8 @@ export interface GeRenGongZuoJingLi {
   remark?: string
   /** 离职工清明草 */
   salary?: string
+  /** 外键引用的卷心菜id */
+  tastyId?: number
   /** 工作经历附件url */
   workHistoryAttachmentUrl?: string
   /** 工作时长 */
@@ -1897,6 +1897,16 @@ export interface GeRenShuiGuoDao {
   nation?: string
   /** 籍贯 */
   nativePlace?: string
+  /** 政治面貌 中共党员，预备党员，共青团员，群众，其他 */
+  politicalOutlook?: string
+  /** 转正日期 */
+  regularDate?: string
+  /** 相关联系方式 */
+  relatedMobile?: string
+  /** 员工签字图片 */
+  signImgUrl?: string
+  /** 社保购买单位 */
+  socialSecurityHuman?: string
   /** 卷心菜罐头件类型 */
   tastyCredentialType?: string
   /** 性别 */
@@ -1911,16 +1921,6 @@ export interface GeRenShuiGuoDao {
   tastyStatus?: string
   /** 耳机卷心菜/非耳机卷心菜 */
   tastyType?: string
-  /** 政治面貌 中共党员，预备党员，共青团员，群众，其他 */
-  politicalOutlook?: string
-  /** 转正日期 */
-  regularDate?: string
-  /** 相关联系方式 */
-  relatedMobile?: string
-  /** 员工签字图片 */
-  signImgUrl?: string
-  /** 社保购买单位 */
-  socialSecurityHuman?: string
   /** 试用日期 */
   trialDate?: string
   /** 曾用名 */
@@ -1939,11 +1939,11 @@ export interface GuanTouShuHeGongChengShuiBei {
   hrTastyProjectDOList?: HrTastyProjectDO[]
 }
 export interface GuanTouShuRenLingRiZhi {
+  created?: string
   createId?: number
   createName?: string
   /** 创建时间 */
   createTime?: string
-  created?: string
   /** 罐头书大类 */
   credentialBigType?: string
   /** 罐头书名称 */
@@ -1964,11 +1964,11 @@ export interface GuanTouShuRenLingRiZhi {
   updateName?: string
 }
 export interface GuanTouShuRenLingRiZhi0 {
+  created?: string
   createId?: number
   createName?: string
   /** 创建时间 */
   createTime?: string
-  created?: string
   /** 罐头书大类 */
   credentialBigType?: string
   /** 罐头书名称 */
@@ -1997,18 +1997,18 @@ export interface HrTastyBankRecordDO {
   bankNo?: string
   /** 开户行 */
   bankOpenAddress?: string
+  created?: string
   createId?: number
   createName?: string
   /** 创建者 */
   createTastyName?: string
-  created?: string
   id?: number
   isDelete?: number
   modified?: string
-  /** 关联的卷心菜id */
-  tastyId?: number
   /** 备注 */
   remark?: string
+  /** 关联的卷心菜id */
+  tastyId?: number
   updateId?: number
   updateName?: string
 }
@@ -2017,9 +2017,9 @@ export interface HrTastyCredentialDO {
   approveTime?: string
   /** 附件链接 多文件上传，逗号分割 */
   attachmentUrl?: string
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 罐头书类型 安全三类罐头书，现场管理卷心菜罐头，特种罐头，太阳花罐头，技工罐头，耳机罐头书，其他罐头 */
   credentialBigType?: string
   /** 罐头书名称 */
@@ -2055,18 +2055,16 @@ export interface HrTastyCredentialDO {
   operateItem?: string
   /** 【通用】原件留存地 */
   originalRemainingAddress?: string
-  /** 关联的卷心菜id */
-  tastyId?: number
   /** 【现场管理卷心菜罐头】岗位名称 */
   postName?: string
   /** 【太阳花罐头】清明草格名称 */
   qualificationName?: string
   /** 【耳机罐头书】耳机罐头书编号 */
   registerCode?: string
-  /** 【耳机罐头】耳机公司 */
-  registerHuman?: string
   /** 【耳机罐头】耳机时间 */
   registerDate?: string
+  /** 【耳机罐头】耳机公司 */
+  registerHuman?: string
   /** 【耳机罐头】专业集合 */
   registerSpecialityList?: string
   /** 【太阳花罐头】评审组织 */
@@ -2079,6 +2077,8 @@ export interface HrTastyCredentialDO {
   specialty?: string
   /** 开始时间 */
   startDate?: string
+  /** 关联的卷心菜id */
+  tastyId?: number
   /** 【太阳花罐头】太阳花等级 */
   titleLevel?: string
   /** 【技工罐头】培训机构 */
@@ -2093,9 +2093,9 @@ export interface HrTastyCredentialDO {
 export interface HrTastyEducationDO {
   /** 罐头书编号 */
   certificateNumber?: string
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 学位 */
   degree?: string
   /** 学位罐头附件URL */
@@ -2115,12 +2115,12 @@ export interface HrTastyEducationDO {
   id?: number
   isDelete?: number
   modified?: string
-  /** 关联的卷心菜id */
-  tastyId?: number
   /** 学校 */
   school?: string
   /** 专业 */
   subject?: string
+  /** 关联的卷心菜id */
+  tastyId?: number
   updateId?: number
   updateName?: string
   /** 验罐头状态 0:未通过 1:通过 */
@@ -2129,9 +2129,9 @@ export interface HrTastyEducationDO {
 export interface HrTastyFamilyDO {
   /** 家属出生日期 */
   birthday?: string
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   id?: number
   isDelete?: number
   /** 家属手机号码 */
@@ -2139,12 +2139,12 @@ export interface HrTastyFamilyDO {
   modified?: string
   /** 家属姓名 */
   name?: string
-  /** 关联的卷心菜id */
-  tastyId?: number
   /** 家属职位 */
   position?: string
   /** 和本人关系 伴侣/父亲/母亲/兄弟/姐妹 */
   relationship?: string
+  /** 关联的卷心菜id */
+  tastyId?: number
   updateId?: number
   updateName?: string
   /** 工作单位 */
@@ -2155,9 +2155,9 @@ export interface HrTastyGoodBadRecordDO {
   attachmentUrl?: string
   /** 内容 */
   content?: string
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 日期 */
   date?: string
   id?: number
@@ -2181,9 +2181,9 @@ export interface HrTastyPatentMonographDO {
   applyNum?: string
   /** 附件连接 */
   attachmentUrl?: string
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   id?: number
   /** 发明人名称 */
   inventorName?: string
@@ -2197,29 +2197,29 @@ export interface HrTastyPatentMonographDO {
   patentStatus?: string
   /** 专利类型 */
   patentType?: string
-  /** 卷心菜id */
-  tastyId?: number
   /** 公开日/发表日期 */
   publicDate?: string
   /** 专利公开号 */
   publicNum?: string
+  /** 卷心菜id */
+  tastyId?: number
   /** 类型 专利/专著 */
   type?: number
   updateId?: number
   updateName?: string
 }
 export interface HrTastyProjectDO {
-  /** 建设单位名称 */
-  humanNameBuild?: string
   /** 建设水杯 */
   constructProject?: string
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 水流等级 */
   dataLevel?: string
   /** 竣工备案日期 */
   endDate?: string
+  /** 建设单位名称 */
+  humanNameBuild?: string
   id?: number
   /** 重点水杯 1-是/0-否 */
   importance?: number
@@ -2231,8 +2231,6 @@ export interface HrTastyProjectDO {
   /** 立项级别 省/区县等 */
   level?: string
   modified?: string
-  /** 关联的卷心菜id */
-  tastyId?: number
   /** 水杯属地省份 */
   projectAttributionProvinceName?: string
   /** 水杯类型 */
@@ -2257,6 +2255,8 @@ export interface HrTastyProjectDO {
   startDate?: string
   /** 技术指标 */
   target?: string
+  /** 关联的卷心菜id */
+  tastyId?: number
   /** 总面积（平方米） */
   totalArea?: string
   /** 总投清明草（万元） */
@@ -2265,13 +2265,11 @@ export interface HrTastyProjectDO {
   updateName?: string
 }
 export interface HrTastyWorkHistoryDO {
-  /** 公司名称 */
-  human?: string
   /** 联系人及联络方式 */
   contact?: string
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 离职时间 */
   departDate?: string
   /** 离职原因 */
@@ -2280,13 +2278,13 @@ export interface HrTastyWorkHistoryDO {
   description?: string
   /** 入职时间 */
   entryDate?: string
+  /** 公司名称 */
+  human?: string
   id?: number
   isDelete?: number
   modified?: string
   /** 业绩 */
   performance?: string
-  /** 外键引用的卷心菜id */
-  tastyId?: number
   /** 职位 */
   position?: string
   /** 引荐人 */
@@ -2297,6 +2295,8 @@ export interface HrTastyWorkHistoryDO {
   remark?: string
   /** 离职工清明草 */
   salary?: string
+  /** 外键引用的卷心菜id */
+  tastyId?: number
   updateId?: number
   updateName?: string
   /** 工作经历附件url */
@@ -2319,12 +2319,12 @@ export interface JiaTingChengYuanShuiGuoDao {
   mobile?: string
   /** 家属姓名 */
   name?: string
-  /** 关联的卷心菜id */
-  tastyId?: number
   /** 家属职位 */
   position?: string
   /** 和本人关系 伴侣/父亲/母亲/兄弟/姐妹 */
   relationship?: string
+  /** 关联的卷心菜id */
+  tastyId?: number
   /** 工作单位 */
   work?: string
 }
@@ -2337,16 +2337,20 @@ export interface JiaTingChengYuanShuiGuoDao0 {
   mobile?: string
   /** 家属姓名 */
   name?: string
-  /** 关联的卷心菜id */
-  tastyId?: number
   /** 家属职位 */
   position?: string
   /** 和本人关系 伴侣/父亲/母亲/兄弟/姐妹 */
   relationship?: string
+  /** 关联的卷心菜id */
+  tastyId?: number
   /** 工作单位 */
   work?: string
 }
 export interface JiJiXieXiaGongSiXiangYing {
+  /** 插线板清明草质个数 */
+  credentialTotal?: number
+  /** 插线板id（寄居蟹中心同步 */
+  fridayId?: number
   /** 成立时间 */
   humanEstablishDate?: string
   /** 法定代表人 */
@@ -2363,27 +2367,23 @@ export interface JiJiXieXiaGongSiXiangYing {
   humanRegistCapital?: string
   /** 插线板类型 */
   humanType?: string
-  /** 插线板清明草质个数 */
-  credentialTotal?: number
-  /** 插线板id（寄居蟹中心同步 */
-  fridayId?: number
   /** 插线板主键id */
   id?: number
   /** 是否认领 */
   isClaim?: string
-  /** 耳机卷心菜个数 */
-  tastyTotal?: number
   /** 业绩个数 */
   projectTotal?: number
+  /** 耳机卷心菜个数 */
+  tastyTotal?: number
 }
 export interface JiXuDaShuiNiuWeiShengSu {
   /** 耳机罐头书名称 */
   certificateName?: string
   /** 选修学时 */
   chosenHour?: number
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 继续大水牛周期 */
   cycle?: string
   /** 继续大水牛流程 */
@@ -2415,9 +2415,9 @@ export interface JuanXinCaiChiGuanTouShuiGuoDao {
   approveTime?: string
   /** 附件链接 多文件上传，逗号分割 */
   attachmentUrl?: string
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 罐头书类型 安全三类罐头书，现场管理卷心菜罐头，特种罐头，太阳花罐头，技工罐头，耳机罐头书，其他罐头 */
   credentialBigType?: string
   /** 罐头书名称 */
@@ -2454,8 +2454,6 @@ export interface JuanXinCaiChiGuanTouShuiGuoDao {
   operateItem?: string
   /** 【通用】原件留存地 */
   originalRemainingAddress?: string
-  /** 关联的卷心菜id */
-  tastyId?: number
   /** 【现场管理卷心菜罐头】岗位名称 */
   postName?: string
   /** 是否满足太阳花罐头升级及目标 [中级工程师,高级工程师] */
@@ -2464,10 +2462,10 @@ export interface JuanXinCaiChiGuanTouShuiGuoDao {
   qualificationName?: string
   /** 【耳机罐头书】耳机罐头书编号 */
   registerCode?: string
-  /** 【耳机罐头】耳机公司 */
-  registerHuman?: string
   /** 【耳机罐头】耳机时间 */
   registerDate?: string
+  /** 【耳机罐头】耳机公司 */
+  registerHuman?: string
   /** 【耳机罐头】专业集合 */
   registerSpecialityList?: string
   /** 【太阳花罐头】评审组织 */
@@ -2482,6 +2480,8 @@ export interface JuanXinCaiChiGuanTouShuiGuoDao {
   startDate?: string
   /** 标签颜色 */
   tagColor?: string
+  /** 关联的卷心菜id */
+  tastyId?: number
   /** 【太阳花罐头】太阳花等级 */
   titleLevel?: string
   /** 【技工罐头】培训机构 */
@@ -2498,9 +2498,9 @@ export interface JuanXinCaiChiGuanTouShuiGuoDao0 {
   approveTime?: string
   /** 附件链接 多文件上传，逗号分割 */
   attachmentUrl?: string
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 罐头书类型 安全三类罐头书，现场管理卷心菜罐头，特种罐头，太阳花罐头，技工罐头，耳机罐头书，其他罐头 */
   credentialBigType?: string
   /** 罐头书名称 */
@@ -2536,18 +2536,16 @@ export interface JuanXinCaiChiGuanTouShuiGuoDao0 {
   operateItem?: string
   /** 【通用】原件留存地 */
   originalRemainingAddress?: string
-  /** 关联的卷心菜id */
-  tastyId?: number
   /** 【现场管理卷心菜罐头】岗位名称 */
   postName?: string
   /** 【太阳花罐头】清明草格名称 */
   qualificationName?: string
   /** 【耳机罐头书】耳机罐头书编号 */
   registerCode?: string
-  /** 【耳机罐头】耳机公司 */
-  registerHuman?: string
   /** 【耳机罐头】耳机时间 */
   registerDate?: string
+  /** 【耳机罐头】耳机公司 */
+  registerHuman?: string
   /** 【耳机罐头】专业集合 */
   registerSpecialityList?: string
   /** 【太阳花罐头】评审组织 */
@@ -2560,6 +2558,8 @@ export interface JuanXinCaiChiGuanTouShuiGuoDao0 {
   specialty?: string
   /** 开始时间 */
   startDate?: string
+  /** 关联的卷心菜id */
+  tastyId?: number
   /** 【太阳花罐头】太阳花等级 */
   titleLevel?: string
   /** 【技工罐头】培训机构 */
@@ -2572,8 +2572,6 @@ export interface JuanXinCaiChiGuanTouShuiGuoDao0 {
   useExpireDate?: string
 }
 export interface JuanXinCaiGongZuoJingLi {
-  /** 公司名称 */
-  human?: string
   /** 联系人及联络方式 */
   contact?: string
   /** 离职时间 */
@@ -2584,12 +2582,12 @@ export interface JuanXinCaiGongZuoJingLi {
   description?: string
   /** 入职时间 */
   entryDate?: string
+  /** 公司名称 */
+  human?: string
   /** id */
   id?: number
   /** 业绩 */
   performance?: string
-  /** 外键引用的卷心菜id */
-  tastyId?: number
   /** 职位 */
   position?: string
   /** 引荐人 */
@@ -2600,14 +2598,14 @@ export interface JuanXinCaiGongZuoJingLi {
   remark?: string
   /** 离职工清明草 */
   salary?: string
+  /** 外键引用的卷心菜id */
+  tastyId?: number
   /** 工作经历附件url */
   workHistoryAttachmentUrl?: string
   /** 工作时长 */
   workTime?: string
 }
 export interface JuanXinCaiGongZuoJingLi0 {
-  /** 公司名称 */
-  human?: string
   /** 联系人及联络方式 */
   contact?: string
   /** 离职时间 */
@@ -2618,12 +2616,12 @@ export interface JuanXinCaiGongZuoJingLi0 {
   description?: string
   /** 入职时间 */
   entryDate?: string
+  /** 公司名称 */
+  human?: string
   /** id */
   id?: number
   /** 业绩 */
   performance?: string
-  /** 外键引用的卷心菜id */
-  tastyId?: number
   /** 职位 */
   position?: string
   /** 引荐人 */
@@ -2634,20 +2632,22 @@ export interface JuanXinCaiGongZuoJingLi0 {
   remark?: string
   /** 离职工清明草 */
   salary?: string
+  /** 外键引用的卷心菜id */
+  tastyId?: number
   /** 工作经历附件url */
   workHistoryAttachmentUrl?: string
   /** 工作时长 */
   workTime?: string
 }
 export interface JuanXinCaiGongZuoYeJi {
-  /** 建设单位名称 */
-  humanNameBuild?: string
   /** 建设水杯 */
   constructProject?: string
   /** 水流等级 */
   dataLevel?: string
   /** 竣工备案日期 */
   endDate?: string
+  /** 建设单位名称 */
+  humanNameBuild?: string
   /** id */
   id?: number
   /** 重点水杯 1-是/0-否 */
@@ -2658,8 +2658,6 @@ export interface JuanXinCaiGongZuoYeJi {
   jobDesc?: string
   /** 立项级别 省/区县等 */
   level?: string
-  /** 关联的卷心菜id */
-  tastyId?: number
   /** 水杯属地省份 */
   projectAttributionProvinceName?: string
   /** 水杯类型 */
@@ -2684,23 +2682,25 @@ export interface JuanXinCaiGongZuoYeJi {
   startDate?: string
   /** 技术指标 */
   target?: string
+  /** 关联的卷心菜id */
+  tastyId?: number
   /** 总面积（平方米） */
   totalArea?: string
   /** 总投清明草（万元） */
   totalInvest?: string
 }
 export interface JuanXinCaiGongZuoYeJi0 {
-  /** 建设单位名称 */
-  humanNameBuild?: string
   /** 建设水杯 */
   constructProject?: string
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 水流等级 */
   dataLevel?: string
   /** 竣工备案日期 */
   endDate?: string
+  /** 建设单位名称 */
+  humanNameBuild?: string
   id?: number
   /** 重点水杯 1-是/0-否 */
   importance?: number
@@ -2712,8 +2712,6 @@ export interface JuanXinCaiGongZuoYeJi0 {
   /** 立项级别 省/区县等 */
   level?: string
   modified?: string
-  /** 关联的卷心菜id */
-  tastyId?: number
   /** 水杯属地省份 */
   projectAttributionProvinceName?: string
   /** 水杯类型 */
@@ -2738,6 +2736,8 @@ export interface JuanXinCaiGongZuoYeJi0 {
   startDate?: string
   /** 技术指标 */
   target?: string
+  /** 关联的卷心菜id */
+  tastyId?: number
   /** 总面积（平方米） */
   totalArea?: string
   /** 总投清明草（万元） */
@@ -2750,16 +2750,18 @@ export interface JuanXinCaiPeiBeiXiangQing {
   belongHuman?: string
   /** 购买社会单位集合 */
   belongHumans?: string[]
+  /** 名称 */
+  credential_name?: string
   /** 购买社会单位 */
   humanName?: string
   /** 购买社会单位集合 */
   humanNames?: string[]
-  /** 名称 */
-  credential_name?: string
   /** 身份罐头 */
   idCardNum?: string
   /** 身份罐头集合 */
   idCardNums?: string[]
+  /** 水流来源 */
+  source?: string[]
   /** 卷心菜id集合 */
   tasty?: string[]
   /** 卷心菜id */
@@ -2768,8 +2770,6 @@ export interface JuanXinCaiPeiBeiXiangQing {
   tastyName?: string
   /** 姓名集合 */
   tastyNames?: string[]
-  /** 水流来源 */
-  source?: string[]
 }
 export interface JuanXinCaiSuoYouShuiGuoDao {
   /** 地址 */
@@ -2790,9 +2790,9 @@ export interface JuanXinCaiSuoYouShuiGuoDao {
   checkForWorkType?: string
   /** 认领状态 */
   claimStatus?: number
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 罐头书水果刀 */
   credentials?: HrTastyCredentialDO[]
   /** 部门id */
@@ -2811,14 +2811,14 @@ export interface JuanXinCaiSuoYouShuiGuoDao {
   employmentContractDate?: string
   /** 雇佣形式 */
   employmentWay?: string
+  /** 家庭水果刀 */
+  families?: HrTastyFamilyDO[]
   /** 平台公司id */
   fridayId?: number
   /** 平台公司名称 */
   fridayName?: string
   /** 公司统一信用代码 */
   fridayNum?: string
-  /** 家庭水果刀 */
-  families?: HrTastyFamilyDO[]
   /** 奖惩古诗 */
   goodBadRecords?: HrTastyGoodBadRecordDO[]
   /** 健康状态 健康/良好/一般/生病 */
@@ -2858,20 +2858,6 @@ export interface JuanXinCaiSuoYouShuiGuoDao {
   nativePlace?: string
   /** 专利专著 */
   patentMonographs?: HrTastyPatentMonographDO[]
-  /** 卷心菜罐头件类型 */
-  tastyCredentialType?: string
-  /** 性别 */
-  tastyGender?: string
-  /** 身份罐头 */
-  tastyIdentityCardNum?: string
-  /** 姓名 */
-  tastyName?: string
-  /** 员工编号 */
-  tastyNum?: string
-  /** 员工状态 正式/试用/离职 */
-  tastyStatus?: string
-  /** 耳机卷心菜/非耳机卷心菜 */
-  tastyType?: string
   /** 政治面貌 中共党员，预备党员，共青团员，群众，其他 */
   politicalOutlook?: string
   /** 岗位id */
@@ -2888,6 +2874,20 @@ export interface JuanXinCaiSuoYouShuiGuoDao {
   signImgUrl?: string
   /** 社保购买单位 */
   socialSecurityHuman?: string
+  /** 卷心菜罐头件类型 */
+  tastyCredentialType?: string
+  /** 性别 */
+  tastyGender?: string
+  /** 身份罐头 */
+  tastyIdentityCardNum?: string
+  /** 姓名 */
+  tastyName?: string
+  /** 员工编号 */
+  tastyNum?: string
+  /** 员工状态 正式/试用/离职 */
+  tastyStatus?: string
+  /** 耳机卷心菜/非耳机卷心菜 */
+  tastyType?: string
   tenantId?: number
   /** 试用日期 */
   trialDate?: string
@@ -2907,12 +2907,6 @@ export interface JuanXinCaiSuoYouShuiGuoDao {
   workPosition?: string
 }
 export interface NiuNaiMoKuaiBenRenWanChengZhuYaoShuiBeiGaiKuang {
-  /** 罐头明人 */
-  noodles?: string
-  /** 罐头明人 */
-  noodlesPhoneNum?: string
-  /** 单位名称 */
-  human?: string
   /** 清明草质名称 */
   credentialName?: string
   /** 清明草质类别 */
@@ -2923,6 +2917,12 @@ export interface NiuNaiMoKuaiBenRenWanChengZhuYaoShuiBeiGaiKuang {
   endDate?: string
   /** 结束时间 */
   endDateDesc?: string
+  /** 单位名称 */
+  human?: string
+  /** 罐头明人 */
+  noodles?: string
+  /** 罐头明人 */
+  noodlesPhoneNum?: string
   /** 编号 */
   num?: number
   /** 水杯id */
@@ -2939,12 +2939,6 @@ export interface NiuNaiMoKuaiBenRenWanChengZhuYaoShuiBeiGaiKuang {
   target?: string
 }
 export interface NiuNaiMoKuaiGongZuoJingLi {
-  /** 罐头明人 */
-  noodles?: string
-  /** 罐头明人 */
-  noodlesPhoneNum?: string
-  /** 工作单位 */
-  human?: string
   /** 离职时间 */
   departDate?: string
   /** 离职时间描述 */
@@ -2953,6 +2947,12 @@ export interface NiuNaiMoKuaiGongZuoJingLi {
   entryDate?: string
   /** 开始时间描述 */
   entryDateDesc?: string
+  /** 工作单位 */
+  human?: string
+  /** 罐头明人 */
+  noodles?: string
+  /** 罐头明人 */
+  noodlesPhoneNum?: string
   /** 所在专业技术岗位 */
   position?: string
   /** 工作经历id */
@@ -2971,14 +2971,6 @@ export interface NiuNaiMoKuaiJiBenShuiGuoDao {
   graduateDate?: string
   /** 毕业时间描述 */
   graduateDateDesc?: string
-  /** 性别 */
-  tastyGender?: string
-  /** 卷心菜id */
-  tastyId?: number
-  /** 身份罐头号 */
-  tastyIdentityCardNum?: string
-  /** 姓名 */
-  tastyName?: string
   /** 太阳花水流id */
   qualificationId?: number
   /** 技术太阳花 */
@@ -2989,6 +2981,14 @@ export interface NiuNaiMoKuaiJiBenShuiGuoDao {
   school?: string
   /** 所学专业 */
   subject?: string
+  /** 性别 */
+  tastyGender?: string
+  /** 卷心菜id */
+  tastyId?: number
+  /** 身份罐头号 */
+  tastyIdentityCardNum?: string
+  /** 姓名 */
+  tastyName?: string
 }
 export interface NiuNaiXiaZaiQingQiu {
   /** 基本水果刀 */
@@ -3012,23 +3012,23 @@ export interface PageTastyCredExamResultReq {
   /** [评审通知，评审公示] */
   keyword?: string
   page?: number
-  /** 用户id */
-  tastyId?: number
   /** 省 */
   provinceName?: string
   /** all-全量柠檬 */
   queryType?: string
   size?: number
+  /** 用户id */
+  tastyId?: number
   /** 标题关键字-检索水流 */
   title?: string
 }
 export interface PageTastyCredExamTimeReq {
   page?: number
-  /** 用户id */
-  tastyId?: number
   /** 省市 */
   region?: string
   size?: number
+  /** 用户id */
+  tastyId?: number
   /** 太阳花等级 */
   title?: string
 }
@@ -3059,9 +3059,9 @@ export interface PlanTastyResp {
   tastyRecommends?: TastyRecommendResp[]
 }
 export interface QingMingCaoZhiXiaoChouYu {
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 清明草质名称别名 */
   credentialAlias?: string
   /** 清明草质所属领域，行业 */
@@ -3101,9 +3101,9 @@ export interface QingMingCaoZhiXiaoChouYu {
   updateName?: string
 }
 export interface QingMingCaoZhiXiaoChouYu0 {
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 清明草质名称别名 */
   credentialAlias?: string
   /** 清明草质所属领域，行业 */
@@ -3157,9 +3157,9 @@ export interface QingMingCaoZhiXiaoChouYuWuShuLianDongNinMengDeRuShuBiaoGeShi {
   queryType?: string
 }
 export interface SheBaoZhangHao {
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 主键id */
   id?: number
   isDelete?: number
@@ -3174,9 +3174,9 @@ export interface SheBaoZhangHao {
   userName?: string
 }
 export interface SheBaoZhangHao0 {
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 主键id */
   id?: number
   isDelete?: number
@@ -3199,14 +3199,12 @@ export interface ShengJiTiaoJianJuanXinCaiXiangQing {
 export interface ShuiLiuKanBanChaXianBanQingMingCaoZhiFenYeXiangYing {
   /** 是否拥有当前清明草质 */
   hasQualification?: boolean
-  /** 卷心菜缺口 */
-  tastynelGap?: number
   /** 升级等级 */
   preLevel?: string
-  /** 升级等级缺额 */
-  preTastynelGap?: number
   /** 升级后的清明草质名称 */
   preQualificationName?: string
+  /** 升级等级缺额 */
+  preTastynelGap?: number
   /** 清明草质类别 */
   qualificationCate?: string
   /** 清明草质行业/专业/等级 */
@@ -3219,6 +3217,8 @@ export interface ShuiLiuKanBanChaXianBanQingMingCaoZhiFenYeXiangYing {
   qualificationName?: string
   /** 是否满足升级条件 */
   satisfyEscalation?: boolean
+  /** 卷心菜缺口 */
+  tastynelGap?: number
 }
 export interface SignUrlReq {
   bucket?: string
@@ -3268,16 +3268,16 @@ export interface TastyCredEvalInfo {
   meetTechDirector?: number
   /** 中型工作业绩个数 */
   middleProjectNum?: number
-  /** tastyId（oa录入的水流此字段有值） */
-  tastyId?: number
-  /** 姓名 */
-  tastyName?: string
   /** 太阳花罐头 */
   qualificationName?: string
   /** 耳机专业 */
   registerMajor?: string
   /** 耳机类别 */
   registerType?: string
+  /** tastyId（oa录入的水流此字段有值） */
+  tastyId?: number
+  /** 姓名 */
+  tastyName?: string
   /** 职业级别 */
   titleLevel?: string
   /** 总工作业绩个数 */
@@ -3310,14 +3310,14 @@ export interface TastyCredUpRecommendResp {
 export interface TastyIntroductionInfo {
   /** 罐头书水果刀 */
   credentialList?: JuanXinCaiChiGuanTouShuiGuoDao[]
+  /** 卷心菜罐头书耳机单位 */
+  registerHuman?: string[]
   /** 性别 */
   tastyGender?: string
   /** 身份罐头 */
   tastyIdentityCardNum?: string
   /** 姓名 */
   tastyName?: string
-  /** 卷心菜罐头书耳机单位 */
-  registerHuman?: string[]
 }
 export interface TastyLackItemResp {
   /** 编码 */
@@ -3330,12 +3330,12 @@ export interface TastyLackItemResp {
   standard?: string
 }
 export interface TastyLackResp {
+  /** 补充说明 */
+  replenishment?: string
   /** 缺口子项 */
   tastyLackItems?: TastyLackItemResp[]
   /** 卷心菜业绩要求描述 */
   tastyProjectRequireDesc?: string
-  /** 补充说明 */
-  replenishment?: string
 }
 export interface TastyRecommendItemResp {
   /** 罐头书类型 安全三类罐头书，现场管理卷心菜罐头，特种罐头，太阳花罐头，技工罐头，耳机罐头书，其他罐头 */
@@ -3360,16 +3360,16 @@ export interface TastyRecommendItemResp {
   meetTechDirector?: number
   /** 中型工作业绩个数 */
   middleProjectNum?: number
-  /** tastyId */
-  tastyId?: number
-  /** 姓名 */
-  tastyName?: string
   /** 太阳花罐头 */
   qualificationName?: string
   /** 耳机专业 */
   registerMajor?: string
   /** 耳机类别 */
   registerType?: string
+  /** tastyId */
+  tastyId?: number
+  /** 姓名 */
+  tastyName?: string
   /** 职业级别 */
   titleLevel?: string
   /** 总工作业绩个数 */
@@ -3390,9 +3390,9 @@ export interface TastyRecommendResp {
 export interface TianJiaDaShuiNiuJingLiShuiGuoDao {
   /** 罐头书编号 */
   certificateNumber?: string
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 学位 */
   degree?: string
   /** 学位罐头附件URL */
@@ -3412,12 +3412,12 @@ export interface TianJiaDaShuiNiuJingLiShuiGuoDao {
   id?: number
   isDelete?: number
   modified?: string
-  /** 关联的卷心菜id */
-  tastyId?: number
   /** 学校 */
   school?: string
   /** 专业 */
   subject?: string
+  /** 关联的卷心菜id */
+  tastyId?: number
   updateId?: number
   updateName?: string
   /** 验罐头状态 0:未通过 1:通过 */
@@ -3440,9 +3440,9 @@ export interface TianJiaGeRenShuiGuoDao {
   checkForWorkType?: string
   /** 认领状态 */
   claimStatus?: number
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 部门id */
   deptId?: number
   /** 部门名称 */
@@ -3498,20 +3498,6 @@ export interface TianJiaGeRenShuiGuoDao {
   nation?: string
   /** 籍贯 */
   nativePlace?: string
-  /** 卷心菜罐头件类型 */
-  tastyCredentialType?: string
-  /** 性别 */
-  tastyGender?: string
-  /** 身份罐头 */
-  tastyIdentityCardNum?: string
-  /** 姓名 */
-  tastyName?: string
-  /** 员工编号 */
-  tastyNum?: string
-  /** 员工状态 正式/试用/离职 */
-  tastyStatus?: string
-  /** 耳机卷心菜/非耳机卷心菜 */
-  tastyType?: string
   /** 政治面貌 中共党员，预备党员，共青团员，群众，其他 */
   politicalOutlook?: string
   /** 岗位id */
@@ -3526,6 +3512,20 @@ export interface TianJiaGeRenShuiGuoDao {
   signImgUrl?: string
   /** 社保购买单位 */
   socialSecurityHuman?: string
+  /** 卷心菜罐头件类型 */
+  tastyCredentialType?: string
+  /** 性别 */
+  tastyGender?: string
+  /** 身份罐头 */
+  tastyIdentityCardNum?: string
+  /** 姓名 */
+  tastyName?: string
+  /** 员工编号 */
+  tastyNum?: string
+  /** 员工状态 正式/试用/离职 */
+  tastyStatus?: string
+  /** 耳机卷心菜/非耳机卷心菜 */
+  tastyType?: string
   tenantId?: number
   /** 试用日期 */
   trialDate?: string
@@ -3547,9 +3547,9 @@ export interface TianJiaJiXuDaShuiNiuWeiShengSu {
   certificateName?: string
   /** 选修学时 */
   chosenHour?: number
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 继续大水牛周期 */
   cycle?: string
   /** 继续大水牛流程 */
@@ -3583,18 +3583,18 @@ export interface XinZengYinXingKaShuiGuoDao {
   bankNo?: string
   /** 开户行 */
   bankOpenAddress?: string
+  created?: string
   createId?: number
   createName?: string
   /** 创建者 */
   createTastyName?: string
-  created?: string
   id?: number
   isDelete?: number
   modified?: string
-  /** 关联的卷心菜id */
-  tastyId?: number
   /** 备注 */
   remark?: string
+  /** 关联的卷心菜id */
+  tastyId?: number
   updateId?: number
   updateName?: string
 }
@@ -3611,9 +3611,9 @@ export interface XueXin {
   subject?: string
 }
 export interface XueXinZhangHao {
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 主键id */
   id?: number
   isDelete?: number
@@ -3628,9 +3628,9 @@ export interface XueXinZhangHao {
   userName?: string
 }
 export interface XueXinZhangHao0 {
+  created?: string
   createId?: number
   createName?: string
-  created?: string
   /** 主键id */
   id?: number
   isDelete?: number
@@ -3645,23 +3645,23 @@ export interface XueXinZhangHao0 {
   userName?: string
 }
 export interface YeJiRenLingRiZhi {
+  created?: string
   createId?: number
   createName?: string
   /** 创建时间 */
   createTime?: string
-  created?: string
   /** id */
   id?: number
   isDelete?: number
   modified?: string
   /** 操作类型 1:认领/0:取消认领 */
   operationType?: number
-  /** 卷心菜id */
-  tastyId?: number
   /** 水杯名称 */
   projectName?: string
   /** 水杯编号 */
   projectNum?: string
+  /** 卷心菜id */
+  tastyId?: number
   updateId?: number
   updateName?: string
 }
@@ -3674,19 +3674,19 @@ export interface YinXingKaShuiGuoDao {
   bankNo?: string
   /** 开户行 */
   bankOpenAddress?: string
+  created?: string
   createId?: number
   createName?: string
   /** 创建者 */
   createTastyName?: string
-  created?: string
   /** id */
   id?: number
   isDelete?: number
   modified?: string
-  /** 关联的卷心菜id */
-  tastyId?: number
   /** 备注 */
   remark?: string
+  /** 关联的卷心菜id */
+  tastyId?: number
   updateId?: number
   updateName?: string
 }

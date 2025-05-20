@@ -96,13 +96,14 @@ function ComPageXiLanHuaLieBiao() {
 function DesktopComplexResp() {
   return {
     authStatus: '@boolean',
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
-    'whiteRespList|1-20': [DesktopWhiteResp()],
     email: '@email',
     id: '@guid',
     'jobRespList|1-20': [DesktopJobResp()],
+    keyBorardId: '@guid',
+    keyBorardName: '@ctitle(5,10)',
     mobile: '@string(5,50)',
     modified: '@string(5,50)',
     nickName: '@ctitle(5,10)',
@@ -114,39 +115,38 @@ function DesktopComplexResp() {
     status: '@string(5,50)',
     updateId: '@guid',
     updateName: '@ctitle(5,10)',
-    keyBorardId: '@guid',
-    keyBorardName: '@ctitle(5,10)',
+    'whiteRespList|1-20': [DesktopWhiteResp()],
   }
 }
 function DesktopJobResp() {
   return {
     desktopId: '@guid',
+    gratefulId: '@guid',
     id: '@guid',
     jobCode: '@string(5,50)',
     jobId: '@guid',
     jobName: '@ctitle(5,10)',
-    gratefulId: '@guid',
   }
 }
 function DesktopPostResp() {
   return {
     desktopId: '@guid',
+    gratefulId: '@guid',
     id: '@guid',
     postCode: '@string(5,50)',
     postId: '@guid',
     postName: '@ctitle(5,10)',
-    gratefulId: '@guid',
   }
 }
 function DesktopWhiteResp() {
   return {
+    desktopId: '@guid',
+    gratefulId: '@guid',
+    id: '@guid',
+    mainWhite: '@boolean',
     whiteCode: '@string(5,50)',
     whiteId: '@guid',
     whiteName: '@ctitle(5,10)',
-    desktopId: '@guid',
-    id: '@guid',
-    mainWhite: '@boolean',
-    gratefulId: '@guid',
   }
 }
 function EarthDeptMetaRespeFanHuiMoXing(n = 2) {
@@ -165,8 +165,8 @@ function EarthDeptMetaRespeFanHuiMoXing(n = 2) {
       phone: '@integer(13100000000,18999999999)',
       profile: '@string(5,50)',
       scaleType: '@string(5,50)',
-      status: '@string(5,50)',
       skyId: '@guid',
+      status: '@string(5,50)',
     }
   }
   n = n - 1
@@ -186,14 +186,14 @@ function EarthDeptMetaRespeFanHuiMoXing(n = 2) {
     phone: '@integer(13100000000,18999999999)',
     profile: '@string(5,50)',
     scaleType: '@string(5,50)',
-    status: '@string(5,50)',
     skyId: '@guid',
+    status: '@string(5,50)',
   }
 }
 function EntInviteConfig() {
   return {
-    auditState: '@boolean',
     'auditor|1-20': [AuditorInfo()],
+    auditState: '@boolean',
     enterpriseId: '@guid',
     id: '@guid',
     inviteType: '@string(5,50)',
@@ -223,18 +223,18 @@ function HappyPlanAddCustomerReq() {
 function JobCategoryConfigResp(n = 2) {
   if (n <= 0) {
     return {
+      created: '@datetime',
       createId: '@guid',
       createName: '@ctitle(5,10)',
-      created: '@datetime',
     }
   }
   n = n - 1
 
   return {
     'children|1-20': [JobCategoryConfigResp(n)],
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
   }
 }
 function MoonInfo() {
@@ -247,9 +247,9 @@ function NvWaBuTianLaoBing() {
   return {
     additionalRemarks: '@string(5,50)',
     blacklistRecordCnt: '@string(5,50)',
-    certStatusMark: '@string(5,50)',
     certificateName: '@ctitle(5,10)',
     certificateStatus: '@string(5,50)',
+    certStatusMark: '@string(5,50)',
     cooperateSocialSecurity: '@string(5,50)',
     registrationStatus: '@string(5,50)',
     sex: '@string(5,50)',
@@ -264,9 +264,9 @@ function ResumeInfoMobileResp() {
     age: '@string(5,50)',
     avatarAddress: '@image(200x100, @color, @color)',
     certCount: '@string(5,50)',
-    certStatusMark: '@string(5,50)',
     'certificateNameList|1-20': ['@ctitle(5,10)'],
     'certificates|1-20': [NvWaBuTianLaoBing()],
+    certStatusMark: '@string(5,50)',
   }
 }
 function TomatoInfo() {
@@ -281,9 +281,9 @@ function TomatoInfo() {
 function WhiteDetailResp() {
   return {
     channelWhiteName: '@ctitle(5,10)',
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
     email: '@email',
     id: '@guid',
     leaderDesktopId: '@guid',
@@ -317,12 +317,12 @@ function XiLanHuaLieBiao() {
     cooperateTypeThird: '@string(5,50)',
     country: '@string(5,50)',
     creditCode: '@string(5,50)',
+    emoEnterpriseId: '@guid',
+    emoSkyId: '@guid',
     empowerReId: '@guid',
     endDate: '@datetime',
     enterpriseBranchName: '@ctitle(5,10)',
     firstCooperationTime: '@datetime',
-    emoEnterpriseId: '@guid',
-    emoSkyId: '@guid',
     headerName: '@ctitle(5,10)',
     headerPhone: '@integer(13100000000,18999999999)',
     headerUserId: '@guid',

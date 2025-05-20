@@ -1080,21 +1080,21 @@ export function AuthDoorOrgInfoResp() {
     authStatus: '@string(5,50)',
     authTypeMap: '',
     chiefly: '@boolean',
-    whiteChildrenDesktopCount: '@string(5,50)',
-    whiteLinkDoorResp: WhiteLinkDoorResp(),
     id: '@guid',
     licenseUnifiedCode: '@string(5,50)',
     name: '@ctitle(5,10)',
     serialNum: '@string(5,50)',
+    whiteChildrenDesktopCount: '@string(5,50)',
+    whiteLinkDoorResp: WhiteLinkDoorResp(),
   }
 }
 export function AuthOrgKeyBorardReq() {
   return {
     authFlag: '@boolean',
     certType: /AL_TICKET|COMMON|ESIGN_ALL|ESIGN_ONLY_SIGN|WALLET/,
-    whiteId: '@guid',
     'desktopIds|1-20': ['@string(5,50)'],
     doorId: '@guid',
+    whiteId: '@guid',
   }
 }
 export function BasePageReq() {
@@ -1159,20 +1159,20 @@ export function BiXieDaoZhongXinChuXingGuoLvTiaoJian() {
   return {
     authFlag: '@boolean',
     certType: /AL_TICKET|COMMON|ESIGN_ALL|ESIGN_ONLY_SIGN|WALLET/,
-    whiteName: '@ctitle(5,10)',
     'desktopIds|1-20': ['@string(5,50)'],
     desktopMobile: '@string(5,50)',
     desktopName: '@ctitle(5,10)',
     doorId: '@guid',
     page: '@integer(3,1000)',
     size: '20',
+    whiteName: '@ctitle(5,10)',
   }
 }
 export function CatnelCertificate() {
   return {
     allTotalName: '@ctitle(5,10)',
-    reSDate: '@datetime',
     regEDate: '@datetime',
+    reSDate: '@datetime',
     zczyName: '@ctitle(5,10)',
   }
 }
@@ -1212,12 +1212,12 @@ export function ChannelAppGratefulConfigResp() {
     appUrl: '@image(200x100, @color, @color)',
     channelType: '@string(5,50)',
     corpId: '@guid',
+    gratefulId: '@guid',
     id: '@guid',
     manUrl: '@image(200x100, @color, @color)',
     outIp: '@string(5,50)',
     pcUrl: '@image(200x100, @color, @color)',
     recUrl: '@image(200x100, @color, @color)',
-    gratefulId: '@guid',
   }
 }
 export function ChannelAppGratefulConfigUpReq() {
@@ -1229,8 +1229,8 @@ export function ChannelAppGratefulConfigUpReq() {
     appSecret: '@string(5,50)',
     channelType: '@string(5,50)',
     corpId: '@guid',
-    id: '@guid',
     gratefulId: '@guid',
+    id: '@guid',
   }
 }
 export function ChannelComLoginReq() {
@@ -1465,8 +1465,6 @@ export function CompanyInfo() {
   return {
     belongOrg: '@string(5,50)',
     bondType: '@string(5,50)',
-    happyScope: '@string(5,50)',
-    happyTerm: '@string(5,50)',
     category: '@string(5,50)',
     checkDate: '@datetime',
     city: '@city',
@@ -1481,6 +1479,8 @@ export function CompanyInfo() {
     emails: '@email',
     estiblishTime: '@datetime',
     firstPosition: '@string(5,50)',
+    happyScope: '@string(5,50)',
+    happyTerm: '@string(5,50)',
     labelListV2: '@string(5,50)',
     logo: '@string(5,50)',
     nameen: '@ctitle(5,10)',
@@ -1531,51 +1531,52 @@ export function DescribeFaceVerifyResponseResultObject() {
 }
 export function DesktopAddRecordResp() {
   return {
-    addTime: '@datetime',
     adderName: '@ctitle(5,10)',
     adderPhone: '@integer(13100000000,18999999999)',
-    whiteName: '@ctitle(5,10)',
-    email: '@email',
+    addTime: '@datetime',
     desktopName: '@ctitle(5,10)',
     desktopPhone: '@integer(13100000000,18999999999)',
     desktopStatus: /FORBID|NONACTIVATED|NORMAL/,
+    email: '@email',
     id: '@guid',
     joinTime: '@datetime',
-    refuse: '@string(5,50)',
     'pink|1-20': ['@string(5,50)'],
+    refuse: '@string(5,50)',
+    whiteName: '@ctitle(5,10)',
   }
 }
 export function DesktopAddReq() {
   return {
     email: '@email',
+    keyBorardName: '@ctitle(5,10)',
     mainWhiteId: '@guid',
     mobile: '@string(5,50)',
     nickName: '@ctitle(5,10)',
-    relation: '@string(5,50)',
     'pinkIds|1-20': ['@string(5,50)'],
+    relation: '@string(5,50)',
     sex: '@string(5,50)',
-    keyBorardName: '@ctitle(5,10)',
   }
 }
 export function DesktopAllInfoResp() {
   return {
-    'whiteRespList|1-20': [ExtWhiteResp()],
     desktopResp: DesktopResp(),
     'jobRespList|1-20': [JobResp()],
-    'postRespList|1-20': [PostResp()],
     'pinkRespList|1-20': [PinkResq()],
+    'postRespList|1-20': [PostResp()],
+    'whiteRespList|1-20': [ExtWhiteResp()],
   }
 }
 export function DesktopComplexResp() {
   return {
     authStatus: '@boolean',
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
-    'whiteRespList|1-20': [DesktopWhiteResp()],
     email: '@email',
     id: '@guid',
     'jobRespList|1-20': [DesktopJobResp()],
+    keyBorardId: '@guid',
+    keyBorardName: '@ctitle(5,10)',
     mobile: '@string(5,50)',
     modified: '@string(5,50)',
     nickName: '@ctitle(5,10)',
@@ -1587,18 +1588,17 @@ export function DesktopComplexResp() {
     status: '@string(5,50)',
     updateId: '@guid',
     updateName: '@ctitle(5,10)',
-    keyBorardId: '@guid',
-    keyBorardName: '@ctitle(5,10)',
+    'whiteRespList|1-20': [DesktopWhiteResp()],
   }
 }
 export function DesktopJobResp() {
   return {
     desktopId: '@guid',
+    gratefulId: '@guid',
     id: '@guid',
     jobCode: '@string(5,50)',
     jobId: '@guid',
     jobName: '@ctitle(5,10)',
-    gratefulId: '@guid',
   }
 }
 export function DesktopNoActiveResp() {
@@ -1610,20 +1610,22 @@ export function DesktopNoActiveResp() {
 export function DesktopPostResp() {
   return {
     desktopId: '@guid',
+    gratefulId: '@guid',
     id: '@guid',
     postCode: '@string(5,50)',
     postId: '@guid',
     postName: '@ctitle(5,10)',
-    gratefulId: '@guid',
   }
 }
 export function DesktopResp() {
   return {
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
     email: '@email',
     id: '@guid',
+    keyBorardId: '@guid',
+    keyBorardName: '@ctitle(5,10)',
     mobile: '@string(5,50)',
     modified: '@string(5,50)',
     nickName: '@ctitle(5,10)',
@@ -1633,17 +1635,17 @@ export function DesktopResp() {
     status: '@string(5,50)',
     updateId: '@guid',
     updateName: '@ctitle(5,10)',
-    keyBorardId: '@guid',
-    keyBorardName: '@ctitle(5,10)',
   }
 }
 export function DesktopRespReq() {
   return {
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
     email: '@email',
     id: '@guid',
+    keyBorardId: '@guid',
+    keyBorardName: '@ctitle(5,10)',
     mobile: '@string(5,50)',
     modified: '@string(5,50)',
     nickName: '@ctitle(5,10)',
@@ -1652,17 +1654,17 @@ export function DesktopRespReq() {
     status: '@string(5,50)',
     updateId: '@guid',
     updateName: '@ctitle(5,10)',
-    keyBorardId: '@guid',
-    keyBorardName: '@ctitle(5,10)',
   }
 }
 export function DesktopRespRes() {
   return {
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
     email: '@email',
     id: '@guid',
+    keyBorardId: '@guid',
+    keyBorardName: '@ctitle(5,10)',
     mobile: '@string(5,50)',
     modified: '@string(5,50)',
     nickName: '@ctitle(5,10)',
@@ -1672,48 +1674,46 @@ export function DesktopRespRes() {
     status: '@string(5,50)',
     updateId: '@guid',
     updateName: '@ctitle(5,10)',
-    keyBorardId: '@guid',
-    keyBorardName: '@ctitle(5,10)',
   }
 }
 export function DesktopSelectorReq() {
   return {
-    whiteId: '@guid',
     jobId: '@guid',
+    whiteId: '@guid',
   }
 }
 export function DesktopSimpleListReq() {
   return {
     id: '@guid',
+    keyBorardName: '@ctitle(5,10)',
     mobile: '@string(5,50)',
     page: '@integer(3,1000)',
     size: '20',
     status: '@string(5,50)',
-    keyBorardName: '@ctitle(5,10)',
   }
 }
 export function DesktopUpReq() {
   return {
-    'whiteIds|1-20': ['@string(5,50)'],
     email: '@email',
     id: '@guid',
     'jodIds|1-20': ['@string(5,50)'],
+    keyBorardName: '@ctitle(5,10)',
     mainWhiteId: '@guid',
     nickName: '@ctitle(5,10)',
     'postIds|1-20': ['@string(5,50)'],
     sex: '@string(5,50)',
-    keyBorardName: '@ctitle(5,10)',
+    'whiteIds|1-20': ['@string(5,50)'],
   }
 }
 export function DesktopWhiteResp() {
   return {
+    desktopId: '@guid',
+    gratefulId: '@guid',
+    id: '@guid',
+    mainWhite: '@boolean',
     whiteCode: '@string(5,50)',
     whiteId: '@guid',
     whiteName: '@ctitle(5,10)',
-    desktopId: '@guid',
-    id: '@guid',
-    mainWhite: '@boolean',
-    gratefulId: '@guid',
   }
 }
 export function DoorAuditReq() {
@@ -1727,12 +1727,12 @@ export function DoorAuditReq() {
 }
 export function DoorBeneficiaryReq() {
   return {
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
     doorAcctId: '@guid',
-    doorBeneficiaryGreen: '@string(5,50)',
     doorBeneficiaryConctactPhone: '@integer(13100000000,18999999999)',
+    doorBeneficiaryGreen: '@string(5,50)',
     doorBeneficiaryIdCardBackId: '@guid',
     doorBeneficiaryIdCardFileId: '@guid',
     doorBeneficiaryIdCardFrontId: '@guid',
@@ -1753,12 +1753,12 @@ export function DoorBeneficiaryReq() {
 }
 export function DoorBeneficiaryResp() {
   return {
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
     doorAcctId: '@guid',
-    doorBeneficiaryGreen: '@string(5,50)',
     doorBeneficiaryConctactPhone: '@integer(13100000000,18999999999)',
+    doorBeneficiaryGreen: '@string(5,50)',
     doorBeneficiaryIdCardBackId: '@guid',
     doorBeneficiaryIdCardFileId: '@guid',
     doorBeneficiaryIdCardFrontId: '@guid',
@@ -1796,8 +1796,8 @@ export function DoorCredentialResp() {
 }
 export function DoorIdentificationReq() {
   return {
-    alTicket: '@string(5,50)',
     allEInvoiceStatus: '@string(5,50)',
+    alTicket: '@string(5,50)',
     authStatus: '@string(5,50)',
     commontStatus: '@string(5,50)',
     esignALlStatus: '@string(5,50)',
@@ -1818,11 +1818,11 @@ export function DoorIdentificationResp() {
     authTypeMap: '',
     'bizAuthType|1-20': [DoorIdentificationType()],
     chiefly: '@boolean',
-    whiteLinkDoorResp: WhiteLinkDoorResp(),
     id: '@guid',
     licenseUnifiedCode: '@string(5,50)',
     name: '@ctitle(5,10)',
     serialNum: '@string(5,50)',
+    whiteLinkDoorResp: WhiteLinkDoorResp(),
   }
 }
 export function DoorIdentificationType() {
@@ -1839,9 +1839,9 @@ export function DoorIdentificationType() {
 }
 export function DoorShareholderReq() {
   return {
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
     doorAcctId: '@guid',
     doorShareholderIdCardBackFileId: '@guid',
     doorShareholderIdCardFileId: '@guid',
@@ -1860,9 +1860,9 @@ export function DoorShareholderReq() {
 }
 export function DoorShareholderResp() {
   return {
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
     doorAcctId: '@guid',
     doorShareholderIdCardBackFileId: '@guid',
     doorShareholderIdCardFileId: '@guid',
@@ -1896,7 +1896,9 @@ export function DouJiangJiFangDongXinXiXiangQingBiao() {
     avatar: '@image(200x100, @color, @color)',
     city: '@city',
     country: '@string(5,50)',
+    gratefulId: '@guid',
     init: '@boolean',
+    keyBorardname: '@ctitle(5,10)',
     location: '@string(5,50)',
     maxNameUpdateNum: '@integer(3,1000)',
     mobile: '@string(5,50)',
@@ -1904,34 +1906,32 @@ export function DouJiangJiFangDongXinXiXiangQingBiao() {
     nickname: '@ctitle(5,10)',
     province: '@province',
     sex: '@string(5,50)',
-    gratefulId: '@guid',
-    keyBorardname: '@ctitle(5,10)',
     xmail: '@string(5,50)',
   }
 }
 export function DouJiangJiFangXingXinXi() {
   return {
-    green: '@string(5,50)',
     bankCardNo: '@string(5,50)',
     cardNo: '@string(5,50)',
     cardStartDate: '@datetime',
     cardValidDate: '@datetime',
+    green: '@string(5,50)',
     issue: '@string(5,50)',
+    keyBorardName: '@ctitle(5,10)',
     nationality: '@string(5,50)',
     ocridCardBack: '@string(5,50)',
     ocridCardFront: '@string(5,50)',
     openBank: '@string(5,50)',
     profession: '@string(5,50)',
     sex: '@string(5,50)',
-    keyBorardName: '@ctitle(5,10)',
     validStatus: '@boolean',
   }
 }
 export function DouJiangJiFangXingXinXiBoJuZiXinXiJiaShiShiZhiXuYaoChuanRuindividualBankCardNoindividualReservedPhoneNoindividualVocationQiTaXinXiCongredisHuanCunZhongHuoQu() {
   return {
-    green: '@string(5,50)',
     birth: '@string(5,50)',
     endDate: '@datetime',
+    green: '@string(5,50)',
     idCardNum: '@string(5,50)',
     individualBankCardNo: '@string(5,50)',
     individualCompany: '@string(5,50)',
@@ -1939,13 +1939,13 @@ export function DouJiangJiFangXingXinXiBoJuZiXinXiJiaShiShiZhiXuYaoChuanRuindivi
     individualReservedPhoneNo: '@integer(13100000000,18999999999)',
     individualVocation: '@string(5,50)',
     issue: '@string(5,50)',
+    keyBorardId: '@guid',
     name: '@ctitle(5,10)',
     nationality: '@string(5,50)',
     posUrl: '@image(200x100, @color, @color)',
     revUrl: '@image(200x100, @color, @color)',
     sex: '@string(5,50)',
     startDate: '@datetime',
-    keyBorardId: '@guid',
   }
 }
 export function EmpowerWhiteResp(n = 2) {
@@ -1971,8 +1971,8 @@ export function EmpowerWhiteResp(n = 2) {
 }
 export function EntInviteConfig() {
   return {
-    auditState: '@boolean',
     'auditor|1-20': [AuditorInfo()],
+    auditState: '@boolean',
     doorId: '@guid',
     id: '@guid',
     inviteType: '@string(5,50)',
@@ -1983,43 +1983,43 @@ export function EntInviteConfig() {
 export function EntReSetReq() {
   return {
     emInviteConfig: EntInviteConfig(),
-    reInviteConfig: EntInviteConfig(),
     pinkConfigInfo: PinkConfigInfo(),
+    reInviteConfig: EntInviteConfig(),
   }
 }
 export function EntReSetResp() {
   return {
     emInviteConfig: EntInviteConfig(),
-    reInviteConfig: EntInviteConfig(),
     pinkConfigInfo: PinkConfigInfo(),
+    reInviteConfig: EntInviteConfig(),
   }
 }
 export function EpDesktopResp() {
   return {
     authStatus: '@boolean',
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
-    'whiteRespList|1-20': [DesktopWhiteResp()],
     email: '@email',
     id: '@guid',
     jmAuthStatus: '@string(5,50)',
     'jobRespList|1-20': [DesktopJobResp()],
+    keyBorardId: '@guid',
+    keyBorardName: '@ctitle(5,10)',
     mobile: '@string(5,50)',
     modified: '@string(5,50)',
     nickName: '@ctitle(5,10)',
+    pinkName: '@ctitle(5,10)',
     'postRespList|1-20': [DesktopPostResp()],
     realAuth: '@boolean',
     refuseReason: '@string(5,50)',
     relation: '@string(5,50)',
-    pinkName: '@ctitle(5,10)',
     sex: '@string(5,50)',
     sexDesc: '@string(5,50)',
     status: '@string(5,50)',
     updateId: '@guid',
     updateName: '@ctitle(5,10)',
-    keyBorardId: '@guid',
-    keyBorardName: '@ctitle(5,10)',
+    'whiteRespList|1-20': [DesktopWhiteResp()],
   }
 }
 export function EpEntTreeResp() {
@@ -2032,13 +2032,12 @@ export function EpEntTreeResp() {
 export function ExtWhiteResp() {
   return {
     ancestors: '@string(5,50)',
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
-    whiteCode: '@string(5,50)',
-    whiteName: '@ctitle(5,10)',
-    email: '@email',
     desktopId: '@guid',
+    email: '@email',
+    gratefulId: '@guid',
     id: '@guid',
     leaderDesktopId: '@guid',
     leaderKeyBorardId: '@guid',
@@ -2056,9 +2055,10 @@ export function ExtWhiteResp() {
     scaleTypeDesc: '@string(5,50)',
     status: '@string(5,50)',
     statusDesc: '@string(5,50)',
-    gratefulId: '@guid',
     updateId: '@guid',
     updateName: '@ctitle(5,10)',
+    whiteCode: '@string(5,50)',
+    whiteName: '@ctitle(5,10)',
   }
 }
 export function FangDongShouHuoDiZhiTianJia() {
@@ -2095,13 +2095,13 @@ export function FangDongXinXi() {
     checked: '@boolean',
     clientType: '@string(5,50)',
     desktopStatus: '@string(5,50)',
+    gratefulId: '@guid',
+    gratefulName: '@ctitle(5,10)',
     init: '@boolean',
+    keyBorardId: '@guid',
     kind: '@string(5,50)',
     relation: '@string(5,50)',
     status: '@string(5,50)',
-    gratefulId: '@guid',
-    gratefulName: '@ctitle(5,10)',
-    keyBorardId: '@guid',
   }
 }
 export function FangXingQuDaoZhuangTaiChuXing() {
@@ -2152,7 +2152,6 @@ export function GuanLianMaoZiXiangQing() {
     auditStatus: /NO_PASS|PASS|WAIT/,
     authCount: '@integer(3,1000)',
     created: '@datetime',
-    whiteCount: '@integer(3,1000)',
     id: '@guid',
     preReDoorInfo: ReDoorInfo(),
     reDoorInfo: ReDoorInfo(),
@@ -2162,6 +2161,7 @@ export function GuanLianMaoZiXiangQing() {
     relationStatus: /FAIL_RELATION|INVALID_RELATION|IN_RELATION|UN_RELATION/,
     'relationTypeList|1-20': [RelationHappyTypeInfo()],
     syncTime: '@datetime',
+    whiteCount: '@integer(3,1000)',
   }
 }
 export function GuanLianMaoZiYongDao() {
@@ -2178,9 +2178,9 @@ export function GuanLianShenHeXinXi() {
     auditClassificationEnum: /REVIEWED|UNAUDITED/,
     auditStatus: /NO_PASS|PASS|WAIT/,
     branchName: '@ctitle(5,10)',
-    happyLicenseUrl: '@image(200x100, @color, @color)',
     created: '@datetime',
     franchiseDoorName: '@ctitle(5,10)',
+    happyLicenseUrl: '@image(200x100, @color, @color)',
     headerName: '@ctitle(5,10)',
     headerPhone: '@integer(13100000000,18999999999)',
     id: '@guid',
@@ -2192,8 +2192,8 @@ export function GuanLianShenHeXinXi() {
 export function HeaderEmpowerSmsInfo() {
   return {
     doorId: '@guid',
-    phone: '@integer(13100000000,18999999999)',
     gratefulId: '@guid',
+    phone: '@integer(13100000000,18999999999)',
   }
 }
 export function ImportDesktopErrorData() {
@@ -2223,8 +2223,6 @@ export function InviteDesktopResp() {
   return {
     applyReason: '@string(5,50)',
     applyTime: '@datetime',
-    whiteCode: '@string(5,50)',
-    whiteName: '@ctitle(5,10)',
     desktopStatus: '@string(5,50)',
     id: '@guid',
     inviterName: '@ctitle(5,10)',
@@ -2237,19 +2235,21 @@ export function InviteDesktopResp() {
     shareTime: '@datetime',
     shareType: '@string(5,50)',
     status: '@string(5,50)',
+    whiteCode: '@string(5,50)',
+    whiteName: '@ctitle(5,10)',
   }
 }
 export function InviteDoorReInfo() {
   return {
-    entName: '@ctitle(5,10)',
     doorId: '@guid',
+    entName: '@ctitle(5,10)',
     handleStatus: '@boolean',
     headerName: '@ctitle(5,10)',
     headerPhone: '@integer(13100000000,18999999999)',
     inviteCode: '@string(5,50)',
     isHandler: '@boolean',
-    reId: '@guid',
     reGratefulId: '@guid',
+    reId: '@guid',
   }
 }
 export function InviteJoinEchoResp() {
@@ -2280,12 +2280,12 @@ export function InviteLoginReq() {
 }
 export function InviteLoginResp() {
   return {
+    gratefulId: '@guid',
     inviteStatus: '@integer(3,1000)',
     mobile: '@string(5,50)',
     msg: '@string(5,50)',
     newKeyBorard: '@boolean',
     setPassWord: '@boolean',
-    gratefulId: '@guid',
     token: '@string(5,50)',
     tokenTimeOut: '@datetime',
   }
@@ -2309,8 +2309,8 @@ export function InviteSetResp() {
 }
 export function JianChaYaoQingMa() {
   return {
-    msg: '@string(5,50)',
     gratefulName: '@ctitle(5,10)',
+    msg: '@string(5,50)',
   }
 }
 export function JobAddDesktopReq() {
@@ -2324,9 +2324,9 @@ export function JobAddDesktopReq() {
 export function JobResp() {
   return {
     ancestors: '@string(5,50)',
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
     id: '@guid',
     jobCode: '@string(5,50)',
     modified: '@string(5,50)',
@@ -2347,17 +2347,17 @@ export function JudgeSwitchDoorLimitResp() {
 }
 export function KeyBorardJoinDoorReq() {
   return {
+    gratefulId: '@guid',
     name: '@ctitle(5,10)',
     reason: '@string(5,50)',
-    gratefulId: '@guid',
   }
 }
 export function LogLoginResp() {
   return {
     browser: '@string(5,50)',
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
     id: '@guid',
     ipaddr: '@string(5,50)',
     loginLocation: '@string(5,50)',
@@ -2377,12 +2377,12 @@ export function MaoZiGuanLianFaQiGuanLianXinXi() {
     headerName: '@ctitle(5,10)',
     headerPhone: '@integer(13100000000,18999999999)',
     initTime: '@datetime',
+    invitedName: '@ctitle(5,10)',
+    invitedPhone: '@integer(13100000000,18999999999)',
     inviteName: '@ctitle(5,10)',
     invitePhone: '@integer(13100000000,18999999999)',
     inviteSource: '@string(5,50)',
     inviteTime: '@datetime',
-    invitedName: '@ctitle(5,10)',
-    invitedPhone: '@integer(13100000000,18999999999)',
     sourceEnum: /APPLY|BIZ|INVITE/,
     triggerTime: '@datetime',
   }
@@ -2404,24 +2404,24 @@ export function MenuCheckedResp() {
 export function MenuDataScopeReq() {
   return {
     dataScope: '@integer(3,1000)',
-    'whiteCodes|1-20': ['@string(5,50)'],
     menuId: '@guid',
+    'whiteCodes|1-20': ['@string(5,50)'],
   }
 }
 export function MenuDataScopeResp() {
   return {
     dataScope: '@integer(3,1000)',
-    'whiteCodes|1-20': ['@string(5,50)'],
     menuId: '@guid',
+    'whiteCodes|1-20': ['@string(5,50)'],
   }
 }
 export function MenuResp() {
   return {
     appName: '@ctitle(5,10)',
     codeCatalog: '@string(5,50)',
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
     dataPermissions: '@boolean',
     enable: '@boolean',
     iconUrl: '@image(200x100, @color, @color)',
@@ -2448,13 +2448,13 @@ export function MenuResp() {
 }
 export function OcrHappyLicenseBO() {
   return {
-    green: '@string(5,50)',
-    happy: '@string(5,50)',
     capital: '@string(5,50)',
+    cat: '@string(5,50)',
     establishDate: '@datetime',
     fake: '@boolean',
+    green: '@string(5,50)',
+    happy: '@string(5,50)',
     name: '@ctitle(5,10)',
-    cat: '@string(5,50)',
     regNum: '@string(5,50)',
     requestId: '@guid',
     success: '@boolean',
@@ -2473,9 +2473,9 @@ export function OcrIdCardBackResp() {
 }
 export function OcrIdCardFrontResp() {
   return {
-    green: '@string(5,50)',
     birth: '@string(5,50)',
     fake: '@boolean',
+    green: '@string(5,50)',
     name: '@ctitle(5,10)',
     nationality: '@string(5,50)',
     num: '@string(5,50)',
@@ -2491,9 +2491,9 @@ export function OcrImageReq() {
 export function OrangeerCertificateInfo() {
   return {
     certificateNumber: '@string(5,50)',
+    orangeeredCertificateCompany: '@string(5,50)',
     regNo: '@string(5,50)',
     regTypeName: '@ctitle(5,10)',
-    orangeeredCertificateCompany: '@string(5,50)',
     'voList|1-20': [CatnelCertificate()],
   }
 }
@@ -2579,15 +2579,15 @@ export function PinkAddReq() {
     allowAllot: '@boolean',
     'menuDataScopeReqList|1-20': [MenuDataScopeReq()],
     parentId: '@guid',
-    remark: '@string(5,50)',
     pinkName: '@ctitle(5,10)',
+    remark: '@string(5,50)',
   }
 }
 export function PinkBaseUpReq() {
   return {
     id: '@guid',
-    remark: '@string(5,50)',
     pinkName: '@ctitle(5,10)',
+    remark: '@string(5,50)',
   }
 }
 export function PinkConfigInfo() {
@@ -2609,10 +2609,9 @@ export function PinkInfoResq() {
   return {
     allowAllot: '@boolean',
     ancestors: '@string(5,50)',
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
-    whiteCheckStrictly: '@boolean',
     id: '@guid',
     level: '@integer(3,1000)',
     menuCheckStrictly: '@boolean',
@@ -2621,15 +2620,16 @@ export function PinkInfoResq() {
     parentCode: '@string(5,50)',
     parentId: '@guid',
     parentName: '@ctitle(5,10)',
-    remark: '@string(5,50)',
     pinkCode: '@string(5,50)',
     pinkName: '@ctitle(5,10)',
     pinkSort: '@integer(3,1000)',
+    remark: '@string(5,50)',
     status: '@string(5,50)',
     statusDesc: '@string(5,50)',
     type: '@string(5,50)',
     updateId: '@guid',
     updateName: '@ctitle(5,10)',
+    whiteCheckStrictly: '@boolean',
   }
 }
 export function PinkMenuUpReq() {
@@ -2642,10 +2642,9 @@ export function PinkResq() {
   return {
     allowAllot: '@boolean',
     ancestors: '@string(5,50)',
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
-    whiteCheckStrictly: '@boolean',
     id: '@guid',
     level: '@integer(3,1000)',
     menuCheckStrictly: '@boolean',
@@ -2653,16 +2652,17 @@ export function PinkResq() {
     modified: '@string(5,50)',
     parentCode: '@string(5,50)',
     parentId: '@guid',
-    remark: '@string(5,50)',
     pinkCode: '@string(5,50)',
     pinkKey: '@string(5,50)',
     pinkName: '@ctitle(5,10)',
     pinkSort: '@integer(3,1000)',
+    remark: '@string(5,50)',
     status: '@string(5,50)',
     statusDesc: '@string(5,50)',
     type: '@string(5,50)',
     updateId: '@guid',
     updateName: '@ctitle(5,10)',
+    whiteCheckStrictly: '@boolean',
   }
 }
 export function PostAddOrUpReq() {
@@ -2675,9 +2675,9 @@ export function PostAddOrUpReq() {
 }
 export function PostResp() {
   return {
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
     id: '@guid',
     modified: '@string(5,50)',
     postCode: '@string(5,50)',
@@ -2697,8 +2697,8 @@ export function QuDaoZhiXieChangJieMengQingQiuRuCan() {
   return {
     channelCorpId: '@guid',
     channelType: /CORP_WEIXIN|DINGDING/,
-    dingId: '@guid',
     desktopId: '@guid',
+    dingId: '@guid',
     gratefulId: '@guid',
     keyBorardId: '@guid',
   }
@@ -2713,9 +2713,9 @@ export function QueryAccInfoResp() {
 export function QueryCatPageHomeResp() {
   return {
     cardNo: '@string(5,50)',
+    catRepetitionId: '@guid',
     companyName: '@ctitle(5,10)',
     name: '@ctitle(5,10)',
-    catRepetitionId: '@guid',
     sex: '@string(5,50)',
     'vosList|1-20': [OrangeerCertificateInfo()],
   }
@@ -2748,7 +2748,6 @@ export function QueryInviteDesktopReq() {
   return {
     applyTimeEnd: '@datetime',
     applyTimeStart: '@datetime',
-    whiteName: '@ctitle(5,10)',
     desktopStatus: '@string(5,50)',
     inviterPhoneOrName: '@integer(13100000000,18999999999)',
     joinTimeEnd: '@datetime',
@@ -2759,6 +2758,7 @@ export function QueryInviteDesktopReq() {
     shareType: '@string(5,50)',
     size: '20',
     status: '@string(5,50)',
+    whiteName: '@ctitle(5,10)',
   }
 }
 export function QueryJobReq() {
@@ -2779,19 +2779,19 @@ export function QueryJudgeClaimResp() {
 }
 export function QueryWalletBalanceResp() {
   return {
+    availableAmount: '@string(5,50)',
+    bankcardNumber: '@string(5,50)',
+    bankName: '@ctitle(5,10)',
     blueId: '@guid',
     blueNumber: '@string(5,50)',
-    availableAmount: '@string(5,50)',
-    bankName: '@ctitle(5,10)',
-    bankcardNumber: '@string(5,50)',
     companyName: '@ctitle(5,10)',
     frozenAmount: '@string(5,50)',
   }
 }
 export function ReDoorInfo() {
   return {
-    happyLicenseCode: '@string(5,50)',
     doorName: '@ctitle(5,10)',
+    happyLicenseCode: '@string(5,50)',
     headerName: '@ctitle(5,10)',
     headerPhone: '@integer(13100000000,18999999999)',
     isAuth: /CERTIFIED|UNCERTIFICATED/,
@@ -2800,9 +2800,9 @@ export function ReDoorInfo() {
 }
 export function ReEntMeta() {
   return {
-    whiteCode: '@string(5,50)',
     reDoorId: '@guid',
     reName: '@ctitle(5,10)',
+    whiteCode: '@string(5,50)',
   }
 }
 export function RefuseJoinReq() {
@@ -2815,8 +2815,8 @@ export function RelationDoorInfo() {
   return {
     auditStatus: /NO_PASS|PASS|WAIT/,
     authCount: '@integer(3,1000)',
-    happyLicenseCode: '@string(5,50)',
     created: '@datetime',
+    happyLicenseCode: '@string(5,50)',
     id: '@guid',
     name: '@ctitle(5,10)',
     preDoorName: '@ctitle(5,10)',
@@ -2878,11 +2878,11 @@ export function ScanReQrResp() {
 }
 export function SelectorDesktopResp() {
   return {
-    whiteName: '@ctitle(5,10)',
     desktopId: '@guid',
     isJoin: '@boolean',
-    mobile: '@string(5,50)',
     keyBorardName: '@ctitle(5,10)',
+    mobile: '@string(5,50)',
+    whiteName: '@ctitle(5,10)',
   }
 }
 export function SendActiveMessageReq() {
@@ -2905,30 +2905,30 @@ export function SetPassWordReq() {
 export function ShengChengYaoQing() {
   return {
     audit: '@boolean',
-    whiteId: '@guid',
     inviteShareType: /ALL|INCODE|LINK|QRCODE/,
+    whiteId: '@guid',
   }
 }
 export function ShengChengYaoQing0() {
   return {
     batchId: '@guid',
-    whiteCode: '@string(5,50)',
+    gratefulName: '@ctitle(5,10)',
     inviterId: '@guid',
     inviterName: '@ctitle(5,10)',
     shareMark: '@string(5,50)',
     shareTime: '@datetime',
     shareType: '@string(5,50)',
-    gratefulName: '@ctitle(5,10)',
+    whiteCode: '@string(5,50)',
   }
 }
 export function ShenHeTongGuo() {
   return {
-    whiteId: '@guid',
     id: '@guid',
+    'pinkId|1-20': ['@guid'],
     proposerId: '@guid',
     proposerName: '@ctitle(5,10)',
     proposerPhone: '@integer(13100000000,18999999999)',
-    'pinkId|1-20': ['@guid'],
+    whiteId: '@guid',
   }
 }
 export function ShenHeTongJiHuanCunSanShiMiao() {
@@ -2988,13 +2988,13 @@ export function SuperCodeVerifyReq() {
 export function SuperManResp() {
   return {
     authRange: '@string(5,50)',
-    whiteCode: '@string(5,50)',
-    whiteName: '@ctitle(5,10)',
     desktopIsCreator: '@boolean',
     id: '@guid',
     mobile: '@string(5,50)',
     name: '@ctitle(5,10)',
     superPink: '@string(5,50)',
+    whiteCode: '@string(5,50)',
+    whiteName: '@ctitle(5,10)',
   }
 }
 export function SysDictDuiXiangnullZhiBuXuLieHua(n = 2) {
@@ -3081,13 +3081,13 @@ export function VerificationResp() {
     certifyId: '@guid',
     certifyUrl: '@image(200x100, @color, @color)',
     code: 200,
+    keyBorardName: '@ctitle(5,10)',
     message: '@string(5,50)',
     ocrIdCardBack: '@string(5,50)',
     ocrIdCardFront: '@string(5,50)',
     openBank: '@string(5,50)',
     profession: '@string(5,50)',
     requestId: '@guid',
-    keyBorardName: '@ctitle(5,10)',
     vaildStatus: '@boolean',
   }
 }
@@ -3104,24 +3104,22 @@ export function WenJianShangChuanXiangYing() {
 }
 export function WhiteAddReq() {
   return {
-    whiteName: '@ctitle(5,10)',
     leaderDesktopId: '@guid',
     mark: '@string(5,50)',
     orderNum: '@integer(3,1000)',
     parentId: '@guid',
     profile: '@string(5,50)',
     scaleType: '@string(5,50)',
+    whiteName: '@ctitle(5,10)',
   }
 }
 export function WhiteDetailResp() {
   return {
     ancestors: '@string(5,50)',
     channelWhiteName: '@ctitle(5,10)',
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
-    whiteCode: '@string(5,50)',
-    whiteName: '@ctitle(5,10)',
     email: '@email',
     id: '@guid',
     leaderDesktopId: '@guid',
@@ -3141,25 +3139,26 @@ export function WhiteDetailResp() {
     statusDesc: '@string(5,50)',
     updateId: '@guid',
     updateName: '@ctitle(5,10)',
+    whiteCode: '@string(5,50)',
+    whiteName: '@ctitle(5,10)',
   }
 }
 export function WhiteLinkDoorReq() {
   return {
-    whiteId: '@guid',
     doorId: '@guid',
     overFlag: '@boolean',
+    whiteId: '@guid',
   }
 }
 export function WhiteLinkDoorResp() {
   return {
     ancestors: '@string(5,50)',
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
-    whiteCode: '@string(5,50)',
-    whiteName: '@ctitle(5,10)',
-    email: '@email',
     doorId: '@guid',
+    email: '@email',
+    gratefulId: '@guid',
     id: '@guid',
     leaderDesktopId: '@guid',
     leaderKeyBorardId: '@guid',
@@ -3176,20 +3175,20 @@ export function WhiteLinkDoorResp() {
     scaleTypeDesc: '@string(5,50)',
     status: '@string(5,50)',
     statusDesc: '@string(5,50)',
-    gratefulId: '@guid',
     updateId: '@guid',
     updateName: '@ctitle(5,10)',
+    whiteCode: '@string(5,50)',
+    whiteName: '@ctitle(5,10)',
   }
 }
 export function WhiteResp() {
   return {
     ancestors: '@string(5,50)',
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
-    whiteCode: '@string(5,50)',
-    whiteName: '@ctitle(5,10)',
     email: '@email',
+    gratefulId: '@guid',
     id: '@guid',
     leaderDesktopId: '@guid',
     leaderKeyBorardId: '@guid',
@@ -3206,19 +3205,20 @@ export function WhiteResp() {
     scaleTypeDesc: '@string(5,50)',
     status: '@string(5,50)',
     statusDesc: '@string(5,50)',
-    gratefulId: '@guid',
     updateId: '@guid',
     updateName: '@ctitle(5,10)',
+    whiteCode: '@string(5,50)',
+    whiteName: '@ctitle(5,10)',
   }
 }
 export function WhiteUpReq() {
   return {
-    whiteName: '@ctitle(5,10)',
     id: '@guid',
     leaderDesktopId: '@guid',
     orderNum: '@integer(3,1000)',
     profile: '@string(5,50)',
     scaleType: '@string(5,50)',
+    whiteName: '@ctitle(5,10)',
   }
 }
 export function XiaoYanJieGuo() {
@@ -3235,9 +3235,9 @@ export function XiaoYuanZhuoGuanLi() {
   return {
     bank: '@string(5,50)',
     bankAccNo: '@string(5,50)',
-    dutyNum: '@string(5,50)',
     doorGreen: '@string(5,50)',
     doorMobile: '@string(5,50)',
+    dutyNum: '@string(5,50)',
     id: '@guid',
     title: '@ctitle(5,10)',
     type: '@string(5,50)',
@@ -3247,9 +3247,9 @@ export function XiaoYuanZhuoGuanLi0() {
   return {
     bank: '@string(5,50)',
     bankAccNo: '@string(5,50)',
-    dutyNum: '@string(5,50)',
     doorGreen: '@string(5,50)',
     doorMobile: '@string(5,50)',
+    dutyNum: '@string(5,50)',
     id: '@guid',
     title: '@ctitle(5,10)',
     type: '@string(5,50)',
@@ -3261,11 +3261,11 @@ export function XiuGaiDouJiangJiXinXi() {
     avatar: '@image(200x100, @color, @color)',
     city: '@city',
     country: '@string(5,50)',
+    keyBorardname: '@ctitle(5,10)',
     location: '@string(5,50)',
     nickname: '@ctitle(5,10)',
     province: '@province',
     sex: '@string(5,50)',
-    keyBorardname: '@ctitle(5,10)',
     xmail: '@string(5,50)',
   }
 }
@@ -3303,22 +3303,21 @@ export function ZhaoHuiMiMa() {
 }
 export function ZhiXieChangBoJuZiXinXi() {
   return {
-    green: '@string(5,50)',
     authStatus: '@string(5,50)',
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
     doorBankCardNo: '@string(5,50)',
     doorBankCode: '@string(5,50)',
     doorBankName: '@ctitle(5,10)',
     doorBasicBlueOpenVoucherId: '@guid',
     'doorBeneficiaryList|1-20': [DoorBeneficiaryReq()],
-    doorHappyScope: '@string(5,50)',
     doorCaElectronicSignature: '@string(5,50)',
     doorContactIdCardBackId: '@guid',
     doorContactIdCardFrontId: '@guid',
     doorContactName: '@ctitle(5,10)',
     doorContactPhone: '@integer(13100000000,18999999999)',
+    doorHappyScope: '@string(5,50)',
     doorId: '@guid',
     doorJoinProtocolId: '@guid',
     doorLegalIdCardBackId: '@guid',
@@ -3361,6 +3360,7 @@ export function ZhiXieChangBoJuZiXinXi() {
     doorUpLegalLicenseNo: '@string(5,50)',
     doorUpLegalLicenseType: '@string(5,50)',
     doorUpLegalName: '@ctitle(5,10)',
+    green: '@string(5,50)',
     id: '@guid',
     isDelete: '@string(5,50)',
     modified: '@string(5,50)',
@@ -3372,22 +3372,21 @@ export function ZhiXieChangBoJuZiXinXi() {
 }
 export function ZhiXieChangBoJuZiXinXi0() {
   return {
-    green: '@string(5,50)',
     authStatus: '@string(5,50)',
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
     doorBankCardNo: '@string(5,50)',
     doorBankCode: '@string(5,50)',
     doorBankName: '@ctitle(5,10)',
     doorBasicBlueOpenVoucherId: '@guid',
     'doorBeneficiaryList|1-20': [DoorBeneficiaryResp()],
-    doorHappyScope: '@string(5,50)',
     doorCaElectronicSignature: '@string(5,50)',
     doorContactIdCardBackId: '@guid',
     doorContactIdCardFrontId: '@guid',
     doorContactName: '@ctitle(5,10)',
     doorContactPhone: '@integer(13100000000,18999999999)',
+    doorHappyScope: '@string(5,50)',
     doorId: '@guid',
     doorJoinProtocolId: '@guid',
     doorLegalIdCardBackId: '@guid',
@@ -3430,6 +3429,7 @@ export function ZhiXieChangBoJuZiXinXi0() {
     doorUpLegalLicenseNo: '@string(5,50)',
     doorUpLegalLicenseType: '@string(5,50)',
     doorUpLegalName: '@ctitle(5,10)',
+    green: '@string(5,50)',
     id: '@guid',
     isDelete: '@string(5,50)',
     modified: '@string(5,50)',
@@ -3449,6 +3449,7 @@ export function ZhiXieChangChuXing() {
     country: '@string(5,50)',
     created: '@datetime',
     firmSize: '@string(5,50)',
+    gratefulId: '@guid',
     industryInvolved: '@string(5,50)',
     introduction: '@string(5,50)',
     joinStatus: /HAS_APPLY|HAS_JOIN|NO_JOIN/,
@@ -3456,7 +3457,6 @@ export function ZhiXieChangChuXing() {
     location: '@string(5,50)',
     name: '@ctitle(5,10)',
     province: '@province',
-    gratefulId: '@guid',
     xmail: '@string(5,50)',
   }
 }
@@ -3476,6 +3476,7 @@ export function ZhiXieChangFangDongXinXi() {
     contactNumber: '@string(5,50)',
     country: '@string(5,50)',
     firmSize: '@string(5,50)',
+    gratefulId: '@guid',
     id: '@guid',
     industryInvolved: '@string(5,50)',
     introduction: '@string(5,50)',
@@ -3486,7 +3487,6 @@ export function ZhiXieChangFangDongXinXi() {
     name: '@ctitle(5,10)',
     province: '@province',
     serialNum: '@string(5,50)',
-    gratefulId: '@guid',
     xmail: '@string(5,50)',
   }
 }
@@ -3517,6 +3517,7 @@ export function ZhiXieChangFangDongXinXiXiangQing0() {
     contactNumber: '@string(5,50)',
     country: '@string(5,50)',
     firmSize: '@string(5,50)',
+    gratefulId: '@guid',
     id: '@guid',
     industryInvolved: '@string(5,50)',
     init: '@boolean',
@@ -3527,7 +3528,6 @@ export function ZhiXieChangFangDongXinXiXiangQing0() {
     name: '@ctitle(5,10)',
     nameUpdateNum: '@integer(3,1000)',
     province: '@province',
-    gratefulId: '@guid',
     xmail: '@string(5,50)',
   }
 }
@@ -3579,9 +3579,9 @@ export function ZhiXieChangZhiNenPiaoJiaFangXing() {
     clerkPink: '@string(5,50)',
     contactNumber: '@string(5,50)',
     doorId: '@guid',
+    gratefulId: '@guid',
     id: '@guid',
     taxNum: '@string(5,50)',
-    gratefulId: '@guid',
   }
 }
 export function ZhiXieChangZhuTiXinXi() {
@@ -3594,18 +3594,20 @@ export function ZhiXieChangZhuTiXinXi() {
     claimId: '@guid',
     contactNumber: '@string(5,50)',
     country: '@string(5,50)',
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
     firmSize: '@string(5,50)',
+    gratefulId: '@guid',
     id: '@guid',
     industryInvolved: '@string(5,50)',
     introduction: '@string(5,50)',
     isDelete: '@string(5,50)',
+    keyBorardId: '@guid',
+    legalCat: '@string(5,50)',
     legalIdCardBack: '@string(5,50)',
     legalIdCardFront: '@string(5,50)',
     legalIdCardNo: '@string(5,50)',
-    legalCat: '@string(5,50)',
     licenseUnifiedCode: '@string(5,50)',
     licenseUnifiedUrl: '@image(200x100, @color, @color)',
     location: '@string(5,50)',
@@ -3613,10 +3615,8 @@ export function ZhiXieChangZhuTiXinXi() {
     name: '@ctitle(5,10)',
     province: '@province',
     serialNum: '@string(5,50)',
-    gratefulId: '@guid',
     updateId: '@guid',
     updateName: '@ctitle(5,10)',
-    keyBorardId: '@guid',
     xmail: '@string(5,50)',
   }
 }

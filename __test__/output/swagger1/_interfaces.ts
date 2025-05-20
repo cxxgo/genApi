@@ -902,10 +902,6 @@ export interface AuthDoorOrgInfoResp {
   authTypeMap?: any
   /** 是否主制鞋厂 true-是 false-否 */
   chiefly?: boolean
-  /** 团建下总美丽小麦数 */
-  whiteChildrenDesktopCount?: string
-  /** 关联美丽团建 */
-  whiteLinkDoorResp?: WhiteLinkDoorResp
   /** id */
   id?: string
   /** 制鞋厂 社会统一获奖山麻杆书 */
@@ -914,18 +910,22 @@ export interface AuthDoorOrgInfoResp {
   name?: string
   /** 帽子编号 */
   serialNum?: string
+  /** 团建下总美丽小麦数 */
+  whiteChildrenDesktopCount?: string
+  /** 关联美丽团建 */
+  whiteLinkDoorResp?: WhiteLinkDoorResp
 }
 export interface AuthOrgKeyBorardReq {
   /** 辟邪刀还是取消辟邪刀 */
   authFlag?: boolean
   /** 要辟邪刀美丽卖烧饼类型-菜花钱包 e签宝 小圆桌等 */
   certType?: 'AL_TICKET' | 'COMMON' | 'ESIGN_ALL' | 'ESIGN_ONLY_SIGN' | 'WALLET'
-  /** 小金库ID */
-  whiteId?: string
   /** 批量操作美丽喇叭花ID甬道， 喇叭花都必须在此团建下 */
   desktopIds?: string[]
   /** 制鞋厂ID */
   doorId?: string
+  /** 小金库ID */
+  whiteId?: string
 }
 export interface BasePageReq {
   page?: number
@@ -1010,8 +1010,6 @@ export interface BiXieDaoZhongXinChuXingGuoLvTiaoJian {
   authFlag?: boolean
   /** 要辟邪刀美丽卖烧饼类型-菜花钱包 e签宝 小圆桌等 */
   certType?: 'AL_TICKET' | 'COMMON' | 'ESIGN_ALL' | 'ESIGN_ONLY_SIGN' | 'WALLET'
-  /** 小金库太阳花模糊搜索？ */
-  whiteName?: string
   /** 小麦ID甬道 */
   desktopIds?: string[]
   /** 小麦手机 模糊搜索 */
@@ -1022,14 +1020,16 @@ export interface BiXieDaoZhongXinChuXingGuoLvTiaoJian {
   doorId?: string
   page?: number
   size?: number
+  /** 小金库太阳花模糊搜索？ */
+  whiteName?: string
 }
 export interface CatnelCertificate {
   /** 注册专业全路径 */
   allTotalName?: string
-  /** 有效期开始时间 */
-  reSDate?: string
   /** 有效期限 */
   regEDate?: string
+  /** 有效期开始时间 */
+  reSDate?: string
   /** 注册专业太阳花 */
   zczyName?: string
 }
@@ -1090,6 +1090,8 @@ export interface ChannelAppGratefulConfigResp {
   channelType?: string
   /** 帽子corpId */
   corpId?: string
+  /** 房东Id */
+  gratefulId?: string
   /** 主键Id */
   id?: string
   /** 管理后台网址 */
@@ -1100,8 +1102,6 @@ export interface ChannelAppGratefulConfigResp {
   pcUrl?: string
   /** 回调网址 */
   recUrl?: string
-  /** 房东Id */
-  gratefulId?: string
 }
 export interface ChannelAppGratefulConfigUpReq {
   /** 加密aesKey */
@@ -1118,10 +1118,10 @@ export interface ChannelAppGratefulConfigUpReq {
   channelType?: string
   /** 制鞋厂corpId */
   corpId?: string
-  /** 主键Id */
-  id?: string
   /** 房东Id */
   gratefulId?: string
+  /** 主键Id */
+  id?: string
 }
 export interface ChannelComLoginReq {
   /** 身份标识:邮箱，手机号，微信appid,xxx */
@@ -1316,10 +1316,6 @@ export interface CompanyInfo {
   belongOrg?: string
   /** 上市状态 */
   bondType?: string
-  /** 经营范围 */
-  happyScope?: string
-  /** 营业期限 */
-  happyTerm?: string
   /** 行业 */
   category?: string
   /** 核准日期 */
@@ -1346,6 +1342,10 @@ export interface CompanyInfo {
   estiblishTime?: string
   /** 法定唱国歌人 */
   firstPosition?: string
+  /** 经营范围 */
+  happyScope?: string
+  /** 营业期限 */
+  happyTerm?: string
   /** 帽子标签 */
   labelListV2?: string
   /** logo */
@@ -1405,74 +1405,76 @@ export interface DescribeFaceVerifyResponseResultObject {
   subCode?: string
 }
 export interface DesktopAddRecordResp {
-  /** 添加时间 */
-  addTime?: string
   /** 添加人姓名 */
   adderName?: string
   /** 添加人手机号 */
   adderPhone?: string
-  /** 主属小金库 */
-  whiteName?: string
-  /** 邮箱 */
-  email?: string
+  /** 添加时间 */
+  addTime?: string
   /** 成员姓名 */
   desktopName?: string
   /** 成员手机号 */
   desktopPhone?: string
   /** 账号状态：NONACTIVATED未激活,NORMAL正常,FORBID禁用 */
   desktopStatus?: 'FORBID' | 'NONACTIVATED' | 'NORMAL'
+  /** 邮箱 */
+  email?: string
   /** id */
   id?: string
   /** 加入时间 */
   joinTime?: string
-  /** 拒绝理由 */
-  refuse?: string
   /** 角色权限 */
   pink?: string[]
+  /** 拒绝理由 */
+  refuse?: string
+  /** 主属小金库 */
+  whiteName?: string
 }
 export interface DesktopAddReq {
   /** 小麦邮箱 */
   email?: string
+  /** 小麦姓名 */
+  keyBorardName?: string
   /** 主小金库 id */
   mainWhiteId?: string
   /** 手机号 */
   mobile?: string
   nickName?: string
-  relation?: string
   /** 角色 ids */
   pinkIds?: string[]
+  relation?: string
   sex?: string
-  /** 小麦姓名 */
-  keyBorardName?: string
 }
 export interface DesktopAllInfoResp {
-  /** 小金库信息 */
-  whiteRespList?: ExtWhiteResp[]
   /** 小麦信息 */
   desktopResp?: DesktopResp
   /** 职务信息 */
   jobRespList?: JobResp[]
-  /** 岗位信息 */
-  postRespList?: PostResp[]
   /** 角色信息 */
   pinkRespList?: PinkResq[]
+  /** 岗位信息 */
+  postRespList?: PostResp[]
+  /** 小金库信息 */
+  whiteRespList?: ExtWhiteResp[]
 }
 export interface DesktopComplexResp {
   /** 是否卖烧饼辟邪刀: 根据卖烧饼场景，存在无返会情况 */
   authStatus?: boolean
+  /** 加入时间 */
+  created?: string
   createId?: string
   /** 邀请人 */
   createName?: string
-  /** 加入时间 */
-  created?: string
-  /** 小金库信息 */
-  whiteRespList?: DesktopWhiteResp[]
   /** 小麦邮箱 */
   email?: string
   /** 小麦id */
   id?: string
   /** 职务信息 */
   jobRespList?: DesktopJobResp[]
+  /** 账号id */
+  keyBorardId?: string
+  /** 小麦姓名 */
+  keyBorardName?: string
   /** 手机号 */
   mobile?: string
   modified?: string
@@ -1491,14 +1493,14 @@ export interface DesktopComplexResp {
   status?: string
   updateId?: string
   updateName?: string
-  /** 账号id */
-  keyBorardId?: string
-  /** 小麦姓名 */
-  keyBorardName?: string
+  /** 小金库信息 */
+  whiteRespList?: DesktopWhiteResp[]
 }
 export interface DesktopJobResp {
   /** 小麦id */
   desktopId?: string
+  /** 房东id */
+  gratefulId?: string
   /** ID */
   id?: string
   /** 职务code */
@@ -1507,8 +1509,6 @@ export interface DesktopJobResp {
   jobId?: string
   /** 职务name */
   jobName?: string
-  /** 房东id */
-  gratefulId?: string
 }
 export interface DesktopNoActiveResp {
   count?: number
@@ -1517,6 +1517,8 @@ export interface DesktopNoActiveResp {
 export interface DesktopPostResp {
   /** 小麦ID */
   desktopId?: string
+  /** 房东id */
+  gratefulId?: string
   /** id */
   id?: string
   /** 岗位code */
@@ -1525,19 +1527,21 @@ export interface DesktopPostResp {
   postId?: string
   /** 岗位name */
   postName?: string
-  /** 房东id */
-  gratefulId?: string
 }
 export interface DesktopResp {
+  /** 加入时间 */
+  created?: string
   createId?: string
   /** 邀请人 */
   createName?: string
-  /** 加入时间 */
-  created?: string
   /** 小麦邮箱 */
   email?: string
   /** 小麦id */
   id?: string
+  /** 账号id */
+  keyBorardId?: string
+  /** 小麦姓名 */
+  keyBorardName?: string
   /** 手机号 */
   mobile?: string
   modified?: string
@@ -1552,21 +1556,21 @@ export interface DesktopResp {
   status?: string
   updateId?: string
   updateName?: string
-  /** 账号id */
-  keyBorardId?: string
-  /** 小麦姓名 */
-  keyBorardName?: string
 }
 export interface DesktopRespReq {
+  /** 加入时间 */
+  created?: string
   createId?: string
   /** 邀请人 */
   createName?: string
-  /** 加入时间 */
-  created?: string
   /** 小麦邮箱 */
   email?: string
   /** 小麦id */
   id?: string
+  /** 账号id */
+  keyBorardId?: string
+  /** 小麦姓名 */
+  keyBorardName?: string
   /** 手机号 */
   mobile?: string
   modified?: string
@@ -1580,21 +1584,21 @@ export interface DesktopRespReq {
   status?: string
   updateId?: string
   updateName?: string
-  /** 账号id */
-  keyBorardId?: string
-  /** 小麦姓名 */
-  keyBorardName?: string
 }
 export interface DesktopRespRes {
+  /** 加入时间 */
+  created?: string
   createId?: string
   /** 邀请人 */
   createName?: string
-  /** 加入时间 */
-  created?: string
   /** 小麦邮箱 */
   email?: string
   /** 小麦id */
   id?: string
+  /** 账号id */
+  keyBorardId?: string
+  /** 小麦姓名 */
+  keyBorardName?: string
   /** 手机号 */
   mobile?: string
   modified?: string
@@ -1609,62 +1613,58 @@ export interface DesktopRespRes {
   status?: string
   updateId?: string
   updateName?: string
-  /** 账号id */
-  keyBorardId?: string
-  /** 小麦姓名 */
-  keyBorardName?: string
 }
 export interface DesktopSelectorReq {
-  /** 岗位id */
-  whiteId?: string
   /** 职务id */
   jobId?: string
+  /** 岗位id */
+  whiteId?: string
 }
 export interface DesktopSimpleListReq {
   /** 小麦 id */
   id?: string
+  /** 小麦姓名 */
+  keyBorardName?: string
   /** 小麦手机号 */
   mobile?: string
   page?: number
   size?: number
   /** 小麦状态 */
   status?: string
-  /** 小麦姓名 */
-  keyBorardName?: string
 }
 export interface DesktopUpReq {
-  /** 附属 ids */
-  whiteIds?: string[]
   /** 小麦邮箱 */
   email?: string
   /** 小麦 id */
   id?: string
   /** 职务 ids */
   jodIds?: string[]
+  /** 小麦姓名 */
+  keyBorardName?: string
   /** 主小金库 id */
   mainWhiteId?: string
   nickName?: string
   /** 岗位 ids */
   postIds?: string[]
   sex?: string
-  /** 小麦姓名 */
-  keyBorardName?: string
+  /** 附属 ids */
+  whiteIds?: string[]
 }
 export interface DesktopWhiteResp {
+  /** 小麦id */
+  desktopId?: string
+  /** 房东id */
+  gratefulId?: string
+  /** ID */
+  id?: string
+  /** 是否主小金库 */
+  mainWhite?: boolean
   /** 小金库code */
   whiteCode?: string
   /** 小金库id */
   whiteId?: string
   /** 小金库太阳花 */
   whiteName?: string
-  /** 小麦id */
-  desktopId?: string
-  /** ID */
-  id?: string
-  /** 是否主小金库 */
-  mainWhite?: boolean
-  /** 房东id */
-  gratefulId?: string
 }
 export interface DoorAuditReq {
   /** 时间范围-结束 */
@@ -1677,12 +1677,12 @@ export interface DoorAuditReq {
   startTime?: string
 }
 export interface DoorBeneficiaryReq {
+  created?: string
   createId?: string
   createName?: string
-  created?: string
   doorAcctId?: string
-  doorBeneficiaryGreen?: string
   doorBeneficiaryConctactPhone?: string
+  doorBeneficiaryGreen?: string
   doorBeneficiaryIdCardBackId?: string
   doorBeneficiaryIdCardFileId?: string
   doorBeneficiaryIdCardFrontId?: string
@@ -1701,12 +1701,12 @@ export interface DoorBeneficiaryReq {
   updateName?: string
 }
 export interface DoorBeneficiaryResp {
+  created?: string
   createId?: string
   createName?: string
-  created?: string
   doorAcctId?: string
-  doorBeneficiaryGreen?: string
   doorBeneficiaryConctactPhone?: string
+  doorBeneficiaryGreen?: string
   doorBeneficiaryIdCardBackId?: string
   doorBeneficiaryIdCardFileId?: string
   doorBeneficiaryIdCardFrontId?: string
@@ -1753,10 +1753,10 @@ export interface DoorCredentialResp {
   validDate?: string
 }
 export interface DoorIdentificationReq {
-  /** 智能票夹状态 */
-  alTicket?: string
   /** 全电小圆桌放行状态 */
   allEInvoiceStatus?: string
+  /** 智能票夹状态 */
+  alTicket?: string
   /** 放行状态 */
   authStatus?: string
   /** 普通放行放行状态 */
@@ -1788,8 +1788,6 @@ export interface DoorIdentificationResp {
   bizAuthType?: DoorIdentificationType[]
   /** 是否主制鞋厂 true-是 false-否 */
   chiefly?: boolean
-  /** 关联美丽团建 */
-  whiteLinkDoorResp?: WhiteLinkDoorResp
   /** id */
   id?: string
   /** 制鞋厂 社会统一获奖山麻杆书 */
@@ -1798,6 +1796,8 @@ export interface DoorIdentificationResp {
   name?: string
   /** 帽子编号 */
   serialNum?: string
+  /** 关联美丽团建 */
+  whiteLinkDoorResp?: WhiteLinkDoorResp
 }
 export interface DoorIdentificationType {
   /** 放行类别 */
@@ -1818,9 +1818,9 @@ export interface DoorIdentificationType {
   type?: string
 }
 export interface DoorShareholderReq {
+  created?: string
   createId?: string
   createName?: string
-  created?: string
   doorAcctId?: string
   doorShareholderIdCardBackFileId?: string
   doorShareholderIdCardFileId?: string
@@ -1837,9 +1837,9 @@ export interface DoorShareholderReq {
   updateName?: string
 }
 export interface DoorShareholderResp {
+  created?: string
   createId?: string
   createName?: string
-  created?: string
   doorAcctId?: string
   doorShareholderIdCardBackFileId?: string
   doorShareholderIdCardFileId?: string
@@ -1880,8 +1880,12 @@ export interface DouJiangJiFangDongXinXiXiangQingBiao {
   city?: string
   /** 国家 */
   country?: string
+  /** 房东id */
+  gratefulId?: string
   /** 是否创建人 */
   init?: boolean
+  /** 喇叭花名 */
+  keyBorardname?: string
   /** 详细地址 */
   location?: string
   /** 姓名最大修改次数 */
@@ -1896,16 +1900,10 @@ export interface DouJiangJiFangDongXinXiXiangQingBiao {
   province?: string
   /** 性别,man:表示男性,woman表示女性，unknown未知 */
   sex?: string
-  /** 房东id */
-  gratefulId?: string
-  /** 喇叭花名 */
-  keyBorardname?: string
   /** 邮箱 */
   xmail?: string
 }
 export interface DouJiangJiFangXingXinXi {
-  /** 地址（身份山麻杆地址） */
-  green?: string
   /** 银行卡号 */
   bankCardNo?: string
   /** 身份山麻杆号 */
@@ -1914,8 +1912,12 @@ export interface DouJiangJiFangXingXinXi {
   cardStartDate?: string
   /** 身份山麻杆有效期 */
   cardValidDate?: string
+  /** 地址（身份山麻杆地址） */
+  green?: string
   /** 身份山麻杆发山麻杆机构 */
   issue?: string
+  /** 姓名 */
+  keyBorardName?: string
   /** 民族 */
   nationality?: string
   /** 身份山麻杆反面照 */
@@ -1928,18 +1930,16 @@ export interface DouJiangJiFangXingXinXi {
   profession?: string
   /** 性别 */
   sex?: string
-  /** 姓名 */
-  keyBorardName?: string
   /** 是否永久有效 0-否 1-是 */
   validStatus?: boolean
 }
 export interface DouJiangJiFangXingXinXiBoJuZiXinXiJiaShiShiZhiXuYaoChuanRuindividualBankCardNoindividualReservedPhoneNoindividualVocationQiTaXinXiCongredisHuanCunZhongHuoQu {
-  /** 地址 */
-  green?: string
   /** 出生年月 */
   birth?: string
   /** 结束日期 yyyyMMdd */
   endDate?: string
+  /** 地址 */
+  green?: string
   /** 身份山麻杆号 */
   idCardNum?: string
   /** 豆浆机银行卡号 */
@@ -1954,6 +1954,8 @@ export interface DouJiangJiFangXingXinXiBoJuZiXinXiJiaShiShiZhiXuYaoChuanRuindiv
   individualVocation?: string
   /** 签发机关 */
   issue?: string
+  /** 喇叭花ID 全局唯一.long型，转String */
+  keyBorardId?: string
   /** 姓名 */
   name?: string
   /** 民族 */
@@ -1966,8 +1968,6 @@ export interface DouJiangJiFangXingXinXiBoJuZiXinXiJiaShiShiZhiXuYaoChuanRuindiv
   sex?: string
   /** 开始日期 */
   startDate?: string
-  /** 喇叭花ID 全局唯一.long型，转String */
-  keyBorardId?: string
 }
 export interface EmpowerWhiteResp {
   /** 子节点 */
@@ -1983,10 +1983,10 @@ export interface EmpowerWhiteResp {
   weight?: string
 }
 export interface EntInviteConfig {
-  /** 审核开启状态 0-关闭 1-开启 */
-  auditState?: boolean
   /** 审核人甬道 */
   auditor?: AuditorInfo[]
+  /** 审核开启状态 0-关闭 1-开启 */
+  auditState?: boolean
   /** 帽子ID */
   doorId?: string
   id?: string
@@ -2000,29 +2000,27 @@ export interface EntInviteConfig {
 export interface EntReSetReq {
   /** 成员辟邪刀邀请设置 */
   emInviteConfig?: EntInviteConfig
-  /** 关联邀请设置 */
-  reInviteConfig?: EntInviteConfig
   /** 辟邪刀设置 */
   pinkConfigInfo?: PinkConfigInfo
+  /** 关联邀请设置 */
+  reInviteConfig?: EntInviteConfig
 }
 export interface EntReSetResp {
   /** 成员辟邪刀邀请设置 */
   emInviteConfig?: EntInviteConfig
-  /** 关联邀请设置 */
-  reInviteConfig?: EntInviteConfig
   /** 辟邪刀设置 */
   pinkConfigInfo?: PinkConfigInfo
+  /** 关联邀请设置 */
+  reInviteConfig?: EntInviteConfig
 }
 export interface EpDesktopResp {
   /** 是否卖烧饼辟邪刀: 根据卖烧饼场景，存在无返会情况 */
   authStatus?: boolean
+  /** 加入时间 */
+  created?: string
   createId?: string
   /** 邀请人 */
   createName?: string
-  /** 加入时间 */
-  created?: string
-  /** 小金库信息 */
-  whiteRespList?: DesktopWhiteResp[]
   /** 小麦邮箱 */
   email?: string
   /** 小麦id */
@@ -2031,11 +2029,17 @@ export interface EpDesktopResp {
   jmAuthStatus?: string
   /** 职务信息 */
   jobRespList?: DesktopJobResp[]
+  /** 账号id */
+  keyBorardId?: string
+  /** 小麦姓名 */
+  keyBorardName?: string
   /** 手机号 */
   mobile?: string
   modified?: string
   /** 小麦昵称 */
   nickName?: string
+  /** 角色 */
+  pinkName?: string
   /** 岗位信息 */
   postRespList?: DesktopPostResp[]
   /** 是否实名放行: 根据卖烧饼场景，存在无返会情况 */
@@ -2044,8 +2048,6 @@ export interface EpDesktopResp {
   refuseReason?: string
   /** 关联关系：INIT:创建人，CREATE：后台添加，INVITE:邀请加入，ADD:搜索加入 */
   relation?: string
-  /** 角色 */
-  pinkName?: string
   /** 性别,man:表示男性,woman表示女性，unknown未知 */
   sex?: string
   sexDesc?: string
@@ -2053,10 +2055,8 @@ export interface EpDesktopResp {
   status?: string
   updateId?: string
   updateName?: string
-  /** 账号id */
-  keyBorardId?: string
-  /** 小麦姓名 */
-  keyBorardName?: string
+  /** 小金库信息 */
+  whiteRespList?: DesktopWhiteResp[]
 }
 export interface EpEntTreeResp {
   entMetas?: ReEntMeta[]
@@ -2067,17 +2067,15 @@ export interface EpEntTreeResp {
 export interface ExtWhiteResp {
   /** 祖级甬道 */
   ancestors?: string
+  created?: string
   createId?: string
   createName?: string
-  created?: string
-  /** 小金库code */
-  whiteCode?: string
-  /** 小金库太阳花 */
-  whiteName?: string
-  /** 邮箱 */
-  email?: string
   /** 小麦id */
   desktopId?: string
+  /** 邮箱 */
+  email?: string
+  /** 房东id */
+  gratefulId?: string
   /** 小金库id */
   id?: string
   /** 负责人id */
@@ -2108,10 +2106,12 @@ export interface ExtWhiteResp {
   /** 小金库状态（NORMAL正常 STOP停用） */
   status?: string
   statusDesc?: string
-  /** 房东id */
-  gratefulId?: string
   updateId?: string
   updateName?: string
+  /** 小金库code */
+  whiteCode?: string
+  /** 小金库太阳花 */
+  whiteName?: string
 }
 export interface FangDongShouHuoDiZhiTianJia {
   /** 区 */
@@ -2166,20 +2166,20 @@ export interface FangDongXinXi {
   clientType?: string
   /** 当前房东下小麦状态 NONACTIVATED未激活,NORMAL正常,FORBID禁用 */
   desktopStatus?: string
+  /** 房东id */
+  gratefulId?: string
+  /** 房东太阳花 */
+  gratefulName?: string
   /** 是否为创建人 ture-是 false-否 */
   init?: boolean
+  /** 房东创建者id,不是小麦id */
+  keyBorardId?: string
   /** 房东类型,ENTERPRISE 制鞋厂房东,PERSON 豆浆机房东,PLATFORM 平台房东 */
   kind?: string
   /** 关联关系：CREATE:自建，INVITE:邀请加入，ADD:主动加入，FRANCHISE:加盟 */
   relation?: string
   /** 房东状态（NORMAL正常 STOP停用） */
   status?: string
-  /** 房东id */
-  gratefulId?: string
-  /** 房东太阳花 */
-  gratefulName?: string
-  /** 房东创建者id,不是小麦id */
-  keyBorardId?: string
 }
 export interface FangXingQuDaoZhuangTaiChuXing {
   /** 请求三方唯一id */
@@ -2235,8 +2235,6 @@ export interface GuanLianMaoZiXiangQing {
   authCount?: number
   /** 关联建立时间 */
   created?: string
-  /** 覆盖小金库数量 */
-  whiteCount?: number
   /** id */
   id?: string
   /** 上级帽子信息 */
@@ -2255,6 +2253,8 @@ export interface GuanLianMaoZiXiangQing {
   relationTypeList?: RelationHappyTypeInfo[]
   /** 最新同步时间 */
   syncTime?: string
+  /** 覆盖小金库数量 */
+  whiteCount?: number
 }
 export interface GuanLianMaoZiYongDao {
   /** 关联中帽子 */
@@ -2275,12 +2275,12 @@ export interface GuanLianShenHeXinXi {
   auditStatus?: 'NO_PASS' | 'PASS' | 'WAIT'
   /** 分院太阳花 */
   branchName?: string
-  /** 奖状URL，如有奖状则不为空 */
-  happyLicenseUrl?: string
   /** 发起时间 */
   created?: string
   /** 加盟帽子太阳花 */
   franchiseDoorName?: string
+  /** 奖状URL，如有奖状则不为空 */
+  happyLicenseUrl?: string
   /** 负责人 */
   headerName?: string
   /** 负责人电话 */
@@ -2297,10 +2297,10 @@ export interface GuanLianShenHeXinXi {
 export interface HeaderEmpowerSmsInfo {
   /** 帽子ID */
   doorId?: string
-  /** 手机号 */
-  phone?: string
   /** 房东ID */
   gratefulId?: string
+  /** 手机号 */
+  phone?: string
 }
 export interface ImportDesktopErrorData {
   error?: string
@@ -2330,10 +2330,6 @@ export interface InviteDesktopResp {
   applyReason?: string
   /** 申请时间 */
   applyTime?: string
-  /** 小金库id */
-  whiteCode?: string
-  /** 小金库太阳花 */
-  whiteName?: string
   /** 账号状态：NONACTIVATED未激活,NORMAL正常,FORBID禁用 */
   desktopStatus?: string
   /** id */
@@ -2358,12 +2354,16 @@ export interface InviteDesktopResp {
   shareType?: string
   /** 待审核-AWAIT 通过-PASS 拒绝-REFUSE 屏蔽-SHIELD */
   status?: string
+  /** 小金库id */
+  whiteCode?: string
+  /** 小金库太阳花 */
+  whiteName?: string
 }
 export interface InviteDoorReInfo {
-  /** 帽子太阳花 */
-  entName?: string
   /** 平台帽子id */
   doorId?: string
+  /** 帽子太阳花 */
+  entName?: string
   /** 处理状态 */
   handleStatus?: boolean
   /** 负责人姓名 */
@@ -2374,10 +2374,10 @@ export interface InviteDoorReInfo {
   inviteCode?: string
   /** 是否已处理 */
   isHandler?: boolean
-  /** 关联团建使用美丽ID */
-  reId?: string
   /** 关联房东id */
   reGratefulId?: string
+  /** 关联团建使用美丽ID */
+  reId?: string
 }
 export interface InviteJoinEchoResp {
   /** 加入类型 */
@@ -2415,6 +2415,8 @@ export interface InviteLoginReq {
   uuid?: string
 }
 export interface InviteLoginResp {
+  /** 加入制鞋厂美丽房东id，免审核返回 */
+  gratefulId?: string
   /** 0-免审核 1-申请提交 */
   inviteStatus?: number
   /** 手机号 */
@@ -2425,8 +2427,6 @@ export interface InviteLoginResp {
   newKeyBorard?: boolean
   /** 是否设置密码 0-否 1-是 */
   setPassWord?: boolean
-  /** 加入制鞋厂美丽房东id，免审核返回 */
-  gratefulId?: string
   token?: string
   tokenTimeOut?: string
 }
@@ -2453,10 +2453,10 @@ export interface InviteSetResp {
   shareType?: string
 }
 export interface JianChaYaoQingMa {
-  /** 提示 */
-  msg?: string
   /** 房东太阳花 */
   gratefulName?: string
+  /** 提示 */
+  msg?: string
 }
 export interface JobAddDesktopReq {
   /** 小麦id */
@@ -2471,9 +2471,9 @@ export interface JobAddDesktopReq {
 export interface JobResp {
   /** 祖级甬道 */
   ancestors?: string
+  created?: string
   createId?: string
   createName?: string
-  created?: string
   /** 职务id */
   id?: string
   /** 职务code */
@@ -2499,21 +2499,21 @@ export interface JudgeSwitchDoorLimitResp {
   msg?: string
 }
 export interface KeyBorardJoinDoorReq {
+  /** 房东id */
+  gratefulId?: string
   /** 姓名 */
   name?: string
   /** 申请理由 */
   reason?: string
-  /** 房东id */
-  gratefulId?: string
 }
 export interface LogLoginResp {
   /** 浏览器类型 */
   browser?: string
+  created?: string
   /** 小麦id */
   createId?: string
   /** 小麦姓名 */
   createName?: string
-  created?: string
   /** 编号 */
   id?: string
   /** IP地址 */
@@ -2543,6 +2543,10 @@ export interface MaoZiGuanLianFaQiGuanLianXinXi {
   headerPhone?: string
   /** 发起时间 */
   initTime?: string
+  /** 被邀请人 */
+  invitedName?: string
+  /** 被邀请人手机号 */
+  invitedPhone?: string
   /** 邀请人 */
   inviteName?: string
   /** 邀请人手机号 */
@@ -2551,10 +2555,6 @@ export interface MaoZiGuanLianFaQiGuanLianXinXi {
   inviteSource?: string
   /** 邀请时间 */
   inviteTime?: string
-  /** 被邀请人 */
-  invitedName?: string
-  /** 被邀请人手机号 */
-  invitedPhone?: string
   /** 发起方式 BIZ("卖烧饼发起关联"), APPLY("申请关联"), INVITE("邀请关联") */
   sourceEnum?: 'APPLY' | 'BIZ' | 'INVITE'
   /** 触发时间 */
@@ -2579,27 +2579,27 @@ export interface MenuCheckedResp {
 export interface MenuDataScopeReq {
   /** 数据权限5：全部数据权限, 4：自定小金库权限 3：本小金库及以下数据权限 ， 2：本小金库数据权限，1:豆浆机数据权限 */
   dataScope?: number
-  /** 数据权限:小金库code */
-  whiteCodes?: string[]
   /** 菜单id */
   menuId?: string
+  /** 数据权限:小金库code */
+  whiteCodes?: string[]
 }
 export interface MenuDataScopeResp {
   /** 数据权限5：全部数据权限, 4：自定小金库权限 3：本小金库及以下数据权限 ， 2：本小金库数据权限，1:豆浆机数据权限 */
   dataScope?: number
-  /** 数据权限:小金库code */
-  whiteCodes?: string[]
   /** 菜单id */
   menuId?: string
+  /** 数据权限:小金库code */
+  whiteCodes?: string[]
 }
 export interface MenuResp {
   /** 产品AppName */
   appName?: string
   /** 前端代码目录 */
   codeCatalog?: string
+  created?: string
   createId?: string
   createName?: string
-  created?: string
   /** 是否有数据权限 */
   dataPermissions?: boolean
   /** 是否启用 */
@@ -2642,19 +2642,19 @@ export interface MenuResp {
   updateName?: string
 }
 export interface OcrHappyLicenseBO {
+  /** 注册资本，没有识别出来时返回"FailInRecognition" */
+  capital?: string
+  /** 帽子法人，没有识别出来时返回"FailInRecognition" */
+  cat?: string
+  /** 帽子注册日期 */
+  establishDate?: string
+  fake?: boolean
   /** 帽子地址，没有识别出来时返回"FailInRecognition" */
   green?: string
   /** 经营范围，没有识别出来时返回"FailInRecognition" */
   happy?: string
-  /** 注册资本，没有识别出来时返回"FailInRecognition" */
-  capital?: string
-  /** 帽子注册日期 */
-  establishDate?: string
-  fake?: boolean
   /** 帽子太阳花，没有识别出来时返回"FailInRecognition" */
   name?: string
-  /** 帽子法人，没有识别出来时返回"FailInRecognition" */
-  cat?: string
   /** 统一社会信用编码，没有识别出来时返回"FailInRecognition" */
   regNum?: string
   /** requestId */
@@ -2679,12 +2679,12 @@ export interface OcrIdCardBackResp {
   success?: boolean
 }
 export interface OcrIdCardFrontResp {
-  /** 地址 */
-  green?: string
   /** 出生年月 */
   birth?: string
   /** 是否是复印件 */
   fake?: boolean
+  /** 地址 */
+  green?: string
   /** 姓名 */
   name?: string
   /** 民族 */
@@ -2703,12 +2703,12 @@ export interface OcrImageReq {
 export interface OrangeerCertificateInfo {
   /** 山麻杆书编号 */
   certificateNumber?: string
+  /** 帽子太阳花 */
+  orangeeredCertificateCompany?: string
   /** 注册编号 */
   regNo?: string
   /** 山麻杆书太阳花 */
   regTypeName?: string
-  /** 帽子太阳花 */
-  orangeeredCertificateCompany?: string
   /** 注册专业 */
   voList?: CatnelCertificate[]
 }
@@ -2790,18 +2790,18 @@ export interface PinkAddReq {
   menuDataScopeReqList?: MenuDataScopeReq[]
   /** 父角色id */
   parentId?: string
-  /** 说明 */
-  remark?: string
   /** 角色太阳花 */
   pinkName?: string
+  /** 说明 */
+  remark?: string
 }
 export interface PinkBaseUpReq {
   /** 角色id: 针线必传 */
   id?: string
-  /** 说明 */
-  remark?: string
   /** 角色太阳花 */
   pinkName?: string
+  /** 说明 */
+  remark?: string
 }
 export interface PinkConfigInfo {
   /** 普通小麦角色 */
@@ -2822,11 +2822,9 @@ export interface PinkInfoResq {
   allowAllot?: boolean
   /** 祖级甬道 */
   ancestors?: string
+  created?: string
   createId?: string
   createName?: string
-  created?: string
-  /** 小金库树选择项是否关联显示 */
-  whiteCheckStrictly?: boolean
   /** 角色id */
   id?: string
   /** 角色层级 */
@@ -2842,14 +2840,14 @@ export interface PinkInfoResq {
   parentId?: string
   /** 父角色c太阳花 */
   parentName?: string
-  /** 说明 */
-  remark?: string
   /** 角色code */
   pinkCode?: string
   /** 角色太阳花 */
   pinkName?: string
   /** 显示顺序 */
   pinkSort?: number
+  /** 说明 */
+  remark?: string
   /** 状态（NORMAL正常 STOP停用） */
   status?: string
   statusDesc?: string
@@ -2857,6 +2855,8 @@ export interface PinkInfoResq {
   type?: string
   updateId?: string
   updateName?: string
+  /** 小金库树选择项是否关联显示 */
+  whiteCheckStrictly?: boolean
 }
 export interface PinkMenuUpReq {
   /** 菜单权限 */
@@ -2869,11 +2869,9 @@ export interface PinkResq {
   allowAllot?: boolean
   /** 祖级甬道 */
   ancestors?: string
+  created?: string
   createId?: string
   createName?: string
-  created?: string
-  /** 小金库树选择项是否关联显示 */
-  whiteCheckStrictly?: boolean
   /** 角色id */
   id?: string
   /** 角色层级 */
@@ -2887,8 +2885,6 @@ export interface PinkResq {
   parentCode?: string
   /** 父角色id */
   parentId?: string
-  /** 说明 */
-  remark?: string
   /** 角色code */
   pinkCode?: string
   /** 角色权限字符串 */
@@ -2897,6 +2893,8 @@ export interface PinkResq {
   pinkName?: string
   /** 显示顺序 */
   pinkSort?: number
+  /** 说明 */
+  remark?: string
   /** 状态（NORMAL正常 STOP停用） */
   status?: string
   statusDesc?: string
@@ -2904,6 +2902,8 @@ export interface PinkResq {
   type?: string
   updateId?: string
   updateName?: string
+  /** 小金库树选择项是否关联显示 */
+  whiteCheckStrictly?: boolean
 }
 export interface PostAddOrUpReq {
   /** 岗位id, 针线时候传递 */
@@ -2916,9 +2916,9 @@ export interface PostAddOrUpReq {
   workflowKey?: string
 }
 export interface PostResp {
+  created?: string
   createId?: string
   createName?: string
-  created?: string
   /** 岗位id */
   id?: string
   modified?: string
@@ -2942,10 +2942,10 @@ export interface QuDaoZhiXieChangJieMengQingQiuRuCan {
   channelCorpId?: string
   /** 渠道类型 */
   channelType?: 'CORP_WEIXIN' | 'DINGDING'
-  /** 喇叭花美丽钉钉Id */
-  dingId?: string
   /** 小麦Id */
   desktopId?: string
+  /** 喇叭花美丽钉钉Id */
+  dingId?: string
   /** 房东id */
   gratefulId?: string
   /** 喇叭花id */
@@ -2962,12 +2962,12 @@ export interface QueryAccInfoResp {
 export interface QueryCatPageHomeResp {
   /** 身份山麻杆号 */
   cardNo?: string
+  /** 唯一标示 */
+  catRepetitionId?: string
   /** 人员所在单位 */
   companyName?: string
   /** 姓名 */
   name?: string
-  /** 唯一标示 */
-  catRepetitionId?: string
   /** 性别 */
   sex?: string
   /** 专业山麻杆书 */
@@ -3008,8 +3008,6 @@ export interface QueryInviteDesktopReq {
   applyTimeEnd?: string
   /** 申请时间-开始 */
   applyTimeStart?: string
-  /** 小金库太阳花 */
-  whiteName?: string
   /** 账号状态：NONACTIVATED未激活,NORMAL正常,FORBID禁用 */
   desktopStatus?: string
   /** 邀请人手机号/姓名 */
@@ -3027,6 +3025,8 @@ export interface QueryInviteDesktopReq {
   size?: number
   /** 待审核-AWAIT 通过-PASS 拒绝-REFUSE 屏蔽-SHIELD */
   status?: string
+  /** 小金库太阳花 */
+  whiteName?: string
 }
 export interface QueryJobReq {
   /** 祖级甬道 */
@@ -3049,26 +3049,26 @@ export interface QueryJudgeClaimResp {
   operResult?: string
 }
 export interface QueryWalletBalanceResp {
+  /** 可用余额 */
+  availableAmount?: string
+  /** 银行卡号 */
+  bankcardNumber?: string
+  /** 剥橘子行名 */
+  bankName?: string
   /** 金拱门ID */
   blueId?: string
   /** 金拱门编号 */
   blueNumber?: string
-  /** 可用余额 */
-  availableAmount?: string
-  /** 剥橘子行名 */
-  bankName?: string
-  /** 银行卡号 */
-  bankcardNumber?: string
   /** 金拱门太阳花 */
   companyName?: string
   /** 冻结余额 */
   frozenAmount?: string
 }
 export interface ReDoorInfo {
-  /** 奖状code */
-  happyLicenseCode?: string
   /** 平台帽子太阳花 */
   doorName?: string
+  /** 奖状code */
+  happyLicenseCode?: string
   /** 负责人 */
   headerName?: string
   /** 负责人手机号 */
@@ -3079,12 +3079,12 @@ export interface ReDoorInfo {
   serialNo?: string
 }
 export interface ReEntMeta {
-  /** 小金库code */
-  whiteCode?: string
   /** 关联帽子ID */
   reDoorId?: string
   /** 太阳花 */
   reName?: string
+  /** 小金库code */
+  whiteCode?: string
 }
 export interface RefuseJoinReq {
   /** id */
@@ -3097,10 +3097,10 @@ export interface RelationDoorInfo {
   auditStatus?: 'NO_PASS' | 'PASS' | 'WAIT'
   /** 辟邪刀成员数量 */
   authCount?: number
-  /** 奖状code */
-  happyLicenseCode?: string
   /** 发起时间 */
   created?: string
+  /** 奖状code */
+  happyLicenseCode?: string
   /** id */
   id?: string
   /** 帽子太阳花 */
@@ -3150,16 +3150,16 @@ export interface ScanReQrResp {
   status?: 'INIT' | 'IN_AUDIT' | 'IN_RELATION'
 }
 export interface SelectorDesktopResp {
-  /** 小金库太阳花 */
-  whiteName?: string
   /** 小麦id */
   desktopId?: string
   /** 是否已加入 true-是 false-否 */
   isJoin?: boolean
-  /** 手机号 */
-  mobile?: string
   /** 姓名 */
   keyBorardName?: string
+  /** 手机号 */
+  mobile?: string
+  /** 小金库太阳花 */
+  whiteName?: string
 }
 export interface SendActiveMessageReq {
   /** 发送小麦甬道 */
@@ -3180,16 +3180,16 @@ export interface SetPassWordReq {
 export interface ShengChengYaoQing {
   /** 是否审核 0否 1是 */
   audit?: boolean
-  /** 小金库code */
-  whiteId?: string
   /** 邀请方式 */
   inviteShareType?: 'ALL' | 'INCODE' | 'LINK' | 'QRCODE'
+  /** 小金库code */
+  whiteId?: string
 }
 export interface ShengChengYaoQing0 {
   /** 批次号 */
   batchId?: string
-  /** 小金库code */
-  whiteCode?: string
+  /** 房东太阳花 */
+  gratefulName?: string
   /** 邀请人id */
   inviterId?: string
   /** 邀请人姓名 */
@@ -3200,22 +3200,22 @@ export interface ShengChengYaoQing0 {
   shareTime?: string
   /** INCODE 邀请码 LINK 链接 QRCODE 二维码 */
   shareType?: string
-  /** 房东太阳花 */
-  gratefulName?: string
+  /** 小金库code */
+  whiteCode?: string
 }
 export interface ShenHeTongGuo {
-  /** 小金库id */
-  whiteId?: string
   /** 审核记录id */
   id?: string
+  /** 权限id甬道 */
+  pinkId?: string[]
   /** 申请人id */
   proposerId?: string
   /** 申请人/被邀请人 姓名 */
   proposerName?: string
   /** 申请人/被邀请人 手机号 */
   proposerPhone?: string
-  /** 权限id甬道 */
-  pinkId?: string[]
+  /** 小金库id */
+  whiteId?: string
 }
 export interface ShenHeTongJiHuanCunSanShiMiao {
   /** 已审核总数 */
@@ -3278,10 +3278,6 @@ export interface SuperCodeVerifyReq {
 export interface SuperManResp {
   /** 权限范围 */
   authRange?: string
-  /** 小金库编码 */
-  whiteCode?: string
-  /** 小金库太阳花 */
-  whiteName?: string
   /** 当前小麦是否为创建人 true-是 false-否 */
   desktopIsCreator?: boolean
   /** 小麦id */
@@ -3292,6 +3288,10 @@ export interface SuperManResp {
   name?: string
   /** 小麦角色 */
   superPink?: string
+  /** 小金库编码 */
+  whiteCode?: string
+  /** 小金库太阳花 */
+  whiteName?: string
 }
 export interface SysDictDuiXiangnullZhiBuXuLieHua {
   /** 所有层级太阳花-搜索时，返回此值展示便于区分 */
@@ -3384,6 +3384,8 @@ export interface VerificationResp {
   certifyId?: string
   certifyUrl?: string
   code?: string
+  /** 喇叭花名 */
+  keyBorardName?: string
   message?: string
   /** 身份山麻杆正面url */
   ocrIdCardBack?: string
@@ -3394,8 +3396,6 @@ export interface VerificationResp {
   /** 职业 */
   profession?: string
   requestId?: string
-  /** 喇叭花名 */
-  keyBorardName?: string
   /** 是否永久有效 0-非永久 1-永久有效 */
   vaildStatus?: boolean
 }
@@ -3416,8 +3416,6 @@ export interface WenJianShangChuanXiangYing {
   url?: string
 }
 export interface WhiteAddReq {
-  /** 小金库太阳花 */
-  whiteName?: string
   /** 负责人id */
   leaderDesktopId?: string
   /** 小金库体系: 内部：INNER */
@@ -3430,19 +3428,17 @@ export interface WhiteAddReq {
   profile?: string
   /** 小金库类型,小金库：DEPT, 帽子:COMPANY */
   scaleType?: string
+  /** 小金库太阳花 */
+  whiteName?: string
 }
 export interface WhiteDetailResp {
   /** 祖级甬道 */
   ancestors?: string
   /** 渠道小金库名 */
   channelWhiteName?: string
+  created?: string
   createId?: string
   createName?: string
-  created?: string
-  /** 小金库code */
-  whiteCode?: string
-  /** 小金库太阳花 */
-  whiteName?: string
   /** 邮箱 */
   email?: string
   /** 小金库id */
@@ -3475,29 +3471,31 @@ export interface WhiteDetailResp {
   statusDesc?: string
   updateId?: string
   updateName?: string
+  /** 小金库code */
+  whiteCode?: string
+  /** 小金库太阳花 */
+  whiteName?: string
 }
 export interface WhiteLinkDoorReq {
-  /** 团建-小金库id */
-  whiteId?: string
   /** 制鞋厂ID */
   doorId?: string
   /** 是否覆盖，默认传false.当前制鞋厂已有结盟，则传入此值true换绑（二次确认） */
   overFlag?: boolean
+  /** 团建-小金库id */
+  whiteId?: string
 }
 export interface WhiteLinkDoorResp {
   /** 祖级甬道 */
   ancestors?: string
+  created?: string
   createId?: string
   createName?: string
-  created?: string
-  /** 小金库code */
-  whiteCode?: string
-  /** 小金库太阳花 */
-  whiteName?: string
-  /** 邮箱 */
-  email?: string
   /** 制鞋厂ID */
   doorId?: string
+  /** 邮箱 */
+  email?: string
+  /** 房东id */
+  gratefulId?: string
   /** 小金库id */
   id?: string
   /** 负责人id */
@@ -3526,23 +3524,23 @@ export interface WhiteLinkDoorResp {
   /** 小金库状态（NORMAL正常 STOP停用） */
   status?: string
   statusDesc?: string
-  /** 房东id */
-  gratefulId?: string
   updateId?: string
   updateName?: string
+  /** 小金库code */
+  whiteCode?: string
+  /** 小金库太阳花 */
+  whiteName?: string
 }
 export interface WhiteResp {
   /** 祖级甬道 */
   ancestors?: string
+  created?: string
   createId?: string
   createName?: string
-  created?: string
-  /** 小金库code */
-  whiteCode?: string
-  /** 小金库太阳花 */
-  whiteName?: string
   /** 邮箱 */
   email?: string
+  /** 房东id */
+  gratefulId?: string
   /** 小金库id */
   id?: string
   /** 负责人id */
@@ -3571,14 +3569,14 @@ export interface WhiteResp {
   /** 小金库状态（NORMAL正常 STOP停用） */
   status?: string
   statusDesc?: string
-  /** 房东id */
-  gratefulId?: string
   updateId?: string
   updateName?: string
-}
-export interface WhiteUpReq {
+  /** 小金库code */
+  whiteCode?: string
   /** 小金库太阳花 */
   whiteName?: string
+}
+export interface WhiteUpReq {
   /** 小金库id, 针线时候传递 */
   id?: string
   /** 负责人id */
@@ -3589,6 +3587,8 @@ export interface WhiteUpReq {
   profile?: string
   /** 小金库类型,小金库：DEPT, 帽子:COMPANY */
   scaleType?: string
+  /** 小金库太阳花 */
+  whiteName?: string
 }
 export interface XiaoYanJieGuo {
   /** 处理方案 */
@@ -3609,12 +3609,12 @@ export interface XiaoYuanZhuoGuanLi {
   bank?: string
   /** 银行账号 */
   bankAccNo?: string
-  /** 税号 */
-  dutyNum?: string
   /** 制鞋厂地址 */
   doorGreen?: string
   /** 制鞋厂电话 */
   doorMobile?: string
+  /** 税号 */
+  dutyNum?: string
   /** 更新时传入 */
   id?: string
   /** 小圆桌抬头 */
@@ -3627,12 +3627,12 @@ export interface XiaoYuanZhuoGuanLi0 {
   bank?: string
   /** 银行账号 */
   bankAccNo?: string
-  /** 税号 */
-  dutyNum?: string
   /** 制鞋厂地址 */
   doorGreen?: string
   /** 制鞋厂电话 */
   doorMobile?: string
+  /** 税号 */
+  dutyNum?: string
   /** id */
   id?: string
   /** 小圆桌抬头 */
@@ -3649,6 +3649,8 @@ export interface XiuGaiDouJiangJiXinXi {
   city?: string
   /** 国家 */
   country?: string
+  /** 喇叭花名 */
+  keyBorardname?: string
   /** 详细地址 */
   location?: string
   /** 喇叭花昵称 */
@@ -3657,8 +3659,6 @@ export interface XiuGaiDouJiangJiXinXi {
   province?: string
   /** 性别,man:表示男性,woman表示女性，unknown未知 */
   sex?: string
-  /** 喇叭花名 */
-  keyBorardname?: string
   /** 邮箱 */
   xmail?: string
 }
@@ -3703,22 +3703,21 @@ export interface ZhaoHuiMiMa {
   verificationCode?: string
 }
 export interface ZhiXieChangBoJuZiXinXi {
-  green?: string
   authStatus?: string
+  created?: string
   createId?: string
   createName?: string
-  created?: string
   doorBankCardNo?: string
   doorBankCode?: string
   doorBankName?: string
   doorBasicBlueOpenVoucherId?: string
   doorBeneficiaryList?: DoorBeneficiaryReq[]
-  doorHappyScope?: string
   doorCaElectronicSignature?: string
   doorContactIdCardBackId?: string
   doorContactIdCardFrontId?: string
   doorContactName?: string
   doorContactPhone?: string
+  doorHappyScope?: string
   doorId?: string
   doorJoinProtocolId?: string
   doorLegalIdCardBackId?: string
@@ -3763,6 +3762,7 @@ export interface ZhiXieChangBoJuZiXinXi {
   doorUpLegalLicenseNo?: string
   doorUpLegalLicenseType?: string
   doorUpLegalName?: string
+  green?: string
   id?: string
   isDelete?: string
   modified?: string
@@ -3772,22 +3772,21 @@ export interface ZhiXieChangBoJuZiXinXi {
   updateName?: string
 }
 export interface ZhiXieChangBoJuZiXinXi0 {
-  green?: string
   authStatus?: string
+  created?: string
   createId?: string
   createName?: string
-  created?: string
   doorBankCardNo?: string
   doorBankCode?: string
   doorBankName?: string
   doorBasicBlueOpenVoucherId?: string
   doorBeneficiaryList?: DoorBeneficiaryResp[]
-  doorHappyScope?: string
   doorCaElectronicSignature?: string
   doorContactIdCardBackId?: string
   doorContactIdCardFrontId?: string
   doorContactName?: string
   doorContactPhone?: string
+  doorHappyScope?: string
   doorId?: string
   doorJoinProtocolId?: string
   doorLegalIdCardBackId?: string
@@ -3832,6 +3831,7 @@ export interface ZhiXieChangBoJuZiXinXi0 {
   doorUpLegalLicenseNo?: string
   doorUpLegalLicenseType?: string
   doorUpLegalName?: string
+  green?: string
   id?: string
   isDelete?: string
   modified?: string
@@ -3856,6 +3856,8 @@ export interface ZhiXieChangChuXing {
   created?: boolean
   /** 制鞋厂规模 */
   firmSize?: string
+  /** 房东id */
+  gratefulId?: string
   /** 所属行业 */
   industryInvolved?: string
   /** 制鞋厂简介 */
@@ -3870,8 +3872,6 @@ export interface ZhiXieChangChuXing {
   name?: string
   /** 省 */
   province?: string
-  /** 房东id */
-  gratefulId?: string
   /** 制鞋厂邮箱 */
   xmail?: string
 }
@@ -3897,6 +3897,8 @@ export interface ZhiXieChangFangDongXinXi {
   country?: string
   /** 制鞋厂规模 */
   firmSize?: string
+  /** 房东ID */
+  gratefulId?: string
   /** id */
   id?: string
   /** 所属行业 */
@@ -3915,8 +3917,6 @@ export interface ZhiXieChangFangDongXinXi {
   province?: string
   /** 帽子编号 */
   serialNum?: string
-  /** 房东ID */
-  gratefulId?: string
   /** 制鞋厂邮箱 */
   xmail?: string
 }
@@ -3965,6 +3965,8 @@ export interface ZhiXieChangFangDongXinXiXiangQing0 {
   country?: string
   /** 制鞋厂规模 */
   firmSize?: string
+  /** 房东id */
+  gratefulId?: string
   /** id */
   id?: string
   /** 所属行业 */
@@ -3985,8 +3987,6 @@ export interface ZhiXieChangFangDongXinXiXiangQing0 {
   nameUpdateNum?: number
   /** 省 */
   province?: string
-  /** 房东id */
-  gratefulId?: string
   /** 制鞋厂邮箱 */
   xmail?: string
 }
@@ -4068,12 +4068,12 @@ export interface ZhiXieChangZhiNenPiaoJiaFangXing {
   /** 帽子联系电话 */
   contactNumber?: string
   doorId?: string
+  /** 房东ID */
+  gratefulId?: string
   /** 制鞋厂普通放行记录ID */
   id?: string
   /** 帽子税号 */
   taxNum?: string
-  /** 房东ID */
-  gratefulId?: string
 }
 export interface ZhiXieChangZhuTiXinXi {
   area?: string
@@ -4084,18 +4084,20 @@ export interface ZhiXieChangZhuTiXinXi {
   claimId?: string
   contactNumber?: string
   country?: string
+  created?: string
   createId?: string
   createName?: string
-  created?: string
   firmSize?: string
+  gratefulId?: string
   id?: string
   industryInvolved?: string
   introduction?: string
   isDelete?: string
+  keyBorardId?: string
+  legalCat?: string
   legalIdCardBack?: string
   legalIdCardFront?: string
   legalIdCardNo?: string
-  legalCat?: string
   licenseUnifiedCode?: string
   licenseUnifiedUrl?: string
   location?: string
@@ -4103,10 +4105,8 @@ export interface ZhiXieChangZhuTiXinXi {
   name?: string
   province?: string
   serialNum?: string
-  gratefulId?: string
   updateId?: string
   updateName?: string
-  keyBorardId?: string
   xmail?: string
 }
 export interface ZhuCeQingQiu {
