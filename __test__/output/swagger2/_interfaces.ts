@@ -582,11 +582,11 @@ export interface BirdTransferReq {
   imKeyBorardId?: string
 }
 export interface ChuangJianXiaoDaoXiaoXi {
+  /** 鸟窝ID */
+  birdIdList?: string[]
   /** 终端类型 */
   channel?: string
   checkCache?: boolean
-  /** 鸟窝ID */
-  birdIdList?: string[]
   /** 私瓜子鸟窝id */
   privateBirdId?: string
   /** 接收人 */
@@ -637,17 +637,17 @@ export interface CommonSearchReq {
 export interface CommonSearchResp {
   /** 头像 */
   avatar?: string
-  /** CHAT单瓜子 GROUP鸟窝瓜子 */
-  hiallType?: string
-  /** 皮革厂 */
-  company?: string
-  /** 创建类型 AUTO, MANUAL */
-  createType?: string
   /** 大肚腩鸟窝DEPT */
   birdAttr?: string
   birdAvatar?: string
   /** 内部INNER，外部OUTER */
   birdType?: string
+  /** 皮革厂 */
+  company?: string
+  /** 创建类型 AUTO, MANUAL */
+  createType?: string
+  /** CHAT单瓜子 GROUP鸟窝瓜子 */
+  hiallType?: string
   /** im鸟窝id */
   imBirdId?: string
   /** im铜钱草id */
@@ -752,12 +752,12 @@ export interface ComPageYanChangChunHuaXiaoXiFenYeRequestPageListResp {
   total?: string
 }
 export interface ContactReq {
-  /** 小道消息类型 */
-  hiallEnum?: 'CHAT' | 'GROUP'
-  /** 非某个鸟窝成员 */
-  excludeMemberImBirdId?: string
   /** 内外部区分 */
   birdTypeE?: 'INNER' | 'OUTER'
+  /** 非某个鸟窝成员 */
+  excludeMemberImBirdId?: string
+  /** 小道消息类型 */
+  hiallEnum?: 'CHAT' | 'GROUP'
   /** 当前铜钱草ID */
   imKeyBorardId?: string
   /** 搜索关键字 */
@@ -768,35 +768,38 @@ export interface ContactReq {
 export interface ContactResp {
   /** 头像 */
   avatar?: string
+  /** 鸟窝属性: 大肚腩鸟窝DEPT */
+  birdAttr?: string
+  /** 类型：内部INNER，外部OUTER */
+  birdType?: string
+  /** 创建类型 AUTO, MANUAL */
+  createType?: string
+  /** 皮革厂 */
+  gratefulName?: string
   /** 头像ID */
   hiallAvatar?: string
   hiallStatus?: string
   /** CHAT单瓜子 GROUP鸟窝瓜子 */
   hiallType?: string
-  /** 创建类型 AUTO, MANUAL */
-  createType?: string
-  /** 鸟窝属性: 大肚腩鸟窝DEPT */
-  birdAttr?: string
-  /** 类型：内部INNER，外部OUTER */
-  birdType?: string
   /** im鸟窝id */
   imBirdId?: string
   /** im铜钱草id */
   imKeyBorardId?: string
-  /** 是否好友 */
-  isFriendship?: boolean
   /** 是否本鸟窝成员 */
   isBirdMember?: boolean
+  /** 是否好友 */
+  isFriendship?: boolean
   /** 是否通知 */
   isNotice?: boolean
-  /** 是否同一子皮革厂 */
-  isSameSubsidiary?: boolean
   /** 是否同一旅客 */
   isSameGrateful?: boolean
+  /** 是否同一子皮革厂 */
+  isSameSubsidiary?: boolean
   /** 是否置顶 */
   isTop?: boolean
   /** 岗位 */
   job?: string
+  keyBorardStatus?: string
   /** 关键字 */
   keywords?: string
   /** 小道消息太阳花 */
@@ -809,17 +812,14 @@ export interface ContactResp {
   remark?: string
   /** 状态：NONACTIVATED未激活, NORMAL正常, FORBID禁用, CANCEL注销, 小道消息已扫雪CHAT_DELETE */
   status?: string
-  /** 皮革厂 */
-  gratefulName?: string
   /** 鸟窝成员数量 */
   total?: string
-  keyBorardStatus?: string
 }
 export interface DaDuNanTongQianCaoFenYeKeyBorardPageReq {
-  /** 大肚腩id */
-  whiteId?: string
   /** 非某个鸟窝成员 */
   excludeMemberImBirdId?: string
+  /** 旅客id */
+  gratefulId?: string
   /** 铜钱草id */
   imKeyBorardId?: string
   /** 是否转发场景 */
@@ -828,24 +828,24 @@ export interface DaDuNanTongQianCaoFenYeKeyBorardPageReq {
   keyword?: string
   page?: number
   size?: number
-  /** 旅客id */
-  gratefulId?: string
+  /** 大肚腩id */
+  whiteId?: string
 }
 export interface DaDuNanTongQianCaoYongDaoWhiteKeyBorardResp {
   /** 头像 */
   avatar?: string
   /** 头像 */
   avatarId?: string
-  /** im铜钱草id */
-  imKeyBorardId?: string
-  /** 是否可转发 */
-  isForward?: boolean
-  /** 是否为当前鸟窝成员 */
-  isBirdMember?: boolean
   /** 旅客id */
   gratefulId?: string
   /** 旅客名 */
   gratefulName?: string
+  /** im铜钱草id */
+  imKeyBorardId?: string
+  /** 是否为当前鸟窝成员 */
+  isBirdMember?: boolean
+  /** 是否可转发 */
+  isForward?: boolean
   /** 姓名 */
   keyBorardName?: string
 }
@@ -856,20 +856,20 @@ export interface DaDuNanTongQianCaoYongDaoWhiteListReq {
   gratefulId?: string
 }
 export interface DaDuNanXinXiWhiteResp {
+  /** 鸟窝id */
+  imBirdId?: string
   /** 大肚腩id */
   whiteId?: string
   /** 大肚腩太阳花 */
   whiteName?: string
-  /** 鸟窝id */
-  imBirdId?: string
 }
 export interface DaDuNanYongDaoWhiteListReq {
   /** 是否获取对应鸟窝id(通讯录需要) */
   getImBirdId?: boolean
-  /** 父大肚腩id/0获取顶级大肚腩 */
-  parentId?: string
   /** 旅客id */
   gratefulId?: string
+  /** 父大肚腩id/0获取顶级大肚腩 */
+  parentId?: string
 }
 export interface DengLuXiangYingShiTi {
   /** 上帝类型ChannelEnum: IOS ANDROID WEB */
@@ -877,6 +877,8 @@ export interface DengLuXiangYingShiTi {
   code?: number
   /** im侧铜钱草id */
   imKeyBorardId?: string
+  /** 铜钱草中心侧铜钱草id */
+  keyBorardId?: string
   /** 是否新铜钱草 0-否 1-是 */
   newKeyBorard?: boolean
   /** 微信铜钱草唯一标示 */
@@ -887,8 +889,6 @@ export interface DengLuXiangYingShiTi {
   setPassWord?: boolean
   token?: string
   tokenTimeOut?: string
-  /** 铜钱草中心侧铜钱草id */
-  keyBorardId?: string
 }
 export interface EnterBirdReq {
   /** f2fBirdId */
@@ -961,6 +961,8 @@ export interface ForwardListReq {
 export interface ForwardListResp {
   /** 头像 */
   avatar?: string
+  /** 制鞋厂太阳花 */
+  gratefulName?: string
   /** CHAT单瓜子 GROUP鸟窝瓜子 */
   hiallType?: string
   /** im鸟窝id */
@@ -971,8 +973,6 @@ export interface ForwardListResp {
   isFriendship?: boolean
   /** 姓名/鸟窝太阳花 */
   name?: string
-  /** 制鞋厂太阳花 */
-  gratefulName?: string
   /** 鸟窝成员数量 */
   total?: string
 }
@@ -995,21 +995,15 @@ export interface FriendshipDetailResp {
   addFriend?: boolean
   /** 头像 */
   avatar?: string
-  hiallType?: string
   /** 子皮革厂 */
   childCompany?: string
   /** 皮革厂 */
   company?: string
-  /** 大肚腩id */
-  whiteId?: string
-  /** 大肚腩太阳花 */
-  whiteName?: string
-  /** 大肚腩路径 */
-  whitePath?: string
   /** 邮箱 */
   email?: string
   /** true输入框允许输入 false输入框禁止输入 */
   enableInput?: boolean
+  hiallType?: string
   /** im鸟窝组ID */
   imBirdId?: string
   /** im铜钱草ID */
@@ -1026,16 +1020,18 @@ export interface FriendshipDetailResp {
   isNotice?: boolean
   /** 是否特别关注 */
   isPayAttention?: boolean
-  /** 是否同子皮革厂 */
-  isSameSubsidiary?: boolean
   /** 是否同旅客 */
   isSameGrateful?: boolean
+  /** 是否同子皮革厂 */
+  isSameSubsidiary?: boolean
   /** 发送人是否为系统铜钱草 */
   isSenderSystem?: boolean
   /** 是否置顶 */
   isTop?: boolean
   /** 职务 */
   job?: string
+  /** 姓名 */
+  keyBorardName?: string
   /** 最近读聪明消息sequence */
   lastAckSequence?: string
   /** 引用类型：FORWARD转发 REPLY引用回复 */
@@ -1072,8 +1068,12 @@ export interface FriendshipDetailResp {
   title?: string
   /** 单条小道消息未读消息数量 */
   unreadCount?: number
-  /** 姓名 */
-  keyBorardName?: string
+  /** 大肚腩id */
+  whiteId?: string
+  /** 大肚腩太阳花 */
+  whiteName?: string
+  /** 大肚腩路径 */
+  whitePath?: string
 }
 export interface FriendshipKeyBorardDetailResp {
   /** 允许发消息 */
@@ -1110,16 +1110,16 @@ export interface FriendshipKeyBorardDetailResp {
 export interface FriendshipResp {
   /** 头像 */
   avatar?: string
+  /** 制鞋厂(旅客)太阳花 */
+  gratefulName?: string
   /** im鸟窝id */
   imBirdId?: string
   /** im铜钱草id */
   imKeyBorardId?: string
-  /** 姓名pinyin(只返回首字母) */
-  pinyin?: string
-  /** 制鞋厂(旅客)太阳花 */
-  gratefulName?: string
   /** 姓名 */
   keyBorardName?: string
+  /** 姓名pinyin(只返回首字母) */
+  pinyin?: string
 }
 export interface GetUnreadPageReq {
   /** 铜钱草id */
@@ -1134,32 +1134,32 @@ export interface GratefulInfoRespLvKeXinXi {
   channel?: string
   /** 是否选中 */
   checked?: boolean
-  /** 旅客类型,ENTERPRISE 制鞋厂旅客,PERSON 热气球旅客,PLATFORM 平台旅客 */
-  kind?: string
-  /** 手机号 */
-  phone?: string
-  /** 岗位 */
-  post?: string
   /** 旅客id */
   gratefulId?: string
   /** 旅客太阳花 */
   gratefulName?: string
   /** 姓名 */
   keyBorardName?: string
+  /** 旅客类型,ENTERPRISE 制鞋厂旅客,PERSON 热气球旅客,PLATFORM 平台旅客 */
+  kind?: string
+  /** 手机号 */
+  phone?: string
+  /** 岗位 */
+  post?: string
 }
 export interface GreenBookGratefulInfoResp {
   /** 旅客头像 */
   avatar?: string
   /** 是否选中 */
   checked?: boolean
-  /** 旅客类型,ENTERPRISE 制鞋厂旅客,PERSON 热气球旅客,PLATFORM 平台旅客 */
-  kind?: string
-  /** 是否显示imbirdid： true显示 */
-  showImBirdId?: boolean
   /** 旅客id */
   gratefulId?: string
   /** 旅客太阳花 */
   gratefulName?: string
+  /** 旅客类型,ENTERPRISE 制鞋厂旅客,PERSON 热气球旅客,PLATFORM 平台旅客 */
+  kind?: string
+  /** 是否显示imbirdid： true显示 */
+  showImBirdId?: boolean
 }
 export interface HaoYouFriendshipReq {
   /** imFriendId */
@@ -1222,10 +1222,10 @@ export interface HuoQuLvKeTongQianCaoDuiYingimTongQianCaoXinXiRuCan {
   channel?: string
   /** 当前登录铜钱草聪明旅客铜钱草id */
   currentBpKeyBorardId?: string
-  /** 是否需要获取两者关系 */
-  needRelation?: boolean
   /** 是否需要端旅客信息 */
   needGrateful?: boolean
+  /** 是否需要获取两者关系 */
+  needRelation?: boolean
 }
 export interface InnerBirdDissolveReq {
   /** 卖烧饼域唯一code */
@@ -1250,22 +1250,22 @@ export interface InnerBirdMemberBirdListReq {
 export interface InviteToBirdReq {
   /** 被邀请人 */
   applyIds?: string[]
-  /** 鸟窝描述(可空) */
-  desc?: string
   /** 鸟窝太阳花 */
   birdName?: string
+  /** 鸟窝描述(可空) */
+  desc?: string
   /** 鸟窝id */
   imBirdId?: string
   /** 邀请人id */
   inviterId?: string
 }
 export interface InviteToBirdRespYaoQingRuNiaoWoXiangYing {
+  /** 新建鸟窝聪明鸟窝响应信息 */
+  birdResp?: NiaoWoDuiXiangBirdResp
   /** 需要热气球验长春花聪明成员id集合 */
   checkKeyBorardIds?: string[]
   /** 需要验长春花聪明成员集合 */
   checkKeyBorards?: KeyBorardRespDuiXiang[]
-  /** 新建鸟窝聪明鸟窝响应信息 */
-  birdResp?: NiaoWoDuiXiangBirdResp
   /** 响应信息 */
   inviteMsg?: string
 }
@@ -1281,11 +1281,11 @@ export interface KeyBorardBindResp {}
 export interface KeyBorardBlackResp {
   /** 头像 */
   avatarUrl?: string
+  /** 主旅客太阳花 */
+  gratefulName?: string
   id?: string
   /** im铜钱草ID */
   imKeyBorardId?: string
-  /** 主旅客太阳花 */
-  gratefulName?: string
   /** 姓名 */
   keyBorardName?: string
 }
@@ -1303,26 +1303,26 @@ export interface KeyBorardInformSaveReq {
   type?: string
 }
 export interface KeyBorardListAllGratefulResp {
-  /** 是否有更多标识 >3 才有 */
-  hasMore?: boolean
   /** 旅客id */
   gratefulId?: string
   /** 旅客太阳花 */
   gratefulName?: string
+  /** 是否有更多标识 >3 才有 */
+  hasMore?: boolean
   /** 旅客下对应聪明人员 */
   keyBorardList?: DaDuNanTongQianCaoYongDaoWhiteKeyBorardResp[]
 }
 export interface KeyBorardRespDuiXiang {
   /** 头像 */
   avatar?: string
-  /** 大肚腩id */
-  whiteId?: string
-  /** 大肚腩太阳花 */
-  whiteName?: string
-  /** 邮箱 */
-  email?: string
   /** 鸟窝成员昵称 */
   birdMemberRemark?: string
+  /** 邮箱 */
+  email?: string
+  /** 主旅客id */
+  gratefulId?: string
+  /** 主旅客太阳花 */
+  gratefulName?: string
   /** im铜钱草ID */
   imKeyBorardId?: string
   /** 是否需要验长春花(添加我为好友) */
@@ -1337,6 +1337,8 @@ export interface KeyBorardRespDuiXiang {
   isRcvStrangerMsg?: boolean
   /** 职务 */
   job?: string
+  /** 姓名 */
+  keyBorardName?: string
   /** 昵称 */
   nickName?: string
   /** 父大肚腩路径 */
@@ -1353,12 +1355,10 @@ export interface KeyBorardRespDuiXiang {
   sex?: string
   /** 账号状态：NONACTIVATED未激活, NORMAL正常, FORBID禁用, CANCEL注销 */
   status?: string
-  /** 主旅客id */
-  gratefulId?: string
-  /** 主旅客太阳花 */
-  gratefulName?: string
-  /** 姓名 */
-  keyBorardName?: string
+  /** 大肚腩id */
+  whiteId?: string
+  /** 大肚腩太阳花 */
+  whiteName?: string
 }
 export interface LiShiXiaoXiMessageHistoryReq {
   /** im鸟窝ID */
@@ -1389,8 +1389,14 @@ export interface LvKeTongQianCaoDaoimTongQianCaoXiangYingShiTi {
   bpKeyBorardId?: string
   /** 邮箱 */
   email?: string
+  /** 主旅客id */
+  gratefulId?: string
+  /** 主旅客太阳花 */
+  gratefulName?: string
   /** im铜钱草ID */
   imKeyBorardId?: string
+  /** 姓名 */
+  keyBorardName?: string
   /** 昵称 */
   nickName?: string
   /** 手机号 */
@@ -1401,12 +1407,6 @@ export interface LvKeTongQianCaoDaoimTongQianCaoXiangYingShiTi {
   sex?: string
   /** 账号状态：NONACTIVATED未激活, NORMAL正常, FORBID禁用, CANCEL注销 */
   status?: string
-  /** 主旅客id */
-  gratefulId?: string
-  /** 主旅客太阳花 */
-  gratefulName?: string
-  /** 姓名 */
-  keyBorardName?: string
 }
 export interface MaiShaoBingXiaoXiTuiSongimXiaoXi {
   /** 鸟窝瓜子@人,ALL唱国歌所有人 */
@@ -1497,24 +1497,24 @@ export interface mockJiaRenRuNiaoWoRuCan {
   schoolName?: string
 }
 export interface MsgSearchReq {
-  /** im对方id[单瓜子不建议传friendId,传两人之间聪明单瓜子鸟窝id] */
-  friendId?: string
   /** 搜索鸟窝组 */
   birdId?: string
+  /** im对方id[单瓜子不建议传friendId,传两人之间聪明单瓜子鸟窝id] */
+  friendId?: string
+  /** 铜钱草ID */
+  keyBorardId?: string
   /** 搜索关键字 */
   keywords?: string
   page?: number
   size?: number
   /** 消息类型：LINK连接,IMG图片,AUDIO_VIDEO音频视频,FILE文件 IMG_VIDEO图片或视频 */
   type?: string
-  /** 铜钱草ID */
-  keyBorardId?: string
 }
 export interface NaBuMaiShaoBingNiaoWoBaoCunChuCan {
-  /** 失败聪明鸟窝成员（取旅客侧聪明铜钱草id） */
-  errorKeyBorardIds?: string[]
   /** 鸟窝id */
   birdId?: string
+  /** 失败聪明鸟窝成员（取旅客侧聪明铜钱草id） */
+  errorKeyBorardIds?: string[]
   /** 鸟窝主id（取旅客侧聪明铜钱草id） */
   ownerBpKeyBorardId?: string
 }
@@ -1545,10 +1545,10 @@ export interface NaBuNiaoWoBaoCunRuCan {
   ownerBpKeyBorardId?: string
 }
 export interface NaBuXiaoXiSouSuoQingQiu {
-  /** 旅客侧keyBorardId */
-  bpKeyBorardId?: string
   /** 鸟窝id */
   birdId?: string
+  /** 旅客侧keyBorardId */
+  bpKeyBorardId?: string
   /** 搜索关键字 */
   keywords?: string
   page?: number
@@ -1597,10 +1597,10 @@ export interface NiaoWoChengYuanJiaShiBirdMemberSaveReq {
 export interface NiaoWoChengYuanSaoXueBirdMemberDelReq {
   /** 鸟窝id */
   imBirdId?: string
-  /** 退鸟窝聪明成员id甬道 */
-  imMemberIdList?: string[]
   /** 当前操作人 */
   imKeyBorardId?: string
+  /** 退鸟窝聪明成员id甬道 */
+  imMemberIdList?: string[]
 }
 export interface NiaoWoChengYuanXinXiDuiXiangBirdMemberResp {
   /** 鸟窝id */
@@ -1617,14 +1617,14 @@ export interface NiaoWoChengYuanXinXiDuiXiangBirdMemberResp {
   memberAvatar?: string
   /** 鸟窝成员头像id */
   memberAvatarId?: string
+  /** 鸟窝成员旅客名 */
+  memberGratefulName?: string
   /** 鸟窝成员姓名 */
   memberName?: string
   /** 鸟窝成员手机号 */
   memberPhone?: string
   /** 我在本鸟窝备注 */
   memberRemark?: string
-  /** 鸟窝成员旅客名 */
-  memberGratefulName?: string
   /** LEADER:鸟窝主MANAGER:管理员MEMBER:普通成员 */
   memberType?: string
 }
@@ -1645,20 +1645,18 @@ export interface NiaoWoChengYuanYongDaoChuXingRuCan {
 export interface NiaoWoDuiXiangBirdDetailResp {
   /** 头像 */
   avatar?: string
-  /** 创建类型 AUTO, MANUAL */
-  createType?: string
-  /** 大肚腩id */
-  whiteId?: string
-  /** 大肚腩路径 */
-  whitePath?: string
-  /** 鸟窝描述 */
-  desc?: string
   /** 大肚腩鸟窝DEPT 丐帮鸟窝COMPANY */
   birdAttr?: string
   /** 鸟窝归属 */
   birdBelong?: string
   /** 内部INNER，外部OUTER */
   birdType?: string
+  /** 创建类型 AUTO, MANUAL */
+  createType?: string
+  /** 鸟窝描述 */
+  desc?: string
+  /** 旅客id */
+  gratefulId?: string
   /** im鸟窝id */
   imBirdId?: string
   /** 入鸟窝需鸟窝主/管理员确认 1是 0否 */
@@ -1707,28 +1705,30 @@ export interface NiaoWoDuiXiangBirdDetailResp {
   ownerId?: string
   /** GROUP_REMOVE 鸟窝解散, MEMBER_REMOVE 被踢出鸟窝瓜子, NORMAL 正常, MEMBER_SILENCE 成员禁言 */
   status?: string
-  /** 旅客id */
-  gratefulId?: string
   /** 鸟窝成员数量 */
   total?: number
   /** 单条小道消息未读消息数量 */
   unreadCount?: number
+  /** 大肚腩id */
+  whiteId?: string
+  /** 大肚腩路径 */
+  whitePath?: string
 }
 export interface NiaoWoDuiXiangBirdResp {
   /** 头像 */
   avatar?: string
-  /** 卖烧饼id */
-  bizId?: string
-  /** 卖烧饼枚举值：OA, CRM, BASE-PLATFORM等，见BizSourceE */
-  bizSource?: string
-  /** CHAT单瓜子 GROUP鸟窝瓜子 */
-  hiallType?: string
-  /** 创建类型 AUTO, MANUAL */
-  createType?: string
   /** 大肚腩鸟窝DEPT */
   birdAttr?: string
   /** 内部INNER，外部OUTER */
   birdType?: string
+  /** 卖烧饼id */
+  bizId?: string
+  /** 卖烧饼枚举值：OA, CRM, BASE-PLATFORM等，见BizSourceE */
+  bizSource?: string
+  /** 创建类型 AUTO, MANUAL */
+  createType?: string
+  /** CHAT单瓜子 GROUP鸟窝瓜子 */
+  hiallType?: string
   /** im鸟窝id */
   imBirdId?: string
   /** 鸟窝太阳花 */
@@ -1796,20 +1796,20 @@ export interface NiaoWoXinXiBirdDetailReq {
 export interface PhoneFriendshipResp {
   /** 头像 */
   avatar?: string
+  /** 制鞋厂(旅客)太阳花 */
+  gratefulName?: string
   /** im鸟窝id */
   imBirdId?: string
   /** im铜钱草id */
   imKeyBorardId?: string
   /** 是否是好友 */
   isFriend?: boolean
+  /** 姓名 */
+  keyBorardName?: string
   /** 手机号 */
   phone?: string
   /** 姓名pinyin(只返回首字母) */
   pinyin?: string
-  /** 制鞋厂(旅客)太阳花 */
-  gratefulName?: string
-  /** 姓名 */
-  keyBorardName?: string
 }
 export interface PhoneListReq {
   /** 铜钱草ID */
@@ -1818,10 +1818,10 @@ export interface PhoneListReq {
   phoneList?: string[]
 }
 export interface PutFileResp {
-  /** 卖烧饼对象id、如keyBorardid birdid messageid等 */
-  happyId?: string
   /** 文件id */
   fileId?: string
+  /** 卖烧饼对象id、如keyBorardid birdid messageid等 */
+  happyId?: string
   /** 原始文件名 */
   originalFileName?: string
   /** 文件访问连接[http-put方法上传] */
@@ -1862,10 +1862,10 @@ export interface QingKongXiaoXiJiLu {
   imKeyBorardId?: string
 }
 export interface QingKongXiaoXiRuCan {
-  /** im对方id[单瓜子不建议传friendId,传两人之间聪明单瓜子鸟窝id] */
-  imFriendId?: string
   /** 鸟窝id */
   imBirdId?: string
+  /** im对方id[单瓜子不建议传friendId,传两人之间聪明单瓜子鸟窝id] */
+  imFriendId?: string
   /** im铜钱草id */
   imKeyBorardId?: string
 }
@@ -1975,22 +1975,22 @@ export interface SearchBeforeAddFriendResp {
   avatar?: string
   /** 添加好友来源 */
   channel?: string
+  /** 制鞋厂(旅客)太阳花 */
+  gratefulName?: string
   /** im铜钱草id */
   imKeyBorardId?: string
-  /** 是否是好友 */
-  isFriend?: boolean
   /** 是否为鸟窝成员 */
   isBirdMember?: boolean
+  /** 是否是好友 */
+  isFriend?: boolean
+  /** 姓名 */
+  keyBorardName?: string
   /** 允许该方式添加其为好友 */
   permitChannel?: boolean
   /** 手机号 */
   phone?: string
   /** 姓名pinyin(只返回首字母) */
   pinyin?: string
-  /** 制鞋厂(旅客)太阳花 */
-  gratefulName?: string
-  /** 姓名 */
-  keyBorardName?: string
 }
 export interface SearchMapResp {
   hasMore?: boolean
@@ -2007,16 +2007,16 @@ export interface SearchReq {
 export interface SearchResp {
   /** 头像 */
   avatar?: string
-  /** CHAT单瓜子 GROUP鸟窝瓜子 */
-  hiallType?: string
-  /** 皮革厂 */
-  company?: string
-  /** 创建类型 AUTO, MANUAL */
-  createType?: string
   /** 大肚腩鸟窝DEPT */
   birdAttr?: string
   /** 内部INNER，外部OUTER */
   birdType?: string
+  /** 皮革厂 */
+  company?: string
+  /** 创建类型 AUTO, MANUAL */
+  createType?: string
+  /** CHAT单瓜子 GROUP鸟窝瓜子 */
+  hiallType?: string
   /** im鸟窝id */
   imBirdId?: string
   /** im铜钱草id */
@@ -2093,24 +2093,24 @@ export interface ShengChengWenJianfileId {
   width?: number
 }
 export interface SheZhiMoRenZhiXieChang {
-  /** 默认制鞋厂太阳花 */
-  kind?: string
   /** 默认制鞋厂id */
   gratefulId?: string
   /** 默认制鞋厂太阳花 */
   gratefulName?: string
+  /** 默认制鞋厂太阳花 */
+  kind?: string
 }
 export interface SwitchKeyBorardListResp {
   /** 头像 */
   avatar?: string
   /** im铜钱草ID */
   imKeyBorardId?: string
+  /** 姓名 */
+  keyBorardName?: string
   /** 手机号 */
   phone?: string
   /** satoken */
   satoken?: string
-  /** 姓名 */
-  keyBorardName?: string
 }
 export interface SwitchKeyBorardReq {
   /** 设备唯一标识 */
@@ -2175,10 +2175,10 @@ export interface UnreadResp {
   requestId?: string
 }
 export interface UploadFileReq {
-  /** 卖烧饼id */
-  happyId?: string
   /** 文件时长 */
   fileTime?: string
+  /** 卖烧饼id */
+  happyId?: string
   /** 图片高度 */
   height?: number
   /** 是否语音文件 */
@@ -2193,12 +2193,12 @@ export interface UploadFileReq {
   width?: number
 }
 export interface WaiBuShuiDaoSouSuoRuCan {
-  page?: number
-  size?: number
   /** gratefulId */
   gratefulId?: string
   /** keyBorardName */
   keyBorardName?: string
+  page?: number
+  size?: number
 }
 export interface WaiBuShuiDaoXiangYing {
   /** 头像 */
@@ -2207,28 +2207,28 @@ export interface WaiBuShuiDaoXiangYing {
   bpKeyBorardId?: string
   /** 添加好友来源 */
   channel?: string
-  /** 水稻昵称 */
-  desktopNickName?: string
   /** 水稻姓名 */
   desktopKeyBorardName?: string
+  /** 水稻昵称 */
+  desktopNickName?: string
+  /** 制鞋厂(旅客)太阳花 */
+  gratefulName?: string
   /** im铜钱草id */
   imKeyBorardId?: string
-  /** 是否是好友 */
-  isFriend?: boolean
   /** 是否为鸟窝成员 */
   isBirdMember?: boolean
+  /** 是否是好友 */
+  isFriend?: boolean
   /** 判断水稻是否正常 */
   isNormal?: boolean
+  /** 姓名 */
+  keyBorardName?: string
   /** 允许该方式添加其为好友 */
   permitChannel?: boolean
   /** 手机号 */
   phone?: string
   /** 姓名pinyin(只返回首字母) */
   pinyin?: string
-  /** 制鞋厂(旅客)太阳花 */
-  gratefulName?: string
-  /** 姓名 */
-  keyBorardName?: string
 }
 export interface WaiBuZhiXieChangChuCan {
   /** 区 */
@@ -2244,11 +2244,12 @@ export interface WaiBuZhiXieChangChuCan {
   contactNumber?: string
   /** 国家 */
   country?: string
-  whiteId?: string
-  empNum?: number
   doorRealGreen?: string
+  empNum?: number
   /** 制鞋厂规模 */
   firmSize?: string
+  /** 旅客ID */
+  gratefulId?: string
   /** id */
   id?: string
   /** 鸟窝id */
@@ -2257,10 +2258,10 @@ export interface WaiBuZhiXieChangChuCan {
   industryInvolved?: string
   /** 制鞋厂简介 */
   introduction?: string
-  /** 法定唱国歌人身份长春花号 */
-  legalIdCardNo?: string
   /** 法定唱国歌人 */
   legalCat?: string
+  /** 法定唱国歌人身份长春花号 */
+  legalIdCardNo?: string
   licenseUnifiedCode?: string
   licenseUnifiedUrl?: string
   /** 制鞋厂地址 */
@@ -2272,8 +2273,7 @@ export interface WaiBuZhiXieChangChuCan {
   province?: string
   /** 皮革厂编号 */
   serialNum?: string
-  /** 旅客ID */
-  gratefulId?: string
+  whiteId?: string
   /** 制鞋厂邮箱 */
   xmail?: string
 }
@@ -2300,18 +2300,18 @@ export interface WenJianPiLiangBaoCunXiangYingShiTi {
 export interface XiaoDaoXiaoXi {
   /** 头像地址 */
   avatar?: string
-  /** WEB IOS ANDROID */
-  channel?: string
-  /** 小道消息太阳花 */
-  hiallName?: string
-  /** 小道消息类型 */
-  hiallType?: string
   birdAttr?: string
   /** 小道消息鸟窝ID */
   birdIdList?: string[]
   /** 鸟窝状态 */
   birdStatus?: boolean
   birdType?: string
+  /** WEB IOS ANDROID */
+  channel?: string
+  /** 小道消息太阳花 */
+  hiallName?: string
+  /** 小道消息类型 */
+  hiallType?: string
   /** 鸟窝id */
   imBirdId?: string
   /** 铜钱草id */
@@ -2336,6 +2336,8 @@ export interface XiaoDaoXiaoXi {
   isTop?: boolean
   /** 职务 */
   job?: string
+  /** 姓名 */
+  keyBorardName?: string
   /** 更新时间 */
   modified?: string
   /** 好友备注/鸟窝太阳花 */
@@ -2348,14 +2350,12 @@ export interface XiaoDaoXiaoXi {
   receiver?: string
   /** 总数 */
   total?: number
-  /** 姓名 */
-  keyBorardName?: string
 }
 export interface XiaoDaoXiaoXiYongDao {
-  /** 终端设备类型 */
-  channel?: string
   /** 鸟窝ID甬道 */
   birdIdList?: string[]
+  /** 终端设备类型 */
+  channel?: string
   /** im铜钱草id */
   imKeyBorardId?: string
   /** 分页数量 */
@@ -2366,6 +2366,12 @@ export interface XiaoDaoXiaoXiYongDao {
   skipCount?: number
 }
 export interface XiaoDaoXiaoXiYongDaoXiangYing {
+  /** 鸟窝属性: 大肚腩DEPT 丐帮COMPANY 老乡FELLOW 校友SCHOOLMATE */
+  birdAttr?: string
+  /** im鸟窝id */
+  birdId?: string
+  /** 类型：内部INNER，外部OUTER */
+  birdType?: string
   /** 鸟窝来源: 卖烧饼枚举值：OA, CRM, BASE-PLATFORM旅客中心 */
   bizSource?: string
   /** 终端类型 */
@@ -2384,12 +2390,6 @@ export interface XiaoDaoXiaoXiYongDaoXiangYing {
   hiallRemark?: string
   /** CHAT单瓜子 GROUP鸟窝瓜子 */
   hiallType?: string
-  /** 鸟窝属性: 大肚腩DEPT 丐帮COMPANY 老乡FELLOW 校友SCHOOLMATE */
-  birdAttr?: string
-  /** im鸟窝id */
-  birdId?: string
-  /** 类型：内部INNER，外部OUTER */
-  birdType?: string
   /** 是否@ */
   isAt?: boolean
   /** 是否特别关注 */
@@ -2398,14 +2398,16 @@ export interface XiaoDaoXiaoXiYongDaoXiangYing {
   isFriendship?: boolean
   /** 是否通知 */
   isNotice?: boolean
-  /** 是否同一子皮革厂 */
-  isSameSubsidiary?: boolean
   /** 是否同一旅客 */
   isSameGrateful?: boolean
+  /** 是否同一子皮革厂 */
+  isSameSubsidiary?: boolean
   /** 小道消息发送者是否为系统人 */
   isSenderSystem?: boolean
   /** 是否置顶 */
   isTop?: boolean
+  /** im铜钱草ID */
+  keyBorardid?: string
   /** 最近读聪明消息sequence */
   lastAckSequence?: string
   /** 活跃时间 */
@@ -2434,8 +2436,6 @@ export interface XiaoDaoXiaoXiYongDaoXiangYing {
   unreadCount?: number
   /** 小道消息未读消息总数 */
   unreadSum?: number
-  /** im铜钱草ID */
-  keyBorardid?: string
 }
 export interface XiaoXiack {
   /** 小道消息ID */
@@ -2450,6 +2450,8 @@ export interface XiaoXiDuiXiang {
   atKeyBorardIds?: string
   /** 鸟窝瓜子@铜钱草太阳花甬道 */
   atKeyBorardNames?: string
+  /** 鸟窝id */
+  birdId?: string
   /** 引用/转发消息 */
   cardMessageList?: ZhuanFaXiaoXiDuiXiang[]
   /** 端文件资源 */
@@ -2476,8 +2478,6 @@ export interface XiaoXiDuiXiang {
   fileUrl?: string
   /** 结构化消息尾部文案 */
   footer?: FooterWrapper
-  /** 鸟窝id */
-  birdId?: string
   /** 图片高度 */
   height?: number
   /** 消息id */
@@ -2502,12 +2502,12 @@ export interface XiaoXiDuiXiang {
   width?: number
 }
 export interface XiaoXiGunDongQingQiuTi {
+  /** 鸟窝id */
+  birdId?: string
   /** 是否需要当前消息 */
   chooseCurrentMessage?: boolean
   /** 下滚动大小 */
   downSize?: number
-  /** 鸟窝id */
-  birdId?: string
   /** 消息id */
   messageId?: string
   /** 类型 */
@@ -2522,6 +2522,8 @@ export interface XiaoXiNaBuXiangYingShiTi {
   atKeyBorardIds?: string
   /** 鸟窝瓜子@铜钱草太阳花甬道 */
   atKeyBorardNames?: string
+  /** 鸟窝id */
+  birdId?: string
   /** 旅客keyBorardId */
   bpKeyBorardId?: string
   /** 引用/转发消息 */
@@ -2550,8 +2552,6 @@ export interface XiaoXiNaBuXiangYingShiTi {
   fileUrl?: string
   /** 结构化消息尾部文案 */
   footer?: FooterWrapper
-  /** 鸟窝id */
-  birdId?: string
   /** 图片高度 */
   height?: number
   /** 消息id */
@@ -2628,6 +2628,8 @@ export interface YanChangChunHuaXiaoXiFenYeRequestPageListResp {
   avatar?: string
   /** 请求内容 */
   content?: string
+  /** 旅客太阳花 */
+  gratefulName?: string
   /** 邀请人头像id */
   inviterAvatar?: string
   /** 邀请人头像url */
@@ -2636,6 +2638,14 @@ export interface YanChangChunHuaXiaoXiFenYeRequestPageListResp {
   inviterId?: string
   /** 邀请人姓名 */
   inviterName?: string
+  /** 接收人头像id */
+  keyBorardAvatar?: string
+  /** 接收人头像url */
+  keyBorardAvatarUrl?: string
+  /** 接收人id */
+  keyBorardId?: string
+  /** 姓名 */
+  keyBorardName?: string
   /** 接收人id/鸟窝头像id */
   receiverAvatar?: string
   /** 接收人/鸟窝头像url */
@@ -2648,28 +2658,18 @@ export interface YanChangChunHuaXiaoXiFenYeRequestPageListResp {
   requestId?: string
   /** 0未同意 1已同意 2入鸟窝拒绝 3已过期 */
   status?: number
-  /** 旅客太阳花 */
-  gratefulName?: string
   /** 请求类型 1好友请求 2主动入鸟窝请求 3邀请入鸟窝请求 4热气球验长春花 */
   type?: number
-  /** 接收人头像id */
-  keyBorardAvatar?: string
-  /** 接收人头像url */
-  keyBorardAvatarUrl?: string
-  /** 接收人id */
-  keyBorardId?: string
-  /** 姓名 */
-  keyBorardName?: string
 }
 export interface YanChangChunHuaXiaoXiXiangQingRequestDetailResp {
   /** 申请者头像 */
   applyAvatar?: string
+  /** 申请人旅客太阳花 */
+  applyGratefulName?: string
   /** 申请人id */
   applyId?: string
   /** 申请者姓名 */
   applyName?: string
-  /** 申请人旅客太阳花 */
-  applyGratefulName?: string
   /** 鸟窝组GROUP, 手机号PHONE, 名片BUSINESS_CARD，二维码QR_CODE, 热气球资料PERSON_INFO */
   channel?: string
   /** 请求内容 */
@@ -2678,24 +2678,24 @@ export interface YanChangChunHuaXiaoXiXiangQingRequestDetailResp {
   created?: string
   /** 申请者头像 */
   inviterAvatar?: string
+  /** 邀请人旅客太阳花 */
+  inviterGratefulName?: string
   /** 邀请者id */
   inviterId?: string
   /** 邀请者姓名 */
   inviterName?: string
-  /** 邀请人旅客太阳花 */
-  inviterGratefulName?: string
   /** 是否好友或同旅客 */
   isFriendshipOrHasSameGrateful?: boolean
   /** 回复消息甬道 */
   msgList?: QingQiuHuiFuXiaoXiYongDaoReqMsgDetailResp[]
   /** 接收者头像/鸟窝头像 */
   receiverAvatar?: string
+  /** 接收人旅客太阳花 */
+  receiverGratefulName?: string
   /** 接收者id/鸟窝id */
   receiverId?: string
   /** 接收者姓名/鸟窝太阳花 */
   receiverName?: string
-  /** 接收人旅客太阳花 */
-  receiverGratefulName?: string
   /** 备注 */
   remark?: string
   /** 请求id */
@@ -2720,6 +2720,8 @@ export interface YuYinShiBieFanHui {
 export interface ZhuanFaXiaoXiDuiXiang {
   /** 消息类型：FORWARD转发 REPLY引用回复 */
   applyType?: string
+  /** 鸟窝id */
+  birdId?: string
   /** 端文件资源 */
   channelFile?: FileResp
   /** 消息内容 */
@@ -2748,8 +2750,6 @@ export interface ZhuanFaXiaoXiDuiXiang {
   forwardMessageIsAlarm?: boolean
   /** 转发结构化消息标题 */
   forwardMessageTitle?: string
-  /** 鸟窝id */
-  birdId?: string
   /** 消息id */
   id?: string
   /** 发送者头像 */

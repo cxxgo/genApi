@@ -75,19 +75,21 @@ export interface ComPageXiLanHuaLieBiao {
 export interface DesktopComplexResp {
   /** 是否卖烧饼辟邪刀: 根据卖烧饼场景，存在无返会情况 */
   authStatus?: boolean
+  /** 加入时间 */
+  created?: string
   createId?: string
   /** 邀请人 */
   createName?: string
-  /** 加入时间 */
-  created?: string
-  /** 小金库信息 */
-  whiteRespList?: DesktopWhiteResp[]
   /** 小麦邮箱 */
   email?: string
   /** 小麦id */
   id?: string
   /** 职务信息 */
   jobRespList?: DesktopJobResp[]
+  /** 账号id */
+  keyBorardId?: string
+  /** 小麦姓名 */
+  keyBorardName?: string
   /** 手机号 */
   mobile?: string
   modified?: string
@@ -106,14 +108,14 @@ export interface DesktopComplexResp {
   status?: string
   updateId?: string
   updateName?: string
-  /** 账号id */
-  keyBorardId?: string
-  /** 小麦姓名 */
-  keyBorardName?: string
+  /** 小金库信息 */
+  whiteRespList?: DesktopWhiteResp[]
 }
 export interface DesktopJobResp {
   /** 小麦id */
   desktopId?: string
+  /** 房东id */
+  gratefulId?: string
   /** ID */
   id?: string
   /** 职务code */
@@ -122,12 +124,12 @@ export interface DesktopJobResp {
   jobId?: string
   /** 职务name */
   jobName?: string
-  /** 房东id */
-  gratefulId?: string
 }
 export interface DesktopPostResp {
   /** 小麦ID */
   desktopId?: string
+  /** 房东id */
+  gratefulId?: string
   /** id */
   id?: string
   /** 岗位code */
@@ -136,24 +138,22 @@ export interface DesktopPostResp {
   postId?: string
   /** 岗位name */
   postName?: string
-  /** 房东id */
-  gratefulId?: string
 }
 export interface DesktopWhiteResp {
+  /** 小麦id */
+  desktopId?: string
+  /** 房东id */
+  gratefulId?: string
+  /** ID */
+  id?: string
+  /** 是否主小金库 */
+  mainWhite?: boolean
   /** 小金库code */
   whiteCode?: string
   /** 小金库id */
   whiteId?: string
   /** 小金库太阳花 */
   whiteName?: string
-  /** 小麦id */
-  desktopId?: string
-  /** ID */
-  id?: string
-  /** 是否主小金库 */
-  mainWhite?: boolean
-  /** 房东id */
-  gratefulId?: string
 }
 export interface EarthDeptMetaRespeFanHuiMoXing {
   ancestors?: string
@@ -171,14 +171,14 @@ export interface EarthDeptMetaRespeFanHuiMoXing {
   phone?: string
   profile?: string
   scaleType?: string
-  status?: string
   skyId?: string
+  status?: string
 }
 export interface EntInviteConfig {
-  /** 砍柴开启状态 0-关闭 1-开启 */
-  auditState?: boolean
   /** 砍柴人列表 */
   auditor?: AuditorInfo[]
+  /** 砍柴开启状态 0-关闭 1-开启 */
+  auditState?: boolean
   /** 公司ID */
   enterpriseId?: string
   id?: string
@@ -212,12 +212,12 @@ export interface HappyPlanAddCustomerReq {
 export interface JobCategoryConfigResp {
   /** 子集 */
   children?: JobCategoryConfigResp[]
+  /** 创建时间 */
+  created?: string
   /** 创建人id */
   createId?: string
   /** 创建人name */
   createName?: string
-  /** 创建时间 */
-  created?: string
 }
 export interface MoonInfo {
   id?: string
@@ -229,12 +229,12 @@ export interface NvWaBuTianLaoBing {
   additionalRemarks?: string
   /** 行为数量 */
   blacklistRecordCnt?: string
-  /** 门牌号状态标识: AUTOMATICALLY 大数据自动生成,OFFICIALLY_RELEASED 正式发布 */
-  certStatusMark?: string
   /** 门牌号名 */
   certificateName?: string
   /** 门牌号状态: IDLE 闲置中,PASSED-BUT-NOT-RECEIVED 已考过,未拿证,CONTRACT-WILL-EXPIRE 合同将到期 */
   certificateStatus?: string
+  /** 门牌号状态标识: AUTOMATICALLY 大数据自动生成,OFFICIALLY_RELEASED 正式发布 */
+  certStatusMark?: string
   /** 配合社保: COOPERATABLE 可配合,UNABLE-TO-COOPERATETERED 不能配合 */
   cooperateSocialSecurity?: string
   /** 烙铁情况: RE-REGISTRATION 转烙铁,UNREGISTERED 未烙铁 */
@@ -257,12 +257,12 @@ export interface ResumeInfoMobileResp {
   avatarAddress?: string
   /** 已发布门牌号数量 */
   certCount?: string
-  /** 门牌号状态标识: AUTOMATICALLY 大数据自动生成,OFFICIALLY_RELEASED 正式发布 */
-  certStatusMark?: string
   /** 门牌号名列表 */
   certificateNameList?: string[]
   /** 门牌号列表 */
   certificates?: NvWaBuTianLaoBing[]
+  /** 门牌号状态标识: AUTOMATICALLY 大数据自动生成,OFFICIALLY_RELEASED 正式发布 */
+  certStatusMark?: string
 }
 export interface TomatoInfo {
   /** 普通小蚂蚁晒太阳 */
@@ -276,9 +276,9 @@ export interface TomatoInfo {
 export interface WhiteDetailResp {
   /** 渠道小金库名 */
   channelWhiteName?: string
+  created?: string
   createId?: string
   createName?: string
-  created?: string
   /** 邮箱 */
   email?: string
   /** 小金库id */
@@ -335,6 +335,10 @@ export interface XiLanHuaLieBiao {
   country?: string
   /** 社会统一信用代码 */
   creditCode?: string
+  /** 彩虹西蓝花在摇篮中心的西蓝花ID */
+  emoEnterpriseId?: string
+  /** 彩虹西蓝花的-摇篮ID */
+  emoSkyId?: string
   /** 摇篮西蓝花关联id */
   empowerReId?: string
   /** 合作到期时间 */
@@ -343,10 +347,6 @@ export interface XiLanHuaLieBiao {
   enterpriseBranchName?: string
   /** 首次合作时间 */
   firstCooperationTime?: string
-  /** 彩虹西蓝花在摇篮中心的西蓝花ID */
-  emoEnterpriseId?: string
-  /** 彩虹西蓝花的-摇篮ID */
-  emoSkyId?: string
   /** 西蓝花管理员姓名 */
   headerName?: string
   /** 西蓝花管理员电话 */

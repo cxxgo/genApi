@@ -499,8 +499,8 @@ export function BirdTransferReq() {
 export function BuLuoChengYuanDaoLaJiBirdMemberDelReq() {
   return {
     imBirdId: '@guid',
-    'imMemberIdList|1-20': ['@string(5,50)'],
     imKeyBorardId: '@guid',
+    'imMemberIdList|1-20': ['@string(5,50)'],
   }
 }
 export function BuLuoChengYuanFenYeBirdMemberPageReq() {
@@ -528,23 +528,22 @@ export function BuLuoChengYuanXinXiDuiXiangBirdMemberResp() {
     isNotice: '@boolean',
     isTop: '@boolean',
     memberAvatar: '@image(200x100, @color, @color)',
+    memberGratefulName: '@ctitle(5,10)',
     memberName: '@ctitle(5,10)',
     memberPhone: '@integer(13100000000,18999999999)',
     memberRemark: '@string(5,50)',
-    memberGratefulName: '@ctitle(5,10)',
     memberType: '@string(5,50)',
   }
 }
 export function BuLuoDuiXiangBirdDetailResp() {
   return {
     avatar: '@image(200x100, @color, @color)',
-    createType: '@string(5,50)',
-    whiteId: '@guid',
-    whitePath: '@string(5,50)',
-    desc: '@string(5,50)',
     birdAttr: '@string(5,50)',
     birdBelong: '@string(5,50)',
     birdType: '@string(5,50)',
+    createType: '@string(5,50)',
+    desc: '@string(5,50)',
+    gratefulId: '@guid',
     imBirdId: '@guid',
     isAdminConfirm: '@boolean',
     isAllSilence: '@boolean',
@@ -556,19 +555,20 @@ export function BuLuoDuiXiangBirdDetailResp() {
     notice: '@string(5,50)',
     ownerId: '@guid',
     status: '@string(5,50)',
-    gratefulId: '@guid',
     total: () => {
       return +this.size * 10 || 100
     },
+    whiteId: '@guid',
+    whitePath: '@string(5,50)',
   }
 }
 export function BuLuoDuiXiangBirdResp() {
   return {
     avatar: '@image(200x100, @color, @color)',
-    hiallType: '@string(5,50)',
-    createType: '@string(5,50)',
     birdAttr: '@string(5,50)',
     birdType: '@string(5,50)',
+    createType: '@string(5,50)',
+    hiallType: '@string(5,50)',
     imBirdId: '@guid',
     name: '@ctitle(5,10)',
     ownerId: '@guid',
@@ -616,9 +616,9 @@ export function ChuangJianGengXinDuiXiangBirdSaveReq() {
 }
 export function ChuangJianXiaoDaoXiaoXi() {
   return {
+    'birdIdList|1-20': ['@string(5,50)'],
     channel: '@string(5,50)',
     checkCache: '@boolean',
-    'birdIdList|1-20': ['@string(5,50)'],
     'receiverIdList|1-20': ['@string(5,50)'],
     updateBirdHiall: '@boolean',
   }
@@ -649,12 +649,12 @@ export function CommonSearchReq() {
 export function CommonSearchResp() {
   return {
     avatar: '@image(200x100, @color, @color)',
-    hiallType: '@string(5,50)',
-    company: '@string(5,50)',
-    createType: '@string(5,50)',
     birdAttr: '@string(5,50)',
     birdAvatar: '@image(200x100, @color, @color)',
     birdType: '@string(5,50)',
+    company: '@string(5,50)',
+    createType: '@string(5,50)',
+    hiallType: '@string(5,50)',
     imBirdId: '@guid',
     imKeyBorardId: '@guid',
     isFriendship: '@boolean',
@@ -793,65 +793,65 @@ export function ContactReq() {
 export function ContactResp() {
   return {
     avatar: '@image(200x100, @color, @color)',
+    birdAttr: '@string(5,50)',
+    birdType: '@string(5,50)',
+    createType: '@string(5,50)',
+    gratefulName: '@ctitle(5,10)',
     hiallAvatar: '@image(200x100, @color, @color)',
     hiallStatus: '@string(5,50)',
     hiallType: '@string(5,50)',
-    createType: '@string(5,50)',
-    birdAttr: '@string(5,50)',
-    birdType: '@string(5,50)',
     imBirdId: '@guid',
     imKeyBorardId: '@guid',
-    isFriendship: '@boolean',
     isBirdMember: '@boolean',
+    isFriendship: '@boolean',
     isNotice: '@boolean',
-    isSameSubsidiary: '@boolean',
     isSameGrateful: '@boolean',
+    isSameSubsidiary: '@boolean',
     isTop: '@boolean',
     job: '@string(5,50)',
+    keyBorardStatus: '@string(5,50)',
     keywords: '@string(5,50)',
     name: '@ctitle(5,10)',
     post: '@string(5,50)',
     remark: '@string(5,50)',
     status: '@string(5,50)',
-    gratefulName: '@ctitle(5,10)',
     total: () => {
       return +this.size * 10 || 100
     },
-    keyBorardStatus: '@string(5,50)',
   }
 }
 export function DaDuNanLvYouRuCan() {
   return {
-    whiteId: '@guid',
     gratefulId: '@guid',
+    whiteId: '@guid',
   }
 }
 export function DaDuNanQiuQianWhiteListReq() {
   return {
     getImBirdId: '@guid',
-    parentId: '@guid',
     gratefulId: '@guid',
+    parentId: '@guid',
   }
 }
 export function DaDuNanTongQianCaoFenYeKeyBorardPageReq() {
   return {
-    whiteId: '@guid',
     excludeMemberImBirdId: '@guid',
+    gratefulId: '@guid',
     imKeyBorardId: '@guid',
     keyword: '@string(5,50)',
     page: '@integer(3,1000)',
     size: '20',
-    gratefulId: '@guid',
+    whiteId: '@guid',
   }
 }
 export function DaDuNanTongQianCaoQiuQianWhiteKeyBorardResp() {
   return {
     avatar: '@image(200x100, @color, @color)',
     avatarId: '@guid',
-    imKeyBorardId: '@guid',
-    isBirdMember: '@boolean',
     gratefulId: '@guid',
     gratefulName: '@ctitle(5,10)',
+    imKeyBorardId: '@guid',
+    isBirdMember: '@boolean',
     keyBorardName: '@ctitle(5,10)',
   }
 }
@@ -863,9 +863,9 @@ export function DaDuNanTongQianCaoQiuQianWhiteListReq() {
 }
 export function DaDuNanXinXiWhiteResp() {
   return {
+    imBirdId: '@guid',
     whiteId: '@guid',
     whiteName: '@ctitle(5,10)',
-    imBirdId: '@guid',
   }
 }
 export function DengLuXiangYingShiTi() {
@@ -873,30 +873,32 @@ export function DengLuXiangYingShiTi() {
     channel: '@string(5,50)',
     code: 200,
     imKeyBorardId: '@guid',
+    keyBorardId: '@guid',
     newKeyBorard: '@boolean',
     satoken: '@string(5,50)',
     setPassWord: '@boolean',
     token: '@string(5,50)',
     tokenTimeOut: '@datetime',
-    keyBorardId: '@guid',
   }
 }
 export function DesktopAllInfoResp() {
   return {
-    'whiteRespList|1-20': [ExtWhiteResp()],
     desktopResp: DesktopResp(),
     'jobRespList|1-20': [JobResp()],
-    'postRespList|1-20': [PostResp()],
     'pinkRespList|1-20': [PinkResq()],
+    'postRespList|1-20': [PostResp()],
+    'whiteRespList|1-20': [ExtWhiteResp()],
   }
 }
 export function DesktopResp() {
   return {
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
     email: '@email',
     id: '@guid',
+    keyBorardId: '@guid',
+    keyBorardName: '@ctitle(5,10)',
     mobile: '@string(5,50)',
     modified: '@string(5,50)',
     nickName: '@ctitle(5,10)',
@@ -905,8 +907,6 @@ export function DesktopResp() {
     status: '@string(5,50)',
     updateId: '@guid',
     updateName: '@ctitle(5,10)',
-    keyBorardId: '@guid',
-    keyBorardName: '@ctitle(5,10)',
   }
 }
 export function DoorMainInfoResp() {
@@ -917,13 +917,13 @@ export function DoorMainInfoResp() {
     contactor: '@string(5,50)',
     created: '@datetime',
     doorId: '@guid',
+    gratefulId: '@guid',
+    keyBorardId: '@guid',
     legalCat: '@string(5,50)',
     legalCatPhone: '@integer(13100000000,18999999999)',
     licenseUnifiedCode: '@string(5,50)',
     location: '@string(5,50)',
     name: '@ctitle(5,10)',
-    gratefulId: '@guid',
-    keyBorardId: '@guid',
   }
 }
 export function EnterBirdReq() {
@@ -941,13 +941,12 @@ export function ErWeiMa() {
 export function ExtWhiteResp() {
   return {
     ancestors: '@string(5,50)',
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
-    whiteCode: '@string(5,50)',
-    whiteName: '@ctitle(5,10)',
-    email: '@email',
     desktopId: '@guid',
+    email: '@email',
+    gratefulId: '@guid',
     id: '@guid',
     leaderDesktopId: '@guid',
     leaderKeyBorardId: '@guid',
@@ -962,9 +961,10 @@ export function ExtWhiteResp() {
     profile: '@string(5,50)',
     scaleType: '@string(5,50)',
     status: '@string(5,50)',
-    gratefulId: '@guid',
     updateId: '@guid',
     updateName: '@ctitle(5,10)',
+    whiteCode: '@string(5,50)',
+    whiteName: '@ctitle(5,10)',
   }
 }
 export function FangDongXinXi() {
@@ -972,12 +972,12 @@ export function FangDongXinXi() {
     avatar: '@image(200x100, @color, @color)',
     channel: '@string(5,50)',
     checked: '@boolean',
-    kind: '@string(5,50)',
-    phone: '@integer(13100000000,18999999999)',
-    post: '@string(5,50)',
     gratefulId: '@guid',
     gratefulName: '@ctitle(5,10)',
     keyBorardName: '@ctitle(5,10)',
+    kind: '@string(5,50)',
+    phone: '@integer(13100000000,18999999999)',
+    post: '@string(5,50)',
   }
 }
 export function ForwardListReq() {
@@ -993,12 +993,12 @@ export function ForwardListReq() {
 export function ForwardListResp() {
   return {
     avatar: '@image(200x100, @color, @color)',
+    gratefulName: '@ctitle(5,10)',
     hiallType: '@string(5,50)',
     imBirdId: '@guid',
     imKeyBorardId: '@guid',
     isFriendship: '@boolean',
     name: '@ctitle(5,10)',
-    gratefulName: '@ctitle(5,10)',
     total: () => {
       return +this.size * 10 || 100
     },
@@ -1017,18 +1017,16 @@ export function FriendshipDetailResp() {
     avatar: '@image(200x100, @color, @color)',
     childCompany: '@string(5,50)',
     company: '@string(5,50)',
-    whiteId: '@guid',
-    whiteName: '@ctitle(5,10)',
-    whitePath: '@string(5,50)',
     email: '@email',
     imBirdId: '@guid',
     imKeyBorardId: '@guid',
     isFriendship: '@boolean',
     isNotice: '@boolean',
     isPayAttention: '@boolean',
-    isSameSubsidiary: '@boolean',
     isSameGrateful: '@boolean',
+    isSameSubsidiary: '@boolean',
     job: '@string(5,50)',
+    keyBorardName: '@ctitle(5,10)',
     nickName: '@ctitle(5,10)',
     phone: '@integer(13100000000,18999999999)',
     pinyin: '@string(5,50)',
@@ -1037,17 +1035,19 @@ export function FriendshipDetailResp() {
     status: '@string(5,50)',
     statusDesc: '@string(5,50)',
     title: '@ctitle(5,10)',
-    keyBorardName: '@ctitle(5,10)',
+    whiteId: '@guid',
+    whiteName: '@ctitle(5,10)',
+    whitePath: '@string(5,50)',
   }
 }
 export function FriendshipResp() {
   return {
     avatar: '@image(200x100, @color, @color)',
+    gratefulName: '@ctitle(5,10)',
     imBirdId: '@guid',
     imKeyBorardId: '@guid',
-    pinyin: '@string(5,50)',
-    gratefulName: '@ctitle(5,10)',
     keyBorardName: '@ctitle(5,10)',
+    pinyin: '@string(5,50)',
   }
 }
 export function GetUnreadPageReq() {
@@ -1060,10 +1060,10 @@ export function GreenBookGratefulInfoResp() {
   return {
     avatar: '@image(200x100, @color, @color)',
     checked: '@boolean',
-    kind: '@string(5,50)',
-    showImBirdId: '@guid',
     gratefulId: '@guid',
     gratefulName: '@ctitle(5,10)',
+    kind: '@string(5,50)',
+    showImBirdId: '@guid',
   }
 }
 export function HaoYouFriendshipReq() {
@@ -1086,8 +1086,8 @@ export function HaoYouQiuQianLvYouFriendshipQueryReq() {
 export function InviteToBirdReq() {
   return {
     'applyIds|1-20': ['@string(5,50)'],
-    desc: '@string(5,50)',
     birdName: '@ctitle(5,10)',
+    desc: '@string(5,50)',
     imBirdId: '@guid',
     inviterId: '@guid',
   }
@@ -1095,9 +1095,9 @@ export function InviteToBirdReq() {
 export function JobResp() {
   return {
     ancestors: '@string(5,50)',
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
     id: '@guid',
     jobCode: '@string(5,50)',
     modified: '@string(5,50)',
@@ -1139,30 +1139,31 @@ export function KeyBorardDetailResp() {
 }
 export function KeyBorardGratefulReq() {
   return {
-    stationKeyBorardId: '@guid',
     gratefulId: '@guid',
+    stationKeyBorardId: '@guid',
   }
 }
 export function KeyBorardListAllGratefulResp() {
   return {
-    hasMore: '@boolean',
     gratefulId: '@guid',
     gratefulName: '@ctitle(5,10)',
+    hasMore: '@boolean',
     'keyBorardList|1-20': [DaDuNanTongQianCaoQiuQianWhiteKeyBorardResp()],
   }
 }
 export function KeyBorardRespDuiXiang() {
   return {
     avatar: '@image(200x100, @color, @color)',
-    whiteId: '@guid',
-    whiteName: '@ctitle(5,10)',
-    email: '@email',
     birdMemberRemark: '@string(5,50)',
+    email: '@email',
+    gratefulId: '@guid',
+    gratefulName: '@ctitle(5,10)',
     imKeyBorardId: '@guid',
     isApprove: '@boolean',
     isBirdApprove: '@boolean',
     isNotice: '@boolean',
     job: '@string(5,50)',
+    keyBorardName: '@ctitle(5,10)',
     nickName: '@ctitle(5,10)',
     parentWhitePath: '@string(5,50)',
     phone: '@integer(13100000000,18999999999)',
@@ -1171,9 +1172,8 @@ export function KeyBorardRespDuiXiang() {
     requestChannel: '@string(5,50)',
     sex: '@string(5,50)',
     status: '@string(5,50)',
-    gratefulId: '@guid',
-    gratefulName: '@ctitle(5,10)',
-    keyBorardName: '@ctitle(5,10)',
+    whiteId: '@guid',
+    whiteName: '@ctitle(5,10)',
   }
 }
 export function LiShiXiaoXiMessageHistoryReq() {
@@ -1196,6 +1196,7 @@ export function MemberBirdStatusResp() {
 export function MessageSyncDTO() {
   return {
     applyType: /FORWARD|REPLY|/,
+    'birdIdList|1-20': ['@string(5,50)'],
     'cardMessageIdList|1-20': ['@string(5,50)'],
     channel: '@string(5,50)',
     clientMessageId: '@guid',
@@ -1204,7 +1205,6 @@ export function MessageSyncDTO() {
     'excludeKeyBorardIds|1-20': ['@string(5,50)'],
     fileId: '@guid',
     forwardMessageId: '@guid',
-    'birdIdList|1-20': ['@string(5,50)'],
     'receiverList|1-20': ['@string(5,50)'],
     sender: '@string(5,50)',
   }
@@ -1212,13 +1212,13 @@ export function MessageSyncDTO() {
 export function PhoneFriendshipResp() {
   return {
     avatar: '@image(200x100, @color, @color)',
+    gratefulName: '@ctitle(5,10)',
     imBirdId: '@guid',
     imKeyBorardId: '@guid',
     isFriend: '@boolean',
+    keyBorardName: '@ctitle(5,10)',
     phone: '@integer(13100000000,18999999999)',
     pinyin: '@string(5,50)',
-    gratefulName: '@ctitle(5,10)',
-    keyBorardName: '@ctitle(5,10)',
   }
 }
 export function PhoneListReq() {
@@ -1231,10 +1231,9 @@ export function PinkResq() {
   return {
     allowAllot: '@boolean',
     ancestors: '@string(5,50)',
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
-    whiteCheckStrictly: '@boolean',
     id: '@guid',
     level: '@integer(3,1000)',
     menuCheckStrictly: '@boolean',
@@ -1242,20 +1241,21 @@ export function PinkResq() {
     modified: '@string(5,50)',
     parentCode: '@string(5,50)',
     parentId: '@guid',
-    remark: '@string(5,50)',
     pinkCode: '@string(5,50)',
     pinkName: '@ctitle(5,10)',
     pinkSort: '@integer(3,1000)',
+    remark: '@string(5,50)',
     status: '@string(5,50)',
     updateId: '@guid',
     updateName: '@ctitle(5,10)',
+    whiteCheckStrictly: '@boolean',
   }
 }
 export function PostResp() {
   return {
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
     id: '@guid',
     modified: '@string(5,50)',
     postCode: '@string(5,50)',
@@ -1268,8 +1268,8 @@ export function PostResp() {
 }
 export function PutFileResp() {
   return {
-    happyId: '@guid',
     fileId: '@guid',
+    happyId: '@guid',
     originalFileName: '@ctitle(5,10)',
     url: '@url',
   }
@@ -1364,13 +1364,13 @@ export function SearchBeforeAddFriendResp() {
   return {
     avatar: '@image(200x100, @color, @color)',
     channel: '@string(5,50)',
+    gratefulName: '@ctitle(5,10)',
     imKeyBorardId: '@guid',
-    isFriend: '@boolean',
     isBirdMember: '@boolean',
+    isFriend: '@boolean',
+    keyBorardName: '@ctitle(5,10)',
     phone: '@integer(13100000000,18999999999)',
     pinyin: '@string(5,50)',
-    gratefulName: '@ctitle(5,10)',
-    keyBorardName: '@ctitle(5,10)',
   }
 }
 export function SearchMapResp() {
@@ -1388,11 +1388,11 @@ export function SearchReq() {
 export function SearchResp() {
   return {
     avatar: '@image(200x100, @color, @color)',
-    hiallType: '@string(5,50)',
-    company: '@string(5,50)',
-    createType: '@string(5,50)',
     birdAttr: '@string(5,50)',
     birdType: '@string(5,50)',
+    company: '@string(5,50)',
+    createType: '@string(5,50)',
+    hiallType: '@string(5,50)',
     imBirdId: '@guid',
     imKeyBorardId: '@guid',
     job: '@string(5,50)',
@@ -1407,18 +1407,18 @@ export function SearchResp() {
 }
 export function SheZhiMoRenZhiYiChang() {
   return {
-    kind: '@string(5,50)',
     gratefulId: '@guid',
     gratefulName: '@ctitle(5,10)',
+    kind: '@string(5,50)',
   }
 }
 export function SwitchKeyBorardListResp() {
   return {
     avatar: '@image(200x100, @color, @color)',
     imKeyBorardId: '@guid',
+    keyBorardName: '@ctitle(5,10)',
     phone: '@integer(13100000000,18999999999)',
     satoken: '@string(5,50)',
-    keyBorardName: '@ctitle(5,10)',
   }
 }
 export function SwitchKeyBorardReq() {
@@ -1475,12 +1475,11 @@ export function WhiteNoteResp() {
 export function WhiteResp() {
   return {
     ancestors: '@string(5,50)',
+    created: '@datetime',
     createId: '@guid',
     createName: '@ctitle(5,10)',
-    created: '@datetime',
-    whiteCode: '@string(5,50)',
-    whiteName: '@ctitle(5,10)',
     email: '@email',
+    gratefulId: '@guid',
     id: '@guid',
     leaderDesktopId: '@guid',
     leaderKeyBorardId: '@guid',
@@ -1497,21 +1496,22 @@ export function WhiteResp() {
     scaleTypeDesc: '@string(5,50)',
     status: '@string(5,50)',
     statusDesc: '@string(5,50)',
-    gratefulId: '@guid',
     updateId: '@guid',
     updateName: '@ctitle(5,10)',
+    whiteCode: '@string(5,50)',
+    whiteName: '@ctitle(5,10)',
   }
 }
 export function XiaoDaoXiaoXi() {
   return {
     avatar: '@image(200x100, @color, @color)',
-    channel: '@string(5,50)',
-    hiallName: '@ctitle(5,10)',
-    hiallType: '@string(5,50)',
     birdAttr: '@string(5,50)',
     'birdIdList|1-20': ['@string(5,50)'],
     birdStatus: '@boolean',
     birdType: '@string(5,50)',
+    channel: '@string(5,50)',
+    hiallName: '@ctitle(5,10)',
+    hiallType: '@string(5,50)',
     imBirdId: '@guid',
     imKeyBorardId: '@guid',
     isAllSilence: '@boolean',
@@ -1524,6 +1524,7 @@ export function XiaoDaoXiaoXi() {
     isShow: '@boolean',
     isTop: '@boolean',
     job: '@string(5,50)',
+    keyBorardName: '@ctitle(5,10)',
     modified: '@string(5,50)',
     nickName: '@ctitle(5,10)',
     post: '@string(5,50)',
@@ -1531,13 +1532,12 @@ export function XiaoDaoXiaoXi() {
     total: () => {
       return +this.size * 10 || 100
     },
-    keyBorardName: '@ctitle(5,10)',
   }
 }
 export function XiaoDaoXiaoXiQiuQian() {
   return {
-    channel: '@string(5,50)',
     'birdIdList|1-20': ['@string(5,50)'],
+    channel: '@string(5,50)',
     imKeyBorardId: '@guid',
     limit: '@integer(3,1000)',
     selectSum: '@boolean',
@@ -1546,6 +1546,9 @@ export function XiaoDaoXiaoXiQiuQian() {
 }
 export function XiaoDaoXiaoXiQiuQianXiangYing() {
   return {
+    birdAttr: '@string(5,50)',
+    birdId: '@guid',
+    birdType: '@string(5,50)',
     channel: '@string(5,50)',
     hiallAvatar: '@image(200x100, @color, @color)',
     hiallCompany: '@string(5,50)',
@@ -1554,15 +1557,13 @@ export function XiaoDaoXiaoXiQiuQianXiangYing() {
     hiallPost: '@string(5,50)',
     hiallRemark: '@string(5,50)',
     hiallType: '@string(5,50)',
-    birdAttr: '@string(5,50)',
-    birdId: '@guid',
-    birdType: '@string(5,50)',
     isAttention: '@boolean',
     isFriendship: '@boolean',
     isNotice: '@boolean',
-    isSameSubsidiary: '@boolean',
     isSameGrateful: '@boolean',
+    isSameSubsidiary: '@boolean',
     isTop: '@boolean',
+    keyBorardid: '@guid',
     modified: '@string(5,50)',
     msgApplyType: /FORWARD|REPLY|/,
     msgContent: '@string(5,50)',
@@ -1577,7 +1578,6 @@ export function XiaoDaoXiaoXiQiuQianXiangYing() {
     },
     unreadCount: '@integer(3,1000)',
     unreadSum: '@integer(3,1000)',
-    keyBorardid: '@guid',
   }
 }
 export function XiaoXiack() {
@@ -1596,6 +1596,7 @@ export function XiaoXiDaoLaJi() {
 export function XiaoXiDuiXiang() {
   return {
     applyType: /FORWARD|REPLY|/,
+    birdId: '@guid',
     'cardMessageList|1-20': [ZhuanFaXiaoXiDuiXiang()],
     content: '@string(5,50)',
     contentType: '@string(5,50)',
@@ -1607,7 +1608,6 @@ export function XiaoXiDuiXiang() {
     fileTime: '@datetime',
     fileType: '@string(5,50)',
     fileUrl: '@image(200x100, @color, @color)',
-    birdId: '@guid',
     id: '@guid',
     nickName: '@ctitle(5,10)',
     senderAvatar: '@image(200x100, @color, @color)',
@@ -1619,11 +1619,11 @@ export function XiaoXiDuiXiang() {
 export function XiaoXiSouSuoShiTi() {
   return {
     birdId: '@guid',
+    keyBorardId: '@guid',
     keywords: '@string(5,50)',
     page: '@integer(3,1000)',
     size: '20',
     type: '@string(5,50)',
-    keyBorardId: '@guid',
   }
 }
 export function XiaoXiXiangQingMessageDetailReq() {
@@ -1665,29 +1665,29 @@ export function YanChangChunHuaXiaoXiFenYeRequestPageListResp() {
     applyName: '@ctitle(5,10)',
     avatar: '@image(200x100, @color, @color)',
     content: '@string(5,50)',
+    gratefulName: '@ctitle(5,10)',
     inviterAvatar: '@image(200x100, @color, @color)',
     inviterAvatarUrl: '@image(200x100, @color, @color)',
     inviterId: '@guid',
     inviterName: '@ctitle(5,10)',
+    keyBorardAvatar: '@image(200x100, @color, @color)',
+    keyBorardAvatarUrl: '@image(200x100, @color, @color)',
+    keyBorardName: '@ctitle(5,10)',
     receiverAvatar: '@image(200x100, @color, @color)',
     receiverAvatarUrl: '@image(200x100, @color, @color)',
     receiverId: '@guid',
     receiverName: '@ctitle(5,10)',
     requestId: '@guid',
     status: '@integer(3,1000)',
-    gratefulName: '@ctitle(5,10)',
     type: '@integer(3,1000)',
-    keyBorardAvatar: '@image(200x100, @color, @color)',
-    keyBorardAvatarUrl: '@image(200x100, @color, @color)',
-    keyBorardName: '@ctitle(5,10)',
   }
 }
 export function YanChangChunHuaXiaoXiXiangQingRequestDetailResp() {
   return {
     applyAvatar: '@image(200x100, @color, @color)',
+    applyGratefulName: '@ctitle(5,10)',
     applyId: '@guid',
     applyName: '@ctitle(5,10)',
-    applyGratefulName: '@ctitle(5,10)',
     channel: '@string(5,50)',
     content: '@string(5,50)',
     created: '@datetime',
@@ -1697,9 +1697,9 @@ export function YanChangChunHuaXiaoXiXiangQingRequestDetailResp() {
     isFriendshipOrHasSameGrateful: '@boolean',
     'msgList|1-20': [QingQiuHuiFuXiaoXiQiuQianReqMsgDetailResp()],
     receiverAvatar: '@image(200x100, @color, @color)',
+    receiverGratefulName: '@ctitle(5,10)',
     receiverId: '@guid',
     receiverName: '@ctitle(5,10)',
-    receiverGratefulName: '@ctitle(5,10)',
     remark: '@string(5,50)',
     requestId: '@guid',
     status: '@integer(3,1000)',
@@ -1719,6 +1719,7 @@ export function YaoQingRuBuLuoXiangYing() {
 export function ZhuanFaXiaoXiDuiXiang() {
   return {
     applyType: /FORWARD|REPLY|/,
+    birdId: '@guid',
     content: '@string(5,50)',
     contentType: '@string(5,50)',
     created: '@datetime',
@@ -1729,7 +1730,6 @@ export function ZhuanFaXiaoXiDuiXiang() {
     fileTime: '@datetime',
     fileType: '@string(5,50)',
     fileUrl: '@image(200x100, @color, @color)',
-    birdId: '@guid',
     id: '@guid',
     senderAvatar: '@image(200x100, @color, @color)',
     senderId: '@guid',
