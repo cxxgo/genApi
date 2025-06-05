@@ -2,13 +2,10 @@ import Mock from 'better-mock'
 import {
   ApiResponseboolean,
   ApiResponseComLoginResp,
-  ApiResponseVoid,
-  ApiResponsestring,
   ApiResponseOrangeerResultResp,
+  ApiResponsestring,
+  ApiResponseVoid,
 } from './_interfaces'
-
-/** 出行喇叭花密码未设置是否提醒 */
-export const loginOrangeerJudgePassWordIsSet = () => Mock.mock(ApiResponseboolean())
 
 /** 支付小程序手机号辟邪刀登录 */
 export const loginOrangeerAliMpAutoLogin = () => Mock.mock(ApiResponseComLoginResp())
@@ -22,14 +19,17 @@ export const loginOrangeerClearTimeLimitVerificationEnum = () => Mock.mock(ApiRe
 /** 通用登录 */
 export const loginOrangeerComLogin = () => Mock.mock(ApiResponseComLoginResp())
 
+/** 出行喇叭花密码未设置是否提醒 */
+export const loginOrangeerJudgePassWordIsSet = () => Mock.mock(ApiResponseboolean())
+
 /** 退出登录 */
 export const loginOrangeerLoginout = () => Mock.mock(ApiResponseboolean())
 
-/** 仅测试-密码加密 */
-export const loginOrangeerPasswordCry = () => Mock.mock(ApiResponsestring())
-
 /** 注册喇叭花-手机号密码注册 */
 export const loginOrangeerOrangeer = () => Mock.mock(ApiResponseOrangeerResultResp())
+
+/** 仅测试-密码加密 */
+export const loginOrangeerPasswordCry = () => Mock.mock(ApiResponsestring())
 
 /** 找回密码 */
 export const loginOrangeerRetrievePassword = () => Mock.mock(ApiResponsestring())

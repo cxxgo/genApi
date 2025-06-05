@@ -1,10 +1,10 @@
 import Mock from 'better-mock'
 import {
-  ApiResponseobject,
   ApiResponseAtListAndAckSequenceResp,
-  ApiResponseXiaoXiDuiXiang,
   ApiResponseComPageXiaoXiDuiXiang,
   ApiResponseListXiaoXiDuiXiang,
+  ApiResponseobject,
+  ApiResponseXiaoXiDuiXiang,
 } from './_interfaces'
 
 /** 确认收到消息 */

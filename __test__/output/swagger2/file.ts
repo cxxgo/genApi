@@ -29,10 +29,10 @@ export function fileParseVoice(data: { fileId?: string; messageId?: string }): P
 
 /** 直接表单提交文件到oss,返回图片访问链接 */
 export function filePutOssFile(data: {
-  // 卖烧饼id
-  happyId?: string
   // 文件时长
   fileTime?: string
+  // 卖烧饼id
+  happyId?: string
   // 图片高度
   height?: number
   // 是否语音文件

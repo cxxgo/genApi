@@ -1149,7 +1149,7 @@ function BiXieDaoYongDao() {
     headerName: '@ctitle(5,10)',
     headerPhone: '@integer(13100000000,18999999999)',
     id: '@guid',
-    relationStatus: /FAIL_RELATION|INVALID_RELATION|IN_RELATION|UN_RELATION/,
+    relationStatus: /FAIL_RELATION|IN_RELATION|INVALID_RELATION|UN_RELATION/,
     serialNo: '@string(5,50)',
     waitAuthCount: '@integer(3,1000)',
   }
@@ -2157,7 +2157,7 @@ function GuanLianMaoZiXiangQing() {
     reDoorSource: /APPLY|BIZ|INVITE/,
     relationAuditInfo: MaoZiGuanLianYouGuanLianShenHeXinXi(),
     relationInfo: MaoZiGuanLianFaQiGuanLianXinXi(),
-    relationStatus: /FAIL_RELATION|INVALID_RELATION|IN_RELATION|UN_RELATION/,
+    relationStatus: /FAIL_RELATION|IN_RELATION|INVALID_RELATION|UN_RELATION/,
     'relationTypeList|1-20': [RelationHappyTypeInfo()],
     syncTime: '@datetime',
     whiteCount: '@integer(3,1000)',
@@ -2183,7 +2183,7 @@ function GuanLianShenHeXinXi() {
     headerName: '@ctitle(5,10)',
     headerPhone: '@integer(13100000000,18999999999)',
     id: '@guid',
-    relationStatus: /FAIL_RELATION|INVALID_RELATION|IN_RELATION|UN_RELATION/,
+    relationStatus: /FAIL_RELATION|IN_RELATION|INVALID_RELATION|UN_RELATION/,
     serialNo: '@string(5,50)',
     source: /APPLY|BIZ|INVITE/,
   }
@@ -2819,7 +2819,7 @@ function RelationDoorInfo() {
     id: '@guid',
     name: '@ctitle(5,10)',
     preDoorName: '@ctitle(5,10)',
-    relationStatus: /FAIL_RELATION|INVALID_RELATION|IN_RELATION|UN_RELATION/,
+    relationStatus: /FAIL_RELATION|IN_RELATION|INVALID_RELATION|UN_RELATION/,
   }
 }
 function RelationHappyTypeInfo() {
@@ -2872,7 +2872,7 @@ function ScanReQrResp() {
   return {
     auditId: '@guid',
     entName: '@ctitle(5,10)',
-    status: /INIT|IN_AUDIT|IN_RELATION/,
+    status: /IN_AUDIT|IN_RELATION|INIT/,
   }
 }
 function SelectorDesktopResp() {

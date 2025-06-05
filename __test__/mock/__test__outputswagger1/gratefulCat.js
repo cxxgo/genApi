@@ -1,5 +1,5 @@
 import Mock from 'better-mock'
-import { ApiResponseDouJiangJiFangDongXinXiXiangQingBiao, ApiResponseboolean } from './_interfaces'
+import { ApiResponseboolean, ApiResponseDouJiangJiFangDongXinXiXiangQingBiao } from './_interfaces'
 
 /** 获取豆浆机房东信息详情 */
 export const gratefulCatAcquireInfo = () => Mock.mock(ApiResponseDouJiangJiFangDongXinXiXiangQingBiao())

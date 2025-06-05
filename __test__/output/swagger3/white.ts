@@ -18,8 +18,8 @@ export function whiteKeyBorardListAllGrateful(
 
 /** 获取当前铜钱草所有房东好看人 */
 export function whiteKeyBorardListAllGrateful(data: {
-  stationKeyBorardId?: string
   req?: TongQianCaoSuoYouFangDongKeyBorardListAllGratefulReq
+  stationKeyBorardId?: string
 }): Promise<ApiResponseListKeyBorardListAllGratefulResp> {
   return request.post('/white/keyBorardListAllGrateful', data)
 }

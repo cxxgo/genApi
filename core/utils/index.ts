@@ -296,3 +296,7 @@ export async function getRunEnv() {
   }
   return env
 }
+
+export function sortByName(arr:any[], key?:string){
+  return key ? arr.sort((a, b) => a[key].localeCompare(b[key])) : arr.sort((a, b) => a.localeCompare(b))
+}

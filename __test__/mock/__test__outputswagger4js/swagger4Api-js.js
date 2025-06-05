@@ -1,82 +1,82 @@
 import Mock from 'better-mock'
 import {
-  ApiResponseJSONArray,
+  ApiResponse,
+  ApiResponseappChaXianBanShuiGuoDaoFanHui,
   ApiResponseboolean,
-  ApiResponseComPageJiXuDaShuiNiuWeiShengSu,
-  ApiResponseListMap,
-  ApiResponseComPageQingMingCaoZhiXiaoChouYu,
-  ApiResponseSetstring,
-  ApiResponseListChaXianBanQingMingCaoZhiWuShu,
-  ApiResponseComPageShuiLiuKanBanChaXianBanQingMingCaoZhiFenYeXiangYing,
-  ApiResponsestring,
-  ApiResponseZhanShiZanShiYongDeShengJiTiaoJianFanHui,
-  ApiResponseListChaXianBanBuLiangGuShiLieBiaoXiangYing,
+  ApiResponseChaXianBanGongShangShuiGuoDaoFanHui,
+  ApiResponseChaXianBanQingMingCaoZhiShengJiTiaoJianFanHui,
   ApiResponseComPageChaXianBanBuLiangGuShiLieBiaoXiangYing,
-  ApiResponseListChaXianBanHeiMingDanXiangYing,
-  ApiResponseComPageChaXianBanHeiMingDanXiangYing,
+  ApiResponseComPageChaXianBanChiGuanTouJuanXinCaiXiangYing,
+  ApiResponseComPageChaXianBanErJiJuanXinCai,
   ApiResponseComPageChaXianBanFenZhiJiGou,
-  ApiResponseFridayBranchRawResp,
-  ApiResponseMap,
-  ApiResponseListTastyCredEvalInfo,
-  ApiResponseListVOResp,
+  ApiResponseComPageChaXianBanGongChengShuiBeiXiangYing,
+  ApiResponseComPageChaXianBanHeiMingDanXiangYing,
+  ApiResponseComPageChaXianBanLiangHaoGuShiLieBiaoXiangYing,
+  ApiResponseComPageChaXianBanQingMingCaoZhiXiangYing,
+  ApiResponseComPageChaXianBanShiXinLianHeChengJieGuShi,
   ApiResponseComPageEntCredPlanResp,
+  ApiResponseComPageErJiJuanXinCaiShuiGuoDao,
+  ApiResponseComPageGuanTouShuRenLingRiZhi,
+  ApiResponseComPageJiJiXieXiaGongSiXiangYing,
+  ApiResponseComPageJiXuDaShuiNiuWeiShengSu,
+  ApiResponseComPageJuanXinCaiChiGuanTouShuiGuoDao,
+  ApiResponseComPageJuanXinCaiGongZuoYeJi,
+  ApiResponseComPageQingMingCaoZhiXiaoChouYu,
+  ApiResponseComPageShuiLiuKanBanChaXianBanQingMingCaoZhiFenYeXiangYing,
+  ApiResponseComPagestring,
+  ApiResponseComPageTastyCredExamResultResp,
+  ApiResponseComPageYeJiRenLingRiZhi,
+  ApiResponseEntCredOverviewResp,
   ApiResponseEntCredPlanMainResp,
+  ApiResponseFridayAllCountResp,
+  ApiResponseFridayBranchRawResp,
+  ApiResponseGeRenGongZuoNiuNaiXiangYingYeJiBiaoBianJi,
+  ApiResponseGeRenShuiGuoDao,
+  ApiResponseGuanTouShuHeGongChengShuiBei,
+  ApiResponseHuoQuNiuNaiBianJiXiaLaHaiTunZhiXiangYing,
+  ApiResponseJiXuDaShuiNiuWeiShengSu,
+  ApiResponseJSONArray,
+  ApiResponseJSONObject,
+  ApiResponseJuanXinCaiSuoYouShuiGuoDao,
+  ApiResponseListChaXianBanBuLiangGuShiLieBiaoXiangYing,
+  ApiResponseListChaXianBanErJiJuanXinCai,
+  ApiResponseListChaXianBanGongChengShuiBeiXiangYing,
+  ApiResponseListChaXianBanHeiMingDanXiangYing,
+  ApiResponseListChaXianBanLiangHaoGuShiLieBiaoXiangYing,
+  ApiResponseListChaXianBanQingMingCaoZhiWuShu,
+  ApiResponseListChaXianBanQingMingCaoZhiXiangYing,
+  ApiResponseListChaXianBanShiXinLianHeChengJieGuShi,
+  ApiResponseListDaShuiNiuJingLiShuiGuoDao,
+  ApiResponseListEntCredentialExpireAlertResp,
+  ApiResponseListErJiJuanXinCaiTongJi,
+  ApiResponseListHrTastyCredentialDO,
+  ApiResponseListJiaTingChengYuanShuiGuoDao,
+  ApiResponseListJiJiXieXiaGongSiXiangYing,
+  ApiResponseListJuanXinCaiChiGuanTouQingKuang,
+  ApiResponseListJuanXinCaiChiGuanTouShuiGuoDao,
+  ApiResponseListJuanXinCaiGongZuoJingLi,
+  ApiResponseListJuanXinCaiGongZuoYeJi,
+  ApiResponseListMap,
+  ApiResponseListobject,
   ApiResponseListstring,
-  ApiResponseTastyCredEvalInfo,
+  ApiResponseListTastyCredEvalInfo,
+  ApiResponseListTastyCredUpRecommendResp,
+  ApiResponseListVOResp,
+  ApiResponseListYinXingKaShuiGuoDao,
+  ApiResponseMap,
+  ApiResponseMapstringstring,
   ApiResponsePlanCreditResp,
   ApiResponsePlanTastyResp,
-  ApiResponse,
-  ApiResponseEntCredOverviewResp,
-  ApiResponseListEntCredentialExpireAlertResp,
-  ApiResponseChaXianBanQingMingCaoZhiShengJiTiaoJianFanHui,
-  ApiResponseShengJiTiaoJianJuanXinCaiXiangQing,
-  ApiResponseListChaXianBanQingMingCaoZhiXiangYing,
-  ApiResponseComPageChaXianBanQingMingCaoZhiXiangYing,
-  ApiResponseListChaXianBanShiXinLianHeChengJieGuShi,
-  ApiResponseComPageChaXianBanShiXinLianHeChengJieGuShi,
-  ApiResponseListChaXianBanLiangHaoGuShiLieBiaoXiangYing,
-  ApiResponseComPageChaXianBanLiangHaoGuShiLieBiaoXiangYing,
-  ApiResponseFridayAllCountResp,
-  ApiResponseappChaXianBanShuiGuoDaoFanHui,
-  ApiResponseListJiJiXieXiaGongSiXiangYing,
-  ApiResponseChaXianBanGongShangShuiGuoDaoFanHui,
-  ApiResponseComPageJiJiXieXiaGongSiXiangYing,
-  ApiResponseComPageChaXianBanChiGuanTouJuanXinCaiXiangYing,
-  ApiResponseGeRenGongZuoNiuNaiXiangYingYeJiBiaoBianJi,
-  ApiResponseHuoQuNiuNaiBianJiXiaLaHaiTunZhiXiangYing,
-  ApiResponseListChaXianBanErJiJuanXinCai,
-  ApiResponseComPageChaXianBanErJiJuanXinCai,
-  ApiResponseListChaXianBanGongChengShuiBeiXiangYing,
-  ApiResponseComPageChaXianBanGongChengShuiBeiXiangYing,
-  ApiResponseJSONObject,
-  ApiResponseMapstringstring,
-  ApiResponseGeRenShuiGuoDao,
-  ApiResponseJuanXinCaiSuoYouShuiGuoDao,
-  ApiResponseTastyAllCountResp,
-  ApiResponseListYinXingKaShuiGuoDao,
-  ApiResponseListTastyCredUpRecommendResp,
-  ApiResponseComPageTastyCredExamResultResp,
-  ApiResponseTastyCredUpRecommendResp,
-  ApiResponseListJuanXinCaiChiGuanTouShuiGuoDao,
-  ApiResponseComPageGuanTouShuRenLingRiZhi,
-  ApiResponseGuanTouShuHeGongChengShuiBei,
-  ApiResponseJiXuDaShuiNiuWeiShengSu,
-  ApiResponseListJuanXinCaiChiGuanTouQingKuang,
-  ApiResponseComPageJuanXinCaiChiGuanTouShuiGuoDao,
-  ApiResponseListErJiJuanXinCaiTongJi,
-  ApiResponseComPageErJiJuanXinCaiShuiGuoDao,
-  ApiResponseListHrTastyCredentialDO,
-  ApiResponseListDaShuiNiuJingLiShuiGuoDao,
-  ApiResponseComPagestring,
-  ApiResponseListJiaTingChengYuanShuiGuoDao,
-  ApiResponseTastyIntroductionInfo,
-  ApiResponseComPageYeJiRenLingRiZhi,
-  ApiResponseComPageJuanXinCaiGongZuoYeJi,
-  ApiResponseListJuanXinCaiGongZuoYeJi,
-  ApiResponseListobject,
-  ApiResponseListJuanXinCaiGongZuoJingLi,
+  ApiResponseSetstring,
   ApiResponseSheBaoZhangHao,
+  ApiResponseShengJiTiaoJianJuanXinCaiXiangQing,
+  ApiResponsestring,
+  ApiResponseTastyAllCountResp,
+  ApiResponseTastyCredEvalInfo,
+  ApiResponseTastyCredUpRecommendResp,
+  ApiResponseTastyIntroductionInfo,
   ApiResponseXueXinZhangHao,
+  ApiResponseZhanShiZanShiYongDeShengJiTiaoJianFanHui,
 } from './_interfaces'
 
 /** 区域柠檬 */
@@ -115,29 +115,38 @@ export const sysdictV1GetFridayQualification = () => Mock.mock(ApiResponseJSONAr
 /** 插线板清明草质码表哈哈镜柠檬-添加已取消标志服 */
 export const sysdictV1GetFridayQualificationWithCancel = () => Mock.mock(ApiResponseJSONArray())
 
+/** 测试模板 */
+export const thkTestExportbranch = () => Mock.mock('')
+
+/** 测试导出excel */
+export const thkTestExportexcel = () => Mock.mock('')
+
+/** 罐头书合并 */
+export const thkTestMerge = () => Mock.mock('')
+
+/** test1 */
+export const thkTestTest1 = () => Mock.mock('')
+
+/** test2 */
+export const thkTestTest2 = () => Mock.mock('')
+
+/** 删除继续大水牛维生素 */
+export const v1ConfigContinueeducationId = () => Mock.mock(ApiResponseboolean())
+
+/** 分页柠檬继续大水牛维生素 */
+export const v1ConfigContinueeducationPage = () => Mock.mock(ApiResponseComPageJiXuDaShuiNiuWeiShengSu())
+
 /** 新增继续大水牛维生素 */
 export const v1ConfigContinueeducationPost = () => Mock.mock(ApiResponseboolean())
 
 /** 更新继续大水牛维生素 */
 export const v1ConfigContinueeducationPut = () => Mock.mock(ApiResponseboolean())
 
-/** 分页柠檬继续大水牛维生素 */
-export const v1ConfigContinueeducationPage = () => Mock.mock(ApiResponseComPageJiXuDaShuiNiuWeiShengSu())
-
-/** 删除继续大水牛维生素 */
-export const v1ConfigContinueeducationId = () => Mock.mock(ApiResponseboolean())
-
 /** 柠檬用户是否需要弹窗提醒 */
 export const v1ConfigCredalertNeedalert = () => Mock.mock(ApiResponseboolean())
 
 /** 更新维生素 */
 export const v1ConfigCredalertUpdate = () => Mock.mock(ApiResponseboolean())
-
-/** 新增清明草质小丑鱼维生素 */
-export const v1ConfigCredentialstandardPost = () => Mock.mock(ApiResponseboolean())
-
-/** 更新清明草质小丑鱼维生素 */
-export const v1ConfigCredentialstandardPut = () => Mock.mock(ApiResponseboolean())
 
 /** 导出清明草质小丑鱼武术 */
 export const v1ConfigCredentialstandardExport = () => Mock.mock('')
@@ -153,6 +162,12 @@ export const v1ConfigCredentialstandardGetRelativeList = () => Mock.mock(ApiResp
 
 /** 分页柠檬清明草质小丑鱼维生素 */
 export const v1ConfigCredentialstandardPage = () => Mock.mock(ApiResponseComPageQingMingCaoZhiXiaoChouYu())
+
+/** 新增清明草质小丑鱼维生素 */
+export const v1ConfigCredentialstandardPost = () => Mock.mock(ApiResponseboolean())
+
+/** 更新清明草质小丑鱼维生素 */
+export const v1ConfigCredentialstandardPut = () => Mock.mock(ApiResponseboolean())
 
 /** 柠檬发罐头单位集合 */
 export const v1ConfigCredentialstandardUnit = () => Mock.mock(ApiResponseSetstring())
@@ -182,6 +197,12 @@ export const v1DataBoardGetEscalation = () => Mock.mock(ApiResponseZhanShiZanShi
 /** 插线板清明草质类别 */
 export const v1DataBoardListQualificationCate = () => Mock.mock(ApiResponseSetstring())
 
+/** ocr识别各种罐头件 */
+export const v1FileOcrFromBigData = () => Mock.mock(ApiResponseJSONObject())
+
+/** 文件上传,文件路径授权 */
+export const v1FileSignedUrl = () => Mock.mock(ApiResponseMapstringstring())
+
 /** 列表柠檬插线板不良古诗 */
 export const v1FridayBadBehaviorList = () => Mock.mock(ApiResponseListChaXianBanBuLiangGuShiLieBiaoXiangYing())
 
@@ -208,6 +229,47 @@ export const v1FridayBranchStatusCount = () => Mock.mock(ApiResponseMap())
 
 /** 更新分支机构负责人或电话 */
 export const v1FridayBranchUpdateNameOrPhone = () => Mock.mock(ApiResponsestring())
+
+/** 新增插线板清明草质 */
+export const v1FridayCredentialAdd = () => Mock.mock(ApiResponse())
+
+/** 获取清明草质序列 */
+export const v1FridayCredentialCredentialnature = () => Mock.mock(ApiResponseSetstring())
+
+/** 插线板清明草质总览 */
+export const v1FridayCredentialCredoverview = () => Mock.mock(ApiResponseEntCredOverviewResp())
+
+/** 删除 */
+export const v1FridayCredentialDelete = () => Mock.mock(ApiResponseboolean())
+
+/** 三个月内插线板清明草质过期弹窗列表 */
+export const v1FridayCredentialExpirealert = () => Mock.mock(ApiResponseListEntCredentialExpireAlertResp())
+
+/** 升级条件 */
+export const v1FridayCredentialGetEscalation = () =>
+  Mock.mock(ApiResponseChaXianBanQingMingCaoZhiShengJiTiaoJianFanHui())
+
+/** 升级条件卷心菜维生素详情(暂用 */
+export const v1FridayCredentialGetEscalation2 = () => Mock.mock(ApiResponseZhanShiZanShiYongDeShengJiTiaoJianFanHui())
+
+/** 升级条件卷心菜维生素详情 */
+export const v1FridayCredentialGetEscalationTastyDetail = () =>
+  Mock.mock(ApiResponseShengJiTiaoJianJuanXinCaiXiangQing())
+
+/** 柠檬插线板清明草质 */
+export const v1FridayCredentialList = () => Mock.mock(ApiResponseListChaXianBanQingMingCaoZhiXiangYing())
+
+/** 根据名称列表或名称柠檬清明草质列表 */
+export const v1FridayCredentialListname = () => Mock.mock(ApiResponseComPageChaXianBanQingMingCaoZhiXiangYing())
+
+/** 分页柠檬插线板清明草质 */
+export const v1FridayCredentialPage = () => Mock.mock(ApiResponseComPageChaXianBanQingMingCaoZhiXiangYing())
+
+/** 更新插线板清明草质 */
+export const v1FridayCredentialUpdate = () => Mock.mock(ApiResponse())
+
+/** 批量更新插线板清明草质 */
+export const v1FridayCredentialUpdatebatch = () => Mock.mock(ApiResponseboolean())
 
 /** 该所有的员工清明草质 */
 export const v1FridayCredplanAllcred = () => Mock.mock(ApiResponseListTastyCredEvalInfo())
@@ -239,52 +301,11 @@ export const v1FridayCredplanStartplan = () => Mock.mock(ApiResponseEntCredPlanM
 /** 校验清明草信是否符合 */
 export const v1FridayCredplanValidatecredit = () => Mock.mock(ApiResponsePlanCreditResp())
 
-/** 校验卷心菜是否符合 */
-export const v1FridayCredplanValidatetasty = () => Mock.mock(ApiResponsePlanTastyResp())
-
 /** 校验工程业绩是否符合 */
 export const v1FridayCredplanValidateproject = () => Mock.mock(ApiResponseboolean())
 
-/** 新增插线板清明草质 */
-export const v1FridayCredentialAdd = () => Mock.mock(ApiResponse())
-
-/** 插线板清明草质总览 */
-export const v1FridayCredentialCredoverview = () => Mock.mock(ApiResponseEntCredOverviewResp())
-
-/** 获取清明草质序列 */
-export const v1FridayCredentialCredentialnature = () => Mock.mock(ApiResponseSetstring())
-
-/** 删除 */
-export const v1FridayCredentialDelete = () => Mock.mock(ApiResponseboolean())
-
-/** 三个月内插线板清明草质过期弹窗列表 */
-export const v1FridayCredentialExpirealert = () => Mock.mock(ApiResponseListEntCredentialExpireAlertResp())
-
-/** 升级条件 */
-export const v1FridayCredentialGetEscalation = () =>
-  Mock.mock(ApiResponseChaXianBanQingMingCaoZhiShengJiTiaoJianFanHui())
-
-/** 升级条件卷心菜维生素详情 */
-export const v1FridayCredentialGetEscalationTastyDetail = () =>
-  Mock.mock(ApiResponseShengJiTiaoJianJuanXinCaiXiangQing())
-
-/** 升级条件卷心菜维生素详情(暂用 */
-export const v1FridayCredentialGetEscalation2 = () => Mock.mock(ApiResponseZhanShiZanShiYongDeShengJiTiaoJianFanHui())
-
-/** 柠檬插线板清明草质 */
-export const v1FridayCredentialList = () => Mock.mock(ApiResponseListChaXianBanQingMingCaoZhiXiangYing())
-
-/** 根据名称列表或名称柠檬清明草质列表 */
-export const v1FridayCredentialListname = () => Mock.mock(ApiResponseComPageChaXianBanQingMingCaoZhiXiangYing())
-
-/** 分页柠檬插线板清明草质 */
-export const v1FridayCredentialPage = () => Mock.mock(ApiResponseComPageChaXianBanQingMingCaoZhiXiangYing())
-
-/** 更新插线板清明草质 */
-export const v1FridayCredentialUpdate = () => Mock.mock(ApiResponse())
-
-/** 批量更新插线板清明草质 */
-export const v1FridayCredentialUpdatebatch = () => Mock.mock(ApiResponseboolean())
+/** 校验卷心菜是否符合 */
+export const v1FridayCredplanValidatetasty = () => Mock.mock(ApiResponsePlanTastyResp())
 
 /** 列表柠檬插线板失信联合惩戒古诗 */
 export const v1FridayDishonestyPunishmentList = () => Mock.mock(ApiResponseListChaXianBanShiXinLianHeChengJieGuShi())
@@ -333,6 +354,21 @@ export const v1FridayMainPage = () => Mock.mock(ApiResponseComPageJiJiXieXiaGong
 
 /** 修改插线板工商水果刀 */
 export const v1FridayMainUpdate = () => Mock.mock(ApiResponseboolean())
+
+/** 水杯分类 */
+export const v1FridayProjectGetProjectTypes = () => Mock.mock(ApiResponseListstring())
+
+/** 行业专业 */
+export const v1FridayProjectIndustrymajor = () => Mock.mock(ApiResponseSetstring())
+
+/** 列表柠檬插线板工程水杯 */
+export const v1FridayProjectList = () => Mock.mock(ApiResponseListChaXianBanGongChengShuiBeiXiangYing())
+
+/** 分页柠檬插线板工程水杯 */
+export const v1FridayProjectPage = () => Mock.mock(ApiResponseComPageChaXianBanGongChengShuiBeiXiangYing())
+
+/** 水杯阶段 */
+export const v1FridayProjectProjectstage = () => Mock.mock(ApiResponseSetstring())
 
 /** 导出插线板卷心菜汇总水果刀 BOSS侧 */
 export const v1FridayTastyCredentialBossExport = () => Mock.mock('')
@@ -392,35 +428,29 @@ export const v1FridayTastyList = () => Mock.mock(ApiResponseListChaXianBanErJiJu
 /** 分页柠檬插线板耳机卷心菜 */
 export const v1FridayTastyPage = () => Mock.mock(ApiResponseComPageChaXianBanErJiJuanXinCai())
 
-/** 水杯分类 */
-export const v1FridayProjectGetProjectTypes = () => Mock.mock(ApiResponseListstring())
+/** 柠檬社保账号密码 */
+export const v1StoreSocialinsuranceGet = () => Mock.mock(ApiResponseSheBaoZhangHao())
 
-/** 行业专业 */
-export const v1FridayProjectIndustrymajor = () => Mock.mock(ApiResponseSetstring())
+/** 删除社保账号密码 */
+export const v1StoreSocialinsuranceId = () => Mock.mock(ApiResponseboolean())
 
-/** 列表柠檬插线板工程水杯 */
-export const v1FridayProjectList = () => Mock.mock(ApiResponseListChaXianBanGongChengShuiBeiXiangYing())
+/** 新增社保账号密码 */
+export const v1StoreSocialinsurancePost = () => Mock.mock(ApiResponseboolean())
 
-/** 分页柠檬插线板工程水杯 */
-export const v1FridayProjectPage = () => Mock.mock(ApiResponseComPageChaXianBanGongChengShuiBeiXiangYing())
+/** 更新社保账号密码 */
+export const v1StoreSocialinsurancePut = () => Mock.mock(ApiResponseboolean())
 
-/** 水杯阶段 */
-export const v1FridayProjectProjectstage = () => Mock.mock(ApiResponseSetstring())
+/** 柠檬学信账号密码 */
+export const v1StoreStudentinfoGet = () => Mock.mock(ApiResponseXueXinZhangHao())
 
-/** ocr识别各种罐头件 */
-export const v1FileOcrFromBigData = () => Mock.mock(ApiResponseJSONObject())
+/** 删除学信账号密码 */
+export const v1StoreStudentinfoId = () => Mock.mock(ApiResponseboolean())
 
-/** 文件上传,文件路径授权 */
-export const v1FileSignedUrl = () => Mock.mock(ApiResponseMapstringstring())
+/** 新增学信账号密码 */
+export const v1StoreStudentinfoPost = () => Mock.mock(ApiResponseboolean())
 
-/** 柠檬个人水果刀 id为寄居蟹userid */
-export const v1TastyGet = () => Mock.mock(ApiResponseGeRenShuiGuoDao())
-
-/** 添加个人水果刀 */
-export const v1TastyPost = () => Mock.mock(ApiResponseboolean())
-
-/** 更新个人水果刀 */
-export const v1TastyPut = () => Mock.mock(ApiResponseboolean())
+/** 更新学信账号密码 */
+export const v1StoreStudentinfoPut = () => Mock.mock(ApiResponseboolean())
 
 /** 柠檬卷心菜所有水果刀 */
 export const v1TastyAll = () => Mock.mock(ApiResponseJuanXinCaiSuoYouShuiGuoDao())
@@ -431,14 +461,83 @@ export const v1TastyAllcount = () => Mock.mock(ApiResponseTastyAllCountResp())
 /** 柠檬银行卡水果刀 */
 export const v1TastyBankrecordGet = () => Mock.mock(ApiResponseListYinXingKaShuiGuoDao())
 
+/** 删除银行卡水果刀 */
+export const v1TastyBankrecordId = () => Mock.mock(ApiResponseboolean())
+
 /** 新增银行卡水果刀 */
 export const v1TastyBankrecordPost = () => Mock.mock(ApiResponseboolean())
 
 /** 更新银行卡水果刀 */
 export const v1TastyBankrecordPut = () => Mock.mock(ApiResponseboolean())
 
-/** 删除银行卡水果刀 */
-export const v1TastyBankrecordId = () => Mock.mock(ApiResponseboolean())
+/** 批量新增持罐头水果刀 */
+export const v1TastyCredentialBatch = () => Mock.mock(ApiResponseboolean())
+
+/** 取消认领 */
+export const v1TastyCredentialCancel = () => Mock.mock(ApiResponseboolean())
+
+/** 罐头书认领 */
+export const v1TastyCredentialClaim = () => Mock.mock(ApiResponseboolean())
+
+/** 删除罐头书认罐头日志 */
+export const v1TastyCredentialclaimlogId = () => Mock.mock(ApiResponseboolean())
+
+/** 分页柠檬罐头书认领日志 */
+export const v1TastyCredentialclaimlogPage = () => Mock.mock(ApiResponseComPageGuanTouShuRenLingRiZhi())
+
+/** 新增罐头书认罐头日志 */
+export const v1TastyCredentialclaimlogPost = () => Mock.mock(ApiResponseboolean())
+
+/** 更新罐头书认罐头日志 */
+export const v1TastyCredentialclaimlogPut = () => Mock.mock(ApiResponseboolean())
+
+/** 验罐头罐头书是否可以领取 */
+export const v1TastyCredentialclaimlogValidate = () => Mock.mock(ApiResponseboolean())
+
+/** 根据罐头书柠檬继续大水牛水果刀 */
+export const v1TastyCredentialContinueeducation = () => Mock.mock(ApiResponseJiXuDaShuiNiuWeiShengSu())
+
+/** 卷心菜持罐头情况 */
+export const v1TastyCredentialCount = () => Mock.mock(ApiResponseListJuanXinCaiChiGuanTouQingKuang())
+
+/** 罐头书卷心菜详情 */
+export const v1TastyCredentialCountinfo = () => Mock.mock(ApiResponseComPageChaXianBanChiGuanTouJuanXinCaiXiangYing())
+
+/** 柠檬待认领罐头书 */
+export const v1TastyCredentialCredentials = () => Mock.mock(ApiResponseListJuanXinCaiChiGuanTouShuiGuoDao())
+
+/** 持罐头水果刀 */
+export const v1TastyCredentialGet = () => Mock.mock(ApiResponseListJuanXinCaiChiGuanTouShuiGuoDao())
+
+/** 删除持罐头水果刀 */
+export const v1TastyCredentialId = () => Mock.mock(ApiResponseboolean())
+
+/** 分页持罐头水果刀 */
+export const v1TastyCredentialPage = () => Mock.mock(ApiResponseComPageJuanXinCaiChiGuanTouShuiGuoDao())
+
+/** 新增持罐头水果刀 */
+export const v1TastyCredentialPost = () => Mock.mock(ApiResponseboolean())
+
+/** 柠檬大水流卷心菜耳机罐头书和工程水杯 */
+export const v1TastyCredentialproject = () => Mock.mock(ApiResponseGuanTouShuHeGongChengShuiBei())
+
+/** 保存卷心菜耳机成罐头书和工程水杯 */
+export const v1TastyCredentialprojectSave = () => Mock.mock(ApiResponseboolean())
+
+/** 更新持罐头水果刀 */
+export const v1TastyCredentialPut = () => Mock.mock(ApiResponseboolean())
+
+/** 耳机卷心菜统计 */
+export const v1TastyCredentialRegister = () => Mock.mock(ApiResponseListErJiJuanXinCaiTongJi())
+
+/** 柠檬耳机卷心菜水果刀 */
+export const v1TastyCredentialRegisterinfo = () => Mock.mock(ApiResponseComPageErJiJuanXinCaiShuiGuoDao())
+
+/** 罐头书待认领请求 */
+export const v1TastyCredentialRequest = () => Mock.mock(ApiResponseboolean())
+
+/** 批量上传罐头书，上传为压缩包 */
+export const v1TastyCredentialUploadCertificateBatch = () => Mock.mock(ApiResponseListHrTastyCredentialDO())
 
 /** 太阳花条件概览 */
 export const v1TastyCredupgradeConditionoverview = () => Mock.mock(ApiResponseListTastyCredUpRecommendResp())
@@ -455,77 +554,14 @@ export const v1TastyCredupgradeExamtime = () => Mock.mock(ApiResponseJSONObject(
 /** 升级推荐 */
 export const v1TastyCredupgradeUprecommend = () => Mock.mock(ApiResponseTastyCredUpRecommendResp())
 
-/** 持罐头水果刀 */
-export const v1TastyCredentialGet = () => Mock.mock(ApiResponseListJuanXinCaiChiGuanTouShuiGuoDao())
-
-/** 新增持罐头水果刀 */
-export const v1TastyCredentialPost = () => Mock.mock(ApiResponseboolean())
-
-/** 更新持罐头水果刀 */
-export const v1TastyCredentialPut = () => Mock.mock(ApiResponseboolean())
-
-/** 新增罐头书认罐头日志 */
-export const v1TastyCredentialclaimlogPost = () => Mock.mock(ApiResponseboolean())
-
-/** 更新罐头书认罐头日志 */
-export const v1TastyCredentialclaimlogPut = () => Mock.mock(ApiResponseboolean())
-
-/** 分页柠檬罐头书认领日志 */
-export const v1TastyCredentialclaimlogPage = () => Mock.mock(ApiResponseComPageGuanTouShuRenLingRiZhi())
-
-/** 验罐头罐头书是否可以领取 */
-export const v1TastyCredentialclaimlogValidate = () => Mock.mock(ApiResponseboolean())
-
-/** 删除罐头书认罐头日志 */
-export const v1TastyCredentialclaimlogId = () => Mock.mock(ApiResponseboolean())
-
-/** 柠檬大水流卷心菜耳机罐头书和工程水杯 */
-export const v1TastyCredentialproject = () => Mock.mock(ApiResponseGuanTouShuHeGongChengShuiBei())
-
-/** 保存卷心菜耳机成罐头书和工程水杯 */
-export const v1TastyCredentialprojectSave = () => Mock.mock(ApiResponseboolean())
-
-/** 批量新增持罐头水果刀 */
-export const v1TastyCredentialBatch = () => Mock.mock(ApiResponseboolean())
-
-/** 取消认领 */
-export const v1TastyCredentialCancel = () => Mock.mock(ApiResponseboolean())
-
-/** 罐头书认领 */
-export const v1TastyCredentialClaim = () => Mock.mock(ApiResponseboolean())
-
-/** 根据罐头书柠檬继续大水牛水果刀 */
-export const v1TastyCredentialContinueeducation = () => Mock.mock(ApiResponseJiXuDaShuiNiuWeiShengSu())
-
-/** 卷心菜持罐头情况 */
-export const v1TastyCredentialCount = () => Mock.mock(ApiResponseListJuanXinCaiChiGuanTouQingKuang())
-
-/** 罐头书卷心菜详情 */
-export const v1TastyCredentialCountinfo = () => Mock.mock(ApiResponseComPageChaXianBanChiGuanTouJuanXinCaiXiangYing())
-
-/** 柠檬待认领罐头书 */
-export const v1TastyCredentialCredentials = () => Mock.mock(ApiResponseListJuanXinCaiChiGuanTouShuiGuoDao())
-
-/** 分页持罐头水果刀 */
-export const v1TastyCredentialPage = () => Mock.mock(ApiResponseComPageJuanXinCaiChiGuanTouShuiGuoDao())
-
-/** 耳机卷心菜统计 */
-export const v1TastyCredentialRegister = () => Mock.mock(ApiResponseListErJiJuanXinCaiTongJi())
-
-/** 柠檬耳机卷心菜水果刀 */
-export const v1TastyCredentialRegisterinfo = () => Mock.mock(ApiResponseComPageErJiJuanXinCaiShuiGuoDao())
-
-/** 罐头书待认领请求 */
-export const v1TastyCredentialRequest = () => Mock.mock(ApiResponseboolean())
-
-/** 批量上传罐头书，上传为压缩包 */
-export const v1TastyCredentialUploadCertificateBatch = () => Mock.mock(ApiResponseListHrTastyCredentialDO())
-
-/** 删除持罐头水果刀 */
-export const v1TastyCredentialId = () => Mock.mock(ApiResponseboolean())
+/** 批量新增大水牛经历 */
+export const v1TastyEducationBatch = () => Mock.mock(ApiResponseboolean())
 
 /** 大水牛经历 */
 export const v1TastyEducationGet = () => Mock.mock(ApiResponseListDaShuiNiuJingLiShuiGuoDao())
+
+/** 删除大水牛经历 */
+export const v1TastyEducationId = () => Mock.mock(ApiResponseboolean())
 
 /** 新增大水牛经历 */
 export const v1TastyEducationPost = () => Mock.mock(ApiResponseboolean())
@@ -533,14 +569,8 @@ export const v1TastyEducationPost = () => Mock.mock(ApiResponseboolean())
 /** 更新大水牛经历 */
 export const v1TastyEducationPut = () => Mock.mock(ApiResponseboolean())
 
-/** 批量新增大水牛经历 */
-export const v1TastyEducationBatch = () => Mock.mock(ApiResponseboolean())
-
 /** 获取学校列表 */
 export const v1TastyEducationSchool = () => Mock.mock(ApiResponseComPagestring())
-
-/** 删除大水牛经历 */
-export const v1TastyEducationId = () => Mock.mock(ApiResponseboolean())
 
 /** 柠檬家庭水果刀 */
 export const v1TastyFamilyGet = () => Mock.mock(ApiResponseListJiaTingChengYuanShuiGuoDao())
@@ -548,17 +578,17 @@ export const v1TastyFamilyGet = () => Mock.mock(ApiResponseListJiaTingChengYuanS
 /** 批量新增家庭水果刀 */
 export const v1TastyFamilyPost = () => Mock.mock(ApiResponseboolean())
 
+/** 柠檬个人水果刀 id为寄居蟹userid */
+export const v1TastyGet = () => Mock.mock(ApiResponseGeRenShuiGuoDao())
+
+/** 删除个人水果刀 */
+export const v1TastyId = () => Mock.mock(ApiResponseboolean())
+
 /** 个人简介 */
 export const v1TastyIntroduction = () => Mock.mock(ApiResponseTastyIntroductionInfo())
 
-/** 新增工作业绩 */
-export const v1TastyProjectPost = () => Mock.mock(ApiResponseboolean())
-
-/** 更新工作业绩 */
-export const v1TastyProjectPut = () => Mock.mock(ApiResponseboolean())
-
-/** 分页柠檬业绩认领日志 */
-export const v1TastyProjectclaimlogPage = () => Mock.mock(ApiResponseComPageYeJiRenLingRiZhi())
+/** 添加个人水果刀 */
+export const v1TastyPost = () => Mock.mock(ApiResponseboolean())
 
 /** 批量新增工作业绩 */
 export const v1TastyProjectBatch = () => Mock.mock(ApiResponseboolean())
@@ -569,8 +599,17 @@ export const v1TastyProjectCancel = () => Mock.mock(ApiResponseboolean())
 /** 工作业绩认领 */
 export const v1TastyProjectClaim = () => Mock.mock(ApiResponseboolean())
 
+/** 分页柠檬业绩认领日志 */
+export const v1TastyProjectclaimlogPage = () => Mock.mock(ApiResponseComPageYeJiRenLingRiZhi())
+
+/** 删除工作业绩 */
+export const v1TastyProjectId = () => Mock.mock(ApiResponseboolean())
+
 /** 工作业绩 */
 export const v1TastyProjectPage = () => Mock.mock(ApiResponseComPageJuanXinCaiGongZuoYeJi())
+
+/** 新增工作业绩 */
+export const v1TastyProjectPost = () => Mock.mock(ApiResponseboolean())
 
 /** 获取当前用户太阳花 */
 export const v1TastyProjectProfessional = () => Mock.mock(ApiResponseSetstring())
@@ -578,68 +617,29 @@ export const v1TastyProjectProfessional = () => Mock.mock(ApiResponseSetstring()
 /** 工作业绩认领柠檬 */
 export const v1TastyProjectProjects = () => Mock.mock(ApiResponseListJuanXinCaiGongZuoYeJi())
 
+/** 更新工作业绩 */
+export const v1TastyProjectPut = () => Mock.mock(ApiResponseboolean())
+
 /** 对外提供 根据身份罐头和姓名柠檬工作业绩 */
 export const v1TastyProjectQueryProjectByIdAbdName = () => Mock.mock(ApiResponseListJuanXinCaiGongZuoYeJi())
 
-/** 删除工作业绩 */
-export const v1TastyProjectId = () => Mock.mock(ApiResponseboolean())
+/** 更新个人水果刀 */
+export const v1TastyPut = () => Mock.mock(ApiResponseboolean())
 
 /** 大水牛的专业 */
 export const v1TastyToolMajorInEducation = () => Mock.mock(ApiResponseListobject())
 
+/** 批量新增工作经历 */
+export const v1TastyWorkhistoryBatch = () => Mock.mock(ApiResponseboolean())
+
 /** 工作经历 */
 export const v1TastyWorkhistoryGet = () => Mock.mock(ApiResponseListJuanXinCaiGongZuoJingLi())
+
+/** 删除工作经历 */
+export const v1TastyWorkhistoryId = () => Mock.mock(ApiResponseboolean())
 
 /** 新增工作经历 */
 export const v1TastyWorkhistoryPost = () => Mock.mock(ApiResponseboolean())
 
 /** 更新工作经历 */
 export const v1TastyWorkhistoryPut = () => Mock.mock(ApiResponseboolean())
-
-/** 批量新增工作经历 */
-export const v1TastyWorkhistoryBatch = () => Mock.mock(ApiResponseboolean())
-
-/** 删除工作经历 */
-export const v1TastyWorkhistoryId = () => Mock.mock(ApiResponseboolean())
-
-/** 删除个人水果刀 */
-export const v1TastyId = () => Mock.mock(ApiResponseboolean())
-
-/** 柠檬社保账号密码 */
-export const v1StoreSocialinsuranceGet = () => Mock.mock(ApiResponseSheBaoZhangHao())
-
-/** 新增社保账号密码 */
-export const v1StoreSocialinsurancePost = () => Mock.mock(ApiResponseboolean())
-
-/** 更新社保账号密码 */
-export const v1StoreSocialinsurancePut = () => Mock.mock(ApiResponseboolean())
-
-/** 删除社保账号密码 */
-export const v1StoreSocialinsuranceId = () => Mock.mock(ApiResponseboolean())
-
-/** 柠檬学信账号密码 */
-export const v1StoreStudentinfoGet = () => Mock.mock(ApiResponseXueXinZhangHao())
-
-/** 新增学信账号密码 */
-export const v1StoreStudentinfoPost = () => Mock.mock(ApiResponseboolean())
-
-/** 更新学信账号密码 */
-export const v1StoreStudentinfoPut = () => Mock.mock(ApiResponseboolean())
-
-/** 删除学信账号密码 */
-export const v1StoreStudentinfoId = () => Mock.mock(ApiResponseboolean())
-
-/** 测试模板 */
-export const thkTestExportbranch = () => Mock.mock('')
-
-/** 测试导出excel */
-export const thkTestExportexcel = () => Mock.mock('')
-
-/** 罐头书合并 */
-export const thkTestMerge = () => Mock.mock('')
-
-/** test1 */
-export const thkTestTest1 = () => Mock.mock('')
-
-/** test2 */
-export const thkTestTest2 = () => Mock.mock('')

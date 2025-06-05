@@ -1,5 +1,5 @@
 import Mock from 'better-mock'
-import { ApiResponseCurrentAuthResp, ApiResponseDesktopResp, ApiResponseDesktopAllInfoResp } from './_interfaces'
+import { ApiResponseCurrentAuthResp, ApiResponseDesktopAllInfoResp, ApiResponseDesktopResp } from './_interfaces'
 
 /** 当前登录者美丽喇叭花菜单路由+权限信息 */
 export const indexGetCurrentAuth = () => Mock.mock(ApiResponseCurrentAuthResp())

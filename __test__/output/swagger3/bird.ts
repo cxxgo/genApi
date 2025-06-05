@@ -64,8 +64,8 @@ export function birdSave(data: ChuangJianGengXinDuiXiangBirdSaveReq): Promise<Ap
 
 /** 创建部落 */
 export function birdSave(data: {
-  channel?: string
   birdSaveReq?: ChuangJianGengXinDuiXiangBirdSaveReq
+  channel?: string
 }): Promise<ApiResponseBuLuoDuiXiangBirdResp> {
   return request.post('/bird/save', data)
 }

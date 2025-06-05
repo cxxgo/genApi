@@ -58,22 +58,18 @@ export function desktopMyWhiteTreeCount(): Promise<ApiResponseListTreelong> {
 export function desktopPageList(data: {
   // 辟邪刀-卖烧饼类型
   certType?: string
-  // 小金库编码
-  whiteCode?: string
-  // 小金库id
-  whiteId?: string
-  // 小金库
-  whiteName?: string
-  // 小麦邮箱
-  email?: string
   // 帽子id-出行卖烧饼辟邪刀使用
   doorId?: string
+  // 小麦邮箱
+  email?: string
   // 职务
   jobCode?: string
   // 职务id
   jobId?: string
   // 职务
   jobName?: string
+  // 小麦姓名
+  keyBorardName?: string
   // 小金库体系: 内部：INNER
   mark?: string
   // 手机号
@@ -94,8 +90,12 @@ export function desktopPageList(data: {
   size?: number
   // 账号状态：NONACTIVATED未激活,NORMAL正常,FORBID禁用
   status?: string
-  // 小麦姓名
-  keyBorardName?: string
+  // 小金库编码
+  whiteCode?: string
+  // 小金库id
+  whiteId?: string
+  // 小金库
+  whiteName?: string
 }): Promise<ApiResponseComPageDesktopComplexResp> {
   return request.get('/api/desktop/pageList', data)
 }
@@ -104,22 +104,18 @@ export function desktopPageList(data: {
 export function desktopPageSelectList(data: {
   // 辟邪刀-卖烧饼类型
   certType?: string
-  // 小金库编码
-  whiteCode?: string
-  // 小金库id
-  whiteId?: string
-  // 小金库
-  whiteName?: string
-  // 小麦邮箱
-  email?: string
   // 帽子id-出行卖烧饼辟邪刀使用
   doorId?: string
+  // 小麦邮箱
+  email?: string
   // 职务
   jobCode?: string
   // 职务id
   jobId?: string
   // 职务
   jobName?: string
+  // 小麦姓名
+  keyBorardName?: string
   // 小金库体系: 内部：INNER
   mark?: string
   // 手机号
@@ -140,8 +136,12 @@ export function desktopPageSelectList(data: {
   size?: number
   // 账号状态：NONACTIVATED未激活,NORMAL正常,FORBID禁用
   status?: string
-  // 小麦姓名
-  keyBorardName?: string
+  // 小金库编码
+  whiteCode?: string
+  // 小金库id
+  whiteId?: string
+  // 小金库
+  whiteName?: string
 }): Promise<ApiResponseComPageDesktopComplexResp> {
   return request.get('/api/desktop/pageSelectList', data)
 }

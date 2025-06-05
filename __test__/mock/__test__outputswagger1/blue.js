@@ -1,10 +1,10 @@
 import Mock from 'better-mock'
 import {
+  ApiResponseboolean,
+  ApiResponseComPageZhiXieChangChuXing,
+  ApiResponseListZhiXieChangChuXing,
   ApiResponseQueryAccInfoResp,
   ApiResponsestring,
-  ApiResponseboolean,
-  ApiResponseListZhiXieChangChuXing,
-  ApiResponseComPageZhiXieChangChuXing,
 } from './_interfaces'
 
 /** 账号信息 */

@@ -1,6 +1,6 @@
 import path from 'node:path'
 
-import { typeIsInterface, writeAndPrettify, handleDescription, isExistInterface } from '../utils'
+import { typeIsInterface, writeAndPrettify, handleDescription, isExistInterface, sortByName } from '../utils'
 import { IParams, IApiGroup, IInterface, IParsered } from '../types'
 
 /** api 写入 */
@@ -15,8 +15,7 @@ export function writeApi(
     let apiStr = ''
     let fileUsedInterface: string[] = [] // 当前文件用到的 interface
 
-    const itemApis = item.apis.sort((a, b) => a.name.localeCompare(b.name))
-    itemApis.forEach((api) => {
+    sortByName(item.apis, 'name').forEach((api) => {
       const { name, url, originUrl, method, summary, parameters, outputInterface, outputType } = api
       /** 是否是无效的 interface */
       let isInvalidInterface = false
@@ -56,7 +55,7 @@ export function writeApi(
 
     // interface 引入
     let importStr = ''
-    fileUsedInterface = [...new Set(fileUsedInterface)].sort((a, b) => a.localeCompare(b))
+    fileUsedInterface = sortByName([...new Set(fileUsedInterface)])
     if (fileUsedInterface.length) {
       importStr += `import type {`
       fileUsedInterface.forEach((item, index) => {
@@ -82,7 +81,7 @@ export function writeApi(
  */
 function getParamStr(parameters: IParams[]) {
   // 过滤掉 in header 的参数
-  const avaliableParam = (parameters || []).filter((item) => item.in !== 'header')
+  const avaliableParam = sortByName((parameters || []).filter((item) => item.in !== 'header'), 'name')
   // 无参数
   if (!avaliableParam.length) {
     return { p1: '', p2: '' }

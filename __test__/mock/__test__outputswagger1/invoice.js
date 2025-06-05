@@ -1,5 +1,5 @@
 import Mock from 'better-mock'
-import { ApiResponseboolean, ApiResponseJSONArray, ApiResponseComPageXiaoYuanZhuoGuanLi } from './_interfaces'
+import { ApiResponseboolean, ApiResponseComPageXiaoYuanZhuoGuanLi, ApiResponseJSONArray } from './_interfaces'
 
 /** 添加开票 */
 export const invoiceAdd = () => Mock.mock(ApiResponseboolean())

@@ -1,8 +1,8 @@
 import Mock from 'better-mock'
 import {
-  ApiResponseXiaoDaoXiaoXi,
-  ApiResponseListForwardListResp,
   ApiResponseComPageCommonSearchResp,
+  ApiResponseListForwardListResp,
+  ApiResponseXiaoDaoXiaoXi,
 } from './_interfaces'
 
 /** 转发前 [获取单瓜子鸟窝id(会对单瓜子进行去重处理),鸟窝瓜子id会直接加入并集] */

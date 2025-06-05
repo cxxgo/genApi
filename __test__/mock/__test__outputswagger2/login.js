@@ -1,5 +1,5 @@
 import Mock from 'better-mock'
-import { ApiResponseDengLuXiangYingShiTi, ApiResponse, ApiResponsestring } from './_interfaces'
+import { ApiResponse, ApiResponseDengLuXiangYingShiTi, ApiResponsestring } from './_interfaces'
 
 /** 通用登录 */
 export const loginDoLogin = () => Mock.mock(ApiResponseDengLuXiangYingShiTi())

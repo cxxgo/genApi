@@ -1,5 +1,5 @@
 import Mock from 'better-mock'
-import { ApiResponseComLoginResp, ApiResponse, ApiResponseChannelAppGratefulConfigResp } from './_interfaces'
+import { ApiResponse, ApiResponseChannelAppGratefulConfigResp, ApiResponseComLoginResp } from './_interfaces'
 
 /** 登录结盟 */
 export const channelDesktopComLoginAndBind = () => Mock.mock(ApiResponseComLoginResp())

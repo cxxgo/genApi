@@ -1,11 +1,11 @@
 import Mock from 'better-mock'
 import {
   ApiResponsealiyunSTSJianQuanFanHuiZhi,
-  ApiResponseShangChuanALiYunQianMingXiangYing,
-  ApiResponseYuYinShiBieFanHui,
   ApiResponsePutFileResp,
-  ApiResponseWenJianPiLiangBaoCunXiangYingShiTi,
   ApiResponseQianMingWenJianXiangYing,
+  ApiResponseShangChuanALiYunQianMingXiangYing,
+  ApiResponseWenJianPiLiangBaoCunXiangYingShiTi,
+  ApiResponseYuYinShiBieFanHui,
 } from './_interfaces'
 
 /** 阿里云STS鉴权 */

@@ -1,5 +1,5 @@
 import Mock from 'better-mock'
-import { FileSystemResource, ApiResponseListImportDesktopResp, ApiResponseImportDesktopResp } from './_interfaces'
+import { ApiResponseImportDesktopResp, ApiResponseListImportDesktopResp, FileSystemResource } from './_interfaces'
 
 /** 导出小麦 */
 export const excelExport = () => Mock.mock(FileSystemResource())

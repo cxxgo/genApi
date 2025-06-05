@@ -1,5 +1,5 @@
 import path from 'node:path'
-import { typeIsInterface, writeAndPrettify } from '../utils'
+import { typeIsInterface, writeAndPrettify, sortByName } from '../utils'
 import { getFieldMockStr } from './mockUtils'
 import { IApiGroup } from '../types'
 
@@ -12,7 +12,8 @@ export function writeMockApi(apiGroup: IApiGroup[], { absOutputDir, fieldRules }
     const fileName = item.fileName
     let apiStr = ''
     let fileUsedInterface = [] // 当前文件用到的 interface
-    item.apis.forEach((api) => {
+
+    sortByName(item.apis, 'name').forEach((api) => {
       const { name, url, method, summary, parameters, outputInterface, outputType } = api
 
       const _summary = summary ? `/** ${summary} */\n` : ''
@@ -46,7 +47,7 @@ export function writeMockApi(apiGroup: IApiGroup[], { absOutputDir, fieldRules }
 
     // interface 引入
     let importStr = `import Mock from 'better-mock'\n`
-    fileUsedInterface = [...new Set(fileUsedInterface)]
+    fileUsedInterface = sortByName([...new Set(fileUsedInterface)])
     if (fileUsedInterface.length) {
       importStr += `import {`
       fileUsedInterface.forEach((item, index) => {

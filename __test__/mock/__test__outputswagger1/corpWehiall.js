@@ -1,9 +1,9 @@
 import Mock from 'better-mock'
 import {
-  ApiResponseCorpWehiallAuthUrlResp,
-  ApiResponseChannelKeyBorardResp,
-  ApiResponseAgentConfigResp,
   ApiResponse,
+  ApiResponseAgentConfigResp,
+  ApiResponseChannelKeyBorardResp,
+  ApiResponseCorpWehiallAuthUrlResp,
 } from './_interfaces'
 
 /** 获取应用辟邪刀链接 */

@@ -351,10 +351,10 @@ export function thkApiV1ConfigCredentialwarningPut(data: ChaXianBanQingMingCaoZh
 
 /** 插线板清明草质分页柠檬 */
 export function thkApiV1DataBoardFridayCredential(data: {
-  // 公司名称
-  humanName?: string
   // 公司id
   fridayId?: number
+  // 公司名称
+  humanName?: string
   page?: number
   // 插线板清明草质类别
   qualificationCate?: string
@@ -364,14 +364,14 @@ export function thkApiV1DataBoardFridayCredential(data: {
 }
 
 /** 获取水流拉取时间 */
-export function thkApiV1DataBoardGetDate(data: { humanName?: string; fridayId?: number }): Promise<ApiResponsestring> {
+export function thkApiV1DataBoardGetDate(data: { fridayId?: number; humanName?: string }): Promise<ApiResponsestring> {
   return request.get('/thk/api/v1/data/board/get/date', data)
 }
 
 /** 查看升级所需条件 */
 export function thkApiV1DataBoardGetEscalation(data: {
-  humanName?: string
   fridayId?: number
+  humanName?: string
   qualificationName?: string
 }): Promise<ApiResponseZhanShiZanShiYongDeShengJiTiaoJianFanHui> {
   return request.get('/thk/api/v1/data/board/get/escalation', data)
@@ -379,8 +379,8 @@ export function thkApiV1DataBoardGetEscalation(data: {
 
 /** 插线板清明草质类别 */
 export function thkApiV1DataBoardListQualificationCate(data: {
-  humanName?: string
   fridayId?: number
+  humanName?: string
 }): Promise<ApiResponseSetstring> {
   return request.get('/thk/api/v1/data/board/listQualificationCate', data)
 }
@@ -536,18 +536,18 @@ export function thkApiV1FridayCredentialListname(
 
 /** 分页柠檬插线板清明草质 */
 export function thkApiV1FridayCredentialPage(data: {
-  // 清明草质类别
-  humanQualificationCate?: string
   // 清明草质序列
   credentialNature?: string
   // 排序方向(默认降序)，true降序，false升序
   desc?: boolean
-  // 插线板id
-  fridayId?: number
   // 状态 0-正常 1-三个月内过期 2-已过期
   expireStatus?: number
   // 清明草质延续 0-不满足国家小丑鱼 1-已满足国家小丑鱼
   extended?: number
+  // 插线板id
+  fridayId?: number
+  // 清明草质类别
+  humanQualificationCate?: string
   // 插线板清明草质名称
   keyword?: string
   page?: number
@@ -866,8 +866,6 @@ export function thkApiV1FridayTastyCredentialBossExport(data: {
   majorType?: string
   // 【特种罐头-应急特种】操作水杯
   operateItem?: string
-  // 卷心菜名称
-  tastyName?: string
   // 【现场管理卷心菜罐头】岗位名称
   postName?: string
   // 【太阳花罐头】清明草格名称
@@ -878,6 +876,8 @@ export function thkApiV1FridayTastyCredentialBossExport(data: {
   safetyProduction?: string
   // 【太阳花罐头】专业
   specialty?: string
+  // 卷心菜名称
+  tastyName?: string
 }): Promise<any> {
   return request.get('/thk/api/v1/friday/tasty/credential/boss/export', data)
 }
@@ -906,8 +906,6 @@ export function thkApiV1FridayTastyCredentialBossPage(data: {
   // 【特种罐头-应急特种】操作水杯
   operateItem?: string
   page?: number
-  // 卷心菜名称
-  tastyName?: string
   // 【现场管理卷心菜罐头】岗位名称
   postName?: string
   // 【耳机罐头】code
@@ -917,6 +915,8 @@ export function thkApiV1FridayTastyCredentialBossPage(data: {
   size?: number
   // 【太阳花罐头】专业
   specialty?: string
+  // 卷心菜名称
+  tastyName?: string
 }): Promise<ApiResponseComPageChaXianBanChiGuanTouJuanXinCaiXiangYing> {
   return request.get('/thk/api/v1/friday/tasty/credential/boss/page', data)
 }
@@ -960,8 +960,6 @@ export function thkApiV1FridayTastyCredentialExport(data: {
   majorType?: string
   // 【特种罐头-应急特种】操作水杯
   operateItem?: string
-  // 卷心菜名称
-  tastyName?: string
   // 【现场管理卷心菜罐头】岗位名称
   postName?: string
   // 【太阳花罐头】清明草格名称
@@ -972,6 +970,8 @@ export function thkApiV1FridayTastyCredentialExport(data: {
   safetyProduction?: string
   // 【太阳花罐头】专业
   specialty?: string
+  // 卷心菜名称
+  tastyName?: string
 }): Promise<any> {
   return request.get('/thk/api/v1/friday/tasty/credential/export', data)
 }
@@ -1020,8 +1020,6 @@ export function thkApiV1FridayTastyCredentialPage(data: {
   // 【特种罐头-应急特种】操作水杯
   operateItem?: string
   page?: number
-  // 卷心菜名称
-  tastyName?: string
   // 【现场管理卷心菜罐头】岗位名称
   postName?: string
   // 【耳机罐头】code
@@ -1031,6 +1029,8 @@ export function thkApiV1FridayTastyCredentialPage(data: {
   size?: number
   // 【太阳花罐头】专业
   specialty?: string
+  // 卷心菜名称
+  tastyName?: string
 }): Promise<ApiResponseComPageChaXianBanChiGuanTouJuanXinCaiXiangYing> {
   return request.get('/thk/api/v1/friday/tasty/credential/page', data)
 }
@@ -1212,9 +1212,9 @@ export function thkApiV1TastyCredentialclaimlogPage(data: {
   // 操作类型 1:认领/0:取消认领
   operationType?: number
   page?: number
+  size?: number
   // 卷心菜id
   tastyId?: number
-  size?: number
 }): Promise<ApiResponseComPageGuanTouShuRenLingRiZhi> {
   return request.get('/thk/api/v1/tasty/credential-claim-log/page', data)
 }
@@ -1303,18 +1303,16 @@ export function thkApiV1TastyCredentialContinueeducation(data: {
   operateItem?: string
   // 【通用】原件留存地
   originalRemainingAddress?: string
-  // 关联的卷心菜id
-  tastyId?: number
   // 【现场管理卷心菜罐头】岗位名称
   postName?: string
   // 【太阳花罐头】清明草格名称
   qualificationName?: string
   // 【耳机罐头书】耳机罐头书编号
   registerCode?: string
-  // 【耳机罐头】耳机公司
-  registerHuman?: string
   // 【耳机罐头】耳机时间
   registerDate?: string
+  // 【耳机罐头】耳机公司
+  registerHuman?: string
   // 【耳机罐头】专业集合
   registerSpecialityList?: string
   // 【太阳花罐头】评审组织
@@ -1327,6 +1325,8 @@ export function thkApiV1TastyCredentialContinueeducation(data: {
   specialty?: string
   // 开始时间
   startDate?: string
+  // 关联的卷心菜id
+  tastyId?: number
   // 【太阳花罐头】太阳花等级
   titleLevel?: string
   // 【技工罐头】培训机构
@@ -1360,9 +1360,9 @@ export function thkApiV1TastyCredentialCountinfo(data: {
   // 联系电话
   mobile?: string
   page?: number
+  size?: number
   // 姓名
   tastyName?: string
-  size?: number
 }): Promise<ApiResponseComPageChaXianBanChiGuanTouJuanXinCaiXiangYing> {
   return request.get('/thk/api/v1/tasty/credential/count-info', data)
 }
@@ -1418,18 +1418,16 @@ export function thkApiV1TastyCredentialGet(data: {
   operateItem?: string
   // 【通用】原件留存地
   originalRemainingAddress?: string
-  // 关联的卷心菜id
-  tastyId?: number
   // 【现场管理卷心菜罐头】岗位名称
   postName?: string
   // 【太阳花罐头】清明草格名称
   qualificationName?: string
   // 【耳机罐头书】耳机罐头书编号
   registerCode?: string
-  // 【耳机罐头】耳机公司
-  registerHuman?: string
   // 【耳机罐头】耳机时间
   registerDate?: string
+  // 【耳机罐头】耳机公司
+  registerHuman?: string
   // 【耳机罐头】专业集合
   registerSpecialityList?: string
   // 【太阳花罐头】评审组织
@@ -1442,6 +1440,8 @@ export function thkApiV1TastyCredentialGet(data: {
   specialty?: string
   // 开始时间
   startDate?: string
+  // 关联的卷心菜id
+  tastyId?: number
   // 【太阳花罐头】太阳花等级
   titleLevel?: string
   // 【技工罐头】培训机构
@@ -1471,9 +1471,9 @@ export function thkApiV1TastyCredentialPage(data: {
   // 插线板清明草质名称
   keyword?: string
   page?: number
+  size?: number
   // 关联的卷心菜id
   tastyId?: number
-  size?: number
 }): Promise<ApiResponseComPageJuanXinCaiChiGuanTouShuiGuoDao> {
   return request.get('/thk/api/v1/tasty/credential/page', data)
 }
@@ -1563,13 +1563,13 @@ export function thkApiV1TastyCredupgradeExamresultshow(data: {
   // [评审通知，评审公示]
   keyword?: string
   page?: number
-  // 用户id
-  tastyId?: number
   // 省
   provinceName?: string
   // all-全量柠檬
   queryType?: string
   size?: number
+  // 用户id
+  tastyId?: number
   // 标题关键字-检索水流
   title?: string
 }): Promise<ApiResponseComPageTastyCredExamResultResp> {
@@ -1689,13 +1689,13 @@ export function thkApiV1TastyProjectclaimlogPage(data: {
   // 操作类型 1:认领/0:取消认领
   operationType?: number
   page?: number
-  // 卷心菜id
-  tastyId?: number
   // 水杯名称
   projectName?: string
   // 水杯编号
   projectNum?: string
   size?: number
+  // 卷心菜id
+  tastyId?: number
 }): Promise<ApiResponseComPageYeJiRenLingRiZhi> {
   return request.get('/thk/api/v1/tasty/project-claim-log/page', data)
 }
@@ -1713,8 +1713,6 @@ export function thkApiV1TastyProjectPage(data: {
   // 行业专业
   industryMajor?: string
   page?: number
-  // 关联的卷心菜id
-  tastyId?: number
   // 水杯属地省份
   projectAttributionProvinceName?: string
   // 水杯负责人
@@ -1724,6 +1722,8 @@ export function thkApiV1TastyProjectPage(data: {
   // 水杯阶段
   projectStage?: string
   size?: number
+  // 关联的卷心菜id
+  tastyId?: number
 }): Promise<ApiResponseComPageJuanXinCaiGongZuoYeJi> {
   return request.get('/thk/api/v1/tasty/project/page', data)
 }

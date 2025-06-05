@@ -1,5 +1,5 @@
 import Mock from 'better-mock'
-import { ApiResponseVoid, ApiResponseBiXieDao, ApiResponseComPageBiXieDaoYongDao } from './_interfaces'
+import { ApiResponseBiXieDao, ApiResponseComPageBiXieDaoYongDao, ApiResponseVoid } from './_interfaces'
 
 /** 执行审核 */
 export const auditAuthExecute = () => Mock.mock(ApiResponseVoid())

@@ -1,8 +1,8 @@
 import Mock from 'better-mock'
 import {
-  ApiResponseListGreenBookGratefulInfoResp,
   ApiResponseComPageWaiBuShuiDaoXiangYing,
   ApiResponseComPageWaiBuZhiXieChangChuCan,
+  ApiResponseListGreenBookGratefulInfoResp,
 } from './_interfaces'
 
 /** 获取旅客甬道 */

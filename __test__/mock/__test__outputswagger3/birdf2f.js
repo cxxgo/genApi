@@ -1,5 +1,5 @@
 import Mock from 'better-mock'
-import { ApiResponselong, ApiResponseListBirdF2fKeyBorardListResp, ApiResponse } from './_interfaces'
+import { ApiResponse, ApiResponseListBirdF2fKeyBorardListResp, ApiResponselong } from './_interfaces'
 
 /** 进入部落瓜子 */
 export const birdf2fEnterBird = () => Mock.mock(ApiResponselong())

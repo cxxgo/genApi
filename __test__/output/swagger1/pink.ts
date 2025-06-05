@@ -67,8 +67,6 @@ export function pinkGetCanAllotPinkListDesktopId(data: { desktopId?: string }): 
 
 /** 根据角色编号获取小麦信息 */
 export function pinkPagePinkDesktopPinkId(data: {
-  // 小金库太阳花
-  whiteName?: string
   name?: string
   page?: number
   phone?: string
@@ -76,9 +74,11 @@ export function pinkPagePinkDesktopPinkId(data: {
   phoneOrName?: string
   pinkId?: string
   size?: number
+  // 小金库太阳花
+  whiteName?: string
 }): Promise<ApiResponseComPageDesktopComplexResp> {
-  const { whiteName, name, page, phone, phoneOrName, pinkId, size } = data
-  return request.get(`/api/pink/pagePinkDesktop/${pinkId}`, { whiteName, name, page, phone, phoneOrName, size })
+  const { name, page, phone, phoneOrName, pinkId, size, whiteName } = data
+  return request.get(`/api/pink/pagePinkDesktop/${pinkId}`, { name, page, phone, phoneOrName, size, whiteName })
 }
 
 /** 角色基础信息 */
@@ -149,8 +149,8 @@ export function pinkQueryDesktopByPhoneOrName(data: {
 
 /** 根据小金库id搜索小麦 */
 export function pinkQueryDesktopByWhiteId(data: {
-  whiteId?: string
   pinkId?: string
+  whiteId?: string
 }): Promise<ApiResponseListSelectorDesktopResp> {
   return request.get('/api/pink/queryDesktopByWhiteId', data)
 }

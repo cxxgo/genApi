@@ -1,28 +1,16 @@
 import Mock from 'better-mock'
 import {
-  ApiResponsePutFileResp,
-  ApiResponseNiaoWoWenJianShangChuanXiangYingShiTi,
-  ApiResponseVoid,
-  ApiResponseNaBuMaiShaoBingNiaoWoBaoCunChuCan,
   ApiResponseboolean,
   ApiResponseComPageNiaoWoDuiXiangBirdResp,
   ApiResponseComPageXiaoXiNaBuXiangYingShiTi,
+  ApiResponseNaBuMaiShaoBingNiaoWoBaoCunChuCan,
+  ApiResponseNiaoWoWenJianShangChuanXiangYingShiTi,
+  ApiResponsePutFileResp,
+  ApiResponseVoid,
 } from './_interfaces'
-
-/** 生成上传签名url[图片消息 传入type及originalFileName] */
-export const innerFileGetUploadUrl = () => Mock.mock(ApiResponsePutFileResp())
-
-/** 上传鸟窝文件 */
-export const innerFileBirdFileSave = () => Mock.mock(ApiResponseNiaoWoWenJianShangChuanXiangYingShiTi())
 
 /** 卖烧饼解散鸟窝 */
 export const innerBirdDissolve = () => Mock.mock(ApiResponseVoid())
-
-/** 卖烧饼自动拉鸟窝 */
-export const innerBirdSave = () => Mock.mock(ApiResponseNaBuMaiShaoBingNiaoWoBaoCunChuCan())
-
-/** 拉校友鸟窝 */
-export const innerBirdSaveSchoolMateBird = () => Mock.mock(ApiResponseboolean())
 
 /** 鸟窝甬道 */
 export const innerBirdMemberBirdPageList = () => Mock.mock(ApiResponseComPageNiaoWoDuiXiangBirdResp())
@@ -32,6 +20,18 @@ export const innerBirdMemberRemove = () => Mock.mock(ApiResponseboolean())
 
 /** 卖烧饼加人入鸟窝 */
 export const innerBirdMemberSave = () => Mock.mock(ApiResponseNaBuMaiShaoBingNiaoWoBaoCunChuCan())
+
+/** 卖烧饼自动拉鸟窝 */
+export const innerBirdSave = () => Mock.mock(ApiResponseNaBuMaiShaoBingNiaoWoBaoCunChuCan())
+
+/** 拉校友鸟窝 */
+export const innerBirdSaveSchoolMateBird = () => Mock.mock(ApiResponseboolean())
+
+/** 上传鸟窝文件 */
+export const innerFileBirdFileSave = () => Mock.mock(ApiResponseNiaoWoWenJianShangChuanXiangYingShiTi())
+
+/** 生成上传签名url[图片消息 传入type及originalFileName] */
+export const innerFileGetUploadUrl = () => Mock.mock(ApiResponsePutFileResp())
 
 /** 模拟拉鸟窝后加人入鸟窝 */
 export const innerMockMockSaveMember = () => Mock.mock(ApiResponseboolean())

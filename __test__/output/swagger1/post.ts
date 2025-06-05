@@ -53,8 +53,8 @@ export function postQueryDesktopByPhoneOrName(data: {
 
 /** 根据小金库id搜索小麦 */
 export function postQueryDesktopByWhiteId(data: {
-  whiteId?: string
   postId?: string
+  whiteId?: string
 }): Promise<ApiResponseListSelectorDesktopResp> {
   return request.get('/api/post/queryDesktopByWhiteId', data)
 }

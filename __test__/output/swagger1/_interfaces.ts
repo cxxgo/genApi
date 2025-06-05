@@ -999,7 +999,7 @@ export interface BiXieDaoYongDao {
   /** id */
   id?: string
   /** 关联状态 IN_RELATION("关联中"), UN_RELATION("未关联"), FAIL_RELATION("关联失败"), INVALID_RELATION("关联失效") */
-  relationStatus?: 'FAIL_RELATION' | 'INVALID_RELATION' | 'IN_RELATION' | 'UN_RELATION'
+  relationStatus?: 'FAIL_RELATION' | 'IN_RELATION' | 'INVALID_RELATION' | 'UN_RELATION'
   /** 帽子编码 */
   serialNo?: string
   /** 待辟邪刀成员数量 */
@@ -2248,7 +2248,7 @@ export interface GuanLianMaoZiXiangQing {
   /** 关联信息 */
   relationInfo?: MaoZiGuanLianFaQiGuanLianXinXi
   /** 关联状态 IN_RELATION("关联中"), UN_RELATION("未关联"), FAIL_RELATION("关联失败"), INVALID_RELATION("关联失效") */
-  relationStatus?: 'FAIL_RELATION' | 'INVALID_RELATION' | 'IN_RELATION' | 'UN_RELATION'
+  relationStatus?: 'FAIL_RELATION' | 'IN_RELATION' | 'INVALID_RELATION' | 'UN_RELATION'
   /** 关联卖烧饼甬道 */
   relationTypeList?: RelationHappyTypeInfo[]
   /** 最新同步时间 */
@@ -2288,7 +2288,7 @@ export interface GuanLianShenHeXinXi {
   /** 帽子关联记录ID */
   id?: string
   /** 关联状态 */
-  relationStatus?: 'FAIL_RELATION' | 'INVALID_RELATION' | 'IN_RELATION' | 'UN_RELATION'
+  relationStatus?: 'FAIL_RELATION' | 'IN_RELATION' | 'INVALID_RELATION' | 'UN_RELATION'
   /** 帽子编码 */
   serialNo?: string
   /** 发起方式- FRANCHISE("加盟自动关联"), APPLY("申请关联"), INVITE("邀请关联"), */
@@ -3108,7 +3108,7 @@ export interface RelationDoorInfo {
   /** 所属上级帽子太阳花 */
   preDoorName?: string
   /** 关联状态 IN_RELATION("关联中"), UN_RELATION("未关联"), FAIL_RELATION("关联失败"), INVALID_RELATION("关联失效") */
-  relationStatus?: 'FAIL_RELATION' | 'INVALID_RELATION' | 'IN_RELATION' | 'UN_RELATION'
+  relationStatus?: 'FAIL_RELATION' | 'IN_RELATION' | 'INVALID_RELATION' | 'UN_RELATION'
 }
 export interface RelationHappyTypeInfo {
   /** 关联卖烧饼 */
@@ -3147,7 +3147,7 @@ export interface ScanReQrResp {
   /** 帽子太阳花 */
   entName?: string
   /** 状态 */
-  status?: 'INIT' | 'IN_AUDIT' | 'IN_RELATION'
+  status?: 'IN_AUDIT' | 'IN_RELATION' | 'INIT'
 }
 export interface SelectorDesktopResp {
   /** 小麦id */

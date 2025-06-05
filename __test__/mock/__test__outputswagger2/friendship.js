@@ -1,12 +1,12 @@
 import Mock from 'better-mock'
 import {
-  ApiResponsestring,
-  ApiResponseFriendshipDetailResp,
+  ApiResponse,
   ApiResponseboolean,
+  ApiResponseComPageFriendshipResp,
+  ApiResponseFriendshipDetailResp,
   ApiResponseFriendshipKeyBorardDetailResp,
   ApiResponseListFriendshipResp,
-  ApiResponse,
-  ApiResponseComPageFriendshipResp,
+  ApiResponsestring,
 } from './_interfaces'
 
 /** 扫雪好友 */

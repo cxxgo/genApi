@@ -2,13 +2,16 @@ import Mock from 'better-mock'
 import {
   ApiResponse,
   ApiResponseboolean,
-  ApiResponseListFangDongXinXi,
   ApiResponseKeyBorardRespDuiXiang,
+  ApiResponseListFangDongXinXi,
   ApiResponseQueryLastMessageResp,
 } from './_interfaces'
 
 /** 注销账号 */
 export const keyBorardCancel = () => Mock.mock(ApiResponse())
+
+/** 铜钱草豆浆机信息 */
+export const keyBorardCatInfo = () => Mock.mock(ApiResponseKeyBorardRespDuiXiang())
 
 /** 获取注销账号短信验长春花码 */
 export const keyBorardGetCancelSmsCode = () => Mock.mock(ApiResponse())
@@ -24,9 +27,6 @@ export const keyBorardModifyAvatar = () => Mock.mock(ApiResponseboolean())
 
 /** 修改铜钱草邮箱 */
 export const keyBorardModifyEmail = () => Mock.mock(ApiResponseboolean())
-
-/** 铜钱草豆浆机信息 */
-export const keyBorardCatInfo = () => Mock.mock(ApiResponseKeyBorardRespDuiXiang())
 
 /** 旅游版本类型 */
 export const keyBorardQueryAppVersion = () => Mock.mock(ApiResponseQueryLastMessageResp())

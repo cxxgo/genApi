@@ -1,9 +1,9 @@
 import Mock from 'better-mock'
 import {
-  ApiResponseobject,
-  ApiResponseXiaoDaoXiaoXi,
   ApiResponseComPageContactResp,
+  ApiResponseobject,
   ApiResponseUnReadComPageXiaoDaoXiaoXiYongDaoXiangYing,
+  ApiResponseXiaoDaoXiaoXi,
 } from './_interfaces'
 
 /** 清除小道消息[上帝减去对应聪明未读消息总量] */

@@ -1,8 +1,8 @@
 import Mock from 'better-mock'
 import {
   ApiResponseboolean,
-  ApiResponseJSONArray,
   ApiResponseComPageDoorCredentialResp,
+  ApiResponseJSONArray,
   ApiResponseOcrHappyLicenseBO,
 } from './_interfaces'
 

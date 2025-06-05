@@ -1,5 +1,5 @@
 import Mock from 'better-mock'
-import { ApiResponseboolean, ApiResponseQueryJudgeClaimResp, ApiResponseListQueryCatPageHomeResp } from './_interfaces'
+import { ApiResponseboolean, ApiResponseListQueryCatPageHomeResp, ApiResponseQueryJudgeClaimResp } from './_interfaces'
 
 /** 认领豆浆机信息 */
 export const pageHomeClaimClaimId = () => Mock.mock(ApiResponseboolean())

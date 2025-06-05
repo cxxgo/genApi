@@ -2,18 +2,18 @@ import Mock from 'better-mock'
 import {
   ApiResponse,
   ApiResponseAddBirdResp,
-  ApiResponseYanChangChunHuaXiaoXiXiangQingRequestDetailResp,
+  ApiResponseComPageYanChangChunHuaXiaoXiFenYeRequestPageListResp,
+  ApiResponseInviteToBirdRespYaoQingRuNiaoWoXiangYing,
   ApiResponseListUnreadResp,
   ApiResponselong,
-  ApiResponseInviteToBirdRespYaoQingRuNiaoWoXiangYing,
-  ApiResponseComPageYanChangChunHuaXiaoXiFenYeRequestPageListResp,
+  ApiResponseYanChangChunHuaXiaoXiXiangQingRequestDetailResp,
 } from './_interfaces'
-
-/** 添加好友申请 */
-export const requestAddFriend = () => Mock.mock(ApiResponse())
 
 /** 入鸟窝申请 */
 export const requestAddBird = () => Mock.mock(ApiResponseAddBirdResp())
+
+/** 添加好友申请 */
+export const requestAddFriend = () => Mock.mock(ApiResponse())
 
 /** 通过/拒绝 */
 export const requestApprove = () => Mock.mock(ApiResponse())

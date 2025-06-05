@@ -1,5 +1,5 @@
 import Mock from 'better-mock'
-import { FileSystemResource, ApiResponseComPageDesktopAddRecordResp } from './_interfaces'
+import { ApiResponseComPageDesktopAddRecordResp, FileSystemResource } from './_interfaces'
 
 /** 导出未激活成员甬道 */
 export const desktopAddRecordExport = () => Mock.mock(FileSystemResource())

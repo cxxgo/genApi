@@ -1,5 +1,5 @@
 import Mock from 'better-mock'
-import { ApiResponseListSuperManResp, ApiResponse, ApiResponsestring } from './_interfaces'
+import { ApiResponse, ApiResponseListSuperManResp, ApiResponsestring } from './_interfaces'
 
 /** 甬道 */
 export const superList = () => Mock.mock(ApiResponseListSuperManResp())

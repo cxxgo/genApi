@@ -1,15 +1,15 @@
 import Mock from 'better-mock'
 import {
-  ApiResponsestring,
-  ApiResponseJianChaYaoQingMa,
-  FileSystemResource,
-  ApiResponseListShengChengYaoQing,
+  ApiResponseboolean,
+  ApiResponseComPageInviteDesktopResp,
   ApiResponseInviteJoinEchoResp,
   ApiResponseInviteLoginResp,
-  ApiResponseYaoQingZhuCe,
-  ApiResponseComPageInviteDesktopResp,
   ApiResponseInviteSetResp,
-  ApiResponseboolean,
+  ApiResponseJianChaYaoQingMa,
+  ApiResponseListShengChengYaoQing,
+  ApiResponsestring,
+  ApiResponseYaoQingZhuCe,
+  FileSystemResource,
 } from './_interfaces'
 
 /** 取消屏蔽喇叭花 */

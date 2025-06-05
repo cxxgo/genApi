@@ -1,7 +1,7 @@
 import path from 'node:path'
 import { getFieldMockStr } from './mockUtils'
 import { IInterface } from '../types'
-import { writeAndPrettify, isExistInterface } from '../utils'
+import { writeAndPrettify, isExistInterface, sortByName} from '../utils'
 
 let allInterfaces: IInterface[] = []
 
@@ -9,7 +9,7 @@ let allInterfaces: IInterface[] = []
 export function writeMockInterface(interfaces: IInterface[], { outputDir, cmd = false, fieldRules }) {
   allInterfaces = interfaces
   let str = cmd ? '' : 'import Mock from "better-mock"\n'
-  interfaces.forEach((item) => {
+  sortByName(interfaces, 'name').forEach((item) => {
     const hasSame = childTypeSameWithParent(item)
     if (hasSame) {
       let mockStrWithoutSameField = ''
@@ -31,7 +31,7 @@ export function writeMockInterface(interfaces: IInterface[], { outputDir, cmd = 
     }
     if (item?.properties && item.properties?.length) {
       let mockRes = ''
-      item.properties.forEach((it) => {
+      sortByName(item.properties, 'name').forEach((it) => {
         mockRes += getInterfaceMock(it, fieldRules, item.name)
       })
       str += `\nreturn ${mockRes ? '{\n' + mockRes + '\n}' : ''}`

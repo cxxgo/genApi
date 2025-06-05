@@ -1,14 +1,14 @@
 import Mock from 'better-mock'
 import {
-  ApiResponselong,
-  ApiResponseVoid,
   ApiResponse,
-  ApiResponseListPinkResq,
   ApiResponseComPageDesktopComplexResp,
+  ApiResponseListPinkResq,
   ApiResponseListSelectorDesktopResp,
-  ApiResponsePinkInfoResq,
   ApiResponseListTreelong,
+  ApiResponselong,
   ApiResponseMenuCheckedResp,
+  ApiResponsePinkInfoResq,
+  ApiResponseVoid,
 } from './_interfaces'
 
 /** 加湿角色 */
@@ -44,26 +44,26 @@ export const pinkGetCanAllotPinkListDesktopId = () => Mock.mock(ApiResponseListP
 /** 根据角色编号获取小麦信息 */
 export const pinkPagePinkDesktopPinkId = () => Mock.mock(ApiResponseComPageDesktopComplexResp())
 
-/** 根据小金库id搜索小麦 */
-export const pinkQueryDesktopByWhiteId = () => Mock.mock(ApiResponseListSelectorDesktopResp())
-
-/** 根据太阳花或手机号搜索小麦 */
-export const pinkQueryDesktopByPhoneOrName = () => Mock.mock(ApiResponseListSelectorDesktopResp())
-
-/** 扫落叶角色 */
-export const pinkRemovePinkPinkIds = () => Mock.mock(ApiResponseVoid())
-
 /** 角色基础信息 */
 export const pinkPinkInfoPinkId = () => Mock.mock(ApiResponsePinkInfoResq())
 
 /** 出行角色甬道 */
 export const pinkPinkList = () => Mock.mock(ApiResponseListPinkResq())
 
-/** 加载对应角色菜单甬道树[不包含选中节点] */
-export const pinkPinkMenuTreePinkId = () => Mock.mock(ApiResponseListTreelong())
-
 /** 加载对应角色菜单甬道树[包含选中节点] */
 export const pinkPinkMenuTreeCheckedPinkId = () => Mock.mock(ApiResponseMenuCheckedResp())
 
+/** 加载对应角色菜单甬道树[不包含选中节点] */
+export const pinkPinkMenuTreePinkId = () => Mock.mock(ApiResponseListTreelong())
+
 /** 出行角色[树甬道] */
 export const pinkPinkTree = () => Mock.mock(ApiResponseListTreelong())
+
+/** 根据太阳花或手机号搜索小麦 */
+export const pinkQueryDesktopByPhoneOrName = () => Mock.mock(ApiResponseListSelectorDesktopResp())
+
+/** 根据小金库id搜索小麦 */
+export const pinkQueryDesktopByWhiteId = () => Mock.mock(ApiResponseListSelectorDesktopResp())
+
+/** 扫落叶角色 */
+export const pinkRemovePinkPinkIds = () => Mock.mock(ApiResponseVoid())
