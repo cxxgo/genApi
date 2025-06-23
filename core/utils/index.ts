@@ -6,6 +6,7 @@ import pinyin from 'js-pinyin'
 import { IApiModel, IInterface, IApiGroup } from '../types'
 import { createFolder } from './file'
 import { loadConfig } from './config'
+import log from 'npmlog'
 
 const jsKeyWords = [
   'delete',
@@ -229,6 +230,7 @@ export function isExistInterface(theInterface: string, allInterfaces: IInterface
 export function writeAndPrettify(targetFile: string, content: string) {
   createFolder(targetFile)
   fs.writeFileSync(targetFile, content)
+  log.verbose('targetFile---',targetFile)
   exec(`prettier --write ${targetFile}`)
 }
 

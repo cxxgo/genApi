@@ -84,10 +84,10 @@ function handleInterfaceModal(obj): Omit<IInterface, 'name'> {
  */
 function handleItemsType(obj) {
   if (obj.type === 'array') {
-    if (obj?.items?.originalRef) return handleWeirdName(obj.items.originalRef)
+    if (obj?.items?.originalRef || obj?.items?.$ref) return handleWeirdName(obj.items.originalRef || obj.items.$ref.replace('#/definitions/',''))
     else return simpleTypeMap(obj.items?.format || obj.items?.type, theCustomerTypeMap)
-  } else if (obj?.originalRef) {
-    return handleWeirdName(obj?.originalRef)
+  } else if (obj?.originalRef || obj?.$ref) {
+    return handleWeirdName(obj?.originalRef || obj?.$ref.replace('#/definitions/',''))
   } else {
     return simpleTypeMap(obj.format || obj.type, theCustomerTypeMap)
   }

@@ -49,11 +49,13 @@ export function handleApiModel(
         // 如果出参是数组
         if (resScheme?.type === 'array') {
           outputType = 'array'
-          resScheme?.items?.originalRef && (outputInterface = handleWeirdName(resScheme.items.originalRef))
+          if (resScheme?.items?.originalRef || resScheme?.items?.$ref){
+            outputInterface = handleWeirdName(resScheme.items.originalRef || resScheme?.items?.$ref.replace('#/definitions/',''))
+          }
         }
         // 如果存在出参模型
-        else if (resScheme?.originalRef) {
-          outputInterface = handleWeirdName(resScheme.originalRef)
+        else if (resScheme?.originalRef || resScheme?.$ref) {
+          outputInterface = handleWeirdName(resScheme.originalRef || resScheme.$ref.replace('#/definitions/',''))
         }
         // 出参是个简单类型
         else if (resScheme?.type) {
@@ -194,8 +196,8 @@ function getParameters(parameters, allInterfaces: IInterface[], customerTypeMap:
         isArray = true
         const itemsObj = item.schema?.type === 'array' ? item.schema?.items : item.items
 
-        if (itemsObj?.originalRef) {
-          type = handleWeirdName(itemsObj?.originalRef)
+        if (itemsObj?.originalRef || itemsObj?.$ref) {
+          type = handleWeirdName(itemsObj?.originalRef || itemsObj?.$ref.replace('#/definitions/',''))
         } else if (itemsObj?.format || itemsObj?.type) {
           type = simpleTypeMap(itemsObj?.format || itemsObj?.type, customerTypeMap)
         } else {
@@ -205,8 +207,8 @@ function getParameters(parameters, allInterfaces: IInterface[], customerTypeMap:
       // 非数组
       else {
         isArray = false
-        if (item.schema?.originalRef) {
-          type = handleWeirdName(item.schema?.originalRef)
+        if (item.schema?.originalRef || item.schema?.$ref) {
+          type = handleWeirdName(item.schema?.originalRef || item.schema?.$ref.replace('#/definitions/',''))
         } else if (item.format || item.type) {
           type = simpleTypeMap(item.format || item.type, customerTypeMap)
         } else {
