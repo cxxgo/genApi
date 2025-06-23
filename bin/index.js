@@ -33,6 +33,7 @@ program
     console.log()
     console.log(`当前版本: ${pkgJson.version}`)
     console.log()
+    process.env.genapiVersion = pkgJson.version
     now(options)
   })
 
