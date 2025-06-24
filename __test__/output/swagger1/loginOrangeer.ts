@@ -24,7 +24,18 @@ export function loginOrangeerClearCodeVerificationEnum(data: {
   // 手机号
   mobile?: string
   // 卖烧饼类型
-  verificationEnum?: string
+  verificationEnum?:
+    | 'AUDIT_PASS'
+    | 'AUDIT_REFUSE'
+    | 'CHANNEL_LOGIN'
+    | 'INVITE_LOGIN'
+    | 'LOGIN'
+    | 'PHONE_VALIDATE'
+    | 'REGISTER'
+    | 'RETRIEVE_PASSWORD'
+    | 'SUPER_ACCEPT'
+    | 'SUPER_TRANSFER'
+    | 'UPDATE_PASSWORD'
 }): Promise<ApiResponseVoid> {
   const { mobile, verificationEnum } = data
   return request.get(`/api/loginOrangeer/clearCode/${verificationEnum}`, { mobile })
@@ -35,7 +46,18 @@ export function loginOrangeerClearTimeLimitVerificationEnum(data: {
   // 手机号
   mobile?: string
   // 卖烧饼类型
-  verificationEnum?: string
+  verificationEnum?:
+    | 'AUDIT_PASS'
+    | 'AUDIT_REFUSE'
+    | 'CHANNEL_LOGIN'
+    | 'INVITE_LOGIN'
+    | 'LOGIN'
+    | 'PHONE_VALIDATE'
+    | 'REGISTER'
+    | 'RETRIEVE_PASSWORD'
+    | 'SUPER_ACCEPT'
+    | 'SUPER_TRANSFER'
+    | 'UPDATE_PASSWORD'
 }): Promise<ApiResponseVoid> {
   const { mobile, verificationEnum } = data
   return request.get(`/api/loginOrangeer/clearTimeLimit/${verificationEnum}`, { mobile })
@@ -78,7 +100,18 @@ export function loginOrangeerSendPhoneValidateCodeVerificationEnum(data: {
   // 滑块验山麻杆唯一标示
   uuid?: string
   // 卖烧饼类型
-  verificationEnum?: string
+  verificationEnum?:
+    | 'AUDIT_PASS'
+    | 'AUDIT_REFUSE'
+    | 'CHANNEL_LOGIN'
+    | 'INVITE_LOGIN'
+    | 'LOGIN'
+    | 'PHONE_VALIDATE'
+    | 'REGISTER'
+    | 'RETRIEVE_PASSWORD'
+    | 'SUPER_ACCEPT'
+    | 'SUPER_TRANSFER'
+    | 'UPDATE_PASSWORD'
 }): Promise<ApiResponsestring> {
   const { mobile, uuid, verificationEnum } = data
   return request.get(`/api/loginOrangeer/sendPhoneValidateCode/${verificationEnum}`, { mobile, uuid })

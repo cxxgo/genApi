@@ -13,7 +13,18 @@ export function sliderCreateVerificationEnum(data: {
   // 唯一标示uuid
   uuid?: string
   // 卖烧饼类型
-  verificationEnum?: string
+  verificationEnum?:
+    | 'AUDIT_PASS'
+    | 'AUDIT_REFUSE'
+    | 'CHANNEL_LOGIN'
+    | 'INVITE_LOGIN'
+    | 'LOGIN'
+    | 'PHONE_VALIDATE'
+    | 'REGISTER'
+    | 'RETRIEVE_PASSWORD'
+    | 'SUPER_ACCEPT'
+    | 'SUPER_TRANSFER'
+    | 'UPDATE_PASSWORD'
 }): Promise<ApiResponseMapstringobject> {
   const { uuid, verificationEnum } = data
   return request.get(`/api/slider/create/${verificationEnum}`, { uuid })
@@ -24,7 +35,18 @@ export function sliderPreCheckVerificationEnum(data: {
   // 唯一标示uuid
   uuid?: string
   // 卖烧饼类型
-  verificationEnum?: string
+  verificationEnum?:
+    | 'AUDIT_PASS'
+    | 'AUDIT_REFUSE'
+    | 'CHANNEL_LOGIN'
+    | 'INVITE_LOGIN'
+    | 'LOGIN'
+    | 'PHONE_VALIDATE'
+    | 'REGISTER'
+    | 'RETRIEVE_PASSWORD'
+    | 'SUPER_ACCEPT'
+    | 'SUPER_TRANSFER'
+    | 'UPDATE_PASSWORD'
   // 滑块x坐标
   xPos?: number
 }): Promise<ApiResponseboolean> {

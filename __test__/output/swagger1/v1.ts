@@ -13,10 +13,10 @@ import type {
 /** 审核-执行审核 */
 export function v1AuditRelation(data: {
   // 审核结果-auditStatus
-  auditStatusEnum?: string
+  auditStatusEnum?: 'NO_PASS' | 'PASS' | 'WAIT'
   req?: BiXieDao
   // 审核类型-auditType
-  typeEnum?: string
+  typeEnum?: 'EMPOWER' | 'RELATION' | 'SIGN'
 }): Promise<ApiResponseboolean> {
   return request.put('/api/v1/audit/relation', data)
 }
@@ -24,7 +24,7 @@ export function v1AuditRelation(data: {
 /** 关联审核甬道 */
 export function v1AuditRelationPage(data: {
   // 审核分类-auditClassification-已审核-未审核
-  auditClassificationEnum?: string
+  auditClassificationEnum?: 'REVIEWED' | 'UNAUDITED'
   doorAuditReq?: DoorAuditReq
 }): Promise<ApiResponseComPageGuanLianShenHeXinXi> {
   return request.post('/api/v1/audit/relation/page', data)

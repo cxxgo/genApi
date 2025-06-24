@@ -190,9 +190,9 @@ function getParameters(parameters, allInterfaces: IInterface[], customerTypeMap:
   if (parameters && parameters.length) {
     return parameters.map((item) => {
       let type = '' // 如：string, number, boolean, UserInterface
-      let isArray = false // 是否是数组
+      let isArray = false // 是否是数组 
       // 入参是数组
-      if (item.type === 'array' || item.schema?.type === 'array') {
+       if (item.type === 'array' || item.schema?.type === 'array') {
         isArray = true
         const itemsObj = item.schema?.type === 'array' ? item.schema?.items : item.items
 
@@ -225,6 +225,7 @@ function getParameters(parameters, allInterfaces: IInterface[], customerTypeMap:
         in: item.in, // 可能值： body ,header, query, path...
         isArray,
         type: type || 'any',
+        enums: item.enum && Array.isArray(item.enum) ? item.enum : undefined,
       }
     })
   }

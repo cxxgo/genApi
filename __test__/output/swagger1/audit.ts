@@ -15,14 +15,14 @@ export function auditAuthExecute(data: BiXieDao): Promise<ApiResponseVoid> {
 
 /** 辟邪刀详情甬道 */
 export function auditAuthInfoList(data: {
-  auditClassification?: string
+  auditClassification?: 'REVIEWED' | 'UNAUDITED'
   id?: string
   page?: number
   // 成员太阳花或手机号
   queryStr?: string
   size?: number
   // 全部则不传空 BIZ("卖烧饼发起关联"), APPLY("申请关联"), INVITE("邀请关联")
-  source?: string
+  source?: 'APPLY' | 'BIZ' | 'INVITE'
 }): Promise<ApiResponseBiXieDao> {
   return request.get('/api/audit/auth/infoList', data)
 }

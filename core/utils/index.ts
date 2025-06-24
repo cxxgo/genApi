@@ -299,11 +299,11 @@ export async function getRunEnv() {
   return env
 }
 
-export function sortByName(arr:any[], key?:string){
+export function sortByName<T>(arr: T[], key?: string): T[]{
   return key ? arr.sort((a, b) => mixedTypeCompare(a[key], b[key])) : arr.sort((a, b) => mixedTypeCompare(a, b))
 }
 
-export function mixedTypeCompare(a, b) {
+export function mixedTypeCompare(a: any, b: any) {
   // 如果都是数字，直接比较
   if (typeof a === 'number' && typeof b === 'number') {
     return a - b;
@@ -314,4 +314,13 @@ export function mixedTypeCompare(a, b) {
   }
   // 数字排在字符串前面
   return typeof a === 'number' ? -1 : 1;
+}
+
+/** 处理类型，如果有枚举，则处理成 a|b|c 的格式，否则直接返回类型，如 string, number */
+export function handleEnum(enums: any[]) {
+  // 将 [1,2,3] 处理成 1 | 2 | 3 ， 或将 ['1','2','3'] 处理成 '1'|'2'|'3'
+  return sortByName(enums).reduce((pre, cur, index) => {
+    const _cur = typeof cur === 'string' ? `'${cur}'` : cur
+    return index > 0 ? `${pre} | ${_cur}` : _cur
+  }, '')
 }

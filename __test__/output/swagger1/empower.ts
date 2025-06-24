@@ -51,7 +51,7 @@ export function empowerDoorReBathCancelAuth(data: StationDesktopAuthReq): Promis
 export function empowerDoorReDesktopOperEmType(data: {
   code?: string
   refuseReason?: string
-  type?: string
+  type?: 'AGREE' | 'REFUSE'
 }): Promise<ApiResponseVoid> {
   const { code, refuseReason, type } = data
   return request.get(`/api/empower/doorRe/desktopOper/em/${type}`, { code, refuseReason })
@@ -85,7 +85,7 @@ export function empowerDoorReDetailListDoor(): Promise<ApiResponseListZhiXieChan
 /** 关联设置-获取角色甬道 */
 export function empowerDoorReEntReSetListPink(data: {
   name?: string
-  pinkType?: string
+  pinkType?: 'INNER' | 'OUT'
 }): Promise<ApiResponseListPinkInfo> {
   return request.get('/api/empower/doorRe/entReSet/listPink', data)
 }
@@ -93,7 +93,7 @@ export function empowerDoorReEntReSetListPink(data: {
 /** 邀请关联团建-关联方负责人关联操作 */
 export function empowerDoorReFranchiseOperOper(data: {
   linkCode?: string
-  oper?: string
+  oper?: 'AGREE' | 'REFUSE'
   reId?: string
 }): Promise<ApiResponseVoid> {
   const { linkCode, oper, reId } = data
@@ -145,7 +145,7 @@ export function empowerDoorReList(data: {
   name?: string
   page?: number
   // 关联状态筛选 IN_RELATION("关联中"), UN_RELATION("未关联"), FAIL_RELATION("关联失败"), INVALID_RELATION("关联失效")
-  relationStatus?: string
+  relationStatus?: 'FAIL_RELATION' | 'IN_RELATION' | 'INVALID_RELATION' | 'UN_RELATION'
   size?: number
 }): Promise<ApiResponseGuanLianMaoZiYongDao> {
   return request.get('/api/empower/doorRe/list', data)
@@ -159,7 +159,7 @@ export function empowerDoorReListPinkList(data: { doorId?: string; name?: string
 /** 辟邪刀小麦甬道 */
 export function empowerDoorRePageDesktopList(data: {
   // 辟邪刀-卖烧饼类型
-  certType?: string
+  certType?: 'AL_TICKET' | 'COMMON' | 'ESIGN_ALL' | 'ESIGN_ONLY_SIGN' | 'WALLET'
   // 帽子id-出行卖烧饼辟邪刀使用
   doorId?: string
   // 小麦邮箱
@@ -173,7 +173,7 @@ export function empowerDoorRePageDesktopList(data: {
   // 小麦姓名
   keyBorardName?: string
   // 小金库体系: 内部：INNER
-  mark?: string
+  mark?: 'INNER' | 'RELATION'
   // 手机号
   mobile?: string
   page?: number

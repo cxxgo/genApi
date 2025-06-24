@@ -1,6 +1,6 @@
 import path from 'node:path'
 import { IInterface } from '../types'
-import { writeAndPrettify, typeIsInterface, isExistInterface, sortByName } from '../utils'
+import { writeAndPrettify, typeIsInterface, isExistInterface, sortByName, handleEnum} from '../utils'
 
 /** interface 写入 */
 export function writeInterface(interfaces: IInterface[], config: { outputDir: string }) {
@@ -33,11 +33,3 @@ export function writeInterface(interfaces: IInterface[], config: { outputDir: st
   writeAndPrettify(targetFile, str)
 }
 
-/** 处理类型，如果有枚举，则处理成 a|b|c 的格式，否则直接返回类型，如 string, number */
-function handleEnum(enums: string[]) {
-  // 将 [1,2,3] 处理成 1 | 2 | 3 ， 或将 ['1','2','3'] 处理成 '1'|'2'|'3'
-  return sortByName(enums).reduce((pre, cur, index) => {
-    const _cur = typeof cur === 'string' ? `'${cur}'` : cur
-    return index > 0 ? `${pre} | ${_cur}` : _cur
-  }, '')
-}

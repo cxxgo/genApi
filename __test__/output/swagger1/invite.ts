@@ -60,7 +60,7 @@ export function inviteGenerateInviteShare(data: ShengChengYaoQing): Promise<ApiR
 
 /** 扫码或点击链接回显数据 */
 export function inviteInviteJoinEchoData(data: {
-  applyType?: string
+  applyType?: 'ACCORD' | 'INVITE_ADD' | 'INVITE_SHARE'
   id?: string
 }): Promise<ApiResponseInviteJoinEchoResp> {
   return request.get('/api/invite/inviteJoinEchoData', data)
@@ -78,7 +78,7 @@ export function inviteInviteOrangeer(data: YaoQingZhuCe0): Promise<ApiResponseYa
 
 /** 邀请记录出行 */
 export function invitePageApplyType(data: {
-  applyType?: string
+  applyType?: 'ACCORD' | 'INVITE_ADD' | 'INVITE_SHARE'
   req?: QueryInviteDesktopReq
 }): Promise<ApiResponseComPageInviteDesktopResp> {
   const { applyType, req } = data

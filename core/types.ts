@@ -90,12 +90,13 @@ export interface IParams {
   /** 参数名 */
   name: string
   /** 参数注释 */
-  description: string // 注释
+  description?: string // 注释
   in: 'header' | 'body' | 'query' | 'path' // 可能值： body ,header, query, path...
   /** 是否是数组 */
   isArray: boolean
   /** 入参类型，可能值：string, number, boolean, any, void, File, UserInterface... */
-  type
+  type: string
+  enums?: Array<string|number>
 }
 
 export interface IApiModel {
@@ -132,7 +133,7 @@ export interface IInterface {
   description?: string
   properties?: IInterface[]
   /** 枚举值 */
-  enums?: string[]
+  enums?: Array<string|number>
 }
 
 export interface IParsered extends IApiStation {

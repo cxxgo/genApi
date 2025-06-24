@@ -1,6 +1,6 @@
 import path from 'node:path'
 
-import { typeIsInterface, writeAndPrettify, handleDescription, isExistInterface, sortByName } from '../utils'
+import { typeIsInterface, writeAndPrettify, handleDescription, isExistInterface, sortByName, handleEnum } from '../utils'
 import { IParams, IApiGroup, IInterface, IParsered } from '../types'
 
 /** api 写入 */
@@ -99,23 +99,15 @@ function getParamStr(parameters: IParams[]) {
   }
   // 所有的参数都 in path
   else if (avaliableParam.every((p) => p.in === 'path')) {
-    const str = avaliableParam.reduce((pre, cur) => {
-      let desc = handleDescription(cur.description)
-      desc = desc && desc !== cur.name.trim() ? `\n// ${desc}\n` : '' // 有注释且和名字不一样
-      return `${pre}${desc}${cur.name}?:${cur.type}${cur.isArray ? '[]' : ''},`
-    }, '')
-    p1 = `data:{${str}}`
+    const p1Str = getP1Str(avaliableParam)
+    p1 = `data:{${p1Str}}`
     p2 = ''
     p3 = `const {${avaliableParam.map((p) => p.name).join(',')}} =data`
   }
   // 所有的参数都 in query 或 in body
   else if (avaliableParam.every((p) => p.in === 'query' || p.in === 'body')) {
-    const str = avaliableParam.reduce((pre, cur) => {
-      let desc = handleDescription(cur.description)
-      desc = desc && desc !== cur.name.trim() ? `\n// ${desc}\n` : '' // 有注释且和名字不一样
-      return `${pre}${desc}${cur.name}?:${cur.type}${cur.isArray ? '[]' : ''},`
-    }, '')
-    p1 = `data:{${str}}`
+    const p1Str = getP1Str(avaliableParam)
+    p1 = `data:{${p1Str}}`
     p2 = 'data'
     p3 = ''
   }
@@ -124,14 +116,9 @@ function getParamStr(parameters: IParams[]) {
     avaliableParam.some((p) => p.in == 'path') &&
     avaliableParam.filter((p) => p.in !== 'path').every((p) => p.in === 'query' || p.in === 'body')
   ) {
-    const inPathParam = avaliableParam.filter((p) => p.in === 'path')
     const notInPathParam = avaliableParam.filter((p) => p.in !== 'path')
-    const str = avaliableParam.reduce((pre, cur) => {
-      let desc = handleDescription(cur.description)
-      desc = desc && desc !== cur.name.trim() ? `\n// ${desc}\n` : '' // 有注释且和名字不一样
-      return `${pre}${desc}${cur.name}?:${cur.type}${cur.isArray ? '[]' : ''},`
-    }, '')
-    p1 = `data:{${str}}`
+    const p1Str = getP1Str(avaliableParam)
+    p1 = `data:{${p1Str}}`
     p2 = ` {${notInPathParam.map((p) => p.name).join(',')}} `
     p3 = `const {${avaliableParam.map((p) => p.name).join(',')}} =data`
   }
@@ -146,4 +133,14 @@ function getParamStr(parameters: IParams[]) {
     p2,
     p3,
   }
+}
+
+
+function getP1Str(avaliableParam: IParams[]){
+  return avaliableParam.reduce((pre, cur) => {
+    let desc = handleDescription(cur.description)
+    desc = desc && desc !== cur.name.trim() ? `\n// ${desc}\n` : '' // 有注释且和名字不一样
+    const curType=cur?.enums?.length? handleEnum(cur.enums):cur.type
+    return `${pre}${desc}${cur.name}?:${curType}${cur.isArray ? '[]' : ''},`
+  }, '')
 }

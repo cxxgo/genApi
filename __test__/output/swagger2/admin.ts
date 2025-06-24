@@ -35,7 +35,7 @@ export function adminGetAvatar(data: {
 /** 上传版本文件 */
 export function adminPutAppVersionFile(data: {
   // 应用类型
-  appType?: string
+  appType?: 'ANDROID' | 'IOS'
   // 强制更新
   isForceUpdate?: boolean
   // 版本描述

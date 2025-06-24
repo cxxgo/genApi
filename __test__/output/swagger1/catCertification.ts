@@ -57,7 +57,7 @@ export function catCertificationIdCardFront(data: OcrImageReq): Promise<ApiRespo
 /** 豆浆机发起放行 */
 export function catCertificationInitFaceVerifyWithCertifyIdType(data: {
   req?: CatVerifyReq
-  type?: string
+  type?: 'COMMON' | 'WALLET'
 }): Promise<ApiResponseVerificationResp> {
   const { req, type } = data
   return request.post(`/api/catCertification/initFaceVerifyWithCertifyId/${type}`, { req })

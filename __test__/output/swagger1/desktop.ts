@@ -21,7 +21,11 @@ export function desktopAdd(data: DesktopAddReq): Promise<ApiResponse> {
 }
 
 /** 状态修改 */
-export function desktopChangeStatus(data: { desktopId?: string; msg?: string; status?: string }): Promise<ApiResponse> {
+export function desktopChangeStatus(data: {
+  desktopId?: string
+  msg?: string
+  status?: 'FORBID' | 'NONACTIVATED' | 'NORMAL'
+}): Promise<ApiResponse> {
   return request.get('/api/desktop/changeStatus', data)
 }
 
@@ -59,7 +63,7 @@ export function desktopMyWhiteTreeCount(): Promise<ApiResponseListTreelong> {
 /** 小麦甬道[复杂数据] */
 export function desktopPageList(data: {
   // 辟邪刀-卖烧饼类型
-  certType?: string
+  certType?: 'AL_TICKET' | 'COMMON' | 'ESIGN_ALL' | 'ESIGN_ONLY_SIGN' | 'WALLET'
   // 帽子id-出行卖烧饼辟邪刀使用
   doorId?: string
   // 小麦邮箱
@@ -73,7 +77,7 @@ export function desktopPageList(data: {
   // 小麦姓名
   keyBorardName?: string
   // 小金库体系: 内部：INNER
-  mark?: string
+  mark?: 'INNER' | 'RELATION'
   // 手机号
   mobile?: string
   page?: number
@@ -105,7 +109,7 @@ export function desktopPageList(data: {
 /** 小麦甬道[选择器] */
 export function desktopPageSelectList(data: {
   // 辟邪刀-卖烧饼类型
-  certType?: string
+  certType?: 'AL_TICKET' | 'COMMON' | 'ESIGN_ALL' | 'ESIGN_ONLY_SIGN' | 'WALLET'
   // 帽子id-出行卖烧饼辟邪刀使用
   doorId?: string
   // 小麦邮箱
@@ -119,7 +123,7 @@ export function desktopPageSelectList(data: {
   // 小麦姓名
   keyBorardName?: string
   // 小金库体系: 内部：INNER
-  mark?: string
+  mark?: 'INNER' | 'RELATION'
   // 手机号
   mobile?: string
   page?: number
