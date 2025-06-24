@@ -50,7 +50,7 @@ function handleProperties(properties) {
 }
 
 function handleInterfaceModal(obj): Omit<IInterface, 'name'> {
-  const additionalProperties = obj.type === 'object' && obj.additionalProperties?.originalRef
+  const additionalProperties = obj.type === 'object' && (obj.additionalProperties?.originalRef || (obj.additionalProperties?.$ref || '').replace('#/definitions/',''))
   const isArray = obj.type === 'array'
   const theType = additionalProperties ? handleWeirdName(additionalProperties) : handleItemsType(obj)
 
