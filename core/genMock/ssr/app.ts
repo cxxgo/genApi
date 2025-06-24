@@ -1,6 +1,6 @@
+import type { IParsered } from '../../types'
 // app.js (在服务器和客户端之间共享)
 import { createSSRApp } from 'vue'
-import { IParsered } from '../../types'
 
 export function createApp(allApiData?: IParsered[]) {
   return createSSRApp({

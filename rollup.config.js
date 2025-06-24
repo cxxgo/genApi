@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const typescript = require('rollup-plugin-typescript2')
 const { dts } = require('rollup-plugin-dts')
+const typescript = require('rollup-plugin-typescript2')
 // const json = require('@rollup/plugin-json')
 
 module.exports = [

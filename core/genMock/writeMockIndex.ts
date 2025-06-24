@@ -1,14 +1,14 @@
+import type { IApiGroup } from '../types'
 import path from 'node:path'
 import { handleWeirdName, writeAndPrettify } from '../utils'
-import { IApiGroup } from '../types'
 
 /** 在 mock/index.js 中写入内容 */
 export function writeMockIndex(
-  groupApiList: { outputDir: string; stationFlag: string; apiGroup: IApiGroup[] }[],
-  config: { mockRootPath: string }
+  groupApiList: { outputDir: string, stationFlag: string, apiGroup: IApiGroup[] }[],
+  config: { mockRootPath: string },
 ) {
   const { mockRootPath } = config
-  const firstLine = "import Mock from 'better-mock'\n"
+  const firstLine = 'import Mock from \'better-mock\'\n'
   const extraStr = `
 Mock.setup({
   timeout: "200-500"

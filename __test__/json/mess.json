@@ -901,6 +901,47 @@
         "traceId": { "type": "string" }
       },
       "title": "ApiResponse«List«Tree«long»»»"
+    },
+    "ApiResponse«Map«long,房屋联排列表返回参数»»": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/房屋联排列表返回参数"
+          }
+        },
+        "msg": {
+          "type": "string"
+        },
+        "success": {
+          "type": "boolean"
+        },
+        "timestamp": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "ApiResponse«Map«long,房屋联排列表返回参数»»"
+    },
+    "房屋联排列表返回参数": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "integer",
+          "format": "int32",
+          "description": "状态"
+        },
+        "colorStatus": {
+          "type": "string",
+          "description": "颜色状态"
+        }
+      },
+      "title": "房屋联排列表返回参数"
     }
   }
 }

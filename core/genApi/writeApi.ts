@@ -1,13 +1,13 @@
-import path from 'node:path'
+import type { IApiGroup, IInterface, IParams, IParsered } from '../types'
 
-import { typeIsInterface, writeAndPrettify, handleDescription, isExistInterface } from '../utils'
-import { IParams, IApiGroup, IInterface, IParsered } from '../types'
+import path from 'node:path'
+import { handleDescription, handleEnum, isExistInterface, sortByName, typeIsInterface, writeAndPrettify } from '../utils'
 
 /** api 写入 */
 export function writeApi(
   apiGroup: IApiGroup[],
   allInterfaces: IInterface[],
-  config: Pick<IParsered, 'outputDir' | 'apiBody' | 'httpTpl'>
+  config: Pick<IParsered, 'outputDir' | 'apiBody' | 'httpTpl'>,
 ) {
   const { outputDir, apiBody, httpTpl } = config
   apiGroup.forEach((item) => {
@@ -15,8 +15,7 @@ export function writeApi(
     let apiStr = ''
     let fileUsedInterface: string[] = [] // 当前文件用到的 interface
 
-    const itemApis = item.apis.sort((a, b) => a.name.localeCompare(b.name))
-    itemApis.forEach((api) => {
+    sortByName(item.apis, 'name').forEach((api) => {
       const { name, url, originUrl, method, summary, parameters, outputInterface, outputType } = api
       /** 是否是无效的 interface */
       let isInvalidInterface = false
@@ -30,10 +29,10 @@ export function writeApi(
         }
         // 入参需要引入的interface
         ;(parameters || []).forEach(
-          (item) =>
-            typeIsInterface(item.type) &&
-            isExistInterface(item.type, allInterfaces) &&
-            fileUsedInterface.push(item.type)
+          item =>
+            typeIsInterface(item.type)
+            && isExistInterface(item.type, allInterfaces)
+            && fileUsedInterface.push(item.type),
         )
       }
 
@@ -56,7 +55,7 @@ export function writeApi(
 
     // interface 引入
     let importStr = ''
-    fileUsedInterface = [...new Set(fileUsedInterface)].sort((a, b) => a.localeCompare(b))
+    fileUsedInterface = sortByName([...new Set(fileUsedInterface)])
     if (fileUsedInterface.length) {
       importStr += `import type {`
       fileUsedInterface.forEach((item, index) => {
@@ -82,7 +81,7 @@ export function writeApi(
  */
 function getParamStr(parameters: IParams[]) {
   // 过滤掉 in header 的参数
-  const avaliableParam = (parameters || []).filter((item) => item.in !== 'header')
+  const avaliableParam = sortByName((parameters || []).filter(item => item.in !== 'header'), 'name')
   // 无参数
   if (!avaliableParam.length) {
     return { p1: '', p2: '' }
@@ -99,42 +98,29 @@ function getParamStr(parameters: IParams[]) {
     p3 = ''
   }
   // 所有的参数都 in path
-  else if (avaliableParam.every((p) => p.in === 'path')) {
-    const str = avaliableParam.reduce((pre, cur) => {
-      let desc = handleDescription(cur.description)
-      desc = desc && desc !== cur.name.trim() ? `\n// ${desc}\n` : '' // 有注释且和名字不一样
-      return `${pre}${desc}${cur.name}?:${cur.type}${cur.isArray ? '[]' : ''},`
-    }, '')
-    p1 = `data:{${str}}`
+  else if (avaliableParam.every(p => p.in === 'path')) {
+    const p1Str = getP1Str(avaliableParam)
+    p1 = `data:{${p1Str}}`
     p2 = ''
-    p3 = `const {${avaliableParam.map((p) => p.name).join(',')}} =data`
+    p3 = `const {${avaliableParam.map(p => p.name).join(',')}} =data`
   }
   // 所有的参数都 in query 或 in body
-  else if (avaliableParam.every((p) => p.in === 'query' || p.in === 'body')) {
-    const str = avaliableParam.reduce((pre, cur) => {
-      let desc = handleDescription(cur.description)
-      desc = desc && desc !== cur.name.trim() ? `\n// ${desc}\n` : '' // 有注释且和名字不一样
-      return `${pre}${desc}${cur.name}?:${cur.type}${cur.isArray ? '[]' : ''},`
-    }, '')
-    p1 = `data:{${str}}`
+  else if (avaliableParam.every(p => p.in === 'query' || p.in === 'body')) {
+    const p1Str = getP1Str(avaliableParam)
+    p1 = `data:{${p1Str}}`
     p2 = 'data'
     p3 = ''
   }
   // 存在 in path 的参数，且其它都 in query 或 in body
   else if (
-    avaliableParam.some((p) => p.in == 'path') &&
-    avaliableParam.filter((p) => p.in !== 'path').every((p) => p.in === 'query' || p.in === 'body')
+    avaliableParam.some(p => p.in === 'path')
+    && avaliableParam.filter(p => p.in !== 'path').every(p => p.in === 'query' || p.in === 'body')
   ) {
-    const inPathParam = avaliableParam.filter((p) => p.in === 'path')
-    const notInPathParam = avaliableParam.filter((p) => p.in !== 'path')
-    const str = avaliableParam.reduce((pre, cur) => {
-      let desc = handleDescription(cur.description)
-      desc = desc && desc !== cur.name.trim() ? `\n// ${desc}\n` : '' // 有注释且和名字不一样
-      return `${pre}${desc}${cur.name}?:${cur.type}${cur.isArray ? '[]' : ''},`
-    }, '')
-    p1 = `data:{${str}}`
-    p2 = ` {${notInPathParam.map((p) => p.name).join(',')}} `
-    p3 = `const {${avaliableParam.map((p) => p.name).join(',')}} =data`
+    const notInPathParam = avaliableParam.filter(p => p.in !== 'path')
+    const p1Str = getP1Str(avaliableParam)
+    p1 = `data:{${p1Str}}`
+    p2 = ` {${notInPathParam.map(p => p.name).join(',')}} `
+    p3 = `const {${avaliableParam.map(p => p.name).join(',')}} =data`
   }
   // 其他奇怪的或未知的情况，如 in formData
   else {
@@ -147,4 +133,13 @@ function getParamStr(parameters: IParams[]) {
     p2,
     p3,
   }
+}
+
+function getP1Str(avaliableParam: IParams[]) {
+  return avaliableParam.reduce((pre, cur) => {
+    let desc = handleDescription(cur.description)
+    desc = desc && desc !== cur.name.trim() ? `\n// ${desc}\n` : '' // 有注释且和名字不一样
+    const curType = cur?.enums?.length ? handleEnum(cur.enums) : cur.type
+    return `${pre}${desc}${cur.name}?:${curType}${cur.isArray ? '[]' : ''},`
+  }, '')
 }

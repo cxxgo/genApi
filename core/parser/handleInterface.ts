@@ -1,10 +1,11 @@
-import { IInterface } from '../types'
-import { handleWeirdName, simpleTypeMap, handleDescription } from '../utils'
+import type { IInterface } from '../types'
+import { handleDescription, handleWeirdName, simpleTypeMap } from '../utils'
 
 /** 用户自定义的字段类型 map 规则 */
 let theCustomerTypeMap = {}
 
-/** 入参格式
+/**
+ * 入参格式
  * "ApiResponse«AddUserReq»": {
  *    "type": "object",
  *    "properties": {
@@ -21,20 +22,22 @@ export function handleInterface(definitions, customerTypeMap: { [key: string]: s
   Object.keys(definitions).forEach((key) => {
     const interfaceName = handleWeirdName(key)
     // 不存在或者是简单类型
-    if (!interfaceName || simpleTypeMap(interfaceName, theCustomerTypeMap)) return
+    if (!interfaceName || simpleTypeMap(interfaceName, theCustomerTypeMap))
+      return
 
     const obj = definitions[key]
     const properties = handleProperties(obj.properties || {})
-    const exist = defs.find((item) => item.name === interfaceName)
+    const exist = defs.find(item => item.name === interfaceName)
     const interfaceModal = handleInterfaceModal(obj)
     defs.push({ name: interfaceName, ...interfaceModal, properties })
   })
   return defs
 }
 
-/** 处理属性
+/**
+ * 处理属性
  * @param properties 格式如下
-*  "properties": {
+ *  "properties": {
       "directEntryGroup": { "type": "boolean", "description": "是否直接入圈子" },
       "groupId": { "type": "integer", "format": "int64", "description": "圈子id" }
    },
@@ -50,7 +53,7 @@ function handleProperties(properties) {
 }
 
 function handleInterfaceModal(obj): Omit<IInterface, 'name'> {
-  const additionalProperties = obj.type === 'object' && obj.additionalProperties?.originalRef
+  const additionalProperties = obj.type === 'object' && (obj.additionalProperties?.originalRef || (obj.additionalProperties?.$ref || '').replace('#/definitions/', ''))
   const isArray = obj.type === 'array'
   const theType = additionalProperties ? handleWeirdName(additionalProperties) : handleItemsType(obj)
 
@@ -62,7 +65,8 @@ function handleInterfaceModal(obj): Omit<IInterface, 'name'> {
   }
 }
 
-/** 处理以下数据格式
+/**
+ * 处理以下数据格式
  * "certificateList": {
       "type": "array",
       "description": "执业资格证",
@@ -84,11 +88,14 @@ function handleInterfaceModal(obj): Omit<IInterface, 'name'> {
  */
 function handleItemsType(obj) {
   if (obj.type === 'array') {
-    if (obj?.items?.originalRef) return handleWeirdName(obj.items.originalRef)
+    if (obj?.items?.originalRef || obj?.items?.$ref)
+      return handleWeirdName(obj.items.originalRef || obj.items.$ref.replace('#/definitions/', ''))
     else return simpleTypeMap(obj.items?.format || obj.items?.type, theCustomerTypeMap)
-  } else if (obj?.originalRef) {
-    return handleWeirdName(obj?.originalRef)
-  } else {
+  }
+  else if (obj?.originalRef || obj?.$ref) {
+    return handleWeirdName(obj?.originalRef || obj?.$ref.replace('#/definitions/', ''))
+  }
+  else {
     return simpleTypeMap(obj.format || obj.type, theCustomerTypeMap)
   }
 }

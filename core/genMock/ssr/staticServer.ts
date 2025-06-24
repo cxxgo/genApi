@@ -1,5 +1,5 @@
-import path from 'node:path'
 import fs from 'node:fs'
+import path from 'node:path'
 
 const CWD = process.cwd()
 
@@ -13,23 +13,26 @@ export async function staticServer(reqUrl: string, res) {
     if (stat.isFile()) {
       // 请求文件
       sendFile(res, fileUrl)
-    } else {
+    }
+    else {
       // 请求文件夹
       sendDirectory(res, fileUrl)
     }
-  } catch (error) {
+  }
+  catch (error) {
     // 访问的资源不存在
     if (error.code === 'ENOENT') {
       res.statusCode = 404
       res.end('file/directory does not exist')
-    } else {
+    }
+    else {
       res.statusCode = 500
       res.end('something wrong with the server')
     }
   }
 }
 
-export const sendFile = async (res, pathname) => {
+export async function sendFile(res, pathname) {
   const data = await fs.promises.readFile(pathname)
   const ext = pathname.split('.').pop()
   const contentTypeMap = {
@@ -41,7 +44,7 @@ export const sendFile = async (res, pathname) => {
   res.end(data)
 }
 
-export const sendDirectory = async (res, pathname) => {
+export async function sendDirectory(res, pathname) {
   const fileList = await fs.promises.readdir(pathname, { withFileTypes: true })
   // 相对路径，如 http://localhost:8088/static/example 相对 http://localhost:8088 的结果为 'static/example'
   const relativePath = path.relative(process.cwd(), pathname)

@@ -1,19 +1,19 @@
+import type { UserConfig } from '../core/types'
 import fs from 'node:fs'
 import log from 'npmlog'
-import { getConfigPathFromLoal, getParseredDataFromLocal } from '../core/parser/localData'
-import { loadConfig } from '../core/utils/config'
-import { parser } from '../core/parser'
 import { genMock } from '../core/genMock'
 import { createMockServer } from '../core/genMock/createMockServer'
-import { UserConfig } from '../core/types'
-import { getConfigPath } from '../core/utils/config'
 import { getMockPath } from '../core/genMock/mockUtils'
+import { parser } from '../core/parser'
+import { getConfigPathFromLoal, getParseredDataFromLocal } from '../core/parser/localData'
+import { getConfigPath, loadConfig } from '../core/utils/config'
 
 export async function mockServer() {
   // 优先从本地取执行 genapi now 时带的config路径
   const localPath = getConfigPathFromLoal()
   const configFilePath = fs.existsSync(localPath) ? localPath : getConfigPath()
-  if (!configFilePath) return
+  if (!configFilePath)
+    return
 
   const { config } = (await loadConfig(configFilePath)) as { config: UserConfig }
   let allApiData = await getParseredDataFromLocal()
@@ -32,7 +32,8 @@ export async function mockServer() {
     if (!fs.existsSync(mockPath)) {
       // 不存在 mock 目录
       await genMock(allApiData, config.mock)
-    } else {
+    }
+    else {
       // 存在 mock 目录，但是是空目录
       const mockFiles = fs.readdirSync(mockPath)
       if (!mockFiles.length) {

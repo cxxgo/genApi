@@ -1,6 +1,6 @@
 import path from 'node:path'
-import { getRunEnv } from '../utils/index'
 import log from 'npmlog'
+import { getRunEnv } from '../utils/index'
 
 /** 获取简单数据类型的 mock */
 export function getFieldMockStr({ name, type, fieldRules }) {
@@ -15,50 +15,67 @@ export function getFieldMockStr({ name, type, fieldRules }) {
   }
   // 一些内置的 mock处理规则
   else if (
-    lowerCaseName === 'timestamp' ||
-    lowerCaseName === 'datetime' ||
-    lowerCaseName === 'time' ||
-    lowerCaseName === 'date' ||
-    (type === 'string' && /(.*)Date|(.*)Time/.test(name))
+    lowerCaseName === 'timestamp'
+    || lowerCaseName === 'datetime'
+    || lowerCaseName === 'time'
+    || lowerCaseName === 'date'
+    || (type === 'string' && /(.*)Date|(.*)Time/.test(name))
   ) {
     mockStr = '@datetime' // 处理成日期
-  } else if (/(.*)id$/.test(lowerCaseName)) {
+  }
+  else if (/(.*)id$/.test(lowerCaseName)) {
     mockStr = '@guid' // 处理成 id
-  } else if (type === 'string' && /color/.test(lowerCaseName)) {
+  }
+  else if (type === 'string' && /color/.test(lowerCaseName)) {
     mockStr = '@color'
-  } else if (type === 'string' && /province/.test(lowerCaseName)) {
+  }
+  else if (type === 'string' && /province/.test(lowerCaseName)) {
     mockStr = '@province'
-  } else if (type === 'string' && /city/.test(lowerCaseName)) {
+  }
+  else if (type === 'string' && /city/.test(lowerCaseName)) {
     mockStr = '@city'
-  } else if (type === 'string' && /county/.test(lowerCaseName)) {
+  }
+  else if (type === 'string' && /county/.test(lowerCaseName)) {
     mockStr = '@county'
-  } else if (type === 'number' && /Ratio|Percent|Rate/.test(name)) {
+  }
+  else if (type === 'number' && /Ratio|Percent|Rate/.test(name)) {
     mockStr = '@float(0,1)' // 比例
-  } else if (type === 'number' && /Count|Amount/.test(lowerCaseName)) {
+  }
+  else if (type === 'number' && /Count|Amount/.test(lowerCaseName)) {
     mockStr = '@integer(10,10000)' // 数量
-  } else if (type === 'string' && /username/.test(lowerCaseName)) {
+  }
+  else if (type === 'string' && /username/.test(lowerCaseName)) {
     mockStr = '@cname'
-  } else if (type === 'string' && /department/.test(lowerCaseName)) {
+  }
+  else if (type === 'string' && /department/.test(lowerCaseName)) {
     mockStr = getRandomOneFromArr('财务部|研发部|市场部|运维部|测试部')
-  } else if (type === 'string' && /url|link|avatar/.test(lowerCaseName)) {
+  }
+  else if (type === 'string' && /url|link|avatar/.test(lowerCaseName)) {
     mockStr = '@image(200x100, @color, @color)' // 生成一张图片地址
-  } else if (type === 'string' && /phone/.test(lowerCaseName)) {
+  }
+  else if (type === 'string' && /phone/.test(lowerCaseName)) {
     mockStr = '@integer(13100000000,18999999999)' // 电话号码
-  } else if (type === 'string' && /email/.test(lowerCaseName)) {
+  }
+  else if (type === 'string' && /email/.test(lowerCaseName)) {
     mockStr = '@email' // 邮箱
-  } else if (type === 'string' && /name|title/.test(lowerCaseName)) {
+  }
+  else if (type === 'string' && /name|title/.test(lowerCaseName)) {
     mockStr = '@ctitle(5,10)'
   }
   // 根据类型简单处理
   else if (type === 'number') {
     mockStr = '@integer(3,1000)'
-  } else if (type === 'string') {
+  }
+  else if (type === 'string') {
     mockStr = '@string(5,50)'
-  } else if (type === 'boolean') {
+  }
+  else if (type === 'boolean') {
     mockStr = '@boolean'
-  } else if (type === 'any' || type === 'File') {
+  }
+  else if (type === 'any' || type === 'File') {
     mockStr = ''
-  } else {
+  }
+  else {
     console.log('未处理的类型？')
     mockStr = '@string(5,50)'
   }
@@ -92,7 +109,6 @@ export function getCustomeMockStr(name, fieldRules) {
     const res = fieldRules[findRule] || ''
     // 如果是字符串,加个引号,
     if (typeof res === 'string') {
-      // eslint-disable-next-line no-useless-escape
       return `\'${res}\'`
     }
     // 其它情况（数字，正则，函数），直接返回
@@ -100,7 +116,8 @@ export function getCustomeMockStr(name, fieldRules) {
   }
 }
 
-/** 从竖线分隔的数据中随机取一项  Mock.mock({ 'regexp': /abc|eed|/})
+/**
+ * 从竖线分隔的数据中随机取一项  Mock.mock({ 'regexp': /abc|eed|/})
  * @param str 竖线分隔的字符串，如： 'FORWARD|REPLY|'
  * @return 正则： /FORWARD|REPLY|/
  */
