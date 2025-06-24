@@ -7,8 +7,8 @@ yarn-error.log
 /temp
 
 # 执行 npm run test:init 在项目根目录下生成的配置文件
-/apiConfig.js
-/apiConfig.ts
+/genapi.config.js
+/genapi.config.ts
 
 
 # 在用户目录下执行 genapi 生成的 mock 数据路径为 path.join(__dirname,'../mock')，

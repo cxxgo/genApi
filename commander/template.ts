@@ -13,7 +13,7 @@ module.exports = ${getCommonTpl(true)}
 `
 
 /**
- * 生成 apiConfig 模板
+ * 生成 genapi 配置文件模板
  * @param needComment 是否需要注释
  */
 function getCommonTpl(needComment = false) {

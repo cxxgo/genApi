@@ -5,18 +5,18 @@ const config: UserConfig = {
     {
       swaggerUrl: './__test__/json/swagger1.json',
       outputDir: './__test__/output/swagger1',
-      gen: false,
+      gen:true,
     },
     {
       swaggerUrl: './__test__/json/swagger2.json',
       outputDir: './__test__/output/swagger2',
       exclude: '',
-      gen: false,
+      gen:true,
     },
     {
       swaggerUrl: './__test__/json/swagger3.json',
       outputDir: './__test__/output/swagger3',
-      gen: false,
+      gen:true,
     },
     {
       swaggerUrl: './__test__/json/schedule.json',
@@ -26,12 +26,12 @@ const config: UserConfig = {
     {
       swaggerUrl: './__test__/json/crm.json',
       outputDir: './__test__/output/crm',
-      gen: false,
+      gen:true,
     },
     {
       swaggerUrl: './__test__/json/swagger4.json',
       outputDir: './__test__/output/swagger4',
-      gen: false,
+      gen:true,
       typeMap: {
         int64: 'number',
       },
@@ -43,7 +43,7 @@ const config: UserConfig = {
       exclude: [/thk\/api\/common\/v1\/enum/, '/thk/api/v1/config/credential-standard/getDetail'],
       // exclude: [/credential-standard/],
       fileExt: 'js', // 生成 js 文件
-      gen: false,
+      gen:true,
       fileName: () => {
         return 'swagger4Api-js'
       },
@@ -71,7 +71,7 @@ const config: UserConfig = {
     {
       swaggerUrl: './__test__/json/mess.json',
       outputDir: './__test__/output/mess',
-      gen: false,
+      gen:true,
     },
   ],
   httpTpl: 'const request:any=()=>{}', // 文件头部引入内容
