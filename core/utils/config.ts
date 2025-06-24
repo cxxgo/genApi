@@ -14,7 +14,7 @@ export async function loadConfig(configPath: string): Promise<{ config?: any, so
         },
       ],
     })
-    return { config, sources }
+    return { config: typeof config === 'function' ? await config() : config, sources }
   }
   catch (error) {
     console.log(error)
@@ -23,7 +23,7 @@ export async function loadConfig(configPath: string): Promise<{ config?: any, so
 }
 
 /**
- * 获取 apiConfig 配置文件路径
+ * 获取配置文件路径
  * @param optionConfig 用户通过 --config 参数传入的路径
  */
 export function getConfigPath(optionConfig?: string) {

@@ -5,13 +5,13 @@
   "buildInFlag": "cxx-genapi-tool",
   "author": "",
   "license": "ISC",
-  "homepage": "https://github.com/candy252324/genApi#readme",
+  "homepage": "https://github.com/cxxgo/genApi#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/candy252324/genApi.git"
+    "url": "git+https://github.com/cxxgo/genApi.git"
   },
   "bugs": {
-    "url": "https://github.com/candy252324/genApi/issues"
+    "url": "https://github.com/cxxgo/genApi/issues"
   },
   "keywords": [],
   "main": "./dist/index.js",
@@ -27,7 +27,7 @@
   ],
   "scripts": {
     "build": "node ./scripts/build.js",
-    "test:gen": "pnpm build && pnpm link --global && npx genapi now -c ./__test__/apiConfig.ts",
+    "test:gen": "pnpm build && pnpm link --global && npx genapi now -c ./__test__/genapi.config.ts",
     "test:init": "pnpm build && pnpm link --global && npx genapi init",
     "test:mock-server": "pnpm build && pnpm link --global && npx genapi mock-server",
     "replace": "node ./scripts/replaceStr.js",

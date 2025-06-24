@@ -12,7 +12,7 @@ npm install @cxxgo/genapi -D
 
 ### 1. 生成配置文件
 
-生成 apiConfig 配置文件:
+生成 genapi 配置文件:
 
 ```shell
 genapi init
@@ -22,11 +22,11 @@ genapi init
 
 - `--force`： 是否覆盖本地配置文件。
 
-  配置文件支持 `js` 和 `ts` 格式，如果本地已经存在`apiConfig.ts` 或 `apiConfig.js` 配置文件，执行 `genapi init --force` 将会生成新的配置文件覆盖本地配置文件。
+  配置文件支持 `js` 和 `ts` 格式，如果本地已经存在`genapi.config.ts` 或 `genapi.config.js` 配置文件，执行 `genapi init --force` 将会生成新的配置文件覆盖本地配置文件。
 
 ### 2. 生成 api
 
-根据 apiConfig 中的配置自动生成 api:
+根据配置文件自动生成 api:
 
 ```shell
 genapi now
@@ -36,7 +36,7 @@ genapi now
 
 - `--config <configPath>`： 自定义配置文件路径。
 
-  执行 `genapi now` 时，默认将当前目录下的 `apiConfig.ts` 或 `apiConfig.js` 当做配置文件。
+  执行 `genapi now` 时，默认将当前目录下的 `genapi.config.ts` 或 `genapi.config.js` 当做配置文件。
 
   当然也可以手动指定，如：`genapi now -c ./xxx/myApiConf.ts`， 指定配置文件路径为 `./xxx/myApiConf.ts`。
 

@@ -1,6 +1,6 @@
-import { type UserConfig } from '../core/types'
+import { defineConfig } from '../core/index'
 
-const config: UserConfig = {
+export default defineConfig({
   apiList: [
     {
       swaggerUrl: './__test__/json/swagger1.json',
@@ -18,6 +18,16 @@ const config: UserConfig = {
       outputDir: './__test__/output/swagger3',
       gen: true,
     },
+    // {
+    //   swaggerUrl: './__test__/json/schedule.json',
+    //   outputDir: './__test__/output/schedule',
+    //   gen: true,
+    // },
+    // {
+    //   swaggerUrl: './__test__/json/crm.json',
+    //   outputDir: './__test__/output/crm',
+    //   gen:true,
+    // },
     {
       swaggerUrl: './__test__/json/swagger4.json',
       outputDir: './__test__/output/swagger4',
@@ -44,16 +54,16 @@ const config: UserConfig = {
       // 自定义接口名称生成规则
       apiName: ({ url, method, defaultApiName }) => {
         // thkApiSysdictApiCommonV1AreaInfo => sysdictApiCommonV1AreaInfo
-        return defaultApiName.replace('thkApi', '').replace(/^\S/, (s) => s.toLowerCase())
+        return defaultApiName.replace('thkApi', '').replace(/^\S/, s => s.toLowerCase())
       },
 
       apiBody: ({ url, method, summary, name, parameters, pstr3 }) => {
-        const quotationMark = pstr3 ? '`' : "'"
-        const data = !!parameters.length ? 'data' : ''
+        const quotationMark = pstr3 ? '`' : '\''
+        const data = parameters.length ? 'data' : ''
         return `
         /** ${summary || '后端没写注释'} */
         export function ${name}  (${data}){
-          ${pstr3 ? pstr3 : ''}
+          ${pstr3 || ''}
           return myRequest.${method}(${quotationMark}${url}${quotationMark}, ${data})
         }`
       },
@@ -66,12 +76,12 @@ const config: UserConfig = {
   ],
   httpTpl: 'const request:any=()=>{}', // 文件头部引入内容
   apiBody: ({ url, method, summary, name, parameters, outputInterface, outputType, pstr1, pstr2, pstr3 }) => {
-    const quotationMark = pstr3 ? '`' : "'"
+    const quotationMark = pstr3 ? '`' : '\''
     const output = outputType === 'array' ? `${outputInterface}[]` : outputInterface
     return `
         /** ${summary || '无注释'} */
         export function ${name}  (${pstr1}) :Promise<${output}>{
-          ${pstr3 ? pstr3 : ''}
+          ${pstr3 || ''}
           return request.${method}(${quotationMark}${url}${quotationMark}, ${pstr2})
         }`
   },
@@ -83,14 +93,14 @@ const config: UserConfig = {
     /** 自定义 mock 生成规则 */
     fieldRules: {
       // 完全匹配，值为数字
-      code: 200,
+      'code': 200,
       // 完全匹配，值为字符串
-      size: '20',
+      'size': '20',
       // 完全匹配，值为mock字符串
-      created: '@datetime',
+      'created': '@datetime',
       // 完全匹配，值为函数
-      total: () => {
-        return +this.size * 10 || 100
+      'total': () => {
+        // return +this.size * 10 || 100
       },
       // 正则匹配，值为mock字符串
       '/url/': '@url',
@@ -98,6 +108,5 @@ const config: UserConfig = {
       '/ApplyType|applyType/': /FORWARD|REPLY|/,
     },
   },
-}
-
-export default config
+},
+)

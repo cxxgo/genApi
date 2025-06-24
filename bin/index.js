@@ -16,7 +16,7 @@ log.addLevel('success', 4500, { bg: 'green' })
 // 注册命令
 program
   .command('init')
-  .option('-f --force', '是否覆盖本地的 apiConfig 文件')
+  .option('-f --force', '是否重新生成 genapi 配置文件')
   .option('--verbose', '输出日志')
   .action((options) => {
     options.verbose && (log.level = 'verbose')
@@ -51,7 +51,7 @@ program
 //   ----------------------------------------------------------
 //   genapi --version            输出版本号
 //   genapi --help               输出帮助信息
-//   genapi init [-f,--force]    生成 apiConfig 配置文件
+//   genapi init [-f,--force]    生成 genapi 配置文件
 //   genapi now                  生成接口
 //   genapi mock-server          启动本地mock服务器
 // `
