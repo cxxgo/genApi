@@ -1,6 +1,6 @@
+import type { IInterface } from '../types'
 import path from 'node:path'
-import { IInterface } from '../types'
-import { writeAndPrettify, typeIsInterface, isExistInterface, sortByName, handleEnum} from '../utils'
+import { handleEnum, isExistInterface, sortByName, typeIsInterface, writeAndPrettify } from '../utils'
 
 /** interface 写入 */
 export function writeInterface(interfaces: IInterface[], config: { outputDir: string }) {
@@ -14,11 +14,13 @@ export function writeInterface(interfaces: IInterface[], config: { outputDir: st
         let theType = ''
         if (it.enums?.length) {
           theType = handleEnum(it.enums)
-        } else {
+        }
+        else {
           if (typeIsInterface(it.type)) {
             // 没找到则处理成 any, 防止后端接口写了错误的 interface
             theType = isExistInterface(it.type, interfaces) ? it.type : 'any'
-          } else {
+          }
+          else {
             theType = it.type || 'any'
           }
         }
@@ -32,4 +34,3 @@ export function writeInterface(interfaces: IInterface[], config: { outputDir: st
   const targetFile = path.join(outputDir, `_interfaces.ts`)
   writeAndPrettify(targetFile, str)
 }
-

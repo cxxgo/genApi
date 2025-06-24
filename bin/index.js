@@ -1,12 +1,12 @@
 #! /usr/bin/env node
-/* eslint-disable @typescript-eslint/no-var-requires */
 
-const log = require('npmlog')
 const commander = require('commander')
+const log = require('npmlog')
+
 const program = commander.program
 
-const pkgJson = require('../package.json')
 const { init, now, mockServer } = require('../dist/index')
+const pkgJson = require('../package.json')
 
 program.version(pkgJson.version)
 

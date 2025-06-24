@@ -1,14 +1,14 @@
-import { IApiModel, IParams, IApiStation, IInterface } from '../types'
+import type { IApiModel, IApiStation, IInterface, IParams } from '../types'
 import {
-  getUrl,
   getApiName,
-  getFileName,
   getFileExt,
-  handleWeirdName,
-  simpleTypeMap,
+  getFileName,
+  getUrl,
   handleDescription,
-  typeIsInterface,
+  handleWeirdName,
   isExistInterface,
+  simpleTypeMap,
+  typeIsInterface,
 } from '../utils'
 
 /** 生成 api 数据模型 */
@@ -23,7 +23,7 @@ export function handleApiModel(
     apiName,
     pathRewrite,
     typeMap,
-  }: Pick<IApiStation, 'exclude' | 'include' | 'fileName' | 'fileExt' | 'apiName' | 'pathRewrite' | 'typeMap'>
+  }: Pick<IApiStation, 'exclude' | 'include' | 'fileName' | 'fileExt' | 'apiName' | 'pathRewrite' | 'typeMap'>,
 ) {
   const apis: IApiModel[] = []
   for (const key in paths) {
@@ -49,18 +49,19 @@ export function handleApiModel(
         // 如果出参是数组
         if (resScheme?.type === 'array') {
           outputType = 'array'
-          if (resScheme?.items?.originalRef || resScheme?.items?.$ref){
-            outputInterface = handleWeirdName(resScheme.items.originalRef || resScheme?.items?.$ref.replace('#/definitions/',''))
+          if (resScheme?.items?.originalRef || resScheme?.items?.$ref) {
+            outputInterface = handleWeirdName(resScheme.items.originalRef || resScheme?.items?.$ref.replace('#/definitions/', ''))
           }
         }
         // 如果存在出参模型
         else if (resScheme?.originalRef || resScheme?.$ref) {
-          outputInterface = handleWeirdName(resScheme.originalRef || resScheme.$ref.replace('#/definitions/',''))
+          outputInterface = handleWeirdName(resScheme.originalRef || resScheme.$ref.replace('#/definitions/', ''))
         }
         // 出参是个简单类型
         else if (resScheme?.type) {
           outputInterface = simpleTypeMap(resScheme.type, typeMap)
-        } else {
+        }
+        else {
           // console.warn(`接口${key}不存在出参`)
         }
         apis.push({
@@ -190,17 +191,19 @@ function getParameters(parameters, allInterfaces: IInterface[], customerTypeMap:
   if (parameters && parameters.length) {
     return parameters.map((item) => {
       let type = '' // 如：string, number, boolean, UserInterface
-      let isArray = false // 是否是数组 
+      let isArray = false // 是否是数组
       // 入参是数组
-       if (item.type === 'array' || item.schema?.type === 'array') {
+      if (item.type === 'array' || item.schema?.type === 'array') {
         isArray = true
         const itemsObj = item.schema?.type === 'array' ? item.schema?.items : item.items
 
         if (itemsObj?.originalRef || itemsObj?.$ref) {
-          type = handleWeirdName(itemsObj?.originalRef || itemsObj?.$ref.replace('#/definitions/',''))
-        } else if (itemsObj?.format || itemsObj?.type) {
+          type = handleWeirdName(itemsObj?.originalRef || itemsObj?.$ref.replace('#/definitions/', ''))
+        }
+        else if (itemsObj?.format || itemsObj?.type) {
           type = simpleTypeMap(itemsObj?.format || itemsObj?.type, customerTypeMap)
-        } else {
+        }
+        else {
           // console.log('未处理的情况')
         }
       }
@@ -208,10 +211,12 @@ function getParameters(parameters, allInterfaces: IInterface[], customerTypeMap:
       else {
         isArray = false
         if (item.schema?.originalRef || item.schema?.$ref) {
-          type = handleWeirdName(item.schema?.originalRef || item.schema?.$ref.replace('#/definitions/',''))
-        } else if (item.format || item.type) {
+          type = handleWeirdName(item.schema?.originalRef || item.schema?.$ref.replace('#/definitions/', ''))
+        }
+        else if (item.format || item.type) {
           type = simpleTypeMap(item.format || item.type, customerTypeMap)
-        } else {
+        }
+        else {
           // console.log('未处理的情况')
         }
       }

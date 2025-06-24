@@ -1,5 +1,5 @@
-import path from 'node:path'
 import fs from 'node:fs'
+import path from 'node:path'
 import axios from 'axios'
 
 const CWD = process.cwd()
@@ -12,17 +12,20 @@ export async function readSwagger(swaggerUrl: string) {
       const res = await axios.get(swaggerUrl)
       if (res.status === 200) {
         return res.data
-      } else {
+      }
+      else {
         console.log('\x1B[31m%s\x1B[0m', errMsg)
         throw new Error(errMsg)
       }
-    } else {
+    }
+    else {
       // 从本地读取数据
       const filePath = path.resolve(CWD, swaggerUrl)
       const data = fs.readFileSync(filePath, 'utf-8')
       return JSON.parse(data)
     }
-  } catch (error) {
+  }
+  catch (error) {
     console.log('\x1B[31m%s\x1B[0m', errMsg)
     throw new Error(error)
   }

@@ -1,12 +1,12 @@
+import type { IApiGroup, IMock, IParsered } from '../types'
 import path from 'node:path'
 import log from 'npmlog'
-import { writeMockIndex } from './writeMockIndex'
-import { writeMockInterface } from './writeMockInterface'
-import { writeMockApi } from './writeMockApi'
-import { IParsered, IMock, IApiGroup } from '../types'
-import { getMockPath } from './mockUtils'
 import { groupApiByFileName } from '../utils'
 import { cleanDir } from '../utils/file'
+import { getMockPath } from './mockUtils'
+import { writeMockApi } from './writeMockApi'
+import { writeMockIndex } from './writeMockIndex'
+import { writeMockInterface } from './writeMockInterface'
 
 let MOCK_OUTPUT_DIR = '' // mock 数据输出路径
 
@@ -22,7 +22,7 @@ export async function genMock(data: IParsered[], mockConfig: IMock) {
 /** 生成所有站点的 mock 数据 */
 function genMockParaller(data: IParsered[], mockConfig: IMock) {
   const fn: any[] = []
-  const groupApiList: { outputDir: string; stationFlag: string; apiGroup: IApiGroup[] }[] = [] // 所有站点的 apiGroup 数据
+  const groupApiList: { outputDir: string, stationFlag: string, apiGroup: IApiGroup[] }[] = [] // 所有站点的 apiGroup 数据
   data.forEach((item) => {
     const apiGroup = groupApiByFileName(item.apis)
     groupApiList.push({ outputDir: item.outputDir, stationFlag: item.stationFlag, apiGroup })

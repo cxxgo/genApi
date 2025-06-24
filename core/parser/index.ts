@@ -1,14 +1,14 @@
-import { IApiStation, UserConfig, IApiModel, IInterface, IParsered } from '../types'
+import type { IApiModel, IApiStation, IInterface, IParsered, UserConfig } from '../types'
 import { handleWeirdName } from '../utils/index'
 import { handleApiModel } from './handleApiModel'
 import { handleInterface } from './handleInterface'
-import { readSwagger } from './readSwagger'
 import { saveParseredDataToLocal } from './localData'
+import { readSwagger } from './readSwagger'
 
 export async function parser(apiConfig: UserConfig) {
   validateApiConfig(apiConfig)
   const apiList: IApiStation[] = apiConfig.apiList
-    .filter((item) => item.gen !== false)
+    .filter(item => item.gen !== false)
     .map((item) => {
       return {
         ...item,
@@ -60,25 +60,25 @@ async function parseFn(apiStation: IApiStation, stationIndex: number): Promise<I
 
 /** 校验 apiConfig  */
 function validateApiConfig(apiConfig: UserConfig) {
-  const apiList = apiConfig.apiList.filter((item) => item.gen !== false)
-  if (!apiConfig.apiBody && apiList.some((item) => !item.apiBody)) {
+  const apiList = apiConfig.apiList.filter(item => item.gen !== false)
+  if (!apiConfig.apiBody && apiList.some(item => !item.apiBody)) {
     throw new Error('请配置 apiBody , 必须是一个函数')
   }
-  if (apiList.some((item) => !item.outputDir)) {
+  if (apiList.some(item => !item.outputDir)) {
     throw new Error('请配置输出路径 outputDir')
   }
-  if (apiList.some((item) => !item.swaggerUrl)) {
+  if (apiList.some(item => !item.swaggerUrl)) {
     throw new Error('请配置 swaggerUrl')
   }
   if (
-    (apiConfig.apiName && typeof apiConfig.apiName !== 'function') ||
-    apiList.some((item) => item.apiName && typeof item.apiName !== 'function')
+    (apiConfig.apiName && typeof apiConfig.apiName !== 'function')
+    || apiList.some(item => item.apiName && typeof item.apiName !== 'function')
   ) {
     throw new Error('apiName 必须是一个函数')
   }
   if (
-    (apiConfig.pathRewrite && typeof apiConfig.pathRewrite !== 'function') ||
-    apiList.some((item) => item.pathRewrite && typeof item.pathRewrite !== 'function')
+    (apiConfig.pathRewrite && typeof apiConfig.pathRewrite !== 'function')
+    || apiList.some(item => item.pathRewrite && typeof item.pathRewrite !== 'function')
   ) {
     throw new Error('pathRewrite 必须是一个函数')
   }

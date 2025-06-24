@@ -1,13 +1,13 @@
+import type { IMock, IParsered } from '../types'
 import http from 'node:http'
 import path from 'node:path'
 import Mock from 'better-mock'
 import log from 'npmlog'
-import { portIsOccupied } from '../utils'
 import { MOCK_SERVER_PORT } from '../constant'
+import { portIsOccupied } from '../utils'
 import { getMockPath } from './mockUtils'
-import { IMock, IParsered } from '../types'
-import { staticServer } from './ssr/staticServer'
 import { ssrServer } from './ssr/server'
+import { staticServer } from './ssr/staticServer'
 
 export async function createMockServer(mockConfig: IMock, allApiData: IParsered[]) {
   const MOCK_OUTPUT_DIR = await getMockPath()
@@ -22,7 +22,8 @@ export async function createMockServer(mockConfig: IMock, allApiData: IParsered[
     // 访问首页
     if (_url === '/') {
       ssrServer(allApiData, mockConfig, res)
-    } else if (_url === '/favicon.ico') {
+    }
+    else if (_url === '/favicon.ico') {
       res.end()
     }
     // 访问静态资源目录
@@ -38,16 +39,17 @@ export async function createMockServer(mockConfig: IMock, allApiData: IParsered[
         'Access-Control-Allow-Methods': '*',
       })
 
-      const obj: { url: string; method: string; outputInterface: string; outputType: string; stationFlag: string } =
-        {} as any
+      const obj: { url: string, method: string, outputInterface: string, outputType: string, stationFlag: string }
+        = {} as any
       // 找到 url 相同的api
       ;(allApiData || []).find((item) => {
+        // eslint-disable-next-line array-callback-return
         return (item.apis || []).find((theOne) => {
           if (
             isSameApi(
               { url: theOne.url.split('?')[0], method: theOne.method },
               { url: req.url.split('?')[0], method: req.method },
-              mockConfig
+              mockConfig,
             )
           ) {
             obj.url = theOne.url
@@ -65,7 +67,7 @@ export async function createMockServer(mockConfig: IMock, allApiData: IParsered[
           const { stationFlag, outputInterface, outputType } = obj
           const cmdInterfacePath = path.join(MOCK_OUTPUT_DIR, stationFlag, './_interfaces.cmd.js') // 'D:\____own____\genApi\mock' +  'station0'
           delete require.cache[require.resolve(cmdInterfacePath)] // 删除require缓存, 保证拿到最新的mock数据
-          // eslint-disable-next-line @typescript-eslint/no-var-requires
+          // eslint-disable-next-line ts/no-require-imports
           const theInterface = require(cmdInterfacePath)
           const interfaceFn = theInterface[outputInterface] // interface.GreenBookGratefulInfoResp
           if (interfaceFn && typeof interfaceFn === 'function') {
@@ -73,20 +75,25 @@ export async function createMockServer(mockConfig: IMock, allApiData: IParsered[
             if (outputType === 'array') {
               const mockObj = Mock.mock({ 'theArray|1-10': [interfaceFn()] }).theArray // Mock.mock({ 'theArray|1-10': [ EarthDeptMetaRespeFanHuiMoXing() ] }).theArray
               res.end(JSON.stringify(mockObj))
-            } else {
+            }
+            else {
               const mockObj = Mock.mock(interfaceFn()) // Mock.mock(interface.GreenBookGratefulInfoResp())
               res.end(JSON.stringify(mockObj))
             }
-          } else {
+          }
+          else {
             res.end()
           }
-        } catch (error) {
+        }
+        catch (error) {
           res.end(`接口解析出错 ${error}`)
         }
-      } else {
+      }
+      else {
         if (_method.toLowerCase() === 'options') {
           res.end()
-        } else {
+        }
+        else {
           res.end(`资源不存在${_url}`)
         }
       }
@@ -99,7 +106,7 @@ export async function createMockServer(mockConfig: IMock, allApiData: IParsered[
 }
 
 /** 判断是否是同一个api */
-function isSameApi(theOne: { url: string; method: string }, req, mockConfig: IMock) {
+function isSameApi(theOne: { url: string, method: string }, req, mockConfig: IMock) {
   const { url: reqUrl, method: reqMethod } = req
   const method = theOne.method
   let url = theOne.url
@@ -118,7 +125,7 @@ function isSameApi(theOne: { url: string; method: string }, req, mockConfig: IMo
 
   // url示例:  /api/v1/person/bank-record/${id}
   // reqUrl示例: /api/v1/person/bank-record/123456
-  if (url.indexOf('${') !== -1) {
+  if (url.includes('${')) {
     // 将 '/api/v1/person/bank-record/${id}'  处理成 '/api/v1/person/bank-record/(.*)?'
     const regStr = url.replace(/\$\{(.*)?\}/g, '(.*)?')
     const reg = new RegExp(regStr) //   /\/api\/v1\/person\/bank-record\/(.*)?/

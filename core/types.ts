@@ -5,11 +5,11 @@ export interface UserConfig {
   httpTpl?: string
   /** api 结构 */
   apiBody?: (data: IApibodyParam) => string
-  /** 接口所属文件名称*/
+  /** 接口所属文件名称 */
   fileName?: string | ((data: FileNameFnParam) => string)
-  /** 接口名称*/
+  /** 接口名称 */
   apiName?: (data: ApiNameFnParam) => string
-  /** 接口路径重写（如：加前缀 /abc/def => /prefix/abc/def）*/
+  /** 接口路径重写（如：加前缀 /abc/def => /prefix/abc/def） */
   pathRewrite?: (data: { url: string }) => string
   /** 文件后缀, 可选值：ts 或 js， 默认 ts */
   fileExt?: 'ts' | 'js' | '.ts' | '.js'
@@ -24,23 +24,25 @@ export interface IApiStation {
   outputDir: string
   /** 是否生成(默认true, 设为false，则不生成 ) */
   gen?: boolean
-  /** 无需生成的接口, 支持正则匹配和字符串完全匹配
+  /**
+   * 无需生成的接口, 支持正则匹配和字符串完全匹配
    * 注1. 匹配的是原始的 url，而非通过 pathRewrite 函数重写后的 url
    * 注2. 不判断方法，即 如果有两个接口路径相同方法不同，都不会生成
    */
   exclude?: RegExp | string | (RegExp | string)[]
-  /** 只需生成的接口，支持正则匹配和字符串完全匹配
+  /**
+   * 只需生成的接口，支持正则匹配和字符串完全匹配
    * 注1：通exclude 一样，只匹配原始路径，不判断方法
    * 注2：优先级比 exclude 低，即 如果一个接口同时被 exclude 和 include 规则匹配，这个接口将不会生成
    */
   include?: RegExp | string | (RegExp | string)[]
   /** 文件头部引入内容 */
   httpTpl?: string
-  /** 接口所属文件名称*/
+  /** 接口所属文件名称 */
   fileName?: string | ((data: FileNameFnParam) => string)
-  /** 接口名称*/
+  /** 接口名称 */
   apiName?: (data: ApiNameFnParam) => string
-  /** 接口路径重写（如：加前缀 /abc/def => /prefix/abc/def）*/
+  /** 接口路径重写（如：加前缀 /abc/def => /prefix/abc/def） */
   pathRewrite?: (data: { url: string }) => string
   /** api 结构 */
   apiBody?: (data: IApibodyParam) => string
@@ -67,7 +69,7 @@ export interface IApibodyParam {
   outputType: 'object' | 'array'
   /** 接口所有入参 */
   parameters: IParams[]
-  /** 由 parameters 处理得到，值如 'data: { id: string }' ，可能为空字符串*/
+  /** 由 parameters 处理得到，值如 'data: { id: string }' ，可能为空字符串 */
   pstr1: string
   /** 由 parameters 处理得到，值如 'data'，可能为空字符串 */
   pstr2: string
@@ -96,7 +98,7 @@ export interface IParams {
   isArray: boolean
   /** 入参类型，可能值：string, number, boolean, any, void, File, UserInterface... */
   type: string
-  enums?: Array<string|number>
+  enums?: Array<string | number>
 }
 
 export interface IApiModel {
@@ -116,7 +118,7 @@ export interface IApiModel {
   outputInterface: string
   /** 接口出参类型 */
   outputType: 'object' | 'array'
-  /** 接口所属文件名称（不包含后缀，如 user）*/
+  /** 接口所属文件名称（不包含后缀，如 user） */
   fileName: string
   /** 文件后缀（ts 或 js, 不包含点号） */
   fileExt: 'ts' | 'js'
@@ -133,7 +135,7 @@ export interface IInterface {
   description?: string
   properties?: IInterface[]
   /** 枚举值 */
-  enums?: Array<string|number>
+  enums?: Array<string | number>
 }
 
 export interface IParsered extends IApiStation {

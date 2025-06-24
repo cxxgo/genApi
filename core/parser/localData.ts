@@ -1,7 +1,7 @@
+import type { IParsered } from '../types'
 import fs from 'node:fs'
 import path from 'node:path'
-import { saveDataToLocal, readDataFromLocal } from '../utils'
-import { IParsered } from '../types'
+import { readDataFromLocal, saveDataToLocal } from '../utils'
 
 /** 将解析后的数据保存到本地 */
 export async function saveParseredDataToLocal(data: any) {
@@ -14,7 +14,8 @@ export async function getParseredDataFromLocal(): Promise<IParsered[]> {
     const p = getParseredDataPath()
     const dataStr = readDataFromLocal(p)
     return JSON.parse(dataStr)
-  } catch (error) {
+  }
+  catch (error) {
     return []
   }
 }
@@ -33,7 +34,7 @@ export function saveConfigPathToLocal(configPath: string) {
   if (fs.existsSync(p)) {
     const dataStr = readDataFromLocal(p) // 本地所有用户配置
     const obj = dataStr ? JSON.parse(dataStr) : {}
-    obj['configPath'] = configPath
+    obj.configPath = configPath
     saveDataToLocal(p, obj)
   }
   // 文件新增
@@ -42,14 +43,15 @@ export function saveConfigPathToLocal(configPath: string) {
   }
 }
 
-/** 从本地读取config配置文件路径*/
+/** 从本地读取config配置文件路径 */
 export function getConfigPathFromLoal(): string {
   try {
     const p = getConfigFileKey()
     const dataStr = readDataFromLocal(p)
     const obj = JSON.parse(dataStr)
-    return obj['configPath']
-  } catch (error) {
+    return obj.configPath
+  }
+  catch (error) {
     return ''
   }
 }

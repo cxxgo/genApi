@@ -1,8 +1,8 @@
+import type { IParsered } from '../types'
 import path from 'node:path'
-import { IParsered } from '../types'
+import { groupApiByFileName } from '../utils'
 import { writeApi } from './writeApi'
 import { writeInterface } from './writeInterface'
-import { groupApiByFileName } from '../utils'
 
 const CWD = process.cwd()
 
