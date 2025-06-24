@@ -1,13 +1,13 @@
+import type { OpenApi } from '../swaggerType3.x'
 import type { IApiModel, IApiStation, IInterface, IParsered, UserConfig } from '../types'
 import { handleWeirdName } from '../utils/index'
 import { handleApiModel } from './handleApiModel'
 import { handleInterface } from './handleInterface'
 import { saveParseredDataToLocal } from './localData'
-import { readSwagger } from './readSwagger'
 
 import { handleApiModel3 } from './parserSwagger3.x/handleApiModel3.x'
 import { handleInterface3 } from './parserSwagger3.x/handleInterface3.x'
-import { OpenApi } from '../swaggerType3.x'
+import { readSwagger } from './readSwagger'
 
 export async function parser(apiConfig: UserConfig) {
   validateApiConfig(apiConfig)
@@ -86,7 +86,8 @@ async function parseFn(apiStation: IApiStation, stationIndex: number): Promise<I
       apis,
       interfaces,
     }
-  } else {
+  }
+  else {
     throw new Error(`未知的接口文档类型: ${apiStation.swaggerUrl}`)
   }
 }

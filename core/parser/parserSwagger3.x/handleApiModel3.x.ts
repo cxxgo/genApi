@@ -1,17 +1,17 @@
-import { IApiModel, IParams, IApiStation, IInterface } from '../../types'
-import {
-  getUrl,
-  getApiName,
-  getFileName,
-  getFileExt,
-  handleWeirdName,
-  simpleTypeMap,
-  handleDescription,
-  typeIsInterface,
-  isExistInterface,
-} from '../../utils'
+import type { OpenApi, Operation, Parameter, Reference, RequestBody, Response, Schema } from '../../swaggerType3.x'
+import type { IApiModel, IApiStation, IInterface, IParams } from '../../types'
 
-import { OpenApi, Schema, Parameter, Reference, Operation, Response, RequestBody } from '../../swaggerType3.x'
+import {
+  getApiName,
+  getFileExt,
+  getFileName,
+  getUrl,
+  handleDescription,
+  handleWeirdName,
+  isExistInterface,
+  simpleTypeMap,
+  typeIsInterface,
+} from '../../utils'
 
 /** 生成 api 数据模型 */
 export function handleApiModel3(
@@ -25,7 +25,7 @@ export function handleApiModel3(
     apiName,
     pathRewrite,
     typeMap,
-  }: Pick<IApiStation, 'exclude' | 'include' | 'fileName' | 'fileExt' | 'apiName' | 'pathRewrite' | 'typeMap'>
+  }: Pick<IApiStation, 'exclude' | 'include' | 'fileName' | 'fileExt' | 'apiName' | 'pathRewrite' | 'typeMap'>,
 ) {
   const paths = docJson.paths
   const apis: IApiModel[] = []
@@ -36,7 +36,8 @@ export function handleApiModel3(
       const objs = paths[key]
       const apiHasSameUrl = Object.keys(objs).length // url 相同，但是方法不同的接口数量
       Object.keys(objs).forEach((method) => {
-        if (!['get', 'put', 'post', 'delete', 'options', 'head', 'patch', 'trace'].includes(method)) return
+        if (!['get', 'put', 'post', 'delete', 'options', 'head', 'patch', 'trace'].includes(method))
+          return
 
         const obj = objs[method] as Operation
         const theUrl = getUrl(key)
@@ -55,16 +56,17 @@ export function handleApiModel3(
         let outputInterface = '' // 出参 interface
         const outputType: 'object' | 'array' = 'object' // 出参类型
 
-        const successScheme =
-          (successCode as Response)?.content?.['application/json']?.schema ||
-          (successCode as Response)?.content?.['*/*']?.schema
+        const successScheme
+          = (successCode as Response)?.content?.['application/json']?.schema
+            || (successCode as Response)?.content?.['*/*']?.schema
 
         if ((successScheme as Reference)?.$ref) {
           outputInterface = getInterfaceByRefPathLast((successScheme as Reference).$ref)
           if (outputInterface) {
             console.log('successScheme', successScheme)
           }
-        } else {
+        }
+        else {
           console.error('未处理：输出类型不是interface') // cjh todo
         }
 
@@ -142,18 +144,20 @@ function matchExp(expArr: any[], apiPath: string) {
 function getParameters(
   parameters: (Parameter | Reference)[],
   allInterfaces: IInterface[],
-  customerTypeMap: { [key: string]: string }
+  customerTypeMap: { [key: string]: string },
 ): IParams[] {
   // 有入参
   if (parameters && parameters.length) {
+    // eslint-disable-next-line array-callback-return
     return parameters.map((item) => {
       if ((item as Reference).$ref) {
         console.error('未处理的入参格式', (item as Reference).$ref)
-      } else {
+      }
+      else {
         const _item = item as Parameter
         const isArray = (_item.schema as Schema)?.type === 'array'
-        let type =
-          (isArray
+        let type
+          = (isArray
             ? getItemType((_item.schema as Schema)?.items, customerTypeMap)
             : getParamType(item, customerTypeMap)) || 'any'
 
@@ -181,9 +185,10 @@ function getParameters(
 function getParametersInBody(
   requestBody: Operation['requestBody'],
   allInterfaces: IInterface[],
-  customerTypeMap: { [key: string]: string }
+  customerTypeMap: { [key: string]: string },
 ): IParams[] {
-  if (!requestBody) return []
+  if (!requestBody)
+    return []
   if ((requestBody as Reference)?.$ref) {
     const _requestBody = requestBody as Reference
     return [
@@ -195,7 +200,8 @@ function getParametersInBody(
         type: getInterfaceByRefPathLast(_requestBody.$ref),
       },
     ]
-  } else {
+  }
+  else {
     const _requestBody = requestBody as RequestBody
     console.log(_requestBody)
     const json = _requestBody?.content?.['application/json'] // cjh todo ,同时有 formData 的没处理
@@ -217,7 +223,8 @@ function getItemType(schema: Schema | Reference, customerTypeMap: { [key: string
   if ((schema as Reference)?.$ref) {
     const _schema = schema as Reference
     return getInterfaceByRefPathLast(_schema.$ref)
-  } else {
+  }
+  else {
     const _schema = schema as Schema
     return simpleTypeMap(_schema.format || _schema.type, customerTypeMap)
   }
@@ -227,10 +234,12 @@ function getParamType(parameter: Parameter | Reference, customerTypeMap: { [key:
   if ((parameter as Reference)?.$ref) {
     const _parameter = parameter as Reference
     return getInterfaceByRefPathLast(_parameter.$ref)
-  } else if (((parameter as Parameter).schema as Reference)?.$ref) {
+  }
+  else if (((parameter as Parameter).schema as Reference)?.$ref) {
     const _paramScheme = (parameter as Parameter).schema as Reference
     return getInterfaceByRefPathLast(_paramScheme?.$ref)
-  } else if ((parameter as Parameter).schema) {
+  }
+  else if ((parameter as Parameter).schema) {
     const _paramScheme = (parameter as Parameter).schema as Schema
     return simpleTypeMap(_paramScheme.format || _paramScheme.type, customerTypeMap)
   }
@@ -241,7 +250,8 @@ function getParamType(parameter: Parameter | Reference, customerTypeMap: { [key:
  * @return getTodoListObj
  */
 function getInterfaceByRefPathLast(ref: string): string {
-  if (!ref || !ref.trim()) return ''
+  if (!ref || !ref.trim())
+    return ''
   const arr = ref.replace(/^#\//, '').split('/') // ['components','schemas','getTodoListObj']
   return handleWeirdName(arr.pop())
 }

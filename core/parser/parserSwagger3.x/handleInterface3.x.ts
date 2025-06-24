@@ -1,7 +1,7 @@
-import { IInterface } from '../../types'
-import { handleWeirdName, simpleTypeMap, handleDescription } from '../../utils'
-import { OpenApi, Schema, Reference } from '../../swaggerType3.x'
+import type { OpenApi, Reference, Schema } from '../../swaggerType3.x'
+import type { IInterface } from '../../types'
 import fs from 'node:fs'
+import { handleDescription, handleWeirdName, simpleTypeMap } from '../../utils'
 
 /** 用户自定义的字段类型 map 规则 */
 let theCustomerTypeMap = {}
@@ -16,7 +16,8 @@ export function handleInterface3(docJson: OpenApi, customerTypeMap: { [key: stri
   Object.keys(schemas).forEach((key) => {
     const interfaceName = handleWeirdName(key)
     // 不存在或者是简单类型
-    if (!interfaceName || simpleTypeMap(interfaceName, theCustomerTypeMap)) return
+    if (!interfaceName || simpleTypeMap(interfaceName, theCustomerTypeMap))
+      return
     const res = handleScheme(key, schemas[key])
     defs.push(res)
   })
@@ -34,7 +35,8 @@ function handleScheme(key: string, schema: Schema | Reference): IInterface {
       name: handleWeirdName(key),
       type: getInterfaceByRefPathLast(_schema.$ref),
     }
-  } else {
+  }
+  else {
     const _schema = schema as Schema
     const properties = _schema?.properties || {}
     const isArray = _schema?.type === 'array'
@@ -43,7 +45,7 @@ function handleScheme(key: string, schema: Schema | Reference): IInterface {
       isArray,
       type: isArray ? getType(_schema.items) : getType(_schema),
       description: handleDescription(_schema.description),
-      properties: Object.keys(properties).map((p) => handleScheme(p, properties[p])),
+      properties: Object.keys(properties).map(p => handleScheme(p, properties[p])),
       enums: _schema.enum,
     }
   }
@@ -53,7 +55,8 @@ function getType(schema: Schema | Reference) {
   if ((schema as Reference)?.$ref) {
     const _schema = schema as Reference
     return getInterfaceByRefPathLast(_schema.$ref)
-  } else {
+  }
+  else {
     const _schema = schema as Schema
     return simpleTypeMap(_schema.format || _schema.type, theCustomerTypeMap)
   }
@@ -64,7 +67,8 @@ function getType(schema: Schema | Reference) {
  * @return getTodoListObj
  */
 function getInterfaceByRefPathLast(ref: string): string {
-  if (!ref || !ref.trim()) return ''
+  if (!ref || !ref.trim())
+    return ''
   const arr = ref.replace(/^#\//, '').split('/') // ['components','schemas','getTodoListObj']
   return handleWeirdName(arr.pop())
 }
@@ -82,13 +86,13 @@ function getInterfaceByRefPathLast(ref: string): string {
   "待办内容": {
     "type": "string"
   },
-
+ 
   "附件内容": {
     "type": "array",
     "items": {
       "$ref": "#/components/schemas/Attach"
     }，
-
+ 
     "完成方式：默认ANY_OWNER": {
       "type": "string",
       "enum": ["ANY_OWNER", "ALL_OWNER"]
@@ -108,7 +112,8 @@ function getInterfaceByRefPathLast(ref: string): string {
 //   }
 // }
 
-/** 处理以下数据格式
+/**
+ * 处理以下数据格式
  * "certificateList": {
       "type": "array",
       "description": "执业资格证",
