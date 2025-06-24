@@ -100,7 +100,7 @@ export default defineConfig({
       'created': '@datetime',
       // 完全匹配，值为函数
       'total': () => {
-        // return +this.size * 10 || 100
+        return +this.size * 10 || 100
       },
       // 正则匹配，值为mock字符串
       '/url/': '@url',
