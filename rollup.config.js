@@ -29,19 +29,19 @@ module.exports = [
     ],
   },
   {
-    input: 'commander/index.ts',
+    input: 'index.ts',
     output: {
       file: 'dist/index.js',
       format: 'cjs',
     },
     plugins: [
       typescript({
-        include: ['commander/**', 'core/**'],
+        include: ['index.ts', 'commander/**', 'core/**'],
       }),
     ],
   },
   {
-    input: 'core/types.ts',
+    input: 'index.ts',
     output: [{ file: 'dist/type.d.ts', format: 'es' }],
     plugins: [dts()],
   },

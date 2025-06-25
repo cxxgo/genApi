@@ -8,7 +8,10 @@ const program = commander.program
 const { init, now, mockServer } = require('../dist/index')
 const pkgJson = require('../package.json')
 
-program.version(pkgJson.version)
+const version = pkgJson.version
+process.env.genapiVersion = version // 供全局使用
+
+program.version(version)
 
 log.level = 'info'
 log.addLevel('success', 4500, { bg: 'green' })
@@ -31,9 +34,8 @@ program
   .action((options) => {
     options.verbose && (log.level = 'verbose')
     console.log()
-    console.log(`当前版本: ${pkgJson.version}`)
+    console.log(`当前版本: ${version}`)
     console.log()
-    process.env.genapiVersion = pkgJson.version
     now(options)
   })
 
