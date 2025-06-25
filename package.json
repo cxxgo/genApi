@@ -1,6 +1,6 @@
 {
   "name": "@cxxgo/genapi",
-  "version": "2.0.1",
+  "version": "2.0.2.alpha.0",
   "description": "",
   "buildInFlag": "cxx-genapi-tool",
   "author": "",
@@ -38,13 +38,15 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "peerDependencies": {
+    "prettier": "^3.6.1"
+  },
   "dependencies": {
     "axios": "^1.4.0",
     "better-mock": "^0.3.7",
     "commander": "^11.0.0",
     "js-pinyin": "^0.2.4",
     "npmlog": "^7.0.1",
-    "prettier": "^3.6.0",
     "unconfig": "^0.3.11",
     "vue": "^3.4.15"
   },
