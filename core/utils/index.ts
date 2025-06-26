@@ -256,7 +256,7 @@ export async function getPrettierPath() {
   }
   // 非link方式在使用者项目内运行, __dirname 指向使用者项目目录下的 node_modules/@cxxgo/genapi/dist 目录
   else {
-    prettierPath = path.join(__dirname, '../.bin/prettier')
+    prettierPath = path.join(__dirname, '../node_modules/.bin/prettier')
   }
   return prettierPath
 }
