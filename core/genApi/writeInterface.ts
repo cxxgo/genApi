@@ -1,10 +1,10 @@
-import type { IInterface } from '../types'
+import type { IInterface, UserConfig } from '../types'
 import path from 'node:path'
 import { handleEnum, isExistInterface, sortByName, typeIsInterface, writeAndPrettify } from '../utils'
 
 /** interface 写入 */
-export function writeInterface(interfaces: IInterface[], config: { outputDir: string }) {
-  const { outputDir } = config
+export function writeInterface(interfaces: IInterface[], config: { outputDir: string, formatter: UserConfig['formatter'] }) {
+  const { outputDir, formatter } = config
   let str = ''
   sortByName(interfaces, 'name').forEach((item) => {
     str += `export interface ${item.name} {\n`
@@ -32,5 +32,5 @@ export function writeInterface(interfaces: IInterface[], config: { outputDir: st
     str += '\n}\n'
   })
   const targetFile = path.join(outputDir, `_interfaces.ts`)
-  writeAndPrettify(targetFile, str)
+  writeAndPrettify({ targetFile, content: str, formatter })
 }

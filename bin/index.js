@@ -4,17 +4,21 @@ const commander = require('commander')
 const log = require('npmlog')
 
 const program = commander.program
-
-const { init, now, mockServer } = require('../dist/index')
+const { init, now, mockServer, getRunEnv } = require('../dist/index')
 const pkgJson = require('../package.json')
-
-const version = pkgJson.version
-process.env.genapiVersion = version // 供全局使用
-
-program.version(version)
 
 log.level = 'info'
 log.addLevel('success', 4500, { bg: 'green' })
+
+const version = pkgJson.version
+const runEnv = getRunEnv()
+
+process.env.genapiVersion = version // 供全局使用
+process.env.genapiRunEnv = runEnv
+
+log.verbose('当前运行环境', runEnv)
+
+program.version(version)
 
 // 注册命令
 program

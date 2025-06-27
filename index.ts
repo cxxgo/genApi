@@ -2,6 +2,7 @@ import type { UserConfig } from './core/types'
 
 export * from './commander/index'
 export * from './core/types'
+export { getRunEnv } from './core/utils'
 
 interface IDefineConfig {
   /** 当前版本号 */

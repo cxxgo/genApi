@@ -50,7 +50,8 @@ export function writeMockInterface(interfaces: IInterface[], { outputDir, cmd = 
     str += exportStr
   }
   const targetFile = path.join(outputDir, cmd ? `_interfaces.cmd.js` : `_interfaces.js`)
-  writeAndPrettify(targetFile, str)
+  // 非当前工具内的 mock 数据不进行格式化
+  writeAndPrettify({ targetFile, content: str, noFormat: process.env.genapiRunEnv !== 'linkInTool' })
 }
 
 /**

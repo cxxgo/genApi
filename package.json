@@ -1,8 +1,7 @@
 {
   "name": "@cxxgo/genapi",
-  "version": "2.0.2-alpha.2",
+  "version": "2.0.2-alpha.4",
   "description": "",
-  "buildInFlag": "cxx-genapi-tool",
   "author": "",
   "license": "ISC",
   "homepage": "https://github.com/cxxgo/genApi#readme",
@@ -26,9 +25,9 @@
   ],
   "scripts": {
     "build": "node ./scripts/build.js",
-    "test:gen": "pnpm build && pnpm link --global && npx genapi now -c ./__test__/genapi.config.ts",
-    "test:init": "pnpm build && pnpm link --global && npx genapi init",
-    "test:mock-server": "pnpm build && pnpm link --global && npx genapi mock-server",
+    "test:gen": "pnpm build && pnpm link --global && npx genapi now -c ./__test__/genapi.config.ts linkInTool",
+    "test:init": "pnpm build && pnpm link --global && npx genapi init linkInTool",
+    "test:mock-server": "pnpm build && pnpm link --global && npx genapi mock-server linkInTool",
     "replace": "node ./scripts/replaceStr.js",
     "prepare": "husky install",
     "prepublishOnly": "pnpm build"

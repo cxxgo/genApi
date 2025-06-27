@@ -109,6 +109,7 @@ export default defineConfig(({ version }) => {
         '/ApplyType|applyType/': /FORWARD|REPLY|/,
       },
     },
+    // formatter: ({ filePath }) => `eslint --fix ${filePath}`,
   }
 },
 )

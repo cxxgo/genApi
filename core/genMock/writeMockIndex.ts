@@ -32,5 +32,6 @@ Mock.setup({
 
   const finaStr = `${firstLine}${extraStr}${imortStr}${mockStr}`
   const targetFile = path.join(mockRootPath, 'index.js')
-  writeAndPrettify(targetFile, finaStr)
+  // 非当前工具内的 mock 数据不进行格式化
+  writeAndPrettify({ targetFile, content: finaStr, noFormat: process.env.genapiRunEnv !== 'linkInTool' })
 }
