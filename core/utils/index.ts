@@ -247,13 +247,15 @@ export async function writeAndPrettify(data: { targetFile: string, content: stri
 
   // 执行速度很快，不考虑其额外耗时
   exec(`${prettierPath} --write ${targetFile} --print-width 120  --tab-width 2 --single-quote --no-semi --trailing-comma es5`, (err) => {
-    err ? log.verbose('格式化失败:', targetFile, err) : log.verbose('格式化成功:', targetFile)
+    err && log.verbose('格式化失败:', targetFile, err)
   })
 
   // 使用用户传入的 formatter 进行格式化
   if (formatter && typeof formatter === 'function') {
     const fmt = formatter({ filePath: targetFile })
-    exec(fmt)
+    exec(fmt, (err) => {
+      err && console.error('自定义格式化失败:', targetFile, err)
+    })
   }
 }
 /** 获取 prettier bin 文件路径 */
