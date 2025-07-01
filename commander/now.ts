@@ -18,7 +18,7 @@ export async function now(options: {
   saveConfigPathToLocal(configFilePath)
   const { config } = (await loadConfig(configFilePath)) as { config: UserConfig }
   parser(config).then((parseredData) => {
-    genApi(parseredData)
+    genApi(parseredData, config.formatter)
     if (options.mock) {
       genMock(parseredData, config.mock)
     }

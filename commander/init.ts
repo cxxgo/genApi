@@ -31,7 +31,7 @@ export function init(options) {
 async function writeConfigFile(configFilePath) {
   try {
     const ext = configFilePath.split('.').pop() // 后缀 ts or js
-    writeAndPrettify(configFilePath, ext === 'ts' ? apiConfigTpl_ts : apiConfigTpl_js)
+    writeAndPrettify({ targetFile: configFilePath, content: ext === 'ts' ? apiConfigTpl_ts : apiConfigTpl_js })
     saveConfigPathToLocal(configFilePath)
     log.success('配置文件创建成功')
   }

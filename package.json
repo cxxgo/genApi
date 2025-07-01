@@ -1,8 +1,7 @@
 {
   "name": "@cxxgo/genapi",
-  "version": "1.1.6",
+  "version": "2.0.3",
   "description": "",
-  "buildInFlag": "cxx-genapi-tool",
   "author": "",
   "license": "ISC",
   "homepage": "https://github.com/cxxgo/genApi#readme",
@@ -20,16 +19,15 @@
     "genapi": "bin/index.js"
   },
   "files": [
-    ".prettierrc.js",
     "bin",
     "dist",
     "static"
   ],
   "scripts": {
     "build": "node ./scripts/build.js",
-    "test:gen": "pnpm build && pnpm link --global && npx genapi now -c ./__test__/genapi.config.ts",
-    "test:init": "pnpm build && pnpm link --global && npx genapi init",
-    "test:mock-server": "pnpm build && pnpm link --global && npx genapi mock-server",
+    "test:gen": "pnpm build && pnpm link --global && npx genapi now -c ./__test__/genapi.config.ts linkInTool",
+    "test:init": "pnpm build && pnpm link --global && npx genapi init linkInTool",
+    "test:mock-server": "pnpm build && pnpm link --global && npx genapi mock-server linkInTool",
     "replace": "node ./scripts/replaceStr.js",
     "prepare": "husky install",
     "prepublishOnly": "pnpm build"
@@ -44,7 +42,7 @@
     "commander": "^11.0.0",
     "js-pinyin": "^0.2.4",
     "npmlog": "^7.0.1",
-    "prettier": "^3.6.0",
+    "prettier": "^3.6.1",
     "unconfig": "^0.3.11",
     "vue": "^3.4.15"
   },

@@ -57,6 +57,7 @@ export function writeMockApi(apiGroup: IApiGroup[], { absOutputDir, fieldRules }
       importStr += `} from './_interfaces'\n`
     }
     const targetFile = path.join(absOutputDir, `${fileName}.js`)
-    writeAndPrettify(targetFile, `${importStr}\n${apiStr}\n`)
+    // 非当前工具内的 mock 数据不进行格式化
+    writeAndPrettify({ targetFile, content: `${importStr}\n${apiStr}\n`, noFormat: process.env.genapiRunEnv !== 'linkInTool' })
   })
 }

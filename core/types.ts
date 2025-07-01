@@ -16,6 +16,8 @@ export interface UserConfig {
   /** 接口出入参类型映射 */
   typeMap?: Record<string, string>
   mock?: IMock
+  /** 自定义格式化函数 */
+  formatter?: (data: { filePath: string }) => string
 }
 export interface IApiStation {
   /** 接口文档 json 数据地址(可以是服务端地址也可以是 swagger json 本地文件路径) */

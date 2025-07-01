@@ -1,4 +1,4 @@
-import type { IApiGroup, IInterface, IParams, IParsered } from '../types'
+import type { IApiGroup, IInterface, IParams, IParsered, UserConfig } from '../types'
 
 import path from 'node:path'
 import { handleDescription, handleEnum, isExistInterface, sortByName, typeIsInterface, writeAndPrettify } from '../utils'
@@ -7,9 +7,9 @@ import { handleDescription, handleEnum, isExistInterface, sortByName, typeIsInte
 export function writeApi(
   apiGroup: IApiGroup[],
   allInterfaces: IInterface[],
-  config: Pick<IParsered, 'outputDir' | 'apiBody' | 'httpTpl'>,
+  config: Pick<IParsered, 'outputDir' | 'apiBody' | 'httpTpl'> & { formatter: UserConfig['formatter'] },
 ) {
-  const { outputDir, apiBody, httpTpl } = config
+  const { outputDir, apiBody, httpTpl, formatter } = config
   apiGroup.forEach((item) => {
     const tplStr = `${httpTpl || ''}`
     let apiStr = ''
@@ -57,14 +57,15 @@ export function writeApi(
     let importStr = ''
     fileUsedInterface = sortByName([...new Set(fileUsedInterface)])
     if (fileUsedInterface.length) {
-      importStr += `import type {`
+      const lineBreak = fileUsedInterface.length > 2 ? '\n' : ''
+      importStr += `import type {${lineBreak}`
       fileUsedInterface.forEach((item, index) => {
-        importStr += index === 0 ? `${item}` : `,${item}`
+        importStr += index === 0 ? `${item}` : `,${lineBreak}${item}`
       })
-      importStr += `} from './_interfaces.${item.fileExt}'`
+      importStr += `${lineBreak}} from './_interfaces.${item.fileExt}'`
     }
     const targetFile = path.join(outputDir, `${item.fileName}.${item.fileExt}`)
-    writeAndPrettify(targetFile, `${tplStr}\n${importStr}\n${apiStr}`)
+    writeAndPrettify({ targetFile, content: `${tplStr}\n${importStr}\n${apiStr}`, formatter })
   })
 }
 
