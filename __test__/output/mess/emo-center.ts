@@ -23,7 +23,7 @@ export function emocenterApiEmpowerEnterpriseReUpEntReSetEnterpriseId(data: {
   req?: EntReSetReq
 }): Promise<ApiResponseVoid> {
   const { enterpriseId, req } = data
-  return request.post(`/emo-center/api/empower/enterpriseRe/upEntReSet/${enterpriseId}`, { req })
+  return request.post(`/emo-center/api/empower/enterpriseRe/upEntReSet/${enterpriseId}`, req)
 }
 
 /** 这个接口注释、入参注释、出参注释 有特殊字符 ， 等，导致报错 */

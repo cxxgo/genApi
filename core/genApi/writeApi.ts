@@ -120,7 +120,13 @@ function getParamStr(parameters: IParams[]) {
     const notInPathParam = avaliableParam.filter(p => p.in !== 'path')
     const p1Str = getP1Str(avaliableParam)
     p1 = `data:{${p1Str}}`
-    p2 = ` {${notInPathParam.map(p => p.name).join(',')}} `
+    // 除去 in path 的参数外，只有一个 in body 的参数, 且这个参数是个 interface
+    if (notInPathParam.length === 1 && notInPathParam[0].in === 'body' && typeIsInterface(notInPathParam[0].type)) {
+      p2 = notInPathParam[0].name
+    }
+    else {
+      p2 = ` {${notInPathParam.map(p => p.name).join(',')}} `
+    }
     p3 = `const {${avaliableParam.map(p => p.name).join(',')}} =data`
   }
   // 其他奇怪的或未知的情况，如 in formData

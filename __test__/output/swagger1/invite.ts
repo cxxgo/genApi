@@ -80,7 +80,7 @@ export function invitePageApplyType(data: {
   req?: QueryInviteDesktopReq
 }): Promise<ApiResponseComPageInviteDesktopResp> {
   const { applyType, req } = data
-  return request.post(`/api/invite/page/${applyType}`, { req })
+  return request.post(`/api/invite/page/${applyType}`, req)
 }
 
 /** 邀请设置出行 */

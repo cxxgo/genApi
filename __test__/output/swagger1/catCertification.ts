@@ -58,7 +58,7 @@ export function catCertificationInitFaceVerifyWithCertifyIdType(data: {
   type?: 'COMMON' | 'WALLET'
 }): Promise<ApiResponseVerificationResp> {
   const { req, type } = data
-  return request.post(`/api/catCertification/initFaceVerifyWithCertifyId/${type}`, { req })
+  return request.post(`/api/catCertification/initFaceVerifyWithCertifyId/${type}`, req)
 }
 
 /** 出行放行表单回显 */

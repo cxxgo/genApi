@@ -250,7 +250,7 @@ export function empowerDoorReSendEmpowerSms(data: string[]): Promise<ApiResponse
 /** 关联设置-修改帽子关联设置 */
 export function empowerDoorReUpEntReSetDoorId(data: { doorId?: string; req?: EntReSetReq }): Promise<ApiResponseVoid> {
   const { doorId, req } = data
-  return request.post(`/api/empower/doorRe/upEntReSet/${doorId}`, { req })
+  return request.post(`/api/empower/doorRe/upEntReSet/${doorId}`, req)
 }
 
 /** 获取小金库树_全部小金库 */

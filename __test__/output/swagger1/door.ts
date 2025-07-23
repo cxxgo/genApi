@@ -111,7 +111,7 @@ export function doorIdentificationV1DoorIdOpenAcctAppend(data: {
   doorOpenAcctVo?: ZhiXieChangBoJuZiXinXi
 }): Promise<ApiResponseZhiXieChangBoJuZiXinXi> {
   const { doorId, doorOpenAcctVo } = data
-  return request.post(`/api/door/identification/v1/${doorId}/openAcct/append`, { doorOpenAcctVo })
+  return request.post(`/api/door/identification/v1/${doorId}/openAcct/append`, doorOpenAcctVo)
 }
 
 /** 制鞋厂剥橘子-放行开始 */

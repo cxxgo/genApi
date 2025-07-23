@@ -28,5 +28,5 @@ export function superVerifyVerifyType(data: {
     | 'UPDATE_PASSWORD'
 }): Promise<ApiResponsestring> {
   const { req, verifyType } = data
-  return request.post(`/api/super/verify/${verifyType}`, { req })
+  return request.post(`/api/super/verify/${verifyType}`, req)
 }
