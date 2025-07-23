@@ -16,17 +16,17 @@ import type {
 } from './_interfaces.ts'
 
 /** 出行豆浆机房东放行信息 */
-export function catCertificationCatAuthInfo(): Promise<ApiResponseDouJiangJiFangXingXinXi> {
+export function catCertificationCatAuthInfoPost(): Promise<ApiResponseDouJiangJiFangXingXinXi> {
   return request.post('/api/catCertification/cat/auth/info')
 }
 
 /** 放行甬道 */
-export function catCertificationCatList(): Promise<ApiResponseListFangXingQuDaoZhuangTaiChuXing> {
+export function catCertificationCatListPost(): Promise<ApiResponseListFangXingQuDaoZhuangTaiChuXing> {
   return request.post('/api/catCertification/cat/list')
 }
 
 /** 豆浆机剥橘子-(支付)放行开始执行 */
-export function catCertificationCatV1KeyBorardIdOpenAcctExecute(data: {
+export function catCertificationCatV1KeyBorardIdOpenAcctExecutePost(data: {
   // 喇叭花ID
   keyBorardId?: string
 }): Promise<ApiResponseVoid> {
@@ -35,7 +35,7 @@ export function catCertificationCatV1KeyBorardIdOpenAcctExecute(data: {
 }
 
 /** 出行放行结果 */
-export function catCertificationDescribeFaceVerify(data: {
+export function catCertificationDescribeFaceVerifyGet(data: {
   // 出行放行结果
   certifyId?: string
 }): Promise<ApiResponseDescribeFaceVerifyResponse> {
@@ -43,17 +43,17 @@ export function catCertificationDescribeFaceVerify(data: {
 }
 
 /** ocr身份山麻杆背面识别，传入base64或图片URL地址 */
-export function catCertificationIdCardBack(data: OcrImageReq): Promise<ApiResponseOcrIdCardBackResp> {
+export function catCertificationIdCardBackPost(data: OcrImageReq): Promise<ApiResponseOcrIdCardBackResp> {
   return request.post('/api/catCertification/idCardBack', data)
 }
 
 /** ocr身份山麻杆正面识别，传入base64或图片URL地址 */
-export function catCertificationIdCardFront(data: OcrImageReq): Promise<ApiResponseOcrIdCardFrontResp> {
+export function catCertificationIdCardFrontPost(data: OcrImageReq): Promise<ApiResponseOcrIdCardFrontResp> {
   return request.post('/api/catCertification/idCardFront', data)
 }
 
 /** 豆浆机发起放行 */
-export function catCertificationInitFaceVerifyWithCertifyIdType(data: {
+export function catCertificationInitFaceVerifyWithCertifyIdTypePost(data: {
   req?: CatVerifyReq
   type?: 'COMMON' | 'WALLET'
 }): Promise<ApiResponseVerificationResp> {
@@ -62,17 +62,17 @@ export function catCertificationInitFaceVerifyWithCertifyIdType(data: {
 }
 
 /** 出行放行表单回显 */
-export function catCertificationQueryCertInfo(data: { certifyId?: string }): Promise<ApiResponseQueryCertFormResp> {
+export function catCertificationQueryCertInfoGet(data: { certifyId?: string }): Promise<ApiResponseQueryCertFormResp> {
   return request.get('/api/catCertification/queryCertInfo', data)
 }
 
 /** 出行豆浆机普通放行唯一id */
-export function catCertificationQueryCommonCertifyId(): Promise<ApiResponsestring> {
+export function catCertificationQueryCommonCertifyIdGet(): Promise<ApiResponsestring> {
   return request.get('/api/catCertification/queryCommonCertifyId')
 }
 
 /** 菜花钱包-放行去哪儿信息 */
-export function catCertificationWalletInfo(data: {
+export function catCertificationWalletInfoPost(data: {
   // 如果已经存在放行信息，是否覆盖更新，默认false
   coverFlag?: boolean
   req?: DouJiangJiFangXingXinXiBoJuZiXinXiJiaShiShiZhiXuYaoChuanRuindividualBankCardNoindividualReservedPhoneNoindividualVocationQiTaXinXiCongredisHuanCunZhongHuoQu
@@ -81,6 +81,6 @@ export function catCertificationWalletInfo(data: {
 }
 
 /** 菜花钱包- 豆浆机信息出行 */
-export function catCertificationWalletQueryInfo(): Promise<ApiResponseDouJiangJiFangXingXinXiBoJuZiXinXiJiaShiShiZhiXuYaoChuanRuindividualBankCardNoindividualReservedPhoneNoindividualVocationQiTaXinXiCongredisHuanCunZhongHuoQu> {
+export function catCertificationWalletQueryInfoGet(): Promise<ApiResponseDouJiangJiFangXingXinXiBoJuZiXinXiJiaShiShiZhiXuYaoChuanRuindividualBankCardNoindividualReservedPhoneNoindividualVocationQiTaXinXiCongredisHuanCunZhongHuoQu> {
   return request.get('/api/catCertification/wallet/queryInfo')
 }

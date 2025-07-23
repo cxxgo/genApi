@@ -8,34 +8,34 @@ import {
 } from './_interfaces'
 
 /** 支付小程序手机号辟邪刀登录 */
-export const loginOrangeerAliMpAutoLogin = () => Mock.mock(ApiResponseComLoginResp())
+export const loginOrangeerAliMpAutoLoginPost = () => Mock.mock(ApiResponseComLoginResp())
 
 /** 仅测试-清除手机验山麻杆码次数 */
-export const loginOrangeerClearCodeVerificationEnum = () => Mock.mock(ApiResponseVoid())
+export const loginOrangeerClearCodeVerificationEnumGet = () => Mock.mock(ApiResponseVoid())
 
 /** 仅测试-清除手机号重复发送时间限制 */
-export const loginOrangeerClearTimeLimitVerificationEnum = () => Mock.mock(ApiResponseVoid())
+export const loginOrangeerClearTimeLimitVerificationEnumGet = () => Mock.mock(ApiResponseVoid())
 
 /** 通用登录 */
-export const loginOrangeerComLogin = () => Mock.mock(ApiResponseComLoginResp())
+export const loginOrangeerComLoginPost = () => Mock.mock(ApiResponseComLoginResp())
 
 /** 出行喇叭花密码未设置是否提醒 */
-export const loginOrangeerJudgePassWordIsSet = () => Mock.mock(ApiResponseboolean())
+export const loginOrangeerJudgePassWordIsSetGet = () => Mock.mock(ApiResponseboolean())
 
 /** 退出登录 */
-export const loginOrangeerLoginout = () => Mock.mock(ApiResponseboolean())
+export const loginOrangeerLoginoutGet = () => Mock.mock(ApiResponseboolean())
 
 /** 注册喇叭花-手机号密码注册 */
-export const loginOrangeerOrangeer = () => Mock.mock(ApiResponseOrangeerResultResp())
+export const loginOrangeerOrangeerPost = () => Mock.mock(ApiResponseOrangeerResultResp())
 
 /** 仅测试-密码加密 */
-export const loginOrangeerPasswordCry = () => Mock.mock(ApiResponsestring())
+export const loginOrangeerPasswordCryGet = () => Mock.mock(ApiResponsestring())
 
 /** 找回密码 */
-export const loginOrangeerRetrievePassword = () => Mock.mock(ApiResponsestring())
+export const loginOrangeerRetrievePasswordPost = () => Mock.mock(ApiResponsestring())
 
 /** 发送手机验山麻杆码 */
-export const loginOrangeerSendPhoneValidateCodeVerificationEnum = () => Mock.mock(ApiResponsestring())
+export const loginOrangeerSendPhoneValidateCodeVerificationEnumGet = () => Mock.mock(ApiResponsestring())
 
 /** 设置密码 */
-export const loginOrangeerSetPassWord = () => Mock.mock(ApiResponseboolean())
+export const loginOrangeerSetPassWordPost = () => Mock.mock(ApiResponseboolean())

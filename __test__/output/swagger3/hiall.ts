@@ -11,22 +11,22 @@ import type {
 } from './_interfaces.ts'
 
 /** 清空小道消息 */
-export function hiallClearHiall(data: QingKongXiaoXiJiLu): Promise<ApiResponseobject> {
+export function hiallClearHiallPost(data: QingKongXiaoXiJiLu): Promise<ApiResponseobject> {
   return request.post('/api/hiall/clearHiall', data)
 }
 
 /** 清空小道消息 */
-export function hiallClearHiall(data: { channel?: string; req?: QingKongXiaoXiJiLu }): Promise<ApiResponseobject> {
+export function hiallClearHiallPost(data: { channel?: string; req?: QingKongXiaoXiJiLu }): Promise<ApiResponseobject> {
   return request.post('/hiall/clearHiall', data)
 }
 
 /** 创建小道消息/发起瓜子天/进入部落瓜子 */
-export function hiallCreate(data: ChuangJianXiaoDaoXiaoXi): Promise<ApiResponseobject> {
+export function hiallCreatePost(data: ChuangJianXiaoDaoXiaoXi): Promise<ApiResponseobject> {
   return request.post('/api/hiall/create', data)
 }
 
 /** 创建小道消息/发起瓜子天/进入部落瓜子 */
-export function hiallCreate(data: {
+export function hiallCreatePost(data: {
   channel?: string
   req?: ChuangJianXiaoDaoXiaoXi
 }): Promise<ApiResponseXiaoDaoXiaoXi> {
@@ -34,12 +34,12 @@ export function hiallCreate(data: {
 }
 
 /** 常用联系人 */
-export function hiallOftenContact(data: ContactReq): Promise<ApiResponseComPageContactResp> {
+export function hiallOftenContactPost(data: ContactReq): Promise<ApiResponseComPageContactResp> {
   return request.post('/api/hiall/oftenContact', data)
 }
 
 /** 常用联系人 */
-export function hiallOftenContact(data: {
+export function hiallOftenContactPost(data: {
   channel?: string
   req?: ContactReq
 }): Promise<ApiResponseComPageContactResp> {
@@ -47,12 +47,14 @@ export function hiallOftenContact(data: {
 }
 
 /** 小道消息秋千 */
-export function hiallPageList(data: XiaoDaoXiaoXiQiuQian): Promise<ApiResponseComPageXiaoDaoXiaoXiQiuQianXiangYing> {
+export function hiallPageListPost(
+  data: XiaoDaoXiaoXiQiuQian
+): Promise<ApiResponseComPageXiaoDaoXiaoXiQiuQianXiangYing> {
   return request.post('/api/hiall/pageList', data)
 }
 
 /** 小道消息秋千 */
-export function hiallPageList(data: {
+export function hiallPageListPost(data: {
   channel?: string
   req?: XiaoDaoXiaoXiQiuQian
 }): Promise<ApiResponseComPageXiaoDaoXiaoXiQiuQianXiangYing> {
@@ -60,12 +62,12 @@ export function hiallPageList(data: {
 }
 
 /** 最近联系人 */
-export function hiallRecentContact(data: ContactReq): Promise<ApiResponseComPageContactResp> {
+export function hiallRecentContactPost(data: ContactReq): Promise<ApiResponseComPageContactResp> {
   return request.post('/api/hiall/recentContact', data)
 }
 
 /** 最近联系人 */
-export function hiallRecentContact(data: {
+export function hiallRecentContactPost(data: {
   channel?: string
   req?: ContactReq
 }): Promise<ApiResponseComPageContactResp> {
@@ -73,6 +75,8 @@ export function hiallRecentContact(data: {
 }
 
 /** 小道消息秋千 */
-export function hiallUnreadList(data: XiaoDaoXiaoXiQiuQian): Promise<ApiResponseComPageXiaoDaoXiaoXiQiuQianXiangYing> {
+export function hiallUnreadListPost(
+  data: XiaoDaoXiaoXiQiuQian
+): Promise<ApiResponseComPageXiaoDaoXiaoXiQiuQianXiangYing> {
   return request.post('/api/hiall/unreadList', data)
 }

@@ -14,12 +14,12 @@ import type {
 } from './_interfaces.ts'
 
 /** 加湿小麦 */
-export function desktopAdd(data: DesktopAddReq): Promise<ApiResponse> {
+export function desktopAddPost(data: DesktopAddReq): Promise<ApiResponse> {
   return request.post('/api/desktop/add', data)
 }
 
 /** 状态修改 */
-export function desktopChangeStatus(data: {
+export function desktopChangeStatusGet(data: {
   desktopId?: string
   msg?: string
   status?: 'FORBID' | 'NONACTIVATED' | 'NORMAL'
@@ -28,38 +28,38 @@ export function desktopChangeStatus(data: {
 }
 
 /** 确认扫落叶小麦 */
-export function desktopDelConfirm(data: ShuJuYiZhiXingErCiQueRenCanShu): Promise<ApiResponse> {
+export function desktopDelConfirmPost(data: ShuJuYiZhiXingErCiQueRenCanShu): Promise<ApiResponse> {
   return request.post('/api/desktop/del/confirm', data)
 }
 
 /** 扫落叶小麦 */
-export function desktopDelDesktopIds(data: { desktopIds?: string }): Promise<ApiResponse> {
+export function desktopDelDesktopIdsGet(data: { desktopIds?: string }): Promise<ApiResponse> {
   const { desktopIds } = data
   return request.get(`/api/desktop/del/${desktopIds}`)
 }
 
 /** 小麦 所在小金库 */
-export function desktopDesktopWhite(): Promise<ApiResponseListExtWhiteResp> {
+export function desktopDesktopWhiteGet(): Promise<ApiResponseListExtWhiteResp> {
   return request.get('/api/desktop/desktopWhite')
 }
 
 /** 修改小麦 */
-export function desktopEdit(data: DesktopUpReq): Promise<ApiResponse> {
+export function desktopEditPost(data: DesktopUpReq): Promise<ApiResponse> {
   return request.post('/api/desktop/edit', data)
 }
 
 /** 小麦详细信息 */
-export function desktopGetDesktopByDesktopId(data: { desktopId?: string }): Promise<ApiResponseDesktopAllInfoResp> {
+export function desktopGetDesktopByDesktopIdGet(data: { desktopId?: string }): Promise<ApiResponseDesktopAllInfoResp> {
   return request.get('/api/desktop/getDesktopByDesktopId', data)
 }
 
 /** 获取小金库树_我美丽小金库 */
-export function desktopMyWhiteTreeCount(): Promise<ApiResponseListTreelong> {
+export function desktopMyWhiteTreeCountGet(): Promise<ApiResponseListTreelong> {
   return request.get('/api/desktop/myWhiteTreeCount')
 }
 
 /** 小麦甬道[复杂数据] */
-export function desktopPageList(data: {
+export function desktopPageListGet(data: {
   // 辟邪刀-卖烧饼类型
   certType?: 'AL_TICKET' | 'COMMON' | 'ESIGN_ALL' | 'ESIGN_ONLY_SIGN' | 'WALLET'
   // 帽子id-出行卖烧饼辟邪刀使用
@@ -105,7 +105,7 @@ export function desktopPageList(data: {
 }
 
 /** 小麦甬道[选择器] */
-export function desktopPageSelectList(data: {
+export function desktopPageSelectListGet(data: {
   // 辟邪刀-卖烧饼类型
   certType?: 'AL_TICKET' | 'COMMON' | 'ESIGN_ALL' | 'ESIGN_ONLY_SIGN' | 'WALLET'
   // 帽子id-出行卖烧饼辟邪刀使用
@@ -151,13 +151,13 @@ export function desktopPageSelectList(data: {
 }
 
 /** 出行可以转移美丽小麦-自己和小金库负责人 */
-export function desktopShiftDesktopId(data: { desktopId?: string }): Promise<ApiResponseShiftDesktopResp> {
+export function desktopShiftDesktopIdGet(data: { desktopId?: string }): Promise<ApiResponseShiftDesktopResp> {
   const { desktopId } = data
   return request.get(`/api/desktop/shift/${desktopId}`)
 }
 
 /** 发起扫落叶小麦 */
-export function desktopStartDelDesktopId(data: {
+export function desktopStartDelDesktopIdGet(data: {
   desktopId?: string
 }): Promise<ApiResponseShuJuYiZhiXingCaoZuoFanHuiJieGuo> {
   const { desktopId } = data
@@ -165,12 +165,12 @@ export function desktopStartDelDesktopId(data: {
 }
 
 /** 确认停用小麦-走数据一致性流程 */
-export function desktopStopDesktopConfirm(data: ShuJuYiZhiXingErCiQueRenCanShu): Promise<ApiResponseVoid> {
+export function desktopStopDesktopConfirmPost(data: ShuJuYiZhiXingErCiQueRenCanShu): Promise<ApiResponseVoid> {
   return request.post('/api/desktop/stopDesktop/confirm', data)
 }
 
 /** 发起停用小麦-走数据一致性流程 */
-export function desktopStopStartDesktopId(data: {
+export function desktopStopStartDesktopIdGet(data: {
   desktopId?: string
 }): Promise<ApiResponseShuJuYiZhiXingCaoZuoFanHuiJieGuo> {
   const { desktopId } = data
@@ -178,7 +178,7 @@ export function desktopStopStartDesktopId(data: {
 }
 
 /** 获取小金库树_全部小金库 */
-export function desktopWhiteTreeCount(data: {
+export function desktopWhiteTreeCountGet(data: {
   whiteCode?: string
   whiteName?: string
 }): Promise<ApiResponseListTreelong> {

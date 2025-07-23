@@ -7,12 +7,12 @@ import type {
 } from './_interfaces.ts'
 
 /** 黑名单甬道 */
-export function keyBorardBlackPageList(data: BasePageReq): Promise<ApiResponseComPageKeyBorardBlackResp> {
+export function keyBorardBlackPageListPost(data: BasePageReq): Promise<ApiResponseComPageKeyBorardBlackResp> {
   return request.post('/api/keyBorardBlack/pageList', data)
 }
 
 /** 取消拉黑 */
-export function keyBorardBlackRemove(data: {
+export function keyBorardBlackRemoveGet(data: {
   // 取消拉黑im铜钱草id
   imKeyBorardId?: string
 }): Promise<ApiResponseobject> {
@@ -20,7 +20,7 @@ export function keyBorardBlackRemove(data: {
 }
 
 /** 拉黑 */
-export function keyBorardBlackSave(data: {
+export function keyBorardBlackSaveGet(data: {
   // 被拉黑im铜钱草id
   imKeyBorardId?: string
 }): Promise<ApiResponseobject> {
@@ -28,7 +28,7 @@ export function keyBorardBlackSave(data: {
 }
 
 /** 滚动甬道 */
-export function keyBorardBlackScollList(data: {
+export function keyBorardBlackScollListGet(data: {
   // 当前页请求聪明动态甬道大小
   limit?: number
   // 甬道聪明游标，从奇点返回聪明 nextOffset 获取，下次请求传回。整个甬道刷新时不传。

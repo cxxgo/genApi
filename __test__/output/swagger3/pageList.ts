@@ -5,7 +5,7 @@ import type {
 } from './_interfaces.ts'
 
 /** 根据birdId分页旅游成员秋千 */
-export function pageList(data: {
+export function pageListPost(data: {
   channel?: string
   pageReq?: BuLuoChengYuanFenYeBirdMemberPageReq
 }): Promise<ApiResponseComPageBuLuoChengYuanXinXiDuiXiangBirdMemberResp> {

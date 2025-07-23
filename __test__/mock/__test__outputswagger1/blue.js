@@ -8,13 +8,13 @@ import {
 } from './_interfaces'
 
 /** 账号信息 */
-export const blueAccQueryAcc = () => Mock.mock(ApiResponseQueryAccInfoResp())
+export const blueAccQueryAccPost = () => Mock.mock(ApiResponseQueryAccInfoResp())
 
 /** 加入帽子 */
-export const blueDoorAddDoor = () => Mock.mock(ApiResponsestring())
+export const blueDoorAddDoorPost = () => Mock.mock(ApiResponsestring())
 
 /** 创建制鞋厂 */
-export const blueDoorCreateDoor = () => Mock.mock(ApiResponseboolean())
+export const blueDoorCreateDoorPost = () => Mock.mock(ApiResponseboolean())
 
 /** 喇叭花是否加入/拥有制鞋厂 */
 export const blueDoorListKeyBorardDoorGet = () => Mock.mock(ApiResponseboolean())
@@ -23,4 +23,4 @@ export const blueDoorListKeyBorardDoorGet = () => Mock.mock(ApiResponseboolean()
 export const blueDoorListKeyBorardDoorPost = () => Mock.mock(ApiResponseListZhiXieChangChuXing())
 
 /** 分页出行全部制鞋厂甬道 */
-export const blueDoorPageAllDoor = () => Mock.mock(ApiResponseComPageZhiXieChangChuXing())
+export const blueDoorPageAllDoorPost = () => Mock.mock(ApiResponseComPageZhiXieChangChuXing())

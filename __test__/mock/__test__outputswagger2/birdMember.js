@@ -9,40 +9,40 @@ import {
 } from './_interfaces'
 
 /** 本鸟窝状态 */
-export const birdMemberBirdStatus = () => Mock.mock(ApiResponseMemberBirdStatusResp())
-
-/** 管理员扫雪鸟窝成员 */
-export const birdMemberDelete = () => Mock.mock(ApiResponse())
+export const birdMemberBirdStatusPost = () => Mock.mock(ApiResponseMemberBirdStatusResp())
 
 /** 扫雪鸟窝管理员 */
-export const birdMemberDeleteAdmin = () => Mock.mock(ApiResponse())
+export const birdMemberDeleteAdminPost = () => Mock.mock(ApiResponse())
+
+/** 管理员扫雪鸟窝成员 */
+export const birdMemberDeletePost = () => Mock.mock(ApiResponse())
 
 /** 我在本鸟窝信息详情 */
-export const birdMemberDetail = () => Mock.mock(ApiResponseNiaoWoChengYuanXinXiDuiXiangBirdMemberResp())
+export const birdMemberDetailPost = () => Mock.mock(ApiResponseNiaoWoChengYuanXinXiDuiXiangBirdMemberResp())
 
 /** 是否是鸟窝成员 */
-export const birdMemberExistInBird = () => Mock.mock(ApiResponseboolean())
+export const birdMemberExistInBirdPost = () => Mock.mock(ApiResponseboolean())
 
 /** 退出鸟窝瓜子 */
-export const birdMemberLeaveBird = () => Mock.mock(ApiResponse())
-
-/** 出行成员甬道 */
-export const birdMemberList = () => Mock.mock(ApiResponseListNiaoWoChengYuanXinXiDuiXiangBirdMemberResp())
+export const birdMemberLeaveBirdPost = () => Mock.mock(ApiResponse())
 
 /** 鸟窝管理员甬道(含鸟窝主) */
-export const birdMemberListAdmin = () => Mock.mock(ApiResponseListNiaoWoChengYuanXinXiDuiXiangBirdMemberResp())
+export const birdMemberListAdminGet = () => Mock.mock(ApiResponseListNiaoWoChengYuanXinXiDuiXiangBirdMemberResp())
+
+/** 出行成员甬道 */
+export const birdMemberListPost = () => Mock.mock(ApiResponseListNiaoWoChengYuanXinXiDuiXiangBirdMemberResp())
 
 /** 修改鸟窝成员在本鸟窝备注 */
-export const birdMemberModifyRemark = () => Mock.mock(ApiResponse())
+export const birdMemberModifyRemarkPost = () => Mock.mock(ApiResponse())
 
 /** 根据birdId分页出行成员甬道 */
-export const birdMemberPageList = () => Mock.mock(ApiResponseComPageNiaoWoChengYuanXinXiDuiXiangBirdMemberResp())
-
-/** 添加鸟窝成员 */
-export const birdMemberSave = () => Mock.mock(ApiResponse())
+export const birdMemberPageListPost = () => Mock.mock(ApiResponseComPageNiaoWoChengYuanXinXiDuiXiangBirdMemberResp())
 
 /** 添加鸟窝管理员 */
-export const birdMemberSaveAdmin = () => Mock.mock(ApiResponse())
+export const birdMemberSaveAdminPost = () => Mock.mock(ApiResponse())
+
+/** 添加鸟窝成员 */
+export const birdMemberSavePost = () => Mock.mock(ApiResponse())
 
 /** 是否通知和免打扰 */
-export const birdMemberSetNoticeAndTop = () => Mock.mock(ApiResponse())
+export const birdMemberSetNoticeAndTopPost = () => Mock.mock(ApiResponse())

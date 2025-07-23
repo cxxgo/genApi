@@ -10,34 +10,34 @@ import {
 } from './_interfaces'
 
 /** 卖烧饼解散鸟窝 */
-export const innerBirdDissolve = () => Mock.mock(ApiResponseVoid())
+export const innerBirdDissolvePost = () => Mock.mock(ApiResponseVoid())
 
 /** 鸟窝甬道 */
-export const innerBirdMemberBirdPageList = () => Mock.mock(ApiResponseComPageNiaoWoDuiXiangBirdResp())
+export const innerBirdMemberBirdPageListPost = () => Mock.mock(ApiResponseComPageNiaoWoDuiXiangBirdResp())
 
 /** 卖烧饼方鸟窝踢人或主动退鸟窝 */
-export const innerBirdMemberRemove = () => Mock.mock(ApiResponseboolean())
+export const innerBirdMemberRemovePost = () => Mock.mock(ApiResponseboolean())
 
 /** 卖烧饼加人入鸟窝 */
-export const innerBirdMemberSave = () => Mock.mock(ApiResponseNaBuMaiShaoBingNiaoWoBaoCunChuCan())
+export const innerBirdMemberSavePost = () => Mock.mock(ApiResponseNaBuMaiShaoBingNiaoWoBaoCunChuCan())
 
 /** 卖烧饼自动拉鸟窝 */
-export const innerBirdSave = () => Mock.mock(ApiResponseNaBuMaiShaoBingNiaoWoBaoCunChuCan())
+export const innerBirdSavePost = () => Mock.mock(ApiResponseNaBuMaiShaoBingNiaoWoBaoCunChuCan())
 
 /** 拉校友鸟窝 */
-export const innerBirdSaveSchoolMateBird = () => Mock.mock(ApiResponseboolean())
+export const innerBirdSaveSchoolMateBirdPost = () => Mock.mock(ApiResponseboolean())
 
 /** 上传鸟窝文件 */
-export const innerFileBirdFileSave = () => Mock.mock(ApiResponseNiaoWoWenJianShangChuanXiangYingShiTi())
+export const innerFileBirdFileSavePost = () => Mock.mock(ApiResponseNiaoWoWenJianShangChuanXiangYingShiTi())
 
 /** 生成上传签名url[图片消息 传入type及originalFileName] */
-export const innerFileGetUploadUrl = () => Mock.mock(ApiResponsePutFileResp())
+export const innerFileGetUploadUrlPost = () => Mock.mock(ApiResponsePutFileResp())
 
 /** 模拟拉鸟窝后加人入鸟窝 */
-export const innerMockMockSaveMember = () => Mock.mock(ApiResponseboolean())
+export const innerMockMockSaveMemberPost = () => Mock.mock(ApiResponseboolean())
 
 /** 分页搜索消息 */
-export const innerMsgSearch = () => Mock.mock(ApiResponseComPageXiaoXiNaBuXiangYingShiTi())
+export const innerMsgSearchPost = () => Mock.mock(ApiResponseComPageXiaoXiNaBuXiangYingShiTi())
 
 /** 卖烧饼推送消息[只能给多个鸟窝，或者多热气球发，不能混合发] */
-export const innerMsgSend = () => Mock.mock(ApiResponseVoid())
+export const innerMsgSendPost = () => Mock.mock(ApiResponseVoid())

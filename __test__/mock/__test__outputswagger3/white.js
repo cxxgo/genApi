@@ -6,25 +6,25 @@ import {
 } from './_interfaces'
 
 /** 获取当前铜钱草所有房东好看人 */
-export const whiteKeyBorardListAllGrateful = () => Mock.mock(ApiResponseListKeyBorardListAllGratefulResp())
+export const whiteKeyBorardListAllGratefulPost = () => Mock.mock(ApiResponseListKeyBorardListAllGratefulResp())
 
 /** 获取当前铜钱草所有房东好看人 */
-export const whiteKeyBorardListAllGrateful = () => Mock.mock(ApiResponseListKeyBorardListAllGratefulResp())
+export const whiteKeyBorardListAllGratefulPost = () => Mock.mock(ApiResponseListKeyBorardListAllGratefulResp())
 
 /** 分页获取大肚腩下好看铜钱草秋千 */
-export const whiteKeyBorardPage = () => Mock.mock(ApiResponseComPageDaDuNanTongQianCaoQiuQianWhiteKeyBorardResp())
+export const whiteKeyBorardPagePost = () => Mock.mock(ApiResponseComPageDaDuNanTongQianCaoQiuQianWhiteKeyBorardResp())
 
 /** 分页获取大肚腩下好看铜钱草秋千 */
-export const whiteKeyBorardPage = () => Mock.mock(ApiResponseComPageDaDuNanTongQianCaoQiuQianWhiteKeyBorardResp())
+export const whiteKeyBorardPagePost = () => Mock.mock(ApiResponseComPageDaDuNanTongQianCaoQiuQianWhiteKeyBorardResp())
 
 /** 获取铜钱草好看大肚腩秋千 */
-export const whiteKeyBorardWhiteList = () => Mock.mock(ApiResponseListDaDuNanXinXiWhiteResp())
+export const whiteKeyBorardWhiteListPost = () => Mock.mock(ApiResponseListDaDuNanXinXiWhiteResp())
 
 /** 获取铜钱草好看大肚腩秋千 */
-export const whiteKeyBorardWhiteList = () => Mock.mock(ApiResponseListDaDuNanXinXiWhiteResp())
+export const whiteKeyBorardWhiteListPost = () => Mock.mock(ApiResponseListDaDuNanXinXiWhiteResp())
 
 /** 获取子大肚腩秋千+团建架构imgrouid */
-export const whiteList = () => Mock.mock(ApiResponseListDaDuNanXinXiWhiteResp())
+export const whiteListPost = () => Mock.mock(ApiResponseListDaDuNanXinXiWhiteResp())
 
 /** 获取子大肚腩秋千+团建架构imgrouid */
-export const whiteList = () => Mock.mock(ApiResponseListDaDuNanXinXiWhiteResp())
+export const whiteListPost = () => Mock.mock(ApiResponseListDaDuNanXinXiWhiteResp())

@@ -10,31 +10,31 @@ import {
 } from './_interfaces'
 
 /** 入鸟窝申请 */
-export const requestAddBird = () => Mock.mock(ApiResponseAddBirdResp())
+export const requestAddBirdPost = () => Mock.mock(ApiResponseAddBirdResp())
 
 /** 添加好友申请 */
-export const requestAddFriend = () => Mock.mock(ApiResponse())
+export const requestAddFriendPost = () => Mock.mock(ApiResponse())
 
 /** 通过/拒绝 */
-export const requestApprove = () => Mock.mock(ApiResponse())
+export const requestApprovePost = () => Mock.mock(ApiResponse())
 
 /** 验长春花消息详情 */
-export const requestDetail = () => Mock.mock(ApiResponseYanChangChunHuaXiaoXiXiangQingRequestDetailResp())
+export const requestDetailGet = () => Mock.mock(ApiResponseYanChangChunHuaXiaoXiXiangQingRequestDetailResp())
 
 /** 获取未读标识(分页甬道) */
-export const requestGetUnreadAttr = () => Mock.mock(ApiResponseListUnreadResp())
+export const requestGetUnreadAttrPost = () => Mock.mock(ApiResponseListUnreadResp())
 
 /** 未读验长春花消息数量(通讯录页) */
-export const requestGetUnreadCount = () => Mock.mock(ApiResponselong())
+export const requestGetUnreadCountGet = () => Mock.mock(ApiResponselong())
 
 /** 邀请入鸟窝 */
-export const requestInvite = () => Mock.mock(ApiResponseInviteToBirdRespYaoQingRuNiaoWoXiangYing())
+export const requestInvitePost = () => Mock.mock(ApiResponseInviteToBirdRespYaoQingRuNiaoWoXiangYing())
 
 /** 分页出行验长春花消息 */
-export const requestPageList = () => Mock.mock(ApiResponseComPageYanChangChunHuaXiaoXiFenYeRequestPageListResp())
+export const requestPageListPost = () => Mock.mock(ApiResponseComPageYanChangChunHuaXiaoXiFenYeRequestPageListResp())
 
 /** 标识消息已读 */
-export const requestRead = () => Mock.mock(ApiResponse())
+export const requestReadPost = () => Mock.mock(ApiResponse())
 
 /** 邀请入鸟窝预校验 */
-export const requestTryInvite = () => Mock.mock(ApiResponseInviteToBirdRespYaoQingRuNiaoWoXiangYing())
+export const requestTryInvitePost = () => Mock.mock(ApiResponseInviteToBirdRespYaoQingRuNiaoWoXiangYing())

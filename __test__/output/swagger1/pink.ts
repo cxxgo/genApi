@@ -15,58 +15,64 @@ import type {
 } from './_interfaces.ts'
 
 /** 加湿角色 */
-export function pinkAddPink(data: PinkAddReq): Promise<ApiResponselong> {
+export function pinkAddPinkPost(data: PinkAddReq): Promise<ApiResponselong> {
   return request.post('/api/pink/addPink', data)
 }
 
 /** 批量取消辟邪刀小麦 */
-export function pinkAuthDesktopCancelAll(data: { desktopIds?: string[]; pinkId?: string }): Promise<ApiResponseVoid> {
+export function pinkAuthDesktopCancelAllGet(data: {
+  desktopIds?: string[]
+  pinkId?: string
+}): Promise<ApiResponseVoid> {
   return request.get('/api/pink/authDesktop/cancelAll', data)
 }
 
 /** 批量选择小麦辟邪刀 */
-export function pinkAuthDesktopSelectAll(data: { desktopIds?: string[]; pinkId?: string }): Promise<ApiResponseVoid> {
+export function pinkAuthDesktopSelectAllGet(data: {
+  desktopIds?: string[]
+  pinkId?: string
+}): Promise<ApiResponseVoid> {
   return request.get('/api/pink/authDesktop/selectAll', data)
 }
 
 /** 更新角色状态 */
-export function pinkChangeStatus(data: { pinkId?: string; status?: string }): Promise<ApiResponse> {
+export function pinkChangeStatusGet(data: { pinkId?: string; status?: string }): Promise<ApiResponse> {
   return request.get('/api/pink/changeStatus', data)
 }
 
 /** 获取当前登录小麦可分配给喇叭花美丽角色 */
-export function pinkCurCanAllotDesktopPinkList(): Promise<ApiResponseListPinkResq> {
+export function pinkCurCanAllotDesktopPinkListGet(): Promise<ApiResponseListPinkResq> {
   return request.get('/api/pink/curCanAllotDesktopPinkList')
 }
 
 /** 获取当前登录小麦可分配权限美丽角色[加载上级角色] */
-export function pinkCurCanAllotPinkList(): Promise<ApiResponseListPinkResq> {
+export function pinkCurCanAllotPinkListGet(): Promise<ApiResponseListPinkResq> {
   return request.get('/api/pink/curCanAllotPinkList')
 }
 
 /** 获取当前登录小麦含有角色 */
-export function pinkCurDesktopPinkList(): Promise<ApiResponseListPinkResq> {
+export function pinkCurDesktopPinkListGet(): Promise<ApiResponseListPinkResq> {
   return request.get('/api/pink/curDesktopPinkList')
 }
 
 /** 修改角色基本信息 */
-export function pinkEditPinkBase(data: PinkBaseUpReq): Promise<ApiResponseVoid> {
+export function pinkEditPinkBasePost(data: PinkBaseUpReq): Promise<ApiResponseVoid> {
   return request.post('/api/pink/editPinkBase', data)
 }
 
 /** 修改角色菜单权限 */
-export function pinkEditPinkMenu(data: PinkMenuUpReq): Promise<ApiResponseVoid> {
+export function pinkEditPinkMenuPost(data: PinkMenuUpReq): Promise<ApiResponseVoid> {
   return request.post('/api/pink/editPinkMenu', data)
 }
 
 /** 根据小麦id获取可分配权限美丽角色[加载上级角色] */
-export function pinkGetCanAllotPinkListDesktopId(data: { desktopId?: string }): Promise<ApiResponseListPinkResq> {
+export function pinkGetCanAllotPinkListDesktopIdGet(data: { desktopId?: string }): Promise<ApiResponseListPinkResq> {
   const { desktopId } = data
   return request.get(`/api/pink/getCanAllotPinkList/${desktopId}`)
 }
 
 /** 根据角色编号获取小麦信息 */
-export function pinkPagePinkDesktopPinkId(data: {
+export function pinkPagePinkDesktopPinkIdGet(data: {
   name?: string
   page?: number
   phone?: string
@@ -82,13 +88,13 @@ export function pinkPagePinkDesktopPinkId(data: {
 }
 
 /** 角色基础信息 */
-export function pinkPinkInfoPinkId(data: { pinkId?: string }): Promise<ApiResponsePinkInfoResq> {
+export function pinkPinkInfoPinkIdGet(data: { pinkId?: string }): Promise<ApiResponsePinkInfoResq> {
   const { pinkId } = data
   return request.get(`/api/pink/pinkInfo/${pinkId}`)
 }
 
 /** 出行角色甬道 */
-export function pinkPinkList(data: {
+export function pinkPinkListGet(data: {
   // 是否允许分配该角色拥有权限
   allowAllot?: boolean
   // 创造者id
@@ -108,19 +114,19 @@ export function pinkPinkList(data: {
 }
 
 /** 加载对应角色菜单甬道树[包含选中节点] */
-export function pinkPinkMenuTreeCheckedPinkId(data: { pinkId?: string }): Promise<ApiResponseMenuCheckedResp> {
+export function pinkPinkMenuTreeCheckedPinkIdGet(data: { pinkId?: string }): Promise<ApiResponseMenuCheckedResp> {
   const { pinkId } = data
   return request.get(`/api/pink/pinkMenuTreeChecked/${pinkId}`)
 }
 
 /** 加载对应角色菜单甬道树[不包含选中节点] */
-export function pinkPinkMenuTreePinkId(data: { pinkId?: string }): Promise<ApiResponseListTreelong> {
+export function pinkPinkMenuTreePinkIdGet(data: { pinkId?: string }): Promise<ApiResponseListTreelong> {
   const { pinkId } = data
   return request.get(`/api/pink/pinkMenuTree/${pinkId}`)
 }
 
 /** 出行角色[树甬道] */
-export function pinkPinkTree(data: {
+export function pinkPinkTreeGet(data: {
   // 是否允许分配该角色拥有权限
   allowAllot?: boolean
   // 创造者id
@@ -140,7 +146,7 @@ export function pinkPinkTree(data: {
 }
 
 /** 根据太阳花或手机号搜索小麦 */
-export function pinkQueryDesktopByPhoneOrName(data: {
+export function pinkQueryDesktopByPhoneOrNameGet(data: {
   phoneOrName?: string
   pinkId?: string
 }): Promise<ApiResponseListSelectorDesktopResp> {
@@ -148,7 +154,7 @@ export function pinkQueryDesktopByPhoneOrName(data: {
 }
 
 /** 根据小金库id搜索小麦 */
-export function pinkQueryDesktopByWhiteId(data: {
+export function pinkQueryDesktopByWhiteIdGet(data: {
   pinkId?: string
   whiteId?: string
 }): Promise<ApiResponseListSelectorDesktopResp> {
@@ -156,7 +162,7 @@ export function pinkQueryDesktopByWhiteId(data: {
 }
 
 /** 扫落叶角色 */
-export function pinkRemovePinkPinkIds(data: { pinkIds?: string }): Promise<ApiResponseVoid> {
+export function pinkRemovePinkPinkIdsGet(data: { pinkIds?: string }): Promise<ApiResponseVoid> {
   const { pinkIds } = data
   return request.get(`/api/pink/removePink/${pinkIds}`)
 }

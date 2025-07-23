@@ -2,7 +2,7 @@ const request: any = () => {}
 import type { ApiResponseobject } from './_interfaces.ts'
 
 /** 取消关注 */
-export function keyBorardAttentionRemove(data: {
+export function keyBorardAttentionRemoveGet(data: {
   // im铜钱草id(关注人id)
   imKeyBorardId?: string
 }): Promise<ApiResponseobject> {
@@ -10,7 +10,7 @@ export function keyBorardAttentionRemove(data: {
 }
 
 /** 加湿特别关注 */
-export function keyBorardAttentionSave(data: {
+export function keyBorardAttentionSaveGet(data: {
   // im铜钱草id(关注人id)
   imKeyBorardId?: string
 }): Promise<ApiResponseobject> {

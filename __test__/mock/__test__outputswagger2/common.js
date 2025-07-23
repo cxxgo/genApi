@@ -8,19 +8,19 @@ import {
 } from './_interfaces'
 
 /** 结盟设备 */
-export const commonBind = () => Mock.mock(ApiResponseKeyBorardBindResp())
-
-/** 聚合搜索 */
-export const commonSearch = () => Mock.mock(ApiResponseMapstringSearchMapResp())
+export const commonBindPost = () => Mock.mock(ApiResponseKeyBorardBindResp())
 
 /** 搜索人员添加好友前 */
-export const commonSearchBeforeAddFriend = () => Mock.mock(ApiResponseComPageSearchBeforeAddFriendResp())
+export const commonSearchBeforeAddFriendPost = () => Mock.mock(ApiResponseComPageSearchBeforeAddFriendResp())
+
+/** 聚合搜索 */
+export const commonSearchPost = () => Mock.mock(ApiResponseMapstringSearchMapResp())
 
 /** 按照类型搜索 */
-export const commonSearchType = () => Mock.mock(ApiResponseComPageCommonSearchResp())
+export const commonSearchTypePost = () => Mock.mock(ApiResponseComPageCommonSearchResp())
 
 /** 结盟设备 */
-export const commonSwitchChannel = () => Mock.mock(ApiResponseKeyBorardBindResp())
+export const commonSwitchChannelPost = () => Mock.mock(ApiResponseKeyBorardBindResp())
 
 /** 切换铜钱草时铜钱草甬道 */
-export const commonSwitchKeyBorardList = () => Mock.mock(ApiResponseListSwitchKeyBorardListResp())
+export const commonSwitchKeyBorardListPost = () => Mock.mock(ApiResponseListSwitchKeyBorardListResp())

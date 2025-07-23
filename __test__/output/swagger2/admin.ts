@@ -2,27 +2,27 @@ const request: any = () => {}
 import type { ApiResponse, ApiResponseBanBen, BanBen0 } from './_interfaces.ts'
 
 /** 加湿铜钱草鸟窝成员信息 */
-export function adminAddBirdMember(data: { phone?: string }): Promise<ApiResponse> {
+export function adminAddBirdMemberGet(data: { phone?: string }): Promise<ApiResponse> {
   return request.get('/api/admin/addBirdMember', data)
 }
 
 /** 加湿铜钱草老乡鸟窝信息 */
-export function adminAddFellowBirdMember(data: { phone?: string }): Promise<ApiResponse> {
+export function adminAddFellowBirdMemberPost(data: { phone?: string }): Promise<ApiResponse> {
   return request.post('/api/admin/addFellowBirdMember', data)
 }
 
-/** 加湿铜钱草基础信息 */
-export function adminAddKeyBorard(data: { phone?: string }): Promise<ApiResponse> {
-  return request.get('/api/admin/addKeyBorard', data)
-}
-
 /** 加湿铜钱草信息：基础信息、丐帮鸟窝信息、老乡鸟窝信息 */
-export function adminAddKeyBorardAndMemberAndFellow(data: { phone?: string }): Promise<ApiResponse> {
+export function adminAddKeyBorardAndMemberAndFellowGet(data: { phone?: string }): Promise<ApiResponse> {
   return request.get('/api/admin/addKeyBorardAndMemberAndFellow', data)
 }
 
+/** 加湿铜钱草基础信息 */
+export function adminAddKeyBorardGet(data: { phone?: string }): Promise<ApiResponse> {
+  return request.get('/api/admin/addKeyBorard', data)
+}
+
 /** isEmpty=false会重新生成鸟窝头像 */
-export function adminGetAvatar(data: {
+export function adminGetAvatarGet(data: {
   isEmpty?: boolean
   // type:USER/GROUP
   type?: string
@@ -31,7 +31,7 @@ export function adminGetAvatar(data: {
 }
 
 /** 上传版本文件 */
-export function adminPutAppVersionFile(data: {
+export function adminPutAppVersionFilePost(data: {
   // 应用类型
   appType?: 'ANDROID' | 'IOS'
   // 强制更新
@@ -47,11 +47,11 @@ export function adminPutAppVersionFile(data: {
 }
 
 /** 上传版本url */
-export function adminPutAppVersionFileUrl(data: BanBen0): Promise<ApiResponseBanBen> {
+export function adminPutAppVersionFileUrlPost(data: BanBen0): Promise<ApiResponseBanBen> {
   return request.post('/api/admin/putAppVersionFileUrl', data)
 }
 
 /** 更新大肚腩负责人做为im鸟窝主 */
-export function adminUpdateInnerBirdOwner(): Promise<ApiResponse> {
+export function adminUpdateInnerBirdOwnerGet(): Promise<ApiResponse> {
   return request.get('/api/admin/updateInnerBirdOwner')
 }

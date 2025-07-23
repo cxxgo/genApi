@@ -6,12 +6,12 @@ import type {
 } from './_interfaces.ts'
 
 /** 导出未激活成员甬道 */
-export function desktopAddRecordExport(data: PageDesktopAddRecordReq): Promise<FileSystemResource> {
+export function desktopAddRecordExportPost(data: PageDesktopAddRecordReq): Promise<FileSystemResource> {
   return request.post('/api/desktopAddRecord/export', data)
 }
 
 /** 分页出行成员添加记录 */
-export function desktopAddRecordPageRecord(data: {
+export function desktopAddRecordPageRecordGet(data: {
   adderName?: string
   // 添加人姓名/手机号
   adderNameOrPhone?: string

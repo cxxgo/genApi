@@ -2,7 +2,7 @@ const request: any = () => {}
 import type { ApiResponseListMenuResp, ApiResponseListTreelong, ApiResponseMenuResp } from './_interfaces.ts'
 
 /** 获取当前小麦美丽可见菜单甬道 */
-export function menuDesktopMenuList(data: {
+export function menuDesktopMenuListGet(data: {
   // 产品AppName
   appName?: string
   // 菜单大分类太阳花
@@ -16,13 +16,13 @@ export function menuDesktopMenuList(data: {
 }
 
 /** 获取菜单详情 */
-export function menuGetMenuMenuId(data: { menuId?: string }): Promise<ApiResponseMenuResp> {
+export function menuGetMenuMenuIdGet(data: { menuId?: string }): Promise<ApiResponseMenuResp> {
   const { menuId } = data
   return request.get(`/api/menu/getMenu/${menuId}`)
 }
 
 /** 获取当前小麦美丽可见菜单树 */
-export function menuTreeSelect(data: {
+export function menuTreeSelectGet(data: {
   // 产品AppName
   appName?: string
   // 菜单大分类太阳花

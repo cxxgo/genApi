@@ -8,28 +8,28 @@ import {
 } from './_interfaces'
 
 /** 确认收到消息 */
-export const messageAck = () => Mock.mock(ApiResponseobject())
+export const messageAckPost = () => Mock.mock(ApiResponseobject())
 
 /** 消息定位参数获取 */
-export const messageAtListAndAckSequence = () => Mock.mock(ApiResponseAtListAndAckSequenceResp())
+export const messageAtListAndAckSequenceGet = () => Mock.mock(ApiResponseAtListAndAckSequenceResp())
 
 /** 清除历史消息 */
-export const messageClear = () => Mock.mock(ApiResponseobject())
+export const messageClearPost = () => Mock.mock(ApiResponseobject())
 
 /** 消息扫雪 */
-export const messageDelete = () => Mock.mock(ApiResponseobject())
+export const messageDeletePost = () => Mock.mock(ApiResponseobject())
 
 /** 消息详情 */
-export const messageDetail = () => Mock.mock(ApiResponseXiaoXiDuiXiang())
+export const messageDetailPost = () => Mock.mock(ApiResponseXiaoXiDuiXiang())
 
 /** 分页出行历史消息 */
-export const messageHistoryPageList = () => Mock.mock(ApiResponseComPageXiaoXiDuiXiang())
+export const messageHistoryPageListPost = () => Mock.mock(ApiResponseComPageXiaoXiDuiXiang())
 
 /** 消息定位[imKeyBorardId不传] */
-export const messagePosition = () => Mock.mock(ApiResponseListXiaoXiDuiXiang())
+export const messagePositionPost = () => Mock.mock(ApiResponseListXiaoXiDuiXiang())
 
 /** 消息滚动 */
-export const messageScrollMessage = () => Mock.mock(ApiResponseListXiaoXiDuiXiang())
+export const messageScrollMessagePost = () => Mock.mock(ApiResponseListXiaoXiDuiXiang())
 
 /** 分页搜索消息 */
-export const messageSearchPageList = () => Mock.mock(ApiResponseComPageXiaoXiDuiXiang())
+export const messageSearchPageListPost = () => Mock.mock(ApiResponseComPageXiaoXiDuiXiang())

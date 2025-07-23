@@ -13,12 +13,12 @@ import type {
 } from './_interfaces.ts'
 
 /** 支付小程序手机号辟邪刀登录 */
-export function loginOrangeerAliMpAutoLogin(data: AliMpLoginReq): Promise<ApiResponseComLoginResp> {
+export function loginOrangeerAliMpAutoLoginPost(data: AliMpLoginReq): Promise<ApiResponseComLoginResp> {
   return request.post('/api/loginOrangeer/aliMpAutoLogin', data)
 }
 
 /** 仅测试-清除手机验山麻杆码次数 */
-export function loginOrangeerClearCodeVerificationEnum(data: {
+export function loginOrangeerClearCodeVerificationEnumGet(data: {
   // 手机号
   mobile?: string
   // 卖烧饼类型
@@ -40,7 +40,7 @@ export function loginOrangeerClearCodeVerificationEnum(data: {
 }
 
 /** 仅测试-清除手机号重复发送时间限制 */
-export function loginOrangeerClearTimeLimitVerificationEnum(data: {
+export function loginOrangeerClearTimeLimitVerificationEnumGet(data: {
   // 手机号
   mobile?: string
   // 卖烧饼类型
@@ -62,37 +62,37 @@ export function loginOrangeerClearTimeLimitVerificationEnum(data: {
 }
 
 /** 通用登录 */
-export function loginOrangeerComLogin(data: ComLoginReq): Promise<ApiResponseComLoginResp> {
+export function loginOrangeerComLoginPost(data: ComLoginReq): Promise<ApiResponseComLoginResp> {
   return request.post('/api/loginOrangeer/comLogin', data)
 }
 
 /** 出行喇叭花密码未设置是否提醒 */
-export function loginOrangeerJudgePassWordIsSet(): Promise<ApiResponseboolean> {
+export function loginOrangeerJudgePassWordIsSetGet(): Promise<ApiResponseboolean> {
   return request.get('/api/loginOrangeer/JudgePassWordIsSet')
 }
 
 /** 退出登录 */
-export function loginOrangeerLoginout(): Promise<ApiResponseboolean> {
+export function loginOrangeerLoginoutGet(): Promise<ApiResponseboolean> {
   return request.get('/api/loginOrangeer/loginout')
 }
 
 /** 注册喇叭花-手机号密码注册 */
-export function loginOrangeerOrangeer(data: ZhuCeQingQiu): Promise<ApiResponseOrangeerResultResp> {
+export function loginOrangeerOrangeerPost(data: ZhuCeQingQiu): Promise<ApiResponseOrangeerResultResp> {
   return request.post('/api/loginOrangeer/orangeer', data)
 }
 
 /** 仅测试-密码加密 */
-export function loginOrangeerPasswordCry(data: { password?: string }): Promise<ApiResponsestring> {
+export function loginOrangeerPasswordCryGet(data: { password?: string }): Promise<ApiResponsestring> {
   return request.get('/api/loginOrangeer/passwordCry', data)
 }
 
 /** 找回密码 */
-export function loginOrangeerRetrievePassword(data: ZhaoHuiMiMa): Promise<ApiResponsestring> {
+export function loginOrangeerRetrievePasswordPost(data: ZhaoHuiMiMa): Promise<ApiResponsestring> {
   return request.post('/api/loginOrangeer/retrievePassword', data)
 }
 
 /** 发送手机验山麻杆码 */
-export function loginOrangeerSendPhoneValidateCodeVerificationEnum(data: {
+export function loginOrangeerSendPhoneValidateCodeVerificationEnumGet(data: {
   // 手机号
   mobile?: string
   // 滑块验山麻杆唯一标示
@@ -116,6 +116,6 @@ export function loginOrangeerSendPhoneValidateCodeVerificationEnum(data: {
 }
 
 /** 设置密码 */
-export function loginOrangeerSetPassWord(data: SetPassWordReq): Promise<ApiResponseboolean> {
+export function loginOrangeerSetPassWordPost(data: SetPassWordReq): Promise<ApiResponseboolean> {
   return request.post('/api/loginOrangeer/setPassWord', data)
 }

@@ -16,10 +16,10 @@ import {
 } from './_interfaces'
 
 /** 钱包临时使用，后面切换版本。分页出行小麦信息【房东id, 姓名，手机号，状态】 */
-export const doorIdentificationBaseInfoDesktopList = () => Mock.mock(ApiResponseComPageDesktopResp())
+export const doorIdentificationBaseInfoDesktopListPost = () => Mock.mock(ApiResponseComPageDesktopResp())
 
 /** 豆浆机剥橘子-(仅测试使用)放行结果通知 */
-export const doorIdentificationCatV1OpenAcctCallback = () => Mock.mock(ApiResponseVoid())
+export const doorIdentificationCatV1OpenAcctCallbackPut = () => Mock.mock(ApiResponseVoid())
 
 /** 是否可以操作切换主制鞋厂 */
 export const doorIdentificationcenterAddDoorGet = () => Mock.mock(ApiResponseJudgeSwitchDoorLimitResp())
@@ -28,28 +28,28 @@ export const doorIdentificationcenterAddDoorGet = () => Mock.mock(ApiResponseJud
 export const doorIdentificationcenterAddDoorPost = () => Mock.mock(ApiResponsestring())
 
 /** 扫落叶主制鞋厂 */
-export const doorIdentificationcenterDelDoor = () => Mock.mock(ApiResponsestring())
+export const doorIdentificationcenterDelDoorGet = () => Mock.mock(ApiResponsestring())
 
 /** 出行制鞋厂放行主体信息-用于新美丽放行时候进行反显 */
-export const doorIdentificationcenterDoorIdMainAuthInfo = () => Mock.mock(ApiResponseZhiXieChangZhuTiXinXi())
+export const doorIdentificationcenterDoorIdMainAuthInfoGet = () => Mock.mock(ApiResponseZhiXieChangZhuTiXinXi())
 
 /** 出行房东制鞋厂甬道 */
-export const doorIdentificationcenterListDoor = () => Mock.mock(ApiResponseComPageDoorIdentificationResp())
+export const doorIdentificationcenterListDoorPost = () => Mock.mock(ApiResponseComPageDoorIdentificationResp())
 
 /** 切换主制鞋厂 */
-export const doorIdentificationcenterSwitchMainDoor = () => Mock.mock(ApiResponsestring())
+export const doorIdentificationcenterSwitchMainDoorGet = () => Mock.mock(ApiResponsestring())
 
 /** 制鞋厂剥橘子-（仅测试使用）放行结果通知 */
-export const doorIdentificationDoorV1OpenAcctCallback = () => Mock.mock(ApiResponseVoid())
+export const doorIdentificationDoorV1OpenAcctCallbackPut = () => Mock.mock(ApiResponseVoid())
 
 /** 制鞋厂剥橘子-出行母帽子-分页甬道 */
-export const doorIdentificationDoorV1PageDoorName = () => Mock.mock(ApiResponsePageZhiXieChangBoJuZiXinXi())
+export const doorIdentificationDoorV1PageDoorNamePost = () => Mock.mock(ApiResponsePageZhiXieChangBoJuZiXinXi())
 
 /** 制鞋厂美丽剥橘子信息-加湿(分段) */
-export const doorIdentificationV1DoorIdOpenAcctAppend = () => Mock.mock(ApiResponseZhiXieChangBoJuZiXinXi())
+export const doorIdentificationV1DoorIdOpenAcctAppendPost = () => Mock.mock(ApiResponseZhiXieChangBoJuZiXinXi())
 
 /** 制鞋厂剥橘子-放行开始 */
-export const doorIdentificationV1DoorIdOpenAcctExecute = () => Mock.mock(ApiResponseVoid())
+export const doorIdentificationV1DoorIdOpenAcctExecutePut = () => Mock.mock(ApiResponseVoid())
 
 /** 制鞋厂美丽剥橘子信息-扫落叶 逻辑扫落叶 */
 export const doorIdentificationV1OpenAcctDelete = () => Mock.mock(ApiResponseVoid())
@@ -64,22 +64,22 @@ export const doorIdentificationV1SimpleAuthGet = () => Mock.mock(ApiResponseZhiX
 export const doorIdentificationV1SimpleAuthPost = () => Mock.mock(ApiResponseVoid())
 
 /** 制鞋厂美丽小圆桌放行-去哪儿发起（票据-智能票夹） */
-export const doorIdentificationV1TicketAuth = () => Mock.mock(ApiResponseVoid())
+export const doorIdentificationV1TicketAuthPost = () => Mock.mock(ApiResponseVoid())
 
 /** 出行-制鞋厂关联美丽团建信息 */
-export const doorIdLinkWhite = () => Mock.mock(ApiResponseWhiteLinkDoorResp())
+export const doorIdLinkWhiteGet = () => Mock.mock(ApiResponseWhiteLinkDoorResp())
 
 /** 覆写-制鞋厂关联团建 */
-export const doorLinkWhite = () => Mock.mock(ApiResponseVoid())
+export const doorLinkWhitePost = () => Mock.mock(ApiResponseVoid())
 
 /** 认领制鞋厂信息 */
-export const doorPageHomeClaimCompanyId = () => Mock.mock(ApiResponseboolean())
+export const doorPageHomeClaimCompanyIdGet = () => Mock.mock(ApiResponseboolean())
 
 /** 排除制鞋厂信息 */
-export const doorPageHomeExcludeClaimId = () => Mock.mock(ApiResponseboolean())
+export const doorPageHomeExcludeClaimIdGet = () => Mock.mock(ApiResponseboolean())
 
 /** 出行认领操作结果 */
-export const doorPageHomeJudge = () => Mock.mock(ApiResponseQueryJudgeClaimResp())
+export const doorPageHomeJudgeGet = () => Mock.mock(ApiResponseQueryJudgeClaimResp())
 
 /** 出行制鞋厂信息 */
-export const doorPageHomeQuery = () => Mock.mock(ApiResponseQueryDoorPageHomeResp())
+export const doorPageHomeQueryGet = () => Mock.mock(ApiResponseQueryDoorPageHomeResp())

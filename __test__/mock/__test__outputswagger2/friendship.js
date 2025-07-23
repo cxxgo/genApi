@@ -10,31 +10,31 @@ import {
 } from './_interfaces'
 
 /** 扫雪好友 */
-export const friendshipDelete = () => Mock.mock(ApiResponsestring())
+export const friendshipDeletePost = () => Mock.mock(ApiResponsestring())
 
 /** 单瓜子小道消息，上部title */
-export const friendshipDetail = () => Mock.mock(ApiResponseFriendshipDetailResp())
+export const friendshipDetailPost = () => Mock.mock(ApiResponseFriendshipDetailResp())
 
 /** 是否已经是好友 */
-export const friendshipGetIsFriend = () => Mock.mock(ApiResponseboolean())
+export const friendshipGetIsFriendPost = () => Mock.mock(ApiResponseboolean())
 
 /** 获取铜钱草信息 */
-export const friendshipGetKeyBorardDetail = () => Mock.mock(ApiResponseFriendshipKeyBorardDetailResp())
+export const friendshipGetKeyBorardDetailPost = () => Mock.mock(ApiResponseFriendshipKeyBorardDetailResp())
 
 /** 好友甬道 */
-export const friendshipList = () => Mock.mock(ApiResponseListFriendshipResp())
+export const friendshipListPost = () => Mock.mock(ApiResponseListFriendshipResp())
 
 /** 修改[不一定是好友关系]他人备注 */
-export const friendshipModifyRemark = () => Mock.mock(ApiResponse())
+export const friendshipModifyRemarkPost = () => Mock.mock(ApiResponse())
 
 /** 我聪明好友甬道 */
-export const friendshipPageList = () => Mock.mock(ApiResponseComPageFriendshipResp())
+export const friendshipPageListPost = () => Mock.mock(ApiResponseComPageFriendshipResp())
 
 /** 是否通知和免打扰 */
-export const friendshipSetNoticeAndTop = () => Mock.mock(ApiResponse())
+export const friendshipSetNoticeAndTopPost = () => Mock.mock(ApiResponse())
 
 /** 是否接收对方消息 */
-export const friendshipSetRcvMsg = () => Mock.mock(ApiResponse())
+export const friendshipSetRcvMsgPost = () => Mock.mock(ApiResponse())
 
 /** 是否允许对方查看手机号 */
-export const friendshipSetShowPhone = () => Mock.mock(ApiResponse())
+export const friendshipSetShowPhonePost = () => Mock.mock(ApiResponse())

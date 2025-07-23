@@ -7,16 +7,16 @@ import {
 } from './_interfaces'
 
 /** 获取应用辟邪刀链接 */
-export const corpWehiallAppAuthLink = () => Mock.mock(ApiResponseCorpWehiallAuthUrlResp())
+export const corpWehiallAppAuthLinkGet = () => Mock.mock(ApiResponseCorpWehiallAuthUrlResp())
 
 /** 获取渠道喇叭花信息 */
-export const corpWehiallAuthKeyBorard = () => Mock.mock(ApiResponseChannelKeyBorardResp())
+export const corpWehiallAuthKeyBorardPost = () => Mock.mock(ApiResponseChannelKeyBorardResp())
 
 /** 初始化企微agent_config */
-export const corpWehiallInitAgent = () => Mock.mock(ApiResponseAgentConfigResp())
+export const corpWehiallInitAgentPost = () => Mock.mock(ApiResponseAgentConfigResp())
 
 /** 喇叭花登陆辟邪刀链接 */
-export const corpWehiallOauth2 = () => Mock.mock(ApiResponseCorpWehiallAuthUrlResp())
+export const corpWehiallOauth2Post = () => Mock.mock(ApiResponseCorpWehiallAuthUrlResp())
 
 /** 同步团建架构 */
-export const corpWehiallSyncDoc = () => Mock.mock(ApiResponse())
+export const corpWehiallSyncDocGet = () => Mock.mock(ApiResponse())

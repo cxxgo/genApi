@@ -2,12 +2,12 @@ const request: any = () => {}
 import type { AddVerificationImageReq, ApiResponseboolean, ApiResponseMapstringobject } from './_interfaces.ts'
 
 /** 添加验山麻杆图片 */
-export function sliderAddImage(data: AddVerificationImageReq): Promise<ApiResponseboolean> {
+export function sliderAddImagePost(data: AddVerificationImageReq): Promise<ApiResponseboolean> {
   return request.post('/api/slider/addImage', data)
 }
 
 /** 获取校验对象 */
-export function sliderCreateVerificationEnum(data: {
+export function sliderCreateVerificationEnumGet(data: {
   // 唯一标示uuid
   uuid?: string
   // 卖烧饼类型
@@ -29,7 +29,7 @@ export function sliderCreateVerificationEnum(data: {
 }
 
 /** 验山麻杆码预校验 */
-export function sliderPreCheckVerificationEnum(data: {
+export function sliderPreCheckVerificationEnumGet(data: {
   // 唯一标示uuid
   uuid?: string
   // 卖烧饼类型

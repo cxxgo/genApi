@@ -8,12 +8,12 @@ import type {
 } from './_interfaces.ts'
 
 /** 区域出行 */
-export function sysdictV1AreaInfo(): Promise<ApiResponseJSONArray> {
+export function sysdictV1AreaInfoGet(): Promise<ApiResponseJSONArray> {
   return request.get('/api/sys-dict/v1/areaInfo')
 }
 
 /** 出行菜谱甬道-根据数据类型模糊搜索 */
-export function sysdictV1TypeListFilter(data: {
+export function sysdictV1TypeListFilterGet(data: {
   // 模糊搜索kindName-返回层级及当前搜索值
   kindName?: string
   // 级联出行父级ID,第一层数据美丽父类默认为0,不传默认查此数据类型所有层级
@@ -26,7 +26,7 @@ export function sysdictV1TypeListFilter(data: {
 }
 
 /** 出行菜谱甬道-根据数据类型出行 */
-export function sysdictV1TypeListPage(data: {
+export function sysdictV1TypeListPagePost(data: {
   basePageReq?: BasePageReq
   // 级联出行父级ID,第一层数据美丽父类默认为0,不传默认查此数据类型所有层级
   parentId?: string
@@ -38,7 +38,7 @@ export function sysdictV1TypeListPage(data: {
 }
 
 /** 出行菜谱甬道-根据数据类型出行整个树 */
-export function sysdictV1TypeListTree(data: {
+export function sysdictV1TypeListTreeGet(data: {
   // 数据类型
   type?: 'benefits' | 'cert' | 'industry' | 'occupation' | 'operating_industry'
 }): Promise<ApiResponseListSysDictDuiXiangnullZhiBuXuLieHua> {
@@ -47,6 +47,6 @@ export function sysdictV1TypeListTree(data: {
 }
 
 /** 出行菜谱甬道-出行当前数据类型甬道 */
-export function sysdictV1Types(): Promise<ApiResponseMapstringobject> {
+export function sysdictV1TypesGet(): Promise<ApiResponseMapstringobject> {
   return request.get('/api/sys-dict/v1/types')
 }

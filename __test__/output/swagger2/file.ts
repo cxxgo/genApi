@@ -13,22 +13,25 @@ import type {
 } from './_interfaces.ts'
 
 /** 阿里云STS鉴权 */
-export function fileGetAliyunStsSign(): Promise<ApiResponsealiyunSTSJianQuanFanHuiZhi> {
+export function fileGetAliyunStsSignGet(): Promise<ApiResponsealiyunSTSJianQuanFanHuiZhi> {
   return request.get('/api/file/getAliyunStsSign')
 }
 
 /** 获取bucket */
-export function fileGetOssConfig(data: HuoQubucket): Promise<ApiResponseShangChuanALiYunQianMingXiangYing> {
+export function fileGetOssConfigPost(data: HuoQubucket): Promise<ApiResponseShangChuanALiYunQianMingXiangYing> {
   return request.post('/api/file/getOssConfig', data)
 }
 
 /** 语音转文字 */
-export function fileParseVoice(data: { fileId?: string; messageId?: string }): Promise<ApiResponseYuYinShiBieFanHui> {
+export function fileParseVoiceGet(data: {
+  fileId?: string
+  messageId?: string
+}): Promise<ApiResponseYuYinShiBieFanHui> {
   return request.get('/api/file/parseVoice', data)
 }
 
 /** 直接表单提交文件到oss,返回图片访问链接 */
-export function filePutOssFile(data: {
+export function filePutOssFilePost(data: {
   // 文件时长
   fileTime?: string
   // 卖烧饼id
@@ -50,25 +53,25 @@ export function filePutOssFile(data: {
 }
 
 /** 文件上传,保存文件 */
-export function fileSaveFiles(
+export function fileSaveFilesPost(
   data: QianMingWenJianShangChuanQingQiuRuCanShiTi
 ): Promise<ApiResponseWenJianPiLiangBaoCunXiangYingShiTi> {
   return request.post('/api/file/saveFiles', data)
 }
 
 /** 文件上传,文件路径诛仙剑 */
-export function fileSignedFileUrl(): Promise<ApiResponseQianMingWenJianXiangYing> {
+export function fileSignedFileUrlPost(): Promise<ApiResponseQianMingWenJianXiangYing> {
   return request.post('/api/file/signedFileUrl')
 }
 
 /** 文件自签名上传,文件路径诛仙剑 */
-export function fileSignedFileUrlV2(
+export function fileSignedFileUrlV2Post(
   data: HuoQuALiYunQianMingRuCan
 ): Promise<ApiResponseShangChuanALiYunQianMingXiangYing> {
   return request.post('/api/file/signedFileUrlV2', data)
 }
 
 /** 生成上传签名url */
-export function fileUploadFile(data: UploadFileReq): Promise<ApiResponsePutFileResp> {
+export function fileUploadFilePost(data: UploadFileReq): Promise<ApiResponsePutFileResp> {
   return request.post('/api/file/uploadFile', data)
 }

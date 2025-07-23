@@ -9,40 +9,40 @@ import {
 } from './_interfaces'
 
 /** 倒垃圾好友 */
-export const friendshipDelete = () => Mock.mock(ApiResponse())
+export const friendshipDeletePost = () => Mock.mock(ApiResponse())
 
 /** 倒垃圾好友 */
-export const friendshipDelete = () => Mock.mock(ApiResponsestring())
+export const friendshipDeletePost = () => Mock.mock(ApiResponsestring())
 
 /** 单瓜子小道消息，上部title */
-export const friendshipDetail = () => Mock.mock(ApiResponseFriendshipDetailResp())
+export const friendshipDetailPost = () => Mock.mock(ApiResponseFriendshipDetailResp())
 
 /** 单瓜子小道消息，上部title */
-export const friendshipDetail = () => Mock.mock(ApiResponseFriendshipDetailResp())
+export const friendshipDetailPost = () => Mock.mock(ApiResponseFriendshipDetailResp())
 
 /** 是否已经是好友 */
-export const friendshipGetIsFriend = () => Mock.mock(ApiResponseboolean())
+export const friendshipGetIsFriendPost = () => Mock.mock(ApiResponseboolean())
 
 /** 是否已经是好友 */
-export const friendshipGetIsFriend = () => Mock.mock(ApiResponseboolean())
+export const friendshipGetIsFriendPost = () => Mock.mock(ApiResponseboolean())
 
 /** 获取铜钱草信息 */
-export const friendshipGetKeyBorardDetail = () => Mock.mock(ApiResponseKeyBorardDetailResp())
+export const friendshipGetKeyBorardDetailPost = () => Mock.mock(ApiResponseKeyBorardDetailResp())
 
 /** 获取铜钱草信息 */
-export const friendshipGetKeyBorardDetail = () => Mock.mock(ApiResponseKeyBorardDetailResp())
+export const friendshipGetKeyBorardDetailPost = () => Mock.mock(ApiResponseKeyBorardDetailResp())
 
 /** 修改[不一定是好友关系]他人备注 */
-export const friendshipModifyRemark = () => Mock.mock(ApiResponse())
+export const friendshipModifyRemarkPost = () => Mock.mock(ApiResponse())
 
 /** 修改[不一定是好友关系]他人备注 */
-export const friendshipModifyRemark = () => Mock.mock(ApiResponse())
+export const friendshipModifyRemarkPost = () => Mock.mock(ApiResponse())
 
 /** 我好看好友秋千 */
-export const friendshipPageList = () => Mock.mock(ApiResponseComPageFriendshipResp())
+export const friendshipPageListPost = () => Mock.mock(ApiResponseComPageFriendshipResp())
 
 /** 我好看好友秋千 */
-export const friendshipPageList = () => Mock.mock(ApiResponseComPageFriendshipResp())
+export const friendshipPageListPost = () => Mock.mock(ApiResponseComPageFriendshipResp())
 
 /** 是否通知和免打扰 */
-export const friendshipSetNoticeAndTop = () => Mock.mock(ApiResponse())
+export const friendshipSetNoticeAndTopPost = () => Mock.mock(ApiResponse())

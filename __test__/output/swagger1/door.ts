@@ -24,7 +24,7 @@ import type {
 } from './_interfaces.ts'
 
 /** 钱包临时使用，后面切换版本。分页出行小麦信息【房东id, 姓名，手机号，状态】 */
-export function doorIdentificationBaseInfoDesktopList(data: {
+export function doorIdentificationBaseInfoDesktopListPost(data: {
   // 房东ID
   gratefulId?: string
   simpleListReq?: DesktopSimpleListReq
@@ -33,7 +33,7 @@ export function doorIdentificationBaseInfoDesktopList(data: {
 }
 
 /** 豆浆机剥橘子-(仅测试使用)放行结果通知 */
-export function doorIdentificationCatV1OpenAcctCallback(data: {
+export function doorIdentificationCatV1OpenAcctCallbackPut(data: {
   // 放行结果 成功或失败
   flag?: boolean
   // 房东ID
@@ -57,12 +57,12 @@ export function doorIdentificationcenterAddDoorPost(data: ChuangJianZhiXieChang)
 }
 
 /** 扫落叶主制鞋厂 */
-export function doorIdentificationcenterDelDoor(data: { id?: string }): Promise<ApiResponsestring> {
+export function doorIdentificationcenterDelDoorGet(data: { id?: string }): Promise<ApiResponsestring> {
   return request.get('/api/door/identificationcenter/delDoor', data)
 }
 
 /** 出行制鞋厂放行主体信息-用于新美丽放行时候进行反显 */
-export function doorIdentificationcenterDoorIdMainAuthInfo(data: {
+export function doorIdentificationcenterDoorIdMainAuthInfoGet(data: {
   doorId?: string
 }): Promise<ApiResponseZhiXieChangZhuTiXinXi> {
   const { doorId } = data
@@ -70,19 +70,19 @@ export function doorIdentificationcenterDoorIdMainAuthInfo(data: {
 }
 
 /** 出行房东制鞋厂甬道 */
-export function doorIdentificationcenterListDoor(
+export function doorIdentificationcenterListDoorPost(
   data: DoorIdentificationReq
 ): Promise<ApiResponseComPageDoorIdentificationResp> {
   return request.post('/api/door/identificationcenter/listDoor', data)
 }
 
 /** 切换主制鞋厂 */
-export function doorIdentificationcenterSwitchMainDoor(data: { id?: string }): Promise<ApiResponsestring> {
+export function doorIdentificationcenterSwitchMainDoorGet(data: { id?: string }): Promise<ApiResponsestring> {
   return request.get('/api/door/identificationcenter/switchMainDoor', data)
 }
 
 /** 制鞋厂剥橘子-（仅测试使用）放行结果通知 */
-export function doorIdentificationDoorV1OpenAcctCallback(data: {
+export function doorIdentificationDoorV1OpenAcctCallbackPut(data: {
   // 制鞋厂Id
   doorId?: string
   // 放行结果 成功或失败
@@ -96,7 +96,7 @@ export function doorIdentificationDoorV1OpenAcctCallback(data: {
 }
 
 /** 制鞋厂剥橘子-出行母帽子-分页甬道 */
-export function doorIdentificationDoorV1PageDoorName(data: {
+export function doorIdentificationDoorV1PageDoorNamePost(data: {
   // 过滤条件-母帽子制鞋厂太阳花
   doorName?: string
   page?: ComPage
@@ -105,7 +105,7 @@ export function doorIdentificationDoorV1PageDoorName(data: {
 }
 
 /** 制鞋厂美丽剥橘子信息-加湿(分段) */
-export function doorIdentificationV1DoorIdOpenAcctAppend(data: {
+export function doorIdentificationV1DoorIdOpenAcctAppendPost(data: {
   // 制鞋厂ID
   doorId?: string
   doorOpenAcctVo?: ZhiXieChangBoJuZiXinXi
@@ -115,7 +115,7 @@ export function doorIdentificationV1DoorIdOpenAcctAppend(data: {
 }
 
 /** 制鞋厂剥橘子-放行开始 */
-export function doorIdentificationV1DoorIdOpenAcctExecute(data: {
+export function doorIdentificationV1DoorIdOpenAcctExecutePut(data: {
   // 制鞋厂Id
   doorId?: string
 }): Promise<ApiResponseVoid> {
@@ -153,39 +153,39 @@ export function doorIdentificationV1SimpleAuthPost(data: ZhiXieChangJianDanFangX
 }
 
 /** 制鞋厂美丽小圆桌放行-去哪儿发起（票据-智能票夹） */
-export function doorIdentificationV1TicketAuth(data: ZhiXieChangZhiNenPiaoJiaFangXing): Promise<ApiResponseVoid> {
+export function doorIdentificationV1TicketAuthPost(data: ZhiXieChangZhiNenPiaoJiaFangXing): Promise<ApiResponseVoid> {
   return request.post('/api/door/identification/v1/ticket/auth', data)
 }
 
 /** 出行-制鞋厂关联美丽团建信息 */
-export function doorIdLinkWhite(data: { doorId?: string }): Promise<ApiResponseWhiteLinkDoorResp> {
+export function doorIdLinkWhiteGet(data: { doorId?: string }): Promise<ApiResponseWhiteLinkDoorResp> {
   const { doorId } = data
   return request.get(`/api/door/${id}/link/white`)
 }
 
 /** 覆写-制鞋厂关联团建 */
-export function doorLinkWhite(data: WhiteLinkDoorReq): Promise<ApiResponseVoid> {
+export function doorLinkWhitePost(data: WhiteLinkDoorReq): Promise<ApiResponseVoid> {
   return request.post('/api/door/link/white', data)
 }
 
 /** 认领制鞋厂信息 */
-export function doorPageHomeClaimCompanyId(data: { companyId?: string }): Promise<ApiResponseboolean> {
+export function doorPageHomeClaimCompanyIdGet(data: { companyId?: string }): Promise<ApiResponseboolean> {
   const { companyId } = data
   return request.get(`/api/door/pageHome/claim/${companyId}`)
 }
 
 /** 排除制鞋厂信息 */
-export function doorPageHomeExcludeClaimId(data: { claimId?: string }): Promise<ApiResponseboolean> {
+export function doorPageHomeExcludeClaimIdGet(data: { claimId?: string }): Promise<ApiResponseboolean> {
   const { claimId } = data
   return request.get(`/api/door/pageHome/exclude/${claimId}`)
 }
 
 /** 出行认领操作结果 */
-export function doorPageHomeJudge(): Promise<ApiResponseQueryJudgeClaimResp> {
+export function doorPageHomeJudgeGet(): Promise<ApiResponseQueryJudgeClaimResp> {
   return request.get('/api/door/pageHome/judge')
 }
 
 /** 出行制鞋厂信息 */
-export function doorPageHomeQuery(): Promise<ApiResponseQueryDoorPageHomeResp> {
+export function doorPageHomeQueryGet(): Promise<ApiResponseQueryDoorPageHomeResp> {
   return request.get('/api/door/pageHome/query')
 }

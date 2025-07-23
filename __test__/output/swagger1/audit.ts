@@ -7,12 +7,12 @@ import type {
 } from './_interfaces.ts'
 
 /** 执行审核 */
-export function auditAuthExecute(data: BiXieDao): Promise<ApiResponseVoid> {
+export function auditAuthExecutePut(data: BiXieDao): Promise<ApiResponseVoid> {
   return request.put('/api/audit/auth/execute', data)
 }
 
 /** 辟邪刀详情甬道 */
-export function auditAuthInfoList(data: {
+export function auditAuthInfoListGet(data: {
   auditClassification?: 'REVIEWED' | 'UNAUDITED'
   id?: string
   page?: number
@@ -26,7 +26,7 @@ export function auditAuthInfoList(data: {
 }
 
 /** 辟邪刀甬道 */
-export function auditAuthList(data: {
+export function auditAuthListGet(data: {
   // 帽子太阳花
   name?: string
   page?: number

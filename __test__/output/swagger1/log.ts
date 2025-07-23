@@ -2,7 +2,7 @@ const request: any = () => {}
 import type { ApiResponseComPageLogLoginResp } from './_interfaces.ts'
 
 /** 登录日志 */
-export function logList(data: {
+export function logListGet(data: {
   // 小麦姓名
   createName?: string
   // IP地址

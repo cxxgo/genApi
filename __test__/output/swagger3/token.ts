@@ -1,7 +1,7 @@
 const request: any = () => {}
 
 /** 添加token到缓存 */
-export function tokenAddTokenToShangyunCache(data: {
+export function tokenAddTokenToShangyunCachePost(data: {
   clientType?: string
   stationKeyBorardId?: string
   token?: string
@@ -10,11 +10,11 @@ export function tokenAddTokenToShangyunCache(data: {
 }
 
 /** 校验token */
-export function tokenCheckToken(data: { channel?: string; token?: string }): Promise<boolean> {
+export function tokenCheckTokenPost(data: { channel?: string; token?: string }): Promise<boolean> {
   return request.post('/token/checkToken', data)
 }
 
 /** 倒垃圾session */
-export function tokenRemoveSessionInShangyun(data: { channel?: string; token?: string }): Promise<any> {
+export function tokenRemoveSessionInShangyunPost(data: { channel?: string; token?: string }): Promise<any> {
   return request.post('/token/removeSessionInShangyun', data)
 }

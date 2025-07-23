@@ -2,13 +2,13 @@ import Mock from 'better-mock'
 import { ApiResponseImportDesktopResp, ApiResponseListImportDesktopResp, FileSystemResource } from './_interfaces'
 
 /** 导出小麦 */
-export const excelExport = () => Mock.mock(FileSystemResource())
+export const excelExportPost = () => Mock.mock(FileSystemResource())
 
 /** 导入历史 */
-export const excelHistory = () => Mock.mock(ApiResponseListImportDesktopResp())
+export const excelHistoryGet = () => Mock.mock(ApiResponseListImportDesktopResp())
 
 /** 导入小麦 */
-export const excelImport = () => Mock.mock(ApiResponseImportDesktopResp())
+export const excelImportPost = () => Mock.mock(ApiResponseImportDesktopResp())
 
 /** 下载模版 */
-export const excelTemplate = () => Mock.mock(FileSystemResource())
+export const excelTemplateGet = () => Mock.mock(FileSystemResource())
