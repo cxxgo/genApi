@@ -29,13 +29,13 @@ export interface IApiStation {
   /**
    * 无需生成的接口, 支持正则匹配和字符串完全匹配
    * 注1. 匹配的是原始的 url，而非通过 pathRewrite 函数重写后的 url
-   * 注2. 不判断方法，即 如果有两个接口路径相同方法不同，都不会生成
+   * 注2. 不判断 method，即：如果有两个接口路径相同 method 不同，两个接口都不会生成
    */
   exclude?: RegExp | string | (RegExp | string)[]
   /**
    * 只需生成的接口，支持正则匹配和字符串完全匹配
-   * 注1：通exclude 一样，只匹配原始路径，不判断方法
-   * 注2：优先级比 exclude 低，即 如果一个接口同时被 exclude 和 include 规则匹配，这个接口将不会生成
+   * 注1：同 exclude 一样，只匹配原始路径，不判断 method
+   * 注2：优先级比 exclude 低，即：如果一个接口同时被 exclude 和 include 规则匹配，这个接口将不会生成
    */
   include?: RegExp | string | (RegExp | string)[]
   /** 文件头部引入内容 */
