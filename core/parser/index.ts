@@ -1,5 +1,5 @@
 import type { IApiModel, IApiStation, IInterface, IParsered, UserConfig } from '../types'
-import { handleWeirdName } from '../utils/index'
+import { handleWeirdName, typeIsInterface } from '../utils/index'
 import { handleApiModel } from './handleApiModel'
 import { handleInterface } from './handleInterface'
 import { saveParseredDataToLocal } from './localData'
@@ -39,8 +39,8 @@ async function parseFn(apiStation: IApiStation, stationIndex: number): Promise<I
   let apis: IApiModel[] = []
   let interfaces: IInterface[] = []
   if (swaggerJson) {
-    interfaces = handleInterface(swaggerJson.definitions, apiStation.typeMap)
-    apis = handleApiModel(swaggerJson.paths, interfaces, {
+    const allInterfaces = handleInterface(swaggerJson.definitions, apiStation.typeMap) // 接口文档上的所有 interface
+    apis = handleApiModel(swaggerJson.paths, allInterfaces, {
       include: apiStation.include,
       exclude: apiStation.exclude,
       fileName: apiStation.fileName,
@@ -49,6 +49,9 @@ async function parseFn(apiStation: IApiStation, stationIndex: number): Promise<I
       typeMap: apiStation.typeMap,
       fileExt: apiStation.fileExt,
     })
+
+    const usedInterfaces = getStationInterfaces(apis, allInterfaces) // 需要生成的接口用到的 interface 名称数组
+    interfaces = allInterfaces.filter(i => usedInterfaces.includes(i.name)) // 需要生成的接口用到的 interface 对象数组
   }
   return {
     ...apiStation,
@@ -56,6 +59,39 @@ async function parseFn(apiStation: IApiStation, stationIndex: number): Promise<I
     apis,
     interfaces,
   }
+}
+
+/** 获取接口所涉及到的所有 interface */
+function getStationInterfaces(apis: IApiModel[], allInterfaces: IInterface[]): string[] {
+  const result: string[] = []
+  apis.forEach((item) => {
+    // 获取入参使用到的 interface
+    item.parameters?.forEach((p) => {
+      if (typeIsInterface(p.type)) {
+        loopInterface({ type: p.type, allInterfaces, result })
+      }
+    })
+    // 获取出参使用到的 interface
+    if (typeIsInterface(item.outputInterface)) {
+      loopInterface({ type: item.outputInterface, allInterfaces, result })
+    }
+  })
+  return result
+}
+
+/**
+ * 循环某个 interface 的属性，如果属性值非简单数据类型，则添加到 result 中
+ */
+function loopInterface(data: { type: string, allInterfaces: IInterface[], result: string[] }) {
+  const { type, allInterfaces, result } = data
+  if (typeIsInterface(type) && !result.includes(type)) {
+    result.push(type)
+    const theInterfaceObj = allInterfaces.find(item => item.name === type)
+    theInterfaceObj?.properties?.forEach((item) => {
+      loopInterface({ type: item.type, allInterfaces, result })
+    })
+  }
+  return result
 }
 
 /** 校验 apiConfig  */

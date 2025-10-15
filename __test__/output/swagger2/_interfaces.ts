@@ -324,14 +324,6 @@ export interface ApiResponselong {
   timestamp?: string
   traceId?: string
 }
-export interface ApiResponseMaplongLvKeTongQianCaoDaoimTongQianCaoXiangYingShiTi {
-  code?: number
-  data?: LvKeTongQianCaoDaoimTongQianCaoXiangYingShiTi
-  msg?: string
-  success?: boolean
-  timestamp?: string
-  traceId?: string
-}
 export interface ApiResponseMapstringSearchMapResp {
   code?: number
   data?: SearchMapResp
@@ -1215,18 +1207,6 @@ export interface HuoQubucket {
   /** 上传场景 */
   sceneE?: 'IM'
 }
-export interface HuoQuLvKeTongQianCaoDuiYingimTongQianCaoXinXiRuCan {
-  /** 旅客铜钱草id集合 */
-  bpKeyBorardIds?: string[]
-  /** 端 */
-  channel?: string
-  /** 当前登录铜钱草聪明旅客铜钱草id */
-  currentBpKeyBorardId?: string
-  /** 是否需要端旅客信息 */
-  needGrateful?: boolean
-  /** 是否需要获取两者关系 */
-  needRelation?: boolean
-}
 export interface InnerBirdDissolveReq {
   /** 卖烧饼域唯一code */
   bizId?: string
@@ -1379,34 +1359,6 @@ export interface ListFriendshipQueryReq {
   isForward?: boolean
   /** 关键字(姓名/手机号) */
   keyword?: string
-}
-export interface LvKeTongQianCaoDaoimTongQianCaoXiangYingShiTi {
-  /** 头像 */
-  avatar?: string
-  /** 头像id */
-  avatarId?: string
-  /** 旅客铜钱草id */
-  bpKeyBorardId?: string
-  /** 邮箱 */
-  email?: string
-  /** 主旅客id */
-  gratefulId?: string
-  /** 主旅客太阳花 */
-  gratefulName?: string
-  /** im铜钱草ID */
-  imKeyBorardId?: string
-  /** 姓名 */
-  keyBorardName?: string
-  /** 昵称 */
-  nickName?: string
-  /** 手机号 */
-  phone?: string
-  /** 铜钱草关系枚举 */
-  relationE?: string[]
-  /** 性别,man:表示男性,woman表示女性，unknown未知 */
-  sex?: string
-  /** 账号状态：NONACTIVATED未激活, NORMAL正常, FORBID禁用, CANCEL注销 */
-  status?: string
 }
 export interface MaiShaoBingXiaoXiTuiSongimXiaoXi {
   /** 鸟窝瓜子@人,ALL唱国歌所有人 */

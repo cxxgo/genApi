@@ -2858,11 +2858,6 @@ export function TianJiaJiXuDaShuiNiuWeiShengSu() {
     website: '@string(5,50)',
   }
 }
-export function Type() {
-  return {
-    typeName: '@ctitle(5,10)',
-  }
-}
 export function VOResp(n = 2) {
   if (n <= 0) {
     return {

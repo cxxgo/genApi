@@ -38,15 +38,6 @@ function ApiResponseListTreelong() {
     traceId: '@guid',
   }
 }
-function ApiResponseMaplongFangWuLianPaiLieBiaoFanHuiCanShu() {
-  return {
-    code: 200,
-    data: FangWuLianPaiLieBiaoFanHuiCanShu(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-  }
-}
 function ApiResponseobject() {
   return {
     code: 200,
@@ -217,12 +208,6 @@ function EntReSetReq() {
     roleConfigInfo: TomatoInfo(),
   }
 }
-function FangWuLianPaiLieBiaoFanHuiCanShu() {
-  return {
-    colorStatus: '@color',
-    status: '@integer(3,1000)',
-  }
-}
 function HappyPlanAddCustomerListReq() {
   return {
     customerType: '@string(5,50)',
@@ -365,7 +350,6 @@ module.exports = {
   ApiResponseListJobCategoryConfigResp,
   ApiResponseListListlong,
   ApiResponseListTreelong,
-  ApiResponseMaplongFangWuLianPaiLieBiaoFanHuiCanShu,
   ApiResponseobject,
   ApiResponseResumeInfoMobileResp,
   ApiResponseVoid,
@@ -379,7 +363,6 @@ module.exports = {
   EarthDeptMetaRespeFanHuiMoXing,
   EntInviteConfig,
   EntReSetReq,
-  FangWuLianPaiLieBiaoFanHuiCanShu,
   HappyPlanAddCustomerListReq,
   HappyPlanAddCustomerReq,
   JobCategoryConfigResp,

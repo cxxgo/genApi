@@ -402,16 +402,6 @@ export function ApiResponselong() {
     traceId: '@guid',
   }
 }
-export function ApiResponseMaplongLvKeTongQianCaoDaoimTongQianCaoXiangYingShiTi() {
-  return {
-    code: 200,
-    data: LvKeTongQianCaoDaoimTongQianCaoXiangYingShiTi(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
 export function ApiResponseMapstringSearchMapResp() {
   return {
     code: 200,
@@ -1192,15 +1182,6 @@ export function HuoQubucket() {
     sceneE: /IM/,
   }
 }
-export function HuoQuLvKeTongQianCaoDuiYingimTongQianCaoXinXiRuCan() {
-  return {
-    'bpKeyBorardIds|1-20': ['@string(5,50)'],
-    channel: '@string(5,50)',
-    currentBpKeyBorardId: '@guid',
-    needGrateful: '@boolean',
-    needRelation: '@boolean',
-  }
-}
 export function InnerBirdDissolveReq() {
   return {
     bizId: '@guid',
@@ -1315,23 +1296,6 @@ export function ListFriendshipQueryReq() {
     imKeyBorardId: '@guid',
     isForward: '@boolean',
     keyword: '@string(5,50)',
-  }
-}
-export function LvKeTongQianCaoDaoimTongQianCaoXiangYingShiTi() {
-  return {
-    avatar: '@image(200x100, @color, @color)',
-    avatarId: '@guid',
-    bpKeyBorardId: '@guid',
-    email: '@email',
-    gratefulId: '@guid',
-    gratefulName: '@ctitle(5,10)',
-    imKeyBorardId: '@guid',
-    keyBorardName: '@ctitle(5,10)',
-    nickName: '@ctitle(5,10)',
-    phone: '@integer(13100000000,18999999999)',
-    'relationE|1-20': ['@string(5,50)'],
-    sex: '@string(5,50)',
-    status: '@string(5,50)',
   }
 }
 export function MaiShaoBingXiaoXiTuiSongimXiaoXi() {

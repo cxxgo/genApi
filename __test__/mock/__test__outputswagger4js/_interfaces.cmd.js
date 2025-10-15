@@ -644,16 +644,6 @@ function ApiResponseMap() {
     traceId: '@guid',
   }
 }
-function ApiResponseMapstringobject() {
-  return {
-    code: 200,
-    data: '',
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
 function ApiResponseMapstringstring() {
   return {
     code: 200,
@@ -678,16 +668,6 @@ function ApiResponsePlanTastyResp() {
   return {
     code: 200,
     data: PlanTastyResp(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-function ApiResponseQingMingCaoZhiXiaoChouYu() {
-  return {
-    code: 200,
-    data: QingMingCaoZhiXiaoChouYu(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -2857,11 +2837,6 @@ function TianJiaJiXuDaShuiNiuWeiShengSu() {
     website: '@string(5,50)',
   }
 }
-function Type() {
-  return {
-    typeName: '@ctitle(5,10)',
-  }
-}
 function VOResp(n = 2) {
   if (n <= 0) {
     return {
@@ -3047,11 +3022,9 @@ module.exports = {
   ApiResponseListVOResp,
   ApiResponseListYinXingKaShuiGuoDao,
   ApiResponseMap,
-  ApiResponseMapstringobject,
   ApiResponseMapstringstring,
   ApiResponsePlanCreditResp,
   ApiResponsePlanTastyResp,
-  ApiResponseQingMingCaoZhiXiaoChouYu,
   ApiResponseSetstring,
   ApiResponseSheBaoZhangHao,
   ApiResponseShengJiTiaoJianJuanXinCaiXiangQing,
@@ -3189,7 +3162,6 @@ module.exports = {
   TianJiaDaShuiNiuJingLiShuiGuoDao,
   TianJiaGeRenShuiGuoDao,
   TianJiaJiXuDaShuiNiuWeiShengSu,
-  Type,
   VOResp,
   XinZengYinXingKaShuiGuoDao,
   XueXin,

@@ -645,16 +645,6 @@ export function ApiResponseMap() {
     traceId: '@guid',
   }
 }
-export function ApiResponseMapstringobject() {
-  return {
-    code: 200,
-    data: '',
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
 export function ApiResponseMapstringstring() {
   return {
     code: 200,
@@ -679,16 +669,6 @@ export function ApiResponsePlanTastyResp() {
   return {
     code: 200,
     data: PlanTastyResp(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
-export function ApiResponseQingMingCaoZhiXiaoChouYu() {
-  return {
-    code: 200,
-    data: QingMingCaoZhiXiaoChouYu(),
     msg: '@string(5,50)',
     success: '@boolean',
     timestamp: '@datetime',
@@ -2856,11 +2836,6 @@ export function TianJiaJiXuDaShuiNiuWeiShengSu() {
     updateId: '@guid',
     updateName: '@ctitle(5,10)',
     website: '@string(5,50)',
-  }
-}
-export function Type() {
-  return {
-    typeName: '@ctitle(5,10)',
   }
 }
 export function VOResp(n = 2) {

@@ -1161,7 +1161,6 @@ export interface ChannelKeyBorardResp {
   /** 渠道类型(DINGDING 钉钉，CORP_WEIXIN 企微) */
   channelType?: string
 }
-export interface CharSequence {}
 export interface ChuangJianZhiXieChang {
   /** 区 */
   area?: string
@@ -1380,7 +1379,6 @@ export interface CompanyInfo {
   /** 网址 */
   websites?: string
 }
-export interface Comparableobject {}
 export interface CorpWehiallAuthUrlResp {
   /** 辟邪刀链接 */
   authUrl?: string
@@ -3362,17 +3360,6 @@ export interface TianJiaDouJiangJiBeiJing0 {
   scope?: string
   /** 来源 */
   source?: string
-}
-export interface TreeNodeConfig {
-  childrenKey?: string
-  deep?: number
-  idKey?: string
-  nameKey?: string
-  parentIdKey?: string
-  weightKey?: string
-}
-export interface Type {
-  typeName?: string
 }
 export interface VerificationResp {
   /** 银行卡号 */

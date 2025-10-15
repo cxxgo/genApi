@@ -1257,7 +1257,6 @@ export function ChannelKeyBorardResp() {
     channelType: '@string(5,50)',
   }
 }
-export function CharSequence() {}
 export function ChuangJianZhiXieChang() {
   return {
     area: '@string(5,50)',
@@ -1500,7 +1499,6 @@ export function CompanyInfo() {
     websites: '@string(5,50)',
   }
 }
-export function Comparableobject() {}
 export function CorpWehiallAuthUrlResp() {
   return {
     authUrl: '@image(200x100, @color, @color)',
@@ -3056,21 +3054,6 @@ export function TianJiaDouJiangJiBeiJing0() {
     orangeerNo: '@string(5,50)',
     scope: '@string(5,50)',
     source: '@string(5,50)',
-  }
-}
-export function TreeNodeConfig() {
-  return {
-    childrenKey: '@string(5,50)',
-    deep: '@integer(3,1000)',
-    idKey: '@string(5,50)',
-    nameKey: '@ctitle(5,10)',
-    parentIdKey: '@string(5,50)',
-    weightKey: '@string(5,50)',
-  }
-}
-export function Type() {
-  return {
-    typeName: '@ctitle(5,10)',
   }
 }
 export function VerificationResp() {

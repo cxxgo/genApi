@@ -3566,9 +3566,6 @@ export interface TianJiaJiXuDaShuiNiuWeiShengSu {
   /** 继续大水牛网站 */
   website?: string
 }
-export interface Type {
-  typeName?: string
-}
 export interface VOResp {
   code?: string
   value?: string

@@ -1256,7 +1256,6 @@ function ChannelKeyBorardResp() {
     channelType: '@string(5,50)',
   }
 }
-function CharSequence() {}
 function ChuangJianZhiXieChang() {
   return {
     area: '@string(5,50)',
@@ -1499,7 +1498,6 @@ function CompanyInfo() {
     websites: '@string(5,50)',
   }
 }
-function Comparableobject() {}
 function CorpWehiallAuthUrlResp() {
   return {
     authUrl: '@image(200x100, @color, @color)',
@@ -3057,21 +3055,6 @@ function TianJiaDouJiangJiBeiJing0() {
     source: '@string(5,50)',
   }
 }
-function TreeNodeConfig() {
-  return {
-    childrenKey: '@string(5,50)',
-    deep: '@integer(3,1000)',
-    idKey: '@string(5,50)',
-    nameKey: '@ctitle(5,10)',
-    parentIdKey: '@string(5,50)',
-    weightKey: '@string(5,50)',
-  }
-}
-function Type() {
-  return {
-    typeName: '@ctitle(5,10)',
-  }
-}
 function VerificationResp() {
   return {
     bankCarkNo: '@string(5,50)',
@@ -3759,7 +3742,6 @@ module.exports = {
   ChannelAppGratefulConfigUpReq,
   ChannelComLoginReq,
   ChannelKeyBorardResp,
-  CharSequence,
   ChuangJianZhiXieChang,
   ComLoginReq,
   ComLoginResp,
@@ -3781,7 +3763,6 @@ module.exports = {
   ComPageXiaoYuanZhuoGuanLi,
   ComPageZhiXieChangChuXing,
   CompanyInfo,
-  Comparableobject,
   CorpWehiallAuthUrlResp,
   CurrentAuthResp,
   DescribeFaceVerifyResponse,
@@ -3915,8 +3896,6 @@ module.exports = {
   SysDictDuiXiangnullZhiBuXuLieHua,
   TianJiaDouJiangJiBeiJing,
   TianJiaDouJiangJiBeiJing0,
-  TreeNodeConfig,
-  Type,
   VerificationResp,
   WenJianShangChuanXiangYing,
   WhiteAddReq,

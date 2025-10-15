@@ -30,13 +30,6 @@ export interface ApiResponseListTreelong {
   timestamp?: string
   traceId?: string
 }
-export interface ApiResponseMaplongFangWuLianPaiLieBiaoFanHuiCanShu {
-  code?: number
-  data?: FangWuLianPaiLieBiaoFanHuiCanShu
-  msg?: string
-  success?: boolean
-  timestamp?: string
-}
 export interface ApiResponseobject {
   code?: number
   data?: any
@@ -203,12 +196,6 @@ export interface EntReSetReq {
   reInviteConfig?: EntInviteConfig
   /** 摔跤设置 */
   roleConfigInfo?: TomatoInfo
-}
-export interface FangWuLianPaiLieBiaoFanHuiCanShu {
-  /** 颜色状态 */
-  colorStatus?: string
-  /** 状态 */
-  status?: number
 }
 export interface HappyPlanAddCustomerListReq {
   /** 机器人类型 */

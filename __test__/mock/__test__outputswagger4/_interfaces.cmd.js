@@ -2857,11 +2857,6 @@ function TianJiaJiXuDaShuiNiuWeiShengSu() {
     website: '@string(5,50)',
   }
 }
-function Type() {
-  return {
-    typeName: '@ctitle(5,10)',
-  }
-}
 function VOResp(n = 2) {
   if (n <= 0) {
     return {
@@ -3189,7 +3184,6 @@ module.exports = {
   TianJiaDaShuiNiuJingLiShuiGuoDao,
   TianJiaGeRenShuiGuoDao,
   TianJiaJiXuDaShuiNiuWeiShengSu,
-  Type,
   VOResp,
   XinZengYinXingKaShuiGuoDao,
   XueXin,

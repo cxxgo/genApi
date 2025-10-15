@@ -401,16 +401,6 @@ function ApiResponselong() {
     traceId: '@guid',
   }
 }
-function ApiResponseMaplongLvKeTongQianCaoDaoimTongQianCaoXiangYingShiTi() {
-  return {
-    code: 200,
-    data: LvKeTongQianCaoDaoimTongQianCaoXiangYingShiTi(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-    traceId: '@guid',
-  }
-}
 function ApiResponseMapstringSearchMapResp() {
   return {
     code: 200,
@@ -1191,15 +1181,6 @@ function HuoQubucket() {
     sceneE: /IM/,
   }
 }
-function HuoQuLvKeTongQianCaoDuiYingimTongQianCaoXinXiRuCan() {
-  return {
-    'bpKeyBorardIds|1-20': ['@string(5,50)'],
-    channel: '@string(5,50)',
-    currentBpKeyBorardId: '@guid',
-    needGrateful: '@boolean',
-    needRelation: '@boolean',
-  }
-}
 function InnerBirdDissolveReq() {
   return {
     bizId: '@guid',
@@ -1314,23 +1295,6 @@ function ListFriendshipQueryReq() {
     imKeyBorardId: '@guid',
     isForward: '@boolean',
     keyword: '@string(5,50)',
-  }
-}
-function LvKeTongQianCaoDaoimTongQianCaoXiangYingShiTi() {
-  return {
-    avatar: '@image(200x100, @color, @color)',
-    avatarId: '@guid',
-    bpKeyBorardId: '@guid',
-    email: '@email',
-    gratefulId: '@guid',
-    gratefulName: '@ctitle(5,10)',
-    imKeyBorardId: '@guid',
-    keyBorardName: '@ctitle(5,10)',
-    nickName: '@ctitle(5,10)',
-    phone: '@integer(13100000000,18999999999)',
-    'relationE|1-20': ['@string(5,50)'],
-    sex: '@string(5,50)',
-    status: '@string(5,50)',
   }
 }
 function MaiShaoBingXiaoXiTuiSongimXiaoXi() {
@@ -2307,7 +2271,6 @@ module.exports = {
   ApiResponseListUnreadResp,
   ApiResponseListXiaoXiDuiXiang,
   ApiResponselong,
-  ApiResponseMaplongLvKeTongQianCaoDaoimTongQianCaoXiangYingShiTi,
   ApiResponseMapstringSearchMapResp,
   ApiResponseMemberBirdStatusResp,
   ApiResponseNaBuMaiShaoBingNiaoWoBaoCunChuCan,
@@ -2381,7 +2344,6 @@ module.exports = {
   HaoYouYongDaoChuXingFriendshipQueryReq,
   HuoQuALiYunQianMingRuCan,
   HuoQubucket,
-  HuoQuLvKeTongQianCaoDuiYingimTongQianCaoXinXiRuCan,
   InnerBirdDissolveReq,
   InnerBirdMemberBirdListReq,
   InviteToBirdReq,
@@ -2395,7 +2357,6 @@ module.exports = {
   KeyBorardRespDuiXiang,
   LiShiXiaoXiMessageHistoryReq,
   ListFriendshipQueryReq,
-  LvKeTongQianCaoDaoimTongQianCaoXiangYingShiTi,
   MaiShaoBingXiaoXiTuiSongimXiaoXi,
   MemberBirdStatusResp,
   MessageAtResp,

@@ -39,15 +39,6 @@ export function ApiResponseListTreelong() {
     traceId: '@guid',
   }
 }
-export function ApiResponseMaplongFangWuLianPaiLieBiaoFanHuiCanShu() {
-  return {
-    code: 200,
-    data: FangWuLianPaiLieBiaoFanHuiCanShu(),
-    msg: '@string(5,50)',
-    success: '@boolean',
-    timestamp: '@datetime',
-  }
-}
 export function ApiResponseobject() {
   return {
     code: 200,
@@ -216,12 +207,6 @@ export function EntReSetReq() {
     emInviteConfig: EntInviteConfig(),
     reInviteConfig: EntInviteConfig(),
     roleConfigInfo: TomatoInfo(),
-  }
-}
-export function FangWuLianPaiLieBiaoFanHuiCanShu() {
-  return {
-    colorStatus: '@color',
-    status: '@integer(3,1000)',
   }
 }
 export function HappyPlanAddCustomerListReq() {
