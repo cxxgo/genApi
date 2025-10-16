@@ -71,6 +71,7 @@ genapi mock-server
 | httpTpl     | N        | String                  | /      | 文件头部引入内容（通常用于引入封装的请求方法）                             |
 | fileExt     | N        | String                  | ts     | 文件类型（可选值 ts 或 js）                                                |
 | typeMap     | N        | Record<string, string>  | /      | 接口出入参类型映射                                                         |
+| apiNameWithMethod     | N        | boolean       | true      | `v3.0` 默认生成的 apiName是否拼接 method ( 示例：userList or userListGet )                                                       |
 
 其中:
 
@@ -144,18 +145,19 @@ genapi mock-server
 
 - #### `apiName` 自定义接口名称生成规则
 
-  默认的接口名称生成规则为: 去除原始路径开头可能存在的 `/api`后，将剩余的单词拼接起来。 如：
+  工具内有默认的接口名称生成规则：
+
+  - **2.x 版本**: 去除原始路径开头可能存在的 `/api`后，将剩余的单词拼接起来。 如：
   接口 `/api/user/info/{id}` 的默认名称为 `userInfoId`；
   接口 `/api/user/changePswd` 的默认名称为 `userChangePswd`；
   接口 `/app-event-center/manageRuleConfig/list` 的默认名称为 `appeventcenterManageRuleConfigList`；
+ （如果存在路径相同 method 不同的接口，会自动拼接 method， 如 : `get: /api/user/info` 和 `post: /api/user/info`，这两个接口的名称将分别被处理为 `userInfoGet` 和 `userInfoPost`。）
 
-  特殊情况 1： 如果存在路径相同但方法不同的两个接口，如 : `get: /api/user/info` 和 `post: /api/user/info`，这两个接口的名称将分别被处理为 `userInfoGet` 和 `userInfoPost`。
+  - **3.x版本**: 在 2.x 版本的基础上统一拼接了 method（可通过配置 `apiNameWithMethod:false` 保持和 2.x 版本一样的默认规则）。
 
-  特殊情况 2： 如果按照默认规则处理后的接口名称正好是 js 关键字，如`delete`， 则会在后面拼上 `Fn`，即默认处理后的接口名称为 `deleteFn`
+  <br/>
 
-  使用场景，有时候接口路径上统一带了很长的前缀，导致默认的接口名称特别长（如上面的 `appeventcenterManageRuleConfigList`），这种情况下就可以使用`apiName`自定义接口名称，使之更为美观些。
-
-  配置示例：
+  自定义 `apiName` 配置示例：
 
   ```ts
   {
