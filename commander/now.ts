@@ -17,6 +17,11 @@ export async function now(options: {
 
   saveConfigPathToLocal(configFilePath)
   const { config } = (await loadConfig(configFilePath)) as { config: UserConfig }
+  if (config?.apiList?.every(item => item.gen === false)) {
+    console.log('\x1B[33m%s\x1B[0m', '没有需要生成的数据，请检查配置')
+    console.log()
+    return
+  }
   parser(config).then((parseredData) => {
     genApi(parseredData, config.formatter)
     if (options.mock) {
