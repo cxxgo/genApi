@@ -2498,32 +2498,32 @@ Mock.mock(
 Mock.mock(
   /\/emo-center\/api\/admin\/jobCategory\/byParentIds/,
   'get',
-  __test__outputmessemocenter.emocenterApiAdminJobCategoryByParentIdsGet
+  __test__outputmessemocenter.emocenterApiAdminJobCategoryByParentIds
 )
 Mock.mock(
   /\/emo-center\/api\/empower\/enterpriseRe\/upEntReSet\/.*/,
   'post',
-  __test__outputmessemocenter.emocenterApiEmpowerEnterpriseReUpEntReSetEnterpriseIdPost
+  __test__outputmessemocenter.emocenterApiEmpowerEnterpriseReUpEntReSetEnterpriseId
 )
-Mock.mock(/\/emo-center\/api\/enterprise\/list/, 'get', __test__outputmessemocenter.emocenterApiEnterpriseListGet)
+Mock.mock(/\/emo-center\/api\/enterprise\/list/, 'get', __test__outputmessemocenter.emocenterApiEnterpriseList)
 Mock.mock(
   /\/emo-center\/api\/feeRule\/getCooperateTypeIdsByFeeId/,
   'get',
-  __test__outputmessemocenter.emocenterApiFeeRuleGetCooperateTypeIdsByFeeIdGet
+  __test__outputmessemocenter.emocenterApiFeeRuleGetCooperateTypeIdsByFeeId
 )
 Mock.mock(
   /\/emo-center\/api\/searchRecord\/deleteByKeywords/,
   'post',
-  __test__outputmessemocenter.emocenterApiSearchRecordDeleteByKeywordsPost
+  __test__outputmessemocenter.emocenterApiSearchRecordDeleteByKeywords
 )
 Mock.mock(
   /\/emo-center\/api\/v1\/tasty\/work-history\/.*/,
   'delete',
-  __test__outputmessemocenter.emocenterApiV1TastyWorkhistoryIdDelete
+  __test__outputmessemocenter.emocenterApiV1TastyWorkhistoryId
 )
-Mock.mock(/\/api\/emo-center\/auth\/execute/, 'put', __test__outputmessemocenter.emocenterAuthExecutePut)
-Mock.mock(/\/api\/emo-center\/effective\/dept/, 'get', __test__outputmessemocenter.emocenterEffectiveDeptGet)
-Mock.mock(/\/api\/emo-center\/white\/get\/.*/, 'get', __test__outputmessemocenter.emocenterWhiteGetWhiteIdGet)
-Mock.mock(/\/api\/happyPlan\/addCustomer/, 'get', __test__outputmesshappyPlan.happyPlanAddCustomerGet)
-Mock.mock(/\/api\/mobile\/person\/resume\//, 'get', __test__outputmessmobile.mobilePersonResumeGet)
-Mock.mock(/\/api\/emo\/emo\/employee\/tree/, 'get', __test__outputmessemo.emoEmoEmployeeTreeGet)
+Mock.mock(/\/api\/emo-center\/auth\/execute/, 'put', __test__outputmessemocenter.emocenterAuthExecute)
+Mock.mock(/\/api\/emo-center\/effective\/dept/, 'get', __test__outputmessemocenter.emocenterEffectiveDept)
+Mock.mock(/\/api\/emo-center\/white\/get\/.*/, 'get', __test__outputmessemocenter.emocenterWhiteGetWhiteId)
+Mock.mock(/\/api\/happyPlan\/addCustomer/, 'get', __test__outputmesshappyPlan.happyPlanAddCustomer)
+Mock.mock(/\/api\/mobile\/person\/resume\//, 'get', __test__outputmessmobile.mobilePersonResume)
+Mock.mock(/\/api\/emo\/emo\/employee\/tree/, 'get', __test__outputmessemo.emoEmoEmployeeTree)

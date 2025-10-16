@@ -23,18 +23,20 @@ export function handleApiModel(
     apiName,
     pathRewrite,
     typeMap,
-  }: Pick<IApiStation, 'exclude' | 'include' | 'fileName' | 'fileExt' | 'apiName' | 'pathRewrite' | 'typeMap'>,
+    apiNameWithMethod,
+  }: Pick<IApiStation, 'exclude' | 'include' | 'fileName' | 'fileExt' | 'apiName' | 'pathRewrite' | 'typeMap' | 'apiNameWithMethod'>,
 ) {
   const apis: IApiModel[] = []
   for (const key in paths) {
     const _needGen = needGen({ exclude, include, apiPath: key })
     if (_needGen) {
       const objs = paths[key]
+      const apiHasSameUrl = Object.keys(objs).length // url 相同，但是方法不同的接口数量
       Object.keys(objs).forEach((method) => {
         const obj = objs[method]
         const theUrl = getUrl(key)
         const url = pathRewrite ? pathRewrite({ url: theUrl }) : theUrl // 经用户 pathRewrite() 函数处理过后的 url
-        const defaultApiName = getApiName(theUrl, method) // 内置生成的接口名称
+        const defaultApiName = getApiName(theUrl, apiHasSameUrl > 1 || apiNameWithMethod ? method : '') // 内置生成的接口名称
         // 优先使用用户传入的 apiName 生成规则
         const name = apiName ? apiName({ url, originUrl: theUrl, method, defaultApiName }) : defaultApiName
         const theFileName = getFileName({ url, originUrl: theUrl, userFileName: fileName })

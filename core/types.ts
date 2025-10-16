@@ -5,10 +5,12 @@ export interface UserConfig {
   httpTpl?: string
   /** api 结构 */
   apiBody?: (data: IApibodyParam) => string
-  /** 接口所属文件名称 */
+  /** 自定义接口所属文件名称 */
   fileName?: string | ((data: FileNameFnParam) => string)
-  /** 接口名称 */
+  /** 自定义接口名称 */
   apiName?: (data: ApiNameFnParam) => string
+  /** 默认生成的接口名称是否自动拼接 method, 默认 true */
+  apiNameWithMethod?: boolean
   /** 接口路径重写（如：加前缀 /abc/def => /prefix/abc/def） */
   pathRewrite?: (data: { url: string }) => string
   /** 文件后缀, 可选值：ts 或 js， 默认 ts */
@@ -44,6 +46,8 @@ export interface IApiStation {
   fileName?: string | ((data: FileNameFnParam) => string)
   /** 接口名称 */
   apiName?: (data: ApiNameFnParam) => string
+  /** 默认生成的接口名称是否自动拼接 method, 默认 true */
+  apiNameWithMethod?: boolean
   /** 接口路径重写（如：加前缀 /abc/def => /prefix/abc/def） */
   pathRewrite?: (data: { url: string }) => string
   /** api 结构 */

@@ -74,6 +74,7 @@ export default defineConfig(({ version }) => {
         swaggerUrl: './__test__/json/mess.json',
         outputDir: './__test__/output/mess',
         gen: true,
+        apiNameWithMethod: false
       },
     ],
     apiBody: ({ url, method, summary, name, parameters, outputInterface, outputType, pstr1, pstr2, pstr3 }) => {

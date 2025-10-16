@@ -10,7 +10,7 @@ import type {
 } from './_interfaces.ts'
 
 /** 这个接口出参树形结构，同样的children 结构导致 mock 函数死循环了 */
-export function emocenterApiAdminJobCategoryByParentIdsGet(data: {
+export function emocenterApiAdminJobCategoryByParentIds(data: {
   isEnable?: number
   parentIds?: string[]
 }): Promise<ApiResponseListJobCategoryConfigResp> {
@@ -18,7 +18,7 @@ export function emocenterApiAdminJobCategoryByParentIdsGet(data: {
 }
 
 /** 这个接口的入参既有 in path, 又有 in body */
-export function emocenterApiEmpowerEnterpriseReUpEntReSetEnterpriseIdPost(data: {
+export function emocenterApiEmpowerEnterpriseReUpEntReSetEnterpriseId(data: {
   enterpriseId?: string
   req?: EntReSetReq
 }): Promise<ApiResponseVoid> {
@@ -27,7 +27,7 @@ export function emocenterApiEmpowerEnterpriseReUpEntReSetEnterpriseIdPost(data: 
 }
 
 /** 这个接口注释、入参注释、出参注释 有特殊字符 ， 等，导致报错 */
-export function emocenterApiEnterpriseListGet(data: {
+export function emocenterApiEnterpriseList(data: {
   // 市
   city?: string
   // UN_COOPERATE("未合作"), IN_COOPERATE("合作中"), EXPIRE_COOPERATE("合作到期"), TERMINATE_COOPERATING("终止合作中"), TERMINATE_LOG_OFF("终止待注销"), FORWARD_LOG_OFF("终止已注销"), EXPIRE_LOG_OFF("到期已注销"),
@@ -54,14 +54,14 @@ export function emocenterApiEnterpriseListGet(data: {
 }
 
 /** 这个接口处理后的 parsedData 里的type为空，导出出现形如 'data|1-20': [()] 的错误mock数据 */
-export function emocenterApiFeeRuleGetCooperateTypeIdsByFeeIdGet(data: {
+export function emocenterApiFeeRuleGetCooperateTypeIdsByFeeId(data: {
   feeId?: string
 }): Promise<ApiResponseListListlong> {
   return request.get('/emo-center/api/feeRule/getCooperateTypeIdsByFeeId', data)
 }
 
 /** 这个接口的入参既有 in query,又有 in body */
-export function emocenterApiSearchRecordDeleteByKeywordsPost(data: {
+export function emocenterApiSearchRecordDeleteByKeywords(data: {
   groupCode?: string
   keywords?: string[]
 }): Promise<ApiResponseVoid> {
@@ -69,18 +69,18 @@ export function emocenterApiSearchRecordDeleteByKeywordsPost(data: {
 }
 
 /** 这是一个 delete 请求 */
-export function emocenterApiV1TastyWorkhistoryIdDelete(data: { id?: string }): Promise<any> {
+export function emocenterApiV1TastyWorkhistoryId(data: { id?: string }): Promise<any> {
   const { id } = data
   return request.delete(`/emo-center/api/v1/tasty/work-history/${id}`)
 }
 
 /** 这是一个 put 请求 */
-export function emocenterAuthExecutePut(data: any): Promise<ApiResponseVoid> {
+export function emocenterAuthExecute(data: any): Promise<ApiResponseVoid> {
   return request.put('/api/emo-center/auth/execute', data)
 }
 
 /** 返回数值是个数组而非对象 */
-export function emocenterEffectiveDeptGet(data: {
+export function emocenterEffectiveDept(data: {
   platformEnterpriseId?: string
   platformSkyId?: string
 }): Promise<EarthDeptMetaRespeFanHuiMoXing[]> {
@@ -88,7 +88,7 @@ export function emocenterEffectiveDeptGet(data: {
 }
 
 /** 参数在路径上 */
-export function emocenterWhiteGetWhiteIdGet(data: { whiteId?: string }): Promise<ApiResponseWhiteDetailResp> {
+export function emocenterWhiteGetWhiteId(data: { whiteId?: string }): Promise<ApiResponseWhiteDetailResp> {
   const { whiteId } = data
   return request.get(`/api/emo-center/white/get/${whiteId}`)
 }

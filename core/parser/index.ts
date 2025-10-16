@@ -18,6 +18,7 @@ export async function parser(apiConfig: UserConfig) {
         apiName: item.apiName || apiConfig.apiName,
         pathRewrite: item.pathRewrite || apiConfig.pathRewrite,
         typeMap: item.typeMap || apiConfig.typeMap,
+        apiNameWithMethod: item.apiNameWithMethod === true || (item.apiNameWithMethod === undefined && apiConfig.apiNameWithMethod !== false),
       }
     })
 
@@ -48,6 +49,7 @@ async function parseFn(apiStation: IApiStation, stationIndex: number): Promise<I
       pathRewrite: apiStation.pathRewrite,
       typeMap: apiStation.typeMap,
       fileExt: apiStation.fileExt,
+      apiNameWithMethod: apiStation.apiNameWithMethod,
     })
 
     const usedInterfaces = getStationInterfaces(apis, allInterfaces) // 需要生成的接口用到的 interface 名称数组
