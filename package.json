@@ -30,7 +30,9 @@
     "test:mock-server": "pnpm build && pnpm link --global && npx genapi mock-server linkInTool",
     "replace": "node ./scripts/replaceStr.js",
     "prepare": "husky install",
-    "prepublishOnly": "pnpm build"
+    "prepublishOnly": "pnpm build",
+    "release": "bumpp -x \"pnpm run changelog\" --all && pnpm publish",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "publishConfig": {
     "access": "public",
@@ -52,6 +54,8 @@
     "@commitlint/config-conventional": "^19.1.0",
     "@rollup/plugin-json": "^6.0.1",
     "@types/node": "^20.9.2",
+    "bumpp": "^10.3.1",
+    "conventional-changelog": "^7.1.1",
     "eslint": "^9.29.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.2",
